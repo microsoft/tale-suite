@@ -42,7 +42,7 @@
   "awaken": {
     "filename": "awaken.z5",
     "info": "http://ifdb.tads.org/viewgame?id=rwseuddvj1gbo481",
-    "link": "https://github.com/danielricks/textplayer/blob/master/games/awaken.z5"
+    "link": "https://github.com/danielricks/textplayer/raw/master/games/awaken.z5"
   },
   "balances": {
     "filename": "balances.z5",
@@ -52,7 +52,7 @@
   "ballyhoo": {
     "filename": "ballyhoo.z5",
     "info": "http://ifdb.tads.org/viewgame?id=b0i6bx7g4rkrekgg",
-    "link": "https://github.com/alexwillisson/zorky/blob/master/z5/ballyhoo.z5"
+    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/ballyhoo.z5"
   },
   "curses": {
     "filename": "curses.z5",
@@ -62,7 +62,7 @@
   "cutthroat": {
     "filename": "cutthroat.z5",
     "info": "http://ifdb.tads.org/viewgame?id=4ao65o1u0xuvj8jf",
-    "link": "https://github.com/alexwillisson/zorky/blob/master/z5/cutthroa.z5"
+    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/cutthroa.z5"
   },
   "deephome": {
     "filename": "deephome.z5",
@@ -227,7 +227,7 @@
   "sherlock": {
     "filename": "sherlock.z5",
     "info": "http://ifdb.tads.org/viewgame?id=j8lmspy4iz73mx26",
-    "link": "https://github.com/alexwillisson/zorky/blob/master/z5/sherlock.z5"
+    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/sherlock.z5"
   },
   "snacktime": {
     "filename": "snacktime.z8",
