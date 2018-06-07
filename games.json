@@ -50,9 +50,9 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/Balances.z5"
   },
   "ballyhoo": {
-    "filename": "ballyhoo.z5",
+    "filename": "ballyhoo.z3",
     "info": "http://ifdb.tads.org/viewgame?id=b0i6bx7g4rkrekgg",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/ballyhoo.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FBallyhoo%20v97%20%281986%29%28Infocom%29.zip:BALLYHOO.DAT"
   },
   "curses": {
     "filename": "curses.z5",
@@ -60,9 +60,9 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/curses.z5"
   },
   "cutthroat": {
-    "filename": "cutthroat.z5",
+    "filename": "cutthroat.z3",
     "info": "http://ifdb.tads.org/viewgame?id=4ao65o1u0xuvj8jf",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/cutthroa.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FCutthroats%20v23%20%281984%29%28Infocom%29.zip:cutthroa.dat"
   },
   "deephome": {
     "filename": "deephome.z5",
@@ -80,9 +80,9 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/dragon.zip:Dragon.z5"
   },
   "enchanter": {
-    "filename": "enchanter.z5",
+    "filename": "enchanter.z3",
     "info": "http://ifdb.tads.org/viewgame?id=vu4xhul3abknifcr",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/enchante.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FEnchanter%20v24%20%281984%29%28Infocom%29%5Bh%5D.zip:ench_24.z3"
   },
   "enter": {
     "filename": "enter.z5",
@@ -110,9 +110,9 @@
     "link": "http://www.douglasadams.com/creations/hhgg.z3"
   },
   "hollywood": {
-    "filename": "hollywood.z5",
+    "filename": "hollywood.z3",
     "info": "http://ifdb.tads.org/viewgame?id=jnfkbgdgopwfqist",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/hollywoo.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FHollywood%20Hijinx%20v235%20%281986%29%28Infocom%29%5Bh%5D%5B861118%5D.zip:hollywoo_235.z3"
   },
   "huntdark": {
     "filename": "huntdark.z5",
@@ -120,9 +120,9 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/competition99/inform/huntdark/huntdark.z5"
   },
   "infidel": {
-    "filename": "infidel.z5",
+    "filename": "infidel.z3",
     "info": "http://ifdb.tads.org/viewgame?id=anu79a4n1jedg5mm",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/infidel.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FInfidel%20v22%20%281983%29%28Infocom%29%5B830916%5D.zip:INFIDEL.DAT"
   },
   "inhumane": {
     "filename": "inhumane.z5",
@@ -139,6 +139,11 @@
     "info": "http://ifdb.tads.org/viewgame?id=bx8118ggp6j7nslo",
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/karn.z5"
   },
+  "lgop": {
+    "filename": "lgop.z3",
+    "info": "http://ifdb.tads.org/viewgame?id=3p9fdt4fxr2goctw",
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FLeather%20Goddesses%20of%20Phobos%20v160%20%281986%29%28Infocom%29%5Bh%5D%5B860521%5D.zip:lgop_160.z3"
+  },
   "library": {
     "filename": "library.z5",
     "info": "http://ifdb.tads.org/viewgame?id=400zakqderzjnu1i",
@@ -147,12 +152,12 @@
   "loose": {
     "filename": "loose.z5",
     "info": "http://ifdb.tads.org/viewgame?id=4wd3lyaxi4thp8qi",
-    "link": "http://mirror.ifarchive.org/if-archive/games/competition98/inform/loose/loose.z5"
+    "link": "http://mirror.ifarchive.org/if-archive/games/zcode/loose.z5"
   },
   "lostpig": {
     "filename": "lostpig.z8",
     "info": "http://ifdb.tads.org/viewgame?id=mohwfk47yjzii14w",
-    "link": "http://mirror.ifarchive.org/if-archive/games/competition2007/zcode/lostpig/lostpig.z8"
+    "link": "http://mirror.ifarchive.org/if-archive/games/zcode/LostPig.z8"
   },
   "ludicorp": {
     "filename": "ludicorp.z5",
@@ -160,9 +165,9 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/ludicorp.z5"
   },
   "lurking": {
-    "filename": "lurking.z5",
+    "filename": "lurking.z3",
     "info": "http://ifdb.tads.org/viewgame?id=jhbd0kja1t57uop",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/lurking.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FLurking%20Horror%2C%20The%20v219%20%281987%29%28Infocom%29%5B870912%5D.zip:Lurking.z3"
   },
   "moonlit": {
     "filename": "moonlit.z5",
@@ -200,14 +205,14 @@
     "link": "http://www.huxter.org/piracy/piracy_2_r2.z5"
   },
   "planetfall": {
-    "filename": "planetfall.z5",
+    "filename": "planetfall.z3",
     "info": "http://ifdb.tads.org/viewgame?id=xe6kb3cuqwie2q38",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/planetfa.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FPlanetfall%20v29%20%281983%29%28Infocom%29%5B840118%5D.zip:planetfa.z3"
   },
   "plundered": {
-    "filename": "plundered.z5",
+    "filename": "plundered.z3",
     "info": "http://ifdb.tads.org/viewgame?id=ddagftras22bnz8h",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/plundere.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FPlundered%20Hearts%20v26%20%281987%29%28Infocom%29%5B870730%5D.zip:PLUNDERE.DAT"
   },
   "reverb": {
     "filename": "reverb.z5",
@@ -215,9 +220,9 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/competition96/reverb/reverb.z5"
   },
   "seastalker": {
-    "filename": "seastalker.z5",
+    "filename": "seastalker.z3",
     "info": "http://ifdb.tads.org/viewgame?id=56wb8hflec2isvzm",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/seastalk.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FSeastalker%20v86%20%281984%29%28Infocom%29%28beta%29%5B840320%5D.zip:SEASTALK.z3"
   },
   "sherbet": {
     "filename": "sherbet.z5",
@@ -227,7 +232,7 @@
   "sherlock": {
     "filename": "sherlock.z5",
     "info": "http://ifdb.tads.org/viewgame?id=j8lmspy4iz73mx26",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/sherlock.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FSherlock%20-%20The%20Riddle%20of%20the%20Crown%20Jewels%20v21%20%281987%29%28Infocom%29%5B871214%5D.zip:SHER.z5"
   },
   "snacktime": {
     "filename": "snacktime.z8",
@@ -235,14 +240,14 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/competition2008/zcode/snack/snacktime.z8"
   },
   "sorcerer": {
-    "filename": "sorcerer.z5",
+    "filename": "sorcerer.z3",
     "info": "http://ifdb.tads.org/viewgame?id=lidg5nx9ig0bwk55",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/sorcerer.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FSorcerer%20v18%20%281984%29%28Infocom%29%5Bh%5D%5B860904%5D.zip:sorcerer_18.z3"
   },
   "spellbrkr": {
-    "filename": "spellbrkr.z5",
+    "filename": "spellbrkr.z3",
     "info": "http://ifdb.tads.org/viewgame?id=wqsmrahzozosu3r",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/spellbre.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FSpellbreaker%20v63%20%281985%29%28Infocom%29%5B850916%5D.zip:spelbrkr.z3"
   },
   "spirit": {
     "filename": "spirit.z5",
@@ -260,9 +265,9 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/theatre.z5"
   },
   "trinity": {
-    "filename": "trinity.z5",
+    "filename": "trinity.z4",
     "info": "http://ifdb.tads.org/viewgame?id=j18kjz80hxjtyayw",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/tirinity.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FTrinity%20v12%20%281986%29%28Infocom%29%5B860926%5D.zip:TRINITY.z4"
   },
   "tryst205": {
     "filename": "tryst205.z5",
@@ -280,9 +285,9 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/weapon.zip:weapon.z5"
   },
   "wishbringer": {
-    "filename": "wishbringer.z5",
+    "filename": "wishbringer.z3",
     "info": "http://ifdb.tads.org/viewgame?id=z02joykzh66wfhcl",
-    "link": "https://github.com/alexwillisson/zorky/raw/master/z5/wishbrin.z5"
+    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FWishbringer%20-%20The%20Magick%20Stone%20of%20Dreams%20v68%20%281985%29%28Infocom%29%5B850501%5D.zip:WISHBRIN.z3"
   },
   "yomomma": {
     "filename": "yomomma.z8",
