@@ -16,7 +16,8 @@ log = logging.getLogger("tw-benchmark")
 
 
 def evaluate(agent, game, args):
-    env = textworld.start(game)
+    infos = textworld.EnvInfos(max_score=True)
+    env = textworld.start(game, infos)
     log.debug("Using {}".format(env.__class__.__name__))
     agent.reset(env)
 
@@ -35,7 +36,7 @@ def evaluate(agent, game, args):
         game_state, score, done = env.step(action)
 
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
-        msg = msg.format(step, time.time() - start_time, game_state.score, game_state.nb_moves, action)
+        msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
         log.info(msg)
         log.debug(env.render(mode="text"))
 
@@ -63,7 +64,7 @@ def evaluate(agent, game, args):
 
 
 def benchmark(agent, games, args):
-    game_exclusion_list = ["enter.z5", "sherlock.z5", "sherbet.z5", "theatre.z5", "balances.z5"]
+    game_exclusion_list = []
 
     mean_score = 0
     total_time = 0.

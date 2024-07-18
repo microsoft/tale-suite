@@ -5,16 +5,19 @@ import shutil
 import zipfile
 import tempfile
 import argparse
-import urllib.request
+import requests
 import subprocess
+
 from os.path import join as pjoin
+
+import tqdm
+from termcolor import colored
 
 
 def download(link):
     filename = link.split("/")[-1]
-    with urllib.request.urlopen(link) as response:
-        data = response.read()
-
+    response = requests.get(link)
+    data = response.content
     return data, filename
 
 
@@ -75,30 +78,21 @@ def main():
     if not os.path.isdir(args.out):
         os.makedirs(args.out)
 
-    print("Downloading...")
-
-    # If available, show progress bar.
-    try:
-        import tqdm
-        pbar = tqdm.tqdm(game_infos.items(), leave=False)
-        using_tqdm = True
-    except ImportError:
-        pbar = game_infos.items()
-        using_tqdm = False
+    pbar = tqdm.tqdm(game_infos.items(), desc="Downloading games", leave=False)
 
     nb_downloaded = 0
     for name, game_info in pbar:
-        if using_tqdm:
-            pbar.set_postfix_str(game_info["filename"])
+        pbar.set_postfix_str(game_info["filename"])
 
         game_file = pjoin(args.out, game_info["filename"])
         if not os.path.isfile(game_file):
             nb_downloaded += 1
+            game_info["link"] = "https://github.com/BYU-PCCL/z-machine-games/raw/master/jericho-game-suite/" + game_info["filename"]
             data = download_game(game_info)
             with open(game_file, "wb") as f:
                 f.write(data)
 
-    print("{} games ({} new)".format(len(game_infos), nb_downloaded))
+    print(colored(f"Downloaded {len(game_infos)} games ({nb_downloaded} new).", "green"))
 
 
 if __name__ == "__main__":

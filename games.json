@@ -11,12 +11,6 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/acorncourt.z5",
     "md5": "a61400439aa76f8faba3b8f01edd4a72"
   },
-  "actofmurder": {
-    "filename": "actofmurder.z8",
-    "info": "http://ifdb.tads.org/viewgame?id=x43lndv5htzy38w0",
-    "link": "http://mirror.ifarchive.org/if-archive/games/competition2007/zcode/actofmurder/ActofMurder.z8",
-    "md5": "d28a66499e394e40d9cab7effd34f486"
-  },
   "advent": {
     "filename": "advent.z5",
     "info": "http://ifdb.tads.org/viewgame?id=fft6pu91j85y4acv",
@@ -40,12 +34,6 @@
     "info": "http://ifdb.tads.org/viewgame?id=op0uw1gn1tjqmjt7",
     "link": "http://ifarchive.org/if-archive/games/zcode/anchor.z8",
     "md5": "c043df8624e0e1e9fda92f1a74b6e402"
-  },
-  "asylum": {
-    "filename": "asylum.z5",
-    "info": "http://ifdb.tads.org/viewgame?id=20uwjal4pcde6gfb",
-    "link": "http://mirror.ifarchive.org/if-archive/games/zcode/Asylum.z5",
-    "md5": "773e2cb46d3521e4f092568ae8d08c4b"
   },
   "awaken": {
     "filename": "awaken.z5",
@@ -74,8 +62,8 @@
   "cutthroat": {
     "filename": "cutthroat.z3",
     "info": "http://ifdb.tads.org/viewgame?id=4ao65o1u0xuvj8jf",
-    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FCutthroats%20v23%20%281984%29%28Infocom%29.zip:cutthroa.dat",
-    "md5": "ec7d273fd79d4a7dd69a9bf7001f6193"
+    "link": "https://github.com/BYU-PCCL/z-machine-games/raw/master/jericho-game-suite/cutthroat.z3",
+    "md5": "216eeeba1c8017a77343dc8482f6f185"
   },
   "deephome": {
     "filename": "deephome.z5",
@@ -107,18 +95,6 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/enter.z5",
     "md5": "4c48ba2c5523d78c5f7f9b7809d16b1d"
   },
-  "exterminate": {
-    "filename": "exterminate.z8",
-    "info": "http://ifdb.tads.org/viewgame?id=4ygzc9qcj6rxhh1",
-    "link": "http://mirror.ifarchive.org/if-archive/games/mini-comps/speedif/SpeedIF_Spring.zip:Exterminate.zblorb",
-    "md5": "c682a544a8d61b889841323c3478954f"
-  },
-  "failsafe": {
-    "filename": "failsafe.z5",
-    "info": "http://ifdb.tads.org/viewgame?id=c6x835i6o9zqfc59",
-    "link": "http://mirror.ifarchive.org/if-archive/games/zcode/FailSafe.z5",
-    "md5": "7ca7dc3fc085652b219a54cd0a0923da"
-  },
   "gold": {
     "filename": "gold.z5",
     "info": "http://ifdb.tads.org/viewgame?id=59ztsy9p01avd6wp",
@@ -128,8 +104,8 @@
   "hhgg": {
     "filename": "hhgg.z3",
     "info": "http://ifdb.tads.org/viewgame?id=ouv80gvsl32xlion",
-    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FHitchhiker%27s%20Guide%20to%20the%20Galaxy%2C%20The%20v59%20%281984%29%28Infocom%29%5Bh%5D%5B851108%5D.zip:hhgttg_59.z3",
-    "md5": "f7b84f101c1beb99e8b77218907f99c7"
+    "link": "https://github.com/BYU-PCCL/z-machine-games/raw/master/jericho-game-suite/hhgg.z3",
+    "md5": "6666389f60e0c8e4ceb08242a263bb52"
   },
   "hollywood": {
     "filename": "hollywood.z3",
@@ -166,12 +142,6 @@
     "info": "http://ifdb.tads.org/viewgame?id=bx8118ggp6j7nslo",
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/karn.z5",
     "md5": "ec55791be814db3663ad1aec0d6b7690"
-  },
-  "lgop": {
-    "filename": "lgop.z3",
-    "info": "http://ifdb.tads.org/viewgame?id=3p9fdt4fxr2goctw",
-    "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FLeather%20Goddesses%20of%20Phobos%20v160%20%281986%29%28Infocom%29%5Bh%5D%5B860521%5D.zip:lgop_160.z3",
-    "md5": "8241afdadbdcdb934ee06afc6ba59b67"
   },
   "library": {
     "filename": "library.z5",
@@ -239,12 +209,6 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/pentari.z5",
     "md5": "f24c6863468823b744e910ccfe997c6d"
   },
-  "piracy2": {
-    "filename": "piracy2.z5",
-    "info": "http://ifdb.tads.org/viewgame?id=6uzu0u107mj4rbhd",
-    "link": "http://www.huxter.org/piracy/piracy_2_r2.z5",
-    "md5": "a9e6b0b9fe78f954aa4a227342c0450c"
-  },
   "planetfall": {
     "filename": "planetfall.z3",
     "info": "http://ifdb.tads.org/viewgame?id=xe6kb3cuqwie2q38",
@@ -268,12 +232,6 @@
     "info": "http://ifdb.tads.org/viewgame?id=56wb8hflec2isvzm",
     "link": "https://archive.org/download/Infocom_Z-Machine_TOSEC_2012_04_23/Infocom_Z-Machine_TOSEC_2012_04_23.zip/Infocom%20Z-Machine%20%5BTOSEC%5D%2FGames%2FSeastalker%20v86%20%281984%29%28Infocom%29%28beta%29%5B840320%5D.zip:SEASTALK.z3",
     "md5": "ee339dbdbb0792f67e20bd71bafe0ea5"
-  },
-  "sherbet": {
-    "filename": "sherbet.z5",
-    "info": "http://ifdb.tads.org/viewgame?id=273o81yvg64m4pkz",
-    "link": "http://mirror.ifarchive.org/if-archive/games/competition96/sherbet/sherbet.z5",
-    "md5": "4870ed634baf9a85b0a68369af92dfd3"
   },
   "sherlock": {
     "filename": "sherlock.z5",
@@ -328,12 +286,6 @@
     "info": "http://ifdb.tads.org/viewgame?id=ic0ebhbi70bdmyc2",
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/tryst205.z5",
     "md5": "fc65ad8d4588da92fd39871f6f7463db"
-  },
-  "violet": {
-    "filename": "violet.z8",
-    "info": "http://ifdb.tads.org/viewgame?id=4glrrfh7wrp9zz7b",
-    "link": "http://mirror.ifarchive.org/if-archive/games/zcode/Violet.zblorb",
-    "md5": "8bbdea7fc901af316cb358d673c2359e"
   },
   "weapon": {
     "filename": "weapon.z5",

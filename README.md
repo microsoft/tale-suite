@@ -1,13 +1,14 @@
-# TextWorld - Baselines
-This repository contains the files needed to benchmark RL agents on text-based games.
+# Text-games - Benchmark
+This repository contains the files needed to benchmark language agents on text-based games.
 
 ## Getting Started
-1.	Make sure TextWorld is installed (see [TextWorld's installation](https://github.com/Microsoft/TextWorld)).
-2.	Download the curated list of games: `python download.py`.
-3.	Run benchmark evaluation on all the games for the specified agent:
-```
-python benchmark --games games/* --agent agent_template.py:CustomAgent
-```
+1.	Make sure dependencies are installed.
+    pip install -r requirements.txt
 
-## Requirements
-- Python 3.5+
+2.	Download the curated list of games.
+
+    python download.py
+
+3.	Run benchmark evaluation on all the games for the specified agent:
+
+    python benchmark.py --games games/* --agent agent_template.py:CustomAgent
