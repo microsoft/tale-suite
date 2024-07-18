@@ -12,7 +12,7 @@ from tqdm import tqdm
 import textworld
 
 
-log = logging.getLogger("tw-benchmark")
+log = logging.getLogger("tw-bench")
 
 
 def evaluate(agent, game, args):
