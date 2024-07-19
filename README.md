@@ -20,7 +20,7 @@ This repository contains the files needed to benchmark language agents on text-b
 
 4.	Run benchmark evaluation on all the games for the specified agent:
 
-        python benchmark --games games/* --agent agent_template.py:CustomAgent
+        python benchmark.py --games games/* --agent agent_template.py:CustomAgent
 
 
 ## Contributing
