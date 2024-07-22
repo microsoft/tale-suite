@@ -152,7 +152,7 @@ def parse_args():
     parser.add_argument("--games", metavar="game", nargs="+", required=False,
                         help="Games on which to evaluate the agent(s). By default,"
                              " use all games found in './games/'")
-    parser.add_argument("--agent", default="./agent_template.py:CustomAgent",
+    parser.add_argument("--agent", default="./agent_llm.py:LLMAgent",
                         help="Full qualified class name to evaluate. Default: %(default)s")
     parser.add_argument("--nb-steps", type=int, default=1000,
                         help="Maximum number of steps per game.")
