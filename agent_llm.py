@@ -11,6 +11,7 @@ client = AzureOpenAI(
 )
 
 def llm(prompt, stop=["\n"]):
+    # print("prompt:" + prompt)
     completion = client.chat.completions.create(
     model="gpt-4-0125-preview",
     messages= [
@@ -42,10 +43,14 @@ class LLMAgent(textworld.Agent):
     def act(self, game_state, reward, done):
         action = self.rng.choice(self.actions)
         if action in ["take", "drop", "eat", "attack"]:
-            words = game_state.feedback.split()  # Observed words.
-            words = [w for w in words if len(w) > 3]  # Ignore most stop words.
-            if len(words) > 0:
+            # print("feedback:" + game_state.feedback)
+            # words = game_state.feedback.split()  # Observed words.
+            # words = [w for w in words if len(w) > 3]  # Ignore most stop words.
+            # if len(words) > 0:
                 # action += " " + self.rng.choice(words)
-                action += " " + llm(" ".join(words), stop=["\n"])
+            if not game_state.feedback.startswith("["):
+                action += " " + llm("Reply with only the next word in this step of the game starting after '" + action +"': " + game_state.feedback, stop=["\n"])[:10]
+                print(action)
 
+        # print("action:" + action)
         return action
