@@ -43,14 +43,8 @@ class LLMAgent(textworld.Agent):
     def act(self, game_state, reward, done):
         action = self.rng.choice(self.actions)
         if action in ["take", "drop", "eat", "attack"]:
-            # print("feedback:" + game_state.feedback)
-            # words = game_state.feedback.split()  # Observed words.
-            # words = [w for w in words if len(w) > 3]  # Ignore most stop words.
-            # if len(words) > 0:
-                # action += " " + self.rng.choice(words)
             if not game_state.feedback.startswith("["):
-                action += " " + llm("Reply with only the next word in this step of the game starting after '" + action +"': " + game_state.feedback, stop=["\n"])[:10]
-                print(action)
+                action += " " + llm("Reply with only the next word in this step of the game starting after '" + action +"': " + game_state.feedback, stop=["\n"])[:100]
 
-        # print("action:" + action)
+        print(f"{game_state.feedback}\n>{action}")
         return action
