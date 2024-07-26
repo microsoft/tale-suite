@@ -36,15 +36,18 @@ class LLMAgent(textworld.Agent):
         self.actions = ["north", "south", "east", "west", "up", "down",
                         "look", "inventory", "take all", "YES", "wait",
                         "take", "drop", "eat", "attack"]
+        self.prompt = ''
 
     def reset(self, env):
         env.display_command_during_render = True
 
     def act(self, game_state, reward, done):
-        action = self.rng.choice(self.actions)
-        if action in ["take", "drop", "eat", "attack"]:
-            if not game_state.feedback.startswith("["):
-                action += " " + llm("Reply with only the next word in this step of the game starting after '" + action +"': " + game_state.feedback, stop=["\n"])[:100]
+        action = llm(f"Reply only with the best action from the list ({', '.join(game_state.valid_actions)}) given the following context:  {self.prompt}\n{game_state.feedback}", stop=["\n"])[:100]
+        # action = self.rng.choice(game_state.valid_actions)
+        # if action in ["take", "drop", "eat", "attack"]:
+        #     if not game_state.feedback.startswith("["):
+        #         action += " " + llm("Select the object for the verb '" + action +"' given the following situation: " + game_state.feedback + ". Reply with only the object.", stop=["\n"])[:100]
 
-        print(f"{game_state.feedback}\n>{action}")
+        self.prompt += f'{game_state.feedback}\n> {action}\n'
+        print(self.prompt)
         return action

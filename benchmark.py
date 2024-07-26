@@ -32,6 +32,7 @@ def evaluate(agent, game, args):
     done = False
 
     for step in range(1, args.nb_steps + 1):
+        game_state.valid_actions = env._jericho.get_valid_actions()
         action = agent.act(game_state, score, done)
         game_state, score, done = env.step(action)
 
@@ -105,9 +106,10 @@ def benchmark(agent, games, args):
 
             mean_score += norm_score
 
-    log.critical("Mean score (over {} games) = {:8.4f}% of total possible".format(nb_games, mean_score / nb_games))
-    log.critical("Total time {:9.2f} seconds".format(total_time))
-    log.critical("Avg. speed: {:8.2f} steps per second".format(total_steps / total_time))
+    if nb_games > 0 and total_time > 0:
+        log.critical("Mean score (over {} games) = {:8.4f}% of total possible".format(nb_games, mean_score / nb_games))
+        log.critical("Total time {:9.2f} seconds".format(total_time))
+        log.critical("Avg. speed: {:8.2f} steps per second".format(total_steps / total_time))
 
 
 class TqdmLoggingHandler(logging.Handler):
