@@ -54,7 +54,7 @@ def evaluate(agent, game, args):
 
             # Replay the game in the hope of achieving a better score.
             game_state = env.reset()
-            agent.reset(env)
+            # agent.reset(env)
             log.debug("Environment reset.\n{}\n".format(env.render(mode="text")))
 
     env.close()

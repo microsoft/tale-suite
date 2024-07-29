@@ -18,6 +18,10 @@ def llm(prompt, stop=["\n"]):
     model="gpt-4o",
     messages= [
     {
+        "role": "system",
+        "content": "You are a helpful assistant",
+    },
+    {
       "role": "user",
       "content": prompt
     }],
@@ -42,11 +46,26 @@ class LLMAgent(textworld.Agent):
         self.prompt = ''
 
     def act(self, game_state, reward, done):
-        action = llm(f"Reply only with the best action from the list ({', '.join(game_state.valid_actions)}) given the following context:\n{self.prompt}\n{game_state.feedback}", stop=["\n"])[:100]
+        valid_actions = game_state.valid_actions
+        if not valid_actions:
+            log.error("No valid actions available.")
+            return 'RESTART'
+        prompt = (f"Reply ONLY with the ONE action selected from the list: [{', '.join(game_state.valid_actions)}]. "
+                  f"If the game is stuck in a loop or not recognizing instruction reply with a random action from the previous list without giving a verbose explanation. "
+                  f"We don't want anything in the output other than the next step. The context is as following:\n{self.prompt}\n{game_state.feedback}"
+        )
+        lines = prompt.splitlines()
+        prompt = "\n".join(lines[-100:])
+        action = llm(prompt, stop=["\t"])
+
         if (action.startswith(">")):
             action = action[1:].strip()
+
+        if action not in game_state.valid_actions:
+            log.warning(f'Invalid action "{action}" received. Choosing a random valid action.')
+            action = self.rng.choice(game_state.valid_actions)
         
         self.prompt += f'{game_state.feedback}\n> {action}\n'
         log.info(f'{game_state.feedback}\n> {action}\n')
 
-        return action
+        return action[0:100]
