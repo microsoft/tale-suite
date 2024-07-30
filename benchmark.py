@@ -33,11 +33,12 @@ def evaluate(agent, game, args):
 
     for step in range(1, args.nb_steps + 1):
         game_state.valid_actions = env._jericho.get_valid_actions()
+        options = str(game_state.valid_actions)
         action = agent.act(game_state, score, done)
         game_state, score, done = env.step(action)
 
-        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
-        msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
+        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s} Options:{:100s}"
+        msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action, options)
         log.info(msg)
         log.debug(env.render(mode="text"))
 

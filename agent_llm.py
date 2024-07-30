@@ -25,7 +25,7 @@ def llm(prompt, stop=["\n"]):
       "role": "user",
       "content": prompt
     }],
-    max_tokens=100,
+    max_tokens=10,
     temperature=0,
     top_p=1,
     frequency_penalty=0,
@@ -50,12 +50,17 @@ class LLMAgent(textworld.Agent):
         if not valid_actions:
             log.error("No valid actions available.")
             return 'RESTART'
-        prompt = (f"Reply ONLY with the ONE action selected from the list: [{', '.join(game_state.valid_actions)}]. "
-                  f"If the game is stuck in a loop or not recognizing instruction reply with a random action from the previous list without giving a verbose explanation. "
-                  f"We don't want anything in the output other than the next step. The context is as following:\n{self.prompt}\n{game_state.feedback}"
+        lines = self.prompt.splitlines()[-500:]
+        prompt = (f"Reply ONLY with the ONE appropriate action selected from the list of valid actions even if the game resets from the beginning.\n"
+                  "If the game has reset to the beginnig or stuck in a loop try to take a different action from the one taken last time at the same step. Make sure you alway return ONLY a valid action as the next step after the Output: and no other text.\n"
+                  "If the game is stuck in a loop or not recognizing instruction reply with a random action from the previous list without giving a verbose explanation. No need to explain why.\n"
+                  "We don't want anything in the output other than the next step.\nHere are some examples of inputs and outputs:\n\n"
+                  '------------\nInput: {"feedback": "You are in a closet. There is a gun on the floor. Better get it. To exit, go east. \n\nYou can see a small black pistol here.", "valid_actions": [\'north\', \'take pistol\', \'east\', \'push pistol to floor\']}\nOutput: take pistol\n------------\n'
+                  '------------\nInput: {"feedback": "You are still on the streets. To the north is a restraunt where the mayor ate often. To the east is the Mayor\'s home.", "valid_actions": [\'west\', \'east\', \'north\', \'put paper down\']}\nOutput: east\n------------\n'
+                  'The past 100 lines of the game play are as following to avoid taking the same step again that led to game ending:\n\n' + "\n".join(lines) + "\n\n"
+                  '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + "valid_actions:" + str(game_state.valid_actions) + "}\nOutput: "
         )
-        lines = prompt.splitlines()
-        prompt = "\n".join(lines[-100:])
+        # prompt = "\n".join(lines[-100:])
         action = llm(prompt, stop=["\t"])
 
         if (action.startswith(">")):

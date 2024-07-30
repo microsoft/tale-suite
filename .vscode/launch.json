@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "benchmark.py",
             "console": "integratedTerminal",
-            "args": ["--games", "games/detective.z5", "--agent", "agent_llm.py:LLMAgent", "-vv"] //"agent_template.py:CustomAgent"]
+            "args": ["--games", "games/detective.z5", "--agent", "agent_llm.py:LLMAgent", "-v"] //"agent_template.py:CustomAgent"]
         }
     ]
 }
