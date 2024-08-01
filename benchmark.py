@@ -158,6 +158,8 @@ def parse_args():
                              " use all games found in './games/'")
     parser.add_argument("--agent", default="./agent_template.py:CustomAgent",
                         help="Full qualified class name to evaluate. Default: %(default)s")
+    parser.add_argument("--llm", default="azure_openai",
+                        help="LLM to be used for evaluation. Default: %(default)s")
     parser.add_argument("--nb-steps", type=int, default=1000,
                         help="Maximum number of steps per game.")
     parser.add_argument("--summary_out_file", default="summary.txt",
@@ -191,7 +193,7 @@ def main():
     log.info('working_dir = {}'.format(os.getcwd()))
     log.info('datetime = {}'.format(datetime.datetime.now()))
 
-    agent = Agent()
+    agent = Agent(args.llm)
     games = args.games or glob.glob("./games/*.z?")
     benchmark(agent, games, args)
 
