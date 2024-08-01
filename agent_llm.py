@@ -34,13 +34,15 @@ class LLMAgent(textworld.Agent):
                   'The past 100 lines of the game play are as following to avoid taking the same step again that led to game ending:\n\n' + "\n".join(lines) + "\n\n"
                   '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + "valid_actions:" + str(game_state.valid_actions) + "}\nOutput: "
         )
-        # prompt = "\n".join(lines[-100:])
-        response = self.model.prompt(prompt) #, temperature=0.0, max_tokens=100, stop=["\n"])
+        response = self.model.prompt(prompt)
         action = response.text()
-        # action = llm(self.model, prompt, stop=["\t"])
 
+        if action.startswith("<|assistant|>"):
+            action = action[len("<|assistant|>"):].strip()
         if (action.startswith(">")):
             action = action[1:].strip()
+
+        action = action.split("\n")[0]
 
         if action not in game_state.valid_actions:
             log.warning(f'Invalid action "{action}" received. Choosing a random valid action.')
