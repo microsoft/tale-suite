@@ -44,7 +44,11 @@ jobs:
       # Install plugins
       - name: Install plugins
         run: llm install plugins/azure_openai
-  
+
+      # Download games
+      - name: Download games
+        run: python download.py
+    
       # Runs a single command using the runners shell
       - name: Run evaluation
         run: python benchmark.py --games games/* --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }}
