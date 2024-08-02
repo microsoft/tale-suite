@@ -49,5 +49,5 @@ jobs:
       - name: Run evaluation
         run: python benchmark.py --games games/* --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }}
         env:
-          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
