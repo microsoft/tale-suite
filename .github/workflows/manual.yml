@@ -17,6 +17,15 @@ on:
         required: true
         # The data type of the input
         type: string
+      games:
+          # Friendly description to be shown in the UI instead of 'games'
+          description: 'Games to evaluate'
+          # Default value if no value is explicitly provided
+          default: 'games/*'
+          # Input has to be provided for the workflow to run
+          required: true
+          # The data type of the input
+          type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -51,7 +60,14 @@ jobs:
     
       # Runs a single command using the runners shell
       - name: Run evaluation
-        run: python benchmark.py --games games/* --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }}
+        run: python benchmark.py --games ${{ inputs.games }} --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }}
         env:
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+      
+      # Upload benchmark results
+      - name: Upload benchmark results
+        uses: actions/upload-artifact@v2
+        with:
+          name: benchmark-logs
+          path: tw_benchmark.log
