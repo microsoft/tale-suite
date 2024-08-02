@@ -21,7 +21,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  evaluate:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -48,3 +48,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run evaluation
         run: python benchmark.py --games games/* --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }}
+        env:
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
