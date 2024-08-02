@@ -32,27 +32,30 @@ def evaluate(agent, game, args):
     done = False
 
     for step in range(1, args.nb_steps + 1):
+        game_state.valid_actions = env._jericho.get_valid_actions()
+        options = str(game_state.valid_actions)
         action = agent.act(game_state, score, done)
         game_state, score, done = env.step(action)
 
-        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
-        msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
+        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s} Options:{:100s}"
+        msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action, options)
         log.info(msg)
         log.debug(env.render(mode="text"))
 
         if done:
             highscore = max(score, highscore)
 
-            if game_state.has_won:
+            if game_state.has_won or game_state.won:
                 if highscore == max_score:
                     break  # No reason to play that game more.
-            elif game_state.has_lost:
+            elif game_state.has_lost or game_state.lost:
                 nb_losts += 1
             else:
                 assert True, "Games should either end with a win or a fail."
 
             # Replay the game in the hope of achieving a better score.
             game_state = env.reset()
+            # agent.reset(env)
             log.debug("Environment reset.\n{}\n".format(env.render(mode="text")))
 
     env.close()
@@ -105,9 +108,10 @@ def benchmark(agent, games, args):
 
             mean_score += norm_score
 
-    log.critical("Mean score (over {} games) = {:8.4f}% of total possible".format(nb_games, mean_score / nb_games))
-    log.critical("Total time {:9.2f} seconds".format(total_time))
-    log.critical("Avg. speed: {:8.2f} steps per second".format(total_steps / total_time))
+    if nb_games > 0 and total_time > 0:
+        log.critical("Mean score (over {} games) = {:8.4f}% of total possible".format(nb_games, mean_score / nb_games))
+        log.critical("Total time {:9.2f} seconds".format(total_time))
+        log.critical("Avg. speed: {:8.2f} steps per second".format(total_steps / total_time))
 
 
 class TqdmLoggingHandler(logging.Handler):
@@ -154,6 +158,8 @@ def parse_args():
                              " use all games found in './games/'")
     parser.add_argument("--agent", default="./agent_template.py:CustomAgent",
                         help="Full qualified class name to evaluate. Default: %(default)s")
+    parser.add_argument("--llm", default="azure_openai",
+                        help="LLM to be used for evaluation. Default: %(default)s")
     parser.add_argument("--nb-steps", type=int, default=1000,
                         help="Maximum number of steps per game.")
     parser.add_argument("--summary_out_file", default="summary.txt",
@@ -187,7 +193,7 @@ def main():
     log.info('working_dir = {}'.format(os.getcwd()))
     log.info('datetime = {}'.format(datetime.datetime.now()))
 
-    agent = Agent()
+    agent = Agent(args.llm)
     games = args.games or glob.glob("./games/*.z?")
     benchmark(agent, games, args)
 
