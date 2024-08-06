@@ -53,8 +53,8 @@ jobs:
       # Install plugins
       - name: Install plugins
         run: |
-          llm install plugins/gcr_phi
           llm install plugins/azure_openai
+          llm install plugins/gcr_phi
         env:
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
