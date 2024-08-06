@@ -49,12 +49,11 @@ class GCRPhi(llm.Model):
         req = urllib.request.Request(self.base_url, body, headers)
 
         try:
-            response = urllib.request.urlopen(req)
-            result = response.read()
+            result = urllib.request.urlopen(req).read()
         except urllib.error.HTTPError as error:
             print("The request failed with status code") 
         return json.loads(result.decode("utf-8"))["output"]
     
     def text(self, prompt, **kwargs):
         result = self.execute(prompt, **kwargs)
-        return result["choices"][0]["text"]
+        return json.loads(result.decode("utf-8"))["output"]
