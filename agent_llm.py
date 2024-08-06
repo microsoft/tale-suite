@@ -35,7 +35,7 @@ class LLMAgent(textworld.Agent):
                   '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + "valid_actions:" + str(game_state.valid_actions) + "}\nOutput: "
         )
         response = self.model.prompt(prompt)
-        action = response.text()
+        action = response.text().strip()
 
         if action.startswith("<|assistant|>"):
             action = action[len("<|assistant|>"):].strip()

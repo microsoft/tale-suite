@@ -1,0 +1,6 @@
+[project]
+name = "gcr-phi"
+version = "0.1"
+
+[project.entry-points.llm]
+azure = "gcr_phi"
