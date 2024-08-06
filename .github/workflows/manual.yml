@@ -52,7 +52,9 @@ jobs:
     
       # Install plugins
       - name: Install plugins
-        run: llm install plugins/azure_openai
+        run: |
+          llm install plugins/azure_openai
+          llm install plugins/gcr_phi
 
       # Download games
       - name: Download games
