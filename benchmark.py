@@ -1,6 +1,7 @@
 import os
 import glob
 import time
+import wandb
 import datetime
 import logging
 import argparse
@@ -112,6 +113,8 @@ def benchmark(agent, games, args):
         log.critical("Mean score (over {} games) = {:8.4f}% of total possible".format(nb_games, mean_score / nb_games))
         log.critical("Total time {:9.2f} seconds".format(total_time))
         log.critical("Avg. speed: {:8.2f} steps per second".format(total_steps / total_time))
+        if args.enable_wandb:
+            wandb.log({"Number of games": nb_games, "Mean score": mean_score / nb_games,  "Total time": total_time, "Avg. speed": total_steps / total_time})
 
 
 class TqdmLoggingHandler(logging.Handler):
@@ -166,6 +169,7 @@ def parse_args():
                         help="Summary information will be written to this file.")
     parser.add_argument("--log_file", default="tw_benchmark.log",
                         help="Verbose information will be written to this file.")
+    parser.add_argument("--enable_wandb", action="store_true", help="Log to wandb")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose mode.")
     parser.add_argument("-vv", "--very-verbose", action="store_true", help="Display actions taken.")
     return parser.parse_args()
@@ -187,6 +191,14 @@ def main():
 
     Agent = getattr(mod, klass)
 
+    if args.enable_wandb:
+        wandb_config = {
+            "llm": args.llm
+        }
+        wandb.init(
+            project="text-games-benchmark",
+            config=wandb_config
+        )    
     # Log some info about the machine.
     log.info('system = {}'.format(platform.system()))
     log.info('server = {}'.format(platform.uname()[1]))

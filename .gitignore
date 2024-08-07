@@ -167,3 +167,4 @@ train_[0-9]*/
 test/
 valid/
 *.zip
+wandb/

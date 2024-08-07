@@ -49,7 +49,11 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         run: pip install -r requirements.txt
-    
+
+      # Log in to Weights & Biases
+      - name: Log in to Weights & Biases
+        run: wandb login --host=https://microsoft-research.wandb.io
+
       # Install plugins
       - name: Install plugins
         run: |
@@ -73,6 +77,7 @@ jobs:
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           GCR_PHI_ENDPOINT: ${{ secrets.GCR_PHI_ENDPOINT }}
           GCR_PHI_API_KEY: ${{ secrets.GCR_PHI_API_KEY }}
+          WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
       
       # Upload benchmark results
       - name: Upload benchmark results
