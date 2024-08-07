@@ -17,7 +17,7 @@ log = logging.getLogger("tw-bench")
 
 
 def evaluate(agent, game, args):
-    infos = textworld.EnvInfos(max_score=True)
+    infos = textworld.EnvInfos(max_score=True, admissible_commands=True)
     env = textworld.start(game, infos)
     log.debug("Using {}".format(env.__class__.__name__))
     agent.reset(env)
@@ -28,18 +28,19 @@ def evaluate(agent, game, args):
 
     max_score = game_state.max_score
     nb_losts = 0
+    nb_invalid = 0
     highscore = 0
     score = 0
     done = False
 
     for step in range(1, args.nb_steps + 1):
-        game_state.valid_actions = env._jericho.get_valid_actions()
-        options = str(game_state.valid_actions)
         action = agent.act(game_state, score, done)
         game_state, score, done = env.step(action)
+        if action not in game_state.admissible_commands:
+            nb_invalid += 1
 
-        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s} Options:{:100s}"
-        msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action, options)
+        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
+        msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
         log.info(msg)
         log.debug(env.render(mode="text"))
 
@@ -64,7 +65,7 @@ def evaluate(agent, game, args):
     # Keep highest score.
     highscore = max(score, highscore)
 
-    return step, nb_losts, highscore, max_score, time.time() - start_time
+    return step, nb_invalid, nb_losts, highscore, max_score, time.time() - start_time
 
 
 def benchmark(agent, games, args):
@@ -73,6 +74,7 @@ def benchmark(agent, games, args):
     mean_score = 0
     total_time = 0.
     total_steps = 0
+    total_invalid = 0
 
     nb_games = 0
     games = sorted(games)
@@ -87,7 +89,7 @@ def benchmark(agent, games, args):
                 pbar.update(1)
                 continue  # Skip excluded games.
             try:
-                nb_steps, nb_losts, final_score, max_score, seconds = evaluate(agent, game, args)
+                nb_steps, nb_invalid, nb_losts, final_score, max_score, seconds = evaluate(agent, game, args)
             except ValueError as e:
                 pbar.write("{} (skip)".format(game_name))
                 log.error(str(e))
@@ -100,6 +102,7 @@ def benchmark(agent, games, args):
             assert norm_score <= 100.0
             total_time += seconds
             total_steps += nb_steps
+            total_invalid += nb_invalid
 
             msg = "{}\t{:5.0f} seconds\t{:4d} losts\tScore: {:3d}/{:3d} ({:6.2f}%)"
             msg = msg.format(game_name.ljust(max_game_name), seconds, nb_losts, final_score, max_score, norm_score)
@@ -112,9 +115,10 @@ def benchmark(agent, games, args):
     if nb_games > 0 and total_time > 0:
         log.critical("Mean score (over {} games) = {:8.4f}% of total possible".format(nb_games, mean_score / nb_games))
         log.critical("Total time {:9.2f} seconds".format(total_time))
+        log.critical("Total {} invalid actions".format(total_invalid))
         log.critical("Avg. speed: {:8.2f} steps per second".format(total_steps / total_time))
         if args.enable_wandb:
-            wandb.log({"Number of games": nb_games, "Mean score": mean_score / nb_games,  "Total time": total_time, "Avg. speed": total_steps / total_time})
+            wandb.log({"Number of games": nb_games, "Mean score": mean_score / nb_games,  "Total time": total_time, "Invalid actions": total_invalid, "Avg. speed": total_steps / total_time})
 
 
 class TqdmLoggingHandler(logging.Handler):
