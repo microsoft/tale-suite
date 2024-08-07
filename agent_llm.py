@@ -9,10 +9,11 @@ import llm
 log = logging.getLogger("tw-bench")
 
 class LLMAgent(textworld.Agent):
-    def __init__(self, model, seed=1234):
+    def __init__(self, model, seed=1234, temperature=0.0):
         self.seed = seed
         self.rng = np.random.RandomState(self.seed)
         self.model = llm.get_model(model)
+        self.temperature = temperature
         self.prompt = ''
 
     def reset(self, env):
@@ -34,7 +35,7 @@ class LLMAgent(textworld.Agent):
                   'The past 100 lines of the game play are as following to avoid taking the same step again that led to game ending:\n\n' + "\n".join(lines) + "\n\n"
                   '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + "valid_actions:" + str(game_state.valid_actions) + "}\nOutput: "
         )
-        response = self.model.prompt(prompt)
+        response = self.model.prompt(prompt, temperature=self.temperature)
         action = response.text().strip()
 
         if action.startswith("<|assistant|>"):

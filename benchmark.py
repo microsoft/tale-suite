@@ -169,6 +169,8 @@ def parse_args():
                         help="Summary information will be written to this file.")
     parser.add_argument("--log_file", default="tw_benchmark.log",
                         help="Verbose information will be written to this file.")
+    parser.add_argument("--seed",  type=int, default=1234, help="Seed for LLM")
+    parser.add_argument("--temperature",  type=float, default=0.0, help="Temperature for LLM")
     parser.add_argument("--enable_wandb", action="store_true", help="Log to wandb")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose mode.")
     parser.add_argument("-vv", "--very-verbose", action="store_true", help="Display actions taken.")
@@ -193,7 +195,9 @@ def main():
 
     if args.enable_wandb:
         wandb_config = {
-            "llm": args.llm
+            "llm": args.llm,
+            "seed": args.seed,
+            "temperature": args.temperature
         }
         wandb.init(
             project="text-games-benchmark",
@@ -205,7 +209,7 @@ def main():
     log.info('working_dir = {}'.format(os.getcwd()))
     log.info('datetime = {}'.format(datetime.datetime.now()))
 
-    agent = Agent(args.llm)
+    agent = Agent(args.llm, seed=args.seed, temperature=args.temperature)
     games = args.games or glob.glob("./games/*.z?")
     benchmark(agent, games, args)
 

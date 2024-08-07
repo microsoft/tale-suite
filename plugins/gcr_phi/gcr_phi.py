@@ -3,6 +3,8 @@ import json
 import llm
 import requests
 import urllib.request
+from typing import Optional
+from pydantic import field_validator, Field
 
 @llm.hookimpl
 def register_models(register):
@@ -14,22 +16,35 @@ class GCRPhi(llm.Model):
     base_url = os.getenv("GCR_PHI_ENDPOINT")
     deployment_id = "phi-3-medium-128k-instruct-1"
 
+    class Options(llm.Options):
+        temperature: Optional[float] = Field(
+            description="Temperature for sampling",
+            default=None
+        )
+
+        @field_validator("temperature")
+        def validate_delay(cls, temperature):
+            if temperature is None:
+                return None
+            if not 0 <= temperature <= 1:
+                raise ValueError("temperature must be between 0 and 1")
+            return temperature
+        
     def execute(self, prompt, stream, response, conversation):
         headers = {
             "Content-Type": "application/json",
             "api-key": self.api_key
         }
-        prompt_str = str(prompt)
         data = {
         "input_data": {
             "input_string": [
             {
                 "role": "user",
-                "content": prompt_str
+                "content": prompt.prompt
             }
             ],
             "parameters": {
-            "temperature": 0.7,
+            "temperature": prompt.options.temperature or 0.0,
             "top_p": 0.9,
             "do_sample": True,
             "max_new_tokens": 1000
