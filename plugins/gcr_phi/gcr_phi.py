@@ -66,8 +66,14 @@ class GCRPhi(llm.Model):
         try:
             result = urllib.request.urlopen(req).read()
         except urllib.error.HTTPError as error:
-            print("The request failed with status code") 
-        return json.loads(result.decode("utf-8"))["output"]
+            print("The request failed with status code")
+
+        result = json.loads(result.decode("utf-8"))["output"]
+
+        if result.startswith("<|assistant|>"):
+            result = result[len("<|assistant|>"):].strip()
+
+        return result.strip()
     
     def text(self, prompt, **kwargs):
         result = self.execute(prompt, **kwargs)
