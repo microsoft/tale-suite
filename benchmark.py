@@ -83,6 +83,10 @@ def benchmark(agent, games, args):
         for game in games:
             game_name = os.path.basename(game)
             pbar.set_postfix_str(game_name)
+            if args.enable_wandb:
+                wandb.config.update({
+                    "game": game_name,  # Update game
+                }, allow_val_change=True)
             if game_name in game_exclusion_list:
                 pbar.write("{} (skip)".format(game_name))
                 log.info("Excluded game: {}".format(game_name))
