@@ -24,7 +24,7 @@ class LLMAgent(textworld.Agent):
         if not game_state.admissible_commands:
             log.error("No valid actions available.")
             return 'RESTART'
-        lines = ("\n").join(self.context[-500:])
+        lines = ("\n").join(self.context[-100:])
         prompt = (f"Reply ONLY with the ONE appropriate action selected from the list of valid actions even if the game resets from the beginning.\n"
                   "If the game has reset to the beginnig or stuck in a loop try to take a different action from the one taken last time at the same step. Make sure you alway return ONLY a valid action as the next step after the Output: and no other text.\n"
                   "If the game is stuck in a loop or not recognizing instruction reply with a random action from the previous list without giving a verbose explanation. No need to explain why.\n"
