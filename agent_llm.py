@@ -41,7 +41,7 @@ class LLMAgent(textworld.Agent):
         action = action.strip()
 
         if action not in game_state.admissible_commands:
-            log.warning(f'Invalid action "{action}" received. Choosing a random valid action.')
+            log.warning(f'Invalid action "{action}" received.')
         
         self.context.append(f'{game_state.feedback}\n> {action}\n')
         log.info(f'{game_state.feedback}\n> {action}\n')
