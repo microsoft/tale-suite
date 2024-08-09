@@ -47,7 +47,12 @@ class AzureOpenAI(llm.Model):
             presence_penalty=0,
             stop="\n"
         )
-        return completion.choices[0].message.content
+        result = completion.choices[0].message.content
+
+        if (result.startswith(">")):
+            result = result[1:].strip()
+
+        return result.strip()
     
     def text(self, prompt, **kwargs):
         result = self.execute(prompt, **kwargs)

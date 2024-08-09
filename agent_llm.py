@@ -14,17 +14,17 @@ class LLMAgent(textworld.Agent):
         self.rng = np.random.RandomState(self.seed)
         self.model = llm.get_model(model)
         self.temperature = temperature
-        self.prompt = ''
+        self.context = []
 
     def reset(self, env):
         env.display_command_during_render = True
-        self.prompt = ''
+        self.context = []
 
     def act(self, game_state, reward, done):
         if not game_state.admissible_commands:
             log.error("No valid actions available.")
             return 'RESTART'
-        lines = self.prompt.splitlines()[-500:]
+        lines = ("\n").join(self.context[-500:])
         prompt = (f"Reply ONLY with the ONE appropriate action selected from the list of valid actions even if the game resets from the beginning.\n"
                   "If the game has reset to the beginnig or stuck in a loop try to take a different action from the one taken last time at the same step. Make sure you alway return ONLY a valid action as the next step after the Output: and no other text.\n"
                   "If the game is stuck in a loop or not recognizing instruction reply with a random action from the previous list without giving a verbose explanation. No need to explain why.\n"
@@ -35,19 +35,15 @@ class LLMAgent(textworld.Agent):
                   '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + "admissible_commands:" + str(game_state.admissible_commands) + "}\nOutput: "
         )
         response = self.model.prompt(prompt, temperature=self.temperature)
-        action = response.text().strip()
-
-        if action.startswith("<|assistant|>"):
-            action = action[len("<|assistant|>"):].strip()
-        if (action.startswith(">")):
-            action = action[1:].strip()
+        action = response.text()
 
         action = action.split("\n")[0]
+        action = action.strip()
 
         if action not in game_state.admissible_commands:
-            log.warning(f'Invalid action "{action}" received. Choosing a random valid action.')
+            log.warning(f'Invalid action "{action}" received.')
         
-        self.prompt += f'{game_state.feedback}\n> {action}\n'
+        self.context.append(f'{game_state.feedback}\n> {action}\n')
         log.info(f'{game_state.feedback}\n> {action}\n')
 
-        return action[0:100]
+        return action

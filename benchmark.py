@@ -42,6 +42,8 @@ def evaluate(agent, game, args):
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
         msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
         log.info(msg)
+        if args.enable_wandb:
+            wandb.log({"Step": step, "Score": game_state.score})
         log.debug(env.render(mode="text"))
 
         if done:
@@ -83,6 +85,10 @@ def benchmark(agent, games, args):
         for game in games:
             game_name = os.path.basename(game)
             pbar.set_postfix_str(game_name)
+            if args.enable_wandb:
+                wandb.config.update({
+                    "game": game_name,  # Update game
+                }, allow_val_change=True)
             if game_name in game_exclusion_list:
                 pbar.write("{} (skip)".format(game_name))
                 log.info("Excluded game: {}".format(game_name))
@@ -107,6 +113,8 @@ def benchmark(agent, games, args):
             msg = "{}\t{:5.0f} seconds\t{:4d} losts\tScore: {:3d}/{:3d} ({:6.2f}%)"
             msg = msg.format(game_name.ljust(max_game_name), seconds, nb_losts, final_score, max_score, norm_score)
             log.info(msg)
+            if args.enable_wandb:
+                wandb.log({"Total steps": total_steps, "Final score": final_score})
             pbar.write(msg)
             pbar.update(1)
 
