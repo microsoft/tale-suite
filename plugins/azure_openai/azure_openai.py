@@ -1,8 +1,10 @@
 import os
 import llm
+import time
 import openai
 from typing import Optional
 from pydantic import field_validator, Field
+from wandb.sdk.data_types.trace_tree import Trace
 
 @llm.hookimpl
 def register_models(register):
@@ -33,6 +35,7 @@ class AzureOpenAI(llm.Model):
             return temperature
         
     def execute(self, prompt, stream, response, conversation):
+        start_time = time.time()
         completion = self.client.chat.completions.create(
             model=self.deployment_id,
             messages= [
@@ -48,7 +51,26 @@ class AzureOpenAI(llm.Model):
             stop="\n"
         )
         result = completion.choices[0].message.content
+        
+        end_time = time.time()
+        token_usage = 0 #count_tokens(system_prompt, enc) + count_tokens(base_prompt, enc) + count_tokens(resp, enc)
 
+        root_span = Trace(
+            name="agent_llm",
+            kind="llm",
+            metadata={
+                "temperature": prompt.options.temperature,
+                "token_usage": token_usage,
+
+            },
+            start_time_ms=start_time,
+            end_time_ms=end_time,
+            inputs={"query": prompt.prompt},
+            outputs={"response": result, "token_usage": token_usage}
+        )
+
+        root_span.log(name="openai_trace")
+        
         if (result.startswith(">")):
             result = result[1:].strip()
 
