@@ -53,13 +53,13 @@ class AzureOpenAI(llm.Model):
         result = completion.choices[0].message.content
         
         end_time = time.time()
-        token_usage = 0 #count_tokens(system_prompt, enc) + count_tokens(base_prompt, enc) + count_tokens(resp, enc)
+        token_usage = completion.usage.to_dict()
 
         root_span = Trace(
             name="agent_llm",
             kind="llm",
             metadata={
-                "temperature": prompt.options.temperature,
+                "temperature": prompt.options.temperature or 0.0,
                 "token_usage": token_usage,
 
             },

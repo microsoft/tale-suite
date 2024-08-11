@@ -1,10 +1,12 @@
 import os
 import json
 import llm
+import time
 import requests
 import urllib.request
 from typing import Optional
 from pydantic import field_validator, Field
+from wandb.sdk.data_types.trace_tree import Trace
 
 @llm.hookimpl
 def register_models(register):
@@ -61,6 +63,8 @@ class GCRPhi(llm.Model):
         # Remove this header to have the request observe the endpoint traffic rules
         headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ self.api_key), 'azureml-model-deployment': self.deployment_id}
 
+        start_time = time.time()
+
         req = urllib.request.Request(self.base_url, body, headers)
 
         try:
@@ -69,6 +73,25 @@ class GCRPhi(llm.Model):
             print("The request failed with status code")
 
         result = json.loads(result.decode("utf-8"))["output"]
+        end_time = time.time()
+
+        token_usage = 0 #TODO: get token usage from response
+
+        root_span = Trace(
+            name="agent_llm",
+            kind="llm",
+            metadata={
+                "temperature": prompt.options.temperature or 0.0,
+                "token_usage": token_usage,
+
+            },
+            start_time_ms=start_time,
+            end_time_ms=end_time,
+            inputs={"query": prompt.prompt},
+            outputs={"response": result, "token_usage": token_usage}
+        )
+
+        root_span.log(name="phi_trace")
 
         if result.startswith("<|assistant|>"):
             result = result[len("<|assistant|>"):].strip()
