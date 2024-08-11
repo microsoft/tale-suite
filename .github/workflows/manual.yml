@@ -12,7 +12,7 @@ on:
         # Friendly description to be shown in the UI instead of 'llm'
         description: 'LLM to evaluate'
         # Default value if no value is explicitly provided
-        default: 'gcr_phi'
+        default: 'azure_openai'
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
