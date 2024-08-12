@@ -43,7 +43,7 @@ def evaluate(agent, game, args):
         msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
         log.info(msg)
         if args.enable_wandb:
-            wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": agent.context.length})    
+            wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": len(agent.context)})    
         log.debug(env.render(mode="text"))
 
         if done:
