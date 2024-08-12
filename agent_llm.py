@@ -20,6 +20,9 @@ class LLMAgent(textworld.Agent):
         env.display_command_during_render = True
         self.context = []
 
+    def context(self):
+        return self.context
+    
     def act(self, game_state, reward, done):
         if not game_state.admissible_commands:
             log.error("No valid actions available.")
