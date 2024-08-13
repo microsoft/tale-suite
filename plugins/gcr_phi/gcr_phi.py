@@ -5,6 +5,7 @@ import time
 import requests
 import urllib.request
 from typing import Optional
+from transformers import LlamaTokenizerFast
 from pydantic import field_validator, Field
 from wandb.sdk.data_types.trace_tree import Trace
 
@@ -17,6 +18,8 @@ class GCRPhi(llm.Model):
     api_key = os.getenv("GCR_PHI_API_KEY")
     base_url = os.getenv("GCR_PHI_ENDPOINT")
     deployment_id = "phi-3-medium-128k-instruct-1"
+
+    tokenizer = LlamaTokenizerFast.from_pretrained("hf-internal-testing/llama-tokenizer")
 
     class Options(llm.Options):
         temperature: Optional[float] = Field(
@@ -31,7 +34,11 @@ class GCRPhi(llm.Model):
             if not 0 <= temperature <= 1:
                 raise ValueError("temperature must be between 0 and 1")
             return temperature
-        
+    
+    def count_tokens(self, text):
+        tokens = self.tokenizer.encode(text)
+        return len(tokens)
+    
     def execute(self, prompt, stream, response, conversation):
         headers = {
             "Content-Type": "application/json",
@@ -75,7 +82,8 @@ class GCRPhi(llm.Model):
         result = json.loads(result.decode("utf-8"))["output"]
         end_time = time.time()
 
-        token_usage = 0 #TODO: get token usage from response
+        token_usage = { "prompt_tokens": self.count_tokens(prompt.prompt), "completion_tokens": self.count_tokens(result) }
+        token_usage["total_tokens"] = token_usage["prompt_tokens"] + token_usage["completion_tokens"]
 
         root_span = Trace(
             name="agent_llm",
