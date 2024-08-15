@@ -1,6 +1,7 @@
 import os
 import llm
 import time
+import wandb
 import openai
 from typing import Optional
 from pydantic import field_validator, Field
@@ -36,41 +37,63 @@ class AzureOpenAI(llm.Model):
         
     def execute(self, prompt, stream, response, conversation):
         start_time = time.time()
-        completion = self.client.chat.completions.create(
-            model=self.deployment_id,
+        if (conversation):
             messages= [
-            {
-                "role": "user",
-                "content": prompt.prompt
-            }],
-            max_tokens=100,
-            temperature=prompt.options.temperature or 0.0,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
-            stop="\n"
-        )
+                {
+                    "role": "system",
+                    "content": prompt.system
+                }
+            ]
+            for response in conversation.responses[-100:]:
+                messages.append({ "role": "user", "content": response.prompt.prompt})
+                messages.append({ "role": "assistant", "content": response.text()})
+            completion = self.client.chat.completions.create(
+                model=self.deployment_id,
+                messages=messages,
+                max_tokens=100,
+                temperature=prompt.options.temperature or 0.0,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0,
+                stop="\n"
+            )
+        else:
+            completion = self.client.chat.completions.create(
+                model=self.deployment_id,
+                messages= [
+                {
+                    "role": "user",
+                    "content": prompt.prompt
+                }],
+                max_tokens=100,
+                temperature=prompt.options.temperature or 0.0,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0,
+                stop="\n"
+            )
         result = completion.choices[0].message.content
         
         end_time = time.time()
         token_usage = completion.usage.to_dict()
 
-        root_span = Trace(
-            name="agent_llm",
-            kind="llm",
-            metadata={
-                "temperature": prompt.options.temperature or 0.0,
-                "token_usage": token_usage,
+        if wandb.run:
+            root_span = Trace(
+                name="agent_llm",
+                kind="llm",
+                metadata={
+                    "temperature": prompt.options.temperature or 0.0,
+                    "token_usage": token_usage,
 
-            },
-            start_time_ms=start_time,
-            end_time_ms=end_time,
-            inputs={"query": prompt.prompt},
-            outputs={"response": result, "token_usage": token_usage}
-        )
+                },
+                start_time_ms=start_time,
+                end_time_ms=end_time,
+                inputs={"messages": messages},
+                outputs={"response": result, "token_usage": token_usage}
+            )
 
-        root_span.log(name="openai_trace")
-        
+            root_span.log(name="openai_trace")
+            
         if (result.startswith(">")):
             result = result[1:].strip()
 

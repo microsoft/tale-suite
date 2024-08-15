@@ -184,6 +184,7 @@ def parse_args():
     parser.add_argument("--seed",  type=int, default=1234, help="Seed for LLM")
     parser.add_argument("--temperature",  type=float, default=0.0, help="Temperature for LLM")
     parser.add_argument("--enable_wandb", action="store_true", help="Log to wandb")
+    parser.add_argument("--conversation", action="store_true", help="Enable conversation mode.")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose mode.")
     parser.add_argument("-vv", "--very-verbose", action="store_true", help="Display actions taken.")
     return parser.parse_args()
@@ -221,7 +222,7 @@ def main():
     log.info('working_dir = {}'.format(os.getcwd()))
     log.info('datetime = {}'.format(datetime.datetime.now()))
 
-    agent = Agent(args.llm, seed=args.seed, temperature=args.temperature)
+    agent = Agent(args.llm, seed=args.seed, temperature=args.temperature, conversation=args.conversation)
     games = args.games or glob.glob("./games/*.z?")
     benchmark(agent, games, args)
 
