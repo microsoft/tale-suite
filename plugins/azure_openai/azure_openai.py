@@ -37,6 +37,7 @@ class AzureOpenAI(llm.Model):
         
     def execute(self, prompt, stream, response, conversation):
         start_time = time.time()
+        messages = []
         if (conversation):
             messages= [
                 {
@@ -59,13 +60,15 @@ class AzureOpenAI(llm.Model):
                 stop="\n"
             )
         else:
-            completion = self.client.chat.completions.create(
-                model=self.deployment_id,
-                messages= [
+            messages = [
                 {
                     "role": "user",
                     "content": prompt.prompt
-                }],
+                }
+            ]
+            completion = self.client.chat.completions.create(
+                model=self.deployment_id,
+                messages=messages,
                 max_tokens=100,
                 temperature=prompt.options.temperature or 0.0,
                 top_p=1,

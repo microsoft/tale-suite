@@ -73,7 +73,7 @@ jobs:
     
       # Runs a single command using the runners shell
       - name: Run evaluation
-        run: python benchmark.py --games ${{ inputs.games }} --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }} --enable_wandb -vv
+        run: python benchmark.py --games ${{ inputs.games }} --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }} --enable_wandb -vv --conversation
         env:
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
