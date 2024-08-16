@@ -47,6 +47,7 @@ class AzureOpenAI(llm.Model):
             for response in conversation.responses[-100:]:
                 messages.append({ "role": "user", "content": response.prompt.prompt})
                 messages.append({ "role": "assistant", "content": response.text()})
+            messages.append({ "role": "user", "content": prompt.prompt})
             completion = self.client.chat.completions.create(
                 model=self.deployment_id,
                 messages=messages,
@@ -88,7 +89,7 @@ class AzureOpenAI(llm.Model):
                 },
                 start_time_ms=start_time,
                 end_time_ms=end_time,
-                inputs={"messages": messages},
+                inputs={"length": len(messages), "messages": messages},
                 outputs={"response": result, "token_usage": token_usage}
             )
 

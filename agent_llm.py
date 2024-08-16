@@ -25,19 +25,22 @@ class LLMAgent(textworld.Agent):
         if self.conversation:
             self.conversation = self.model.conversation()
 
-    def context(self):
-        return self.context
+    def context_length(self):
+        if self.conversation:
+            return len(self.conversation.responses[-100:])
+        else:
+            return len(self.context[-100:])
     
     def act(self, game_state, reward, done):
-        if not game_state.admissible_commands:
+        if not self.conversation and not game_state.admissible_commands:
             log.error("No valid actions available.")
             return 'RESTART'
         lines = ("\n").join(self.context[-100:])
         context = f'The past 100 lines of the game play are as following to avoid taking the same step again that led to game ending:\n\n{lines}\n\n' if lines and not self.conversation else ""
-        system_prompt = (f"Reply ONLY with the ONE appropriate action selected from the list of valid actions even if the game resets from the beginning.\n"
-                  "If the game has reset to the beginnig or stuck in a loop try to take a different action from the one taken last time at the same step. Make sure you alway return ONLY a valid action as the next step after the Output: and no other text.\n"
-                  "If the game is stuck in a loop or not recognizing instruction reply with a random action from the previous list without giving a verbose explanation. No need to explain why.\n"
-                  "We don't want anything in the output other than the next step.\nHere are some examples of inputs and outputs:\n\n"
+        system_prompt = (f"You are a helpful assistant playing a text-based game. Reply ONLY with the ONE appropriate action selected from the list of admissible commands even if the game resets from the beginning.\n"
+                  "If the game has reset to the beginnig or stuck in a loop try to take a different action from the one taken last time at the same step. Make sure you alway return ONLY an admissible command as the next step after the Output: and no other text.\n"
+                  "If the game is stuck in a loop or not recognizing an invalid action reply with a random action from the previous list without giving a verbose explanation. No need to explain why.\n"
+                  "We don't want anything in the output other than the next step and the output can never be an empty string.\nHere are some examples of inputs and outputs:\n\n"
                   '------------\nInput: {"feedback": "You are in a closet. There is a gun on the floor. Better get it. To exit, go east. \n\nYou can see a small black pistol here.", "admissible_commands": [\'north\', \'take pistol\', \'east\', \'push pistol to floor\']}\nOutput: take pistol\n------------\n'
                   '------------\nInput: {"feedback": "You are still on the streets. To the north is a restraunt where the mayor ate often. To the east is the Mayor\'s home.", "admissible_commands": [\'west\', \'east\', \'north\', \'put paper down\']}\nOutput: east\n------------\n'
         )
@@ -54,7 +57,11 @@ class LLMAgent(textworld.Agent):
         if action not in game_state.admissible_commands:
             log.warning(f'Invalid action "{action}" received.')
         
+        if self.conversation and not game_state.admissible_commands:
+            self.conversation.responses[-1]._chunks = ['R', 'E', 'S', 'T', 'A', 'R', 'T']
+            action = 'RESTART'
+
         self.context.append(f'{game_state.feedback}\n> {action}\n')
         log.info(f'{game_state.feedback}\n> {action}\n')
 
-        return action
+        return action[:100]

@@ -43,7 +43,7 @@ def evaluate(agent, game, args):
         msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
         log.info(msg)
         if args.enable_wandb:
-            wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": len(agent.context)})    
+            wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": agent.context_length()})    
         log.debug(env.render(mode="text"))
 
         if done:
@@ -57,6 +57,9 @@ def evaluate(agent, game, args):
             else:
                 assert True, "Games should either end with a win or a fail."
 
+            if args.conversation:
+                action = agent.act(game_state, score, done)
+                # game_state, score, done = env.step(action)
             # Replay the game in the hope of achieving a better score.
             game_state = env.reset()
             # agent.reset(env)
