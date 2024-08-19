@@ -214,6 +214,7 @@ def main():
         wandb_config = {
             "llm": args.llm,
             "seed": args.seed,
+            "context": args.context,
             "temperature": args.temperature
         }
         wandb.init(
