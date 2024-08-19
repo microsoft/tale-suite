@@ -43,7 +43,7 @@ class AzureOpenAI(llm.Model):
         def validate_context(cls, context):
             if context is None:
                 return None
-            if not 1 <= context <= 100:
+            if not 1 <= context <= 1000:
                 raise ValueError("context must be between 1 and 100")
             return context
         
