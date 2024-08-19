@@ -54,7 +54,7 @@ class LLMAgent(textworld.Agent):
         action = action.split("\n")[0]
         action = action.strip()
 
-        if action not in game_state.admissible_commands:
+        if game_state.admissible_commands and action not in game_state.admissible_commands:
             log.warning(f'Invalid action "{action}" received.')
         
         if self.conversation and not game_state.admissible_commands:
