@@ -4,7 +4,7 @@ import time
 import wandb
 import openai
 from typing import Optional
-from pydantic import field_validator, Field
+from pydantic import validator, Field
 from wandb.sdk.data_types.trace_tree import Trace
 
 @llm.hookimpl
@@ -27,8 +27,8 @@ class AzureOpenAI(llm.Model):
             default=None
         )
 
-        @field_validator("temperature")
-        def validate_delay(cls, temperature):
+        @validator("temperature")
+        def validate_temperature(cls, temperature):
             if temperature is None:
                 return None
             if not 0 <= temperature <= 1:
