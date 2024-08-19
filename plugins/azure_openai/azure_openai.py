@@ -26,6 +26,10 @@ class AzureOpenAI(llm.Model):
             description="Temperature for sampling",
             default=None
         )
+        context: Optional[int] = Field(
+            description="Number of previous messages to include in the context",
+            default=None
+        )
 
         @validator("temperature")
         def validate_temperature(cls, temperature):
@@ -34,6 +38,14 @@ class AzureOpenAI(llm.Model):
             if not 0 <= temperature <= 1:
                 raise ValueError("temperature must be between 0 and 1")
             return temperature
+        
+        @validator("context")
+        def validate_context(cls, context):
+            if context is None:
+                return None
+            if not 1 <= context <= 100:
+                raise ValueError("context must be between 1 and 100")
+            return context
         
     def execute(self, prompt, stream, response, conversation):
         start_time = time.time()
@@ -45,7 +57,8 @@ class AzureOpenAI(llm.Model):
                     "content": prompt.system
                 }
             ]
-            for response in conversation.responses[-100:]:
+            context = prompt.options.context or 10 
+            for response in conversation.responses[-context:]:
                 messages.append({ "role": "user", "content": response.prompt.prompt})
                 messages.append({ "role": "assistant", "content": response.text()})
             messages.append({ "role": "user", "content": prompt.prompt})

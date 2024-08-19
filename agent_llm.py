@@ -9,33 +9,34 @@ import llm
 log = logging.getLogger("tw-bench")
 
 class LLMAgent(textworld.Agent):
-    def __init__(self, model, seed=1234, temperature=0.0, conversation=False):
+    def __init__(self, model, seed=1234, temperature=0.0, conversation=False, context=100):
         self.seed = seed
         self.rng = np.random.RandomState(self.seed)
         self.model = llm.get_model(model)
         self.temperature = temperature
-        self.context = []
+        self.context = context
+        self.window = []
         self.conversation = None
         if conversation:
             self.conversation = self.model.conversation()
 
     def reset(self, env):
         env.display_command_during_render = True
-        self.context = []
+        self.window = []
         if self.conversation:
             self.conversation = self.model.conversation()
 
     def context_length(self):
         if self.conversation:
-            return len(self.conversation.responses[-100:])
+            return len(self.conversation.responses[-self.context:])
         else:
-            return len(self.context[-100:])
+            return len(self.window[-self.context:])
     
     def act(self, game_state, reward, done):
         if not self.conversation and not game_state.admissible_commands:
             log.error("No valid actions available.")
             return 'RESTART'
-        lines = ("\n").join(self.context[-100:])
+        lines = ("\n").join(self.window[-self.context:])
         context = f'The past 100 lines of the game play are as following to avoid taking the same step again that led to game ending:\n\n{lines}\n\n' if lines and not self.conversation else ""
         system_prompt = (f"You are a helpful assistant playing a text-based game. Reply ONLY with the ONE appropriate action selected from the list of admissible commands even if the game resets from the beginning.\n"
                   "If the game has reset to the beginnig or stuck in a loop try to take a different action from the one taken last time at the same step. Make sure you alway return ONLY an admissible command as the next step after the Output: and no other text.\n"
@@ -46,7 +47,7 @@ class LLMAgent(textworld.Agent):
         )
         input = '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + '"admissible_commands":' + str(game_state.admissible_commands) + "}\nOutput: "
         if self.conversation:
-            response = self.conversation.prompt(input, system=system_prompt, temperature=self.temperature)
+            response = self.conversation.prompt(input, system=system_prompt, temperature=self.temperature, context=self.context)
         else:
             response = self.model.prompt(system_prompt + context + input, temperature=self.temperature)
         
@@ -61,7 +62,7 @@ class LLMAgent(textworld.Agent):
             self.conversation.responses[-1]._chunks = ['R', 'E', 'S', 'T', 'A', 'R', 'T']
             action = 'RESTART'
 
-        self.context.append(f'{game_state.feedback}\n> {action}\n')
+        self.window.append(f'{game_state.feedback}\n> {action}\n')
         log.info(f'{game_state.feedback}\n> {action}\n')
 
         return action[:100]
