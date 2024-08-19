@@ -36,7 +36,7 @@ def evaluate(agent, game, args):
     for step in range(1, args.nb_steps + 1):
         action = agent.act(game_state, score, done)
         game_state, score, done = env.step(action)
-        if action not in game_state.admissible_commands:
+        if game_state.admissible_commands and action not in game_state.admissible_commands:
             nb_invalid += 1
 
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
