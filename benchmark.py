@@ -36,14 +36,14 @@ def evaluate(agent, game, args):
     for step in range(1, args.nb_steps + 1):
         action = agent.act(game_state, score, done)
         game_state, score, done = env.step(action)
-        if action not in game_state.admissible_commands:
+        if game_state.admissible_commands and action not in game_state.admissible_commands:
             nb_invalid += 1
 
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
         msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
         log.info(msg)
         if args.enable_wandb:
-            wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": len(agent.context)})    
+            wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": agent.context_length()})    
         log.debug(env.render(mode="text"))
 
         if done:
@@ -57,6 +57,9 @@ def evaluate(agent, game, args):
             else:
                 assert True, "Games should either end with a win or a fail."
 
+            if args.conversation:
+                action = agent.act(game_state, score, done)
+                # game_state, score, done = env.step(action)
             # Replay the game in the hope of achieving a better score.
             game_state = env.reset()
             # agent.reset(env)
@@ -183,7 +186,9 @@ def parse_args():
                         help="Verbose information will be written to this file.")
     parser.add_argument("--seed",  type=int, default=1234, help="Seed for LLM")
     parser.add_argument("--temperature",  type=float, default=0.0, help="Temperature for LLM")
+    parser.add_argument("--context",  type=int, default=10, help="Context for LLM")
     parser.add_argument("--enable_wandb", action="store_true", help="Log to wandb")
+    parser.add_argument("--conversation", action="store_true", help="Enable conversation mode.")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose mode.")
     parser.add_argument("-vv", "--very-verbose", action="store_true", help="Display actions taken.")
     return parser.parse_args()
@@ -209,6 +214,8 @@ def main():
         wandb_config = {
             "llm": args.llm,
             "seed": args.seed,
+            "context": args.context,
+            "conversation": args.conversation,
             "temperature": args.temperature
         }
         wandb.init(
@@ -221,7 +228,7 @@ def main():
     log.info('working_dir = {}'.format(os.getcwd()))
     log.info('datetime = {}'.format(datetime.datetime.now()))
 
-    agent = Agent(args.llm, seed=args.seed, temperature=args.temperature)
+    agent = Agent(args.llm, seed=args.seed, temperature=args.temperature, conversation=args.conversation, context=args.context)
     games = args.games or glob.glob("./games/*.z?")
     benchmark(agent, games, args)
 
