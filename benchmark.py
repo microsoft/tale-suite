@@ -16,7 +16,7 @@ import textworld
 log = logging.getLogger("tw-bench")
 
 
-def evaluate(agent, game, args):
+def evaluate(agent, game, args, table):
     infos = textworld.EnvInfos(max_score=True, admissible_commands=True)
     env = textworld.start(game, infos)
     log.debug("Using {}".format(env.__class__.__name__))
@@ -44,6 +44,7 @@ def evaluate(agent, game, args):
         log.info(msg)
         if args.enable_wandb:
             wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": agent.context_length()})    
+            table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length())
         log.debug(env.render(mode="text"))
 
         if done:
@@ -73,7 +74,7 @@ def evaluate(agent, game, args):
     return step, nb_invalid, nb_losts, highscore, max_score, time.time() - start_time
 
 
-def benchmark(agent, games, args):
+def benchmark(agent, games, args, table):
     game_exclusion_list = []
 
     mean_score = 0
@@ -98,7 +99,7 @@ def benchmark(agent, games, args):
                 pbar.update(1)
                 continue  # Skip excluded games.
             try:
-                nb_steps, nb_invalid, nb_losts, final_score, max_score, seconds = evaluate(agent, game, args)
+                nb_steps, nb_invalid, nb_losts, final_score, max_score, seconds = evaluate(agent, game, args, table)
             except ValueError as e:
                 pbar.write("{} (skip)".format(game_name))
                 log.error(str(e))
@@ -218,10 +219,15 @@ def main():
             "conversation": args.conversation,
             "temperature": args.temperature
         }
-        wandb.init(
+        run = wandb.init(
             project="text-games-benchmark",
             config=wandb_config
         )    
+
+        # create a wandb table with corresponding columns
+        columns = ["Step", "Score", "Max Score", "Moves", "Context"]
+        table = wandb.Table(columns=columns)
+
     # Log some info about the machine.
     log.info('system = {}'.format(platform.system()))
     log.info('server = {}'.format(platform.uname()[1]))
@@ -230,7 +236,10 @@ def main():
 
     agent = Agent(args.llm, seed=args.seed, temperature=args.temperature, conversation=args.conversation, context=args.context)
     games = args.games or glob.glob("./games/*.z?")
-    benchmark(agent, games, args)
+    benchmark(agent, games, args, table)
+    if args.enable_wandb:
+        run.log({"log_table": table})
+        wandb.finish()
 
 
 if __name__ == "__main__":
