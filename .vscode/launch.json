@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "benchmark.py",
             "console": "integratedTerminal",
-            "args": ["--games", "games/detective.z5", "--agent", "agent_llm.py:LLMAgent", "--llm", "azure_openai", "--enable_wandb", "-vv", "--conversation", "--context", "10"]
+            "args": ["--games", "games/detective.z5", "--agent", "agent_llm.py:LLMAgent", "--llm", "azure_openai", "--enable_wandb", "-vv", "--conversation", "--context", "100"]
         }
     ]
 }
