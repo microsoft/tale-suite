@@ -100,7 +100,10 @@ jobs:
     
       # Runs a single command using the runners shell
       - name: Run evaluation
-        run: python benchmark.py --games ${{ inputs.games }} --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }} --enable_wandb -vv --conversation ${{ inputs.conversation }}  --context ${{ inputs.context }} --admissible_commands ${{ inputs.admissible_commands }}
+        run: |
+          python benchmark.py --games ${{ inputs.games }} --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }} --enable_wandb -vv --context ${{ inputs.context }} \
+          ${{ inputs.conversation && '--conversation' || '' }} \
+          ${{ inputs.admissible_commands && '--admissible_commands' || '' }}
         env:
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
