@@ -219,8 +219,9 @@ def main():
             "llm": args.llm,
             "seed": args.seed,
             "context": args.context,
+            "temperature": args.temperature,
             "conversation": args.conversation,
-            "temperature": args.temperature
+            "admissible_commands": args.addmissible_commands
         }
         run = wandb.init(
             project="text-games-benchmark",
