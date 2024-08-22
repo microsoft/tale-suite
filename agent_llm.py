@@ -1,4 +1,5 @@
 import os
+import json
 import openai
 # from openai import AzureOpenAI
 import numpy as np
@@ -9,7 +10,7 @@ import llm
 log = logging.getLogger("tw-bench")
 
 class LLMAgent(textworld.Agent):
-    def __init__(self, model, seed=1234, temperature=0.0, conversation=False, context=100):
+    def __init__(self, model, seed=1234, temperature=0.0, conversation=False, context=100, admissible_commands=False):
         self.seed = seed
         self.rng = np.random.RandomState(self.seed)
         self.model = llm.get_model(model)
@@ -17,14 +18,15 @@ class LLMAgent(textworld.Agent):
         self.context = context
         self.window = []
         self.conversation = None
+        self.admissible_commands = admissible_commands
         if conversation:
             self.conversation = self.model.conversation()
 
     def reset(self, env):
         env.display_command_during_render = True
         self.window = []
-        if self.conversation:
-            self.conversation = self.model.conversation()
+        # if self.conversation:
+        #     self.conversation = self.model.conversation()
 
     def context_length(self):
         if self.conversation:
@@ -45,10 +47,11 @@ class LLMAgent(textworld.Agent):
                   '------------\nInput: {"feedback": "You are in a closet. There is a gun on the floor. Better get it. To exit, go east. \n\nYou can see a small black pistol here.", "admissible_commands": [\'north\', \'take pistol\', \'east\', \'push pistol to floor\']}\nOutput: take pistol\n------------\n'
                   '------------\nInput: {"feedback": "You are still on the streets. To the north is a restraunt where the mayor ate often. To the east is the Mayor\'s home.", "admissible_commands": [\'west\', \'east\', \'north\', \'put paper down\']}\nOutput: east\n------------\n'
         )
-        input = '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + '"admissible_commands":' + str(game_state.admissible_commands) + "}\nOutput: "
         if self.conversation:
+            input = json.dumps({"feedback": game_state.feedback, "admissible_commands": game_state.admissible_commands}) if self.admissible_commands else game_state.feedback
             response = self.conversation.prompt(input, system=system_prompt, temperature=self.temperature, context=self.context)
         else:
+            input = '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + '"admissible_commands":' + str(game_state.admissible_commands) + "}\nOutput: "
             response = self.model.prompt(system_prompt + context + input, temperature=self.temperature)
         
         action = response.text()
@@ -63,6 +66,5 @@ class LLMAgent(textworld.Agent):
             action = 'RESTART'
 
         self.window.append(f'{game_state.feedback}\n> {action}\n')
-        log.info(f'{game_state.feedback}\n> {action}\n')
 
-        return action[:100]
+        return action[:100], response

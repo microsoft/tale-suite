@@ -58,9 +58,9 @@ class AzureOpenAI(llm.Model):
                 }
             ]
             context = prompt.options.context or 10 
-            for response in conversation.responses[-context:]:
-                messages.append({ "role": "user", "content": response.prompt.prompt})
-                messages.append({ "role": "assistant", "content": response.text()})
+            for resp in conversation.responses[-context:]:
+                messages.append({ "role": "user", "content": resp.prompt.prompt})
+                messages.append({ "role": "assistant", "content": resp.text()})
             messages.append({ "role": "user", "content": prompt.prompt})
             completion = self.client.chat.completions.create(
                 model=self.deployment_id,
@@ -114,6 +114,8 @@ class AzureOpenAI(llm.Model):
         if (result.startswith(">")):
             result = result[1:].strip()
 
+        response.messages = messages
+        response.token_usage = token_usage
         return result.strip()
     
     def text(self, prompt, **kwargs):
