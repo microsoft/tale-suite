@@ -26,6 +26,15 @@ on:
           required: true
           # The data type of the input
           type: string
+      context:
+          # Friendly description to be shown in the UI instead of 'context'
+          description: 'Context length'
+          # Default value if no value is explicitly provided
+          default: '100'
+          # Input has to be provided for the workflow to run
+          required: true
+          # The data type of the input
+          type: number
       conversation:
           # Friendly description to be shown in the UI instead of 'conversation'
           description: 'Enable conversation mode'
@@ -35,17 +44,8 @@ on:
           required: true
           # The data type of the input
           type: boolean
-      context:
-          # Friendly description to be shown in the UI instead of 'conversation'
-          description: 'Enable conversation mode'
-          # Default value if no value is explicitly provided
-          default: '100'
-          # Input has to be provided for the workflow to run
-          required: true
-          # The data type of the input
-          type: number
       admissible_commands:
-          # Friendly description to be shown in the UI instead of 'conversation'
+          # Friendly description to be shown in the UI instead of 'admissible_commands'
           description: 'Add admissible commands'
           # Default value if no value is explicitly provided
           default: True
