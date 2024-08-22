@@ -115,6 +115,7 @@ class AzureOpenAI(llm.Model):
             result = result[1:].strip()
 
         response.messages = messages
+        response.token_usage = token_usage
         return result.strip()
     
     def text(self, prompt, **kwargs):

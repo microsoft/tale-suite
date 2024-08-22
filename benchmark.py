@@ -34,6 +34,7 @@ def evaluate(agent, game, args, table):
     done = False
 
     for step in range(1, args.nb_steps + 1):
+        observation = game_state.feedback
         action, response = agent.act(game_state, score, done)
         game_state, score, done = env.step(action)
         if game_state.admissible_commands and action not in game_state.admissible_commands:
@@ -44,7 +45,7 @@ def evaluate(agent, game, args, table):
         log.info(msg)
         if args.enable_wandb:
             wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": agent.context_length()})    
-            table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), game_state.feedback, action, response.messages, response.text())
+            table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, response.messages, response.text(), response.token_usage)
         log.debug(env.render(mode="text"))
 
         if done:
@@ -190,6 +191,7 @@ def parse_args():
     parser.add_argument("--context",  type=int, default=10, help="Context for LLM")
     parser.add_argument("--enable_wandb", action="store_true", help="Log to wandb")
     parser.add_argument("--conversation", action="store_true", help="Enable conversation mode.")
+    parser.add_argument("--admissible_commands", action="store_true", help="Enable admissible commands.")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose mode.")
     parser.add_argument("-vv", "--very-verbose", action="store_true", help="Display actions taken.")
     return parser.parse_args()
@@ -226,7 +228,7 @@ def main():
         )    
 
         # create a wandb table with corresponding columns
-        columns = ["Step", "Score", "Max Score", "Moves", "Context", "Feedback", "Action", "Input", "Output"]
+        columns = ["Step", "Score", "Max Score", "Moves", "Context", "Observation", "Action", "Feedback", "Input", "Output", "Token Usage"]
         table = wandb.Table(columns=columns)
 
     # Log some info about the machine.
@@ -235,7 +237,7 @@ def main():
     log.info('working_dir = {}'.format(os.getcwd()))
     log.info('datetime = {}'.format(datetime.datetime.now()))
 
-    agent = Agent(args.llm, seed=args.seed, temperature=args.temperature, conversation=args.conversation, context=args.context)
+    agent = Agent(args.llm, seed=args.seed, temperature=args.temperature, conversation=args.conversation, context=args.context, admissible_commands=args.admissible_commands)
     games = args.games or glob.glob("./games/*.z?")
     benchmark(agent, games, args, table)
     if args.enable_wandb:

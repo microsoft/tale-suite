@@ -9,7 +9,7 @@ import llm
 log = logging.getLogger("tw-bench")
 
 class LLMAgent(textworld.Agent):
-    def __init__(self, model, seed=1234, temperature=0.0, conversation=False, context=100):
+    def __init__(self, model, seed=1234, temperature=0.0, conversation=False, context=100, admissible_commands=False):
         self.seed = seed
         self.rng = np.random.RandomState(self.seed)
         self.model = llm.get_model(model)
@@ -17,6 +17,7 @@ class LLMAgent(textworld.Agent):
         self.context = context
         self.window = []
         self.conversation = None
+        self.admissible_commands = admissible_commands
         if conversation:
             self.conversation = self.model.conversation()
 
@@ -46,7 +47,7 @@ class LLMAgent(textworld.Agent):
                   '------------\nInput: {"feedback": "You are still on the streets. To the north is a restraunt where the mayor ate often. To the east is the Mayor\'s home.", "admissible_commands": [\'west\', \'east\', \'north\', \'put paper down\']}\nOutput: east\n------------\n'
         )
         if self.conversation:
-            input = game_state.feedback
+            input = '{"feedback": ' + f'"{game_state.feedback}", ' + '"admissible_commands":' + str(game_state.admissible_commands) + "}" if self.admissible_commands else game_state.feedback
             response = self.conversation.prompt(input, system=system_prompt, temperature=self.temperature, context=self.context)
         else:
             input = '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + '"admissible_commands":' + str(game_state.admissible_commands) + "}\nOutput: "
