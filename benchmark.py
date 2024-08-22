@@ -34,7 +34,7 @@ def evaluate(agent, game, args, table):
     done = False
 
     for step in range(1, args.nb_steps + 1):
-        action = agent.act(game_state, score, done)
+        action, response = agent.act(game_state, score, done)
         game_state, score, done = env.step(action)
         if game_state.admissible_commands and action not in game_state.admissible_commands:
             nb_invalid += 1
@@ -44,7 +44,7 @@ def evaluate(agent, game, args, table):
         log.info(msg)
         if args.enable_wandb:
             wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": agent.context_length()})    
-            table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length())
+            table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), game_state.feedback, action, response.messages, response.text())
         log.debug(env.render(mode="text"))
 
         if done:
@@ -211,6 +211,7 @@ def main():
 
     Agent = getattr(mod, klass)
 
+    table = None
     if args.enable_wandb:
         wandb_config = {
             "llm": args.llm,
@@ -225,7 +226,7 @@ def main():
         )    
 
         # create a wandb table with corresponding columns
-        columns = ["Step", "Score", "Max Score", "Moves", "Context"]
+        columns = ["Step", "Score", "Max Score", "Moves", "Context", "Feedback", "Action", "Input", "Output"]
         table = wandb.Table(columns=columns)
 
     # Log some info about the machine.

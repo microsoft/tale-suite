@@ -64,6 +64,5 @@ class LLMAgent(textworld.Agent):
             action = 'RESTART'
 
         self.window.append(f'{game_state.feedback}\n> {action}\n')
-        log.info(f'{game_state.feedback}\n> {action}\n')
 
-        return action[:100]
+        return action[:100], response
