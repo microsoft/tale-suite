@@ -1,4 +1,5 @@
 import os
+import json
 import openai
 # from openai import AzureOpenAI
 import numpy as np
@@ -47,7 +48,7 @@ class LLMAgent(textworld.Agent):
                   '------------\nInput: {"feedback": "You are still on the streets. To the north is a restraunt where the mayor ate often. To the east is the Mayor\'s home.", "admissible_commands": [\'west\', \'east\', \'north\', \'put paper down\']}\nOutput: east\n------------\n'
         )
         if self.conversation:
-            input = '{"feedback": ' + f'"{game_state.feedback}", ' + '"admissible_commands":' + str(game_state.admissible_commands) + "}" if self.admissible_commands else game_state.feedback
+            input = json.dumps({"feedback": game_state.feedback, "admissible_commands": game_state.admissible_commands}) if self.admissible_commands else game_state.feedback
             response = self.conversation.prompt(input, system=system_prompt, temperature=self.temperature, context=self.context)
         else:
             input = '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + '"admissible_commands":' + str(game_state.admissible_commands) + "}\nOutput: "
