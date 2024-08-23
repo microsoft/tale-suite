@@ -24,7 +24,7 @@ class LLMAgent(textworld.Agent):
 
     def reset(self, env):
         env.display_command_during_render = True
-        self.window = []
+        # self.window = []
         # if self.conversation:
         #     self.conversation = self.model.conversation()
 
