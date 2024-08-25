@@ -97,7 +97,7 @@ def benchmark(agent, games, args):
             table = None
             if args.enable_wandb:
                 wandb_config = {
-                    "games": game,
+                    "game": game_name,
                     "llm": args.llm,
                     "seed": args.seed,
                     "context": args.context,
