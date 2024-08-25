@@ -45,7 +45,10 @@ def evaluate(agent, game, args, table):
         log.info(msg)
         if args.enable_wandb:
             wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": agent.context_length()})    
-            table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, response.messages, response.text(), response.token_usage)
+            if response:
+                table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, response.messages, response.text(), response.token_usage)
+            else:
+                table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, None, None, None)
         log.debug(env.render(mode="text"))
 
         if done:
