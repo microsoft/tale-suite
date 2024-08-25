@@ -37,7 +37,7 @@ class LLMAgent(textworld.Agent):
     def act(self, game_state, reward, done):
         if not self.conversation and not game_state.admissible_commands:
             log.error("No valid actions available.")
-            return 'RESTART'
+            return 'RESTART', None
         lines = ("\n").join(self.window[-self.context:])
         context = f'The past 100 lines of the game play are as following to avoid taking the same step again that led to game ending:\n\n{lines}\n\n' if lines and not self.conversation else ""
         system_prompt = (f"You are a helpful assistant playing a text-based game. Reply ONLY with the ONE appropriate action selected from the list of admissible commands even if the game resets from the beginning.\n"

@@ -152,8 +152,8 @@ def benchmark(agent, games, args):
         log.critical("Total time {:9.2f} seconds".format(total_time))
         log.critical("Total {} invalid actions".format(total_invalid))
         log.critical("Avg. speed: {:8.2f} steps per second".format(total_steps / total_time))
-        if args.enable_wandb:
-            wandb.log({"Number of games": nb_games, "Mean score": mean_score / nb_games,  "Total time": total_time, "Invalid actions": total_invalid, "Avg. speed": total_steps / total_time})
+        # if args.enable_wandb:
+        #     wandb.log({"Number of games": nb_games, "Mean score": mean_score / nb_games,  "Total time": total_time, "Invalid actions": total_invalid, "Avg. speed": total_steps / total_time})
 
 
 class TqdmLoggingHandler(logging.Handler):
@@ -241,7 +241,13 @@ def main():
     log.info('working_dir = {}'.format(os.getcwd()))
     log.info('datetime = {}'.format(datetime.datetime.now()))
 
-    agent = Agent(args.llm, args)
+    agent = Agent(args.llm,
+                  seed=args.seed,
+                  temperature=args.temperature,
+                  conversation=args.conversation,
+                  context=args.context,
+                  admissible_commands=args.admissible_commands)
+    
     games = args.games or glob.glob("./games/*.z?")
     benchmark(agent, games, args)
 
