@@ -10,16 +10,16 @@ import llm
 log = logging.getLogger("tw-bench")
 
 class LLMAgent(textworld.Agent):
-    def __init__(self, model, seed=1234, temperature=0.0, conversation=False, context=100, admissible_commands=False):
-        self.seed = seed
-        self.rng = np.random.RandomState(self.seed)
+    def __init__(self, model, *args, **kwargs):
         self.model = llm.get_model(model)
-        self.temperature = temperature
-        self.context = context
+        self.seed = kwargs.get('seed', 1234)
+        self.rng = np.random.RandomState(self.seed)
+        self.temperature = kwargs.get('temperature', 0.0)
+        self.context = kwargs.get('context', 100)
+        self.admissible_commands = kwargs.get('admissible_commands', False)
         self.window = []
         self.conversation = None
-        self.admissible_commands = admissible_commands
-        if conversation:
+        if kwargs.get('conversation', False):
             self.conversation = self.model.conversation()
 
     def reset(self, env):
