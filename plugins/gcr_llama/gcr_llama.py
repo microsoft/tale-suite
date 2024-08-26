@@ -61,18 +61,33 @@ class GCRLLaMA(llm.Model):
         return len(tokens)
     
     def execute(self, prompt, stream, response, conversation):
+        messages = []
+        if (conversation):
+            messages= [
+                {
+                    "role": "system",
+                    "content": prompt.system
+                }
+            ]
+            context = prompt.options.context or 10 
+            for resp in conversation.responses[-context:]:
+                messages.append({ "role": "user", "content": resp.prompt.prompt})
+                messages.append({ "role": "assistant", "content": resp.text()})
+            messages.append({ "role": "user", "content": prompt.prompt})
+        else:
+          messages = [
+                {
+                    "role": "user",
+                    "content": prompt.prompt
+                }
+            ]
         headers = {
             "Content-Type": "application/json",
             "api-key": self.api_key
         }
         data = {
         "input_data": {
-                "input_string": [
-                {
-                    "role": "user",
-                    "content": prompt.prompt
-                }
-                ],
+                "input_string": messages,
                 "parameters": {
                 "temperature": prompt.options.temperature or 0.0,
                 "top_p": 0.9,
@@ -125,6 +140,8 @@ class GCRLLaMA(llm.Model):
         if result.startswith("<|assistant|>"):
             result = result[len("<|assistant|>"):].strip()
 
+        response.messages = messages
+        response.token_usage = token_usage
         return result.strip()
     
     def text(self, prompt, **kwargs):
