@@ -88,11 +88,14 @@ jobs:
         run: |
           llm install plugins/azure_openai
           llm install plugins/gcr_phi
+          llm install plugins/gcr_llama
         env:
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           GCR_PHI_ENDPOINT: ${{ secrets.GCR_PHI_ENDPOINT }}
           GCR_PHI_API_KEY: ${{ secrets.GCR_PHI_API_KEY }}
+          GCR_LLAMA_ENDPOINT: ${{ secrets.GCR_LLAMA_ENDPOINT }}
+          GCR_LLAMA_API_KEY: ${{ secrets.GCR_LLAMA_API_KEY }}
 
       # Download games
       - name: Download games
@@ -110,6 +113,8 @@ jobs:
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           GCR_PHI_ENDPOINT: ${{ secrets.GCR_PHI_ENDPOINT }}
           GCR_PHI_API_KEY: ${{ secrets.GCR_PHI_API_KEY }}
+          GCR_LLAMA_ENDPOINT: ${{ secrets.GCR_LLAMA_ENDPOINT }}
+          GCR_LLAMA_API_KEY: ${{ secrets.GCR_LLAMA_API_KEY }}
           WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
       
       # Upload benchmark results
