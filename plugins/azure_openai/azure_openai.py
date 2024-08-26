@@ -62,16 +62,6 @@ class AzureOpenAI(llm.Model):
                 messages.append({ "role": "user", "content": resp.prompt.prompt})
                 messages.append({ "role": "assistant", "content": resp.text()})
             messages.append({ "role": "user", "content": prompt.prompt})
-            completion = self.client.chat.completions.create(
-                model=self.deployment_id,
-                messages=messages,
-                max_tokens=100,
-                temperature=prompt.options.temperature or 0.0,
-                top_p=1,
-                frequency_penalty=0,
-                presence_penalty=0,
-                stop="\n"
-            )
         else:
             messages = [
                 {
@@ -79,16 +69,16 @@ class AzureOpenAI(llm.Model):
                     "content": prompt.prompt
                 }
             ]
-            completion = self.client.chat.completions.create(
-                model=self.deployment_id,
-                messages=messages,
-                max_tokens=100,
-                temperature=prompt.options.temperature or 0.0,
-                top_p=1,
-                frequency_penalty=0,
-                presence_penalty=0,
-                stop="\n"
-            )
+        completion = self.client.chat.completions.create(
+            model=self.deployment_id,
+            messages=messages,
+            max_tokens=100,
+            temperature=prompt.options.temperature or 0.0,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0,
+            stop="\n"
+        )
         result = completion.choices[0].message.content
         
         end_time = time.time()

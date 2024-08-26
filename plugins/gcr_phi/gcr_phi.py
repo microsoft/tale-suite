@@ -27,7 +27,11 @@ class GCRPhi(llm.Model):
             description="Temperature for sampling",
             default=None
         )
-
+        context: Optional[int] = Field(
+            description="Number of previous messages to include in the context",
+            default=None
+        )
+        
         @validator("temperature")
         def validate_temperature(cls, temperature):
             if temperature is None:
@@ -35,24 +39,47 @@ class GCRPhi(llm.Model):
             if not 0 <= temperature <= 1:
                 raise ValueError("temperature must be between 0 and 1")
             return temperature
-    
+        
+        @validator("context")
+        def validate_context(cls, context):
+            if context is None:
+                return None
+            if not 1 <= context <= 1000:
+                raise ValueError("context must be between 1 and 100")
+            return context
+        
     def count_tokens(self, text):
         tokens = self.tokenizer.encode(text)
         return len(tokens)
     
     def execute(self, prompt, stream, response, conversation):
+        messages = []
+        if (conversation):
+            messages= [
+                {
+                    "role": "system",
+                    "content": prompt.system
+                }
+            ]
+            context = prompt.options.context or 10 
+            for resp in conversation.responses[-context:]:
+                messages.append({ "role": "user", "content": resp.prompt.prompt})
+                messages.append({ "role": "assistant", "content": resp.text()})
+            messages.append({ "role": "user", "content": prompt.prompt})
+        else:
+          messages = [
+                {
+                    "role": "user",
+                    "content": prompt.prompt
+                }
+            ]
         headers = {
             "Content-Type": "application/json",
             "api-key": self.api_key
         }
         data = {
         "input_data": {
-            "input_string": [
-            {
-                "role": "user",
-                "content": prompt.prompt
-            }
-            ],
+            "input_string": messages,
             "parameters": {
             "temperature": prompt.options.temperature or 0.0,
             "top_p": 0.9,
@@ -105,6 +132,8 @@ class GCRPhi(llm.Model):
         if result.startswith("<|assistant|>"):
             result = result[len("<|assistant|>"):].strip()
 
+        response.messages = messages
+        response.token_usage = token_usage
         return result.strip()
     
     def text(self, prompt, **kwargs):

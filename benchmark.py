@@ -43,12 +43,13 @@ def evaluate(agent, game, args, table):
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
         msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
         log.info(msg)
+        norm_score = 100.0 * game_state.score / max_score
         if args.enable_wandb:
-            wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": agent.context_length()})    
+            wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Normalized Score": norm_score, "Moves": game_state.moves, "Context": agent.context_length()})    
             if response:
-                table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, response.messages, response.text(), response.token_usage)
+                table.add_data(step, score, game_state.max_score, norm_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, response.messages, response.text(), response.token_usage)
             else:
-                table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, None, None, None)
+                table.add_data(step, score, game_state.max_score, norm_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, None, None, None)
         log.debug(env.render(mode="text"))
 
         if done:
@@ -91,6 +92,7 @@ def benchmark(agent, games, args):
     max_game_name = max(len(os.path.basename(game)) for game in games)
     with tqdm(total=len(games), leave=False) as pbar:
         for game in games:
+            total_steps = 0
             game_name = os.path.basename(game)
             pbar.set_postfix_str(game_name)
 
@@ -112,7 +114,7 @@ def benchmark(agent, games, args):
                 )    
 
                 # create a wandb table with corresponding columns
-                columns = ["Step", "Score", "Max Score", "Moves", "Context", "Observation", "Action", "Feedback", "Input", "Output", "Token Usage"]
+                columns = ["Step", "Score", "Max Score", "Normalized Score", "Moves", "Context", "Observation", "Action", "Feedback", "Input", "Output", "Token Usage"]
                 table = wandb.Table(columns=columns)
 
             if game_name in game_exclusion_list:
@@ -140,7 +142,7 @@ def benchmark(agent, games, args):
             msg = msg.format(game_name.ljust(max_game_name), seconds, nb_losts, final_score, max_score, norm_score)
             log.info(msg)
             if args.enable_wandb:
-                wandb.log({"Total steps": total_steps, "Final score": final_score})
+                wandb.log({"Total steps": total_steps, "Final score": final_score, "Normalized Score": norm_score})
             pbar.write(msg)
             pbar.update(1)
 
