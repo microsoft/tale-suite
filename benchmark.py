@@ -45,7 +45,10 @@ def evaluate(agent, game, args, table):
         log.info(msg)
         if args.enable_wandb:
             wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Moves": game_state.moves, "Context": agent.context_length()})    
-            table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, response.messages, response.text(), response.token_usage)
+            if response:
+                table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, response.messages, response.text(), response.token_usage)
+            else:
+                table.add_data(step, score, game_state.max_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, None, None, None)
         log.debug(env.render(mode="text"))
 
         if done:
@@ -75,7 +78,7 @@ def evaluate(agent, game, args, table):
     return step, nb_invalid, nb_losts, highscore, max_score, time.time() - start_time
 
 
-def benchmark(agent, games, args, table):
+def benchmark(agent, games, args):
     game_exclusion_list = []
 
     mean_score = 0
@@ -90,10 +93,28 @@ def benchmark(agent, games, args, table):
         for game in games:
             game_name = os.path.basename(game)
             pbar.set_postfix_str(game_name)
+
+            table = None
             if args.enable_wandb:
-                wandb.config.update({
-                    "game": game_name,  # Update game
-                }, allow_val_change=True)
+                wandb_config = {
+                    "game": game_name,
+                    "llm": args.llm,
+                    "seed": args.seed,
+                    "context": args.context,
+                    "temperature": args.temperature,
+                    "conversation": args.conversation,
+                    "admissible_commands": args.admissible_commands
+                }
+                run = wandb.init(
+                    project="text-games-benchmark",
+                    config=wandb_config,
+                    reinit=True
+                )    
+
+                # create a wandb table with corresponding columns
+                columns = ["Step", "Score", "Max Score", "Moves", "Context", "Observation", "Action", "Feedback", "Input", "Output", "Token Usage"]
+                table = wandb.Table(columns=columns)
+
             if game_name in game_exclusion_list:
                 pbar.write("{} (skip)".format(game_name))
                 log.info("Excluded game: {}".format(game_name))
@@ -125,13 +146,17 @@ def benchmark(agent, games, args, table):
 
             mean_score += norm_score
 
+            if args.enable_wandb:
+                run.log({"log_table": table})
+                wandb.finish()
+
     if nb_games > 0 and total_time > 0:
         log.critical("Mean score (over {} games) = {:8.4f}% of total possible".format(nb_games, mean_score / nb_games))
         log.critical("Total time {:9.2f} seconds".format(total_time))
         log.critical("Total {} invalid actions".format(total_invalid))
         log.critical("Avg. speed: {:8.2f} steps per second".format(total_steps / total_time))
-        if args.enable_wandb:
-            wandb.log({"Number of games": nb_games, "Mean score": mean_score / nb_games,  "Total time": total_time, "Invalid actions": total_invalid, "Avg. speed": total_steps / total_time})
+        # if args.enable_wandb:
+        #     wandb.log({"Number of games": nb_games, "Mean score": mean_score / nb_games,  "Total time": total_time, "Invalid actions": total_invalid, "Avg. speed": total_steps / total_time})
 
 
 class TqdmLoggingHandler(logging.Handler):
@@ -213,37 +238,21 @@ def main():
 
     Agent = getattr(mod, klass)
 
-    table = None
-    if args.enable_wandb:
-        wandb_config = {
-            "llm": args.llm,
-            "seed": args.seed,
-            "context": args.context,
-            "conversation": args.conversation,
-            "temperature": args.temperature
-        }
-        run = wandb.init(
-            project="text-games-benchmark",
-            config=wandb_config
-        )    
-
-        # create a wandb table with corresponding columns
-        columns = ["Step", "Score", "Max Score", "Moves", "Context", "Observation", "Action", "Feedback", "Input", "Output", "Token Usage"]
-        table = wandb.Table(columns=columns)
-
     # Log some info about the machine.
     log.info('system = {}'.format(platform.system()))
     log.info('server = {}'.format(platform.uname()[1]))
     log.info('working_dir = {}'.format(os.getcwd()))
     log.info('datetime = {}'.format(datetime.datetime.now()))
 
-    agent = Agent(args.llm, seed=args.seed, temperature=args.temperature, conversation=args.conversation, context=args.context, admissible_commands=args.admissible_commands)
+    agent = Agent(args.llm,
+                  seed=args.seed,
+                  temperature=args.temperature,
+                  conversation=args.conversation,
+                  context=args.context,
+                  admissible_commands=args.admissible_commands)
+    
     games = args.games or glob.glob("./games/*.z?")
-    benchmark(agent, games, args, table)
-    if args.enable_wandb:
-        run.log({"log_table": table})
-        wandb.finish()
-
+    benchmark(agent, games, args)
 
 if __name__ == "__main__":
     main()

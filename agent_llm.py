@@ -10,21 +10,21 @@ import llm
 log = logging.getLogger("tw-bench")
 
 class LLMAgent(textworld.Agent):
-    def __init__(self, model, seed=1234, temperature=0.0, conversation=False, context=100, admissible_commands=False):
-        self.seed = seed
-        self.rng = np.random.RandomState(self.seed)
+    def __init__(self, model, *args, **kwargs):
         self.model = llm.get_model(model)
-        self.temperature = temperature
-        self.context = context
+        self.seed = kwargs.get('seed', 1234)
+        self.rng = np.random.RandomState(self.seed)
+        self.temperature = kwargs.get('temperature', 0.0)
+        self.context = kwargs.get('context', 100)
+        self.admissible_commands = kwargs.get('admissible_commands', False)
         self.window = []
         self.conversation = None
-        self.admissible_commands = admissible_commands
-        if conversation:
+        if kwargs.get('conversation', False):
             self.conversation = self.model.conversation()
 
     def reset(self, env):
         env.display_command_during_render = True
-        self.window = []
+        # self.window = []
         # if self.conversation:
         #     self.conversation = self.model.conversation()
 
@@ -37,9 +37,9 @@ class LLMAgent(textworld.Agent):
     def act(self, game_state, reward, done):
         if not self.conversation and not game_state.admissible_commands:
             log.error("No valid actions available.")
-            return 'RESTART'
+            return 'RESTART', None
         lines = ("\n").join(self.window[-self.context:])
-        context = f'The past 100 lines of the game play are as following to avoid taking the same step again that led to game ending:\n\n{lines}\n\n' if lines and not self.conversation else ""
+        context = f'The past {self.context} steps of the game play are as following to avoid taking the same step again that led to game ending:\n\n{lines}\n\n' if lines and not self.conversation else ""
         system_prompt = (f"You are a helpful assistant playing a text-based game. Reply ONLY with the ONE appropriate action selected from the list of admissible commands even if the game resets from the beginning.\n"
                   "If the game has reset to the beginnig or stuck in a loop try to take a different action from the one taken last time at the same step. Make sure you alway return ONLY an admissible command as the next step after the Output: and no other text.\n"
                   "If the game is stuck in a loop or not recognizing an invalid action reply with a random action from the previous list without giving a verbose explanation. No need to explain why.\n"

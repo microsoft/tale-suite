@@ -21,12 +21,39 @@ on:
           # Friendly description to be shown in the UI instead of 'games'
           description: 'Games to evaluate'
           # Default value if no value is explicitly provided
-          default: 'games/detective.z5'
+          default: 'games/detective.z5,games/advent.z5'
           # Input has to be provided for the workflow to run
           required: true
           # The data type of the input
           type: string
-
+      context:
+          # Friendly description to be shown in the UI instead of 'context'
+          description: 'Context length'
+          # Default value if no value is explicitly provided
+          default: '100'
+          # Input has to be provided for the workflow to run
+          required: true
+          # The data type of the input
+          type: number
+      conversation:
+          # Friendly description to be shown in the UI instead of 'conversation'
+          description: 'Enable conversation mode'
+          # Default value if no value is explicitly provided
+          default: True
+          # Input has to be provided for the workflow to run
+          required: true
+          # The data type of the input
+          type: boolean
+      admissible_commands:
+          # Friendly description to be shown in the UI instead of 'admissible_commands'
+          description: 'Add admissible commands'
+          # Default value if no value is explicitly provided
+          default: True
+          # Input has to be provided for the workflow to run
+          required: true
+          # The data type of the input
+          type: boolean
+      
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "evaluate"
@@ -73,7 +100,11 @@ jobs:
     
       # Runs a single command using the runners shell
       - name: Run evaluation
-        run: python benchmark.py --games ${{ inputs.games }} --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }} --enable_wandb -vv --conversation
+        run: |
+          games_list=$(echo "${{ inputs.games }}" | tr ',' ' ')
+          python benchmark.py --games $games_list --agent agent_llm.py:LLMAgent --llm ${{ inputs.llm }} --enable_wandb -vv --context ${{ inputs.context }} \
+          ${{ inputs.conversation && '--conversation' || '' }} \
+          ${{ inputs.admissible_commands && '--admissible_commands' || '' }}
         env:
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
