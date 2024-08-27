@@ -96,7 +96,7 @@ def benchmark(agent, games, args):
         for game in games:
             total_steps = 0
             game_name = os.path.basename(game)
-            log_file = os.path.join("logs", f"{game_name}_{args.llm}.json")
+            log_file = os.path.join("logs", f"{game_name}_{args.llm}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json")
             if os.path.exists(log_file):
                 log.info("Skipping game: {}".format(game_name))
                 continue  # Skip games that have already been evaluated.
