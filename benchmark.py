@@ -9,6 +9,7 @@ import importlib
 import platform
 
 from tqdm import tqdm
+import pandas as pd
 
 import textworld
 
@@ -88,12 +89,17 @@ def benchmark(agent, games, args):
     total_invalid = 0
 
     nb_games = 0
+    log_file = None
     games = sorted(games)
     max_game_name = max(len(os.path.basename(game)) for game in games)
     with tqdm(total=len(games), leave=False) as pbar:
         for game in games:
             total_steps = 0
             game_name = os.path.basename(game)
+            log_file = os.path.join("logs", f"{game_name}_{args.llm}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json")
+            if os.path.exists(log_file):
+                log.info("Skipping game: {}".format(game_name))
+                continue  # Skip games that have already been evaluated.
             pbar.set_postfix_str(game_name)
 
             table = None
@@ -149,6 +155,8 @@ def benchmark(agent, games, args):
             mean_score += norm_score
 
             if args.enable_wandb:
+                df = pd.DataFrame(table.data, columns=table.columns)
+                df.to_json(log_file, orient="records", lines=True)
                 run.log({"log_table": table})
                 wandb.finish()
 
@@ -179,7 +187,7 @@ class TqdmLoggingHandler(logging.Handler):
 def setup_logging(args):
     log.setLevel(logging.DEBUG)
 
-    fh = logging.FileHandler('tw_benchmark.log', mode='w')
+    fh = logging.FileHandler(f'tw_benchmark_{args.llm}.log', mode='w')
     formatter = logging.Formatter("%(asctime)s: %(message)s")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)
