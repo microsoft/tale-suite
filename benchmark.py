@@ -187,7 +187,7 @@ class TqdmLoggingHandler(logging.Handler):
 def setup_logging(args):
     log.setLevel(logging.DEBUG)
 
-    fh = logging.FileHandler('tw_benchmark.log', mode='w')
+    fh = logging.FileHandler(f'tw_benchmark_{args.llm}.log', mode='w')
     formatter = logging.Formatter("%(asctime)s: %(message)s")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)
