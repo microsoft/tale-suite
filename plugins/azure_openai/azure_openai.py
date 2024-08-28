@@ -22,6 +22,10 @@ class AzureOpenAI(llm.Model):
     )
 
     class Options(llm.Options):
+        seed: Optional[float] = Field(
+            description="Seed for sampling",
+            default=None
+        )
         temperature: Optional[float] = Field(
             description="Temperature for sampling",
             default=None
@@ -30,6 +34,14 @@ class AzureOpenAI(llm.Model):
             description="Number of previous messages to include in the context",
             default=None
         )
+
+        @validator("seed")
+        def validate_seed(cls, seed):
+            if seed is None:
+                return None
+            if not isinstance(seed, int):
+                raise ValueError("seed must be an integer")
+            return seed
 
         @validator("temperature")
         def validate_temperature(cls, temperature):
@@ -75,6 +87,7 @@ class AzureOpenAI(llm.Model):
             max_tokens=100,
             temperature=prompt.options.temperature or 0.0,
             top_p=1,
+            seed=prompt.options.seed or None,
             frequency_penalty=0,
             presence_penalty=0,
             stop="\n"
