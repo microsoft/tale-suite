@@ -23,6 +23,10 @@ class GCRPhi(llm.Model):
     tokenizer = LlamaTokenizerFast.from_pretrained("hf-internal-testing/llama-tokenizer")
 
     class Options(llm.Options):
+        seed: Optional[float] = Field(
+            description="Seed for sampling",
+            default=None
+        )
         temperature: Optional[float] = Field(
             description="Temperature for sampling",
             default=None
@@ -31,6 +35,14 @@ class GCRPhi(llm.Model):
             description="Number of previous messages to include in the context",
             default=None
         )
+        
+        @validator("seed")
+        def validate_seed(cls, seed):
+            if seed is None:
+                return None
+            if not isinstance(seed, int):
+                raise ValueError("seed must be an integer")
+            return seed
         
         @validator("temperature")
         def validate_temperature(cls, temperature):
@@ -83,6 +95,7 @@ class GCRPhi(llm.Model):
             "parameters": {
             "temperature": prompt.options.temperature or 0.0,
             "top_p": 0.9,
+            "seed": prompt.options.seed or None,
             "do_sample": True,
             "max_new_tokens": 1000
             }

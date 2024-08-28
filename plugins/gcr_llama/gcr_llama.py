@@ -31,6 +31,10 @@ class GCRLLaMA(llm.Model):
     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
 
     class Options(llm.Options):
+        seed: Optional[float] = Field(
+            description="Seed for sampling",
+            default=None
+        )
         temperature: Optional[float] = Field(
             description="Temperature for sampling",
             default=None
@@ -40,6 +44,14 @@ class GCRLLaMA(llm.Model):
             default=None
         )
 
+        @validator("seed")
+        def validate_seed(cls, seed):
+            if seed is None:
+                return None
+            if not isinstance(seed, int):
+                raise ValueError("seed must be an integer")
+            return seed
+        
         @validator("temperature")
         def validate_temperature(cls, temperature):
             if temperature is None:
@@ -91,6 +103,7 @@ class GCRLLaMA(llm.Model):
                 "parameters": {
                 "temperature": prompt.options.temperature or 0.0,
                 "top_p": 0.9,
+                "seed": prompt.options.seed or None,
                 "max_new_tokens": 1000
                 }
             }
