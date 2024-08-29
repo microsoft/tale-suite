@@ -107,6 +107,7 @@ def benchmark(agent, games, args):
                 wandb_config = {
                     "game": game_name,
                     "llm": args.llm,
+                    "model": agent.deployment_id,
                     "seed": args.seed,
                     "context": args.context,
                     "temperature": args.temperature,
