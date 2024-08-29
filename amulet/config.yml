@@ -1,1 +1,25 @@
-#docker run     --runtime nvidia --gpus all     --restart unless-stopped     --name vllm     --env "HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN}"     -v ~/.cache/huggingface:/root/.cache/huggingface     -p 8000:8000     --ipc=host     vllm/vllm-openai:latest     --model meta-llama/Meta-Llama-3.1-70B-Instruct     --tensor-parallel-size 4     --host 0.0.0.0
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+
+# enter path to your script files
+code: ./
+# use scripts in Python, R, Java, Julia, C#. Here we have shown python
+command:  python benchmark.py --agent agent_llm.py:LLMAgent --llm gcr_llama --enable_wandb -vv --context 100 --admissible_commands
+# invoke completions (Ctrl+Space, Cmd+Space) to see the list of environments available
+environment:
+  image: 9bde45dfef284488a8adeb17a1b173d4.azurecr.io/azureml/azureml_453da0ccf9501ea22b06831f74e45dd7
+# select the virtual cluster to run the job
+compute: /subscriptions/22da88f6-1210-4de2-a5a3-da4c7c2a1213/resourcegroups/gcr-singularity/providers/microsoft.machinelearningservices/virtualclusters/baltic11
+# select the instance type to run the job
+resources:
+  instance_type: Singularity.ND96_H100_v5
+tags:
+  Project_Name: Model_Adaptation
+  ProjectID: PRJ-0424-A30
+  Experiment: DLN_SP
+environment_variables:
+  WANDB_BASE_URL: https://microsoft-research.wandb.io
+  # WANDB_API_KEY: local-key
+properties:
+  azureml.SLATier: Standard
+  # azureml.EnableAzmlInt: 'true'
+  # docker run     --runtime nvidia --gpus all     --restart unless-stopped     --name vllm     --env "HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN}"     -v ~/.cache/huggingface:/root/.cache/huggingface     -p 8000:8000     --ipc=host     vllm/vllm-openai:latest     --model meta-llama/Meta-Llama-3.1-70B-Instruct     --tensor-parallel-size 4     --host 0.0.0.0
