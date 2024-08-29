@@ -22,7 +22,7 @@ class AzureOpenAI(llm.Model):
     )
 
     class Options(llm.Options):
-        seed: Optional[float] = Field(
+        seed: Optional[int] = Field(
             description="Seed for sampling",
             default=None
         )

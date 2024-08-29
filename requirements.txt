@@ -5,6 +5,7 @@ discoveryworld
 #alfworld
 llm
 tqdm
+pandas
 wandb
 termcolor
 transformers

@@ -31,7 +31,7 @@ class GCRLLaMA(llm.Model):
     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
 
     class Options(llm.Options):
-        seed: Optional[float] = Field(
+        seed: Optional[int] = Field(
             description="Seed for sampling",
             default=None
         )

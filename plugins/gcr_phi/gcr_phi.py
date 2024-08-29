@@ -23,7 +23,7 @@ class GCRPhi(llm.Model):
     tokenizer = LlamaTokenizerFast.from_pretrained("hf-internal-testing/llama-tokenizer")
 
     class Options(llm.Options):
-        seed: Optional[float] = Field(
+        seed: Optional[int] = Field(
             description="Seed for sampling",
             default=None
         )
