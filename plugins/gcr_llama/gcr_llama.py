@@ -9,7 +9,6 @@ import urllib.request
 from typing import Optional
 from transformers import LlamaTokenizerFast
 from pydantic import validator, Field
-from wandb.sdk.data_types.trace_tree import Trace
 
 @llm.hookimpl
 def register_models(register):
@@ -133,22 +132,6 @@ class GCRLLaMA(llm.Model):
 
         token_usage = { "prompt_tokens": self.count_tokens(prompt.prompt), "completion_tokens": self.count_tokens(result) }
         token_usage["total_tokens"] = token_usage["prompt_tokens"] + token_usage["completion_tokens"]
-
-        if wandb.run:
-            root_span = Trace(
-                name="agent_llm",
-                kind="llm",
-                metadata={
-                    "temperature": prompt.options.temperature or 0.0,
-                    "token_usage": token_usage,
-
-                },
-                start_time_ms=start_time,
-                end_time_ms=end_time,
-                inputs={"query": prompt.prompt},
-                outputs={"response": result, "token_usage": token_usage}
-            )
-            root_span.log(name="llama_trace")
 
         if result.startswith("<|assistant|>"):
             result = result[len("<|assistant|>"):].strip()

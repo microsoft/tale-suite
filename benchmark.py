@@ -148,7 +148,7 @@ def benchmark(agent, games, args):
             msg = msg.format(game_name.ljust(max_game_name), seconds, nb_losts, final_score, max_score, norm_score)
             log.info(msg)
             if args.enable_wandb:
-                wandb.log({"Total steps": total_steps, "Final score": final_score, "Normalized Score": norm_score})
+                wandb.log({"Total steps": total_steps, "Final score": final_score, "Max Normalized Score": norm_score})
             pbar.write(msg)
             pbar.update(1)
 

@@ -5,7 +5,6 @@ import wandb
 import openai
 from typing import Optional
 from pydantic import validator, Field
-from wandb.sdk.data_types.trace_tree import Trace
 
 @llm.hookimpl
 def register_models(register):
@@ -97,23 +96,6 @@ class AzureOpenAI(llm.Model):
         end_time = time.time()
         token_usage = completion.usage.to_dict()
 
-        if wandb.run:
-            root_span = Trace(
-                name="agent_llm",
-                kind="llm",
-                metadata={
-                    "temperature": prompt.options.temperature or 0.0,
-                    "token_usage": token_usage,
-
-                },
-                start_time_ms=start_time,
-                end_time_ms=end_time,
-                inputs={"length": len(messages), "messages": messages},
-                outputs={"response": result, "token_usage": token_usage}
-            )
-
-            root_span.log(name="openai_trace")
-            
         if (result.startswith(">")):
             result = result[1:].strip()
 
