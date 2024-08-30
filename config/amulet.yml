@@ -1,0 +1,17 @@
+description: Text Games Benchmark
+
+environment:
+  image: azureml/openmpi3.1.2-cuda10.2-cudnn7-ubuntu18.04:latest
+  # conda_yaml_file: $CONFIG_DIR/hi-ml/supercomputer_environment.yml
+
+code:
+  # local directory of the code. this will be uploaded to the server.
+  # $CONFIG_DIR is expanded to the directory of this config file
+  local_dir: $CONFIG_DIR
+
+# list of jobs to run
+jobs:
+- name: Benchmark
+  sku: G8
+  command:
+  - python benchmark.py --agent agent_llm.py:LLMAgent --llm gcr_llama --enable_wandb -vv --context 100 --admissible_commands
