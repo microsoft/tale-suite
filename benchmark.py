@@ -103,6 +103,9 @@ def benchmark(agent, games, args):
             if os.path.exists(log_file):
                 log.info("Skipping game: {}".format(game_name))
                 continue  # Skip games that have already been evaluated.
+            with open(log_file, 'w') as file:
+                pass  # Create the empty file
+
             pbar.set_postfix_str(game_name)
 
             table = None
