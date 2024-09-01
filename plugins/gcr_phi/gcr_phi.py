@@ -34,7 +34,19 @@ class GCRPhi(llm.Model):
             description="Number of previous messages to include in the context",
             default=None
         )
-        
+        stop: Optional[str] = Field(
+            description="Stop token for sampling",
+            default=None
+        )
+        top_p: Optional[float] = Field(
+            description="Top p for sampling",
+            default=None
+        )
+        max_tokens: Optional[int] = Field(
+            description="Maximum number of tokens to generate",
+            default=None
+        )
+
         @validator("seed")
         def validate_seed(cls, seed):
             if seed is None:
@@ -58,7 +70,31 @@ class GCRPhi(llm.Model):
             if not 1 <= context <= 1000:
                 raise ValueError("context must be between 1 and 100")
             return context
+       
+        @validator("stop")
+        def validate_stop(cls, stop):
+            if stop is None:
+                return None
+            if not isinstance(stop, str):
+                raise ValueError("stop must be a string")
+            return stop
+
+        @validator("top_p")
+        def validate_top_p(cls, top_p):
+            if top_p is None:
+                return None
+            if not 0 <= top_p <= 1:
+                raise ValueError("temperature must be between 0 and 1")
+            return top_p
         
+        @validator("max_tokens")
+        def validate_max_tokens(cls, max_tokens):
+            if max_tokens is None:
+                return None
+            if not 1 <= max_tokens <= 1000:
+                raise ValueError("max_tokens must be between 1 and 1000")
+            return max_tokens
+   
     def count_tokens(self, text):
         tokens = self.tokenizer.encode(text)
         return len(tokens)
@@ -93,10 +129,11 @@ class GCRPhi(llm.Model):
             "input_string": messages,
             "parameters": {
             "temperature": prompt.options.temperature or 0.0,
-            "top_p": 0.9,
+            "top_p": prompt.options.top_p or 1,
             "seed": prompt.options.seed or None,
             "do_sample": True,
-            "max_new_tokens": 1000
+            "max_new_tokens": prompt.options.max_tokens or 100,
+            "stop": prompt.options.stop or "\n"
             }
         }
         }
