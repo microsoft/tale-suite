@@ -102,6 +102,7 @@ def benchmark(agent, games, args):
             log_file = os.path.join("logs", f"{game_name}_{args.llm}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json")
             if os.path.exists(log_file):
                 log.info("Skipping game: {}".format(game_name))
+                pbar.update(1)
                 continue  # Skip games that have already been evaluated.
             with open(log_file, 'w') as file:
                 pass  # Create the empty file
