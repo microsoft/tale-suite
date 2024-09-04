@@ -13,5 +13,9 @@ code:
 jobs:
 - name: Benchmark
   sku: G8
+  identity: managed
+  submit_args:
+    env:
+      _AZUREML_SINGULARITY_JOB_UAI: /subscriptions/693ffe34-785e-44cd-8fb7-81da25f4d3bd/resourcegroups/ModularPolicies/providers/Microsoft.ManagedIdentity/userAssignedIdentities/modularpoliciesmi
   command:
   - python benchmark.py --agent agent_llm.py:LLMAgent --llm gcr_llama --enable_wandb -vv --context 100 --admissible_commands
