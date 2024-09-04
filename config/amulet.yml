@@ -7,12 +7,12 @@ environment:
 code:
   # local directory of the code. this will be uploaded to the server.
   # $CONFIG_DIR is expanded to the directory of this config file
-  local_dir: $CONFIG_DIR
+  local_dir: $CONFIG_DIR/../
 
 # list of jobs to run
 jobs:
 - name: Benchmark
-  sku: G8
+  sku: G1
   identity: managed
   submit_args:
     env:
