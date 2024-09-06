@@ -3,6 +3,8 @@ description: Text Games Benchmark
 environment:
   image: azureml/azureml_b48beba85ea5ab1bbaa48abeeab0bb21:latest
   # conda_yaml_file: $CONFIG_DIR/environment.yml
+  username: modularpolicies
+  registry: modularpolicies.azurecr.io
 
 code:
   # local directory of the code. this will be uploaded to the server.
