@@ -109,12 +109,16 @@ def benchmark(agent, games, args):
 
             pbar.set_postfix_str(game_name)
 
+            model_name = "random-agent"
+            if (agent.model):
+                model_name = agent.model.model_name if hasattr(agent.model, "model_name") else agent.model.deployment_id
+            
             table = None
             if args.enable_wandb:
                 wandb_config = {
                     "game": game_name,
                     "llm": args.llm,
-                    "model": agent.model.model_name if hasattr(agent.model, "model_name") else agent.model.deployment_id,
+                    "model": model_name,
                     "seed": args.seed,
                     "context": args.context,
                     "temperature": args.temperature,

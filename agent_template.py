@@ -4,13 +4,23 @@ import textworld
 
 
 class CustomAgent(textworld.Agent):
-    def __init__(self, seed=1234):
-        self.seed = seed
+    def __init__(self, model, *args, **kwargs):
+        self.model = None
+        self.seed = kwargs.get('seed', 1234)
+        self.context = kwargs.get('context', 100)
         self.rng = np.random.RandomState(self.seed)
+        self.conversation = None
+        self.window = []
         self.actions = ["north", "south", "east", "west", "up", "down",
                         "look", "inventory", "take all", "YES", "wait",
                         "take", "drop", "eat", "attack"]
 
+    def context_length(self):
+        if self.conversation:
+            return len(self.conversation.responses[-self.context:])
+        else:
+            return len(self.window[-self.context:])
+        
     def reset(self, env):
         env.display_command_during_render = True
 
@@ -22,4 +32,4 @@ class CustomAgent(textworld.Agent):
             if len(words) > 0:
                 action += " " + self.rng.choice(words)
 
-        return action
+        return str(action), None
