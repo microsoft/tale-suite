@@ -1,8 +1,8 @@
 description: Text Games Benchmark
 
 environment:
-  image: azureml/openmpi3.1.2-cuda10.2-cudnn7-ubuntu18.04:latest
-  conda_yaml_file: $CONFIG_DIR/environment.yml
+  image: azureml/azureml_b48beba85ea5ab1bbaa48abeeab0bb21:latest
+  # conda_yaml_file: $CONFIG_DIR/environment.yml
 
 code:
   # local directory of the code. this will be uploaded to the server.
@@ -11,7 +11,7 @@ code:
 
 # list of jobs to run
 jobs:
-- name: Benchmark
+- name: Text Games Benchmark
   sku: G1
   identity: managed
   submit_args:
