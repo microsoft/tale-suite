@@ -1,4 +1,15 @@
 games/
 wandb/
 logs/
+data/
+valid/
+test/
+train_1/
+train_20/
+train_100/
 *.log
+*.zip
+*.z3
+*.z4
+*.z5
+*.z8
