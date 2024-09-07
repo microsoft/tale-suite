@@ -6,7 +6,7 @@ environment:
   registry: modularpolicies.azurecr.io
   setup:
     - pip install -r requirements.txt
-    - llm install plugins/gcr_llama
+    - /home/aiscuser/.local/bin/llm install plugins/gcr_llama
 
 code:
   # local directory of the code. this will be uploaded to the server.
