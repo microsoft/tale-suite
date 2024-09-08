@@ -6,8 +6,9 @@ environment:
   registry: modularpolicies.azurecr.io
   setup:
     - pip install -r requirements.txt
-    # - wandb login --host=https://microsoft-research.wandb.io
     - /home/aiscuser/.local/bin/llm install plugins/gcr_llama
+    - wandb login --host=https://microsoft-research.wandb.io
+    - docker run --runtime nvidia --gpus all --restart unless-stopped --name vllm --env "HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN}" -v ~/.cache/huggingface:/root/.cache/huggingface -p 8000:8000 --ipc=host vllm/vllm-openai:latest --model meta-llama/Meta-Llama-3.1-70B-Instruct --tensor-parallel-size 4 --host 0.0.0.0
 
 code:
   # local directory of the code. this will be uploaded to the server.
