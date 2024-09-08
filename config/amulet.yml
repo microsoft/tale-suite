@@ -6,8 +6,8 @@ environment:
   registry: modularpolicies.azurecr.io
   setup:
     - pip install -r requirements.txt
-    - /home/aiscuser/.local/bin/llm install plugins/gcr_llama
-    - cp config/extra-openai-models.yaml "$(dirname $(llm logs path))"
+    - ~/.local/bin/llm install plugins/gcr_llama
+    - cp config/extra-openai-models.yaml ~/.config/io.datasette.llm/
     - wandb login --host=https://microsoft-research.wandb.io
     - docker run --runtime nvidia --gpus all --restart unless-stopped --name vllm -v ~/.cache/huggingface:/root/.cache/huggingface -p 8000:8000 --ipc=host vllm/vllm-openai:latest --model meta-llama/Meta-Llama-3.1-70B-Instruct --tensor-parallel-size 4 --host 0.0.0.0
 
@@ -25,4 +25,4 @@ jobs:
     env:
       _AZUREML_SINGULARITY_JOB_UAI: /subscriptions/693ffe34-785e-44cd-8fb7-81da25f4d3bd/resourcegroups/ModularPolicies/providers/Microsoft.ManagedIdentity/userAssignedIdentities/modularpoliciesmi
   command:
-  - python benchmark.py --agent agent_llm.py:LLMAgent --llm gcr_llama -vv --context 100 --admissible_commands
+  - python benchmark.py --agent agent_llm.py:LLMAgent --llm llama -vv --context 100 --admissible_commands
