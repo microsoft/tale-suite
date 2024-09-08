@@ -101,9 +101,14 @@ def benchmark(agent, games, args):
             game_name = os.path.basename(game)
             log_file = os.path.join("logs", f"{game_name}_{args.llm}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json")
             if os.path.exists(log_file):
-                log.info("Skipping game: {}".format(game_name))
-                pbar.update(1)
-                continue  # Skip games that have already been evaluated.
+                file_age = time.time() - os.path.getmtime(log_file)
+                file_size = os.path.getsize(log_file)
+                if file_size == 0 and file_age > 60 * 60 * 24:  # Less than a day old.
+                   log.info("Retrying game: {}".format(game_name))
+                else:
+                    log.info("Skipping game: {}".format(game_name))
+                    pbar.update(1)
+                    continue  # Skip games that have already been evaluated.
             with open(log_file, 'w') as file:
                 pass  # Create the empty file
 
