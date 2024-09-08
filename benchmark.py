@@ -95,6 +95,7 @@ def benchmark(agent, games, args):
     log_file = None
     games = sorted(games)
     max_game_name = max(len(os.path.basename(game)) for game in games)
+    os.makedirs("logs", exist_ok=True) # Ensure the logs directory exists
     with tqdm(total=len(games), leave=False) as pbar:
         for game in games:
             total_steps = 0
