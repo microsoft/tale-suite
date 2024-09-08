@@ -1,4 +1,3 @@
-games/
 wandb/
 logs/
 data/
@@ -9,7 +8,3 @@ train_20/
 train_100/
 *.log
 *.zip
-*.z3
-*.z4
-*.z5
-*.z8

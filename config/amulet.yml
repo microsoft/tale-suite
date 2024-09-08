@@ -6,7 +6,7 @@ environment:
   registry: modularpolicies.azurecr.io
   setup:
     - pip install -r requirements.txt
-    - python download.py
+    # - wandb login --host=https://microsoft-research.wandb.io
     - /home/aiscuser/.local/bin/llm install plugins/gcr_llama
 
 code:
@@ -23,4 +23,4 @@ jobs:
     env:
       _AZUREML_SINGULARITY_JOB_UAI: /subscriptions/693ffe34-785e-44cd-8fb7-81da25f4d3bd/resourcegroups/ModularPolicies/providers/Microsoft.ManagedIdentity/userAssignedIdentities/modularpoliciesmi
   command:
-  - python benchmark.py --agent agent_llm.py:LLMAgent --llm gcr_llama --enable_wandb -vv --context 100 --admissible_commands
+  - python benchmark.py --agent agent_llm.py:LLMAgent --llm gcr_llama -vv --context 100 --admissible_commands
