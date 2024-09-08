@@ -7,8 +7,19 @@ environment:
   setup:
     - pip install -r requirements.txt
     - ~/.local/bin/llm install plugins/gcr_llama
-    - cp config/extra-openai-models.yaml ~/.config/io.datasette.llm/
+    - cp config/extra-openai-models.yaml $$(dirname $$(~/.local/bin/llm logs path))
     - wandb login --host=https://microsoft-research.wandb.io
+    - sudo apt-get update
+    - sudo apt-get install -y ca-certificates curl
+    - sudo install -m 0755 -d /etc/apt/keyrings
+    - sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    - sudo chmod a+r /etc/apt/keyrings/docker.asc
+    - echo \
+      "deb [arch=$$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+      $$(. /etc/os-release && echo "$$VERSION_CODENAME") stable" | \
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    - sudo apt-get update
+    - sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     - docker run --runtime nvidia --gpus all --restart unless-stopped --name vllm -v ~/.cache/huggingface:/root/.cache/huggingface -p 8000:8000 --ipc=host vllm/vllm-openai:latest --model meta-llama/Meta-Llama-3.1-70B-Instruct --tensor-parallel-size 4 --host 0.0.0.0
 
 code:
