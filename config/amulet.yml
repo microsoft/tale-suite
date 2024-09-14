@@ -6,7 +6,6 @@ environment:
   registry: modularpolicies.azurecr.io
   setup:
     - export PATH="/home/aiscuser/.local/bin:$$PATH"
-    - export OPENAI_API_KEY=""
     - pip install -r requirements.txt
     - sudo apt-get update && sudo apt-get install -y netcat
     - llm logs path
@@ -20,7 +19,7 @@ environment:
         sleep 1
       done
       echo "vllm server is up and running"
-    - ~/.local/bin/llm -m llama "What's up?"
+    - curl -X GET http://127.0.0.1:8000/v1/models
 
 code:
   # local directory of the code. this will be uploaded to the server.
@@ -36,5 +35,5 @@ jobs:
     env:
       _AZUREML_SINGULARITY_JOB_UAI: /subscriptions/693ffe34-785e-44cd-8fb7-81da25f4d3bd/resourcegroups/ModularPolicies/providers/Microsoft.ManagedIdentity/userAssignedIdentities/modularpoliciesmi
   command:
-  - python benchmark.py --agent agent_llm.py:LLMAgent --llm llama -vv --context 100 --admissible_commands
+  - python benchmark.py --games games/detective.z5 --agent agent_llm.py:LLMAgent --llm microsoft/phi-2 -vv --context 100 --admissible_commands
   - pkill -f vllm
