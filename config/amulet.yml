@@ -5,12 +5,14 @@ environment:
   username: modularpolicies
   registry: modularpolicies.azurecr.io
   setup:
+    - export PATH="/home/aiscuser/.local/bin:$$PATH"
+    - export OPENAI_API_KEY=""
     - pip install -r requirements.txt
     - sudo apt-get update && sudo apt-get install -y netcat
-    - ~/.local/bin/llm install plugins/gcr_llama
-    - ~/.local/bin/llm logs path
+    - llm logs path
+    - llm install plugins/gcr_llama
     - cp -v config/extra-openai-models.yaml ~/.config/io.datasette.llm/
-    - ~/.local/bin/llm models
+    - llm models
     - python -m vllm.entrypoints.openai.api_server --model microsoft/phi-2 --host 0.0.0.0 &
     - |
       # Wait for the vllm server to be up
@@ -35,3 +37,4 @@ jobs:
       _AZUREML_SINGULARITY_JOB_UAI: /subscriptions/693ffe34-785e-44cd-8fb7-81da25f4d3bd/resourcegroups/ModularPolicies/providers/Microsoft.ManagedIdentity/userAssignedIdentities/modularpoliciesmi
   command:
   - python benchmark.py --agent agent_llm.py:LLMAgent --llm llama -vv --context 100 --admissible_commands
+  - pkill -f vllm
