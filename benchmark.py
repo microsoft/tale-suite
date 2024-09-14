@@ -100,7 +100,7 @@ def benchmark(agent, games, args):
         for game in games:
             total_steps = 0
             game_name = os.path.basename(game)
-            log_file = os.path.join("logs", f"{game_name}_{args.llm.replace("/", "-")}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json")
+            log_file = os.path.join("logs", f'{game_name}_{args.llm.replace("/", "-")}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json')
             if os.path.exists(log_file):
                 file_age = time.time() - os.path.getmtime(log_file)
                 file_size = os.path.getsize(log_file)

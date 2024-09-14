@@ -12,7 +12,7 @@ environment:
     - llm install plugins/gcr_llama
     - cp -v config/extra-openai-models.yaml ~/.config/io.datasette.llm/
     - llm models
-    - python -m vllm.entrypoints.openai.api_server --model microsoft/phi-2 --host 0.0.0.0 &
+    - python -m vllm.entrypoints.openai.api_server --model microsoft/Phi-3-mini-128k-instruct --host 0.0.0.0 &
     - |
       # Wait for the vllm server to be up
       while ! nc -z localhost 8000; do
@@ -20,6 +20,7 @@ environment:
       done
       echo "vllm server is up and running"
     - curl -X GET http://127.0.0.1:8000/v1/models
+    - wandb login --host=https://microsoft-research.wandb.io
 
 code:
   # local directory of the code. this will be uploaded to the server.
@@ -34,6 +35,7 @@ jobs:
   submit_args:
     env:
       _AZUREML_SINGULARITY_JOB_UAI: /subscriptions/693ffe34-785e-44cd-8fb7-81da25f4d3bd/resourcegroups/ModularPolicies/providers/Microsoft.ManagedIdentity/userAssignedIdentities/modularpoliciesmi
+      WANDB_API_KEY: $$WANDB_API_KEY
   command:
-  - python benchmark.py --games games/detective.z5 --agent agent_llm.py:LLMAgent --llm microsoft/phi-2 -vv --context 100 --admissible_commands
+  - python benchmark.py --games games/detective.z5 --agent agent_llm.py:LLMAgent --llm microsoft/Phi-3-mini-128k-instruct -vv --enable_wandb --context 100 --admissible_commands
   - pkill -f vllm
