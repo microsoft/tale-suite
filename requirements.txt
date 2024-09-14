@@ -4,6 +4,7 @@ scienceworld
 discoveryworld
 #alfworld
 llm
+vllm
 tqdm
 pandas
 wandb
