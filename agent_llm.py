@@ -47,14 +47,14 @@ class LLMAgent(textworld.Agent):
                   '------------\nInput: {"feedback": "You are in a closet. There is a gun on the floor. Better get it. To exit, go east. \n\nYou can see a small black pistol here.", "admissible_commands": [\'north\', \'take pistol\', \'east\', \'push pistol to floor\']}\nOutput: take pistol\n------------\n'
                   '------------\nInput: {"feedback": "You are still on the streets. To the north is a restraunt where the mayor ate often. To the east is the Mayor\'s home.", "admissible_commands": [\'west\', \'east\', \'north\', \'put paper down\']}\nOutput: east\n------------\n'
         )
+        input = json.dumps({"feedback": game_state.feedback, "admissible_commands": game_state.admissible_commands}) if self.admissible_commands else game_state.feedback
         if self.conversation:
-            input = json.dumps({"feedback": game_state.feedback, "admissible_commands": game_state.admissible_commands}) if self.admissible_commands else game_state.feedback
-            response = self.conversation.prompt(input, system=system_prompt, temperature=self.temperature, seed=self.seed, context=self.context)
+            response = self.conversation.prompt(input, system=system_prompt, temperature=self.temperature, seed=self.seed, context=self.context, max_tokens=100, top_p=1, stop="\n")
         else:
-            input = '------------\nInput: {"feedback": ' + f'"{game_state.feedback}",'  + '"admissible_commands":' + str(game_state.admissible_commands) + "}\nOutput: "
-            response = self.model.prompt(system_prompt + context + input, temperature=self.temperature, seed=self.seed)
+            response = self.model.prompt(system_prompt + context + f"------------\nInput: {input}\nOutput: ", temperature=self.temperature, seed=self.seed, max_tokens=100, top_p=1, stop="\n")
         
         action = response.text()
+        action = action.encode('utf-8').decode('unicode_escape').strip()
         action = action.split("\n")[0]
         action = action.strip()
 

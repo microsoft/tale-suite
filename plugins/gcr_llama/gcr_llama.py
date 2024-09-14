@@ -9,7 +9,6 @@ import urllib.request
 from typing import Optional
 from transformers import LlamaTokenizerFast
 from pydantic import validator, Field
-from wandb.sdk.data_types.trace_tree import Trace
 
 @llm.hookimpl
 def register_models(register):
@@ -43,6 +42,18 @@ class GCRLLaMA(llm.Model):
             description="Number of previous messages to include in the context",
             default=None
         )
+        stop: Optional[str] = Field(
+            description="Stop token for sampling",
+            default=None
+        )
+        top_p: Optional[float] = Field(
+            description="Top p for sampling",
+            default=None
+        )
+        max_tokens: Optional[int] = Field(
+            description="Maximum number of tokens to generate",
+            default=None
+        )
 
         @validator("seed")
         def validate_seed(cls, seed):
@@ -67,6 +78,30 @@ class GCRLLaMA(llm.Model):
             if not 1 <= context <= 1000:
                 raise ValueError("context must be between 1 and 100")
             return context
+
+        @validator("stop")
+        def validate_stop(cls, stop):
+            if stop is None:
+                return None
+            if not isinstance(stop, str):
+                raise ValueError("stop must be a string")
+            return stop
+
+        @validator("top_p")
+        def validate_top_p(cls, top_p):
+            if top_p is None:
+                return None
+            if not 0 <= top_p <= 1:
+                raise ValueError("temperature must be between 0 and 1")
+            return top_p
+        
+        @validator("max_tokens")
+        def validate_max_tokens(cls, max_tokens):
+            if max_tokens is None:
+                return None
+            if not 1 <= max_tokens <= 1000:
+                raise ValueError("max_tokens must be between 1 and 1000")
+            return max_tokens
         
     def count_tokens(self, text):
         tokens = self.tokenizer.encode(text)
@@ -102,9 +137,10 @@ class GCRLLaMA(llm.Model):
                 "input_string": messages,
                 "parameters": {
                 "temperature": prompt.options.temperature or 0.0,
-                "top_p": 0.9,
+                "top_p": prompt.options.top_p or 1,
                 "seed": prompt.options.seed or None,
-                "max_new_tokens": 1000
+                "max_new_tokens": prompt.options.max_tokens or 100,
+                "stop": "\n"
                 }
             }
         }
@@ -133,22 +169,6 @@ class GCRLLaMA(llm.Model):
 
         token_usage = { "prompt_tokens": self.count_tokens(prompt.prompt), "completion_tokens": self.count_tokens(result) }
         token_usage["total_tokens"] = token_usage["prompt_tokens"] + token_usage["completion_tokens"]
-
-        if wandb.run:
-            root_span = Trace(
-                name="agent_llm",
-                kind="llm",
-                metadata={
-                    "temperature": prompt.options.temperature or 0.0,
-                    "token_usage": token_usage,
-
-                },
-                start_time_ms=start_time,
-                end_time_ms=end_time,
-                inputs={"query": prompt.prompt},
-                outputs={"response": result, "token_usage": token_usage}
-            )
-            root_span.log(name="llama_trace")
 
         if result.startswith("<|assistant|>"):
             result = result[len("<|assistant|>"):].strip()

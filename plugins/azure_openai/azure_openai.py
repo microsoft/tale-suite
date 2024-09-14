@@ -5,7 +5,6 @@ import wandb
 import openai
 from typing import Optional
 from pydantic import validator, Field
-from wandb.sdk.data_types.trace_tree import Trace
 
 @llm.hookimpl
 def register_models(register):
@@ -34,6 +33,18 @@ class AzureOpenAI(llm.Model):
             description="Number of previous messages to include in the context",
             default=None
         )
+        stop: Optional[str] = Field(
+            description="Stop token for sampling",
+            default=None
+        )
+        top_p: Optional[float] = Field(
+            description="Top p for sampling",
+            default=None
+        )
+        max_tokens: Optional[int] = Field(
+            description="Maximum number of tokens to generate",
+            default=None
+        )
 
         @validator("seed")
         def validate_seed(cls, seed):
@@ -59,6 +70,30 @@ class AzureOpenAI(llm.Model):
                 raise ValueError("context must be between 1 and 100")
             return context
         
+        @validator("stop")
+        def validate_stop(cls, stop):
+            if stop is None:
+                return None
+            if not isinstance(stop, str):
+                raise ValueError("stop must be a string")
+            return stop
+
+        @validator("top_p")
+        def validate_top_p(cls, top_p):
+            if top_p is None:
+                return None
+            if not 0 <= top_p <= 1:
+                raise ValueError("temperature must be between 0 and 1")
+            return top_p
+        
+        @validator("max_tokens")
+        def validate_max_tokens(cls, max_tokens):
+            if max_tokens is None:
+                return None
+            if not 1 <= max_tokens <= 1000:
+                raise ValueError("max_tokens must be between 1 and 1000")
+            return max_tokens
+          
     def execute(self, prompt, stream, response, conversation):
         start_time = time.time()
         messages = []
@@ -97,23 +132,6 @@ class AzureOpenAI(llm.Model):
         end_time = time.time()
         token_usage = completion.usage.to_dict()
 
-        if wandb.run:
-            root_span = Trace(
-                name="agent_llm",
-                kind="llm",
-                metadata={
-                    "temperature": prompt.options.temperature or 0.0,
-                    "token_usage": token_usage,
-
-                },
-                start_time_ms=start_time,
-                end_time_ms=end_time,
-                inputs={"length": len(messages), "messages": messages},
-                outputs={"response": result, "token_usage": token_usage}
-            )
-
-            root_span.log(name="openai_trace")
-            
         if (result.startswith(">")):
             result = result[1:].strip()
 

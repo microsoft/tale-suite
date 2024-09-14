@@ -169,3 +169,6 @@ valid/
 *.zip
 wandb/
 logs/
+.amltconfig
+*.z5
+*.z4

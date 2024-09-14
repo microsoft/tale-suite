@@ -48,7 +48,10 @@ def evaluate(agent, game, args, table):
         if args.enable_wandb:
             wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Normalized Score": norm_score, "Moves": game_state.moves, "Context": agent.context_length()})    
             if response:
-                table.add_data(step, score, game_state.max_score, norm_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, response.messages, response.text(), response.token_usage)
+                messages = response.messages if hasattr(response, "messages") else None
+                output = response.text() if hasattr(response, "text") else None
+                token_usage = response.token_usage if hasattr(response, "token_usage") else None
+                table.add_data(step, score, game_state.max_score, norm_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, messages, output, token_usage)
             else:
                 table.add_data(step, score, game_state.max_score, norm_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, None, None, None)
         log.debug(env.render(mode="text"))
@@ -92,21 +95,36 @@ def benchmark(agent, games, args):
     log_file = None
     games = sorted(games)
     max_game_name = max(len(os.path.basename(game)) for game in games)
+    os.makedirs("logs", exist_ok=True) # Ensure the logs directory exists
     with tqdm(total=len(games), leave=False) as pbar:
         for game in games:
             total_steps = 0
             game_name = os.path.basename(game)
-            log_file = os.path.join("logs", f"{game_name}_{args.llm}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json")
+            log_file = os.path.join("logs", f'{game_name}_{args.llm.replace("/", "-")}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json')
             if os.path.exists(log_file):
-                log.info("Skipping game: {}".format(game_name))
-                continue  # Skip games that have already been evaluated.
+                file_age = time.time() - os.path.getmtime(log_file)
+                file_size = os.path.getsize(log_file)
+                if file_size == 0 and file_age > 60 * 60 * 24:  # Less than a day old.
+                   log.info("Retrying game: {}".format(game_name))
+                else:
+                    log.info("Skipping game: {}".format(game_name))
+                    pbar.update(1)
+                    continue  # Skip games that have already been evaluated.
+            with open(log_file, 'w') as file:
+                pass  # Create the empty file
+
             pbar.set_postfix_str(game_name)
 
+            model_name = "random-agent"
+            if (agent.model):
+                model_name = agent.model.model_name if hasattr(agent.model, "model_name") else agent.model.deployment_id
+            
             table = None
             if args.enable_wandb:
                 wandb_config = {
                     "game": game_name,
                     "llm": args.llm,
+                    "model": model_name,
                     "seed": args.seed,
                     "context": args.context,
                     "temperature": args.temperature,
@@ -148,7 +166,7 @@ def benchmark(agent, games, args):
             msg = msg.format(game_name.ljust(max_game_name), seconds, nb_losts, final_score, max_score, norm_score)
             log.info(msg)
             if args.enable_wandb:
-                wandb.log({"Total steps": total_steps, "Final score": final_score, "Normalized Score": norm_score})
+                wandb.log({"Total steps": total_steps, "Final score": final_score, "Max Normalized Score": norm_score})
             pbar.write(msg)
             pbar.update(1)
 
@@ -187,7 +205,7 @@ class TqdmLoggingHandler(logging.Handler):
 def setup_logging(args):
     log.setLevel(logging.DEBUG)
 
-    fh = logging.FileHandler(f'tw_benchmark_{args.llm}.log', mode='w')
+    fh = logging.FileHandler(f'tw_benchmark_{args.llm.replace("/", "-")}.log', mode='w')
     formatter = logging.Formatter("%(asctime)s: %(message)s")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)

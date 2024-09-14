@@ -1,0 +1,3 @@
+- model_id: microsoft/Phi-3-mini-128k-instruct
+  model_name: microsoft/Phi-3-mini-128k-instruct
+  api_base: "http://127.0.0.1:8000/v1"
