@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "twbench"
+version = "0.0.1"
+description = "Text-games Benchmark"
+readme = "README.md"
+requires-python = ">=3.9"
+dynamic = ["dependencies"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages]
+find = {}
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pre-commit",
+    "black",
+    "isort",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/microsoft/text-games-benchmark"
+"Bug Tracker" = "https://github.com/microsoft/text-games-benchmark/issues"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"

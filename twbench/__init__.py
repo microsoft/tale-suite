@@ -7,6 +7,7 @@ import yaml
 from termcolor import colored
 
 from twbench.version import __version__
+from twbench.agent import Agent
 
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
@@ -14,7 +15,7 @@ tasks = []
 env_list = []
 
 
-_exclude_path = ['__pycache__', 'utils', 'tests', 'eval', 'version', 'config']
+_exclude_path = ['__pycache__', 'utils', 'tests']
 _module_dir = os.path.dirname(__file__)
 
 

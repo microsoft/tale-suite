@@ -1,9 +1,9 @@
 import numpy as np
 
-import textworld
+import twbench
 
 
-class RandomAgent(textworld.Agent):
+class RandomAgent(twbench.Agent):
     def __init__(self, model, *args, **kwargs):
         self.model = None
         self.seed = kwargs.get('seed', 1234)

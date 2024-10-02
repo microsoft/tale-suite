@@ -4,7 +4,8 @@ import logging
 import numpy as np
 
 import llm
-import textworld
+import twbench
+
 
 log = logging.getLogger("tw-bench")
 
@@ -28,15 +29,15 @@ def build_prompt(observation, history, question, qa_history):
     return messages
 
 
-
 QUESTIONS = [
     "// Based on the above information (history), what is the best action to take? Let's think step by step, ",
     "// Provide your chosen action on a single line while respecting the desired format.",
 ]
-QUESTIONS_TEMPERATURE = [0.8, 0.0]
+QUESTIONS_TEMPERATURE = [0.0, 0.0]
 
 
-class ReactAgent(textworld.Agent):
+class ReactAgent(twbench.Agent):
+
     def __init__(self, model, *args, **kwargs):
         self.model = llm.get_model(model)
 
@@ -68,7 +69,6 @@ class ReactAgent(textworld.Agent):
         response = self.conversation.prompt(prompt, system=self.system_prompt, temperature=0.0, seed=self.seed, top_p=1)
         action = response.text().strip()
         log.debug(colored(prompt, "cyan"))
-        # log.debug(colored(action, "green"))
 
         self.history.append((obs, "> {answer}\n"))
 

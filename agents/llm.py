@@ -4,12 +4,12 @@ import logging
 import numpy as np
 
 import llm
-import textworld
+import twbench
 
 log = logging.getLogger("tw-bench")
 
 
-class LLMAgent(textworld.Agent):
+class LLMAgent(twbench.Agent):
     def __init__(self, model, *args, **kwargs):
         self.model = llm.get_model(model)
 

@@ -25,10 +25,11 @@ def evaluate(agent, env_name, args, table):
     env.unwrapped.seed(args.game_seed)
 
     log.debug("Using {}".format(env.__class__.__name__))
-    agent.reset(env)
 
     start_time = time.time()
     obs, infos = env.reset()
+    agent.reset(obs, infos)
+
     log.debug(f"Environment reset.\n{obs}\n")
 
     max_score = infos["max_score"]
@@ -40,6 +41,11 @@ def evaluate(agent, env_name, args, table):
 
     for step in range(1, args.nb_steps + 1):
         action, response = agent.act(obs, score, done, infos)
+        log.debug(colored(f"> {action}", "green"))
+
+        if args.debug:
+            breakpoint()
+
         obs, _, done, infos = env.step(action)
         score = infos["score"]
         moves = infos["moves"]
@@ -58,7 +64,7 @@ def evaluate(agent, env_name, args, table):
                 table.add_data(step, score, max_score, norm_score, moves, agent.context_length(), obs, action, feedback, response.messages, response.text(), response.token_usage)
             else:
                 table.add_data(step, score, max_score, norm_score, moves, agent.context_length(), obs, action, feedback, None, None, None)
-        log.debug(colored(f"> {action}", "green"))
+
         log.debug(obs)
 
         if done:
@@ -72,13 +78,11 @@ def evaluate(agent, env_name, args, table):
             else:
                 assert True, "Games should either end with a win or a fail."
 
-            if args.conversation:
-                action = agent.act(obs, score, done, infos)
-                # game_state, score, done = env.step(action)  # TODO: ??
-
             # Replay the game in the hope of achieving a better score.
+            last_obs = obs
             obs, infos = env.reset()
-            # agent.reset(env)
+            obs = last_obs + "\n-= Restarting =-\n" + obs
+            agent.reset(obs, infos)
 
             log.debug(f"Environment reset.\n{obs}\n")
 
@@ -221,9 +225,6 @@ def setup_logging(args):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    # parser.add_argument("--games", metavar="game", nargs="+", required=False,
-    #                     help="Games on which to evaluate the agent(s). By default,"
-    #                          " use all games found in './games/'")
     parser.add_argument("--envs", metavar="env", nargs="+", choices=twbench.env_list,
                         help="Interactive text environments to evaluate the agent(s)."
                             f" Available: {sorted(twbench.env_list)}")  # TODO: support: Jericho, TextWorld, etc...
@@ -238,7 +239,7 @@ def parse_args():
     parser.add_argument("--log_file", default="tw_benchmark.log",
                         help="Verbose information will be written to this file.")
     parser.add_argument("--seed",  type=int, default=1234, help="Seed for LLM")
-    parser.add_argument("--game-seed",  type=int, help="Seed for the game.")
+    parser.add_argument("--game-seed", type=int, default=20241001, help="Seed for the game. Default: %(default)s.")
     parser.add_argument("--temperature",  type=float, default=0.0, help="Temperature for LLM")
     parser.add_argument("--context",  type=int, default=10, help="Context for LLM")
     parser.add_argument("--enable_wandb", action="store_true", help="Log to wandb")
