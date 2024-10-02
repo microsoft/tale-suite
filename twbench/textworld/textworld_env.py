@@ -1,5 +1,4 @@
 import gymnasium as gym
-
 import numpy as np
 import textworld
 from textworld.envs.wrappers import Filter
@@ -11,8 +10,12 @@ class TextWorldEnv(gym.Env):
 
     def __init__(self, gamefile, admissible_commands=False, *args, **kwargs):
         self.infos = textworld.EnvInfos(
-            score=True, max_score=True, won=True, lost=True,
-            feedback=True, moves=True,
+            score=True,
+            max_score=True,
+            won=True,
+            lost=True,
+            feedback=True,
+            moves=True,
             admissible_commands=admissible_commands,
         )
         self.gamefile = gamefile

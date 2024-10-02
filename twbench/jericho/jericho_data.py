@@ -1,6 +1,6 @@
-import os
 import json
 import logging
+import os
 from os.path import join as pjoin
 
 from twbench.config import TWBENCH_CACHE_HOME, TWBENCH_FORCE_DOWNLOAD

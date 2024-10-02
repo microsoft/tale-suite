@@ -1,17 +1,16 @@
 import io
 import os
 import shutil
-import zipfile
-import requests
 import tempfile
-
+import zipfile
 from os.path import join as pjoin
 
+import requests
 from tqdm import tqdm
 
 
 def mkdirs(dirpath: str) -> str:
-    """ Create a directory and all its parents.
+    """Create a directory and all its parents.
 
     If the folder already exists, its path is returned without raising any exceptions.
 
@@ -30,7 +29,7 @@ def mkdirs(dirpath: str) -> str:
 
 
 def download(url, dst, desc=None, force=False):
-    """ Download a remote file using HTTP get request.
+    """Download a remote file using HTTP get request.
 
     Args:
         url (str): URL where to get the file.
@@ -45,7 +44,7 @@ def download(url, dst, desc=None, force=False):
         This code is inspired by
         https://github.com/huggingface/transformers/blob/v4.0.0/src/transformers/file_utils.py#L1069
     """
-    filename = dst_filename or url.split('/')[-1]
+    filename = dst_filename or url.split("/")[-1]
     path = pjoin(mkdirs(dst), filename)
 
     if os.path.isfile(path) and not force:
@@ -55,15 +54,17 @@ def download(url, dst, desc=None, force=False):
     # with incomplete downloads.
     temp_dir = mkdirs(pjoin(tempfile.gettempdir(), "twbench"))
     temp_path = pjoin(temp_dir, filename)
-    with open(temp_path, 'ab') as temp_file:
+    with open(temp_path, "ab") as temp_file:
         headers = {}
         resume_size = temp_file.tell()
         if resume_size:
-            headers['Range'] = f'bytes={resume_size}-'
-            headers['x-ms-version'] = "2020-04-08"  # Needed for Range support.
+            headers["Range"] = f"bytes={resume_size}-"
+            headers["x-ms-version"] = "2020-04-08"  # Needed for Range support.
 
         r = requests.get(url, stream=True, headers=headers)
-        if r.headers.get("x-ms-error-code") == "InvalidRange" and r.headers["Content-Range"].rsplit("/", 1)[-1] == str(resume_size):
+        if r.headers.get("x-ms-error-code") == "InvalidRange" and r.headers[
+            "Content-Range"
+        ].rsplit("/", 1)[-1] == str(resume_size):
             shutil.move(temp_path, path)
             return path
 

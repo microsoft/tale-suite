@@ -1,4 +1,3 @@
-
 class Agent:
 
     def reset(self, obs, infos):

@@ -6,20 +6,34 @@ import twbench
 class RandomAgent(twbench.Agent):
     def __init__(self, model, *args, **kwargs):
         self.model = None
-        self.seed = kwargs.get('seed', 1234)
-        self.context = kwargs.get('context', 100)
+        self.seed = kwargs.get("seed", 1234)
+        self.context = kwargs.get("context", 100)
         self.rng = np.random.RandomState(self.seed)
         self.conversation = None
         self.window = []
-        self.actions = ["north", "south", "east", "west", "up", "down",
-                        "look", "inventory", "take all", "YES", "wait",
-                        "take", "drop", "eat", "attack"]
+        self.actions = [
+            "north",
+            "south",
+            "east",
+            "west",
+            "up",
+            "down",
+            "look",
+            "inventory",
+            "take all",
+            "YES",
+            "wait",
+            "take",
+            "drop",
+            "eat",
+            "attack",
+        ]
 
     def context_length(self):
         if self.conversation:
-            return len(self.conversation.responses[-self.context:])
+            return len(self.conversation.responses[-self.context :])
         else:
-            return len(self.window[-self.context:])
+            return len(self.window[-self.context :])
 
     def reset(self, env):
         env.display_command_during_render = True

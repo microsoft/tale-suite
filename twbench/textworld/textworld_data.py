@@ -1,16 +1,18 @@
 import glob
-import os
 import json
 import logging
-from os.path import join as pjoin
+import os
 import zipfile
+from os.path import join as pjoin
 
 import tqdm
 
 from twbench.config import TWBENCH_CACHE_HOME, TWBENCH_FORCE_DOWNLOAD
 from twbench.utils import download
 
-TW_COOKING_URL = "https://github.com/xingdi-eric-yuan/GATA-public/releases/download/data/rl.0.2.zip"
+TW_COOKING_URL = (
+    "https://github.com/xingdi-eric-yuan/GATA-public/releases/download/data/rl.0.2.zip"
+)
 TWBENCH_CACHE_TEXTWORLD = pjoin(TWBENCH_CACHE_HOME, "textworld")
 TWBENCH_CACHE_TWCOOKING = pjoin(TWBENCH_CACHE_TEXTWORLD, "tw-cooking")
 
@@ -22,7 +24,12 @@ def prepare_twcooking_data(force=TWBENCH_FORCE_DOWNLOAD):
         return
 
     os.makedirs(TWBENCH_CACHE_TWCOOKING, exist_ok=True)
-    download(TW_COOKING_URL, dst=TWBENCH_CACHE_TWCOOKING, desc="Downloading TWCooking", force=force)
+    download(
+        TW_COOKING_URL,
+        dst=TWBENCH_CACHE_TWCOOKING,
+        desc="Downloading TWCooking",
+        force=force,
+    )
 
     # Extract the content of the folder train_20 from the downloaded file
     zip_file = pjoin(TWBENCH_CACHE_TWCOOKING, "rl.0.2.zip")
@@ -36,6 +43,8 @@ def prepare_twcooking_data(force=TWBENCH_FORCE_DOWNLOAD):
 def get_cooking_game(difficulty):
     prepare_twcooking_data()  # make sure the data is ready
 
-    cooking_dir = pjoin(TWBENCH_CACHE_TWCOOKING, "train_20", f"difficulty_level_{difficulty}")
+    cooking_dir = pjoin(
+        TWBENCH_CACHE_TWCOOKING, "train_20", f"difficulty_level_{difficulty}"
+    )
     game_files = glob.glob(pjoin(cooking_dir, "*.z8"))
     return game_files

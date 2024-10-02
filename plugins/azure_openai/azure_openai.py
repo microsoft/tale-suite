@@ -1,49 +1,41 @@
 import os
-import llm
 import time
-import wandb
-import openai
 from typing import Optional
-from pydantic import validator, Field
+
+import llm
+import openai
+import wandb
+from pydantic import Field, validator
+
 
 @llm.hookimpl
 def register_models(register):
     register(AzureOpenAI())
+
 
 class AzureOpenAI(llm.Model):
     model_id = "azure_openai"
     deployment_id = "gpt-4o"
 
     client = openai.AzureOpenAI(
-        api_key=os.getenv("AZURE_OPENAI_API_KEY"),  
+        api_key=os.getenv("AZURE_OPENAI_API_KEY"),
         api_version="2024-02-01",
-        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
     )
 
     class Options(llm.Options):
-        seed: Optional[int] = Field(
-            description="Seed for sampling",
-            default=None
-        )
+        seed: Optional[int] = Field(description="Seed for sampling", default=None)
         temperature: Optional[float] = Field(
-            description="Temperature for sampling",
-            default=None
+            description="Temperature for sampling", default=None
         )
         context: Optional[int] = Field(
             description="Number of previous messages to include in the context",
-            default=None
+            default=None,
         )
-        stop: Optional[str] = Field(
-            description="Stop token for sampling",
-            default=None
-        )
-        top_p: Optional[float] = Field(
-            description="Top p for sampling",
-            default=None
-        )
+        stop: Optional[str] = Field(description="Stop token for sampling", default=None)
+        top_p: Optional[float] = Field(description="Top p for sampling", default=None)
         max_tokens: Optional[int] = Field(
-            description="Maximum number of tokens to generate",
-            default=None
+            description="Maximum number of tokens to generate", default=None
         )
 
         @validator("seed")
@@ -61,7 +53,7 @@ class AzureOpenAI(llm.Model):
             if not 0 <= temperature <= 1:
                 raise ValueError("temperature must be between 0 and 1")
             return temperature
-        
+
         @validator("context")
         def validate_context(cls, context):
             if context is None:
@@ -69,7 +61,7 @@ class AzureOpenAI(llm.Model):
             if not 1 <= context <= 1000:
                 raise ValueError("context must be between 1 and 100")
             return context
-        
+
         @validator("stop")
         def validate_stop(cls, stop):
             if stop is None:
@@ -85,7 +77,7 @@ class AzureOpenAI(llm.Model):
             if not 0 <= top_p <= 1:
                 raise ValueError("temperature must be between 0 and 1")
             return top_p
-        
+
         @validator("max_tokens")
         def validate_max_tokens(cls, max_tokens):
             if max_tokens is None:
@@ -93,29 +85,19 @@ class AzureOpenAI(llm.Model):
             if not 1 <= max_tokens <= 1000:
                 raise ValueError("max_tokens must be between 1 and 1000")
             return max_tokens
-          
+
     def execute(self, prompt, stream, response, conversation):
         start_time = time.time()
         messages = []
-        if (conversation):
-            messages= [
-                {
-                    "role": "system",
-                    "content": prompt.system
-                }
-            ]
-            context = prompt.options.context or 10 
+        if conversation:
+            messages = [{"role": "system", "content": prompt.system}]
+            context = prompt.options.context or 10
             for resp in conversation.responses[-context:]:
-                messages.append({ "role": "user", "content": resp.prompt.prompt})
-                messages.append({ "role": "assistant", "content": resp.text()})
-            messages.append({ "role": "user", "content": prompt.prompt})
+                messages.append({"role": "user", "content": resp.prompt.prompt})
+                messages.append({"role": "assistant", "content": resp.text()})
+            messages.append({"role": "user", "content": prompt.prompt})
         else:
-            messages = [
-                {
-                    "role": "user",
-                    "content": prompt.prompt
-                }
-            ]
+            messages = [{"role": "user", "content": prompt.prompt}]
         completion = self.client.chat.completions.create(
             model=self.deployment_id,
             messages=messages,
@@ -125,20 +107,20 @@ class AzureOpenAI(llm.Model):
             seed=prompt.options.seed or None,
             frequency_penalty=0,
             presence_penalty=0,
-            stop="\n"
+            stop="\n",
         )
         result = completion.choices[0].message.content
-        
+
         end_time = time.time()
         token_usage = completion.usage.to_dict()
 
-        if (result.startswith(">")):
+        if result.startswith(">"):
             result = result[1:].strip()
 
         response.messages = messages
         response.token_usage = token_usage
         return result.strip()
-    
+
     def text(self, prompt, **kwargs):
         result = self.execute(prompt, **kwargs)
         return result["choices"][0]["text"]
