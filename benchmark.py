@@ -76,36 +76,18 @@ def evaluate(agent, env_name, args, table):
                     "Context": agent.context_length(),
                 }
             )
+            # fmt: off
             if response:
                 table.add_data(
-                    step,
-                    score,
-                    max_score,
-                    norm_score,
-                    moves,
-                    agent.context_length(),
-                    obs,
-                    action,
-                    feedback,
-                    response.messages,
-                    response.text(),
-                    response.token_usage,
+                    step, score, max_score, norm_score, moves,agent.context_length(),
+                    obs, action, feedback,response.messages, response.text(), response.token_usage
                 )
             else:
                 table.add_data(
-                    step,
-                    score,
-                    max_score,
-                    norm_score,
-                    moves,
-                    agent.context_length(),
-                    obs,
-                    action,
-                    feedback,
-                    None,
-                    None,
-                    None,
+                    step, score, max_score, norm_score, moves, agent.context_length(),
+                    obs, action, feedback, None, None, None
                 )
+            # fmt: on
 
         log.debug(obs)
 
@@ -137,7 +119,8 @@ def evaluate(agent, env_name, args, table):
 
 
 def benchmark(agent, games, args):
-    game_exclusion_list = []
+    # Log games we are about to evaluate.
+    log.critical("Evaluating {} games:".format(len(games)))
 
     mean_score = 0
     total_time = 0.0
@@ -159,6 +142,7 @@ def benchmark(agent, games, args):
             if os.path.exists(log_file):
                 log.info("Skipping game: {}".format(game_name))
                 continue  # Skip games that have already been evaluated.
+
             pbar.set_postfix_str(game_name)
 
             table = None
@@ -177,27 +161,14 @@ def benchmark(agent, games, args):
                 )
 
                 # create a wandb table with corresponding columns
+                # fmt: off
                 columns = [
-                    "Step",
-                    "Score",
-                    "Max Score",
-                    "Normalized Score",
-                    "Moves",
-                    "Context",
-                    "Observation",
-                    "Action",
-                    "Feedback",
-                    "Input",
-                    "Output",
-                    "Token Usage",
+                    "Step", "Score", "Max Score", "Normalized Score", "Moves", "Context", "Observation",
+                    "Action", "Feedback", "Input", "Output", "Token Usage"
                 ]
+                # fmt: on
                 table = wandb.Table(columns=columns)
 
-            if game_name in game_exclusion_list:
-                pbar.write("{} (skip)".format(game_name))
-                log.info("Excluded game: {}".format(game_name))
-                pbar.update(1)
-                continue  # Skip excluded games.
             try:
                 nb_steps, nb_invalid, nb_losts, final_score, max_score, seconds = (
                     evaluate(agent, game, args, table)
@@ -219,15 +190,12 @@ def benchmark(agent, games, args):
             total_steps += nb_steps
             total_invalid += nb_invalid
 
+            # fmt: off
             msg = "{}\t{:5.0f} seconds\t{:4d} losts\tScore: {:3d}/{:3d} ({:6.2f}%)"
-            msg = msg.format(
-                game_name.ljust(max_game_name),
-                seconds,
-                nb_losts,
-                final_score,
-                max_score,
-                norm_score,
-            )
+            msg = msg.format(game_name.ljust(max_game_name), seconds, nb_losts,
+                             final_score, max_score, norm_score)
+            # fmt: on
+
             log.info(msg)
             if args.enable_wandb:
                 wandb.log(
@@ -259,8 +227,6 @@ def benchmark(agent, games, args):
         log.critical(
             "Avg. speed: {:8.2f} steps per second".format(total_steps / total_time)
         )
-        # if args.enable_wandb:
-        #     wandb.log({"Number of games": nb_games, "Mean score": mean_score / nb_games,  "Total time": total_time, "Invalid actions": total_invalid, "Avg. speed": total_steps / total_time})
 
 
 class TqdmLoggingHandler(logging.Handler):
@@ -300,65 +266,74 @@ def setup_logging(args):
         ch.setLevel(logging.DEBUG)
 
 
+def pretty_print_tasks(num_cols: int = 3, disable_print: bool = False):
+    output = []
+
+    max_justify = max(
+        len(env_name) for task in twbench.envs_per_task.values() for env_name in task
+    )
+
+    for task in sorted(twbench.envs_per_task):
+        task_output = f"{'=' * 5} {task} {'=' * 5}\n"
+
+        # Reference: https://stackoverflow.com/a/33464001
+        for count, env_id in enumerate(sorted(twbench.envs_per_task[task]), 1):
+            # Print column with justification.
+            task_output += env_id.ljust(max_justify) + " "
+
+            # Once all rows printed, switch to new column.
+            if count % num_cols == 0:
+                task_output = task_output.rstrip(" ")
+
+                if count != len(twbench.envs_per_task[task]):
+                    task_output += "\n"
+
+        output.append(task_output.rstrip(" "))
+
+    if disable_print:
+        return "\n".join(output)
+    else:
+        print("\n".join(output))
+
+
 def parse_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--envs",
-        metavar="env",
-        nargs="+",
-        choices=twbench.env_list,
-        help="Interactive text environments to evaluate the agent(s)."
-        f" Available: {sorted(twbench.env_list)}",
-    )  # TODO: support: Jericho, TextWorld, etc...
-    parser.add_argument(
-        "--agent",
-        default="./agent_random.py:RandomAgent",
-        help="Full qualified class name to evaluate. Default: %(default)s",
-    )
-    parser.add_argument(
-        "--llm",
-        default="azure_openai",
-        help="LLM to be used for evaluation. Default: %(default)s",
-    )
-    parser.add_argument(
-        "--nb-steps", type=int, default=1000, help="Maximum number of steps per game."
-    )
-    parser.add_argument(
-        "--summary_out_file",
-        default="summary.txt",
-        help="Summary information will be written to this file.",
-    )
-    parser.add_argument(
-        "--log_file",
-        default="tw_benchmark.log",
-        help="Verbose information will be written to this file.",
-    )
-    parser.add_argument("--seed", type=int, default=1234, help="Seed for LLM")
-    parser.add_argument(
-        "--game-seed",
-        type=int,
-        default=20241001,
-        help="Seed for the game. Default: %(default)s.",
-    )
-    parser.add_argument(
-        "--temperature", type=float, default=0.0, help="Temperature for LLM"
-    )
-    parser.add_argument("--context", type=int, default=10, help="Context for LLM")
-    parser.add_argument("--enable_wandb", action="store_true", help="Log to wandb")
-    parser.add_argument(
-        "--conversation", action="store_true", help="Enable conversation mode."
-    )
-    parser.add_argument(
-        "--admissible_commands", action="store_true", help="Enable admissible commands."
-    )
-    parser.add_argument(
-        "-v", "--verbose", action="store_true", help="Enable verbose mode."
-    )
-    parser.add_argument(
-        "-vv", "--very-verbose", action="store_true", help="Display actions taken."
-    )
-    parser.add_argument("--debug", action="store_true", help="Debug mode.")
+    # fmt: off
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument("--envs", metavar="env", nargs="+", choices=twbench.envs + twbench.tasks,
+                        help="Interactive text environments to evaluate the agent(s)."
+                            f" Available:\n{pretty_print_tasks(disable_print=True)}")
+    parser.add_argument("--agent", default="./agent_random.py:RandomAgent",
+                        help="Full qualified class name to evaluate. Default: %(default)s")
+    parser.add_argument("--llm", default="azure_openai",
+                        help="LLM to be used for evaluation. Default: %(default)s")
+    parser.add_argument("--nb-steps", type=int, default=1000,
+                        help="Maximum number of steps per game.")
+    parser.add_argument("--summary_out_file", default="summary.txt",
+                        help="Summary information will be written to this file.")
+    parser.add_argument("--log_file", default="tw_benchmark.log",
+                        help="Verbose information will be written to this file.")
+    parser.add_argument("--seed", type=int, default=1234,
+                        help="Seed for LLM")
+    parser.add_argument("--game-seed", type=int, default=20241001,
+                        help="Seed for the game. Default: %(default)s.")
+    parser.add_argument("--temperature", type=float, default=0.0,
+                        help="Temperature for LLM")
+    parser.add_argument("--context", type=int, default=10,
+                        help="Context for LLM")
+    parser.add_argument("--enable_wandb", action="store_true",
+                        help="Log to wandb")
+    parser.add_argument("--conversation", action="store_true",
+                        help="Enable conversation mode.")
+    parser.add_argument("--admissible_commands", action="store_true",
+                        help="Enable admissible commands.")
+    parser.add_argument("-v", "--verbose", action="store_true",
+                        help="Enable verbose mode.")
+    parser.add_argument("-vv", "--very-verbose", action="store_true",
+                        help="Display actions taken.")
+    parser.add_argument("--debug", action="store_true",
+                        help="Debug mode.")
     return parser.parse_args()
+    # fmt: on
 
 
 def main():
@@ -396,6 +371,13 @@ def main():
     )
 
     args.envs = args.envs or twbench.env_list
+    # Expand tasks into their respective environments.
+    args.envs = [
+        env
+        for task in args.envs
+        for env in (twbench.envs_per_task[task] if task in twbench.tasks else [task])
+    ]
+
     benchmark(agent, args.envs, args)
 
 

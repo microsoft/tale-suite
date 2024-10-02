@@ -11,9 +11,21 @@ This repository contains the files needed to benchmark language agents on text-b
 
         pip install -r requirements.txt
 
-3.	Run benchmark evaluation on all the games for the specified agent:
+3.	Run benchmark evaluation on all the games for the specified random agent:
 
         python benchmark.py --agent agents/random.py:RandomAgent
+
+4.	Run benchmark evaluation on a subset of the games:
+
+        python benchmark.py --env tw-cooking --agent agents/random.py:RandomAgent
+
+5.	Run benchmark evaluation on specific games:
+
+        python benchmark.py --envs JerichoEnvZork1 JerichoEnvDetective --agent agents/random.py:RandomAgent
+
+6.	Run benchmark evaluation using as a HumanAgent:
+
+        python benchmark.py --envs TWCookingLevel1 --agent agents/human.py:HumanAgent
 
 
 ## Contributing

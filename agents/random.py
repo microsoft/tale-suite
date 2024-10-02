@@ -11,32 +11,15 @@ class RandomAgent(twbench.Agent):
         self.rng = np.random.RandomState(self.seed)
         self.conversation = None
         self.window = []
+        # fmt:off
         self.actions = [
-            "north",
-            "south",
-            "east",
-            "west",
-            "up",
-            "down",
-            "look",
-            "inventory",
-            "take all",
-            "YES",
-            "wait",
-            "take",
-            "drop",
-            "eat",
-            "attack",
+            "north", "south", "east", "west", "up", "down",
+            "look", "inventory",
+            "drop", "take", "take all",
+            "eat", "attack",
+            "wait", "YES",
         ]
-
-    def context_length(self):
-        if self.conversation:
-            return len(self.conversation.responses[-self.context :])
-        else:
-            return len(self.window[-self.context :])
-
-    def reset(self, env):
-        env.display_command_during_render = True
+        # fmt:on
 
     def act(self, obs, reward, done, infos):
         if "admissible_commands" in infos:

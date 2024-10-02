@@ -2,8 +2,8 @@ import importlib
 import os
 import traceback
 import warnings
+from collections import defaultdict
 
-import yaml
 from termcolor import colored
 
 from twbench.agent import Agent
@@ -11,12 +11,10 @@ from twbench.version import __version__
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
 tasks = []
-env_list = []
+envs = []
+envs_per_task = defaultdict(list)
 
-
-_exclude_path = ["__pycache__", "utils", "tests"]
-_module_dir = os.path.dirname(__file__)
-
+_exclude_path = ["__pycache__", "tests"]
 
 for dirname in os.listdir(root_dir):
     if not os.path.isdir(os.path.join(root_dir, dirname)):
@@ -39,8 +37,8 @@ for task in tasks:
         environments = getattr(module, "environments", None)
         if environments:
             for env_name, version in environments:
-                # env_list.append('{}-{}'.format(env_name, version))
-                env_list.append(env_name)
+                envs.append(env_name)
+                envs_per_task[task].append(env_name)
         else:
             warnings.warn(
                 "Failed to load `{}.environments`. Skipping the task.".format(task),
@@ -53,9 +51,8 @@ for task in tasks:
             "Failed to import `{}`. Skipping the task.".format(task), UserWarning
         )
         warnings.warn(colored(f"{e}", "red"), UserWarning)
-        # Add stacktrace
         warnings.warn(colored(f"{traceback.format_exc()}", "red"), UserWarning)
         continue
 
-
-# from twbench.eval import *
+envs_per_task = dict(envs_per_task)
+__all__ = ["Agent", "__version__", "envs", "envs_per_task", "tasks"]
