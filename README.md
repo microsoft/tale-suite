@@ -11,16 +11,9 @@ This repository contains the files needed to benchmark language agents on text-b
 
         pip install -r requirements.txt
 
-3.	Download the text-games (TODO: make a single script to download and cache everything).
+3.	Run benchmark evaluation on all the games for the specified agent:
 
-        python download.py  # For Jericho
-        wget https://github.com/xingdi-eric-yuan/GATA-public/releases/download/data/rl.0.2.zip -O rl.0.2.zip  # For TextWorld cooking games
-        unzip rl.0.2.zip
-        alfworld-download  # For ALFWorld
-
-4.	Run benchmark evaluation on all the games for the specified agent:
-
-        python benchmark.py --games games/* --agent agent_template.py:CustomAgent
+        python benchmark.py --agent agents/random.py:RandomAgent
 
 
 ## Contributing

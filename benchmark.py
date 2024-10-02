@@ -1,6 +1,7 @@
 import os
 import glob
 import time
+from termcolor import colored
 import wandb
 import datetime
 import logging
@@ -8,26 +9,29 @@ import argparse
 import importlib
 import platform
 
+import gymnasium as gym
 from tqdm import tqdm
 import pandas as pd
 
-import textworld
+import twbench
 
 
+os.environ["WANDB_MODE"] = "disabled"
 log = logging.getLogger("tw-bench")
 
 
-def evaluate(agent, game, args, table):
-    infos = textworld.EnvInfos(max_score=True, admissible_commands=True)
-    env = textworld.start(game, infos)
+def evaluate(agent, env_name, args, table):
+    env = gym.make(f"twbench/{env_name}-v0", disable_env_checker=True, admissible_commands=args.admissible_commands)
+    env.unwrapped.seed(args.game_seed)
+
     log.debug("Using {}".format(env.__class__.__name__))
     agent.reset(env)
 
     start_time = time.time()
-    game_state = env.reset()
-    log.debug("Environment reset.\n{}\n".format(env.render(mode="text")))
+    obs, infos = env.reset()
+    log.debug(f"Environment reset.\n{obs}\n")
 
-    max_score = game_state.max_score
+    max_score = infos["max_score"]
     nb_losts = 0
     nb_invalid = 0
     highscore = 0
@@ -35,45 +39,48 @@ def evaluate(agent, game, args, table):
     done = False
 
     for step in range(1, args.nb_steps + 1):
-        observation = game_state.feedback
-        action, response = agent.act(game_state, score, done)
-        game_state, score, done = env.step(action)
-        if game_state.admissible_commands and action not in game_state.admissible_commands:
+        action, response = agent.act(obs, score, done, infos)
+        obs, _, done, infos = env.step(action)
+        score = infos["score"]
+        moves = infos["moves"]
+        feedback = infos["feedback"]
+
+        if args.admissible_commands and infos["admissible_commands"] and action not in infos["admissible_commands"]:
             nb_invalid += 1
 
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
-        msg = msg.format(step, time.time() - start_time, game_state.score, game_state.moves, action)
+        msg = msg.format(step, time.time() - start_time, score, moves, action)
         log.info(msg)
-        norm_score = 100.0 * game_state.score / max_score
+        norm_score = 100.0 * score / max_score
         if args.enable_wandb:
-            wandb.log({"Step": step, "Score": game_state.score, "Max Score": game_state.max_score, "Normalized Score": norm_score, "Moves": game_state.moves, "Context": agent.context_length()})    
+            wandb.log({"Step": step, "Score": score, "Max Score": max_score, "Normalized Score": norm_score, "Moves": moves, "Context": agent.context_length()})
             if response:
-                messages = response.messages if hasattr(response, "messages") else None
-                output = response.text() if hasattr(response, "text") else None
-                token_usage = response.token_usage if hasattr(response, "token_usage") else None
-                table.add_data(step, score, game_state.max_score, norm_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, messages, output, token_usage)
+                table.add_data(step, score, max_score, norm_score, moves, agent.context_length(), obs, action, feedback, response.messages, response.text(), response.token_usage)
             else:
-                table.add_data(step, score, game_state.max_score, norm_score, game_state.moves, agent.context_length(), observation, action, game_state.feedback, None, None, None)
-        log.debug(env.render(mode="text"))
+                table.add_data(step, score, max_score, norm_score, moves, agent.context_length(), obs, action, feedback, None, None, None)
+        log.debug(colored(f"> {action}", "green"))
+        log.debug(obs)
 
         if done:
             highscore = max(score, highscore)
 
-            if game_state.has_won or game_state.won:
+            if infos["won"]:
                 if highscore == max_score:
                     break  # No reason to play that game more.
-            elif game_state.has_lost or game_state.lost:
+            elif infos["lost"]:
                 nb_losts += 1
             else:
                 assert True, "Games should either end with a win or a fail."
 
             if args.conversation:
-                action = agent.act(game_state, score, done)
-                # game_state, score, done = env.step(action)
+                action = agent.act(obs, score, done, infos)
+                # game_state, score, done = env.step(action)  # TODO: ??
+
             # Replay the game in the hope of achieving a better score.
-            game_state = env.reset()
+            obs, infos = env.reset()
             # agent.reset(env)
-            log.debug("Environment reset.\n{}\n".format(env.render(mode="text")))
+
+            log.debug(f"Environment reset.\n{obs}\n")
 
     env.close()
 
@@ -95,36 +102,21 @@ def benchmark(agent, games, args):
     log_file = None
     games = sorted(games)
     max_game_name = max(len(os.path.basename(game)) for game in games)
-    os.makedirs("logs", exist_ok=True) # Ensure the logs directory exists
     with tqdm(total=len(games), leave=False) as pbar:
         for game in games:
             total_steps = 0
             game_name = os.path.basename(game)
-            log_file = os.path.join("logs", f'{game_name}_{args.llm.replace("/", "-")}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json')
+            log_file = os.path.join("logs", f"{game_name}_{args.llm}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json")
             if os.path.exists(log_file):
-                file_age = time.time() - os.path.getmtime(log_file)
-                file_size = os.path.getsize(log_file)
-                if file_size == 0 and file_age > 60 * 60 * 24:  # Less than a day old.
-                   log.info("Retrying game: {}".format(game_name))
-                else:
-                    log.info("Skipping game: {}".format(game_name))
-                    pbar.update(1)
-                    continue  # Skip games that have already been evaluated.
-            with open(log_file, 'w') as file:
-                pass  # Create the empty file
-
+                log.info("Skipping game: {}".format(game_name))
+                continue  # Skip games that have already been evaluated.
             pbar.set_postfix_str(game_name)
 
-            model_name = "random-agent"
-            if (agent.model):
-                model_name = agent.model.model_name if hasattr(agent.model, "model_name") else agent.model.deployment_id
-            
             table = None
             if args.enable_wandb:
                 wandb_config = {
                     "game": game_name,
                     "llm": args.llm,
-                    "model": model_name,
                     "seed": args.seed,
                     "context": args.context,
                     "temperature": args.temperature,
@@ -135,7 +127,7 @@ def benchmark(agent, games, args):
                     project="text-games-benchmark",
                     config=wandb_config,
                     reinit=True
-                )    
+                )
 
                 # create a wandb table with corresponding columns
                 columns = ["Step", "Score", "Max Score", "Normalized Score", "Moves", "Context", "Observation", "Action", "Feedback", "Input", "Output", "Token Usage"]
@@ -152,6 +144,9 @@ def benchmark(agent, games, args):
                 pbar.write("{} (skip)".format(game_name))
                 log.error(str(e))
                 pbar.update(1)
+                if args.debug:
+                    raise
+
                 continue  # Skip not supported games.
 
             nb_games += 1
@@ -166,7 +161,7 @@ def benchmark(agent, games, args):
             msg = msg.format(game_name.ljust(max_game_name), seconds, nb_losts, final_score, max_score, norm_score)
             log.info(msg)
             if args.enable_wandb:
-                wandb.log({"Total steps": total_steps, "Final score": final_score, "Max Normalized Score": norm_score})
+                wandb.log({"Total steps": total_steps, "Final score": final_score, "Normalized Score": norm_score})
             pbar.write(msg)
             pbar.update(1)
 
@@ -205,7 +200,7 @@ class TqdmLoggingHandler(logging.Handler):
 def setup_logging(args):
     log.setLevel(logging.DEBUG)
 
-    fh = logging.FileHandler(f'tw_benchmark_{args.llm.replace("/", "-")}.log', mode='w')
+    fh = logging.FileHandler(f'tw-bench_{args.llm}.log', mode='w')
     formatter = logging.Formatter("%(asctime)s: %(message)s")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)
@@ -226,10 +221,13 @@ def setup_logging(args):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--games", metavar="game", nargs="+", required=False,
-                        help="Games on which to evaluate the agent(s). By default,"
-                             " use all games found in './games/'")
-    parser.add_argument("--agent", default="./agent_template.py:CustomAgent",
+    # parser.add_argument("--games", metavar="game", nargs="+", required=False,
+    #                     help="Games on which to evaluate the agent(s). By default,"
+    #                          " use all games found in './games/'")
+    parser.add_argument("--envs", metavar="env", nargs="+", choices=twbench.env_list,
+                        help="Interactive text environments to evaluate the agent(s)."
+                            f" Available: {sorted(twbench.env_list)}")  # TODO: support: Jericho, TextWorld, etc...
+    parser.add_argument("--agent", default="./agent_random.py:RandomAgent",
                         help="Full qualified class name to evaluate. Default: %(default)s")
     parser.add_argument("--llm", default="azure_openai",
                         help="LLM to be used for evaluation. Default: %(default)s")
@@ -240,6 +238,7 @@ def parse_args():
     parser.add_argument("--log_file", default="tw_benchmark.log",
                         help="Verbose information will be written to this file.")
     parser.add_argument("--seed",  type=int, default=1234, help="Seed for LLM")
+    parser.add_argument("--game-seed",  type=int, help="Seed for the game.")
     parser.add_argument("--temperature",  type=float, default=0.0, help="Temperature for LLM")
     parser.add_argument("--context",  type=int, default=10, help="Context for LLM")
     parser.add_argument("--enable_wandb", action="store_true", help="Log to wandb")
@@ -247,6 +246,7 @@ def parse_args():
     parser.add_argument("--admissible_commands", action="store_true", help="Enable admissible commands.")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose mode.")
     parser.add_argument("-vv", "--very-verbose", action="store_true", help="Display actions taken.")
+    parser.add_argument("--debug", action="store_true", help="Debug mode.")
     return parser.parse_args()
 
 
@@ -254,6 +254,9 @@ def main():
     args = parse_args()
     setup_logging(args)
     args.verbose = args.verbose or args.very_verbose
+
+    if args.enable_wandb:
+        os.environ["WANDB_MODE"] = "online"
 
     # Dynamically load agent class.
     path, klass = args.agent.split(":")
@@ -278,9 +281,10 @@ def main():
                   conversation=args.conversation,
                   context=args.context,
                   admissible_commands=args.admissible_commands)
-    
-    games = args.games or glob.glob("./games/*.z?")
-    benchmark(agent, games, args)
+
+    args.envs = args.envs or twbench.env_list
+    benchmark(agent, args.envs, args)
+
 
 if __name__ == "__main__":
     main()

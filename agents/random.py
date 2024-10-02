@@ -3,7 +3,7 @@ import numpy as np
 import textworld
 
 
-class CustomAgent(textworld.Agent):
+class RandomAgent(textworld.Agent):
     def __init__(self, model, *args, **kwargs):
         self.model = None
         self.seed = kwargs.get('seed', 1234)
@@ -20,14 +20,17 @@ class CustomAgent(textworld.Agent):
             return len(self.conversation.responses[-self.context:])
         else:
             return len(self.window[-self.context:])
-        
+
     def reset(self, env):
         env.display_command_during_render = True
 
-    def act(self, game_state, reward, done):
+    def act(self, obs, reward, done, infos):
+        if "admissible_commands" in infos:
+            self.actions = infos["admissible_commands"]
+
         action = self.rng.choice(self.actions)
         if action in ["take", "drop", "eat", "attack"]:
-            words = game_state.feedback.split()  # Observed words.
+            words = obs.split()  # Observed words.
             words = [w for w in words if len(w) > 3]  # Ignore most stop words.
             if len(words) > 0:
                 action += " " + self.rng.choice(words)
