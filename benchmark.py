@@ -1,11 +1,11 @@
 import argparse
 import datetime
-import glob
 import importlib
 import logging
 import os
 import platform
 import time
+from os.path import join as pjoin
 
 import gymnasium as gym
 import pandas as pd
@@ -65,7 +65,7 @@ def evaluate(agent, env_name, args, table):
         msg = msg.format(step, time.time() - start_time, score, moves, action)
         log.info(msg)
         norm_score = 100.0 * score / max_score
-        if args.enable_wandb:
+        if args.wandb:
             wandb.log(
                 {
                     "Step": step,
@@ -137,7 +137,7 @@ def benchmark(agent, games, args):
             game_name = os.path.basename(game)
             log_file = os.path.join(
                 "logs",
-                f"{game_name}_{args.llm}_{args.context}_s{args.seed}_t{args.temperature}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json",
+                f"{game_name}_{args.llm}_{args.context_limit}_s{args.seed}_t{args.act_temp}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json",
             )
             if os.path.exists(log_file):
                 log.info("Skipping game: {}".format(game_name))
@@ -146,7 +146,7 @@ def benchmark(agent, games, args):
             pbar.set_postfix_str(game_name)
 
             table = None
-            if args.enable_wandb:
+            if args.wandb:
                 wandb_config = {
                     "game": game_name,
                     "llm": args.llm,
@@ -197,7 +197,7 @@ def benchmark(agent, games, args):
             # fmt: on
 
             log.info(msg)
-            if args.enable_wandb:
+            if args.wandb:
                 wandb.log(
                     {
                         "Total steps": total_steps,
@@ -210,7 +210,7 @@ def benchmark(agent, games, args):
 
             mean_score += norm_score
 
-            if args.enable_wandb:
+            if args.wandb:
                 df = pd.DataFrame(table.data, columns=table.columns)
                 df.to_json(log_file, orient="records", lines=True)
                 run.log({"log_table": table})
@@ -247,7 +247,11 @@ class TqdmLoggingHandler(logging.Handler):
 def setup_logging(args):
     log.setLevel(logging.DEBUG)
 
-    fh = logging.FileHandler(f"tw-bench_{args.llm}.log", mode="w")
+    agent_class = args.agent.split(":")[1]
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    os.makedirs(args.log_dir, exist_ok=True)
+    log_filename = f"tw-bench_{agent_class}_{args.llm}_{args.conversation}_{args.context_limit}_{timestamp}.log"
+    fh = logging.FileHandler(pjoin(args.log_dir, log_filename), mode="w")
     formatter = logging.Formatter("%(asctime)s: %(message)s")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)
@@ -302,30 +306,34 @@ def parse_args():
     parser.add_argument("--envs", metavar="env", nargs="+", choices=twbench.envs + twbench.tasks,
                         help="Interactive text environments to evaluate the agent(s)."
                             f" Available:\n{pretty_print_tasks(disable_print=True)}")
-    parser.add_argument("--agent", default="./agent_random.py:RandomAgent",
-                        help="Full qualified class name to evaluate. Default: %(default)s")
-    parser.add_argument("--llm", default="azure_openai",
-                        help="LLM to be used for evaluation. Default: %(default)s")
-    parser.add_argument("--nb-steps", type=int, default=1000,
-                        help="Maximum number of steps per game.")
-    parser.add_argument("--summary_out_file", default="summary.txt",
-                        help="Summary information will be written to this file.")
-    parser.add_argument("--log_file", default="tw_benchmark.log",
-                        help="Verbose information will be written to this file.")
-    parser.add_argument("--seed", type=int, default=1234,
-                        help="Seed for LLM")
     parser.add_argument("--game-seed", type=int, default=20241001,
                         help="Seed for the game. Default: %(default)s.")
-    parser.add_argument("--temperature", type=float, default=0.0,
-                        help="Temperature for LLM")
-    parser.add_argument("--context", type=int, default=10,
-                        help="Context for LLM")
-    parser.add_argument("--enable_wandb", action="store_true",
-                        help="Log to wandb")
-    parser.add_argument("--conversation", action="store_true",
-                        help="Enable conversation mode.")
+
+    parser.add_argument("--agent", default="./agent_random.py:RandomAgent",
+                        help="Full qualified class name to evaluate. Default: %(default)s")
+    parser.add_argument("--nb-steps", type=int, default=1000,
+                        help="Maximum number of steps per game.")
     parser.add_argument("--admissible_commands", action="store_true",
                         help="Enable admissible commands.")
+
+    parser.add_argument("--llm", default="gpt-4o-mini",
+                        help="LLM to be used for evaluation. Default: %(default)s")
+    parser.add_argument("--seed", type=int, default=20241001,
+                        help="Seed for LLM (not all endpoints support this). Default: %(default)s")
+    parser.add_argument("--cot-temp", type=float, default=0.0,
+                        help="Temperature for LLM when doing chaint-of-thoughts. Default: %(default)s")
+    parser.add_argument("--act-temp", type=float, default=0.0,
+                        help="Temperature for LLM when taking actions. Default: %(default)s")
+    parser.add_argument("--context-limit", type=int, default=10,
+                        help="Limit context for LLM (in conversation turns). Default: %(default)s")
+    parser.add_argument("--conversation", action="store_true",
+                        help="Enable conversation mode. Otherwise, use single prompt.")
+
+    parser.add_argument("--log-dir", default="logs",
+                        help="Folder where to save verbose log information.")
+
+    parser.add_argument("--wandb", action="store_true",
+                        help="Log to wandb")
     parser.add_argument("-v", "--verbose", action="store_true",
                         help="Enable verbose mode.")
     parser.add_argument("-vv", "--very-verbose", action="store_true",
@@ -341,38 +349,31 @@ def main():
     setup_logging(args)
     args.verbose = args.verbose or args.very_verbose
 
-    if args.enable_wandb:
+    if args.wandb:
         os.environ["WANDB_MODE"] = "online"
+
+    # Log some info about the machine.
+    log.info(f"args = {args}")
+    log.info(f"system = {platform.system()}")
+    log.info(f"server = {platform.uname()[1]}")
+    log.info(f"working_dir = {os.getcwd()}")
+    log.info(f"datetime = {datetime.datetime.now()}")
 
     # Dynamically load agent class.
     path, klass = args.agent.split(":")
-    spec = importlib.util.spec_from_file_location("textworld.benchmark.agents", path)
+    spec = importlib.util.spec_from_file_location("twbench.agents", path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     if not hasattr(mod, klass):
         msg = "python file '{}' has no class '{}'".format(path, klass)
         raise AttributeError(msg)
 
+    # Instanciate the agent.
     Agent = getattr(mod, klass)
-
-    # Log some info about the machine.
-    log.info("system = {}".format(platform.system()))
-    log.info("server = {}".format(platform.uname()[1]))
-    log.info("working_dir = {}".format(os.getcwd()))
-    log.info("datetime = {}".format(datetime.datetime.now()))
-
-    agent = Agent(
-        args.llm,
-        seed=args.seed,
-        temperature=args.temperature,
-        conversation=args.conversation,
-        context=args.context,
-        admissible_commands=args.admissible_commands,
-    )
+    agent = Agent(**vars(args))
 
     args.envs = args.envs or twbench.env_list
-    # Expand tasks into their respective environments.
-    args.envs = [
+    args.envs = [  # Expand tasks into their respective environments.
         env
         for task in args.envs
         for env in (twbench.envs_per_task[task] if task in twbench.tasks else [task])

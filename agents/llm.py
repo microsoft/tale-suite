@@ -1,4 +1,3 @@
-import json
 import logging
 
 import llm
@@ -8,100 +7,68 @@ import twbench
 
 log = logging.getLogger("tw-bench")
 
+SYSTEM_PROMPT = (
+    "You are playing a text-based game and your goal is to finish it with the highest score."
+    " Upon reading the text observation, provide a *single* short phrase to interact with the game, e.g. `get lamp`."
+    " When stuck, try using the `help` command to see what commands are available."
+)
+
 
 class LLMAgent(twbench.Agent):
-    def __init__(self, model, *args, **kwargs):
-        self.model = llm.get_model(model)
+
+    def __init__(self, *args, **kwargs):
+        self.model = llm.get_model(kwargs["llm"])
 
         # Provide the API key, if one is needed and has been provided
-        if self.model.needs_key:
-            self.model.key = llm.get_key(
-                kwargs.get("key"), self.model.needs_key, self.model.key_env_var
-            )
+        self.model.key = llm.get_key(
+            kwargs.get("key"), kwargs["llm"], self.model.key_env_var
+        ) or llm.get_key(None, self.model.needs_key, self.model.key_env_var)
 
         self.seed = kwargs.get("seed", 1234)
         self.rng = np.random.RandomState(self.seed)
-        self.temperature = kwargs.get("temperature", 0.0)
-        self.context = kwargs.get("context", 100)
-        self.admissible_commands = kwargs.get("admissible_commands", False)
-        self.window = []
-        self.conversation = None
-        if kwargs.get("conversation", False):
-            self.conversation = self.model.conversation()
 
-    def context_length(self):
-        if self.conversation:
-            return len(self.conversation.responses[-self.context :])
-        else:
-            return len(self.window[-self.context :])
+        self.history = []
+        self.context = kwargs.get(
+            "context_limit", -0
+        )  # Default: keep all conversation turns.
+        self.act_temp = kwargs.get("act_temp", 0.0)
+        self.conversation = (
+            self.model.conversation() if kwargs.get("conversation") else None
+        )
 
     def act(self, obs, reward, done, infos):
-        if not self.conversation and not infos.get("admissible_commands"):
-            log.error("No valid actions available.")
-            return "RESTART", None
-
-        lines = ("\n").join(self.window[-self.context :])
-        context = (
-            f"The past {self.context} steps of the game play are as following to avoid taking the same step again that led to game ending:\n\n{lines}\n\n"
-            if lines and not self.conversation
-            else ""
-        )
-        system_prompt = (
-            f"You are a helpful assistant playing a text-based game. Reply ONLY with the ONE appropriate action selected from the list of admissible commands even if the game resets from the beginning.\n"
-            "If the game has reset to the beginnig or stuck in a loop try to take a different action from the one taken last time at the same step. Make sure you alway return ONLY an admissible command as the next step after the Output: and no other text.\n"
-            "If the game is stuck in a loop or not recognizing an invalid action reply with a random action from the previous list without giving a verbose explanation. No need to explain why.\n"
-            "We don't want anything in the output other than the next step and the output can never be an empty string.\nHere are some examples of inputs and outputs:\n\n"
-            "------------\nInput: {\"feedback\": \"You are in a closet. There is a gun on the floor. Better get it. To exit, go east. \n\nYou can see a small black pistol here.\", \"admissible_commands\": ['north', 'take pistol', 'east', 'push pistol to floor']}\nOutput: take pistol\n------------\n"
-            "------------\nInput: {\"feedback\": \"You are still on the streets. To the north is a restraunt where the mayor ate often. To the east is the Mayor's home.\", \"admissible_commands\": ['west', 'east', 'north', 'put paper down']}\nOutput: east\n------------\n"
-        )
-        input = (
-            json.dumps(
-                {"feedback": obs, "admissible_commands": infos["admissible_commands"]}
-            )
-            if self.admissible_commands
-            else obs
-        )
         if self.conversation:
+            self.conversation.responses = self.conversation.responses[-self.context :]
             response = self.conversation.prompt(
-                input,
-                system=system_prompt,
-                temperature=self.temperature,
+                prompt=f"{obs}\n>",
+                system=SYSTEM_PROMPT,
+                temperature=self.act_temp,
                 seed=self.seed,
-                context=self.context,
-                max_tokens=100,
                 top_p=1,
-                stop="\n",
             )
         else:
             response = self.model.prompt(
-                system_prompt + context + f"------------\nInput: {input}\nOutput: ",
-                temperature=self.temperature,
+                self.build_prompt(obs),
+                system=SYSTEM_PROMPT,
+                temperature=self.act_temp,
                 seed=self.seed,
-                max_tokens=100,
                 top_p=1,
-                stop="\n",
             )
 
-        action = response.text()
-        action = action.encode("utf-8").decode("unicode_escape").strip()
-        action = action.split("\n")[0]
-        action = action.strip()
+        action = response.text().strip()
+        self.history.append((obs, f"> {action}\n"))
+        return action, response
 
-        if infos["admissible_commands"] and action not in infos["admissible_commands"]:
-            log.warning(f'Invalid action "{action}" received.')
+    def build_prompt(self, observation):
+        messages = [{"role": "system", "content": SYSTEM_PROMPT}]
 
-        if self.conversation and not infos["admissible_commands"]:
-            self.conversation.responses[-1]._chunks = [
-                "R",
-                "E",
-                "S",
-                "T",
-                "A",
-                "R",
-                "T",
-            ]
-            action = "RESTART"
+        for obs, action in self.history[-self.context :]:
+            messages.append({"role": "user", "content": obs})
+            messages.append({"role": "assistant", "content": action})
 
-        self.window.append(f"{obs}\n> {action}\n")
+        messages.append({"role": "user", "content": observation})
 
-        return action[:100], response
+        # Discard the system prompt.
+        # Merge all messages content into a single string
+        prompt = "\n".join([msg["content"] for msg in messages[1:]])
+        return prompt
