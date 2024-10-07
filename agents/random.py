@@ -4,7 +4,7 @@ import twbench
 
 
 class RandomAgent(twbench.Agent):
-    def __init__(self, model, *args, **kwargs):
+    def __init__(self, **kwargs):
         self.model = None
         self.seed = kwargs.get("seed", 1234)
         self.context = kwargs.get("context", 100)
