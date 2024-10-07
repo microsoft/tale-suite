@@ -17,7 +17,8 @@ SYSTEM_PROMPT = (
 class LLMAgent(twbench.Agent):
 
     def __init__(self, *args, **kwargs):
-        self.model = llm.get_model(kwargs["llm"])
+        self.llm = kwargs["llm"]
+        self.model = llm.get_model(self.llm)
 
         # Provide the API key, if one is needed and has been provided
         self.model.key = llm.get_key(
@@ -34,6 +35,16 @@ class LLMAgent(twbench.Agent):
         self.act_temp = kwargs.get("act_temp", 0.0)
         self.conversation = (
             self.model.conversation() if kwargs.get("conversation") else None
+        )
+
+    @property
+    def uid(self):
+        return (
+            f"LLMAgent_{self.llm}"
+            f"_s{self.seed}"
+            f"_c{self.context}"
+            f"_t{self.act_temp}"
+            f"_conv{self.conversation is not None}"
         )
 
     def act(self, obs, reward, done, infos):

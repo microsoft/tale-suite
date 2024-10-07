@@ -129,7 +129,6 @@ def benchmark(agent, games, args):
 
     nb_games = 0
     log_file = None
-    games = sorted(games)
     max_game_name = max(len(os.path.basename(game)) for game in games)
     with tqdm(total=len(games), leave=False) as pbar:
         for game in games:
@@ -244,13 +243,12 @@ class TqdmLoggingHandler(logging.Handler):
             self.handleError(record)
 
 
-def setup_logging(args):
+def setup_logging(args, agent_uid):
     log.setLevel(logging.DEBUG)
 
-    agent_class = args.agent.split(":")[1]
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     os.makedirs(args.log_dir, exist_ok=True)
-    log_filename = f"tw-bench_{agent_class}_{args.llm}_{args.conversation}_{args.context_limit}_{timestamp}.log"
+    log_filename = f"tw-bench_{agent_uid}_{timestamp}.log"
     fh = logging.FileHandler(pjoin(args.log_dir, log_filename), mode="w")
     formatter = logging.Formatter("%(asctime)s: %(message)s")
     fh.setLevel(logging.DEBUG)
@@ -313,7 +311,7 @@ def parse_args():
                         help="Full qualified class name to evaluate. Default: %(default)s")
     parser.add_argument("--nb-steps", type=int, default=1000,
                         help="Maximum number of steps per game.")
-    parser.add_argument("--admissible_commands", action="store_true",
+    parser.add_argument("--admissible-commands", action="store_true",
                         help="Enable admissible commands.")
 
     parser.add_argument("--llm", default="gpt-4o-mini",
@@ -346,18 +344,7 @@ def parse_args():
 
 def main():
     args = parse_args()
-    setup_logging(args)
     args.verbose = args.verbose or args.very_verbose
-
-    if args.wandb:
-        os.environ["WANDB_MODE"] = "online"
-
-    # Log some info about the machine.
-    log.info(f"args = {args}")
-    log.info(f"system = {platform.system()}")
-    log.info(f"server = {platform.uname()[1]}")
-    log.info(f"working_dir = {os.getcwd()}")
-    log.info(f"datetime = {datetime.datetime.now()}")
 
     # Dynamically load agent class.
     path, klass = args.agent.split(":")
@@ -371,6 +358,18 @@ def main():
     # Instanciate the agent.
     Agent = getattr(mod, klass)
     agent = Agent(**vars(args))
+
+    setup_logging(args, agent_uid=agent.uid)
+
+    if args.wandb:
+        os.environ["WANDB_MODE"] = "online"
+
+    # Log some info about the machine.
+    log.info(f"args = {args}")
+    log.info(f"system = {platform.system()}")
+    log.info(f"server = {platform.uname()[1]}")
+    log.info(f"working_dir = {os.getcwd()}")
+    log.info(f"datetime = {datetime.datetime.now()}")
 
     args.envs = args.envs or twbench.env_list
     args.envs = [  # Expand tasks into their respective environments.

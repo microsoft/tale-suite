@@ -60,6 +60,17 @@ class ReactAgent(twbench.Agent):
             self.model.conversation() if kwargs.get("conversation") else None
         )
 
+    @property
+    def uid(self):
+        return (
+            f"LLMAgent_{self.llm}"
+            f"_s{self.seed}"
+            f"_c{self.context}"
+            f"_t{self.act_temp}"
+            f"_cot{self.cot_temp}"
+            f"_conv{self.conversation is not None}"
+        )
+
     def act(self, obs, reward, done, infos):
         question = "// Based on the above information (history), what is the best action to take? Let's think step by step, "
         response = self.conversation.prompt(
