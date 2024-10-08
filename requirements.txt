@@ -12,6 +12,7 @@ wandb
 pandas
 
 llm
+tiktoken
 #vllm
 #jinja2>=3.1.0
 #transformers

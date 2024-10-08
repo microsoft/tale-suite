@@ -1,11 +1,10 @@
-import io
 import os
 import shutil
 import tempfile
-import zipfile
 from os.path import join as pjoin
 
 import requests
+import tiktoken
 from tqdm import tqdm
 
 
@@ -44,7 +43,7 @@ def download(url, dst, desc=None, force=False):
         This code is inspired by
         https://github.com/huggingface/transformers/blob/v4.0.0/src/transformers/file_utils.py#L1069
     """
-    filename = dst_filename or url.split("/")[-1]
+    filename = dst or url.split("/")[-1]
     path = pjoin(mkdirs(dst), filename)
 
     if os.path.isfile(path) and not force:
@@ -90,27 +89,10 @@ def download(url, dst, desc=None, force=False):
     return path
 
 
-# def download(link):
-#     filename = link.split("/")[-1]
-#     response = requests.get(link)
-#     data = response.content
-#     return data, filename
-
-
-# def extract_file_from_zip(link):
-#     splits = link.split(":")
-#     downloadable_link = ":".join(splits[:-1])
-#     filename_to_extract = splits[-1]
-#     data, filename = download(downloadable_link)
-#     zipped_file = zipfile.ZipFile(io.BytesIO(data))
-#     data = zipped_file.read(filename_to_extract)
-#     return data, filename_to_extract
-
-
-# def download_game(game_info):
-#     if ".zip:" in game_info["link"].lower():
-#         data, filename = extract_file_from_zip(game_info["link"])
-#     else:
-#         data, filename = download(game_info["link"])
-
-#     return data
+def count_tokens(messages=None, text=None):
+    enc = tiktoken.get_encoding("o200k_base")
+    if messages is not None:
+        return sum(len(enc.encode(msg["content"])) for msg in messages)
+    if text is not None:
+        return len(enc.encode(text))
+    return 0

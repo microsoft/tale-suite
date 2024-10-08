@@ -4,6 +4,7 @@ import llm
 import numpy as np
 
 import twbench
+from twbench.utils import count_tokens
 
 log = logging.getLogger("tw-bench")
 
@@ -48,27 +49,31 @@ class LLMAgent(twbench.Agent):
         )
 
     def act(self, obs, reward, done, infos):
-        if self.conversation:
-            self.conversation.responses = self.conversation.responses[-self.context :]
-            response = self.conversation.prompt(
-                prompt=f"{obs}\n>",
-                system=SYSTEM_PROMPT,
-                temperature=self.act_temp,
-                seed=self.seed,
-                top_p=1,
-            )
-        else:
-            response = self.model.prompt(
-                self.build_prompt(obs),
-                system=SYSTEM_PROMPT,
-                temperature=self.act_temp,
-                seed=self.seed,
-                top_p=1,
-            )
+        conversation = self.conversation or self.model.conversation()
+        conversation.responses = conversation.responses[-self.context :]
+        prompt = f"{obs}\n>" if self.conversation else self.build_prompt(obs)
+
+        response = conversation.prompt(
+            prompt=prompt,
+            system=SYSTEM_PROMPT,
+            temperature=self.act_temp,
+            seed=self.seed,
+            top_p=1,
+        )
 
         action = response.text().strip()
         self.history.append((obs, f"> {action}\n"))
-        return action, response
+
+        # Compute usage statistics
+        messages = conversation.responses[-1]._prompt_json["messages"]
+        stats = {
+            "prompt": response._prompt_json,
+            "response": response.text(),
+            "nb_tokens": count_tokens(messages=messages)
+            + count_tokens(text=response.text()),
+        }
+
+        return action, stats
 
     def build_prompt(self, observation):
         messages = [{"role": "system", "content": SYSTEM_PROMPT}]

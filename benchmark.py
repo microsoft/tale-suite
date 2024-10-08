@@ -6,20 +6,21 @@ import os
 import platform
 import time
 from os.path import join as pjoin
+from typing import List
 
 import gymnasium as gym
 import pandas as pd
-import wandb
 from termcolor import colored
 from tqdm import tqdm
 
 import twbench
+import wandb
 
 os.environ["WANDB_MODE"] = "disabled"
 log = logging.getLogger("tw-bench")
 
 
-def evaluate(agent, env_name, args, table):
+def evaluate(agent, env_name, args):
     env = gym.make(
         f"twbench/{env_name}-v0",
         disable_env_checker=True,
@@ -36,14 +37,18 @@ def evaluate(agent, env_name, args, table):
     log.debug(f"Environment reset.\n{obs}\n")
 
     max_score = infos["max_score"]
+    nb_resets = 0
+    nb_wins = 0
     nb_losts = 0
-    nb_invalid = 0
+    nb_resets = 0
+    nb_invalid_actions = 0
     highscore = 0
     score = 0
     done = False
+    results = []
 
     for step in range(1, args.nb_steps + 1):
-        action, response = agent.act(obs, score, done, infos)
+        action, stats = agent.act(obs, score, done, infos)
         log.debug(colored(f"> {action}", "green"))
 
         if args.debug:
@@ -59,35 +64,29 @@ def evaluate(agent, env_name, args, table):
             and infos["admissible_commands"]
             and action not in infos["admissible_commands"]
         ):
-            nb_invalid += 1
+            nb_invalid_actions += 1
 
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
         msg = msg.format(step, time.time() - start_time, score, moves, action)
         log.info(msg)
         norm_score = 100.0 * score / max_score
-        if args.wandb:
-            wandb.log(
-                {
-                    "Step": step,
-                    "Score": score,
-                    "Max Score": max_score,
-                    "Normalized Score": norm_score,
-                    "Moves": moves,
-                    "Context": agent.context_length(),
-                }
-            )
-            # fmt: off
-            if response:
-                table.add_data(
-                    step, score, max_score, norm_score, moves,agent.context_length(),
-                    obs, action, feedback,response.messages, response.text(), response.token_usage
-                )
-            else:
-                table.add_data(
-                    step, score, max_score, norm_score, moves, agent.context_length(),
-                    obs, action, feedback, None, None, None
-                )
-            # fmt: on
+        wandb.log(
+            {
+                "Step": step,
+                "Score": score,
+                "Max Score": max_score,
+                "Normalized Score": norm_score,
+                "Moves": moves,
+            }
+        )
+
+        # fmt: off
+        #table.add_data(
+        results.append([
+            step, score, max_score, norm_score, moves,
+            action, feedback, stats["prompt"], stats["response"], stats["nb_tokens"]
+        ])
+        # fmt: on
 
         log.debug(obs)
 
@@ -95,6 +94,7 @@ def evaluate(agent, env_name, args, table):
             highscore = max(score, highscore)
 
             if infos["won"]:
+                nb_wins += 1
                 if highscore == max_score:
                     break  # No reason to play that game more.
             elif infos["lost"]:
@@ -107,6 +107,7 @@ def evaluate(agent, env_name, args, table):
             obs, infos = env.reset()
             obs = last_obs + "\n-= Restarting =-\n" + obs
             agent.reset(obs, infos)
+            nb_resets += 1
 
             log.debug(f"Environment reset.\n{obs}\n")
 
@@ -115,7 +116,19 @@ def evaluate(agent, env_name, args, table):
     # Keep highest score.
     highscore = max(score, highscore)
 
-    return step, nb_invalid, nb_losts, highscore, max_score, time.time() - start_time
+    stats = {
+        "nb_steps": step,
+        "nb_invalid_actions": nb_invalid_actions,
+        "nb_losts": nb_losts,
+        "nb_wins": nb_wins,
+        "nb_resets": nb_resets,
+        "highscore": highscore,
+        "max_score": max_score,
+        "norm_score": highscore / max_score,
+        "duration": time.time() - start_time,
+    }
+
+    return stats, results
 
 
 def benchmark(agent, games, args):
@@ -128,52 +141,45 @@ def benchmark(agent, games, args):
     total_invalid = 0
 
     nb_games = 0
-    log_file = None
     max_game_name = max(len(os.path.basename(game)) for game in games)
     with tqdm(total=len(games), leave=False) as pbar:
         for game in games:
             total_steps = 0
             game_name = os.path.basename(game)
-            log_file = os.path.join(
-                "logs",
-                f"{game_name}_{args.llm}_{args.context_limit}_s{args.seed}_t{args.act_temp}_c{int(args.conversation)}_a{int(args.admissible_commands)}.json",
+            logfile = pjoin(
+                args.log_dir,
+                f"{game_name}",
+                f"a{int(args.admissible_commands)}_s{args.game_seed}.jsonl",
             )
-            if os.path.exists(log_file):
-                log.info("Skipping game: {}".format(game_name))
+            os.makedirs(os.path.dirname(logfile), exist_ok=True)
+            if os.path.exists(logfile) and not args.force:
+                pbar.write(colored(f"{game_name} (skip done)", "yellow"))
+                log.info(
+                    f"Skipping {game_name} evaluation, already saved in {logfile}."
+                )
+                pbar.update(1)
                 continue  # Skip games that have already been evaluated.
 
             pbar.set_postfix_str(game_name)
 
-            table = None
-            if args.wandb:
-                wandb_config = {
-                    "game": game_name,
-                    "llm": args.llm,
-                    "seed": args.seed,
-                    "context": args.context,
-                    "temperature": args.temperature,
-                    "conversation": args.conversation,
-                    "admissible_commands": args.admissible_commands,
-                }
-                run = wandb.init(
-                    project="text-games-benchmark", config=wandb_config, reinit=True
-                )
-
-                # create a wandb table with corresponding columns
-                # fmt: off
-                columns = [
-                    "Step", "Score", "Max Score", "Normalized Score", "Moves", "Context", "Observation",
-                    "Action", "Feedback", "Input", "Output", "Token Usage"
-                ]
-                # fmt: on
-                table = wandb.Table(columns=columns)
+            wandb_config = {
+                "game": game_name,
+                "llm": args.llm,
+                "seed": args.seed,
+                "context": args.context_limit,
+                "act-temp": args.act_temp,
+                "cot-temp": args.cot_temp,
+                "conversation": args.conversation,
+                "admissible_commands": args.admissible_commands,
+            }
+            run = wandb.init(
+                project="text-games-benchmark", config=wandb_config, reinit=True
+            )
 
             try:
-                nb_steps, nb_invalid, nb_losts, final_score, max_score, seconds = (
-                    evaluate(agent, game, args, table)
-                )
+                stats, results = evaluate(agent, game, args)
             except ValueError as e:
-                pbar.write("{} (skip)".format(game_name))
+                pbar.write(colored(f"{game_name} (error)", "red"))
                 log.error(str(e))
                 pbar.update(1)
                 if args.debug:
@@ -183,37 +189,42 @@ def benchmark(agent, games, args):
 
             nb_games += 1
 
-            norm_score = 100.0 * final_score / max_score
-            assert norm_score <= 100.0
-            total_time += seconds
-            total_steps += nb_steps
-            total_invalid += nb_invalid
+            total_time += stats["duration"]  # In seconds
+            total_steps += stats["nb_steps"]
+            total_invalid += stats["nb_invalid_actions"]
 
-            # fmt: off
-            msg = "{}\t{:5.0f} seconds\t{:4d} losts\tScore: {:3d}/{:3d} ({:6.2f}%)"
-            msg = msg.format(game_name.ljust(max_game_name), seconds, nb_losts,
-                             final_score, max_score, norm_score)
-            # fmt: on
+            msg = (
+                f"{game_name.ljust(max_game_name)}"
+                f"  Steps: {stats['nb_steps']:4d}/{args.nb_steps:4d}"
+                f"  Time: {datetime.timedelta(seconds=int(stats['duration']))}"
+                f"{stats['nb_resets']:4d} resets"
+                f"  Score: {stats['highscore']:3d}/{stats['max_score']:3d} ({stats['norm_score']:6.2%})"
+            )
 
             log.info(msg)
-            if args.wandb:
-                wandb.log(
-                    {
-                        "Total steps": total_steps,
-                        "Final score": final_score,
-                        "Normalized Score": norm_score,
-                    }
-                )
+            wandb.log(
+                {
+                    "Total steps": stats["nb_steps"],
+                    "Final score": stats["highscore"],
+                    "Normalized Score": stats["norm_score"],
+                }
+            )
             pbar.write(msg)
             pbar.update(1)
 
-            mean_score += norm_score
+            mean_score += stats["norm_score"]
 
-            if args.wandb:
-                df = pd.DataFrame(table.data, columns=table.columns)
-                df.to_json(log_file, orient="records", lines=True)
-                run.log({"log_table": table})
-                wandb.finish()
+            # fmt: off
+            columns = [
+                "Step", "Score", "Max Score", "Normalized Score", "Moves",
+                "Action", "Feedback", "Prompt", "Response", "Token Usage"
+            ]
+            # fmt: on
+            df = pd.DataFrame(results, columns=columns)
+            df.to_json(logfile, orient="records", lines=True)
+
+            run.log({"rollout": wandb.Table(dataframe=df)})
+            run.finish()
 
     if nb_games > 0 and total_time > 0:
         log.critical(
@@ -243,13 +254,11 @@ class TqdmLoggingHandler(logging.Handler):
             self.handleError(record)
 
 
-def setup_logging(args, agent_uid):
+def setup_logging(args):
     log.setLevel(logging.DEBUG)
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    os.makedirs(args.log_dir, exist_ok=True)
-    log_filename = f"tw-bench_{agent_uid}_{timestamp}.log"
-    fh = logging.FileHandler(pjoin(args.log_dir, log_filename), mode="w")
+    fh = logging.FileHandler(pjoin(args.log_dir, f"{timestamp}.log"), mode="w")
     formatter = logging.Formatter("%(asctime)s: %(message)s")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)
@@ -332,6 +341,8 @@ def parse_args():
 
     parser.add_argument("--wandb", action="store_true",
                         help="Log to wandb")
+    parser.add_argument("-f", "--force", action="store_true",
+                        help="Force overwriting existing log files.")
     parser.add_argument("-v", "--verbose", action="store_true",
                         help="Enable verbose mode.")
     parser.add_argument("-vv", "--very-verbose", action="store_true",
@@ -359,7 +370,10 @@ def main():
     Agent = getattr(mod, klass)
     agent = Agent(**vars(args))
 
-    setup_logging(args, agent_uid=agent.uid)
+    # Create logging directory.
+    args.log_dir = pjoin(args.log_dir, f"tw-bench_{agent.uid}")
+    os.makedirs(args.log_dir, exist_ok=True)
+    setup_logging(args)
 
     if args.wandb:
         os.environ["WANDB_MODE"] = "online"

@@ -3,6 +3,7 @@ import re
 import numpy as np
 
 import twbench
+from twbench.utils import count_tokens
 
 
 class RandomAgent(twbench.Agent):
@@ -25,8 +26,14 @@ class RandomAgent(twbench.Agent):
         return f"RandomAgent_s{self.seed}"
 
     def act(self, obs, reward, done, infos):
+        stats = {
+            "prompt": None,
+            "response": None,
+            "nb_tokens": count_tokens(text=obs),
+        }
+
         if "admissible_commands" in infos:
-            return self.rng.choice(infos["admissible_commands"]), None
+            return self.rng.choice(infos["admissible_commands"]), stats
 
         action = self.rng.choice(self.actions)
         if action in ["take", "drop", "eat", "attack"]:
@@ -36,4 +43,4 @@ class RandomAgent(twbench.Agent):
             if len(words) > 0:
                 action += " " + self.rng.choice(words)
 
-        return action, None
+        return str(action), stats
