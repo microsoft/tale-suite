@@ -31,7 +31,12 @@ def evaluate(agent, env_name, args):
     log.debug("Using {}".format(env.__class__.__name__))
 
     start_time = time.time()
+
+    if "Walkthrough Agent" in agent.uid:
+        agent.load_wlkthr(env.get_walkthrough())
+
     obs, infos = env.reset()
+
     agent.reset(obs, infos)
 
     log.debug(f"Environment reset.\n{obs}\n")
@@ -318,7 +323,7 @@ def parse_args():
 
     parser.add_argument("--agent", default="./agent_random.py:RandomAgent",
                         help="Full qualified class name to evaluate. Default: %(default)s")
-    parser.add_argument("--nb-steps", type=int, default=1000,
+    parser.add_argument("--nb-steps", type=int, default=20,
                         help="Maximum number of steps per game.")
     parser.add_argument("--admissible-commands", action="store_true",
                         help="Enable admissible commands.")

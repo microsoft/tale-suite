@@ -43,7 +43,7 @@ def download(url, dst, desc=None, force=False):
         This code is inspired by
         https://github.com/huggingface/transformers/blob/v4.0.0/src/transformers/file_utils.py#L1069
     """
-    filename = dst or url.split("/")[-1]
+    filename = dst or url.split("/")[-1] + "_temp"
     path = pjoin(mkdirs(dst), filename)
 
     if os.path.isfile(path) and not force:
@@ -52,7 +52,10 @@ def download(url, dst, desc=None, force=False):
     # Download to a temp folder first to avoid corrupting the cache
     # with incomplete downloads.
     temp_dir = mkdirs(pjoin(tempfile.gettempdir(), "twbench"))
+    filename += "_temp"
     temp_path = pjoin(temp_dir, filename)
+    print("Temp dir", temp_dir)
+    print("Path:", temp_path)
     with open(temp_path, "ab") as temp_file:
         headers = {}
         resume_size = temp_file.tell()

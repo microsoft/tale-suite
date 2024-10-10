@@ -17,7 +17,8 @@ log = logging.getLogger("tw-bench")
 
 def prepare_jericho_data(force=TWBENCH_FORCE_DOWNLOAD):
     if os.path.exists(TWBENCH_CACHE_JERICHO) and not force:
-        return
+        if os.listdir(TWBENCH_CACHE_JERICHO):
+            return
 
     os.makedirs(TWBENCH_CACHE_JERICHO, exist_ok=True)
 
