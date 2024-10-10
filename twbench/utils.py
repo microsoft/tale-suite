@@ -46,7 +46,7 @@ def download(url, dst, desc=None, force=False):
         This code is inspired by
         https://github.com/huggingface/transformers/blob/v4.0.0/src/transformers/file_utils.py#L1069
     """
-    filename = dst or url.split("/")[-1]
+    filename = url.split("/")[-1]
     path = pjoin(mkdirs(dst), filename)
 
     if os.path.isfile(path) and not force:
