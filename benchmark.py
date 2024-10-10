@@ -41,7 +41,6 @@ def evaluate(agent, env_name, args, wandb_run):
     obs, infos = env.reset()
 
 
-    agent = agent.new()
     agent.reset(obs, infos)
 
     log.debug(f"Environment reset.\n{obs}\n")
