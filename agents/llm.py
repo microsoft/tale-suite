@@ -1,18 +1,30 @@
-import logging
-
 import llm
 import numpy as np
+from tenacity import (
+    retry,
+    retry_if_exception,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 import twbench
-from twbench.utils import count_tokens
-
-log = logging.getLogger("tw-bench")
+from twbench.utils import count_tokens, is_recoverable_error
 
 SYSTEM_PROMPT = (
     "You are playing a text-based game and your goal is to finish it with the highest score."
-    " Upon reading the text observation, provide a *single* short phrase to interact with the game, e.g. `get lamp`."
+    " Upon reading the text observation, provide a *single* short phrase to interact with the game, e.g. `get lamp` (without the backticks)."
     " When stuck, try using the `help` command to see what commands are available."
 )
+
+
+def format_messages_to_markdown(messages):
+    """Concatenate messages into a single markdown string."""
+    markdown_content = ""
+    for message in messages:
+        role = message["role"].capitalize()
+        content = message["content"]
+        markdown_content += f"#### {role}\n\n```\n{content}\n```\n\n"
+    return markdown_content
 
 
 class LLMAgent(twbench.Agent):
@@ -20,6 +32,7 @@ class LLMAgent(twbench.Agent):
     def __init__(self, *args, **kwargs):
         self.llm = kwargs["llm"]
         self.model = llm.get_model(self.llm)
+        self.allows_system_prompt = self.llm not in ["o1-mini", "o1-preview"]
 
         # Provide the API key, if one is needed and has been provided
         self.model.key = llm.get_key(
@@ -30,13 +43,11 @@ class LLMAgent(twbench.Agent):
         self.rng = np.random.RandomState(self.seed)
 
         self.history = []
-        self.context = kwargs.get(
-            "context_limit", -0
-        )  # Default: keep all conversation turns.
+        self.context = kwargs.get("context_limit", -0)  # i.e. keep all.
         self.act_temp = kwargs.get("act_temp", 0.0)
-        self.conversation = (
-            self.model.conversation() if kwargs.get("conversation") else None
-        )
+        self.conversation = None
+        if kwargs.get("conversation"):
+            self.conversation = self.model.conversation()
 
     @property
     def uid(self):
@@ -48,17 +59,41 @@ class LLMAgent(twbench.Agent):
             f"_conv{self.conversation is not None}"
         )
 
+    @retry(
+        retry=retry_if_exception(is_recoverable_error),
+        wait=wait_random_exponential(multiplier=1, max=40),
+        stop=stop_after_attempt(100),
+    )
+    def _llm_call(self, conversation, *args, **kwargs):
+        response = conversation.prompt(*args, **kwargs)
+        response.duration_ms()  # Forces the response to be computed.
+        return response
+
     def act(self, obs, reward, done, infos):
         conversation = self.conversation or self.model.conversation()
         conversation.responses = conversation.responses[-self.context :]
+        # TODO: Add a message saying the history was truncated?
+
         prompt = f"{obs}\n>" if self.conversation else self.build_prompt(obs)
 
-        response = conversation.prompt(
+        if not self.allows_system_prompt:
+            if len(conversation.responses) == 0:
+                # Model doesn't support system prompt and this is the first message in the conversation.
+                prompt = f"{SYSTEM_PROMPT}\n\n{prompt}"
+            else:
+                # Make sure the system prompt is added to the first message in the conversation.
+                first_prompt = conversation.responses[0].prompt
+                if SYSTEM_PROMPT not in first_prompt.prompt:
+                    first_prompt.prompt = f"{SYSTEM_PROMPT}\n\n{first_prompt.prompt}"
+
+        response = self._llm_call(
+            conversation,
             prompt=prompt,
-            system=SYSTEM_PROMPT,
+            system=SYSTEM_PROMPT if self.allows_system_prompt else None,
             temperature=self.act_temp,
             seed=self.seed,
             top_p=1,
+            stream=False,
         )
 
         action = response.text().strip()
@@ -66,8 +101,9 @@ class LLMAgent(twbench.Agent):
 
         # Compute usage statistics
         messages = conversation.responses[-1]._prompt_json["messages"]
+
         stats = {
-            "prompt": response._prompt_json,
+            "prompt": format_messages_to_markdown(messages),
             "response": response.text(),
             "nb_tokens": count_tokens(messages=messages)
             + count_tokens(text=response.text()),
@@ -76,7 +112,10 @@ class LLMAgent(twbench.Agent):
         return action, stats
 
     def build_prompt(self, observation):
-        messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+        messages = []
+        # messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+        # if not self.allows_system_prompt:
+        #     messages[-1]["role"] = "user"
 
         for obs, action in self.history[-self.context :]:
             messages.append({"role": "user", "content": obs})
@@ -86,5 +125,6 @@ class LLMAgent(twbench.Agent):
 
         # Discard the system prompt.
         # Merge all messages content into a single string
-        prompt = "\n".join([msg["content"] for msg in messages[1:]])
+        # prompt = "\n".join([msg["content"] for msg in messages[1:]])
+        prompt = "\n".join([msg["content"] for msg in messages])
         return prompt

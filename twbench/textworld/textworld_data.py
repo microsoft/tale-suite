@@ -1,11 +1,7 @@
 import glob
-import json
-import logging
 import os
 import zipfile
 from os.path import join as pjoin
-
-import tqdm
 
 from twbench.config import TWBENCH_CACHE_HOME, TWBENCH_FORCE_DOWNLOAD
 from twbench.utils import download
@@ -15,8 +11,6 @@ TW_COOKING_URL = (
 )
 TWBENCH_CACHE_TEXTWORLD = pjoin(TWBENCH_CACHE_HOME, "textworld")
 TWBENCH_CACHE_TWCOOKING = pjoin(TWBENCH_CACHE_TEXTWORLD, "tw-cooking")
-
-log = logging.getLogger("tw-bench")
 
 
 def prepare_twcooking_data(force=TWBENCH_FORCE_DOWNLOAD):

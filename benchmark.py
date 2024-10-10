@@ -5,6 +5,7 @@ import logging
 import os
 import platform
 import time
+from functools import partial
 from os.path import join as pjoin
 from typing import List
 
@@ -15,12 +16,13 @@ from tqdm import tqdm
 
 import twbench
 import wandb
+from twbench.utils import log
 
 os.environ["WANDB_MODE"] = "disabled"
-log = logging.getLogger("tw-bench")
 
 
 def evaluate(agent, env_name, args):
+
     env = gym.make(
         f"twbench/{env_name}-v0",
         disable_env_checker=True,
@@ -32,6 +34,8 @@ def evaluate(agent, env_name, args):
 
     start_time = time.time()
     obs, infos = env.reset()
+
+    agent = agent.new()
     agent.reset(obs, infos)
 
     log.debug(f"Environment reset.\n{obs}\n")
@@ -47,13 +51,16 @@ def evaluate(agent, env_name, args):
     done = False
     results = []
 
-    for step in range(1, args.nb_steps + 1):
+    for step in tqdm(
+        range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
+    ):
         action, stats = agent.act(obs, score, done, infos)
         log.debug(colored(f"> {action}", "green"))
 
         if args.debug:
             breakpoint()
 
+        prev_obs = obs
         obs, _, done, infos = env.step(action)
         score = infos["score"]
         moves = infos["moves"]
@@ -84,7 +91,7 @@ def evaluate(agent, env_name, args):
         #table.add_data(
         results.append([
             step, score, max_score, norm_score, moves,
-            action, feedback, stats["prompt"], stats["response"], stats["nb_tokens"]
+            prev_obs, action, feedback, stats["prompt"], stats["response"], stats["nb_tokens"]
         ])
         # fmt: on
 
@@ -142,7 +149,7 @@ def benchmark(agent, games, args):
 
     nb_games = 0
     max_game_name = max(len(os.path.basename(game)) for game in games)
-    with tqdm(total=len(games), leave=False) as pbar:
+    with tqdm(total=len(games), desc="Benchmarking", unit="game", leave=False) as pbar:
         for game in games:
             total_steps = 0
             game_name = os.path.basename(game)
@@ -164,12 +171,14 @@ def benchmark(agent, games, args):
 
             wandb_config = {
                 "game": game_name,
+                "agent": agent.uid,
                 "llm": args.llm,
                 "seed": args.seed,
                 "context": args.context_limit,
                 "act-temp": args.act_temp,
                 "cot-temp": args.cot_temp,
                 "conversation": args.conversation,
+                "max_steps": args.nb_steps,
                 "admissible_commands": args.admissible_commands,
             }
             run = wandb.init(
@@ -217,7 +226,7 @@ def benchmark(agent, games, args):
             # fmt: off
             columns = [
                 "Step", "Score", "Max Score", "Normalized Score", "Moves",
-                "Action", "Feedback", "Prompt", "Response", "Token Usage"
+                "Observation", "Action", "Feedback", "Prompt", "Response", "Token Usage"
             ]
             # fmt: on
             df = pd.DataFrame(results, columns=columns)
@@ -369,6 +378,7 @@ def main():
     # Instanciate the agent.
     Agent = getattr(mod, klass)
     agent = Agent(**vars(args))
+    agent.new = partial(Agent, **vars(args))
 
     # Create logging directory.
     args.log_dir = pjoin(args.log_dir, f"tw-bench_{agent.uid}")

@@ -1,13 +1,15 @@
-import logging
-
 import llm
 import numpy as np
+from tenacity import (
+    retry,
+    retry_if_exception,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 from termcolor import colored
 
 import twbench
-
-log = logging.getLogger("tw-bench")
-
+from twbench.utils import count_tokens, is_recoverable_error, log
 
 SYSTEM_PROMPT = (
     "You are playing a text-based game and your goal is to finish it with the highest score."
@@ -52,18 +54,17 @@ class ReactAgent(twbench.Agent):
         self.rng = np.random.RandomState(self.seed)
 
         self.history = []
-
-        self.context = kwargs.get("context", 100)
+        self.context = kwargs.get("context_limit", -0)  # i.e. keep all.
         self.cot_temp = kwargs.get("cot_temp", 0.0)
         self.act_temp = kwargs.get("act_temp", 0.0)
-        self.conversation = (
-            self.model.conversation() if kwargs.get("conversation") else None
-        )
+        self.conversation = None
+        if kwargs.get("conversation"):
+            self.conversation = self.model.conversation()
 
     @property
     def uid(self):
         return (
-            f"LLMAgent_{self.llm}"
+            f"ReactAgent_{self.llm}"
             f"_s{self.seed}"
             f"_c{self.context}"
             f"_t{self.act_temp}"
@@ -71,9 +72,22 @@ class ReactAgent(twbench.Agent):
             f"_conv{self.conversation is not None}"
         )
 
+    @retry(
+        retry=retry_if_exception(is_recoverable_error),
+        wait=wait_random_exponential(multiplier=1, max=40),
+        stop=stop_after_attempt(100),
+    )
+    def _llm_call(self, conversation, *args, **kwargs):
+        response = conversation.prompt(*args, **kwargs)
+        response.duration_ms()  # Forces the response to be computed.
+        return response
+
     def act(self, obs, reward, done, infos):
+        assert self.conversation, "TODO: deal with non conversation mode."
+
         question = "// Based on the above information (history), what is the best action to take? Let's think step by step, "
-        response = self.conversation.prompt(
+        response = self._llm_call(
+            self.conversation,
             prompt=f"{obs}\n\n{question}",
             system=SYSTEM_PROMPT,
             temperature=self.cot_temp,
@@ -85,8 +99,9 @@ class ReactAgent(twbench.Agent):
         log.debug(colored(answer, "green"))
 
         prompt = "// Provide your chosen action on a single line while respecting the desired format."
-        response = self.conversation.prompt(
-            prompt,
+        response = self._llm_call(
+            self.conversation,
+            prompt=prompt,
             system=SYSTEM_PROMPT,
             temperature=self.act_temp,
             seed=self.seed,
