@@ -1,5 +1,4 @@
 import json
-import logging
 import os
 from os.path import join as pjoin
 
@@ -9,10 +8,9 @@ from twbench.utils import download
 GAMES_URLS = "https://github.com/BYU-PCCL/z-machine-games/raw/master/jericho-game-suite"
 TWBENCH_CACHE_JERICHO = pjoin(TWBENCH_CACHE_HOME, "jericho")
 
+
 with open(pjoin(os.path.dirname(__file__), "games.json")) as f:
     GAMES_INFOS = json.load(f)
-
-log = logging.getLogger("tw-bench")
 
 
 def prepare_jericho_data(force=TWBENCH_FORCE_DOWNLOAD):

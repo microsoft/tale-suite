@@ -4,7 +4,9 @@ import importlib
 import logging
 import os
 import platform
+import sys
 import time
+from functools import partial
 from os.path import join as pjoin
 from typing import List
 
@@ -15,12 +17,13 @@ from tqdm import tqdm
 
 import twbench
 import wandb
+from twbench.utils import log
 
 os.environ["WANDB_MODE"] = "disabled"
-log = logging.getLogger("tw-bench")
 
 
-def evaluate(agent, env_name, args):
+def evaluate(agent, env_name, args, wandb_run):
+
     env = gym.make(
         f"twbench/{env_name}-v0",
         disable_env_checker=True,
@@ -37,6 +40,8 @@ def evaluate(agent, env_name, args):
 
     obs, infos = env.reset()
 
+
+    agent = agent.new()
     agent.reset(obs, infos)
 
     log.debug(f"Environment reset.\n{obs}\n")
@@ -52,13 +57,16 @@ def evaluate(agent, env_name, args):
     done = False
     results = []
 
-    for step in range(1, args.nb_steps + 1):
+    for step in tqdm(
+        range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
+    ):
         action, stats = agent.act(obs, score, done, infos)
         log.debug(colored(f"> {action}", "green"))
 
         if args.debug:
             breakpoint()
 
+        prev_obs = obs
         obs, _, done, infos = env.step(action)
         score = infos["score"]
         moves = infos["moves"]
@@ -74,22 +82,22 @@ def evaluate(agent, env_name, args):
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
         msg = msg.format(step, time.time() - start_time, score, moves, action)
         log.info(msg)
-        norm_score = 100.0 * score / max_score
-        wandb.log(
+        norm_score = score / max_score
+
+        wandb_run.log(
             {
-                "Step": step,
-                "Score": score,
-                "Max Score": max_score,
-                "Normalized Score": norm_score,
-                "Moves": moves,
-            }
+                "episode/moves": moves,
+                "episode/score": score,
+                "episode/normalized_score": norm_score,
+            },
+            step=step + 1,
         )
 
         # fmt: off
         #table.add_data(
         results.append([
             step, score, max_score, norm_score, moves,
-            action, feedback, stats["prompt"], stats["response"], stats["nb_tokens"]
+            prev_obs, action, feedback, stats["prompt"], stats["response"], stats["nb_tokens"]
         ])
         # fmt: on
 
@@ -123,6 +131,7 @@ def evaluate(agent, env_name, args):
 
     stats = {
         "nb_steps": step,
+        "nb_moves": moves,
         "nb_invalid_actions": nb_invalid_actions,
         "nb_losts": nb_losts,
         "nb_wins": nb_wins,
@@ -147,7 +156,7 @@ def benchmark(agent, games, args):
 
     nb_games = 0
     max_game_name = max(len(os.path.basename(game)) for game in games)
-    with tqdm(total=len(games), leave=False) as pbar:
+    with tqdm(total=len(games), desc="Benchmarking", unit="game", leave=False) as pbar:
         for game in games:
             total_steps = 0
             game_name = os.path.basename(game)
@@ -169,20 +178,23 @@ def benchmark(agent, games, args):
 
             wandb_config = {
                 "game": game_name,
-                "llm": args.llm,
-                "seed": args.seed,
-                "context": args.context_limit,
-                "act-temp": args.act_temp,
-                "cot-temp": args.cot_temp,
-                "conversation": args.conversation,
+                "agent": agent.uid,
+                # "llm": args.llm,
+                # "seed": args.seed,
+                # "context": args.context_limit,
+                # "act-temp": args.act_temp,
+                # "cot-temp": args.cot_temp,
+                # "conversation": args.conversation,
+                "max_steps": args.nb_steps,
                 "admissible_commands": args.admissible_commands,
+                **agent.params,
             }
-            run = wandb.init(
+            wandb_run = wandb.init(
                 project="text-games-benchmark", config=wandb_config, reinit=True
             )
 
             try:
-                stats, results = evaluate(agent, game, args)
+                stats, results = evaluate(agent, game, args, wandb_run)
             except ValueError as e:
                 pbar.write(colored(f"{game_name} (error)", "red"))
                 log.error(str(e))
@@ -207,13 +219,6 @@ def benchmark(agent, games, args):
             )
 
             log.info(msg)
-            wandb.log(
-                {
-                    "Total steps": stats["nb_steps"],
-                    "Final score": stats["highscore"],
-                    "Normalized Score": stats["norm_score"],
-                }
-            )
             pbar.write(msg)
             pbar.update(1)
 
@@ -222,14 +227,28 @@ def benchmark(agent, games, args):
             # fmt: off
             columns = [
                 "Step", "Score", "Max Score", "Normalized Score", "Moves",
-                "Action", "Feedback", "Prompt", "Response", "Token Usage"
+                "Observation", "Action", "Feedback", "Prompt", "Response", "Token Usage"
             ]
             # fmt: on
             df = pd.DataFrame(results, columns=columns)
             df.to_json(logfile, orient="records", lines=True)
 
-            run.log({"rollout": wandb.Table(dataframe=df)})
-            run.finish()
+            wandb_run.log(
+                {
+                    "episode/rollout": wandb.Table(dataframe=df),
+                    "total/Env. Steps": stats["nb_steps"],
+                    "total/Game Moves": stats["nb_moves"],
+                    "total/Invalid Actions": stats["nb_invalid_actions"],
+                    "total/Losts": stats["nb_losts"],
+                    "total/Wins": stats["nb_wins"],
+                    "total/Resets": stats["nb_resets"],
+                    "final/Highscore": stats["highscore"],
+                    "final/Game Max Score": stats["max_score"],
+                    "final/Normalized Score": stats["norm_score"],
+                    "final/Duration": stats["duration"],
+                }
+            )
+            wandb_run.finish()
 
     if nb_games > 0 and total_time > 0:
         log.critical(
@@ -312,6 +331,31 @@ def pretty_print_tasks(num_cols: int = 3, disable_print: bool = False):
         print("\n".join(output))
 
 
+def exit_listing_agents(agent=None):
+    msg = ""
+    if agent is not None:
+        msg += "Unknown agent: {}\n\n".format(agent)
+
+    msg += "Available agents:\n  "
+    msg += "\n  ".join(sorted(twbench.agent.AGENTS))
+    print(msg)
+    sys.exit(1)
+
+
+def _maybe_load_agent_module():
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("--agent")
+    args, _ = parser.parse_known_args()
+    if args.agent:
+        print(f"Importing agent(s) from {args.agent}.")
+
+        import importlib
+
+        spec = importlib.util.spec_from_file_location("twbench.agents", args.agent)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
+
 def parse_args():
     # fmt: off
     parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
@@ -328,52 +372,94 @@ def parse_args():
     parser.add_argument("--admissible-commands", action="store_true",
                         help="Enable admissible commands.")
 
-    parser.add_argument("--llm", default="gpt-4o-mini",
-                        help="LLM to be used for evaluation. Default: %(default)s")
-    parser.add_argument("--seed", type=int, default=20241001,
-                        help="Seed for LLM (not all endpoints support this). Default: %(default)s")
-    parser.add_argument("--cot-temp", type=float, default=0.0,
-                        help="Temperature for LLM when doing chaint-of-thoughts. Default: %(default)s")
-    parser.add_argument("--act-temp", type=float, default=0.0,
-                        help="Temperature for LLM when taking actions. Default: %(default)s")
-    parser.add_argument("--context-limit", type=int, default=10,
-                        help="Limit context for LLM (in conversation turns). Default: %(default)s")
-    parser.add_argument("--conversation", action="store_true",
-                        help="Enable conversation mode. Otherwise, use single prompt.")
+    description = "Benchmark some agent on interactive text environments."
+    general_parser = argparse.ArgumentParser(add_help=False, description=description)
+    general_parser.add_argument("--agent", default="./agents/random.py",
+                                help="Load an external python file. Useful to register custom challenges on-the-fly. Default: %(default)s")
 
-    parser.add_argument("--log-dir", default="logs",
-                        help="Folder where to save verbose log information.")
+    parser = argparse.ArgumentParser(parents=[general_parser])
+    subparsers = parser.add_subparsers(dest="subcommand", title='Agents to benchmark')
 
-    parser.add_argument("--wandb", action="store_true",
-                        help="Log to wandb")
-    parser.add_argument("-f", "--force", action="store_true",
-                        help="Force overwriting existing log files.")
-    parser.add_argument("-v", "--verbose", action="store_true",
-                        help="Enable verbose mode.")
-    parser.add_argument("-vv", "--very-verbose", action="store_true",
-                        help="Display actions taken.")
-    parser.add_argument("--debug", action="store_true",
-                        help="Debug mode.")
+    # parser.add_argument("--llm", default="gpt-4o-mini",
+    #                     help="LLM to be used for evaluation. Default: %(default)s")
+    # parser.add_argument("--seed", type=int, default=20241001,
+    #                     help="Seed for LLM (not all endpoints support this). Default: %(default)s")
+    # parser.add_argument("--cot-temp", type=float, default=0.0,
+    #                     help="Temperature for LLM when doing chaint-of-thoughts. Default: %(default)s")
+    # parser.add_argument("--act-temp", type=float, default=0.0,
+    #                     help="Temperature for LLM when taking actions. Default: %(default)s")
+    # parser.add_argument("--context-limit", type=int, default=10,
+    #                     help="Limit context for LLM (in conversation turns). Default: %(default)s")
+    # parser.add_argument("--conversation", action="store_true",
+    #                     help="Enable conversation mode. Otherwise, use single prompt.")
+
+    def _add_general_settings(parser):
+
+        parser.formatter_class = argparse.RawTextHelpFormatter
+        general_group = parser.add_argument_group('General settings')
+
+        #general_group = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
+        general_group.add_argument("--envs", metavar="env", nargs="+", choices=twbench.envs + twbench.tasks,
+                            help="Interactive text environments to evaluate the agent(s)."
+                                f" Available:\n{pretty_print_tasks(disable_print=True)}")
+        general_group.add_argument("--game-seed", type=int, default=20241001,
+                            help="Seed for the game. Default: %(default)s.")
+        general_group.add_argument("--nb-steps", type=int, default=1000,
+                            help="Maximum number of steps per game.")
+        general_group.add_argument("--admissible-commands", action="store_true",
+                            help="Enable admissible commands.")
+
+        general_group.add_argument("--log-dir", default="logs",
+                            help="Folder where to save verbose log information.")
+
+        general_group.add_argument("--wandb", action="store_true",
+                            help="Log to wandb")
+        general_group.add_argument("-f", "--force", action="store_true",
+                            help="Force overwriting existing log files.")
+        general_group.add_argument("-v", "--verbose", action="store_true",
+                            help="Enable verbose mode.")
+        general_group.add_argument("-vv", "--very-verbose", action="store_true",
+                            help="Display actions taken.")
+        general_group.add_argument("--debug", action="store_true",
+                            help="Debug mode.")
+
+    agent_parsers = []
+    for challenge_name, (desc, _, add_agent_arguments) in twbench.agent.AGENTS.items():
+        agent_parser = subparsers.add_parser(challenge_name, help=desc)
+        add_agent_arguments(agent_parser)
+        _add_general_settings(agent_parser)
+        agent_parsers.append(agent_parser)
+
+    #return parser, agent_parsers
     return parser.parse_args()
     # fmt: on
 
 
 def main():
+    _maybe_load_agent_module()
     args = parse_args()
+
+    if args.subcommand is None:
+        print("Need to specify which type of agent to benchmark.")
+        exit_listing_agents(args.subcommand)
+
     args.verbose = args.verbose or args.very_verbose
 
-    # Dynamically load agent class.
-    path, klass = args.agent.split(":")
-    spec = importlib.util.spec_from_file_location("twbench.agents", path)
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    if not hasattr(mod, klass):
-        msg = "python file '{}' has no class '{}'".format(path, klass)
-        raise AttributeError(msg)
+    # # Dynamically load agent class.
+    # path, klass = args.agent.split(":")
+    # spec = importlib.util.spec_from_file_location("twbench.agents", path)
+    # mod = importlib.util.module_from_spec(spec)
+    # spec.loader.exec_module(mod)
+    # if not hasattr(mod, klass):
+    #     msg = "python file '{}' has no class '{}'".format(path, klass)
+    #     raise AttributeError(msg)
 
     # Instanciate the agent.
-    Agent = getattr(mod, klass)
+    # Agent = getattr(mod, klass)
+    # agent = Agent(**vars(args))
+    _, Agent, _ = twbench.agent.AGENTS[args.subcommand]
     agent = Agent(**vars(args))
+    agent.new = partial(Agent, **vars(args))
 
     # Create logging directory.
     args.log_dir = pjoin(args.log_dir, f"tw-bench_{agent.uid}")
@@ -390,7 +476,7 @@ def main():
     log.info(f"working_dir = {os.getcwd()}")
     log.info(f"datetime = {datetime.datetime.now()}")
 
-    args.envs = args.envs or twbench.env_list
+    args.envs = args.envs or twbench.envs
     args.envs = [  # Expand tasks into their respective environments.
         env
         for task in args.envs

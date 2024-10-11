@@ -1,3 +1,4 @@
+import logging
 import os
 import shutil
 import tempfile
@@ -6,6 +7,8 @@ from os.path import join as pjoin
 import requests
 import tiktoken
 from tqdm import tqdm
+
+log = logging.getLogger("tw-bench")
 
 
 def mkdirs(dirpath: str) -> str:
@@ -43,7 +46,7 @@ def download(url, dst, desc=None, force=False):
         This code is inspired by
         https://github.com/huggingface/transformers/blob/v4.0.0/src/transformers/file_utils.py#L1069
     """
-    filename = dst or url.split("/")[-1] + "_temp"
+    filename = url.split("/")[-1]
     path = pjoin(mkdirs(dst), filename)
 
     if os.path.isfile(path) and not force:
@@ -99,3 +102,25 @@ def count_tokens(messages=None, text=None):
     if text is not None:
         return len(enc.encode(text))
     return 0
+
+
+def is_recoverable_error(exception):
+    # List of exceptions thrown by various libraries that can be retried.
+    recoverable_errors = [
+        "openai.APIStatusError",
+        "openai.APITimeoutError",
+        "openai.error.Timeout",
+        "openai.error.RateLimitError",
+        "openai.error.ServiceUnavailableError",
+        "openai.Timeout",
+        "openai.APIError",
+        "openai.APIConnectionError",
+        "openai.RateLimitError",
+        # Add more as needed
+    ]
+    exception_full_name = (
+        f"{exception.__class__.__module__}.{exception.__class__.__name__}"
+    )
+    log.warning(f"Exception_full_name: {exception_full_name}")
+    log.warning(f"Exception: {exception}")
+    return exception_full_name in recoverable_errors
