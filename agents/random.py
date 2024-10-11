@@ -1,8 +1,10 @@
+import argparse
 import re
 
 import numpy as np
 
 import twbench
+from twbench.agent import register
 from twbench.utils import count_tokens
 
 
@@ -25,6 +27,10 @@ class RandomAgent(twbench.Agent):
     def uid(self):
         return f"RandomAgent_s{self.seed}"
 
+    @property
+    def params(self):
+        return {"seed": self.seed}
+
     def act(self, obs, reward, done, infos):
         stats = {
             "prompt": None,
@@ -44,3 +50,26 @@ class RandomAgent(twbench.Agent):
                 action += " " + self.rng.choice(words)
 
         return str(action), stats
+
+
+def build_argparser(parser=None):
+    parser = parser or argparse.ArgumentParser()
+    group = parser.add_argument_group("RandomAgent settings")
+    group.add_argument(
+        "--seed",
+        type=int,
+        default=20241001,
+        help="Random generator seed to select actions. Default: %(default)s",
+    )
+    return parser
+
+
+register(
+    name="random",
+    desc=(
+        "This agent will pick an action at random among a predefined set of actions or,"
+        " if available, the admissible commands."
+    ),
+    klass=RandomAgent,
+    add_arguments=build_argparser,
+)

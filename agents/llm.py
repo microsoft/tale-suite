@@ -1,3 +1,5 @@
+import argparse
+
 import llm
 import numpy as np
 from tenacity import (
@@ -8,6 +10,7 @@ from tenacity import (
 )
 
 import twbench
+from twbench.agent import register
 from twbench.utils import count_tokens, is_recoverable_error
 
 SYSTEM_PROMPT = (
@@ -58,6 +61,16 @@ class LLMAgent(twbench.Agent):
             f"_t{self.act_temp}"
             f"_conv{self.conversation is not None}"
         )
+
+    @property
+    def params(self):
+        return {
+            "llm": self.llm,
+            "seed": self.seed,
+            "context": self.context,
+            "act_temp": self.act_temp,
+            "conversation": self.conversation is not None,
+        }
 
     @retry(
         retry=retry_if_exception(is_recoverable_error),
@@ -128,3 +141,49 @@ class LLMAgent(twbench.Agent):
         # prompt = "\n".join([msg["content"] for msg in messages[1:]])
         prompt = "\n".join([msg["content"] for msg in messages])
         return prompt
+
+
+def build_argparser(parser=None):
+    parser = parser or argparse.ArgumentParser()
+    group = parser.add_argument_group("LLMAgent settings")
+
+    group.add_argument(
+        "--llm",
+        default="gpt-4o-mini",
+        help="LLM to be used for evaluation. Default: %(default)s",
+    )
+    group.add_argument(
+        "--seed",
+        type=int,
+        default=20241001,
+        help="Seed for LLM (not all endpoints support this). Default: %(default)s",
+    )
+    group.add_argument(
+        "--act-temp",
+        type=float,
+        default=0.0,
+        help="Temperature for LLM when taking actions. Default: %(default)s",
+    )
+    group.add_argument(
+        "--context-limit",
+        type=int,
+        default=10,
+        help="Limit context for LLM (in conversation turns). Default: %(default)s",
+    )
+    group.add_argument(
+        "--conversation",
+        action="store_true",
+        help="Enable conversation mode. Otherwise, use single prompt.",
+    )
+
+    return parser
+
+
+register(
+    name="zero-shot",
+    desc=(
+        "This agent uses a LLM to decide which action to take in a zero-shot manner."
+    ),
+    klass=LLMAgent,
+    add_arguments=build_argparser,
+)

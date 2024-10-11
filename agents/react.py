@@ -1,3 +1,5 @@
+import argparse
+
 import llm
 import numpy as np
 from tenacity import (
@@ -9,6 +11,7 @@ from tenacity import (
 from termcolor import colored
 
 import twbench
+from twbench.agent import register
 from twbench.utils import count_tokens, is_recoverable_error, log
 
 SYSTEM_PROMPT = (
@@ -72,6 +75,17 @@ class ReactAgent(twbench.Agent):
             f"_conv{self.conversation is not None}"
         )
 
+    @property
+    def params(self):
+        return {
+            "llm": self.llm,
+            "seed": self.seed,
+            "context": self.context,
+            "act_temp": self.act_temp,
+            "cot_temp": self.cot_temp,
+            "conversation": self.conversation is not None,
+        }
+
     @retry(
         retry=retry_if_exception(is_recoverable_error),
         wait=wait_random_exponential(multiplier=1, max=40),
@@ -113,3 +127,55 @@ class ReactAgent(twbench.Agent):
         self.history.append((obs, "> {action}\n"))
 
         return action, response
+
+
+def build_argparser(parser=None):
+    parser = parser or argparse.ArgumentParser()
+    group = parser.add_argument_group("LLMAgent settings")
+
+    group.add_argument(
+        "--llm",
+        default="gpt-4o-mini",
+        help="LLM to be used for evaluation. Default: %(default)s",
+    )
+    group.add_argument(
+        "--seed",
+        type=int,
+        default=20241001,
+        help="Seed for LLM (not all endpoints support this). Default: %(default)s",
+    )
+    group.add_argument(
+        "--cot-temp",
+        type=float,
+        default=0.0,
+        help="Temperature for LLM when doing chain-of-thoughts. Default: %(default)s",
+    )
+    group.add_argument(
+        "--act-temp",
+        type=float,
+        default=0.0,
+        help="Temperature for LLM when taking actions. Default: %(default)s",
+    )
+    group.add_argument(
+        "--context-limit",
+        type=int,
+        default=10,
+        help="Limit context for LLM (in conversation turns). Default: %(default)s",
+    )
+    group.add_argument(
+        "--conversation",
+        action="store_true",
+        help="Enable conversation mode. Otherwise, use single prompt.",
+    )
+
+    return parser
+
+
+register(
+    name="react",
+    desc=(
+        "This agent uses a LLM to decide which action to take by following a CoT/ReAct approach."
+    ),
+    klass=ReactAgent,
+    add_arguments=build_argparser,
+)
