@@ -34,13 +34,9 @@ def evaluate(agent, env_name, args, wandb_run):
     log.debug("Using {}".format(env.__class__.__name__))
 
     start_time = time.time()
-
-    if "Walkthrough Agent" in agent.uid:
-        agent.load_wlkthr(env.get_walkthrough())
-
     obs, infos = env.reset()
 
-
+    agent = agent.new()
     agent.reset(obs, infos)
 
     log.debug(f"Environment reset.\n{obs}\n")
@@ -357,6 +353,7 @@ def _maybe_load_agent_module():
 
 def parse_args():
     # fmt: off
+
     description = "Benchmark some agent on interactive text environments."
     general_parser = argparse.ArgumentParser(add_help=False, description=description)
     general_parser.add_argument("--agent", default="./agents/random.py",
@@ -407,6 +404,7 @@ def parse_args():
                             help="Display actions taken.")
         general_group.add_argument("--debug", action="store_true",
                             help="Debug mode.")
+        
 
     agent_parsers = []
     for challenge_name, (desc, _, add_agent_arguments) in twbench.agent.AGENTS.items():
