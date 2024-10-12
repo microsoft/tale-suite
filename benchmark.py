@@ -12,11 +12,11 @@ from typing import List
 
 import gymnasium as gym
 import pandas as pd
+import wandb
 from termcolor import colored
 from tqdm import tqdm
 
 import twbench
-import wandb
 from twbench.utils import log
 
 os.environ["WANDB_MODE"] = "disabled"
@@ -38,6 +38,9 @@ def evaluate(agent, env_name, args, wandb_run):
 
     agent = agent.new()
     agent.reset(obs, infos)
+    if "Walkthrough Agent" in agent.uid:
+        print(infos.get("extra.walkthrough"))
+        agent.load_wlkthr(infos.get("extra.walkthrough"))
 
     log.debug(f"Environment reset.\n{obs}\n")
 

@@ -17,6 +17,7 @@ class JerichoEnv(gym.Env):
             feedback=True,
             moves=True,
             admissible_commands=admissible_commands,
+            extras=["walkthrough"],
         )
         self.env = textworld.start(gamefile, self.infos, wrappers=[Filter])
 
@@ -29,14 +30,3 @@ class JerichoEnv(gym.Env):
 
     def step(self, action):
         return self.env.step(action)
-    
-    def get_walkthrough(self):
-        self.env.request_infos.extras.append("walkthrough")
-
-        obs, infos = self.env.reset()
-        
-        if infos.get("extra.walkthrough") is None:
-            msg = "WalkthroughAgent is only supported for games that have a walkthrough."
-            raise NameError(msg)
-
-        return infos.get("extra.walkthrough")

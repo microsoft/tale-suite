@@ -1,44 +1,26 @@
-import logging
+import argparse
 
 import llm
 import numpy as np
+from tenacity import (
+    retry,
+    retry_if_exception,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 import twbench
-from twbench.utils import count_tokens
+from agents.llm import LLMAgent
+from twbench.agent import register
+from twbench.utils import count_tokens, is_recoverable_error
 
-log = logging.getLogger("tw-bench")
 
 # For the LLMWlkThrAgent, the sysprompt is initialized in the __init__ function as we need to change it once we extract the walkthrough from the env
-class LLMWlkThrAgent(twbench.Agent):
+class LLMWlkThrAgent(LLMAgent):
 
     def __init__(self, *args, **kwargs):
-        self.llm = kwargs["llm"]
-        self.model = llm.get_model(self.llm)
-
-        # Provide the API key, if one is needed and has been provided
-        self.model.key = llm.get_key(
-            kwargs.get("key"), kwargs["llm"], self.model.key_env_var
-        ) or llm.get_key(None, self.model.needs_key, self.model.key_env_var)
-
-        self.seed = kwargs.get("seed", 1234)
-        self.rng = np.random.RandomState(self.seed)
-
-        self.history = []
-        self.context = kwargs.get(
-            "context_limit", -0
-        )  # Default: keep all conversation turns.
-        self.act_temp = kwargs.get("act_temp", 0.0)
-        self.conversation = (
-            self.model.conversation() if kwargs.get("conversation") else None
-        )
-
-        self.sys_prompt = (
-                "You are playing a text-based game and your goal is to finish it with the highest score."
-                " The following is a walkthrough in the form of a list of actions to beat the game."
-                " You should follow this walkthrough as closely as possible to get the maximum score"
-                " You must ONLY respond with the action you wish to take with no other special tokens."
-                "Walkthrough: WALKTHROUGH"
-            )
+        super().__init__(*args, **kwargs)
+        self.sys_prompt = ""
 
     @property
     def uid(self):
@@ -50,9 +32,17 @@ class LLMWlkThrAgent(twbench.Agent):
             f"_conv{self.conversation is not None}"
             f"Walkthrough Agent"
         )
-    
+
     def load_wlkthr(self, wlkthr):
-        self.sys_prompt = self.sys_prompt.replace("WALKTHROUGH", ",".join(wlkthr))
+        sys_prompt = (
+            "You are playing a text-based game and your goal is to finish it with the highest score."
+            " The following is a walkthrough in the form of a list of actions to beat the game."
+            " You should follow this walkthrough as closely as possible to get the maximum score"
+            " You must ONLY respond with the action you wish to take with no other special tokens."
+            "Walkthrough: WALKTHROUGH"
+        )
+
+        self.sys_prompt = sys_prompt.replace("WALKTHROUGH", ",".join(wlkthr))
         return True
 
     def act(self, obs, reward, done, infos):
@@ -82,16 +72,54 @@ class LLMWlkThrAgent(twbench.Agent):
 
         return action, stats
 
-    def build_prompt(self, observation):
-        messages = [{"role": "system", "content": self.sys_prompt}]
 
-        for obs, action in self.history[-self.context :]:
-            messages.append({"role": "user", "content": obs})
-            messages.append({"role": "assistant", "content": action})
+def build_argparser(parser=None):
+    parser = parser or argparse.ArgumentParser()
+    group = parser.add_argument_group("LLMAgent settings")
 
-        messages.append({"role": "user", "content": observation})
+    group.add_argument(
+        "--llm",
+        default="gpt-4o-mini",
+        help="LLM to be used for evaluation. Default: %(default)s",
+    )
+    group.add_argument(
+        "--seed",
+        type=int,
+        default=20241001,
+        help="Seed for LLM (not all endpoints support this). Default: %(default)s",
+    )
+    group.add_argument(
+        "--act-temp",
+        type=float,
+        default=0.0,
+        help="Temperature for LLM when taking actions. Default: %(default)s",
+    )
+    group.add_argument(
+        "--context-limit",
+        type=int,
+        default=10,
+        help="Limit context for LLM (in conversation turns). Default: %(default)s",
+    )
+    group.add_argument(
+        "--conversation",
+        action="store_true",
+        help="Enable conversation mode. Otherwise, use single prompt.",
+    )
+    group.add_argument(
+        "--wlkthr-limit",
+        type=int,
+        default=10000,
+        help="Number of walkthrough actions to provide the LLM. Default: %(default)s",
+    )
 
-        # Discard the system prompt.
-        # Merge all messages content into a single string
-        prompt = "\n".join([msg["content"] for msg in messages[1:]])
-        return prompt
+    return parser
+
+
+register(
+    name="wlkthr",
+    desc=(
+        "This agent uses the ground-truth walkthrough from the environment to attempt to progress through the game."
+    ),
+    klass=LLMWlkThrAgent,
+    add_arguments=build_argparser,
+)

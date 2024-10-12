@@ -55,10 +55,7 @@ def download(url, dst, desc=None, force=False):
     # Download to a temp folder first to avoid corrupting the cache
     # with incomplete downloads.
     temp_dir = mkdirs(pjoin(tempfile.gettempdir(), "twbench"))
-    filename += "_temp"
     temp_path = pjoin(temp_dir, filename)
-    print("Temp dir", temp_dir)
-    print("Path:", temp_path)
     with open(temp_path, "ab") as temp_file:
         headers = {}
         resume_size = temp_file.tell()
