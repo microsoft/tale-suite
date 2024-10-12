@@ -13,7 +13,7 @@ This repository contains the files needed to benchmark language agents on text-b
 
 3.	Run benchmark evaluation on all the games for the specified random agent:
 
-        python benchmark.py --agent agents/random.py:RandomAgent
+        python benchmark.py --agent agents/random.py random
 
 4.	Run benchmark evaluation on a subset of the games:
 
@@ -21,11 +21,11 @@ This repository contains the files needed to benchmark language agents on text-b
 
 5.	Run benchmark evaluation on specific games:
 
-        python benchmark.py --envs JerichoEnvZork1 JerichoEnvDetective --agent agents/random.py:RandomAgent
+        python benchmark.py --agent agents/random.py random --envs JerichoEnvZork1 JerichoEnvDetective
 
-6.	Run benchmark evaluation using as a HumanAgent:
+6.	Run benchmark evaluation using as a HumanAgent (Not working atm):
 
-        python benchmark.py --envs TWCookingLevel1 --agent agents/human.py:HumanAgent
+        python benchmark.py --agent agents/human.py human --envs TWCookingLevel1
 
 
 ## Benchmarking LLMs
