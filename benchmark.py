@@ -358,20 +358,6 @@ def _maybe_load_agent_module():
 
 def parse_args():
     # fmt: off
-    parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument("--envs", metavar="env", nargs="+", choices=twbench.envs + twbench.tasks,
-                        help="Interactive text environments to evaluate the agent(s)."
-                            f" Available:\n{pretty_print_tasks(disable_print=True)}")
-    parser.add_argument("--game-seed", type=int, default=20241001,
-                        help="Seed for the game. Default: %(default)s.")
-
-    parser.add_argument("--agent", default="./agent_random.py:RandomAgent",
-                        help="Full qualified class name to evaluate. Default: %(default)s")
-    parser.add_argument("--nb-steps", type=int, default=20,
-                        help="Maximum number of steps per game.")
-    parser.add_argument("--admissible-commands", action="store_true",
-                        help="Enable admissible commands.")
-
     description = "Benchmark some agent on interactive text environments."
     general_parser = argparse.ArgumentParser(add_help=False, description=description)
     general_parser.add_argument("--agent", default="./agents/random.py",
