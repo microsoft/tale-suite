@@ -17,15 +17,13 @@ class JerichoEnv(gym.Env):
             feedback=True,
             moves=True,
             admissible_commands=admissible_commands,
-            extras=["walkthrough"],
         )
         self.env = textworld.start(gamefile, self.infos, wrappers=[Filter])
 
     def seed(self, seed):
         self.env.seed(seed)
 
-    def reset(self, seed, options):
-        self.seed(seed)
+    def reset(self):
         return self.env.reset()
 
     def step(self, action):

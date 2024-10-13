@@ -14,9 +14,8 @@ with open(pjoin(os.path.dirname(__file__), "games.json")) as f:
 
 
 def prepare_jericho_data(force=TWBENCH_FORCE_DOWNLOAD):
-    # if os.path.exists(TWBENCH_CACHE_JERICHO) and not force:
-    #     if os.listdir(TWBENCH_CACHE_JERICHO):
-    #         return
+    if os.path.exists(TWBENCH_CACHE_JERICHO) and not force:
+        return
 
     os.makedirs(TWBENCH_CACHE_JERICHO, exist_ok=True)
 

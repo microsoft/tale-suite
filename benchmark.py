@@ -12,11 +12,11 @@ from typing import List
 
 import gymnasium as gym
 import pandas as pd
-import wandb
 from termcolor import colored
 from tqdm import tqdm
 
 import twbench
+import wandb
 from twbench.utils import log
 
 os.environ["WANDB_MODE"] = "disabled"
@@ -404,7 +404,6 @@ def parse_args():
                             help="Display actions taken.")
         general_group.add_argument("--debug", action="store_true",
                             help="Debug mode.")
-        
 
     agent_parsers = []
     for challenge_name, (desc, _, add_agent_arguments) in twbench.agent.AGENTS.items():
