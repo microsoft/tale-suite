@@ -27,6 +27,12 @@ This repository contains the files needed to benchmark language agents on text-b
 
         python benchmark.py --agent agents/human.py human --envs TWCookingLevel1
 
+7.	Run benchmark evaluation where the LLM is provided the ground-truth walkthrough:
+
+        python benchmark.py --agent agents/llm_wlkthr.py wlkthr --envs JerichoEnvZork1
+
+*Note: The walkthrough agent does not add ">" to its action history as this causes the llm to then generate ">action" which is not accepted by the game engine.
+
 
 ## Benchmarking LLMs
 

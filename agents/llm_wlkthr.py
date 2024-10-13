@@ -49,7 +49,6 @@ class LLMWlkThrAgent(LLMAgent):
         conversation = self.conversation or self.model.conversation()
         conversation.responses = conversation.responses[-self.context :]
         prompt = f"{obs}\n>" if self.conversation else self.build_prompt(obs)
-
         response = conversation.prompt(
             prompt=prompt,
             system=self.sys_prompt,
@@ -57,10 +56,8 @@ class LLMWlkThrAgent(LLMAgent):
             seed=self.seed,
             top_p=1,
         )
-
         action = response.text().strip()
-        self.history.append((obs, f"> {action}\n"))
-
+        self.history.append((obs, f"{action}\n"))
         # Compute usage statistics
         messages = conversation.responses[-1]._prompt_json["messages"]
         stats = {
