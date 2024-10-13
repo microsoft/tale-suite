@@ -31,7 +31,7 @@ This repository contains the files needed to benchmark language agents on text-b
 
         python benchmark.py --agent agents/llm_wlkthr.py wlkthr --envs JerichoEnvZork1
 
-*Note: The walkthrough agent does not add ">" to its action history as this causes the llm to then generate ">action" which is not accepted by the game engine.
+*Note: The walkthrough agent does not add ">" to its action history as this causes the llm to then generate ">action" which is not accepted by the game engine. For example, the llm will first generate "action" but this will be appended to the context as ">action". Thus, the llm will then generate ">action1" which is not accepted by the game engine.
 
 
 ## Benchmarking LLMs
