@@ -33,18 +33,6 @@ class LLMWlkThrAgent(LLMAgent):
             f"Walkthrough Agent"
         )
 
-    def load_wlkthr(self, wlkthr):
-        sys_prompt = (
-            "You are playing a text-based game and your goal is to finish it with the highest score."
-            " The following is a walkthrough in the form of a list of actions to beat the game."
-            " You should follow this walkthrough as closely as possible to get the maximum score"
-            " You must ONLY respond with the action you wish to take with no other special tokens."
-            "Walkthrough: WALKTHROUGH"
-        )
-
-        self.sys_prompt = sys_prompt.replace("WALKTHROUGH", ",".join(wlkthr))
-        return True
-
     def act(self, obs, reward, done, infos):
         conversation = self.conversation or self.model.conversation()
         conversation.responses = conversation.responses[-self.context :]
@@ -68,6 +56,16 @@ class LLMWlkThrAgent(LLMAgent):
         }
 
         return action, stats
+
+    def reset(self, obs, infos):
+        self.sys_prompt = (
+            "You are playing a text-based game and your goal is to finish it with the highest score."
+            " The following is a walkthrough in the form of a list of actions to beat the game."
+            " You should follow this walkthrough as closely as possible to get the maximum score"
+            " You must ONLY respond with the action you wish to take with no other special tokens."
+            "Walkthrough: WALKTHROUGH"
+        ).replace("WALKTHROUGH", ",".join(infos.get("extra.walkthrough")))
+        return True
 
 
 def build_argparser(parser=None):

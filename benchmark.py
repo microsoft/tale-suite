@@ -38,8 +38,6 @@ def evaluate(agent, env_name, args, wandb_run):
 
     agent = agent.new()
     agent.reset(obs, infos)
-    if "Walkthrough Agent" in agent.uid:
-        agent.load_wlkthr(infos.get("extra.walkthrough"))
 
     log.debug(f"Environment reset.\n{obs}\n")
 
