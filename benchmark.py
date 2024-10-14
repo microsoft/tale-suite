@@ -52,10 +52,24 @@ def evaluate(agent, env_name, args, wandb_run):
     done = False
     results = []
 
-    for step in tqdm(
-        range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
-    ):
+    # Hard coding for personal testing
+    max_tokens = 10000
+
+    # for step in tqdm(
+    #     range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
+    # ):
+    progress_bar = tqdm(
+        total=max_tokens, desc=f"  {env_name}", unit="tokens generated", leave=False
+    )
+    tokens_generated = 0
+    step = 0
+    while tokens_generated < max_tokens:
         action, stats = agent.act(obs, score, done, infos)
+        step += 1
+
+        progress_bar.update(stats["new_tokens"])
+        tokens_generated += stats["new_tokens"]
+
         log.debug(colored(f"> {action}", "green"))
 
         if args.debug:

@@ -10,17 +10,24 @@ from tenacity import (
 )
 
 import twbench
-from agents.llm import LLMAgent
+from agents.llm import LLMAgent, format_messages_to_markdown
 from twbench.agent import register
 from twbench.utils import count_tokens, is_recoverable_error
 
+SYSTEM_PROMPT = (
+    "You are playing a text-based game and your goal is to finish it with the highest score."
+    " After each set of observation, reflect on your current situation."
+    " Consider what places you've explored, what places you haven't explored, and what items you may need later in the game."
+    " Using this, describe a current objective and explain why this objective will help you finish the game."
+    " Once you have finished reflecting, provide a *single* short phrase to interact with the game in brackets, e.g. `[[get lamp]]` (without the backticks)."
+)
+
 
 # For the LLMWlkThrAgent, the sysprompt is initialized in the __init__ function as we need to change it once we extract the walkthrough from the env
-class LLMWlkThrAgent(LLMAgent):
+class LLMCoTAgent(LLMAgent):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.sys_prompt = ""
 
     @property
     def uid(self):
@@ -30,43 +37,51 @@ class LLMWlkThrAgent(LLMAgent):
             f"_c{self.context}"
             f"_t{self.act_temp}"
             f"_conv{self.conversation is not None}"
-            f"Walkthrough Agent"
+            f"CoT Agent"
         )
 
     def act(self, obs, reward, done, infos):
         conversation = self.conversation or self.model.conversation()
         conversation.responses = conversation.responses[-self.context :]
+        # TODO: Add a message saying the history was truncated?
+
         prompt = f"{obs}\n>" if self.conversation else self.build_prompt(obs)
-        response = conversation.prompt(
+
+        if not self.allows_system_prompt:
+            if len(conversation.responses) == 0:
+                # Model doesn't support system prompt and this is the first message in the conversation.
+                prompt = f"{SYSTEM_PROMPT}\n\n{prompt}"
+            else:
+                # Make sure the system prompt is added to the first message in the conversation.
+                first_prompt = conversation.responses[0].prompt
+                if SYSTEM_PROMPT not in first_prompt.prompt:
+                    first_prompt.prompt = f"{SYSTEM_PROMPT}\n\n{first_prompt.prompt}"
+
+        response = self._llm_call(
+            conversation,
             prompt=prompt,
-            system=self.sys_prompt,
+            system=SYSTEM_PROMPT if self.allows_system_prompt else None,
             temperature=self.act_temp,
             seed=self.seed,
             top_p=1,
+            stream=False,
         )
-        action = response.text().strip()
-        self.history.append((obs, f"{action}\n"))
+
+        reflection = response.text().strip()
+        self.history.append((obs, f"> {reflection}\n"))
+
+        action = reflection.split("[[")[-1].split("]]")[0]
         # Compute usage statistics
         messages = conversation.responses[-1]._prompt_json["messages"]
-        token_cnt = count_tokens(text=response.text())
+        new_tokens = count_tokens(text=response.text())
         stats = {
-            "prompt": response._prompt_json,
+            "prompt": format_messages_to_markdown(messages),
             "response": response.text(),
-            "nb_tokens": count_tokens(messages=messages) + token_cnt,
-            "new_tokens": token_cnt,
+            "nb_tokens": count_tokens(messages=messages) + new_tokens,
+            "new_tokens": new_tokens,
         }
 
         return action, stats
-
-    def reset(self, obs, infos):
-        self.sys_prompt = (
-            "You are playing a text-based game and your goal is to finish it with the highest score."
-            " The following is a walkthrough in the form of a list of actions to beat the game."
-            " You should follow this walkthrough as closely as possible to get the maximum score"
-            " You must ONLY respond with the action you wish to take with no other special tokens."
-            "Walkthrough: WALKTHROUGH"
-        ).replace("WALKTHROUGH", ",".join(infos.get("extra.walkthrough")))
-        return True
 
 
 def build_argparser(parser=None):
@@ -93,7 +108,7 @@ def build_argparser(parser=None):
     group.add_argument(
         "--context-limit",
         type=int,
-        default=10,
+        default=100,
         help="Limit context for LLM (in conversation turns). Default: %(default)s",
     )
     group.add_argument(
@@ -101,21 +116,15 @@ def build_argparser(parser=None):
         action="store_true",
         help="Enable conversation mode. Otherwise, use single prompt.",
     )
-    group.add_argument(
-        "--wlkthr-limit",
-        type=int,
-        default=10000,
-        help="Number of walkthrough actions to provide the LLM. Default: %(default)s",
-    )
 
     return parser
 
 
 register(
-    name="wlkthr",
+    name="cot",
     desc=(
-        "This agent uses the ground-truth walkthrough from the environment to attempt to progress through the game."
+        "This agent uses a n-step chain of thought to attempt to progress through the game. Please see llm_cot.py for more details about the prompt."
     ),
-    klass=LLMWlkThrAgent,
+    klass=LLMCoTAgent,
     add_arguments=build_argparser,
 )
