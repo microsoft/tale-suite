@@ -1,6 +1,6 @@
 gymnasium
 
-jericho
+jericho>=3.3.0
 textworld
 scienceworld
 discoveryworld
