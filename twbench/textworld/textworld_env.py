@@ -24,7 +24,10 @@ class TextWorldEnv(gym.Env):
     def seed(self, seed):
         self.env.seed(seed)
 
-    def reset(self):
+    def reset(self, seed=None, options=None):
+        if seed:
+            self.seed(seed)
+
         if self.env is None:
             self.env = textworld.start(self.gamefile, self.infos, wrappers=[Filter])
 

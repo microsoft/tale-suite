@@ -12,11 +12,11 @@ from typing import List
 
 import gymnasium as gym
 import pandas as pd
-import wandb
 from termcolor import colored
 from tqdm import tqdm
 
 import twbench
+import wandb
 from twbench.utils import log
 
 os.environ["WANDB_MODE"] = "disabled"
@@ -96,7 +96,8 @@ def evaluate(agent, env_name, args, wandb_run):
         ])
         # fmt: on
 
-        log.debug(obs)
+        if not done:
+            log.debug(obs)
 
         if done:
             highscore = max(score, highscore)
@@ -104,11 +105,12 @@ def evaluate(agent, env_name, args, wandb_run):
             if infos["won"]:
                 nb_wins += 1
                 if highscore == max_score:
+                    log.debug(obs)
                     break  # No reason to play that game more.
             elif infos["lost"]:
                 nb_losts += 1
-            else:
-                assert True, "Games should either end with a win or a fail."
+            # else:
+            #     assert False, "Games should either end with a win or a fail."
 
             # Replay the game in the hope of achieving a better score.
             last_obs = obs
@@ -117,7 +119,7 @@ def evaluate(agent, env_name, args, wandb_run):
             agent.reset(obs, infos)
             nb_resets += 1
 
-            log.debug(f"Environment reset.\n{obs}\n")
+            log.debug(f"{obs}")
 
     env.close()
 
@@ -404,7 +406,7 @@ def parse_args():
                             help="Display actions taken.")
         general_group.add_argument("--debug", action="store_true",
                             help="Debug mode.")
-        
+
 
     agent_parsers = []
     for challenge_name, (desc, _, add_agent_arguments) in twbench.agent.AGENTS.items():

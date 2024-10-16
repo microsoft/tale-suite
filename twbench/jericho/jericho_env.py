@@ -24,8 +24,10 @@ class JerichoEnv(gym.Env):
     def seed(self, seed):
         self.env.seed(seed)
 
-    def reset(self, seed, options):
-        self.seed(seed)
+    def reset(self, seed=None, options=None):
+        if seed:
+            self.seed(seed)
+
         return self.env.reset()
 
     def step(self, action):
