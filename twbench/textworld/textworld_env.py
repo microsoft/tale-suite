@@ -21,12 +21,8 @@ class TextWorldEnv(gym.Env):
         self.gamefile = gamefile
         self.env = None
 
-    def seed(self, seed):
-        self.env.seed(seed)
-
-    def reset(self, seed=None, options=None):
-        if seed:
-            self.seed(seed)
+    def reset(self, *, seed=None, options=None):
+        super().reset(seed=seed, options=options)
 
         if self.env is None:
             self.env = textworld.start(self.gamefile, self.infos, wrappers=[Filter])
@@ -43,11 +39,11 @@ class TWCookingEnv(TextWorldEnv):
         self.gamefiles = sorted(textworld_data.get_cooking_game(difficulty))
         super().__init__(self.gamefiles[0], *args, **kwargs)
 
-    def seed(self, seed):
-        if self.env is not None:
-            self.env.close()
-            self.env = None
+    def reset(self, *, seed=None, options=None):
+        if seed is not None:
+            self.gamefile = self.gamefiles[seed % len(self.gamefiles)]
+            if self.env is not None:
+                self.env.close()
+                self.env = None
 
-        self.rng = np.random.RandomState(seed)
-        idx = self.rng.choice(len(self.gamefiles))
-        self.gamefile = self.gamefiles[idx]
+        return super().reset(seed=seed, options=options)

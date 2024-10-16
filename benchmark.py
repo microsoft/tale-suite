@@ -29,12 +29,11 @@ def evaluate(agent, env_name, args, wandb_run):
         disable_env_checker=True,
         admissible_commands=args.admissible_commands,
     )
-    env.unwrapped.seed(args.game_seed)
 
     log.debug("Using {}".format(env.__class__.__name__))
 
     start_time = time.time()
-    obs, infos = env.reset()
+    obs, infos = env.reset(seed=args.game_seed)
 
     agent = agent.new()
     agent.reset(obs, infos)
@@ -109,13 +108,11 @@ def evaluate(agent, env_name, args, wandb_run):
                     break  # No reason to play that game more.
             elif infos["lost"]:
                 nb_losts += 1
-            # else:
-            #     assert False, "Games should either end with a win or a fail."
 
             # Replay the game in the hope of achieving a better score.
             last_obs = obs
             obs, infos = env.reset()
-            obs = last_obs + "\n-= Restarting =-\n" + obs
+            obs = last_obs + "\n\n-= Restarting =-\n" + obs
             agent.reset(obs, infos)
             nb_resets += 1
 
