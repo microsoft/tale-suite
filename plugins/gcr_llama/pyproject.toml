@@ -1,6 +1,0 @@
-[project]
-name = "gcr-llama"
-version = "0.1"
-
-[project.entry-points.llm]
-llama = "gcr_llama"

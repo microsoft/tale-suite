@@ -9,7 +9,7 @@ environment:
     - pip install -r requirements.txt
     - sudo apt-get update && sudo apt-get install -y netcat
     - llm logs path
-    - llm install plugins/gcr_llama
+    - llm install llm-azure
     - cp -v config/extra-openai-models.yaml ~/.config/io.datasette.llm/
     - llm models
     - python -m vllm.entrypoints.openai.api_server --model microsoft/Phi-3-mini-128k-instruct --host 0.0.0.0 &
