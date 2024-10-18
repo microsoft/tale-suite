@@ -172,31 +172,39 @@ def benchmark(agent, games, args):
 
             wandb_config = {
                 "game": game_name,
+                "framework": twbench.env2task[game_name],
                 "agent": agent.uid,
-                # "llm": args.llm,
-                # "seed": args.seed,
-                # "context": args.context_limit,
-                # "act-temp": args.act_temp,
-                # "cot-temp": args.cot_temp,
-                # "conversation": args.conversation,
                 "max_steps": args.nb_steps,
                 "admissible_commands": args.admissible_commands,
                 **agent.params,
             }
             wandb_run = wandb.init(
-                project="text-games-benchmark", config=wandb_config, reinit=True
+                project="text-games-benchmark",
+                config=wandb_config,
+                reinit=True,
+                name=f"{game_name} - {agent.uid}",
             )
 
             try:
                 stats, results = evaluate(agent, game, args, wandb_run)
-            except ValueError as e:
-                pbar.write(colored(f"{game_name} (error)", "red"))
+            except KeyboardInterrupt as e:
+                pbar.write(colored(f"{game_name} (killed)", "red"))
+                wandb_run.finish(1)  # Mark as failed.
                 log.error(str(e))
                 pbar.update(1)
                 if args.debug:
                     raise
 
-                continue  # Skip not supported games.
+                continue
+            except ValueError as e:
+                pbar.write(colored(f"{game_name} (error)", "red"))
+                wandb_run.finish(1)  # Mark as failed.
+                log.error(str(e))
+                pbar.update(1)
+                if args.debug:
+                    raise
+
+                continue
 
             nb_games += 1
 
@@ -361,25 +369,11 @@ def parse_args():
     parser = argparse.ArgumentParser(parents=[general_parser])
     subparsers = parser.add_subparsers(dest="subcommand", title='Agents to benchmark')
 
-    # parser.add_argument("--llm", default="gpt-4o-mini",
-    #                     help="LLM to be used for evaluation. Default: %(default)s")
-    # parser.add_argument("--seed", type=int, default=20241001,
-    #                     help="Seed for LLM (not all endpoints support this). Default: %(default)s")
-    # parser.add_argument("--cot-temp", type=float, default=0.0,
-    #                     help="Temperature for LLM when doing chaint-of-thoughts. Default: %(default)s")
-    # parser.add_argument("--act-temp", type=float, default=0.0,
-    #                     help="Temperature for LLM when taking actions. Default: %(default)s")
-    # parser.add_argument("--context-limit", type=int, default=10,
-    #                     help="Limit context for LLM (in conversation turns). Default: %(default)s")
-    # parser.add_argument("--conversation", action="store_true",
-    #                     help="Enable conversation mode. Otherwise, use single prompt.")
-
     def _add_general_settings(parser):
 
         parser.formatter_class = argparse.RawTextHelpFormatter
         general_group = parser.add_argument_group('General settings')
 
-        #general_group = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
         general_group.add_argument("--envs", metavar="env", nargs="+", choices=twbench.envs + twbench.tasks,
                             help="Interactive text environments to evaluate the agent(s)."
                                 f" Available:\n{pretty_print_tasks(disable_print=True)}")

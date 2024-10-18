@@ -55,4 +55,6 @@ for task in tasks:
         continue
 
 envs_per_task = dict(envs_per_task)
+env2task = {env: task for task, envs in envs_per_task.items() for env in envs}
+
 __all__ = ["Agent", "__version__", "envs", "envs_per_task", "tasks"]
