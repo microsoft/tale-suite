@@ -33,14 +33,14 @@ def evaluate(agent, env_name, args, wandb_run):
     log.debug("Using {}".format(env.__class__.__name__))
 
     start_time = time.time()
-    obs, infos = env.reset(seed=args.game_seed)
+    obs, info = env.reset(seed=args.game_seed)
 
     agent = agent.new()
-    agent.reset(obs, infos)
+    agent.reset(obs, info)
 
     log.debug(f"Environment reset.\n{obs}\n")
 
-    max_score = infos["max_score"]
+    max_score = info["max_score"]
     nb_resets = 0
     nb_wins = 0
     nb_losts = 0
@@ -51,32 +51,36 @@ def evaluate(agent, env_name, args, wandb_run):
     done = False
     results = []
 
-    for step in tqdm(
+    pbar = tqdm(
         range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
-    ):
-        action, stats = agent.act(obs, score, done, infos)
+    )
+    for step in pbar:
+        pbar.set_postfix_str(
+            f"Score: {info['score']}/{info['max_score']} ({info['score']/info['max_score']:.1%})"
+        )
+        action, stats = agent.act(obs, score, done, info)
         log.debug(colored(f"> {action}", "green"))
 
         if args.debug:
             breakpoint()
 
         prev_obs = obs
-        obs, _, done, infos = env.step(action)
-        score = infos["score"]
-        moves = infos["moves"]
-        feedback = infos["feedback"]
+        obs, _, done, info = env.step(action)
+        score = info["score"]
+        moves = info["moves"]
+        feedback = info["feedback"]
+        norm_score = score / max_score
 
         if (
             args.admissible_commands
-            and infos["admissible_commands"]
-            and action not in infos["admissible_commands"]
+            and info["admissible_commands"]
+            and action not in info["admissible_commands"]
         ):
             nb_invalid_actions += 1
 
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
         msg = msg.format(step, time.time() - start_time, score, moves, action)
         log.info(msg)
-        norm_score = score / max_score
 
         wandb_run.log(
             {
@@ -101,19 +105,19 @@ def evaluate(agent, env_name, args, wandb_run):
         if done:
             highscore = max(score, highscore)
 
-            if infos["won"]:
+            if info["won"]:
                 nb_wins += 1
                 if highscore == max_score:
                     log.debug(obs)
                     break  # No reason to play that game more.
-            elif infos["lost"]:
+            elif info["lost"]:
                 nb_losts += 1
 
             # Replay the game in the hope of achieving a better score.
             last_obs = obs
-            obs, infos = env.reset()
+            obs, info = env.reset()
             obs = last_obs + "\n\n-= Restarting =-\n" + obs
-            agent.reset(obs, infos)
+            agent.reset(obs, info)
             nb_resets += 1
 
             log.debug(f"{obs}")
