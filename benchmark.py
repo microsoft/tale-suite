@@ -68,6 +68,11 @@ def evaluate(agent, env_name, args, wandb_run):
         obs, _, done, info = env.step(action)
         score = info["score"]
         moves = info["moves"]
+
+        # Textworld returns info["moves"] as a NoneType which causes an error. Not sure how to fix this
+        if not moves:
+            moves = -1
+
         feedback = info["feedback"]
         norm_score = score / max_score
 
@@ -77,11 +82,9 @@ def evaluate(agent, env_name, args, wandb_run):
             and action not in info["admissible_commands"]
         ):
             nb_invalid_actions += 1
-
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
         msg = msg.format(step, time.time() - start_time, score, moves, action)
         log.info(msg)
-
         wandb_run.log(
             {
                 "episode/moves": moves,
@@ -90,7 +93,6 @@ def evaluate(agent, env_name, args, wandb_run):
             },
             step=step + 1,
         )
-
         # fmt: off
         #table.add_data(
         results.append([
