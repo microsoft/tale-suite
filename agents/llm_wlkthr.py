@@ -20,7 +20,8 @@ class LLMWlkThrAgent(LLMAgent):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.sys_prompt = ""
+        self.sys_prompt = "Not Initialized"
+        self.steps = 1
 
     @property
     def uid(self):
@@ -34,6 +35,11 @@ class LLMWlkThrAgent(LLMAgent):
         )
 
     def act(self, obs, reward, done, infos):
+
+        # Throw an error if the agent has failed to get the walkthrough from the environment for whatever reason.
+        if self.sys_prompt == "Not Initialized":
+            raise ValueError("Walkthrough not initalized: Check the environment")
+
         conversation = self.conversation or self.model.conversation()
         conversation.responses = conversation.responses[-self.context :]
         prompt = f"{obs}\n>" if self.conversation else self.build_prompt(obs)
@@ -55,16 +61,34 @@ class LLMWlkThrAgent(LLMAgent):
             + count_tokens(text=response.text()),
         }
 
+        self.steps += 1
+
         return action, stats
 
+    # def reset(self, obs, infos):
+    #     self.sys_prompt = (
+    #         "You are playing a text-based game and your goal is to finish it with the highest score."
+    #         " The following is a walkthrough in the form of a list of actions to beat the game."
+    #         " You should follow this walkthrough as closely as possible to get the maximum score"
+    #         " You must ONLY respond with the action you wish to take with no other special tokens."
+    #         "Walkthrough: WALKTHROUGH"
+    #     ).replace("WALKTHROUGH", ",".join(infos.get("extra.walkthrough")))
+    #     return True
+
     def reset(self, obs, infos):
+        plain_walkthrough = infos.get("extra.walkthrough")
+        numbered_walkthrough = ""
+
+        for i, act in enumerate(plain_walkthrough):
+            numbered_walkthrough += str(i + 1) + ".)" + act + ", "
+
         self.sys_prompt = (
             "You are playing a text-based game and your goal is to finish it with the highest score."
             " The following is a walkthrough in the form of a list of actions to beat the game."
             " You should follow this walkthrough as closely as possible to get the maximum score"
             " You must ONLY respond with the action you wish to take with no other special tokens."
             "Walkthrough: WALKTHROUGH"
-        ).replace("WALKTHROUGH", ",".join(infos.get("extra.walkthrough")))
+        ).replace("WALKTHROUGH", numbered_walkthrough[:-2])
         return True
 
 
@@ -92,7 +116,7 @@ def build_argparser(parser=None):
     group.add_argument(
         "--context-limit",
         type=int,
-        default=10,
+        default=51,
         help="Limit context for LLM (in conversation turns). Default: %(default)s",
     )
     group.add_argument(
