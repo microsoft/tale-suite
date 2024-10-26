@@ -16,9 +16,19 @@ from twbench.utils import count_tokens, is_recoverable_error, log
 
 SYSTEM_PROMPT = (
     "You are playing a text-based game and your goal is to finish it with the highest score."
-    " Upon reading the text observation, use short phrases to interact with the game, e.g. `get lamp`."
+    " Upon reading the text observation, provide a *single* short phrase to interact with the game, e.g. `get lamp` (without the backticks)."
     " When stuck, try using the `help` command to see what commands are available."
 )
+
+
+def format_messages_to_markdown(messages):
+    """Concatenate messages into a single markdown string."""
+    markdown_content = ""
+    for message in messages:
+        role = message["role"].capitalize()
+        content = message["content"]
+        markdown_content += f"#### {role}\n\n```\n{content}\n```\n\n"
+    return markdown_content
 
 
 def build_prompt(observation, history, question, qa_history):
@@ -45,12 +55,14 @@ def build_prompt(observation, history, question, qa_history):
 
 class ReactAgent(twbench.Agent):
 
-    def __init__(self, model, *args, **kwargs):
-        self.model = llm.get_model(model)
+    def __init__(self, *args, **kwargs):
+        self.llm = kwargs["llm"]
+        self.model = llm.get_model(self.llm)
+        self.allows_system_prompt = self.llm not in ["o1-mini", "o1-preview"]
 
-        # Retrieve the API key from llm's keys store.
+        # Provide the API key, if one is needed and has been provided
         self.model.key = llm.get_key(
-            kwargs.get("key"), model, self.model.key_env_var
+            kwargs.get("key"), kwargs["llm"], self.model.key_env_var
         ) or llm.get_key(None, self.model.needs_key, self.model.key_env_var)
 
         self.seed = kwargs.get("seed", 1234)
