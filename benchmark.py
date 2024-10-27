@@ -371,7 +371,7 @@ def parse_args():
                                 help="Load an external python file. Useful to register custom challenges on-the-fly. Default: %(default)s")
 
     parser = argparse.ArgumentParser(parents=[general_parser])
-    subparsers = parser.add_subparsers(dest="subcommand", title='Agents to benchmark')
+    subparsers = parser.add_subparsers(dest="subcommand", title='Available agents to benchmark')
 
     def _add_general_settings(parser):
 
@@ -402,6 +402,7 @@ def parse_args():
         general_group.add_argument("--debug", action="store_true",
                             help="Debug mode.")
 
+    _add_general_settings(parser)
 
     agent_parsers = []
     for challenge_name, (desc, _, add_agent_arguments) in twbench.agent.AGENTS.items():
@@ -410,7 +411,6 @@ def parse_args():
         _add_general_settings(agent_parser)
         agent_parsers.append(agent_parser)
 
-    #return parser, agent_parsers
     return parser.parse_args()
     # fmt: on
 
@@ -425,18 +425,7 @@ def main():
 
     args.verbose = args.verbose or args.very_verbose
 
-    # # Dynamically load agent class.
-    # path, klass = args.agent.split(":")
-    # spec = importlib.util.spec_from_file_location("twbench.agents", path)
-    # mod = importlib.util.module_from_spec(spec)
-    # spec.loader.exec_module(mod)
-    # if not hasattr(mod, klass):
-    #     msg = "python file '{}' has no class '{}'".format(path, klass)
-    #     raise AttributeError(msg)
-
     # Instanciate the agent.
-    # Agent = getattr(mod, klass)
-    # agent = Agent(**vars(args))
     _, Agent, _ = twbench.agent.AGENTS[args.subcommand]
     agent = Agent(**vars(args))
     agent.new = partial(Agent, **vars(args))
