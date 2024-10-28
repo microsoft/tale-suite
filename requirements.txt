@@ -2,6 +2,7 @@ gymnasium>=1.0.0
 
 jericho>=3.3.0
 textworld
+textworld-express
 scienceworld>=1.2.2
 discoveryworld
 #alfworld
