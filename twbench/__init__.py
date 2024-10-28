@@ -31,7 +31,6 @@ for dirname in os.listdir(root_dir):
 
 
 for task in tasks:
-    print(task)
     try:
         # Load environments
         module = importlib.import_module(f".{task}", package="twbench")
