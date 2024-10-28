@@ -161,7 +161,7 @@ def benchmark(agent, games, args):
             logfile = pjoin(
                 args.log_dir,
                 f"{game_name}",
-                f"a{int(args.admissible_commands)}_s{args.game_seed}.jsonl",
+                f"a{int(args.admissible_commands)}_s{args.game_seed}_steps{args.nb_steps}.jsonl",
             )
             os.makedirs(os.path.dirname(logfile), exist_ok=True)
             if os.path.exists(logfile) and not args.force:
