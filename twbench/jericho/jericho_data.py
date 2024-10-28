@@ -12,6 +12,10 @@ TWBENCH_CACHE_JERICHO = pjoin(TWBENCH_CACHE_HOME, "jericho")
 with open(pjoin(os.path.dirname(__file__), "games.json")) as f:
     GAMES_INFOS = json.load(f)
 
+# Remove known games that are not working.
+# GAMES_INFOS.pop("sherlock", None)
+# GAMES_INFOS.pop("trinity", None)
+
 
 def prepare_jericho_data(force=TWBENCH_FORCE_DOWNLOAD):
     # if os.path.exists(TWBENCH_CACHE_JERICHO) and not force:

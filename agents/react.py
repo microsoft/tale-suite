@@ -100,7 +100,7 @@ class ReactAgent(twbench.Agent):
 
     def act(self, obs, reward, done, infos):
         question = "// Based on the above information (history), what is the best action to take? Let's think step by step, "
-        messages = self.build_messages(f"{obs}> ", question, [])
+        messages = self.build_messages(obs, question, [])
         response = self._llm_call_from_messages(
             messages,
             temperature=self.cot_temp,
@@ -113,8 +113,8 @@ class ReactAgent(twbench.Agent):
         log.debug(colored(question, "cyan"))
         log.debug(colored(answer, "green"))
 
-        prompt = "// Provide your chosen action on a single line while respecting the desired format."
-        messages = self.build_messages(f"{obs}> ", prompt, [(question, answer)])
+        prompt = "// Provide your chosen action on a single line while respecting the desired format.\n> "
+        messages = self.build_messages(obs, prompt, [(question, answer)])
         response = self._llm_call_from_messages(
             messages,
             temperature=self.act_temp,
@@ -124,7 +124,7 @@ class ReactAgent(twbench.Agent):
         )
 
         action = response.text().strip()
-        self.history.append((f"{obs}> ", f"{action}\n"))
+        self.history.append((obs, f"> {action}"))
         log.debug(colored(prompt, "cyan"))
 
         # Compute usage statistics
@@ -160,7 +160,7 @@ class ReactAgent(twbench.Agent):
 
         if not self.conversation:
             # Merge all messages into a single message except for the system.
-            content = "".join([msg["content"] for msg in messages[1:]])
+            content = "\n\n".join([msg["content"] for msg in messages[1:]])
             messages = messages[:1] + [{"role": "user", "content": content}]
 
         if not self.allows_system_prompt:
