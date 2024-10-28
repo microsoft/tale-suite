@@ -183,7 +183,7 @@ def benchmark(agent, games, args):
                 **agent.params,
             }
             wandb_run = wandb.init(
-                project="text-games-benchmark",
+                project="tw-bench",
                 config=wandb_config,
                 reinit=True,
                 name=f"{game_name} - {agent.uid}",

@@ -2,6 +2,7 @@ import argparse
 
 import llm
 import numpy as np
+from llm import Conversation, Response
 from tenacity import (
     retry,
     retry_if_exception,
@@ -11,7 +12,12 @@ from tenacity import (
 
 import twbench
 from twbench.agent import register
-from twbench.utils import count_tokens, is_recoverable_error
+from twbench.utils import (
+    TokenCounter,
+    format_messages_to_markdown,
+    is_recoverable_error,
+    messages2conversation,
+)
 
 SYSTEM_PROMPT = (
     "You are playing a text-based game and your goal is to finish it with the highest score."
@@ -20,21 +26,12 @@ SYSTEM_PROMPT = (
 )
 
 
-def format_messages_to_markdown(messages):
-    """Concatenate messages into a single markdown string."""
-    markdown_content = ""
-    for message in messages:
-        role = message["role"].capitalize()
-        content = message["content"]
-        markdown_content += f"#### {role}\n\n```\n{content}\n```\n\n"
-    return markdown_content
-
-
 class LLMAgent(twbench.Agent):
 
     def __init__(self, *args, **kwargs):
         self.llm = kwargs["llm"]
         self.model = llm.get_model(self.llm)
+        self.token_counter = TokenCounter(self.model.model_name)
         self.allows_system_prompt = self.llm not in ["o1-mini", "o1-preview"]
 
         # Provide the API key, if one is needed and has been provided
@@ -46,18 +43,19 @@ class LLMAgent(twbench.Agent):
         self.rng = np.random.RandomState(self.seed)
 
         self.history = []
-        self.context = kwargs.get("context_limit", -0)  # i.e. keep all.
-        self.act_temp = kwargs.get("act_temp", 0.0)
-        self.conversation = None
-        if kwargs.get("conversation"):
-            self.conversation = self.model.conversation()
+        self.context_limit = kwargs["context_limit"]
+        if self.context_limit is not None:
+            assert self.context_limit > 0, "--context-limit must be greater than 0."
+
+        self.act_temp = kwargs["act_temp"]
+        self.conversation = kwargs.get("conversation", False)
 
     @property
     def uid(self):
         return (
             f"LLMAgent_{self.llm}"
             f"_s{self.seed}"
-            f"_c{self.context}"
+            f"_c{self.context_limit}"
             f"_t{self.act_temp}"
             f"_conv{self.conversation is not None}"
         )
@@ -67,7 +65,7 @@ class LLMAgent(twbench.Agent):
         return {
             "llm": self.llm,
             "seed": self.seed,
-            "context": self.context,
+            "context_limit": self.context_limit,
             "act_temp": self.act_temp,
             "conversation": self.conversation is not None,
         }
@@ -77,32 +75,24 @@ class LLMAgent(twbench.Agent):
         wait=wait_random_exponential(multiplier=1, max=40),
         stop=stop_after_attempt(100),
     )
-    def _llm_call(self, conversation, *args, **kwargs):
+    def _llm_call_from_conversation(self, conversation, *args, **kwargs):
         response = conversation.prompt(*args, **kwargs)
         response.duration_ms()  # Forces the response to be computed.
         return response
 
+    def _llm_call_from_messages(self, messages, *args, **kwargs):
+        conversation = messages2conversation(self.model, messages)
+        prompt = messages[-1]["content"]
+        system = messages[0]["content"] if self.allows_system_prompt else None
+
+        return self._llm_call_from_conversation(
+            conversation, prompt=prompt, system=system, *args, **kwargs
+        )
+
     def act(self, obs, reward, done, infos):
-        conversation = self.conversation or self.model.conversation()
-        conversation.responses = conversation.responses[-self.context :]
-        # TODO: Add a message saying the history was truncated?
-
-        prompt = f"{obs}\n>" if self.conversation else self.build_prompt(obs)
-
-        if not self.allows_system_prompt:
-            if len(conversation.responses) == 0:
-                # Model doesn't support system prompt and this is the first message in the conversation.
-                prompt = f"{SYSTEM_PROMPT}\n\n{prompt}"
-            else:
-                # Make sure the system prompt is added to the first message in the conversation.
-                first_prompt = conversation.responses[0].prompt
-                if SYSTEM_PROMPT not in first_prompt.prompt:
-                    first_prompt.prompt = f"{SYSTEM_PROMPT}\n\n{first_prompt.prompt}"
-
-        response = self._llm_call(
-            conversation,
-            prompt=prompt,
-            system=SYSTEM_PROMPT if self.allows_system_prompt else None,
+        messages = self.build_messages(f"{obs}> ")
+        response = self._llm_call_from_messages(
+            messages,
             temperature=self.act_temp,
             seed=self.seed,
             top_p=1,
@@ -110,37 +100,44 @@ class LLMAgent(twbench.Agent):
         )
 
         action = response.text().strip()
-        self.history.append((obs, f"> {action}\n"))
+        self.history.append((f"{obs}> ", f"{action}\n"))
 
         # Compute usage statistics
-        messages = conversation.responses[-1]._prompt_json["messages"]
-
         stats = {
             "prompt": format_messages_to_markdown(messages),
             "response": response.text(),
-            "nb_tokens": count_tokens(messages=messages)
-            + count_tokens(text=response.text()),
+            "nb_tokens": self.token_counter(messages=messages, text=response.text()),
         }
 
         return action, stats
 
-    def build_prompt(self, observation):
-        messages = []
-        # messages = [{"role": "system", "content": SYSTEM_PROMPT}]
-        # if not self.allows_system_prompt:
-        #     messages[-1]["role"] = "user"
+    def build_messages(self, observation):
+        messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+        limit = self.context_limit or len(self.history) + 1
 
-        for obs, action in self.history[-self.context :]:
+        for i, (obs, action) in enumerate(self.history[-limit:]):
+            if len(self.history) >= limit and i == 0:
+                # Add the current observation.
+                obs = (
+                    f"// History has been truncated to the last {limit} steps.\n...\n> "
+                )
+
             messages.append({"role": "user", "content": obs})
             messages.append({"role": "assistant", "content": action})
 
         messages.append({"role": "user", "content": observation})
 
-        # Discard the system prompt.
-        # Merge all messages content into a single string
-        # prompt = "\n".join([msg["content"] for msg in messages[1:]])
-        prompt = "\n".join([msg["content"] for msg in messages])
-        return prompt
+        if not self.conversation:
+            # Merge all messages into a single message except for the system.
+            content = "".join([msg["content"] for msg in messages[1:]])
+            messages = messages[:1] + [{"role": "user", "content": content}]
+
+        if not self.allows_system_prompt:
+            # Make sure the system prompt is added to the following message.
+            messages.pop(0)
+            messages[1]["content"] = f"{SYSTEM_PROMPT}\n\n{messages[1]['content']}"
+
+        return messages
 
 
 def build_argparser(parser=None):
@@ -167,8 +164,7 @@ def build_argparser(parser=None):
     group.add_argument(
         "--context-limit",
         type=int,
-        default=10,
-        help="Limit context for LLM (in conversation turns). Default: %(default)s",
+        help="Limit context for LLM (in conversation turns). Default: no limit.",
     )
     group.add_argument(
         "--conversation",

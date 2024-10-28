@@ -6,7 +6,9 @@ from os.path import join as pjoin
 
 import requests
 import tiktoken
+from llm import Conversation, Response
 from tqdm import tqdm
+from transformers import AutoTokenizer
 
 log = logging.getLogger("tw-bench")
 
@@ -92,13 +94,79 @@ def download(url, dst, desc=None, force=False):
     return path
 
 
-def count_tokens(messages=None, text=None):
-    enc = tiktoken.get_encoding("o200k_base")
-    if messages is not None:
-        return sum(len(enc.encode(msg["content"])) for msg in messages)
-    if text is not None:
-        return len(enc.encode(text))
-    return 0
+class TokenCounter:
+    def __init__(self, model: str = "gpt-4o"):
+        self.model = model
+        try:
+            self.tokenize = tiktoken.encoding_for_model(model).encode
+        except KeyError:
+            try:
+                # Try to load from transformers.
+                self.tokenize = AutoTokenizer.from_pretrained(model).tokenize
+            except OSError:
+                msg = (
+                    f"Tokenizer not found for model {model},"
+                    " make sure you have access to the model"
+                    " (e.g., HuggingFace API key is correctly set)."
+                )
+                raise ValueError(msg)
+
+    def __call__(self, *, messages=None, text=None):
+        nb_tokens = 0
+        if messages is not None:
+            nb_tokens += sum(len(self.tokenize(msg["content"])) for msg in messages)
+
+        if text is not None:
+            nb_tokens += len(self.tokenize(text))
+
+        return nb_tokens
+
+
+def merge_messages(messages):
+    """Merge messages from the same role into a single message."""
+    messages_out = [dict(messages[0])]
+    for message in messages[1:]:
+        if message["role"] == messages_out[-1]["role"]:
+            messages_out[-1]["content"] += "\n\n" + message["content"]
+        else:
+            messages_out.append(dict(message))
+
+    return messages_out
+
+
+def messages2conversation(model, messages):
+    messages = merge_messages(messages)
+    responses = []
+
+    system = None
+    for message in messages:
+        if message["role"] == "system":
+            system = message["content"]
+            continue
+
+        if message["role"] == "user":
+            prompt = message["content"]
+            continue
+
+        if message["role"] == "assistant":
+            response = message["content"]
+            responses.append(
+                Response.fake(model, prompt=prompt, system=system, response=response)
+            )
+            system = None
+            prompt = None
+
+    return Conversation(model, responses=responses)
+
+
+def format_messages_to_markdown(messages):
+    """Concatenate messages into a single markdown string."""
+    markdown_content = ""
+    for message in messages:
+        role = message["role"].capitalize()
+        content = message["content"]
+        markdown_content += f"#### {role}\n\n```\n{content}\n```\n\n"
+    return markdown_content
 
 
 def is_recoverable_error(exception):
