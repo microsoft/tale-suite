@@ -16,7 +16,7 @@ from twbench.utils import count_tokens, is_recoverable_error
 
 
 # For the LLMWlkThrAgent, the sysprompt is initialized in the __init__ function as we need to change it once we extract the walkthrough from the env
-class LLMWlkThrAgent(LLMAgent):
+class LLMWalkThroughAgent(LLMAgent):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -135,7 +135,7 @@ def build_argparser(parser=None):
 
 
 register(
-    name="wlkthr",
+    name="walkthrough",
     desc=(
         "This agent uses the ground-truth walkthrough from the environment to attempt to progress through the game."
     ),
