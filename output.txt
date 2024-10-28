@@ -1,0 +1,10 @@
+jericho
+textworld
+scienceworld
+Importing agent(s) from agents/traj_comp.py.
+Evaluating 1 games:
+JerichoEnvZork1  Steps:   10/  10  Time: 0:00:08   0 resets  Score:   5/350 ( 1.43%)
+Mean score (over 1 games) =   0.0143% of total possible
+Total time      8.86 seconds
+Total 0 invalid actions
+Avg. speed:     1.13 steps per second

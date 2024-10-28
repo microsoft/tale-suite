@@ -19,7 +19,7 @@ import twbench
 import wandb
 from twbench.utils import log
 
-os.environ["WANDB_MODE"] = "disabled"
+os.environ["WANDB_MODE"] = "online"
 
 
 def evaluate(agent, env_name, args, wandb_run):
@@ -185,7 +185,8 @@ def benchmark(agent, games, args):
                 **agent.params,
             }
             wandb_run = wandb.init(
-                project="text-games-benchmark",
+                # project="text-games-benchmark",
+                project="LLM Walkthrough Agent",
                 config=wandb_config,
                 reinit=True,
                 name=f"{game_name} - {agent.uid}",
