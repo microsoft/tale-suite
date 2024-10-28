@@ -12,7 +12,12 @@ from tenacity import (
 import twbench
 from agents.llm import LLMAgent
 from twbench.agent import register
-from twbench.utils import count_tokens, is_recoverable_error
+from twbench.utils import (
+    TokenCounter,
+    format_messages_to_markdown,
+    is_recoverable_error,
+    messages2conversation,
+)
 
 
 # For the LLMWlkThrAgent, the sysprompt is initialized in the __init__ function as we need to change it once we extract the walkthrough from the env
@@ -21,61 +26,19 @@ class LLMWalkThroughAgent(LLMAgent):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.sys_prompt = "Not Initialized"
-        self.steps = 1
 
     @property
     def uid(self):
         return (
             f"LLMAgent_{self.llm}"
             f"_s{self.seed}"
-            f"_c{self.context}"
+            f"_c{self.context_limit}"
             f"_t{self.act_temp}"
             f"_conv{self.conversation is not None}"
             f"Walkthrough Agent"
         )
 
-    def act(self, obs, reward, done, infos):
-
-        # Throw an error if the agent has failed to get the walkthrough from the environment for whatever reason.
-        if self.sys_prompt == "Not Initialized":
-            raise ValueError("Walkthrough not initalized: Check the environment")
-
-        conversation = self.conversation or self.model.conversation()
-        conversation.responses = conversation.responses[-self.context :]
-        prompt = f"{obs}\n>" if self.conversation else self.build_prompt(obs)
-        response = conversation.prompt(
-            prompt=prompt,
-            system=self.sys_prompt,
-            temperature=self.act_temp,
-            seed=self.seed,
-            top_p=1,
-        )
-        action = response.text().strip()
-        self.history.append((obs, f"{action}\n"))
-        # Compute usage statistics
-        messages = conversation.responses[-1]._prompt_json["messages"]
-        stats = {
-            "prompt": response._prompt_json,
-            "response": response.text(),
-            "nb_tokens": count_tokens(messages=messages)
-            + count_tokens(text=response.text()),
-        }
-
-        self.steps += 1
-
-        return action, stats
-
-    # def reset(self, obs, infos):
-    #     self.sys_prompt = (
-    #         "You are playing a text-based game and your goal is to finish it with the highest score."
-    #         " The following is a walkthrough in the form of a list of actions to beat the game."
-    #         " You should follow this walkthrough as closely as possible to get the maximum score"
-    #         " You must ONLY respond with the action you wish to take with no other special tokens."
-    #         "Walkthrough: WALKTHROUGH"
-    #     ).replace("WALKTHROUGH", ",".join(infos.get("extra.walkthrough")))
-    #     return True
-
-    def reset(self, obs, infos):
+    def reset(self, obs, infos, env=""):
         plain_walkthrough = infos.get("extra.walkthrough")
         numbered_walkthrough = ""
 
@@ -87,8 +50,12 @@ class LLMWalkThroughAgent(LLMAgent):
             " The following is a walkthrough in the form of a list of actions to beat the game."
             " You should follow this walkthrough as closely as possible to get the maximum score"
             " You must ONLY respond with the action you wish to take with no other special tokens."
-            "Walkthrough: WALKTHROUGH"
-        ).replace("WALKTHROUGH", numbered_walkthrough[:-2])
+            "Walkthrough: $%^WALKTHROUGH$%^"
+        ).replace("$%^WALKTHROUGH$%^", numbered_walkthrough[:-2])
+
+        if "$%^WALKTHROUGH$%^" in self.sys_prompt or len(plain_walkthrough) < 1:
+            raise ValueError("Walkthrough not initalized: Check the environment")
+
         return True
 
 
@@ -139,6 +106,6 @@ register(
     desc=(
         "This agent uses the ground-truth walkthrough from the environment to attempt to progress through the game."
     ),
-    klass=LLMWlkThrAgent,
+    klass=LLMWalkThroughAgent,
     add_arguments=build_argparser,
 )

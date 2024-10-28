@@ -19,7 +19,11 @@ class JerichoEnv(gym.Env):
             admissible_commands=admissible_commands,
             extras=["walkthrough"],
         )
+        self.test_walkthrough()
         self.env = textworld.start(gamefile, self.infos, wrappers=[Filter])
+
+    def test_walkthrough(self):
+        print(self.infos)
 
     def reset(self, *, seed=None, options=None):
         self.env.seed(seed)
