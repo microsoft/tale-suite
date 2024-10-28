@@ -69,10 +69,6 @@ def evaluate(agent, env_name, args, wandb_run):
         score = info["score"]
         moves = info["moves"]
 
-        # Textworld returns info["moves"] as a NoneType which causes an error. Not sure how to fix this
-        if not moves:
-            moves = -1
-
         feedback = info["feedback"]
         norm_score = score / max_score
         highscore = max(score, highscore)

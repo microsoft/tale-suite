@@ -55,6 +55,10 @@ class LLMWalkThroughAgent(LLMAgent):
 
         if "$%^WALKTHROUGH$%^" in self.sys_prompt or len(plain_walkthrough) < 1:
             raise ValueError("Walkthrough not initalized: Check the environment")
+        elif not infos["valid_walkthrough"]:
+            raise ValueError(
+                "Provided walkthrough does not successfully complete game: Terminating run"
+            )
 
         return True
 

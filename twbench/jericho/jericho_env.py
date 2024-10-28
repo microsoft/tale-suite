@@ -19,15 +19,24 @@ class JerichoEnv(gym.Env):
             admissible_commands=admissible_commands,
             extras=["walkthrough"],
         )
-        self.test_walkthrough()
         self.env = textworld.start(gamefile, self.infos, wrappers=[Filter])
-
-    def test_walkthrough(self):
-        print(self.infos)
 
     def reset(self, *, seed=None, options=None):
         self.env.seed(seed)
-        return self.env.reset()
+        obs, info = self.env.reset()
+        walkthrough = info["extra.walkthrough"]
+        for act in walkthrough:
+            _, _, _, info_internal_eval = self.env.step(act)
+
+        if info_internal_eval["score"] != info_internal_eval["max_score"]:
+            valid_walkthrough = False
+        else:
+            valid_walkthrough = True
+
+        _, _ = self.env.reset()
+        info["valid_walkthrough"] = valid_walkthrough
+
+        return obs, info
 
     def step(self, action):
         return self.env.step(action)
