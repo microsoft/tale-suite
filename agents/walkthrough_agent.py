@@ -8,6 +8,7 @@ from twbench.utils import TokenCounter
 class WalkthroughAgent(twbench.Agent):
     def __init__(self, **kwargs):
         self.token_counter = TokenCounter()
+        self.walkthrough = None
 
     @property
     def uid(self):
@@ -19,7 +20,8 @@ class WalkthroughAgent(twbench.Agent):
 
     def reset(self, obs, info, env_name):
         # Store the walkthrough in reverse order so we can pop from it.
-        self.walkthrough = info.get("extra.walkthrough")[::-1]
+        if self.walkthrough is None:
+            self.walkthrough = info.get("extra.walkthrough")[::-1]
 
     def act(self, obs, reward, done, info):
         stats = {
@@ -27,6 +29,9 @@ class WalkthroughAgent(twbench.Agent):
             "response": None,
             "nb_tokens": self.token_counter(text=obs),
         }
+
+        if len(self.walkthrough) == 0:
+            return "QUIT", stats
 
         return self.walkthrough.pop(), stats
 
