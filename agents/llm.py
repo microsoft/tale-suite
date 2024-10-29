@@ -90,7 +90,7 @@ class LLMAgent(twbench.Agent):
         )
 
     def act(self, obs, reward, done, infos):
-        messages = self.build_messages(obs)
+        messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(
             messages,
             temperature=self.act_temp,
@@ -100,7 +100,7 @@ class LLMAgent(twbench.Agent):
         )
 
         action = response.text().strip()
-        self.history.append((obs, f"> {action}"))
+        self.history.append((f"{obs}\n> ", f"{action}\n"))
 
         # Compute usage statistics
         stats = {
@@ -129,7 +129,7 @@ class LLMAgent(twbench.Agent):
 
         if not self.conversation:
             # Merge all messages into a single message except for the system.
-            content = "\n\n".join([msg["content"] for msg in messages[1:]])
+            content = "".join([msg["content"] for msg in messages[1:]])
             messages = messages[:1] + [{"role": "user", "content": content}]
 
         if not self.allows_system_prompt:

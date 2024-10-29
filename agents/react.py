@@ -12,7 +12,7 @@ from termcolor import colored
 
 import twbench
 from twbench.agent import register
-from twbench.utils import TokenCounter, is_recoverable_error, log, messages2conversation
+from twbench.utils import TokenCounter, is_recoverable_error, log, messages2conversation, format_messages_to_markdown
 
 SYSTEM_PROMPT = (
     "You are playing a text-based game and your goal is to finish it with the highest score."
@@ -20,16 +20,6 @@ SYSTEM_PROMPT = (
     " then provide a *single* short phrase to interact with the game when asked to do so, e.g. `get lamp` (without the backticks)."
     " When stuck, try using the `help` command to see what commands are available."
 )
-
-
-def format_messages_to_markdown(messages):
-    """Concatenate messages into a single markdown string."""
-    markdown_content = ""
-    for message in messages:
-        role = message["role"].capitalize()
-        content = message["content"]
-        markdown_content += f"#### {role}\n\n```\n{content}\n```\n\n"
-    return markdown_content
 
 
 class ReactAgent(twbench.Agent):
@@ -53,8 +43,9 @@ class ReactAgent(twbench.Agent):
         if self.context_limit is not None:
             assert self.context_limit > 0, "--context-limit must be greater than 0."
 
-        self.cot_temp = kwargs.get("cot_temp", 0.0)
         self.act_temp = kwargs.get("act_temp", 0.0)
+        self.cot_temp = kwargs.get("cot_temp", 0.0)
+        self.cot_max_tokens = kwargs.get("cot_max_tokens")
         self.conversation = kwargs.get("conversation", False)
 
     @property
@@ -64,7 +55,8 @@ class ReactAgent(twbench.Agent):
             f"_s{self.seed}"
             f"_c{self.context_limit}"
             f"_t{self.act_temp}"
-            f"_cot{self.cot_temp}"
+            f"_cotT{self.cot_temp}"
+            f"_cotN{self.cot_max_tokens}"
             f"_conv{self.conversation is not None}"
         )
 
@@ -76,6 +68,7 @@ class ReactAgent(twbench.Agent):
             "context_limit": self.context_limit,
             "act_temp": self.act_temp,
             "cot_temp": self.cot_temp,
+            "cot_temp": self.cot_max_tokens,
             "conversation": self.conversation is not None,
         }
 
@@ -99,11 +92,12 @@ class ReactAgent(twbench.Agent):
         )
 
     def act(self, obs, reward, done, infos):
-        question = "// Based on the above information (history), what is the best action to take? Let's think step by step, "
+        question = "// Based on the above information (history), what is the best action to take? Let's think step by step.\n"
         messages = self.build_messages(obs, question, [])
         response = self._llm_call_from_messages(
             messages,
             temperature=self.cot_temp,
+            max_tokens=self.cot_max_tokens,
             seed=self.seed,
             top_p=1,
             stream=False,
@@ -114,7 +108,7 @@ class ReactAgent(twbench.Agent):
         log.debug(colored(answer, "green"))
 
         prompt = "// Provide your chosen action on a single line while respecting the desired format.\n> "
-        messages = self.build_messages(obs, prompt, [(question, answer)])
+        messages = self.build_messages(obs, prompt, [(question, f"{answer}\n")])
         response = self._llm_call_from_messages(
             messages,
             temperature=self.act_temp,
@@ -124,7 +118,7 @@ class ReactAgent(twbench.Agent):
         )
 
         action = response.text().strip()
-        self.history.append((obs, f"> {action}"))
+        self.history.append((f"{obs}\n> ", f"{action}\n"))
         log.debug(colored(prompt, "cyan"))
 
         # Compute usage statistics
@@ -160,7 +154,7 @@ class ReactAgent(twbench.Agent):
 
         if not self.conversation:
             # Merge all messages into a single message except for the system.
-            content = "\n\n".join([msg["content"] for msg in messages[1:]])
+            content = "".join([msg["content"] for msg in messages[1:]])
             messages = messages[:1] + [{"role": "user", "content": content}]
 
         if not self.allows_system_prompt:
@@ -191,6 +185,12 @@ def build_argparser(parser=None):
         type=float,
         default=0.0,
         help="Temperature for LLM when doing chain-of-thoughts. Default: %(default)s",
+    )
+    group.add_argument(
+        "--cot-max-tokens",
+        type=int,
+        default=1024,
+        help="Maximum number of token for chain-of-thoughts. Default: %(default)s",
     )
     group.add_argument(
         "--act-temp",

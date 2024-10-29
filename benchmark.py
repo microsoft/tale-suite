@@ -258,7 +258,7 @@ def benchmark(agent, games, args):
 
     if nb_games > 0 and total_time > 0:
         log.critical(
-            "Mean score (over {} games) = {:8.4f}% of total possible".format(
+            "Mean score (over {} games) = {:8.4%} of total possible".format(
                 nb_games, mean_score / nb_games
             )
         )
@@ -434,6 +434,7 @@ def main():
     args.log_dir = pjoin(args.log_dir, f"tw-bench_{agent.uid}")
     os.makedirs(args.log_dir, exist_ok=True)
     setup_logging(args)
+    print(colored(f"Logs will be saved in {args.log_dir}", "magenta"))
 
     if args.wandb:
         os.environ["WANDB_MODE"] = "online"
