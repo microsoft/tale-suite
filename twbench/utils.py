@@ -136,7 +136,7 @@ def merge_messages(messages):
 
 
 def messages2conversation(model, messages):
-    messages = merge_messages(messages)
+    messages = merge_messages(messages)  # Just in case.
     responses = []
 
     system = None

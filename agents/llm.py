@@ -16,6 +16,7 @@ from twbench.utils import (
     TokenCounter,
     format_messages_to_markdown,
     is_recoverable_error,
+    merge_messages,
     messages2conversation,
 )
 
@@ -126,6 +127,9 @@ class LLMAgent(twbench.Agent):
             messages.append({"role": "assistant", "content": action})
 
         messages.append({"role": "user", "content": observation})
+
+        # Just in case, let's avoid having multiple messages from the same role.
+        messages = merge_messages(messages)
 
         if not self.conversation:
             # Merge all messages into a single message except for the system.

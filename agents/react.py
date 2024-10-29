@@ -12,7 +12,7 @@ from termcolor import colored
 
 import twbench
 from twbench.agent import register
-from twbench.utils import TokenCounter, is_recoverable_error, log, messages2conversation, format_messages_to_markdown
+from twbench.utils import TokenCounter, is_recoverable_error, log, merge_messages, messages2conversation, format_messages_to_markdown
 
 SYSTEM_PROMPT = (
     "You are playing a text-based game and your goal is to finish it with the highest score."
@@ -151,6 +151,9 @@ class ReactAgent(twbench.Agent):
             messages.append({"role": "assistant", "content": a})
 
         messages.append({"role": "user", "content": question})
+
+        # Merging the current game observation current and the question.
+        messages = merge_messages(messages)
 
         if not self.conversation:
             # Merge all messages into a single message except for the system.
