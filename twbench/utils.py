@@ -3,6 +3,7 @@ import os
 import shutil
 import tempfile
 from os.path import join as pjoin
+from typing import Optional
 
 import requests
 import tiktoken
@@ -95,8 +96,8 @@ def download(url, dst, desc=None, force=False):
 
 
 class TokenCounter:
-    def __init__(self, model: str = "gpt-4o"):
-        self.model = model
+    def __init__(self, model: Optional[str] = None):
+        self.model = model or "gpt-4o"
         try:
             self.tokenize = tiktoken.encoding_for_model(model).encode
         except KeyError:
