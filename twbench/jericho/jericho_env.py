@@ -23,20 +23,7 @@ class JerichoEnv(gym.Env):
 
     def reset(self, *, seed=None, options=None):
         self.env.seed(seed)
-        obs, info = self.env.reset()
-        walkthrough = info["extra.walkthrough"]
-        for act in walkthrough:
-            _, _, _, info_internal_eval = self.env.step(act)
-
-        if info_internal_eval["score"] != info_internal_eval["max_score"]:
-            valid_walkthrough = False
-        else:
-            valid_walkthrough = True
-
-        _, _ = self.env.reset()
-        info["valid_walkthrough"] = valid_walkthrough
-
-        return obs, info
+        return self.env.reset()
 
     def step(self, action):
         return self.env.step(action)

@@ -36,20 +36,6 @@ class ScienceWorldEnv(gym.Env):
         info["lost"] = False
         info["admissible_commands"] = info["valid"]
         info["extra.walkthrough"] = self.env.get_gold_action_sequence()
-
-        # Test and make sure that the walkthrough can actually get through the env (Accounting for stocasticity)
-        walkthrough = info["extra.walkthrough"]
-        for act in walkthrough:
-            _, _, _, info_internal_eval = self.env.step(act)
-
-        if info_internal_eval["score"] != info_internal_eval["max_score"]:
-            valid_walkthrough = False
-        else:
-            valid_walkthrough = True
-
-        info["valid_walkthrough"] = valid_walkthrough
-        _, _ = self.env.reset()
-
         return obs, info
 
     def step(self, action):

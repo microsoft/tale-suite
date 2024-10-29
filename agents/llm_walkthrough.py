@@ -1,6 +1,7 @@
 import argparse
 
 import llm
+import gymnasium as gym
 import numpy as np
 from tenacity import (
     retry,
@@ -38,29 +39,27 @@ class LLMWalkThroughAgent(LLMAgent):
             f"Walkthrough Agent"
         )
 
-    def reset(self, obs, infos, env=""):
-        plain_walkthrough = infos.get("extra.walkthrough")
-        numbered_walkthrough = ""
+    def reset(self, obs, info, env_name):
+        walkthrough = info.get("extra.walkthrough")
+        if walkthrough is None or len(walkthrough) < 1:
+            raise ValueError("Walkthrough not initalized: Check the environment")
 
-        for i, act in enumerate(plain_walkthrough):
-            numbered_walkthrough += str(i + 1) + ".)" + act + ", "
+        # Check if the walkthrough is valid.
+        env = gym.make(f"twbench/{env_name}-v0", disable_env_checker=True)
+        for act in walkthrough:
+            _, _, _, info_ = env.step(act)
 
+        if info_["score"] != info_["max_score"]:
+            raise ValueError("Provided walkthrough does not successfully complete game.")
+
+        numbered_walkthrough = ",".join(f"{i + 1}.){act}" for i, act in enumerate(walkthrough))
         self.sys_prompt = (
             "You are playing a text-based game and your goal is to finish it with the highest score."
             " The following is a walkthrough in the form of a list of actions to beat the game."
             " You should follow this walkthrough as closely as possible to get the maximum score"
             " You must ONLY respond with the action you wish to take with no other special tokens."
-            "Walkthrough: $%^WALKTHROUGH$%^"
-        ).replace("$%^WALKTHROUGH$%^", numbered_walkthrough[:-2])
-
-        if "$%^WALKTHROUGH$%^" in self.sys_prompt or len(plain_walkthrough) < 1:
-            raise ValueError("Walkthrough not initalized: Check the environment")
-        elif not infos["valid_walkthrough"]:
-            raise ValueError(
-                "Provided walkthrough does not successfully complete game: Terminating run"
-            )
-
-        return True
+            f"Walkthrough: {numbered_walkthrough}"
+        )
 
 
 def build_argparser(parser=None):
