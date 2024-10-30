@@ -1,9 +1,9 @@
 class Agent:
 
-    def reset(self, obs, infos):
+    def reset(self, obs, info, env):
         pass
 
-    def act(self, obs, reward, done, infos):
+    def act(self, obs, reward, done, info):
         raise NotImplementedError("Child class must implement this method.")
 
     @property

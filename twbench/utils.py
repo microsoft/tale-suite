@@ -99,14 +99,14 @@ class TokenCounter:
     def __init__(self, model: Optional[str] = None):
         self.model = model or "gpt-4o"
         try:
-            self.tokenize = tiktoken.encoding_for_model(model).encode
+            self.tokenize = tiktoken.encoding_for_model(self.model).encode
         except KeyError:
             try:
                 # Try to load from transformers.
-                self.tokenize = AutoTokenizer.from_pretrained(model).tokenize
+                self.tokenize = AutoTokenizer.from_pretrained(self.model).tokenize
             except OSError:
                 msg = (
-                    f"Tokenizer not found for model {model},"
+                    f"Tokenizer not found for model {self.model},"
                     " make sure you have access to the model"
                     " (e.g., HuggingFace API key is correctly set)."
                 )

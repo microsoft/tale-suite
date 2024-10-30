@@ -36,7 +36,7 @@ def evaluate(agent, env_name, args, wandb_run):
     obs, info = env.reset(seed=args.game_seed)
 
     agent = agent.new()
-    agent.reset(obs, info)
+    agent.reset(obs, info, env_name)
 
     log.debug(f"Environment reset.\n{obs}\n")
 
@@ -120,7 +120,7 @@ def evaluate(agent, env_name, args, wandb_run):
             last_obs = obs
             obs, info = env.reset()
             obs = last_obs + "\n\n-= Restarting =-\n" + obs
-            agent.reset(obs, info)
+            agent.reset(obs, info, env_name)
             nb_resets += 1
 
             log.debug(f"{obs}")
@@ -179,6 +179,7 @@ def benchmark(agent, games, args):
                 "framework": twbench.env2task[game_name],
                 "agent": agent.uid,
                 "max_steps": args.nb_steps,
+                "game_seed": args.game_seed,
                 "admissible_commands": args.admissible_commands,
                 **agent.params,
             }
@@ -259,7 +260,7 @@ def benchmark(agent, games, args):
 
     if nb_games > 0 and total_time > 0:
         log.critical(
-            "Mean score (over {} games) = {:8.4%} of total possible".format(
+            "Mean score (over {} games) = {:8.2%} of total possible".format(
                 nb_games, mean_score / nb_games
             )
         )
@@ -382,8 +383,8 @@ def parse_args():
         general_group.add_argument("--envs", metavar="env", nargs="+", choices=twbench.envs + twbench.tasks,
                             help="Interactive text environments to evaluate the agent(s)."
                                 f" Available:\n{pretty_print_tasks(disable_print=True)}")
-        general_group.add_argument("--game-seed", type=int, default=20241001,
-                            help="Seed for the game. Default: %(default)s.")
+        general_group.add_argument("--game-seed", type=int,
+                            help="Seed for the game. Default: game-specific one.")
         general_group.add_argument("--nb-steps", type=int, default=1000,
                             help="Maximum number of steps per game.")
         general_group.add_argument("--admissible-commands", action="store_true",

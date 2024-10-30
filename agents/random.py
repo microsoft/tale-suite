@@ -5,13 +5,14 @@ import numpy as np
 
 import twbench
 from twbench.agent import register
-from twbench.utils import count_tokens
+from twbench.utils import TokenCounter
 
 
 class RandomAgent(twbench.Agent):
     def __init__(self, **kwargs):
         self.seed = kwargs.get("seed", 1234)
         self.rng = np.random.RandomState(self.seed)
+        self.token_counter = TokenCounter()
 
         # fmt:off
         self.actions = [
@@ -31,15 +32,15 @@ class RandomAgent(twbench.Agent):
     def params(self):
         return {"seed": self.seed}
 
-    def act(self, obs, reward, done, infos):
+    def act(self, obs, reward, done, info):
         stats = {
             "prompt": None,
             "response": None,
-            "nb_tokens": count_tokens(text=obs),
+            "nb_tokens": self.token_counter(text=obs),
         }
 
-        if "admissible_commands" in infos:
-            return self.rng.choice(infos["admissible_commands"]), stats
+        if "admissible_commands" in info:
+            return self.rng.choice(info["admissible_commands"]), stats
 
         action = self.rng.choice(self.actions)
         if action in ["take", "drop", "eat", "attack"]:
