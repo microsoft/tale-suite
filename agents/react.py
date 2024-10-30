@@ -107,6 +107,9 @@ class ReactAgent(twbench.Agent):
         log.debug(colored(question, "cyan"))
         log.debug(colored(answer, "green"))
 
+        # Compute usage statistics for the CoT.
+        nb_tokens_cot = self.token_counter(messages=messages, text=response.text())
+
         prompt = "// Provide your chosen action on a single line while respecting the desired format.\n> "
         messages = self.build_messages(obs, prompt, [(question, f"{answer}\n")])
         response = self._llm_call_from_messages(
@@ -122,10 +125,11 @@ class ReactAgent(twbench.Agent):
         log.debug(colored(prompt, "cyan"))
 
         # Compute usage statistics
+        nb_tokens_act = self.token_counter(messages=messages, text=response.text())
         stats = {
             "prompt": format_messages_to_markdown(messages),
             "response": response.text(),
-            "nb_tokens": self.token_counter(messages=messages, text=response.text()),
+            "nb_tokens": nb_tokens_cot + nb_tokens_act,
         }
 
         return action, stats

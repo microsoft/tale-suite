@@ -70,6 +70,8 @@ def evaluate(agent, env_name, args, wandb_run):
         moves = info["moves"]
         feedback = info["feedback"]
         norm_score = score / max_score
+        highscore = max(score, highscore)
+        norm_highscore = highscore / max_score
 
         if (
             args.admissible_commands
@@ -86,7 +88,10 @@ def evaluate(agent, env_name, args, wandb_run):
             {
                 "episode/moves": moves,
                 "episode/score": score,
+                "episode/highscore": highscore,
                 "episode/normalized_score": norm_score,
+                "episode/normalized_highscore": norm_highscore,
+                "episode/token_usage": stats["nb_tokens"],
             },
             step=step + 1,
         )
@@ -103,8 +108,6 @@ def evaluate(agent, env_name, args, wandb_run):
             log.debug(obs)
 
         if done:
-            highscore = max(score, highscore)
-
             if info["won"]:
                 nb_wins += 1
                 if highscore == max_score:
@@ -123,9 +126,6 @@ def evaluate(agent, env_name, args, wandb_run):
             log.debug(f"{obs}")
 
     env.close()
-
-    # Keep highest score.
-    highscore = max(score, highscore)
 
     stats = {
         "nb_steps": step,
@@ -248,6 +248,7 @@ def benchmark(agent, games, args):
                     "total/Losts": stats["nb_losts"],
                     "total/Wins": stats["nb_wins"],
                     "total/Resets": stats["nb_resets"],
+                    "total/Tokens": df["Token Usage"].sum(),
                     "final/Highscore": stats["highscore"],
                     "final/Game Max Score": stats["max_score"],
                     "final/Normalized Score": stats["norm_score"],
@@ -434,7 +435,7 @@ def main():
     args.log_dir = pjoin(args.log_dir, f"tw-bench_{agent.uid}")
     os.makedirs(args.log_dir, exist_ok=True)
     setup_logging(args)
-    print(colored(f"Logs will be saved in {args.log_dir}", "magenta"))
+    print(colored(f"Logs will be saved in {os.path.abspath(args.log_dir)}", "magenta"))
 
     if args.wandb:
         os.environ["WANDB_MODE"] = "online"
