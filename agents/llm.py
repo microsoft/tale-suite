@@ -95,6 +95,7 @@ class LLMAgent(twbench.Agent):
         response = self._llm_call_from_messages(
             messages,
             temperature=self.act_temp,
+            max_tokens=100,  # Text actions are short phrases.
             seed=self.seed,
             top_p=1,
             stream=False,

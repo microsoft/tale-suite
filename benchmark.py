@@ -30,7 +30,8 @@ def evaluate(agent, env_name, args, wandb_run):
         admissible_commands=args.admissible_commands,
     )
 
-    log.debug("Using {}".format(env.__class__.__name__))
+    log.debug(f"Using {env.__class__.__name__}")
+    log.debug(f"Playing {env_name}")
 
     start_time = time.time()
     obs, info = env.reset(seed=args.game_seed)
