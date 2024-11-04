@@ -43,10 +43,10 @@ class ReactAgent(twbench.Agent):
         if self.context_limit is not None:
             assert self.context_limit > 0, "--context-limit must be greater than 0."
 
-        self.act_temp = kwargs.get("act_temp", 0.0)
-        self.cot_temp = kwargs.get("cot_temp", 0.0)
-        self.cot_max_tokens = kwargs.get("cot_max_tokens")
-        self.conversation = kwargs.get("conversation", False)
+        self.act_temp = kwargs["act_temp"]
+        self.cot_temp = kwargs["cot_temp"]
+        self.cot_max_tokens = kwargs["cot_max_tokens"]
+        self.conversation = kwargs["conversation"]
 
     @property
     def uid(self):
@@ -57,7 +57,7 @@ class ReactAgent(twbench.Agent):
             f"_t{self.act_temp}"
             f"_cotT{self.cot_temp}"
             f"_cotN{self.cot_max_tokens}"
-            f"_conv{self.conversation is not None}"
+            f"_conv{self.conversation}"
         )
 
     @property
@@ -69,7 +69,7 @@ class ReactAgent(twbench.Agent):
             "act_temp": self.act_temp,
             "cot_temp": self.cot_temp,
             "cot_temp": self.cot_max_tokens,
-            "conversation": self.conversation is not None,
+            "conversation": self.conversation,
         }
 
     @retry(
@@ -213,7 +213,8 @@ def build_argparser(parser=None):
     )
     group.add_argument(
         "--conversation",
-        action="store_true",
+        required=True,
+        action=argparse.BooleanOptionalAction,
         help="Enable conversation mode. Otherwise, use single prompt.",
     )
 

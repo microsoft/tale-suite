@@ -18,6 +18,7 @@ from twbench.utils import (
     is_recoverable_error,
     merge_messages,
     messages2conversation,
+    str2bool,
 )
 
 SYSTEM_PROMPT = (
@@ -49,7 +50,7 @@ class LLMAgent(twbench.Agent):
             assert self.context_limit > 0, "--context-limit must be greater than 0."
 
         self.act_temp = kwargs["act_temp"]
-        self.conversation = kwargs.get("conversation", False)
+        self.conversation = kwargs["conversation"]
 
     @property
     def uid(self):
@@ -58,7 +59,7 @@ class LLMAgent(twbench.Agent):
             f"_s{self.seed}"
             f"_c{self.context_limit}"
             f"_t{self.act_temp}"
-            f"_conv{self.conversation is not None}"
+            f"_conv{self.conversation}"
         )
 
     @property
@@ -68,7 +69,7 @@ class LLMAgent(twbench.Agent):
             "seed": self.seed,
             "context_limit": self.context_limit,
             "act_temp": self.act_temp,
-            "conversation": self.conversation is not None,
+            "conversation": self.conversation,
         }
 
     @retry(
@@ -173,7 +174,8 @@ def build_argparser(parser=None):
     )
     group.add_argument(
         "--conversation",
-        action="store_true",
+        required=True,
+        action=argparse.BooleanOptionalAction,
         help="Enable conversation mode. Otherwise, use single prompt.",
     )
 
