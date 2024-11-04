@@ -18,7 +18,6 @@ from twbench.utils import (
     is_recoverable_error,
     merge_messages,
     messages2conversation,
-    str2bool,
 )
 
 SYSTEM_PROMPT = (
