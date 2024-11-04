@@ -167,6 +167,7 @@ logs/
 
 # Compute
 .amltconfig
+amlt/
 
 # Website
 website/_site
