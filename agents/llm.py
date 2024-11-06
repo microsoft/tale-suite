@@ -40,7 +40,7 @@ class LLMAgent(twbench.Agent):
             kwargs.get("key"), kwargs["llm"], self.model.key_env_var
         ) or llm.get_key(None, self.model.needs_key, self.model.key_env_var)
 
-        self.seed = kwargs.get("seed", 1234)
+        self.seed = kwargs["seed"]
         self.rng = np.random.RandomState(self.seed)
 
         self.history = []
@@ -64,6 +64,7 @@ class LLMAgent(twbench.Agent):
     @property
     def params(self):
         return {
+            "agent_type": "zero-shot",
             "llm": self.llm,
             "seed": self.seed,
             "context_limit": self.context_limit,

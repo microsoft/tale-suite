@@ -455,6 +455,7 @@ def main():
 
     if args.wandb:
         os.environ["WANDB_MODE"] = "online"
+        os.environ.pop("WANDB_RUN_ID", None)
 
     # Log some info about the machine.
     log.info(f"args = {args}")
