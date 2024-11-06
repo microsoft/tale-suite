@@ -30,7 +30,10 @@ class RandomAgent(twbench.Agent):
 
     @property
     def params(self):
-        return {"seed": self.seed}
+        return {
+            "agent_type": "random",
+            "seed": self.seed,
+        }
 
     def act(self, obs, reward, done, info):
         stats = {

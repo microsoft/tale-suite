@@ -35,7 +35,7 @@ class ReactAgent(twbench.Agent):
             kwargs.get("key"), kwargs["llm"], self.model.key_env_var
         ) or llm.get_key(None, self.model.needs_key, self.model.key_env_var)
 
-        self.seed = kwargs.get("seed", 1234)
+        self.seed = kwargs["seed"]
         self.rng = np.random.RandomState(self.seed)
 
         self.history = []
@@ -43,10 +43,10 @@ class ReactAgent(twbench.Agent):
         if self.context_limit is not None:
             assert self.context_limit > 0, "--context-limit must be greater than 0."
 
-        self.act_temp = kwargs.get("act_temp", 0.0)
-        self.cot_temp = kwargs.get("cot_temp", 0.0)
-        self.cot_max_tokens = kwargs.get("cot_max_tokens")
-        self.conversation = kwargs.get("conversation", False)
+        self.act_temp = kwargs["act_temp"]
+        self.cot_temp = kwargs["cot_temp"]
+        self.cot_max_tokens = kwargs["cot_max_tokens"]
+        self.conversation = kwargs["conversation"]
 
     @property
     def uid(self):
@@ -57,19 +57,20 @@ class ReactAgent(twbench.Agent):
             f"_t{self.act_temp}"
             f"_cotT{self.cot_temp}"
             f"_cotN{self.cot_max_tokens}"
-            f"_conv{self.conversation is not None}"
+            f"_conv{self.conversation}"
         )
 
     @property
     def params(self):
         return {
+            "agent_type": "react",
             "llm": self.llm,
             "seed": self.seed,
             "context_limit": self.context_limit,
             "act_temp": self.act_temp,
             "cot_temp": self.cot_temp,
             "cot_temp": self.cot_max_tokens,
-            "conversation": self.conversation is not None,
+            "conversation": self.conversation,
         }
 
     @retry(
@@ -115,6 +116,7 @@ class ReactAgent(twbench.Agent):
         response = self._llm_call_from_messages(
             messages,
             temperature=self.act_temp,
+            max_tokens=100,  # Text actions are short phrases.
             seed=self.seed,
             top_p=1,
             stream=False,
@@ -212,7 +214,8 @@ def build_argparser(parser=None):
     )
     group.add_argument(
         "--conversation",
-        action="store_true",
+        required=True,
+        action=argparse.BooleanOptionalAction,
         help="Enable conversation mode. Otherwise, use single prompt.",
     )
 

@@ -30,7 +30,8 @@ def evaluate(agent, env_name, args, wandb_run):
         admissible_commands=args.admissible_commands,
     )
 
-    log.debug("Using {}".format(env.__class__.__name__))
+    log.debug(f"Using {env.__class__.__name__}")
+    log.debug(f"Playing {env_name}")
 
     start_time = time.time()
     obs, info = env.reset(seed=args.game_seed)
@@ -46,10 +47,23 @@ def evaluate(agent, env_name, args, wandb_run):
     nb_losts = 0
     nb_resets = 0
     nb_invalid_actions = 0
+    moves = 0
     highscore = 0
     score = 0
     done = False
     results = []
+
+    wandb_run.log(
+        {
+            "episode/moves": moves,
+            "episode/score": score,
+            "episode/highscore": highscore,
+            "episode/normalized_score": score / max_score,
+            "episode/normalized_highscore": highscore / max_score,
+            "episode/token_usage": 0,
+        },
+        step=0,
+    )
 
     pbar = tqdm(
         range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
@@ -93,7 +107,7 @@ def evaluate(agent, env_name, args, wandb_run):
                 "episode/normalized_highscore": norm_highscore,
                 "episode/token_usage": stats["nb_tokens"],
             },
-            step=step + 1,
+            step=step,
         )
 
         # fmt: off
@@ -254,7 +268,8 @@ def benchmark(agent, games, args):
                     "final/Game Max Score": stats["max_score"],
                     "final/Normalized Score": stats["norm_score"],
                     "final/Duration": stats["duration"],
-                }
+                },
+                step=stats["nb_steps"],
             )
             wandb_run.finish()
 
@@ -440,6 +455,7 @@ def main():
 
     if args.wandb:
         os.environ["WANDB_MODE"] = "online"
+        os.environ.pop("WANDB_RUN_ID", None)
 
     # Log some info about the machine.
     log.info(f"args = {args}")
