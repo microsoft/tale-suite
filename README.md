@@ -7,7 +7,7 @@ This repository contains the files needed to benchmark language agents on text-b
         conda create -n tw-bench python=3.10
         conda activate tw-bench
 
-2.	Install the required packages (Jericho, TextWorld, ScienceWorld, DiscoveryWorld, ALFWorld).
+2.	Install the required packages (Jericho, TextWorld, TextWorld-Express, ScienceWorld, DiscoveryWorld, ALFWorld).
 
         pip install -r requirements.txt
 
@@ -29,10 +29,10 @@ This repository contains the files needed to benchmark language agents on text-b
 
 7.	Run benchmark evaluation where the LLM is provided the ground-truth walkthrough:
 
-        python benchmark.py --agent agents/llm_wlkthr.py wlkthr --envs JerichoEnvZork1
+        python benchmark.py --agent agents/llm_walkthrough.py walkthrough --envs JerichoEnvZork1
 
-*Note: The walkthrough agent does not add ">" to its action history as this causes the llm to then generate ">action" which is not accepted by the game engine. For example, the llm will first generate "action" but this will be appended to the context as ">action". Thus, the llm will then generate ">action1" which is not accepted by the game engine.
 
+You will need java 1.8+ installed to run the environments TextWorld-Express and ScienceWorld.
 
 ## Benchmarking LLMs
 
