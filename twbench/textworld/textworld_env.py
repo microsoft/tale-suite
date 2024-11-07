@@ -17,6 +17,7 @@ class TextWorldEnv(gym.Env):
             feedback=True,
             moves=True,
             admissible_commands=admissible_commands,
+            extras=["walkthrough"],
         )
         self.gamefile = gamefile
         self.env = None
