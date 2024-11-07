@@ -12,7 +12,6 @@ class RandomAgent(twbench.Agent):
     def __init__(self, **kwargs):
         self.seed = kwargs.get("seed", 1234)
         self.rng = np.random.RandomState(self.seed)
-        self.token_counter = TokenCounter()
 
         # fmt:off
         self.actions = [
@@ -30,20 +29,17 @@ class RandomAgent(twbench.Agent):
 
     @property
     def params(self):
-        return {
-            "agent_type": "random",
-            "seed": self.seed,
-        }
+        return {"seed": self.seed}
 
-    def act(self, obs, reward, done, info):
+    def act(self, obs, reward, done, infos):
         stats = {
             "prompt": None,
             "response": None,
-            "nb_tokens": self.token_counter(text=obs),
+            "nb_tokens": len(obs),
         }
 
-        if "admissible_commands" in info:
-            return self.rng.choice(info["admissible_commands"]), stats
+        if "admissible_commands" in infos:
+            return self.rng.choice(infos["admissible_commands"]), stats
 
         action = self.rng.choice(self.actions)
         if action in ["take", "drop", "eat", "attack"]:
