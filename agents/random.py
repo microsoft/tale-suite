@@ -5,7 +5,6 @@ import numpy as np
 
 import twbench
 from twbench.agent import register
-from twbench.utils import TokenCounter
 
 
 class RandomAgent(twbench.Agent):
