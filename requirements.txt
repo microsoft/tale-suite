@@ -2,12 +2,12 @@ gymnasium>=1.0.0
 
 jericho>=3.3.0
 textworld
+textworld-express>=1.0.5
 scienceworld>=1.2.2
 discoveryworld
 #alfworld
 
-#termcolor
-
+termcolor
 wandb
 pandas
 
@@ -15,5 +15,3 @@ llm
 tiktoken
 tenacity
 transformers
-#vllm
-#jinja2>=3.1.0
