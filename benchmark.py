@@ -211,6 +211,7 @@ def benchmark(agent, games, args):
                 wandb_run.finish(1)  # Mark as failed.
                 log.error(str(e))
                 pbar.update(1)
+                time.sleep(1)
                 if args.debug:
                     raise
 
