@@ -99,7 +99,10 @@ class TokenCounter:
     def __init__(self, model: Optional[str] = None):
         self.model = model or "gpt-4o"
         try:
-            self.tokenize = tiktoken.encoding_for_model(self.model).encode
+            if self.model in tiktoken.model.MODEL_TO_ENCODING:
+                self.tokenize = tiktoken.get_encoding(self.model).encode
+            else:
+                self.tokenize = tiktoken.encoding_for_model(self.model.split("_")[0]).encode
         except KeyError:
             try:
                 # Try to load from transformers.
