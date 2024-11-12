@@ -100,7 +100,7 @@ class TokenCounter:
         self.model = model or "gpt-4o"
         try:
             if self.model in tiktoken.model.MODEL_TO_ENCODING:
-                self.tokenize = tiktoken.get_encoding(self.model).encode
+                self.tokenize = tiktoken.encoding_for_model(self.model).encode
             else:
                 self.tokenize = tiktoken.encoding_for_model(self.model.split("_")[0]).encode
         except KeyError:
