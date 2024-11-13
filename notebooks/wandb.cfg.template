@@ -1,0 +1,6 @@
+{
+    "cloud": {
+        "base_url": "https://api.wandb.ai",
+        "api_key": "[INSERT_YOUR_API_KEY]"
+    }
+}
