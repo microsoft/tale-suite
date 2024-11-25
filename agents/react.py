@@ -16,6 +16,7 @@ from twbench.token import get_token_counter
 from twbench.utils import (
     format_messages_to_markdown,
     is_recoverable_error,
+    log,
     merge_messages,
     messages2conversation,
 )
