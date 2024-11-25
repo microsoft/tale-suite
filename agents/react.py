@@ -12,7 +12,13 @@ from termcolor import colored
 
 import twbench
 from twbench.agent import register
-from twbench.utils import TokenCounter, is_recoverable_error, log, merge_messages, messages2conversation, format_messages_to_markdown
+from twbench.token import get_token_counter
+from twbench.utils import (
+    format_messages_to_markdown,
+    is_recoverable_error,
+    merge_messages,
+    messages2conversation,
+)
 
 SYSTEM_PROMPT = (
     "You are playing a text-based game and your goal is to finish it with the highest score."
@@ -27,7 +33,7 @@ class ReactAgent(twbench.Agent):
     def __init__(self, *args, **kwargs):
         self.llm = kwargs["llm"]
         self.model = llm.get_model(self.llm)
-        self.token_counter = TokenCounter(self.model.model_name)
+        self.token_counter = get_token_counter(self.model)
         self.allows_system_prompt = self.llm not in ["o1-mini", "o1-preview"]
 
         # Provide the API key, if one is needed and has been provided
@@ -100,7 +106,6 @@ class ReactAgent(twbench.Agent):
             temperature=self.cot_temp,
             max_tokens=self.cot_max_tokens,
             seed=self.seed,
-            top_p=1,
             stream=False,
         )
 
@@ -118,7 +123,6 @@ class ReactAgent(twbench.Agent):
             temperature=self.act_temp,
             max_tokens=100,  # Text actions are short phrases.
             seed=self.seed,
-            top_p=1,
             stream=False,
         )
 

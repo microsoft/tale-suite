@@ -1,15 +1,13 @@
+import asyncio
 import logging
 import os
 import shutil
 import tempfile
 from os.path import join as pjoin
-from typing import Optional
 
 import requests
-import tiktoken
-from llm import Conversation, Response
+from llm import Conversation, AsyncResponse, Prompt, Response
 from tqdm import tqdm
-from transformers import AutoTokenizer
 
 log = logging.getLogger("tw-bench")
 
@@ -95,37 +93,6 @@ def download(url, dst, desc=None, force=False):
     return path
 
 
-class TokenCounter:
-    def __init__(self, model: Optional[str] = None):
-        self.model = model or "gpt-4o"
-        try:
-            if self.model in tiktoken.model.MODEL_TO_ENCODING:
-                self.tokenize = tiktoken.encoding_for_model(self.model).encode
-            else:
-                self.tokenize = tiktoken.encoding_for_model(self.model.split("_")[0]).encode
-        except KeyError:
-            try:
-                # Try to load from transformers.
-                self.tokenize = AutoTokenizer.from_pretrained(self.model).tokenize
-            except OSError:
-                msg = (
-                    f"Tokenizer not found for model {self.model},"
-                    " make sure you have access to the model"
-                    " (e.g., HuggingFace API key is correctly set)."
-                )
-                raise ValueError(msg)
-
-    def __call__(self, *, messages=None, text=None):
-        nb_tokens = 0
-        if messages is not None:
-            nb_tokens += sum(len(self.tokenize(msg["content"])) for msg in messages)
-
-        if text is not None:
-            nb_tokens += len(self.tokenize(text))
-
-        return nb_tokens
-
-
 def merge_messages(messages):
     """Merge messages from the same role into a single message."""
     messages_out = [dict(messages[0])]
@@ -153,10 +120,20 @@ def messages2conversation(model, messages):
             continue
 
         if message["role"] == "assistant":
-            response = message["content"]
-            responses.append(
-                Response.fake(model, prompt=prompt, system=system, response=response)
+            # Make a fake response object.
+            response = Response(
+                model=model,
+                prompt=Prompt(
+                    prompt,
+                    system=system,
+                    model=model,
+                ),
+                stream=False,
             )
+            response._done = True
+            response._chunks = [message["content"]]
+            responses.append(response)
+
             system = None
             prompt = None
 

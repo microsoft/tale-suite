@@ -5,14 +5,14 @@ import numpy as np
 
 import twbench
 from twbench.agent import register
-from twbench.utils import TokenCounter
+from twbench.token import get_token_counter
 
 
 class RandomAgent(twbench.Agent):
     def __init__(self, **kwargs):
         self.seed = kwargs.get("seed", 1234)
         self.rng = np.random.RandomState(self.seed)
-        self.token_counter = TokenCounter()
+        self.token_counter = get_token_counter()
 
         # fmt:off
         self.actions = [
