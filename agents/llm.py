@@ -2,7 +2,6 @@ import argparse
 
 import llm
 import numpy as np
-from llm import Conversation, Response
 from tenacity import (
     retry,
     retry_if_exception,
@@ -12,8 +11,8 @@ from tenacity import (
 
 import twbench
 from twbench.agent import register
+from twbench.token import get_token_counter
 from twbench.utils import (
-    TokenCounter,
     format_messages_to_markdown,
     is_recoverable_error,
     merge_messages,
@@ -32,7 +31,7 @@ class LLMAgent(twbench.Agent):
     def __init__(self, *args, **kwargs):
         self.llm = kwargs["llm"]
         self.model = llm.get_model(self.llm)
-        self.token_counter = TokenCounter(self.model.model_name)
+        self.token_counter = get_token_counter(self.model)
         self.allows_system_prompt = self.llm not in ["o1-mini", "o1-preview"]
 
         # Provide the API key, if one is needed and has been provided
@@ -98,7 +97,6 @@ class LLMAgent(twbench.Agent):
             temperature=self.act_temp,
             max_tokens=100,  # Text actions are short phrases.
             seed=self.seed,
-            top_p=1,
             stream=False,
         )
 
