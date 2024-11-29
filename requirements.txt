@@ -6,7 +6,7 @@ textworld-express>=1.0.5
 scienceworld>=1.2.2
 discoveryworld
 
-alfworld>=0.4.0rc1
+alfworld>=0.4.0
 
 termcolor
 wandb

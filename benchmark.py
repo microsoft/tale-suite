@@ -12,11 +12,11 @@ from typing import List
 
 import gymnasium as gym
 import pandas as pd
+import wandb
 from termcolor import colored
 from tqdm import tqdm
 
 import twbench
-import wandb
 from twbench.utils import log
 
 os.environ["WANDB_MODE"] = "disabled"
@@ -401,7 +401,7 @@ def parse_args():
                                 f" Available:\n{pretty_print_tasks(disable_print=True)}")
         general_group.add_argument("--game-seed", type=int,
                             help="Seed for the game. Default: game-specific one.")
-        general_group.add_argument("--nb-steps", type=int, default=1000,
+        general_group.add_argument("--nb-steps", type=int, default=100,
                             help="Maximum number of steps per game.")
         general_group.add_argument("--admissible-commands", action="store_true",
                             help="Enable admissible commands.")
