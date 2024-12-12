@@ -1,11 +1,12 @@
 gymnasium>=1.0.0
 
 jericho>=3.3.0
-textworld
+textworld>=1.6.2rc1
 textworld-express>=1.0.5
 scienceworld>=1.2.2
 discoveryworld
-#alfworld
+
+alfworld>=0.4.0
 
 termcolor
 wandb
