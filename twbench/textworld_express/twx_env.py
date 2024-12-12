@@ -4,13 +4,16 @@ import textworld_express as twx
 
 from . import twx_data
 
-TASK_NAMES = twx_data.TASK_NAMES
+TASKS = twx_data.TASKS
 
 
 class TextWorldExpressEnv(gym.Env):
 
-    def __init__(self, task_name, admissible_commands=False, *args, **kwargs):
-        self.task_name = task_name
+    def __init__(
+        self, game_name, game_params, admissible_commands=False, *args, **kwargs
+    ):
+        self.game_name = game_name
+        self.game_params = game_params
         self.admissible_commands = admissible_commands
         self.env = twx.TextWorldExpressEnv(envStepLimit=np.inf)
         self.seeds = twx_data.get_seeds(split="test", env=self.env)
@@ -20,12 +23,11 @@ class TextWorldExpressEnv(gym.Env):
         if seed is not None:
             self.seed = self.seeds[seed % len(self.seeds)]
 
-        # self.env.load(gameName=self.task_name, gameParams="")
         obs, info = self.env.reset(
             seed=self.seed,
             gameFold="test",
-            gameName=self.task_name,
-            gameParams="",
+            gameName=self.game_name,
+            gameParams=self.game_params,
             generateGoldPath=True,
         )
 
