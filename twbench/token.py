@@ -1,9 +1,8 @@
-
 from typing import Optional
 
-from llm import Model
 import llm
 import tiktoken
+from llm import Model
 from transformers import AutoTokenizer
 
 
@@ -73,6 +72,7 @@ class ClaudeTokenCounter(TokenCounter):
 
     def __init__(self, model: Model):
         from anthropic import Anthropic
+
         self.model = model.model_id
         self.client = Anthropic(api_key=model.get_key())
 

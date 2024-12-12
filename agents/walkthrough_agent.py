@@ -2,7 +2,7 @@ import argparse
 
 import twbench
 from twbench.agent import register
-from twbench.token import get_token_counter()
+from twbench.token import get_token_counter
 
 
 class WalkthroughAgent(twbench.Agent):
@@ -42,9 +42,7 @@ def build_argparser(parser=None):
 
 register(
     name="walkthrough",
-    desc=(
-        "This agent will follow the walkthrough provided by the environment."
-    ),
+    desc=("This agent will follow the walkthrough provided by the environment."),
     klass=WalkthroughAgent,
     add_arguments=build_argparser,
 )

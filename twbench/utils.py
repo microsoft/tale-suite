@@ -6,7 +6,7 @@ import tempfile
 from os.path import join as pjoin
 
 import requests
-from llm import Conversation, AsyncResponse, Prompt, Response
+from llm import AsyncResponse, Conversation, Prompt, Response
 from tqdm import tqdm
 
 log = logging.getLogger("tw-bench")
