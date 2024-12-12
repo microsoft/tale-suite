@@ -216,7 +216,7 @@ def benchmark(agent, games, args):
                     raise
 
                 continue
-            except ValueError as e:
+            except Exception as e:
                 pbar.write(colored(f"{game_name} (error)", "red"))
                 wandb_run.finish(1)  # Mark as failed.
                 log.error(str(e))

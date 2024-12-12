@@ -15,6 +15,7 @@ with open(pjoin(os.path.dirname(__file__), "games.json")) as f:
 # Remove known games that are not working.
 # GAMES_INFOS.pop("sherlock", None)
 # GAMES_INFOS.pop("trinity", None)
+# GAMES_INFOS.pop("hollywood", None)
 
 
 def prepare_jericho_data(force=TWBENCH_FORCE_DOWNLOAD):
