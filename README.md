@@ -32,7 +32,7 @@ This repository contains the files needed to benchmark language agents on text-b
         python benchmark.py --agent agents/llm_walkthrough.py walkthrough --envs JerichoEnvZork1
 
 
-You will need java 1.8+ installed to run the environments TextWorld-Express and ScienceWorld.
+You will need java 1.8+ installed to run the environments TextWorld-Express and ScienceWorld. This can be installed with 'apt install default-jre'.
 
 ## Benchmarking LLMs
 
