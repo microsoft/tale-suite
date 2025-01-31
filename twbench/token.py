@@ -7,19 +7,19 @@ from transformers import AutoTokenizer
 
 
 def get_token_counter(model: Optional[Model] = None):
-    if model is None:
+    if model is None or model.model_id == "gpt-4o":
         return OpenAITokenCounter("gpt-4o")
 
     if "claude-" in model.model_id:
         return ClaudeTokenCounter(model)
 
     try:
-        return OpenAITokenCounter(model.model_name)
+        return OpenAITokenCounter(model.model_id)
     except KeyError:
         pass
 
     # Try to load from transformers.
-    return HuggingFaceTokenCounter(model.model_name)
+    return HuggingFaceTokenCounter(model.model_id)
 
 
 class TokenCounter:
