@@ -1,0 +1,10 @@
+include requirements.txt
+include README.md
+include LICENSE
+include pyproject.toml
+
+global-exclude */__pycache__/*
+
+prune wandb
+prune logs
+prune website

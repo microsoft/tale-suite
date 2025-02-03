@@ -2,14 +2,19 @@
 This repository contains the files needed to benchmark language agents on text-based games.
 
 ## Getting Started
-1.	Make a dedicted conda virtual environment.
+1.	Make a dedicated conda virtual environment.
 
-        conda create -n tw-bench python=3.10
+        conda create -n tw-bench python=3.12
         conda activate tw-bench
 
 2.	Install the required packages (Jericho, TextWorld, TextWorld-Express, ScienceWorld, DiscoveryWorld, ALFWorld).
 
         pip install -r requirements.txt
+
+> [!WARNING]
+> You will need Java 1.8+ installed to run the environments TextWorld-Express and ScienceWorld.
+>
+>     sudo apt update && apt install openjdk-8-jre-headless -y
 
 3.	Run benchmark evaluation on all the games for the specified random agent:
 
@@ -31,8 +36,8 @@ This repository contains the files needed to benchmark language agents on text-b
 
         python benchmark.py --agent agents/llm_walkthrough.py walkthrough --envs JerichoEnvZork1
 
+*Note: The walkthrough agent does not add ">" to its action history as this causes the llm to then generate ">action" which is not accepted by the game engine. For example, the llm will first generate "action" but this will be appended to the context as ">action". Thus, the llm will then generate ">action1" which is not accepted by the game engine.
 
-You will need java 1.8+ installed to run the environments TextWorld-Express and ScienceWorld. This can be installed with 'apt install default-jre'.
 
 ## Benchmarking LLMs
 
@@ -67,6 +72,10 @@ class CustomAgent(twbench.Agent):
 You can then use this agent by specifying the path to the file and the class name in the `--agent` argument.
 
         python benchmark.py --agent agents/custom.py:CustomAgent
+
+
+## Deploying a model locally using vLLM
+    docker run --runtime nvidia --gpus all --restart unless-stopped --name vllm-Llama-3.1-8B-Instruct --env "HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN}" -v ~/.cache/huggingface:/root/.cache/huggingface -p 8000:8000 --ipc=host vllm/vllm-openai:latest --model meta-llama/Llama-3.1-8B-Instruct --tensor-parallel-size 4 --host 0.0.0.0
 
 
 ## Contributing
