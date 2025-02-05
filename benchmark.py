@@ -1,5 +1,6 @@
 import argparse
 import datetime
+import glob
 import importlib
 import logging
 import os
@@ -368,16 +369,21 @@ def exit_listing_agents(agent=None):
 
 def _maybe_load_agent_module():
     parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument("--agent")
+    parser.add_argument("--agent", default="agents/*.py",
+                        help="Load external python file(s). Useful to register custom agent on-the-fly. Default: %(default)s")
     args, _ = parser.parse_known_args()
     if args.agent:
         print(f"Importing agent(s) from {args.agent}.")
+        for agent_file in glob.glob(args.agent):
+            import importlib
+            agent_dirname = os.path.dirname(agent_file)
+            agent_filename, _ = os.path.splitext(os.path.basename(agent_file))
+            if f"{agent_dirname}.{agent_filename}" in sys.modules:
+                continue
 
-        import importlib
-
-        spec = importlib.util.spec_from_file_location("twbench.agents", args.agent)
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
+            spec = importlib.util.spec_from_file_location(f"{agent_dirname}.{agent_filename}", agent_file)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
 
 
 def parse_args():
@@ -385,8 +391,8 @@ def parse_args():
 
     description = "Benchmark some agent on interactive text environments."
     general_parser = argparse.ArgumentParser(add_help=False, description=description)
-    general_parser.add_argument("--agent", default="./agents/random.py",
-                                help="Load an external python file. Useful to register custom challenges on-the-fly. Default: %(default)s")
+    general_parser.add_argument("--agent", default="./agents/*",
+                                help="Load external python file(s). Useful to register custom agent on-the-fly. Default: %(default)s")
 
     parser = argparse.ArgumentParser(parents=[general_parser])
     subparsers = parser.add_subparsers(dest="subcommand", title='Available agents to benchmark')

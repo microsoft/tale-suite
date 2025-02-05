@@ -129,7 +129,7 @@ def build_argparser(parser=None):
 
 
 register(
-    name="walkthrough",
+    name="llm-walkthrough",
     desc=(
         "This agent uses the ground-truth walkthrough from the environment to attempt to progress through the game."
     ),

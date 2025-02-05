@@ -19,8 +19,8 @@ classifiers = [
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
 
-[tool.setuptools.packages]
-find = {}
+[tool.setuptools.packages.find]
+exclude = ["wandb/*", "logs/*", "website/*"]
 
 
 [project.optional-dependencies]

@@ -13,3 +13,6 @@ for task_name in TASK_NAMES:
         entry_point="twbench.scienceworld:ScienceWorldEnv",
         kwargs={"task_name": task_name},
     )
+
+def download():
+    pass

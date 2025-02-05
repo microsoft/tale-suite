@@ -96,7 +96,7 @@ class LLMAgent(twbench.Agent):
             messages,
             temperature=self.act_temp,
             max_tokens=100,  # Text actions are short phrases.
-            # seed=self.seed,
+            seed=self.seed,
             stream=False,
         )
 

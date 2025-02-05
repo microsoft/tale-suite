@@ -76,7 +76,7 @@ class ReactAgent(twbench.Agent):
             "context_limit": self.context_limit,
             "act_temp": self.act_temp,
             "cot_temp": self.cot_temp,
-            "cot_temp": self.cot_max_tokens,
+            "cot_max_tokens": self.cot_max_tokens,
             "conversation": self.conversation,
         }
 

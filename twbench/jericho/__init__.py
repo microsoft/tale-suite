@@ -1,6 +1,6 @@
 import gymnasium as gym
 
-from .jericho_data import GAMES_INFOS
+from .jericho_data import GAMES_INFOS, prepare_jericho_data
 from .jericho_env import JerichoEnv
 
 environments = []
@@ -14,3 +14,6 @@ for game, infos in GAMES_INFOS.items():
         entry_point="twbench.jericho:JerichoEnv",
         kwargs={"game": game},
     )
+
+def download():
+    prepare_jericho_data()

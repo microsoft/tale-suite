@@ -1,6 +1,7 @@
 import gymnasium as gym
 
 from .textworld_env import TextWorldEnv, TWCookingEnv
+from .textworld_data import prepare_twcooking_data
 
 environments = []
 
@@ -14,3 +15,6 @@ for difficulty in range(1, 10 + 1):
         entry_point="twbench.textworld:TWCookingEnv",
         kwargs={"difficulty": difficulty},
     )
+
+def download():
+    prepare_twcooking_data()

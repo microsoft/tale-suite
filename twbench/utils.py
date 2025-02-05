@@ -80,6 +80,7 @@ def download(url, dst, desc=None, force=False):
             unit_scale=True,
             total=total,
             desc=desc or "Downloading {}".format(filename),
+            leave=False,
         )
 
         for chunk in r.iter_content(chunk_size=1024):
