@@ -14,5 +14,6 @@ for task_name in TASK_NAMES:
         kwargs={"task_name": task_name},
     )
 
+
 def download():
     pass

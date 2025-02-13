@@ -36,7 +36,12 @@ class ReasoningAgent(twbench.Agent):
         self.llm = kwargs["llm"]
         self.model = llm.get_model(self.llm)
         self.token_counter = get_token_counter(self.model)
-        self.allows_system_prompt = self.llm not in ["o1", "o1-mini", "o1-preview", "o3-mini"]
+        self.allows_system_prompt = self.llm not in [
+            "o1",
+            "o1-mini",
+            "o1-preview",
+            "o3-mini",
+        ]
 
         # Provide the API key, if one is needed and has been provided
         self.model.key = llm.get_key(
@@ -126,10 +131,17 @@ class ReasoningAgent(twbench.Agent):
             reasoning_end = action.find("</think>")
             if reasoning_end == -1:
                 # Send another request to get the action with the current reasoning.
-                messages.append({"role": "assistant", "content": "<think>\n" + response_text.strip() + "\n</think>"})
-                #prompt = "// Thinking exceeded the length limit. Based on the thoughts so far, provide your chosen action on a single line while respecting the desired format.\n> "
-                #messages.append({"role": "user", "content": prompt})
-                llm_kwargs["max_tokens"] = 100  # Text actions should be short phrases but deepseek forces thought process by starting the generation with <think>.
+                messages.append(
+                    {
+                        "role": "assistant",
+                        "content": "<think>\n" + response_text.strip() + "\n</think>",
+                    }
+                )
+                # prompt = "// Thinking exceeded the length limit. Based on the thoughts so far, provide your chosen action on a single line while respecting the desired format.\n> "
+                # messages.append({"role": "user", "content": prompt})
+                llm_kwargs["max_tokens"] = (
+                    100  # Text actions should be short phrases but deepseek forces thought process by starting the generation with <think>.
+                )
                 llm_kwargs["temperature"] = self.act_temp
                 llm_kwargs["extra_body"] = {
                     "chat_template": DEEPSEEK_CHAT_TEMPLATE_NO_THINK,
@@ -139,7 +151,9 @@ class ReasoningAgent(twbench.Agent):
                 action = response.text().strip()
                 reasoning_end = action.find("</think>")
                 if reasoning_end == -1:
-                    reasoning_end = 0  # Give up and use the entire response as the action.
+                    reasoning_end = (
+                        0  # Give up and use the entire response as the action.
+                    )
                 else:
                     reasoning_end += len("</think>")
             else:

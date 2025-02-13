@@ -15,5 +15,6 @@ for game, infos in GAMES_INFOS.items():
         kwargs={"game": game},
     )
 
+
 def download():
     prepare_jericho_data()

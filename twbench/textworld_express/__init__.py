@@ -14,5 +14,6 @@ for task_name, game_name, game_params in TASKS:
         kwargs={"game_name": game_name, "game_params": game_params},
     )
 
+
 def download():
     pass

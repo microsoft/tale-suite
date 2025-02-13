@@ -370,19 +370,25 @@ def exit_listing_agents(agent=None):
 
 def _maybe_load_agent_module():
     parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument("--agent", default="agents/*.py",
-                        help="Load external python file(s). Useful to register custom agent on-the-fly. Default: %(default)s")
+    parser.add_argument(
+        "--agent",
+        default="agents/*.py",
+        help="Load external python file(s). Useful to register custom agent on-the-fly. Default: %(default)s",
+    )
     args, _ = parser.parse_known_args()
     if args.agent:
         print(f"Importing agent(s) from {args.agent}.")
         for agent_file in glob.glob(args.agent):
             import importlib
+
             agent_dirname = os.path.dirname(agent_file)
             agent_filename, _ = os.path.splitext(os.path.basename(agent_file))
             if f"{agent_dirname}.{agent_filename}" in sys.modules:
                 continue
 
-            spec = importlib.util.spec_from_file_location(f"{agent_dirname}.{agent_filename}", agent_file)
+            spec = importlib.util.spec_from_file_location(
+                f"{agent_dirname}.{agent_filename}", agent_file
+            )
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
 

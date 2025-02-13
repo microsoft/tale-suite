@@ -163,7 +163,6 @@ def is_recoverable_error(exception):
         "openai.APIError",
         "openai.APIConnectionError",
         "openai.RateLimitError",
-
         "anthropic.error.RateLimitError",
         "anthropic.InternalServerError",
         # Add more as needed

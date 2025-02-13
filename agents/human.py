@@ -4,10 +4,7 @@ import sys
 import twbench
 from twbench.agent import register
 from twbench.token import get_token_counter
-from twbench.utils import (
-    format_messages_to_markdown,
-    merge_messages,
-)
+from twbench.utils import format_messages_to_markdown, merge_messages
 
 prompt_toolkit_available = False
 try:
@@ -33,9 +30,7 @@ class HumanAgent(twbench.Agent):
 
     @property
     def uid(self):
-        return (
-            f"HumanAgent"
-        )
+        return f"HumanAgent"
 
     @property
     def params(self):
@@ -105,9 +100,7 @@ def build_argparser(parser=None):
 
 register(
     name="human",
-    desc=(
-        "Manually decide which action to take."
-    ),
+    desc=("Manually decide which action to take."),
     klass=HumanAgent,
     add_arguments=build_argparser,
 )
