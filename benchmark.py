@@ -190,6 +190,7 @@ def benchmark(agent, games, args):
             pbar.set_postfix_str(game_name)
 
             wandb_config = {
+                "version": twbench.__version__,
                 "game": game_name,
                 "framework": twbench.env2task[game_name],
                 "agent": agent.uid,
