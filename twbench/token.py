@@ -1,8 +1,11 @@
+import os
 from typing import Optional
 
-import llm
 import tiktoken
 from llm import Model
+
+# Suppress warnings from transformers
+os.environ["TRANSFORMERS_NO_ADVISORY_WARNINGS"] = "True"
 from transformers import AutoTokenizer
 
 
