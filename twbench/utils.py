@@ -1,15 +1,17 @@
 import asyncio
+import json
 import logging
 import os
 import shutil
 import tempfile
 from os.path import join as pjoin
 
+import numpy as np
 import requests
 from llm import AsyncResponse, Conversation, Prompt, Response
 from tqdm import tqdm
 
-log = logging.getLogger("tw-bench")
+from twbench.logger import log
 
 
 def mkdirs(dirpath: str) -> str:
@@ -173,3 +175,12 @@ def is_recoverable_error(exception):
     log.warning(f"Exception_full_name: {exception_full_name}")
     log.warning(f"Exception: {exception}")
     return exception_full_name in recoverable_errors
+
+
+class NumpyEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, (np.integer, np.floating)):
+            return obj.item()
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super(NumpyEncoder, self).default(obj)

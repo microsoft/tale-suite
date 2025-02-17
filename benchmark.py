@@ -2,14 +2,13 @@ import argparse
 import datetime
 import glob
 import importlib
+import json
 import logging
 import os
-import platform
 import sys
 import time
 from functools import partial
 from os.path import join as pjoin
-from typing import List
 
 import gymnasium as gym
 import pandas as pd
@@ -18,12 +17,54 @@ from tqdm import tqdm
 
 import twbench
 import wandb
-from twbench.utils import log
+from twbench.logger import log, setup_logging
+from twbench.utils import NumpyEncoder
 
 os.environ["WANDB_MODE"] = "disabled"
 
 
-def evaluate(agent, env_name, args, wandb_run):
+def evaluate(agent, env_name, args):
+    env_params = (
+        f"a{int(args.admissible_commands)}_s{args.game_seed}_steps{args.nb_steps}"
+    )
+    logdir = pjoin(args.log_dir, f"{env_name}")
+    os.makedirs(logdir, exist_ok=True)
+    summary_file = pjoin(logdir, f"{env_params}.json")
+    rollouts_file = pjoin(logdir, f"{env_params}.jsonl")
+    log_file = pjoin(logdir, f"{env_params}.log")
+
+    # Create new file handler for this env evaluation.
+    fh = log.add_new_file_handler(log_file)
+
+    # Check if the game has already been evaluated.
+    if not args.force_all and os.path.exists(summary_file):
+        log.info(f"Previous evaluation found: {summary_file}")
+        with open(summary_file) as reader:
+            summary = json.load(reader)
+
+        log.info(f"Previous evaluation status: {summary['status']}")
+        if not args.force_failed or summary["status"] == "finished":
+            log.info(colored("Skipped, already done.", "yellow"))
+            log.removeHandler(fh)
+            return summary
+
+    # initialize wandb
+    wandb_config = {
+        "version": twbench.__version__,
+        "game": env_name,
+        "framework": twbench.env2task[env_name],
+        "agent": agent.uid,
+        "max_steps": args.nb_steps,
+        "game_seed": args.game_seed,
+        "admissible_commands": args.admissible_commands,
+        **agent.params,
+    }
+    wandb_run = wandb.init(
+        project="tw-bench",
+        config=wandb_config,
+        reinit=True,
+        name=f"{env_name} - {agent.uid}",
+    )
 
     env = gym.make(
         f"twbench/{env_name}-v0",
@@ -42,7 +83,9 @@ def evaluate(agent, env_name, args, wandb_run):
 
     log.debug(f"Environment reset.\n{obs}\n")
 
+    status = "running"
     max_score = info["max_score"]
+    step = 0
     nb_resets = 0
     nb_wins = 0
     nb_losts = 0
@@ -65,80 +108,99 @@ def evaluate(agent, env_name, args, wandb_run):
         },
         step=0,
     )
+    try:
 
-    pbar = tqdm(
-        range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
-    )
-    for step in pbar:
-        pbar.set_postfix_str(
-            f"Score: {info['score']}/{info['max_score']} ({info['score']/info['max_score']:.1%})"
+        pbar = tqdm(
+            range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
         )
-        action, stats = agent.act(obs, score, done, info)
-        log.debug(colored(f"> {action}", "green"))
+        for step in pbar:
+            pbar.set_postfix_str(
+                f"Score: {info['score']}/{info['max_score']} ({info['score']/info['max_score']:.1%})"
+            )
+            action, stats = agent.act(obs, score, done, info)
+            log.debug(colored(f"> {action}", "green"))
 
+            if args.debug:
+                breakpoint()
+
+            prev_obs = obs
+            obs, _, done, info = env.step(action)
+            score = info["score"]
+            moves = info["moves"]
+            feedback = info["feedback"]
+            norm_score = score / max_score
+            highscore = max(score, highscore)
+            norm_highscore = highscore / max_score
+
+            if (
+                args.admissible_commands
+                and info["admissible_commands"]
+                and action not in info["admissible_commands"]
+            ):
+                nb_invalid_actions += 1
+
+            msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
+            msg = msg.format(step, time.time() - start_time, score, moves, action)
+            log.info(msg)
+
+            wandb_run.log(
+                {
+                    "episode/moves": moves,
+                    "episode/score": score,
+                    "episode/highscore": highscore,
+                    "episode/normalized_score": norm_score,
+                    "episode/normalized_highscore": norm_highscore,
+                    "episode/token_usage": stats["nb_tokens"],
+                },
+                step=step,
+            )
+
+            # fmt: off
+            results.append([
+                step, score, max_score, norm_score, moves,
+                prev_obs, action, feedback, stats["prompt"], stats["response"], stats["nb_tokens"]
+            ])
+            # fmt: on
+
+            if not done:
+                log.debug(obs)
+
+            if done:
+                if info["won"]:
+                    nb_wins += 1
+                    if highscore == max_score:
+                        log.debug(obs)
+                        break  # No reason to play that game more.
+                elif info["lost"]:
+                    nb_losts += 1
+
+                # Replay the game in the hope of achieving a better score.
+                last_obs = obs
+                obs, info = env.reset()
+                obs = last_obs + "\n\n-= Restarting =-\n" + obs
+                agent.reset(obs, info, env_name)
+                nb_resets += 1
+
+                log.debug(f"{obs}")
+
+        status = "finished"
+
+    except KeyboardInterrupt as e:
+        status = "killed"
+        log.critical(colored(f"{env_name} (killed)", "red"))
+        log.error(str(e))
+        time.sleep(
+            1
+        )  # Give time for the user to issue another ctrl+c to cancel the script.
         if args.debug:
-            breakpoint()
+            raise
 
-        prev_obs = obs
-        obs, _, done, info = env.step(action)
-        score = info["score"]
-        moves = info["moves"]
-        feedback = info["feedback"]
-        norm_score = score / max_score
-        highscore = max(score, highscore)
-        norm_highscore = highscore / max_score
-
-        if (
-            args.admissible_commands
-            and info["admissible_commands"]
-            and action not in info["admissible_commands"]
-        ):
-            nb_invalid_actions += 1
-
-        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
-        msg = msg.format(step, time.time() - start_time, score, moves, action)
-        log.info(msg)
-
-        wandb_run.log(
-            {
-                "episode/moves": moves,
-                "episode/score": score,
-                "episode/highscore": highscore,
-                "episode/normalized_score": norm_score,
-                "episode/normalized_highscore": norm_highscore,
-                "episode/token_usage": stats["nb_tokens"],
-            },
-            step=step,
-        )
-
-        # fmt: off
-        #table.add_data(
-        results.append([
-            step, score, max_score, norm_score, moves,
-            prev_obs, action, feedback, stats["prompt"], stats["response"], stats["nb_tokens"]
-        ])
-        # fmt: on
-
-        if not done:
-            log.debug(obs)
-
-        if done:
-            if info["won"]:
-                nb_wins += 1
-                if highscore == max_score:
-                    log.debug(obs)
-                    break  # No reason to play that game more.
-            elif info["lost"]:
-                nb_losts += 1
-
-            # Replay the game in the hope of achieving a better score.
-            last_obs = obs
-            obs, info = env.reset()
-            obs = last_obs + "\n\n-= Restarting =-\n" + obs
-            agent.reset(obs, info, env_name)
-            nb_resets += 1
-
-            log.debug(f"{obs}")
+    except Exception as e:
+        status = "failed"
+        log.critical(colored(f"{env_name} (error)", "red"))
+        log.error(str(e))
+        if args.debug:
+            raise
 
     env.close()
 
@@ -155,176 +217,96 @@ def evaluate(agent, env_name, args, wandb_run):
         "duration": time.time() - start_time,
     }
 
-    return stats, results
+    # fmt: off
+    columns = [
+        "Step", "Score", "Max Score", "Normalized Score", "Moves",
+        "Observation", "Action", "Feedback", "Prompt", "Response", "Token Usage"
+    ]
+    # fmt: on
+    df = pd.DataFrame(results, columns=columns)
+    df.to_json(rollouts_file, orient="records", lines=True)
+
+    wandb_stats = {
+        "total/Env. Steps": stats["nb_steps"],
+        "total/Game Moves": stats["nb_moves"],
+        "total/Invalid Actions": stats["nb_invalid_actions"],
+        "total/Losts": stats["nb_losts"],
+        "total/Wins": stats["nb_wins"],
+        "total/Resets": stats["nb_resets"],
+        "total/Tokens": df["Token Usage"].sum(),
+        "final/Highscore": stats["highscore"],
+        "final/Game Max Score": stats["max_score"],
+        "final/Normalized Score": stats["norm_score"],
+        "final/Duration": stats["duration"],
+    }
+    wandb_run.log(
+        {"episode/rollout": wandb.Table(dataframe=df), **wandb_stats},
+        step=stats["nb_steps"],
+    )
+
+    # Save summary.
+    summary = {
+        "status": status,
+        "env_name": env_name,
+        "env_params": env_params,
+        "wandb_run_id": wandb_run.id,
+        "wandb_url": wandb_run.url,
+        **stats,
+        **wandb_stats,
+    }
+
+    with open(summary_file, "w") as f:
+        json.dump(summary, f, indent=2, sort_keys=True, cls=NumpyEncoder)
+
+    wandb.save(rollouts_file)
+    wandb.save(log_file)
+    wandb.save(summary_file)
+
+    wandb_run.finish(exit_code=int(status != "finished"))
+
+    log.removeHandler(fh)
+    return summary
 
 
-def benchmark(agent, games, args):
-    # Log games we are about to evaluate.
-    log.critical("Evaluating {} games:".format(len(games)))
+def benchmark(agent, args):
+    # Log how many envs we are about to evaluate.
+    log.critical("Evaluating {} interactive text environments:".format(len(args.envs)))
 
     mean_score = 0
     total_time = 0.0
     total_steps = 0
     total_invalid = 0
 
-    nb_games = 0
-    max_game_name = max(len(os.path.basename(game)) for game in games)
-    with tqdm(total=len(games), desc="Benchmarking", unit="game", leave=False) as pbar:
-        for game in games:
-            total_steps = 0
-            game_name = os.path.basename(game)
-            logfile = pjoin(
-                args.log_dir,
-                f"{game_name}",
-                f"a{int(args.admissible_commands)}_s{args.game_seed}_steps{args.nb_steps}.jsonl",
-            )
-            os.makedirs(os.path.dirname(logfile), exist_ok=True)
-            if os.path.exists(logfile) and not args.force:
-                pbar.write(colored(f"{game_name} (skip done)", "yellow"))
-                log.info(
-                    f"Skipping {game_name} evaluation, already saved in {logfile}."
-                )
-                pbar.update(1)
-                continue  # Skip games that have already been evaluated.
+    nb_envs = 0
+    max_env_name = max(map(len, args.envs))
+    for env in tqdm(args.envs, desc="Benchmarking", unit="game", leave=False):
+        summary = evaluate(agent, env, args)
 
-            pbar.set_postfix_str(game_name)
+        nb_envs += 1
 
-            wandb_config = {
-                "version": twbench.__version__,
-                "game": game_name,
-                "framework": twbench.env2task[game_name],
-                "agent": agent.uid,
-                "max_steps": args.nb_steps,
-                "game_seed": args.game_seed,
-                "admissible_commands": args.admissible_commands,
-                **agent.params,
-            }
-            wandb_run = wandb.init(
-                project="tw-bench",
-                config=wandb_config,
-                reinit=True,
-                name=f"{game_name} - {agent.uid}",
-            )
+        total_time += summary["duration"]  # In seconds
+        total_steps += summary["nb_steps"]
+        total_invalid += summary["nb_invalid_actions"]
 
-            try:
-                stats, results = evaluate(agent, game, args, wandb_run)
-            except KeyboardInterrupt as e:
-                pbar.write(colored(f"{game_name} (killed)", "red"))
-                wandb_run.finish(1)  # Mark as failed.
-                log.error(str(e))
-                pbar.update(1)
-                time.sleep(1)
-                if args.debug:
-                    raise
-
-                continue
-            except Exception as e:
-                pbar.write(colored(f"{game_name} (error)", "red"))
-                wandb_run.finish(1)  # Mark as failed.
-                log.error(str(e))
-                pbar.update(1)
-                if args.debug:
-                    raise
-
-                continue
-
-            nb_games += 1
-
-            total_time += stats["duration"]  # In seconds
-            total_steps += stats["nb_steps"]
-            total_invalid += stats["nb_invalid_actions"]
-
-            msg = (
-                f"{game_name.ljust(max_game_name)}"
-                f"  Steps: {stats['nb_steps']:4d}/{args.nb_steps:4d}"
-                f"  Time: {datetime.timedelta(seconds=int(stats['duration']))}"
-                f"{stats['nb_resets']:4d} resets"
-                f"  Score: {stats['highscore']:3d}/{stats['max_score']:3d} ({stats['norm_score']:6.2%})"
-            )
-
-            log.info(msg)
-            pbar.write(msg)
-            pbar.update(1)
-
-            mean_score += stats["norm_score"]
-
-            # fmt: off
-            columns = [
-                "Step", "Score", "Max Score", "Normalized Score", "Moves",
-                "Observation", "Action", "Feedback", "Prompt", "Response", "Token Usage"
-            ]
-            # fmt: on
-            df = pd.DataFrame(results, columns=columns)
-            df.to_json(logfile, orient="records", lines=True)
-
-            wandb_run.log(
-                {
-                    "episode/rollout": wandb.Table(dataframe=df),
-                    "total/Env. Steps": stats["nb_steps"],
-                    "total/Game Moves": stats["nb_moves"],
-                    "total/Invalid Actions": stats["nb_invalid_actions"],
-                    "total/Losts": stats["nb_losts"],
-                    "total/Wins": stats["nb_wins"],
-                    "total/Resets": stats["nb_resets"],
-                    "total/Tokens": df["Token Usage"].sum(),
-                    "final/Highscore": stats["highscore"],
-                    "final/Game Max Score": stats["max_score"],
-                    "final/Normalized Score": stats["norm_score"],
-                    "final/Duration": stats["duration"],
-                },
-                step=stats["nb_steps"],
-            )
-            wandb_run.finish()
-
-    if nb_games > 0 and total_time > 0:
-        log.critical(
-            "Mean score (over {} games) = {:8.2%} of total possible".format(
-                nb_games, mean_score / nb_games
-            )
-        )
-        log.critical("Total time {:9.2f} seconds".format(total_time))
-        log.critical("Total {} invalid actions".format(total_invalid))
-        log.critical(
-            "Avg. speed: {:8.2f} steps per second".format(total_steps / total_time)
+        msg = (
+            f"{env.ljust(max_env_name)}"
+            f"  Steps: {summary['nb_steps']:4d}/{args.nb_steps:4d}"
+            f"  Time: {datetime.timedelta(seconds=int(summary['duration']))}"
+            f"{summary['nb_resets']:4d} resets"
+            f"  Score: {summary['highscore']:3d}/{summary['max_score']:3d} ({summary['norm_score']:6.2%})"
         )
 
+        log.info(msg)
 
-class TqdmLoggingHandler(logging.Handler):
-    def __init__(self, level=logging.NOTSET):
-        super().__init__(level)
+        mean_score += summary["norm_score"]
 
-    def emit(self, record):
-        try:
-            msg = self.format(record)
-            tqdm.write(msg)
-            self.flush()
-        except (KeyboardInterrupt, SystemExit):
-            raise
-        except Exception:
-            self.handleError(record)
-
-
-def setup_logging(args):
-    log.setLevel(logging.DEBUG)
-
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    fh = logging.FileHandler(pjoin(args.log_dir, f"{timestamp}.log"), mode="w")
-    formatter = logging.Formatter("%(asctime)s: %(message)s")
-    fh.setLevel(logging.DEBUG)
-    fh.setFormatter(formatter)
-    log.addHandler(fh)
-
-    ch = TqdmLoggingHandler()
-    formatter = logging.Formatter("%(message)s")
-    ch.setFormatter(formatter)
-    log.addHandler(ch)
-
-    ch.setLevel(logging.CRITICAL)
-    if args.verbose:
-        ch.setLevel(logging.INFO)
-
-    if args.very_verbose:
-        ch.setLevel(logging.DEBUG)
+    if nb_envs > 0 and total_time > 0:
+        log.critical(
+            f"Mean score (over {nb_envs} games) = {mean_score / nb_envs:8.2%} of total possible"
+        )
+        log.critical(f"Total time {total_time:9.2f} seconds")
+        log.critical(f"Total {total_invalid} invalid actions")
+        log.critical(f"Avg. speed: {total_steps / total_time:8.2f} steps per second")
 
 
 def pretty_print_tasks(num_cols: int = 3, disable_print: bool = False):
@@ -379,8 +361,6 @@ def _maybe_load_agent_module():
     if args.agent:
         print(f"Importing agent(s) from {args.agent}.")
         for agent_file in glob.glob(args.agent):
-            import importlib
-
             agent_dirname = os.path.dirname(agent_file)
             agent_filename, _ = os.path.splitext(os.path.basename(agent_file))
             if f"{agent_dirname}.{agent_filename}" in sys.modules:
@@ -424,14 +404,29 @@ def parse_args():
 
         general_group.add_argument("--wandb", action="store_true",
                             help="Log to wandb")
-        general_group.add_argument("-f", "--force", action="store_true",
+        general_group.add_argument("-ff", "--force-all", action="store_true",
                             help="Force overwriting existing log files.")
-        general_group.add_argument("-v", "--verbose", action="store_true",
-                            help="Enable verbose mode.")
-        general_group.add_argument("-vv", "--very-verbose", action="store_true",
-                            help="Display actions taken.")
+        general_group.add_argument("-f", "--force-failed", action="store_true",
+                            help="Force overwriting only log files that have failed.")
         general_group.add_argument("--debug", action="store_true",
                             help="Debug mode.")
+
+        subgroup = general_group.add_mutually_exclusive_group()
+        subgroup.add_argument(
+            "-v", "--verbose", dest="logging_level",
+            action="store_const", const=logging.INFO, default=logging.CRITICAL,
+            help="Display actions taken.",
+        )
+        subgroup.add_argument(
+            "-vv", "--very-verbose", dest="logging_level",
+            action="store_const", const=logging.DEBUG, default=logging.CRITICAL,
+            help="Display actions and game observations.",
+        )
+        subgroup.add_argument(
+            "--logging-level", dest="logging_level", default=logging.CRITICAL,
+            choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+            help="Set a specific logging level",
+        )
 
     _add_general_settings(parser)
 
@@ -454,8 +449,6 @@ def main():
         print("Need to specify which type of agent to benchmark.")
         exit_listing_agents(args.subcommand)
 
-    args.verbose = args.verbose or args.very_verbose
-
     # Instanciate the agent.
     _, Agent, _ = twbench.agent.AGENTS[args.subcommand]
     agent = Agent(**vars(args))
@@ -465,18 +458,14 @@ def main():
     args.log_dir = pjoin(args.log_dir, f"tw-bench_{agent.uid}")
     os.makedirs(args.log_dir, exist_ok=True)
     setup_logging(args)
-    print(colored(f"Logs will be saved in {os.path.abspath(args.log_dir)}", "magenta"))
+    log.critical(
+        colored(f"Logs will be saved in {os.path.abspath(args.log_dir)}", "magenta")
+    )
+    # log = TWBenchLogger("tw-bench", args.log_dir, level=args.logging_level)
 
     if args.wandb:
         os.environ["WANDB_MODE"] = "online"
         os.environ.pop("WANDB_RUN_ID", None)
-
-    # Log some info about the machine.
-    log.info(f"args = {args}")
-    log.info(f"system = {platform.system()}")
-    log.info(f"server = {platform.uname()[1]}")
-    log.info(f"working_dir = {os.getcwd()}")
-    log.info(f"datetime = {datetime.datetime.now()}")
 
     args.envs = args.envs or twbench.envs
     args.envs = [  # Expand tasks into their respective environments.
@@ -485,7 +474,7 @@ def main():
         for env in (twbench.envs_per_task[task] if task in twbench.tasks else [task])
     ]
 
-    benchmark(agent, args.envs, args)
+    benchmark(agent, args)
 
 
 if __name__ == "__main__":
