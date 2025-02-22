@@ -48,6 +48,13 @@ def evaluate(agent, env_name, args):
             log.removeHandler(fh)
             return summary
 
+    # if args.wandb:
+    #     # Check if there already exists a run with the same name using Wandb API.
+    #     wandb_api = wandb.Api()
+    #     wandb_runs = wandb_api.runs(
+    #         filters={"name": f"{env_name} - {agent.uid}"},
+    #     )
+
     # initialize wandb
     wandb_config = {
         "version": twbench.__version__,
@@ -455,13 +462,12 @@ def main():
     agent.new = partial(Agent, **vars(args))
 
     # Create logging directory.
-    args.log_dir = pjoin(args.log_dir, f"tw-bench_{agent.uid}")
+    args.log_dir = pjoin(args.log_dir, f"tw-bench_{agent.uid.replace('/', '-')}")
     os.makedirs(args.log_dir, exist_ok=True)
     setup_logging(args)
     log.critical(
         colored(f"Logs will be saved in {os.path.abspath(args.log_dir)}", "magenta")
     )
-    # log = TWBenchLogger("tw-bench", args.log_dir, level=args.logging_level)
 
     if args.wandb:
         os.environ["WANDB_MODE"] = "online"
