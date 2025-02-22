@@ -12,11 +12,11 @@ from os.path import join as pjoin
 
 import gymnasium as gym
 import pandas as pd
+import wandb
 from termcolor import colored
 from tqdm import tqdm
 
 import twbench
-import wandb
 from twbench.logger import log, setup_logging
 from twbench.utils import NumpyEncoder
 
