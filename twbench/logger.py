@@ -44,66 +44,20 @@ def setup_logging(args):
         fh.setFormatter(formatter)
 
         # Log some system information at the top of the log file.
-        fh.emit(
-            logging.LogRecord(
-                log.name, logging.DEBUG, None, None, f"args = {args}", None, None
+        def _emit_msg(msg):
+            fh.emit(
+                logging.makeLogRecord(
+                    {"name": log.name, "level": logging.DEBUG, "msg": msg}
+                )
             )
-        )
-        fh.emit(
-            logging.LogRecord(
-                log.name,
-                logging.DEBUG,
-                None,
-                None,
-                f"system = {platform.system()}",
-                None,
-                None,
-            )
-        )
-        fh.emit(
-            logging.LogRecord(
-                log.name,
-                logging.DEBUG,
-                None,
-                None,
-                f"server = {platform.uname()[1]}",
-                None,
-                None,
-            )
-        )
-        fh.emit(
-            logging.LogRecord(
-                log.name,
-                logging.DEBUG,
-                None,
-                None,
-                f"working_dir = {os.getcwd()}",
-                None,
-                None,
-            )
-        )
-        fh.emit(
-            logging.LogRecord(
-                log.name,
-                logging.DEBUG,
-                None,
-                None,
-                f"datetime = {datetime.datetime.now()}",
-                None,
-                None,
-            )
-        )
-        fh.emit(
-            logging.LogRecord(
-                log.name,
-                logging.DEBUG,
-                None,
-                None,
-                f"git_commit = {os.popen('git rev-parse HEAD').read().strip()}",
-                None,
-                None,
-            )
-        )
+
+        _emit_msg("System information:")
+        _emit_msg(f"args = {args}")
+        _emit_msg(f"system = {platform.system()}")
+        _emit_msg(f"server = {platform.uname()[1]}")
+        _emit_msg(f"working_dir = {os.getcwd()}")
+        _emit_msg(f"datetime = {datetime.datetime.now()}")
+        _emit_msg(f"git_commit = {os.popen('git rev-parse HEAD').read().strip()}")
 
         return fh
 
