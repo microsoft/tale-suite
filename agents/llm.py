@@ -92,13 +92,21 @@ class LLMAgent(twbench.Agent):
 
     def act(self, obs, reward, done, infos):
         messages = self.build_messages(f"{obs}\n> ")
-        response = self._llm_call_from_messages(
-            messages,
-            temperature=self.act_temp,
-            max_tokens=100,  # Text actions are short phrases.
-            seed=self.seed,
-            stream=False,
-        )
+        llm_kwargs = {
+            "temperature": self.act_temp,
+            "max_tokens": 100,  # Text actions are short phrases.
+            "seed": self.seed,
+            "stream": False,
+        }
+        if self.llm in [
+            "claude-3.5-haiku",
+            "claude-3.5-sonnet",
+            "claude-3.5-sonnet-latest",
+        ]:
+            # For these models, we cannot set the seed.
+            llm_kwargs.pop("seed")
+
+        response = self._llm_call_from_messages(messages, **llm_kwargs)
 
         action = response.text().strip()
         self.history.append((f"{obs}\n> ", f"{action}\n"))
