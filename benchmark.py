@@ -131,7 +131,13 @@ def evaluate(agent, env_name, args):
                 breakpoint()
 
             prev_obs = obs
-            obs, _, done, info = env.step(action)
+
+            # Force one action per step.
+            if "\n" in action.strip():
+                obs = "The game only allows one action per step."
+            else:
+                obs, _, done, info = env.step(action)
+
             score = info["score"]
             moves = info["moves"]
             feedback = info["feedback"]
@@ -204,8 +210,8 @@ def evaluate(agent, env_name, args):
 
     except Exception as e:
         status = "failed"
-        log.critical(colored(f"{env_name} (error)", "red"))
-        log.error(str(e))
+        log.critical(colored(f"{env_name} ({e!r})", "red"))
+        log.error(str(e), exc_info=True)
         if args.debug:
             raise
 
