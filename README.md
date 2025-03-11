@@ -38,12 +38,20 @@ This repository contains the files needed to benchmark language agents on text-b
 
 *Note: The walkthrough agent does not add ">" to its action history as this causes the llm to then generate ">action" which is not accepted by the game engine. For example, the llm will first generate "action" but this will be appended to the context as ">action". Thus, the llm will then generate ">action1" which is not accepted by the game engine.
 
+## Examples
+We provide a pre-built docker image at 
+
+        docker pull czcui/twb:prebuilt
+
+[Please see the following this docs page for more details on how to set up a local vllm for use with the text world benchmark.](https://docs.google.com/document/d/1Q5FtcNpYDpMLbyraJ1dSKxJLwOgLvWCECiPsnDkEq2Y/edit?usp=sharing)
+
+An example script can be found in the scripts folder. 
 
 ## Benchmarking LLMs
 
 In order to benchmark a given LLM acting as language agent playing text-based games, you will need to first configure it. `tw-bench` is leveraging the [`llm`](https://llm.datasette.io/en/stable/) library to handle communication with different LLMs.
 
-    python benchmark.py --envs TWCookingLevel1 --agent agents/llm.py:LLMAgent
+    python benchmark.py --envs TWCookingLevel1 --agent agents/llm.py zero-shot
 
 ### API-based LLMS
 
