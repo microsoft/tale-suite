@@ -7,7 +7,7 @@ This repository contains the files needed to benchmark language agents on text-b
         conda create -n tw-bench python=3.12
         conda activate tw-bench
 
-2.	Install the required packages (Jericho, TextWorld, TextWorld-Express, ScienceWorld, DiscoveryWorld, ALFWorld).
+2.	Install the required packages (Jericho, TextWorld, TextWorld-Express, ScienceWorld, ALFWorld).
 
         pip install -r requirements.txt
 
@@ -39,13 +39,13 @@ This repository contains the files needed to benchmark language agents on text-b
 *Note: The walkthrough agent does not add ">" to its action history as this causes the llm to then generate ">action" which is not accepted by the game engine. For example, the llm will first generate "action" but this will be appended to the context as ">action". Thus, the llm will then generate ">action1" which is not accepted by the game engine.
 
 ## Examples
-We provide a pre-built docker image at 
+We provide a pre-built docker image at
 
         docker pull czcui/twb:prebuilt
 
 [Please see the following this docs page for more details on how to set up a local vllm for use with the text world benchmark.](https://docs.google.com/document/d/1Q5FtcNpYDpMLbyraJ1dSKxJLwOgLvWCECiPsnDkEq2Y/edit?usp=sharing)
 
-An example script can be found in the scripts folder. 
+An example script can be found in the scripts folder.
 
 ## Benchmarking LLMs
 
@@ -55,12 +55,33 @@ In order to benchmark a given LLM acting as language agent playing text-based ga
 
 ### API-based LLMS
 
-`llm` natively supports OpenAI models.
+`llm` natively supports OpenAI models and self-hosted models that offer an OpenAI-compatible API (e.g. like vLLM does - more on this below).
 
 ### Adding support to other LLMS
 
-    llm install llm-azure
+`llm` offers different plugins to include other LLMs. E.g.
 
+    llm install llm-claude
+
+See the `llm`plugins [page](https://llm.datasette.io/en/stable/plugins/directory.html) for more information.
+
+### Deploying a model locally using vLLM
+
+To serve a custom HugginFace model with vLLM, one can use the vllm docker image like this:
+
+    docker run --runtime nvidia --gpus all --restart unless-stopped --name vllm-Llama-3.1-8B-Instruct --env "HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN}" -v ~/.cache/huggingface:/root/.cache/huggingface -p 8000:8000 --ipc=host vllm/vllm-openai:latest --model meta-llama/Llama-3.1-8B-Instruct --tensor-parallel-size 4 --host 0.0.0.0
+
+Then, add the following entrypoint in `~/.config/io.datasette.llm/extra-openai-models.yaml`
+
+```
+- model_id: meta-llama/Llama-3.1-8B-Instruct
+  model_name: meta-llama/Llama-3.1-8B-Instruct
+  api_base: "http://0.0.0.0:8000/v1"
+```
+
+You can check that everything is working properly with this simple command:
+
+    llm -m meta-llama/Llama-3.1-8B-Instruct "Hi. What's your name?"
 
 ## Custom Agents
 
@@ -82,8 +103,6 @@ You can then use this agent by specifying the path to the file and the class nam
         python benchmark.py --agent agents/custom.py:CustomAgent
 
 
-## Deploying a model locally using vLLM
-    docker run --runtime nvidia --gpus all --restart unless-stopped --name vllm-Llama-3.1-8B-Instruct --env "HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN}" -v ~/.cache/huggingface:/root/.cache/huggingface -p 8000:8000 --ipc=host vllm/vllm-openai:latest --model meta-llama/Llama-3.1-8B-Instruct --tensor-parallel-size 4 --host 0.0.0.0
 
 
 ## Contributing
