@@ -39,7 +39,7 @@ class HumanAgent(twbench.Agent):
         }
 
     def act(self, obs, reward, done, infos):
-        available_commands = infos.get("available_commands", [])
+        available_commands = infos.get("admissible_commands", [])
         if prompt_toolkit_available:
             actions_completer = WordCompleter(
                 available_commands, ignore_case=True, sentence=True
