@@ -1,7 +1,7 @@
 import gymnasium as gym
 
-from .alfworld_data import prepare_alfworld_data
-from .alfworld_env import TASK_TYPES, ALFWorldTask
+from .alfworld_data import TASK_TYPES, prepare_alfworld_data
+from .alfworld_env import ALFWorldTask
 
 environments = []
 

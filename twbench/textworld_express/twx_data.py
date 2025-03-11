@@ -26,28 +26,37 @@ TASKS = [
     ),
     ("Sorting", "sorting", ""),
     ("SimonSays10", "simonsays", "gameLength=10, numDistractors=4, memorization=0"),
-    ("SimonSays20", "simonsays", "gameLength=20, numDistractors=4, memorization=0"),
     ("SimonSays50", "simonsays", "gameLength=50, numDistractors=4, memorization=0"),
     ("SimonSays100", "simonsays", "gameLength=100, numDistractors=4, memorization=0"),
     (
         "SimonSaysWithMemory10",
         "simonsays",
-        "gameLength=10, numDistractors=4, memorization=1",
-    ),
-    (
-        "SimonSaysWithMemory20",
-        "simonsays",
-        "gameLength=20, numDistractors=4, memorization=1",
+        "gameLength=10, numDistractors=4, memorization=1, verbose=0",
     ),
     (
         "SimonSaysWithMemory50",
         "simonsays",
-        "gameLength=50, numDistractors=4, memorization=1",
+        "gameLength=50, numDistractors=4, memorization=1, verbose=0",
     ),
     (
         "SimonSaysWithMemory100",
         "simonsays",
-        "gameLength=100, numDistractors=4, memorization=1",
+        "gameLength=100, numDistractors=4, memorization=1, verbose=0",
+    ),
+    (
+        "SimonSaysWithMemory10Verbose",
+        "simonsays",
+        "gameLength=10, numDistractors=4, memorization=1, verbose=1",
+    ),
+    (
+        "SimonSaysWithMemory50Verbose",
+        "simonsays",
+        "gameLength=50, numDistractors=4, memorization=1, verbose=1",
+    ),
+    (
+        "SimonSaysWithMemory100Verbose",
+        "simonsays",
+        "gameLength=100, numDistractors=4, memorization=1, verbose=1",
     ),
     ("PeckingOrder", "peckingorder", ""),
 ]
