@@ -15,10 +15,10 @@ TASK_TYPES = [
     "pick_two_obj_and_place",
 ]
 
-ALFWORLD_DATA_URL = "https://github.com/alfworld/alfworld/releases/download/0.4.0/json_2.1.2_tw-pddl.zip"
+ALFWORLD_DATA_URL = "https://github.com/alfworld/alfworld/releases/download/0.4.2/json_2.1.3_tw-pddl.zip"
 TWBENCH_CACHE_ALFWORLD = pjoin(TWBENCH_CACHE_HOME, "alfworld")
 TWBENCH_CACHE_ALFWORLD_DATA_ZIP = pjoin(
-    TWBENCH_CACHE_ALFWORLD, "json_2.1.2_tw-pddl.zip"
+    TWBENCH_CACHE_ALFWORLD, "json_2.1.3_tw-pddl.zip"
 )
 TWBENCH_CACHE_ALFWORLD_VALID_SEEN = pjoin(
     TWBENCH_CACHE_ALFWORLD, "json_2.1.1", "valid_seen"
