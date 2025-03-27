@@ -197,8 +197,8 @@ class ReasoningAgent(twbench.Agent):
 
         if not self.allows_system_prompt:
             # Make sure the system prompt is added to the following message.
-            messages.pop(0)
             messages[1]["content"] = f"{SYSTEM_PROMPT}\n\n{messages[1]['content']}"
+            messages.pop(0)
 
         return messages
 
