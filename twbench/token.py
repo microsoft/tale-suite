@@ -2,6 +2,7 @@ import os
 from typing import Optional
 
 import tiktoken
+from anthropic import NOT_GIVEN
 from llm import Model
 
 # Suppress warnings from transformers
@@ -76,7 +77,7 @@ class ClaudeTokenCounter(TokenCounter):
     def __init__(self, model: Model):
         from anthropic import Anthropic
 
-        self.model = model.model_id
+        self.model = model.claude_model_id
         self.client = Anthropic(api_key=model.get_key())
 
     def __call__(self, *, messages=None, text=None):
@@ -85,7 +86,7 @@ class ClaudeTokenCounter(TokenCounter):
             messages += [{"role": "assistant", "content": text.strip()}]
 
         # Extract system messages, if any.
-        system = None
+        system = NOT_GIVEN
         if messages and messages[0]["role"] == "system":
             system = messages[0]["content"]
             messages.pop(0)

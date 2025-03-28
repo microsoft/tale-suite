@@ -111,13 +111,21 @@ class ReasoningAgent(twbench.Agent):
             "stream": True,  # Should prevent openai.APITimeoutError
         }
         if isinstance(self.reasoning_effort, int):
-            llm_kwargs["max_tokens"] = self.reasoning_effort
-        else:
+            if self.llm in ["claude-3.7-sonnet"]:
+                llm_kwargs["thinking_budget"] = self.reasoning_effort
+            else:
+                llm_kwargs["max_tokens"] = self.reasoning_effort
+
+        elif self.llm in ["o1", "o1-preview", "o3-mini"]:
             llm_kwargs["reasoning_effort"] = self.reasoning_effort
 
-        if self.llm in ["o1", "o1-mini", "o1-preview", "o3-mini"]:
+        if self.llm in ["o1", "o1-mini", "o1-preview", "o3-mini", "claude-3.7-sonnet"]:
             # For these models, we cannot set the temperature.
             llm_kwargs.pop("temperature")
+
+        if self.llm in ["claude-3.7-sonnet"]:
+            llm_kwargs["thinking"] = 1
+            llm_kwargs.pop("seed")
 
         messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(messages, **llm_kwargs)
@@ -125,6 +133,7 @@ class ReasoningAgent(twbench.Agent):
 
         action = response.text().strip()
 
+        thinking = None
         if "DeepSeek-R1" in self.llm:
             # Strip the reasoning <think> and </think>.
             reasoning_end = action.find("</think>")
@@ -158,16 +167,29 @@ class ReasoningAgent(twbench.Agent):
             else:
                 reasoning_end += len("</think>")
 
+            # Extract the reasoning part from the response.
+            thinking = action[:reasoning_end].strip()
+            # Extract the action part from the response.
             action = action[reasoning_end:].strip()
+
+        elif self.llm in ["claude-3.7-sonnet"]:
+            # Extract the thinking part from the response JSON.
+            thinking = "".join(
+                [item.get("thinking", "") for item in response.json()["content"]]
+            )
 
         self.history.append((f"{obs}\n> ", f"{action}\n"))
 
         # Compute usage statistics
         stats = {
             "prompt": format_messages_to_markdown(messages),
+            "thinking": thinking,
             "response": response_text,
             "nb_tokens": self.token_counter(messages=messages, text=response_text),
         }
+
+        if thinking is not None:
+            stats["nb_tokens"] += self.token_counter(text=thinking)
 
         return action, stats
 
