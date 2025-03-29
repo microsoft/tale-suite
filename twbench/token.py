@@ -2,7 +2,6 @@ import os
 from typing import Optional
 
 import tiktoken
-from anthropic import NOT_GIVEN
 from llm import Model
 
 # Suppress warnings from transformers
@@ -81,6 +80,8 @@ class ClaudeTokenCounter(TokenCounter):
         self.client = Anthropic(api_key=model.get_key())
 
     def __call__(self, *, messages=None, text=None):
+        from anthropic import NOT_GIVEN
+
         messages = list(messages or [])
         if text is not None:
             messages += [{"role": "assistant", "content": text.strip()}]
