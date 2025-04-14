@@ -1,11 +1,11 @@
-# Text-games Benchmark
+# TALES
 This repository contains the files needed to benchmark language agents on text-based games.
 
 ## Getting Started
 1.	Make a dedicated conda virtual environment.
 
-        conda create -n tw-bench python=3.12
-        conda activate tw-bench
+        conda create -n tales python=3.12
+        conda activate tales
 
 2.	Install the required packages (Jericho, TextWorld, TextWorld-Express, ScienceWorld, ALFWorld).
 
@@ -49,7 +49,7 @@ An example script can be found in the scripts folder.
 
 ## Benchmarking LLMs
 
-In order to benchmark a given LLM acting as language agent playing text-based games, you will need to first configure it. `tw-bench` is leveraging the [`llm`](https://llm.datasette.io/en/stable/) library to handle communication with different LLMs.
+In order to benchmark a given LLM acting as language agent playing text-based games, you will need to first configure it. `tales` is leveraging the [`llm`](https://llm.datasette.io/en/stable/) library to handle communication with different LLMs.
 
     python benchmark.py --envs TWCookingLevel1 --agent agents/llm.py zero-shot
 
@@ -103,7 +103,16 @@ You can then use this agent by specifying the path to the file and the class nam
         python benchmark.py --agent agents/custom.py:CustomAgent
 
 
-
+## Citation
+```
+@article{cui2025tales,
+  title={TALES: Text-Adventure Learning Environment Suite},
+  author={Christopher Cui, Xingdi Yuan, Ziang Xiao, Prithviraj Ammanabrolu, Marc-Alexandre C\^ot\'e},
+  journal={arXiv preprint arXiv:},
+  year={2025},
+  url={https://arxiv.org/abs/}
+}
+```
 
 ## Contributing
 
@@ -128,5 +137,7 @@ Use of Microsoft trademarks or logos in modified versions of this project must n
 Any use of third-party trademarks or logos are subject to those third-party's policies.
 
 ## Privacy
+This framework does not collect user's personal data. For more information about Microsoft's privacy policies. Please see [Microsoft Privacy Statement](https://www.microsoft.com/en-ca/privacy/privacystatement).
 
-[Microsoft Privacy Statement](https://privacy.microsoft.com/en-us/privacystatement)
+## Responsible AI
+Please see our [Responsible AI Statement](https://github.com/microsoft/tales/blob/main/RESPONSIBLE_AI.md).
