@@ -165,8 +165,13 @@ def is_recoverable_error(exception):
         "openai.APIError",
         "openai.APIConnectionError",
         "openai.RateLimitError",
+        "openai.InternalServerError",
         "anthropic.error.RateLimitError",
         "anthropic.InternalServerError",
+        "anthropic.OverloadedError",
+        "anthropic.APIStatusError",
+        "anthropic._exceptions.OverloadedError",
+        "llm.errors.ModelError",  # Gemini
         # Add more as needed
     ]
     exception_full_name = (
