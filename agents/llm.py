@@ -106,6 +106,11 @@ class LLMAgent(twbench.Agent):
             # For these models, we cannot set the seed.
             llm_kwargs.pop("seed")
 
+        if "gemini" in self.llm or "gemma" in self.llm:
+            # For these models, we cannot set the seed and max_tokens has a different name.
+            llm_kwargs.pop("seed")
+            llm_kwargs["max_output_tokens"] = llm_kwargs.pop("max_tokens")
+
         response = self._llm_call_from_messages(messages, **llm_kwargs)
 
         action = response.text().strip()
