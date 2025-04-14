@@ -127,6 +127,10 @@ class ReasoningAgent(twbench.Agent):
             llm_kwargs["thinking"] = 1
             llm_kwargs.pop("seed")
 
+        if "gemini" in self.llm or "gemma" in self.llm:
+            # For these models, we cannot set the seed and max_tokens has a different name.
+            llm_kwargs.pop("seed")
+
         messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(messages, **llm_kwargs)
         response_text = response.text()
