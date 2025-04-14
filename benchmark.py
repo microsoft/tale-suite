@@ -48,12 +48,35 @@ def evaluate(agent, env_name, args):
             log.removeHandler(fh)
             return summary
 
-    # if args.wandb:
-    #     # Check if there already exists a run with the same name using Wandb API.
-    #     wandb_api = wandb.Api()
-    #     wandb_runs = wandb_api.runs(
-    #         filters={"name": f"{env_name} - {agent.uid}"},
-    #     )
+    run_name = f"{env_name} - {agent.uid}"
+    if args.wandb and not args.force_all:
+        # Check if there already exists a run with the same name using Wandb API.
+        wandb_api = wandb.Api()
+        wandb_runs = wandb_api.runs(filters={"display_name": run_name})
+        if wandb_runs:
+            wandb_run = wandb_runs[0]
+            log.info(f"Previous evaluation found: {wandb_run.url} ({wandb_run.state})")
+            if wandb_run.state in ("finished", "running"):
+                log.info(colored("Skipped, already exists.", "yellow"))
+                log.removeHandler(fh)
+                summary = {
+                    "status": wandb_run.state,
+                    "env_name": env_name,
+                    "env_params": env_params,
+                    "wandb_run_id": wandb_run.id,
+                    "wandb_url": wandb_run.url,
+                    "nb_steps": wandb_run.summary["total/Env. Steps"],
+                    "nb_moves": wandb_run.summary["total/Game Moves"],
+                    "nb_invalid_actions": wandb_run.summary["total/Invalid Actions"],
+                    "nb_losts": wandb_run.summary["total/Losts"],
+                    "nb_wins": wandb_run.summary["total/Wins"],
+                    "nb_resets": wandb_run.summary["total/Resets"],
+                    "highscore": wandb_run.summary["final/Highscore"],
+                    "max_score": wandb_run.summary["final/Game Max Score"],
+                    "norm_score": wandb_run.summary["final/Normalized Score"],
+                    "duration": wandb_run.summary["final/Duration"],
+                }
+                return summary
 
     # initialize wandb
     wandb_config = {
@@ -70,7 +93,7 @@ def evaluate(agent, env_name, args):
         project="tw-bench",
         config=wandb_config,
         reinit=True,
-        name=f"{env_name} - {agent.uid}",
+        name=run_name,
     )
 
     env = gym.make(
@@ -171,7 +194,7 @@ def evaluate(agent, env_name, args):
             # fmt: off
             results.append([
                 step, score, max_score, norm_score, moves,
-                prev_obs, action, feedback, stats["prompt"], stats["response"], stats["nb_tokens"]
+                prev_obs, action, feedback, stats["prompt"], stats["response"], stats.get("thinking"), stats["nb_tokens"]
             ])
             # fmt: on
 
@@ -233,7 +256,7 @@ def evaluate(agent, env_name, args):
     # fmt: off
     columns = [
         "Step", "Score", "Max Score", "Normalized Score", "Moves",
-        "Observation", "Action", "Feedback", "Prompt", "Response", "Token Usage"
+        "Observation", "Action", "Feedback", "Prompt", "Response", "Thinking", "Token Usage"
     ]
     # fmt: on
     df = pd.DataFrame(results, columns=columns)
@@ -309,7 +332,7 @@ def benchmark(agent, args):
             f"  Score: {summary['highscore']:3d}/{summary['max_score']:3d} ({summary['norm_score']:6.2%})"
         )
 
-        log.info(msg)
+        log.critical(msg)
 
         mean_score += summary["norm_score"]
 
