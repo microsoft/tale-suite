@@ -10,7 +10,7 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
         <button class="tab-button" onclick="openTab(event, 'tab3')">Scores By Framework</button>
         <button class="tab-button" onclick="openTab(event, 'tab2')">Scores By Game</button>
         <button class="tab-button" onclick="openTab(event, 'tab6')">All LLM Scores</button>
-        <button class="tab-button" onclick="openTab(event, 'tab5')">Bloopers</button>
+        <!-- <button class="tab-button" onclick="openTab(event, 'tab5')">Bloopers</button> -->
     </div>
     
 <div id="tab1" class="tab-content active">
