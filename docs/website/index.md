@@ -12,7 +12,7 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
         <button class="tab-button" onclick="openTab(event, 'tab6')">All LLM Scores</button>
         <!-- <button class="tab-button" onclick="openTab(event, 'tab5')">Bloopers</button> -->
     </div>
-    
+
 <div id="tab1" class="tab-content active">
     <!-- Content for main tab without nested tabs -->
     <p class="author-tagline"><em>Anonymized for review</em></p>
@@ -77,7 +77,7 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab4')">Scienceworld</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab5')">Jericho</button>
     </div>
-    
+
 <div id="tab4-subtab1" class="nested-tab-content active">
     <div class="environment-container">
         <p class="environment-tagline">TextWorld</p>
@@ -88,10 +88,10 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 <div id="tab4-subtab2" class="nested-tab-content">
     <div class="environment-container">
         <p class="environment-tagline">Textworld Express</p>
-        <p>Textworld Express is a highly optimized re-implementation of many Textworld game scenarios that runs approximately three orders of magnitudes faster compared to the Textworld counterparts. 
-        While token throughput is the major speed bottleneck in many LLM-based applications, we opt to use Textworld Express over Textworld for the performance improvement where applicable. 
+        <p>Textworld Express is a highly optimized re-implementation of many Textworld game scenarios that runs approximately three orders of magnitudes faster compared to the Textworld counterparts.
+        While token throughput is the major speed bottleneck in many LLM-based applications, we opt to use Textworld Express over Textworld for the performance improvement where applicable.
 
-        While significantly faster, an arguable drawback of using Textworld Express over Textworld is also in its stricter parser. 
+        While significantly faster, an arguable drawback of using Textworld Express over Textworld is also in its stricter parser.
         Textworld Express simplifies its parser for speed and thus does not allow for nearest-neighbor action phrases.</p>
     </div>
 </div>
@@ -100,9 +100,9 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
     <div class="environment-container">
         <p class="environment-tagline">Alfworld</p>
         <p>Alfworld is a multi-modal framework combining complementary visual and textual observations, where agents are asked to navigate and perform tasks in a household setting. All tasks provide only a terminal reward of 1 upon task completion. For <strong><em>TALES</em></strong>, we only use its textual modality as it has become the standard in the LLM literature when evaluated on.</p>
-        
+
         <p>The Alfworld environments are unique in their lack of informative feedback.
-        Where other environments have a predefined error message relating to the type of error, whether it is due to the parser not recognizing the command or the action not being possible, Alfworld has only one error message in the form of 'Nothing happened'. 
+        Where other environments have a predefined error message relating to the type of error, whether it is due to the parser not recognizing the command or the action not being possible, Alfworld has only one error message in the form of 'Nothing happened'.
         In the original Alfworld framework, the visual component compensates for the insufficient text feedback. However, this lack of detailed information significantly increases the difficulty for agents that rely solely on text-based interactions.
         This difficulty is compounded upon by the limitation that an agent in Alfworld can only hold one object at a time. </p>
     </div>
@@ -111,9 +111,9 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 <div id="tab4-subtab4" class="nested-tab-content">
     <div class="environment-container">
         <p class="environment-tagline">Scienceworld</p>
-        <p>Scienceworld is a framework focused on the completion of elementary-level science curriculum tasks. 
-        Notably for many of its tasks, Scienceworld emulates an open-world setting where the player can complete the task in different ways that do not follow one expected trajectory. 
-        When it comes to heating objects, this part of the task can be completed by either the oven in the kitchen or the blast furnace in the workshop. 
+        <p>Scienceworld is a framework focused on the completion of elementary-level science curriculum tasks.
+        Notably for many of its tasks, Scienceworld emulates an open-world setting where the player can complete the task in different ways that do not follow one expected trajectory.
+        When it comes to heating objects, this part of the task can be completed by either the oven in the kitchen or the blast furnace in the workshop.
         Similarly, Scienceworld also allows the player the freedom to reset the game on command.
         This is especially important as a number of Scienceworld games have dead states where it is no longer possible to complete the assigned task in that play-through.</p>
     </div>
@@ -122,10 +122,15 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 <div id="tab4-subtab5" class="nested-tab-content">
     <div class="environment-container">
         <p class="environment-tagline">Jericho</p>
-        <p>Jericho is a suite of 55 human-written, interactive fiction games. 
+        <p>Jericho is a suite of 55 human-written, interactive fiction games.
         We consider Jericho to be the most difficult framework due to the length and complexity of many of the games. Some can be completed within 17 steps while some others require over 500 steps.
         Those games also cover an extremely wide range of genres and styles and lack the consistency of many other text-game environment suites designed for evaluating agents.
         For example, '9:05' follows the morning of an ordinary office worker where 'Anchorhead' is a Lovecraftian Horror Story.</p>
+    </div>
+    <div class="iframe-container">
+        <p>Below is an interactive version of Zork I, one of the classic text adventure games available in the Jericho suite:</p>
+        <iframe src="https://iplayif.com/?story=https%3A%2F%2Fgithub.com%2FBYU-PCCL%2Fz-machine-games%2Fraw%2Frefs%2Fheads%2Fmaster%2Fjericho-game-suite%2Fzork1.z5" width="100%" height="600px" frameborder="0" title="Play Zork I"></iframe>
+        <p><em>Try it yourself! Type commands like "look", "inventory", or "go north" to interact with the game.</em></p>
     </div>
 </div>
 </div>
