@@ -1,9 +1,68 @@
----
-layout: default
-title: <strong><em>T A L E S</em>
-description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A</em></strong><em>dventure</em> <strong><em>L</em></strong><em>earning</em> <strong><em>E</em></strong><em>nvironment</em> <strong><em>S</em></strong><em>uite</em>"
----
-<div class="tab-container">
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>T A L E S | the Text Adventure Learning Environment Suite</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="T A L E S" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="the Text Adventure Learning Environment Suite" />
+<meta property="og:description" content="the Text Adventure Learning Environment Suite" />
+<link rel="canonical" href="http://0.0.0.0:4000/" />
+<meta property="og:url" content="http://0.0.0.0:4000/" />
+<meta property="og:site_name" content="the Text Adventure Learning Environment Suite" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="T A L E S" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"the Text Adventure Learning Environment Suite","headline":"T A L E S","name":"the Text Adventure Learning Environment Suite","url":"http://0.0.0.0:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ad5445b175348c6fe7dd3f4e30630bdcf75bfb37">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    
+    <!-- Microsoft WcpConsent library -->
+    <script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+    
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Analytics -->
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- Microsoft Cookie Consent Banner -->
+
+<!-- Add your custom head content here -->
+<script src="/assets/js/tabs.js"></script>
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <!-- Microsoft cookie banner placeholder -->
+    <div id="cookie-banner"></div>
+    
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name"><strong><em>T A L E S</em></h1>
+      <h2 class="project-tagline"><em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A</em></strong><em>dventure</em> <strong><em>L</em></strong><em>earning</em> <strong><em>E</em></strong><em>nvironment</em> <strong><em>S</em></strong><em>uite</em></h2>
+      
+        <a href="https://github.com/microsoft/text-games-benchmark" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <div class="tab-container">
     <div class="tabs">
         <button class="tab-button active" onclick="openTab(event, 'tab1')"><strong><em>TALES</em></strong></button>
         <button class="tab-button" onclick="openTab(event, 'tab4')">Environments</button>
@@ -377,3 +436,63 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 </div>
     </div>
 </div>
+<footer class="site-footer" style="text-align: center;">
+    <span class="site-footer-credits">
+        <a href="https://www.microsoft.com" id="copyright">&copy; 2025 Microsoft</a>
+        |
+        <a href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy</a>
+        |
+        <a href="https://go.microsoft.com/fwlink/?LinkId=2259814">Consumer Health Privacy</a>
+        |
+        <a id="cookiesManager" onClick="manageConsent();">Cookies</a>
+        |
+        <a href="https://go.microsoft.com/fwlink/?LinkID=206977">Terms of Use</a>
+        |
+        <a href="https://www.microsoft.com/trademarks">Trademarks</a>
+    </span>
+</footer>
+
+<script>
+  function manageConsent() {
+      if (typeof WcpConsent !== 'undefined' && WcpConsent.siteConsent) {
+          WcpConsent.siteConsent.manageConsent();
+      } else {
+          console.warn('WcpConsent library not fully initialized');
+          alert('Cookie preferences management is currently unavailable. Please try again later.');
+      }
+  }
+</script></main>
+    
+    <!-- Initialize Microsoft WCP Consent -->
+    <script>
+      (function() {
+        // Initialize WcpConsent
+        function initializeWcp() {
+          if (typeof WcpConsent !== 'undefined') {
+            WcpConsent.init("en-US", "cookie-banner", function(err, siteConsent) {
+              if (err) {
+                console.error("WCP initialization failed: ", err);
+              } else {
+                console.log("WCP initialization succeeded!");
+              }
+            }, onConsentChanged);
+          } else {
+            console.error("WcpConsent library not loaded");
+            setTimeout(initializeWcp, 500); // Try again after 500ms
+          }
+        }
+        
+        function onConsentChanged(newConsent) {
+          console.log("Consent changed: ", newConsent);
+        }
+        
+        // Call initialization function when the page loads
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeWcp);
+        } else {
+          initializeWcp();
+        }
+      })();
+    </script>
+  </body>
+</html>

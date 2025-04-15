@@ -82,3 +82,92 @@
 .nested-tab-content.active {
     display: block;
 }
+
+#main-description {
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* If needed, control other text properties */
+#main-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.author-tagline {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.abstract-container {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #ddd;
+}
+
+.abstract-container h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.abstract-container p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.abstract-tagline {
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  
+  .model-scores {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .model-scores th {
+    background-color: #157878;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+  }
+  
+  .model-scores td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .model-scores tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .model-scores tr:hover {
+    background-color: #e8f4f4;
+  }
+  
+  /* Responsive design for mobile */
+  @media screen and (max-width: 768px) {
+    .model-scores {
+      font-size: 12px;
+    }
+    
+    .model-scores th, .model-scores td {
+      padding: 6px;
+    }
+  }
