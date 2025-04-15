@@ -1,0 +1,84 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Tabs styling */
+.tab-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.tabs, .nested-tabs {
+    display: flex; /* Add flexbox display */
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    border-radius: 4px 4px 0 0;
+    width: 100%; /* Ensure full width */
+}
+
+.nested-tabs {
+    margin-bottom: 15px;
+}
+
+/* Shared styles for both main and nested tab buttons */
+.tab-button, .nested-tab-button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    flex: 1; /* Make tabs grow evenly to fill space */
+    text-align: center; /* Center text in tabs */
+}
+
+/* Main tab button specific styles */
+.tab-button {
+    padding: 14px 16px;
+    font-size: 16px;
+}
+
+/* Nested tab button specific styles */
+.nested-tab-button {
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.tab-button:hover, .nested-tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-button.active {
+    background-color: #157878;
+    color: white;
+}
+
+.nested-tab-button.active {
+    background-color: #1a9a9a; /* Slightly different color to distinguish */
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    width: 100%; /* Ensure content takes full width */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.nested-tab-content {
+    display: none;
+    padding: 10px 0;
+    border-top: none;
+    width: 100%; /* Ensure nested content takes full width */
+}
+
+.nested-tab-content.active {
+    display: block;
+}
