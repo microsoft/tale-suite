@@ -12,4 +12,15 @@
         |
         <a href="https://www.microsoft.com" id="copyright">©️ 2024 Microsoft</a>
     </span>
-  </footer>
+</footer>
+  
+<script>
+  function manageConsent() {
+      if (typeof WcpConsent !== 'undefined' && WcpConsent.siteConsent) {
+          WcpConsent.siteConsent.manageConsent();
+      } else {
+          console.warn('WcpConsent library not fully initialized');
+          alert('Cookie preferences management is currently unavailable. Please try again later.');
+      }
+  }
+</script>

@@ -6,24 +6,6 @@
 <!-- link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" -->
 
 <!-- Microsoft Cookie Consent Banner -->
-<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
-<script>
-    function manageConsent() {
-        if (typeof WcpConsent !== 'undefined' && WcpConsent.siteConsent) {
-            WcpConsent.siteConsent.manageConsent();
-        } else {
-            // Fallback if WcpConsent is not fully initialized
-            console.warn('WcpConsent library not fully initialized');
-            setTimeout(function() {
-                if (typeof WcpConsent !== 'undefined' && WcpConsent.siteConsent) {
-                    WcpConsent.siteConsent.manageConsent();
-                } else {
-                    console.error('WcpConsent library failed to initialize properly');
-                }
-            }, 1000); // Try again after a delay
-        }
-    }
-</script>
 
 <!-- Add your custom head content here -->
 <script src="{{ '/assets/js/tabs.js' | relative_url }}"></script>

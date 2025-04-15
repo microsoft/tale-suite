@@ -11,6 +11,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    
+    <!-- Microsoft WcpConsent library -->
+    <script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+    
     {% include head-custom.html %}
   </head>
   <body>
@@ -37,5 +41,37 @@
       {%- include footer.html -%}
 
     </main>
+    
+    <!-- Initialize Microsoft WCP Consent -->
+    <script>
+      (function() {
+        // Initialize WcpConsent
+        function initializeWcp() {
+          if (typeof WcpConsent !== 'undefined') {
+            WcpConsent.init("en-US", "cookie-banner", function(err, siteConsent) {
+              if (err) {
+                console.error("WCP initialization failed: ", err);
+              } else {
+                console.log("WCP initialization succeeded!");
+              }
+            }, onConsentChanged);
+          } else {
+            console.error("WcpConsent library not loaded");
+            setTimeout(initializeWcp, 500); // Try again after 500ms
+          }
+        }
+        
+        function onConsentChanged(newConsent) {
+          console.log("Consent changed: ", newConsent);
+        }
+        
+        // Call initialization function when the page loads
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeWcp);
+        } else {
+          initializeWcp();
+        }
+      })();
+    </script>
   </body>
 </html>
