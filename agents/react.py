@@ -10,10 +10,10 @@ from tenacity import (
 )
 from termcolor import colored
 
-import twbench
-from twbench.agent import register
-from twbench.token import get_token_counter
-from twbench.utils import (
+import tales
+from tales.agent import register
+from tales.token import get_token_counter
+from tales.utils import (
     format_messages_to_markdown,
     is_recoverable_error,
     log,
@@ -29,7 +29,7 @@ SYSTEM_PROMPT = (
 )
 
 
-class ReactAgent(twbench.Agent):
+class ReactAgent(tales.Agent):
 
     def __init__(self, *args, **kwargs):
         self.llm = kwargs["llm"]

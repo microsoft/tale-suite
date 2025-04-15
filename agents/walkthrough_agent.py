@@ -1,11 +1,11 @@
 import argparse
 
-import twbench
-from twbench.agent import register
-from twbench.token import get_token_counter
+import tales
+from tales.agent import register
+from tales.token import get_token_counter
 
 
-class WalkthroughAgent(twbench.Agent):
+class WalkthroughAgent(tales.Agent):
     def __init__(self, **kwargs):
         self.token_counter = get_token_counter()
         self.walkthrough = None

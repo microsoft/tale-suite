@@ -10,8 +10,8 @@ for game, infos in GAMES_INFOS.items():
     environments.append([env_name, "v0"])
 
     gym.register(
-        id=f"twbench/{env_name}-v0",
-        entry_point="twbench.jericho:JerichoEnv",
+        id=f"tales/{env_name}-v0",
+        entry_point="tales.jericho:JerichoEnv",
         kwargs={"game": game},
     )
 

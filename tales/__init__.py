@@ -6,8 +6,8 @@ from collections import defaultdict
 
 from termcolor import colored
 
-from twbench.agent import Agent
-from twbench.version import __version__
+from tales.agent import Agent
+from tales.version import __version__
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
 tasks = []
@@ -33,7 +33,7 @@ for dirname in os.listdir(root_dir):
 for task in tasks:
     try:
         # Load environments
-        module = importlib.import_module(f".{task}", package="twbench")
+        module = importlib.import_module(f".{task}", package="tales")
         environments = getattr(module, "environments", None)
         if environments:
             for env_name, version in environments:

@@ -1,10 +1,10 @@
 import argparse
 import sys
 
-import twbench
-from twbench.agent import register
-from twbench.token import get_token_counter
-from twbench.utils import format_messages_to_markdown, merge_messages
+import tales
+from tales.agent import register
+from tales.token import get_token_counter
+from tales.utils import format_messages_to_markdown, merge_messages
 
 prompt_toolkit_available = False
 try:
@@ -18,7 +18,7 @@ except ImportError:
     pass
 
 
-class HumanAgent(twbench.Agent):
+class HumanAgent(tales.Agent):
 
     def __init__(self, *args, **kwargs):
         self.token_counter = get_token_counter()

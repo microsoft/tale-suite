@@ -7,7 +7,7 @@ from os.path import join as pjoin
 
 from tqdm import tqdm
 
-log = logging.getLogger("tw-bench")
+log = logging.getLogger("tales")
 
 
 class TqdmLoggingHandler(logging.Handler):

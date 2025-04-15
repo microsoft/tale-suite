@@ -49,8 +49,8 @@ def register(name: str, desc: str, klass: callable, add_arguments: callable) -> 
 
     Example:
 
-        >>> from twbench.agent import register
-        >>> from twbench.agents import RandomAgent
+        >>> from tales.agent import register
+        >>> from tales.agents import RandomAgent
         >>> def _add_arguments(parser):
                 parser.add_argument("--seed", required=True, type=int,
                                     help="Random seed to use.")

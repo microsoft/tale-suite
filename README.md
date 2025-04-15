@@ -89,9 +89,9 @@ To build a custom agent, you need to create a new file (e.g., `custom.py`) in th
 
 ```python
 from typing import Dict, Any
-import twbench
+import tales
 
-class CustomAgent(twbench.Agent):
+class CustomAgent(tales.Agent):
 
     def act(self, obs: str, reward: float, done: bool, infos: Dict[str, Any]) -> str:
         # ...

@@ -3,12 +3,12 @@ import re
 
 import numpy as np
 
-import twbench
-from twbench.agent import register
-from twbench.token import get_token_counter
+import tales
+from tales.agent import register
+from tales.token import get_token_counter
 
 
-class RandomAgent(twbench.Agent):
+class RandomAgent(tales.Agent):
     def __init__(self, **kwargs):
         self.seed = kwargs.get("seed", 1234)
         self.rng = np.random.RandomState(self.seed)

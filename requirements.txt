@@ -17,7 +17,7 @@ pandas
 llm @ git+https://github.com/MarcCote/llm.git@add_extra_body_option
 llm-anthropic
 llm-gemini
-llm-azure-openai @ https://github.com/MarcCote/llm-azure-openai.git@/generic_ad_auth
+llm-azure-openai @ git+https://github.com/MarcCote/llm-azure-openai.git@generic_ad_auth
 anthropic
 google-genai
 tiktoken

@@ -3,8 +3,8 @@ import argparse
 import gymnasium as gym
 
 from agents.llm import LLMAgent
-from twbench.agent import register
-from twbench.utils import merge_messages
+from tales.agent import register
+from tales.utils import merge_messages
 
 
 # For the LLMWlkThrAgent, the sysprompt is initialized in the __init__ function as we need to change it once we extract the walkthrough from the env
@@ -62,7 +62,7 @@ class LLMWalkThroughAgent(LLMAgent):
             raise ValueError("Walkthrough not initalized: Check the environment")
 
         # Check if the walkthrough is valid.
-        env = gym.make(f"twbench/{env_name}-v0", disable_env_checker=True)
+        env = gym.make(f"tales/{env_name}-v0", disable_env_checker=True)
 
         _, _ = env.reset()
 

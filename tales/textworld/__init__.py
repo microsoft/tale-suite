@@ -11,8 +11,8 @@ for difficulty in range(1, 10 + 1):
     environments.append([env_name, "v0"])
 
     gym.register(
-        id=f"twbench/{env_name}-v0",
-        entry_point="twbench.textworld:TWCookingEnv",
+        id=f"tales/{env_name}-v0",
+        entry_point="tales.textworld:TWCookingEnv",
         kwargs={"difficulty": difficulty},
     )
 

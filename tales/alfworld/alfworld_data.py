@@ -3,8 +3,8 @@ import os
 import zipfile
 from os.path import join as pjoin
 
-from twbench.config import TWBENCH_CACHE_HOME, TWBENCH_FORCE_DOWNLOAD
-from twbench.utils import download
+from tales.config import TALES_CACHE_HOME, TALES_FORCE_DOWNLOAD
+from tales.utils import download
 
 TASK_TYPES = [
     "pick_and_place_simple",
@@ -16,49 +16,47 @@ TASK_TYPES = [
 ]
 
 ALFWORLD_DATA_URL = "https://github.com/alfworld/alfworld/releases/download/0.4.2/json_2.1.3_tw-pddl.zip"
-TWBENCH_CACHE_ALFWORLD = pjoin(TWBENCH_CACHE_HOME, "alfworld")
-TWBENCH_CACHE_ALFWORLD_DATA_ZIP = pjoin(
-    TWBENCH_CACHE_ALFWORLD, "json_2.1.3_tw-pddl.zip"
+TALES_CACHE_ALFWORLD = pjoin(TALES_CACHE_HOME, "alfworld")
+TALES_CACHE_ALFWORLD_DATA_ZIP = pjoin(TALES_CACHE_ALFWORLD, "json_2.1.3_tw-pddl.zip")
+TALES_CACHE_ALFWORLD_VALID_SEEN = pjoin(
+    TALES_CACHE_ALFWORLD, "json_2.1.1", "valid_seen"
 )
-TWBENCH_CACHE_ALFWORLD_VALID_SEEN = pjoin(
-    TWBENCH_CACHE_ALFWORLD, "json_2.1.1", "valid_seen"
-)
-TWBENCH_CACHE_ALFWORLD_VALID_UNSEEN = pjoin(
-    TWBENCH_CACHE_ALFWORLD, "json_2.1.1", "valid_unseen"
+TALES_CACHE_ALFWORLD_VALID_UNSEEN = pjoin(
+    TALES_CACHE_ALFWORLD, "json_2.1.1", "valid_unseen"
 )
 
 
-def prepare_alfworld_data(force=TWBENCH_FORCE_DOWNLOAD):
-    os.makedirs(TWBENCH_CACHE_ALFWORLD, exist_ok=True)
-    data_exists = os.path.exists(TWBENCH_CACHE_ALFWORLD_VALID_SEEN) and os.path.exists(
-        TWBENCH_CACHE_ALFWORLD_VALID_UNSEEN
+def prepare_alfworld_data(force=TALES_FORCE_DOWNLOAD):
+    os.makedirs(TALES_CACHE_ALFWORLD, exist_ok=True)
+    data_exists = os.path.exists(TALES_CACHE_ALFWORLD_VALID_SEEN) and os.path.exists(
+        TALES_CACHE_ALFWORLD_VALID_UNSEEN
     )
     if data_exists and not force:
         return
 
-    if not os.path.exists(TWBENCH_CACHE_ALFWORLD_DATA_ZIP) or force:
+    if not os.path.exists(TALES_CACHE_ALFWORLD_DATA_ZIP) or force:
         download(
             ALFWORLD_DATA_URL,
-            dst=TWBENCH_CACHE_ALFWORLD,
+            dst=TALES_CACHE_ALFWORLD,
             desc="Downloading ALFWorld data",
             force=force,
         )
 
     # Extract the content of the folder test from the downloaded file
-    with zipfile.ZipFile(TWBENCH_CACHE_ALFWORLD_DATA_ZIP, "r") as zip_ref:
+    with zipfile.ZipFile(TALES_CACHE_ALFWORLD_DATA_ZIP, "r") as zip_ref:
         # Only extract the test folder
         for member in zip_ref.namelist():
             if "valid_seen" in member or "valid_unseen" in member:
-                zip_ref.extract(member, TWBENCH_CACHE_ALFWORLD)
+                zip_ref.extract(member, TALES_CACHE_ALFWORLD)
 
 
 def get_alfworld_game(task_type, split="seen"):
     prepare_alfworld_data()  # make sure the data is ready
 
     if split == "seen":
-        root = TWBENCH_CACHE_ALFWORLD_VALID_SEEN
+        root = TALES_CACHE_ALFWORLD_VALID_SEEN
     elif split == "unseen":
-        root = TWBENCH_CACHE_ALFWORLD_VALID_UNSEEN
+        root = TALES_CACHE_ALFWORLD_VALID_UNSEEN
     else:
         raise ValueError(f"Unknown split: {split}")
 

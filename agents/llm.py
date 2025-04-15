@@ -9,10 +9,10 @@ from tenacity import (
     wait_random_exponential,
 )
 
-import twbench
-from twbench.agent import register
-from twbench.token import get_token_counter
-from twbench.utils import (
+import tales
+from tales.agent import register
+from tales.token import get_token_counter
+from tales.utils import (
     format_messages_to_markdown,
     is_recoverable_error,
     merge_messages,
@@ -26,7 +26,7 @@ SYSTEM_PROMPT = (
 )
 
 
-class LLMAgent(twbench.Agent):
+class LLMAgent(tales.Agent):
 
     def __init__(self, *args, **kwargs):
         self.llm = kwargs["llm"]

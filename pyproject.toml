@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "twbench"
+name = "tales"
 version = "0.0.1"
-description = "Text-games Benchmark"
+description = "Text-Adventure Learning Environment Suite"
 readme = "README.md"
 requires-python = ">=3.9"
 dynamic = ["dependencies"]
@@ -32,8 +32,8 @@ dev = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/microsoft/text-games-benchmark"
-"Bug Tracker" = "https://github.com/microsoft/text-games-benchmark/issues"
+"Homepage" = "https://github.com/microsoft/tales"
+"Bug Tracker" = "https://github.com/microsoft/tales/issues"
 
 [tool.black]
 line-length = 88

@@ -5,13 +5,13 @@ import warnings
 from termcolor import colored
 from tqdm import tqdm
 
-from twbench import tasks
+from tales import tasks
 
 
 def download():
-    for task in tqdm(tasks, desc="Downloading data for TW-Bench"):
+    for task in tqdm(tasks, desc="Downloading data for TALES"):
         try:
-            module = importlib.import_module(f".{task}", package="twbench")
+            module = importlib.import_module(f".{task}", package="tales")
             module.download()
         except Exception as e:
             warnings.warn(

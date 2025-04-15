@@ -11,7 +11,7 @@ import requests
 from llm import AsyncResponse, Conversation, Prompt, Response
 from tqdm import tqdm
 
-from twbench.logger import log
+from tales.logger import log
 
 
 def mkdirs(dirpath: str) -> str:
@@ -57,7 +57,7 @@ def download(url, dst, desc=None, force=False):
 
     # Download to a temp folder first to avoid corrupting the cache
     # with incomplete downloads.
-    temp_dir = mkdirs(pjoin(tempfile.gettempdir(), "twbench"))
+    temp_dir = mkdirs(pjoin(tempfile.gettempdir(), "tales"))
     temp_path = pjoin(temp_dir, filename)
     with open(temp_path, "ab") as temp_file:
         headers = {}

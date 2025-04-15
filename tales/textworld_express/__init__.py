@@ -9,8 +9,8 @@ for task_name, game_name, game_params in TASKS:
     environments.append([env_name, "v0"])
 
     gym.register(
-        id=f"twbench/{env_name}-v0",
-        entry_point="twbench.textworld_express:TextWorldExpressEnv",
+        id=f"tales/{env_name}-v0",
+        entry_point="tales.textworld_express:TextWorldExpressEnv",
         kwargs={"game_name": game_name, "game_params": game_params},
     )
 

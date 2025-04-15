@@ -16,9 +16,9 @@ import wandb
 from termcolor import colored
 from tqdm import tqdm
 
-import twbench
-from twbench.logger import log, setup_logging
-from twbench.utils import NumpyEncoder
+import tales
+from tales.logger import log, setup_logging
+from tales.utils import NumpyEncoder
 
 os.environ["WANDB_MODE"] = "disabled"
 
@@ -80,9 +80,9 @@ def evaluate(agent, env_name, args):
 
     # initialize wandb
     wandb_config = {
-        "version": twbench.__version__,
+        "version": tales.__version__,
         "game": env_name,
-        "framework": twbench.env2task[env_name],
+        "framework": tales.env2task[env_name],
         "agent": agent.uid,
         "max_steps": args.nb_steps,
         "game_seed": args.game_seed,
@@ -90,14 +90,14 @@ def evaluate(agent, env_name, args):
         **agent.params,
     }
     wandb_run = wandb.init(
-        project="tw-bench",
+        project="tales",
         config=wandb_config,
         reinit=True,
         name=run_name,
     )
 
     env = gym.make(
-        f"twbench/{env_name}-v0",
+        f"tales/{env_name}-v0",
         disable_env_checker=True,
         admissible_commands=args.admissible_commands,
     )
@@ -349,14 +349,14 @@ def pretty_print_tasks(num_cols: int = 3, disable_print: bool = False):
     output = []
 
     max_justify = max(
-        len(env_name) for task in twbench.envs_per_task.values() for env_name in task
+        len(env_name) for task in tales.envs_per_task.values() for env_name in task
     )
 
-    for task in sorted(twbench.envs_per_task):
+    for task in sorted(tales.envs_per_task):
         task_output = f"{'=' * 5} {task} {'=' * 5}\n"
 
         # Reference: https://stackoverflow.com/a/33464001
-        for count, env_id in enumerate(sorted(twbench.envs_per_task[task]), 1):
+        for count, env_id in enumerate(sorted(tales.envs_per_task[task]), 1):
             # Print column with justification.
             task_output += env_id.ljust(max_justify) + " "
 
@@ -364,7 +364,7 @@ def pretty_print_tasks(num_cols: int = 3, disable_print: bool = False):
             if count % num_cols == 0:
                 task_output = task_output.rstrip(" ")
 
-                if count != len(twbench.envs_per_task[task]):
+                if count != len(tales.envs_per_task[task]):
                     task_output += "\n"
 
         output.append(task_output.rstrip(" "))
@@ -381,7 +381,7 @@ def exit_listing_agents(agent=None):
         msg += "Unknown agent: {}\n\n".format(agent)
 
     msg += "Available agents:\n  "
-    msg += "\n  ".join(sorted(twbench.agent.AGENTS))
+    msg += "\n  ".join(sorted(tales.agent.AGENTS))
     print(msg)
     sys.exit(1)
 
@@ -425,7 +425,7 @@ def parse_args():
         parser.formatter_class = argparse.RawTextHelpFormatter
         general_group = parser.add_argument_group('General settings')
 
-        general_group.add_argument("--envs", metavar="env", nargs="+", choices=twbench.envs + twbench.tasks,
+        general_group.add_argument("--envs", metavar="env", nargs="+", choices=tales.envs + tales.tasks,
                             help="Interactive text environments to evaluate the agent(s)."
                                 f" Available:\n{pretty_print_tasks(disable_print=True)}")
         general_group.add_argument("--game-seed", type=int,
@@ -467,7 +467,7 @@ def parse_args():
     _add_general_settings(parser)
 
     agent_parsers = []
-    for challenge_name, (desc, _, add_agent_arguments) in twbench.agent.AGENTS.items():
+    for challenge_name, (desc, _, add_agent_arguments) in tales.agent.AGENTS.items():
         agent_parser = subparsers.add_parser(challenge_name, help=desc)
         add_agent_arguments(agent_parser)
         _add_general_settings(agent_parser)
@@ -486,12 +486,12 @@ def main():
         exit_listing_agents(args.subcommand)
 
     # Instanciate the agent.
-    _, Agent, _ = twbench.agent.AGENTS[args.subcommand]
+    _, Agent, _ = tales.agent.AGENTS[args.subcommand]
     agent = Agent(**vars(args))
     agent.new = partial(Agent, **vars(args))
 
     # Create logging directory.
-    args.log_dir = pjoin(args.log_dir, f"tw-bench_{agent.uid.replace('/', '-')}")
+    args.log_dir = pjoin(args.log_dir, f"tales_{agent.uid.replace('/', '-')}")
     os.makedirs(args.log_dir, exist_ok=True)
     setup_logging(args)
     log.critical(
@@ -502,11 +502,11 @@ def main():
         os.environ["WANDB_MODE"] = "online"
         os.environ.pop("WANDB_RUN_ID", None)
 
-    args.envs = args.envs or twbench.envs
+    args.envs = args.envs or tales.envs
     args.envs = [  # Expand tasks into their respective environments.
         env
         for task in args.envs
-        for env in (twbench.envs_per_task[task] if task in twbench.tasks else [task])
+        for env in (tales.envs_per_task[task] if task in tales.tasks else [task])
     ]
 
     benchmark(agent, args)

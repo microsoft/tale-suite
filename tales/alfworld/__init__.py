@@ -12,8 +12,8 @@ for split in ["seen", "unseen"]:
         environments.append([env_name, "v0"])
 
         gym.register(
-            id=f"twbench/{env_name}-v0",
-            entry_point="twbench.alfworld:ALFWorldTask",
+            id=f"tales/{env_name}-v0",
+            entry_point="tales.alfworld:ALFWorldTask",
             kwargs={"task_type": task_type, "split": split},
         )
 
