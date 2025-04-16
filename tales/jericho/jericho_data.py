@@ -13,16 +13,11 @@ with open(pjoin(os.path.dirname(__file__), "games.json")) as f:
     GAMES_INFOS = json.load(f)
 
 # Remove known games that are not working.
-# GAMES_INFOS.pop("sherlock", None)
-# GAMES_INFOS.pop("trinity", None)
 GAMES_INFOS.pop("hollywood", None)
+GAMES_INFOS.pop("theatre", None)
 
 
 def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD):
-    # if os.path.exists(TALES_CACHE_JERICHO) and not force:
-    #     if os.listdir(TALES_CACHE_JERICHO):
-    #         return
-
     os.makedirs(TALES_CACHE_JERICHO, exist_ok=True)
 
     for name, game_info in GAMES_INFOS.items():
