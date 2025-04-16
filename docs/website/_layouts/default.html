@@ -11,6 +11,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Microsoft WcpConsent library -->
     <script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
@@ -25,6 +26,7 @@
 
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: TALES | default: TALES }}</h1>
+      <p><img src="assets/figs/static_banner.png" alt="banner" /></p>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
