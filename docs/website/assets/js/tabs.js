@@ -40,6 +40,7 @@ function openNestedTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+
 function copyTextToClipboard(elementId, event) {
     console.log("Citation button clicked for: " + elementId);
     
@@ -98,22 +99,50 @@ function copyTextToClipboard(elementId, event) {
         citationTextElement.innerText = citationText.innerText;
     }
     
-    // Get the button that was clicked
-    var button = event.currentTarget;
+    // Position the popup near the mouse cursor instead of the button
+    var x = event.clientX;
+    var y = event.clientY;
     
-    // Position the popup
-    var buttonRect = button.getBoundingClientRect();
-    popup.style.left = (buttonRect.right + 10) + 'px';
-    popup.style.top = (buttonRect.top - 100) + 'px';
-    
-    // Make sure the popup is within viewport
+    // Get dimensions
     var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-    if (buttonRect.right + 10 + 400 > viewportWidth) {
-        popup.style.left = (buttonRect.left - 410) + 'px';
+    var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    
+    // Show the popup temporarily to get its dimensions
+    popup.style.visibility = 'hidden';
+    popup.style.display = 'block';
+    var popupWidth = popup.offsetWidth;
+    var popupHeight = popup.offsetHeight;
+    
+    // Calculate position to ensure popup stays in viewport
+    // Add 10px padding from edges
+    var padding = 10;
+    
+    // Position horizontally
+    if (x + popupWidth + padding > viewportWidth) {
+        // If too far right, position to the left of cursor
+        x = Math.max(padding, x - popupWidth - padding);
+    } else {
+        // Otherwise position to the right of cursor with padding
+        x = x + padding;
     }
     
-    // Show the popup
-    popup.style.display = 'block';
+    // Position vertically
+    if (y + popupHeight + padding > viewportHeight) {
+        // If too far down, position above cursor
+        y = Math.max(padding, y - popupHeight - padding);
+    } else {
+        // Otherwise position below cursor with padding
+        y = y + padding;
+    }
+    
+    // Apply the position (convert from viewport coordinates to document coordinates)
+    popup.style.left = (x + scrollLeft) + 'px';
+    popup.style.top = (y + scrollTop) + 'px';
+    
+    // Make the popup visible
+    popup.style.visibility = 'visible';
     
     // Prevent default action and event bubbling
     event.preventDefault();

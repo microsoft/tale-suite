@@ -403,7 +403,7 @@ a:hover { text-decoration: underline; }
 
 .close-modal:hover, .close-modal:focus { color: black; text-decoration: none; }
 
-.citation-popup { display: none; position: absolute; z-index: 1000; background-color: #fefefe; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 400px; max-width: 90vw; padding: 15px; }
+.citation-popup { display: none; position: absolute; /* Use absolute instead of fixed */ z-index: 1000; background-color: #fefefe; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 400px; max-width: 90vw; padding: 15px; }
 
 /* Citation box styling */
 .citation-box { background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 4px; padding: 10px; margin: 10px 0; max-height: 200px; overflow-y: auto; }

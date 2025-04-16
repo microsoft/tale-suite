@@ -248,7 +248,7 @@
   
   .citation-popup {
     display: none;
-    position: absolute;
+    position: absolute;  /* Use absolute instead of fixed */
     z-index: 1000;
     background-color: #fefefe;
     border: 1px solid #ddd;
@@ -257,7 +257,7 @@
     width: 400px;
     max-width: 90vw;
     padding: 15px;
-  }
+}
   
   /* Citation box styling */
   .citation-box {
