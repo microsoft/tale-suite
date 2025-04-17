@@ -25,7 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=367fd9a42720ff8eaeec05f4d3645ee52abe977e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=adc1c0f876da5bb1a81e394a50404afb1d9365a2">
     <link rel="stylesheet" href="/assets/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -135,14 +135,14 @@
 <div id="tab4" class="tab-content">
 <p class="citation-notice">Please consider citing the original work!</p>
     <div class="nested-tabs">
-        <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab4-subtab1')">Textworld</button>
+        <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab1')">Textworld</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab2')">Textworld Express</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab3')">Alfworld</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab4')">Scienceworld</button>
-        <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab5')">Jericho</button>
+        <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab4-subtab5')">Jericho</button>
     </div>
 
-<div id="tab4-subtab1" class="nested-tab-content active">
+<div id="tab4-subtab1" class="nested-tab-content">
     <div class="environment-container">
         <p class="environment-tagline">
             <a href="https://github.com/microsoft/TextWorld">TextWorld</a>
@@ -257,7 +257,7 @@
     </div>
 </div>
 
-<div id="tab4-subtab5" class="nested-tab-content">
+<div id="tab4-subtab5" class="nested-tab-content active">
     <div class="environment-container">
         <p class="environment-tagline"><a href="https://github.com/microsoft/jericho">Jericho</a>
         <button class="cite-button" onclick="copyTextToClipboard('jericho-citation', event)">
@@ -295,9 +295,9 @@
 
 <div id="tab6" class="tab-content">
     <div class="table-container">
-    <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 9 models. All scores are displayed as percentages.</p>
-    <div class="table-container">
-<table class="model-scores">
+        <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 9 models. All scores are displayed as percentages.</p>
+        <div class="responsive-table">
+            <table class="model-scores">
     <thead>
     <tr>
         <th>Model</th>
@@ -582,10 +582,10 @@
     </tr>
     </tbody>
 </table>
+        </div>
     </div>
 </div>
 
-</div>
 </div>
 <footer class="site-footer" style="text-align: center;">
     <span class="site-footer-credits">

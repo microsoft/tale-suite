@@ -73,14 +73,14 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 <div id="tab4" class="tab-content">
 <p class="citation-notice">Please consider citing the original work!</p>
     <div class="nested-tabs">
-        <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab4-subtab1')">Textworld</button>
+        <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab1')">Textworld</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab2')">Textworld Express</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab3')">Alfworld</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab4')">Scienceworld</button>
-        <button class="nested-tab-button" onclick="openNestedTab(event, 'tab4-subtab5')">Jericho</button>
+        <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab4-subtab5')">Jericho</button>
     </div>
 
-<div id="tab4-subtab1" class="nested-tab-content active">
+<div id="tab4-subtab1" class="nested-tab-content">
     <div class="environment-container">
         <p class="environment-tagline">
             <a href="https://github.com/microsoft/TextWorld">TextWorld</a>
@@ -195,7 +195,7 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
     </div>
 </div>
 
-<div id="tab4-subtab5" class="nested-tab-content">
+<div id="tab4-subtab5" class="nested-tab-content active">
     <div class="environment-container">
         <p class="environment-tagline"><a href="https://github.com/microsoft/jericho">Jericho</a>
         <button class="cite-button" onclick="copyTextToClipboard('jericho-citation', event)">
@@ -233,293 +233,10 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 
 <div id="tab6" class="tab-content">
     <div class="table-container">
-    <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 9 models. All scores are displayed as percentages.</p>
-    <div class="table-container">
-<table class="model-scores">
-    <thead>
-    <tr>
-        <th>Model</th>
-        <th>Textworld</th>
-        <th>Textworld Express</th>
-        <th>Alfworld</th>
-        <th>Scienceworld</th>
-        <th>Jericho</th>
-        <th>Overall</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><strong>claude-3.7-sonnet</strong></td>
-        <td>97.3%</td>
-        <td>91.3%</td>
-        <td>83.3%</td>
-        <td>76.5%</td>
-        <td>12.5%</td>
-        <td>52.5%</td>
-    </tr>
-    <tr>
-        <td>claude-3.5-sonnet-latest</td>
-        <td>95.5%</td>
-        <td>81.6%</td>
-        <td>75.0%</td>
-        <td>82.3%</td>
-        <td>9.6%</td>
-        <td>50.4%</td>
-    </tr>
-    <tr>
-        <td>o1</td>
-        <td>97.8%</td>
-        <td>70.0%</td>
-        <td>28.3%</td>
-        <td>80.1%</td>
-        <td>10.1%</td>
-        <td>44.1%</td>
-    </tr>
-    <tr>
-        <td>gpt-4o</td>
-        <td>83.6%</td>
-        <td>80.6%</td>
-        <td>56.7%</td>
-        <td>61.4%</td>
-        <td>5.6%</td>
-        <td>40.6%</td>
-    </tr>
-    <tr>
-        <td>claude-3.5-haiku</td>
-        <td>94.9%</td>
-        <td>79.8%</td>
-        <td>26.7%</td>
-        <td>67.3%</td>
-        <td>5.0%</td>
-        <td>39.6%</td>
-    </tr>
-    <tr>
-        <td>Llama-3.1-405B-Instruct</td>
-        <td>90.9%</td>
-        <td>79.2%</td>
-        <td>31.7%</td>
-        <td>51.8%</td>
-        <td>6.1%</td>
-        <td>36.4%</td>
-    </tr>
-    <tr>
-        <td>Llama-3.3-70B-Instruct</td>
-        <td>69.6%</td>
-        <td>77.2%</td>
-        <td>15.0%</td>
-        <td>55.1%</td>
-        <td>4.5%</td>
-        <td>32.8%</td>
-    </tr>
-    <tr>
-        <td>Llama-3.1-70B-Instruct</td>
-        <td>65.6%</td>
-        <td>81.9%</td>
-        <td>8.3%</td>
-        <td>51.9%</td>
-        <td>5.3%</td>
-        <td>32.0%</td>
-    </tr>
-    <tr>
-        <td>Qwen2.5-72B-Instruct</td>
-        <td>76.5%</td>
-        <td>83.8%</td>
-        <td>36.7%</td>
-        <td>35.0%</td>
-        <td>2.9%</td>
-        <td>30.7%</td>
-    </tr>
-    <tr>
-        <td>Mistral-Large-Instruct-2407</td>
-        <td>82.4%</td>
-        <td>68.3%</td>
-        <td>6.7%</td>
-        <td>46.1%</td>
-        <td>5.8%</td>
-        <td>30.3%</td>
-    </tr>
-    <tr>
-        <td>gpt-4o-mini</td>
-        <td>56.5%</td>
-        <td>73.6%</td>
-        <td>0.0%</td>
-        <td>27.2%</td>
-        <td>1.8%</td>
-        <td>21.8%</td>
-    </tr>
-    <tr>
-        <td>Llama-4-Scout-17B-16E-Instruct</td>
-        <td>41.1%</td>
-        <td>68.4%</td>
-        <td>0.0%</td>
-        <td>27.0%</td>
-        <td>1.8%</td>
-        <td>19.8%</td>
-    </tr>
-    <tr>
-        <td>Llama-4-Maverick-17B-128E-Instruct-FP8</td>
-        <td>43.5%</td>
-        <td>56.1%</td>
-        <td>8.3%</td>
-        <td>11.5%</td>
-        <td>2.0%</td>
-        <td>15.5%</td>
-    </tr>
-    <tr>
-        <td>Mistral-Small-Instruct-2409</td>
-        <td>56.1%</td>
-        <td>27.3%</td>
-        <td>0.0%</td>
-        <td>24.4%</td>
-        <td>1.4%</td>
-        <td>14.8%</td>
-    </tr>
-    <tr>
-        <td>Llama-3.1-8B-Instruct</td>
-        <td>29.7%</td>
-        <td>50.3%</td>
-        <td>0.0%</td>
-        <td>15.7%</td>
-        <td>2.3%</td>
-        <td>13.9%</td>
-    </tr>
-    <tr>
-        <td>Qwen2.5-7B-Instruct</td>
-        <td>27.7%</td>
-        <td>45.6%</td>
-        <td>0.0%</td>
-        <td>12.6%</td>
-        <td>0.7%</td>
-        <td>11.7%</td>
-    </tr>
-    <tr>
-        <td>Llama-3.2-3B-Instruct</td>
-        <td>21.4%</td>
-        <td>42.0%</td>
-        <td>0.0%</td>
-        <td>10.0%</td>
-        <td>1.5%</td>
-        <td>10.4%</td>
-    </tr>
-    <tr>
-        <td>phi-4</td>
-        <td>20.8%</td>
-        <td>43.8%</td>
-        <td>0.0%</td>
-        <td>8.9%</td>
-        <td>1.6%</td>
-        <td>10.3%</td>
-    </tr>
-    <tr>
-        <td>Mistral-Small-24B-Instruct-2501</td>
-        <td>15.8%</td>
-        <td>23.0%</td>
-        <td>0.0%</td>
-        <td>15.8%</td>
-        <td>1.4%</td>
-        <td>8.8%</td>
-    </tr>
-    <tr>
-        <td>DeepSeek-R1-Distill-Llama-70B</td>
-        <td>8.7%</td>
-        <td>39.8%</td>
-        <td>0.0%</td>
-        <td>7.7%</td>
-        <td>1.3%</td>
-        <td>8.4%</td>
-    </tr>
-    <tr>
-        <td>Ministral-8B-Instruct-2410</td>
-        <td>10.9%</td>
-        <td>22.8%</td>
-        <td>0.0%</td>
-        <td>2.3%</td>
-        <td>0.4%</td>
-        <td>4.6%</td>
-    </tr>
-    <tr>
-        <td>Mistral-Small-3.1-24B-Instruct-2503</td>
-        <td>2.5%</td>
-        <td>10.3%</td>
-        <td>0.0%</td>
-        <td>10.5%</td>
-        <td>0.8%</td>
-        <td>4.5%</td>
-    </tr>
-    <tr>
-        <td>Mixtral-8x22B-Instruct-v0.1</td>
-        <td>17.1%</td>
-        <td>8.4%</td>
-        <td>0.0%</td>
-        <td>4.0%</td>
-        <td>0.4%</td>
-        <td>3.7%</td>
-    </tr>
-    <tr>
-        <td>Llama-3.2-1B-Instruct</td>
-        <td>0.0%</td>
-        <td>19.0%</td>
-        <td>0.0%</td>
-        <td>2.4%</td>
-        <td>0.6%</td>
-        <td>3.3%</td>
-    </tr>
-    <tr>
-        <td>Phi-3-mini-128k-instruct</td>
-        <td>2.7%</td>
-        <td>9.4%</td>
-        <td>0.0%</td>
-        <td>2.4%</td>
-        <td>0.3%</td>
-        <td>2.2%</td>
-    </tr>
-    <tr>
-        <td>Phi-3.5-MoE-instruct</td>
-        <td>0.0%</td>
-        <td>7.0%</td>
-        <td>0.0%</td>
-        <td>2.3%</td>
-        <td>0.4%</td>
-        <td>1.7%</td>
-    </tr>
-    <tr>
-        <td>Phi-4-mini-instruct</td>
-        <td>0.0%</td>
-        <td>5.5%</td>
-        <td>0.0%</td>
-        <td>2.3%</td>
-        <td>0.5%</td>
-        <td>1.5%</td>
-    </tr>
-    <tr>
-        <td>Mixtral-8x7B-Instruct-v0.1</td>
-        <td>0.0%</td>
-        <td>1.6%</td>
-        <td>0.0%</td>
-        <td>4.0%</td>
-        <td>0.3%</td>
-        <td>1.3%</td>
-    </tr>
-    <tr>
-        <td>Phi-3.5-mini-instruct</td>
-        <td>0.0%</td>
-        <td>2.0%</td>
-        <td>0.0%</td>
-        <td>2.4%</td>
-        <td>0.5%</td>
-        <td>1.0%</td>
-    </tr>
-    <tr>
-        <td>Phi-3-medium-128k-instruct</td>
-        <td>0.0%</td>
-        <td>0.0%</td>
-        <td>0.0%</td>
-        <td>2.3%</td>
-        <td>0.3%</td>
-        <td>0.7%</td>
-    </tr>
-    </tbody>
-</table>
+        <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 9 models. All scores are displayed as percentages.</p>
+        <div class="responsive-table">
+            {% include table.md %}
+        </div>
     </div>
 </div>
 

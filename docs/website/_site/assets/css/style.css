@@ -368,8 +368,6 @@ a:hover { text-decoration: underline; }
 .abstract-tagline { text-align: center; font-weight: bold; color: #666; margin-bottom: 20px; }
 
 /* Table styling */
-.table-container { overflow-x: auto; margin: 20px 0; }
-
 .model-scores { width: 100%; border-collapse: collapse; font-size: 14px; }
 
 .model-scores th { background-color: #157878; color: white; text-align: left; padding: 10px; position: sticky; top: 0; }
@@ -436,3 +434,32 @@ a:hover { text-decoration: underline; }
 .environment-image-container { text-align: center; margin: 20px 0; }
 
 .image-caption { text-align: center; font-size: 0.85em; color: #666; margin-top: 5px; font-style: italic; }
+
+/* Add this to your stylesheet */
+.table-container { width: 100%; overflow-x: hidden; }
+
+/* Force the table to fit within the container */
+.responsive-table { width: 100%; overflow-x: hidden; }
+
+/* Style the model-scores table */
+.model-scores { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 14px; /* Base font size */ }
+
+/* Give more space to model names, less to percentages */
+.model-scores th:first-child, .model-scores td:first-child { width: 16%; /* Prioritize model names */ text-align: left; font-weight: 500; padding-right: 8px; }
+
+/* Make percentage columns very compact */
+.model-scores th:not(:first-child), .model-scores td:not(:first-child) { width: 14%; /* Distribute remaining 65% across 6 columns */ text-align: right; padding-left: 2px; padding-right: 2px; }
+
+/* Force text wrapping in all cells */
+.model-scores th, .model-scores td { word-break: break-word; overflow-wrap: break-word; white-space: normal; padding-top: 4px; padding-bottom: 4px; }
+
+/* Progressive font size reduction for different screen sizes */
+@media screen and (max-width: 992px) { .model-scores { font-size: 13px; } }
+@media screen and (max-width: 768px) { .model-scores { font-size: 12px; }
+  .model-scores th:first-child, .model-scores td:first-child { width: 16%; }
+  .model-scores th:not(:first-child), .model-scores td:not(:first-child) { width: 14%; } }
+@media screen and (max-width: 576px) { .model-scores { font-size: 10px; }
+  .model-scores th:first-child, .model-scores td:first-child { width: 12.5%; }
+  .model-scores th:not(:first-child), .model-scores td:not(:first-child) { width: 25%; } }
+/* For extremely small screens */
+@media screen and (max-width: 400px) { .model-scores { font-size: 9px; } }
