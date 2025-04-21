@@ -49,10 +49,16 @@ def evaluate(agent, env_name, args):
             return summary
 
     run_name = f"{env_name} - {agent.uid}"
-    if args.wandb and not args.force_all:
+    if args.wandb:  # and not args.force_all:
         # Check if there already exists a run with the same name using Wandb API.
         wandb_api = wandb.Api()
-        wandb_runs = wandb_api.runs(filters={"display_name": run_name})
+        wandb_runs = wandb_api.runs(
+            "pearls-lab/text-games-benchmark",
+            filters={
+                "display_name": run_name,
+                "tags": {"$ne": "without-help"},
+            },
+        )
         if wandb_runs:
             wandb_run = wandb_runs[0]
             log.info(f"Previous evaluation found: {wandb_run.url} ({wandb_run.state})")
@@ -158,6 +164,8 @@ def evaluate(agent, env_name, args):
             # Force one action per step.
             if "\n" in action.strip():
                 obs = "The game only allows one action per step."
+            elif "\\" in action or "{" in action:
+                obs = "The game's parser doesn't allow backslash or curly brackets."
             else:
                 obs, _, done, info = env.step(action)
 

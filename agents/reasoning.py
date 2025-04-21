@@ -123,6 +123,9 @@ class ReasoningAgent(twbench.Agent):
             # For these models, we cannot set the temperature.
             llm_kwargs.pop("temperature")
 
+        if self.llm in ["o3-mini"]:
+            llm_kwargs["stream"] = False
+
         if self.llm in ["claude-3.7-sonnet"]:
             llm_kwargs["thinking"] = 1
             llm_kwargs.pop("seed")
