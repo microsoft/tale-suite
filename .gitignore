@@ -51,6 +51,8 @@ coverage.xml
 .pytest_cache/
 cover/
 
+docs/website/_site/media
+
 # Translations
 *.mo
 *.pot

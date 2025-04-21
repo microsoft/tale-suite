@@ -448,7 +448,7 @@ a:hover { text-decoration: underline; }
 .model-scores th:first-child, .model-scores td:first-child { width: 16%; /* Prioritize model names */ text-align: left; font-weight: 500; padding-right: 8px; }
 
 /* Make percentage columns very compact */
-.model-scores th:not(:first-child), .model-scores td:not(:first-child) { width: 14%; /* Distribute remaining 65% across 6 columns */ text-align: right; padding-left: 2px; padding-right: 2px; }
+.model-scores th:not(:first-child), .model-scores td:not(:first-child) { width: 14%; /* Distribute remaining 65% across 6 columns */ text-align: center; padding-left: 2px; padding-right: 2px; }
 
 /* Force text wrapping in all cells */
 .model-scores th, .model-scores td { word-break: break-word; overflow-wrap: break-word; white-space: normal; padding-top: 4px; padding-bottom: 4px; }
@@ -463,3 +463,7 @@ a:hover { text-decoration: underline; }
   .model-scores th:not(:first-child), .model-scores td:not(:first-child) { width: 25%; } }
 /* For extremely small screens */
 @media screen and (max-width: 400px) { .model-scores { font-size: 9px; } }
+.simplified-table-container { width: 100%; overflow-x: hidden; max-width: 100%; display: block; }
+
+/* Make sure simplified-table-container is correctly displayed in nested-tab-content */
+#tab6-subtab1 .responsive-table.simplified-table-container { width: 100%; overflow-x: auto; /* Change from hidden to auto if table might overflow on small screens */ }

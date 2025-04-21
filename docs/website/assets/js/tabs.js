@@ -213,3 +213,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Find the simplified table by its container
+    const simplifiedTableContainer = document.getElementById('tab6-subtab1');
+    if (simplifiedTableContainer) {
+      const table = simplifiedTableContainer.querySelector('table');
+      if (table) {
+        table.classList.add('simplified-scores');
+      }
+    }
+  });

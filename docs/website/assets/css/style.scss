@@ -401,7 +401,7 @@
 .model-scores th:not(:first-child),
 .model-scores td:not(:first-child) {
   width: 14%; /* Distribute remaining 65% across 6 columns */
-  text-align: right;
+  text-align: center;
   padding-left: 2px;
   padding-right: 2px;
 }
@@ -461,3 +461,62 @@
     font-size: 9px;
   }
 }
+
+.simplified-table-container {
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Make sure simplified-table-container is correctly displayed in nested-tab-content */
+#tab6-subtab1 .responsive-table.simplified-table-container {
+  width: 100%;
+  overflow-x: auto; /* Change from hidden to auto if table might overflow on small screens */
+}
+
+// /* Column-specific widths for the simplified table */
+// .simplified-table-container .model-scores th:nth-child(1),
+// .simplified-table-container .model-scores td:nth-child(1) {
+//   width: 8%; /* Rank column - very narrow */
+//   text-align: center;
+// }
+
+// .simplified-table-container .model-scores th:nth-child(2),
+// .simplified-table-container .model-scores td:nth-child(2) {
+//   width: 52%; /* Model name column - give it most space */
+//   text-align: left;
+// }
+
+// .simplified-table-container .model-scores th:nth-child(3),
+// .simplified-table-container .model-scores td:nth-child(3) {
+//   width: 20%; /* Score column - moderate space */
+//   text-align: center;
+// }
+
+// .simplified-table-container .model-scores th:nth-child(4),
+// .simplified-table-container .model-scores td:nth-child(4) {
+//   width: 20%; /* Reasoning column - moderate space */
+//   text-align: center;
+// }
+
+// /* Responsive adjustments for simplified table */
+// @media screen and (max-width: 768px) {
+//   .simplified-table-container .model-scores th:nth-child(1),
+//   .simplified-table-container .model-scores td:nth-child(1) {
+//     width: 10%;
+//   }
+  
+//   .simplified-table-container .model-scores th:nth-child(2),
+//   .simplified-table-container .model-scores td:nth-child(2) {
+//     width: 40%;
+//   }
+  
+//   .simplified-table-container .model-scores th:nth-child(3),
+//   .simplified-table-container .model-scores td:nth-child(3),
+//   .simplified-table-container .model-scores th:nth-child(4),
+//   .simplified-table-container .model-scores td:nth-child(4) {
+//     width: 25%;
+//   }
+// }

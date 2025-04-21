@@ -1,3 +1,4 @@
+<div class="table-container">
 <table class="model-scores">
     <thead>
     <tr>
@@ -30,13 +31,22 @@
         <td>50.4%</td>
     </tr>
     <tr>
+        <td>gemini-2.5-pro-preview*</td>
+        <td>98.5%</td>
+        <td>91.8%</td>
+        <td>75.0%</td>
+        <td>64.2%</td>
+        <td>13.4%</td>
+        <td>49.2%</td>
+    </tr>
+    <tr>
         <td>o1</td>
         <td>97.8%</td>
-        <td>70.0%</td>
+        <td>70.2%</td>
         <td>28.3%</td>
         <td>80.1%</td>
-        <td>10.1%</td>
-        <td>44.1%</td>
+        <td>10.3%</td>
+        <td>44.2%</td>
     </tr>
     <tr>
         <td>gpt-4o</td>
@@ -64,6 +74,15 @@
         <td>51.8%</td>
         <td>6.1%</td>
         <td>36.4%</td>
+    </tr>
+    <tr>
+        <td>gemini-2.0-flash</td>
+        <td>80.8%</td>
+        <td>76.1%</td>
+        <td>20.0%</td>
+        <td>57.1%</td>
+        <td>5.4%</td>
+        <td>35.0%</td>
     </tr>
     <tr>
         <td>Llama-3.3-70B-Instruct</td>
@@ -120,7 +139,7 @@
         <td>19.8%</td>
     </tr>
     <tr>
-        <td>Llama-4-Maverick-17B-128E-Instruct-FP8</td>
+        <td>Llama-4-Maverick-17B-128E-Instruct-</td>
         <td>43.5%</td>
         <td>56.1%</td>
         <td>8.3%</td>
@@ -145,6 +164,15 @@
         <td>15.7%</td>
         <td>2.3%</td>
         <td>13.9%</td>
+    </tr>
+    <tr>
+        <td>DeepSeek-R1</td>
+        <td>37.1%</td>
+        <td>38.6%</td>
+        <td>0.0%</td>
+        <td>15.8%</td>
+        <td>1.0%</td>
+        <td>12.4%</td>
     </tr>
     <tr>
         <td>Qwen2.5-7B-Instruct</td>
@@ -283,3 +311,4 @@
     </tr>
     </tbody>
 </table>
+</div>

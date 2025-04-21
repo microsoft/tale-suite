@@ -232,12 +232,24 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 </div>
 
 <div id="tab6" class="tab-content">
-    <div class="table-container">
-        <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 9 models. All scores are displayed as percentages.</p>
-        <div class="responsive-table">
-            {% include table.md %}
-        </div>
+    <!-- Insert Tab 5 content here -->
+    <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 9 models. All scores are displayed as percentages.</p>
+    <div class="nested-tabs">
+        <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab6-subtab1')">Simplified</button>
+        <button class="nested-tab-button" onclick="openNestedTab(event, 'tab6-subtab2')">Per Framework</button>
     </div>
+
+<div id="tab6-subtab1" class="nested-tab-content active">
+    <div class="responsive-table simplified-table-container">
+        {% include simple_table.md %}
+    </div>
+</div>
+
+<div id="tab6-subtab2" class="nested-tab-content">
+    <div class="responsive-table">
+        {% include table.md %}
+    </div>
+</div>
 </div>
 
 </div>
