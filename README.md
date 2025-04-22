@@ -1,7 +1,7 @@
 # TALES: Text-Adventure Learning Environment Suite
 This repository contains the files needed to benchmark language agents on a curated list of text-based games from the following frameworks: [Jericho](https://github.com/microsoft/jericho), [TextWorld](https://github.com/microsoft/textworld), [TextWorld-Express](https://github.com/cognitiveailab/TextWorldExpress), [ScienceWorld](https://github.com/allenai/ScienceWorld), [ALFWorld](https://github.com/alfworld/alfworld)).
 
-[[Technical Report](https://arxiv.org/abs/2504.14128)] [[Project Page](https://aka.ms/tale-suite/)]
+[[Technical Report](https://arxiv.org/abs/2504.14128)] [[Project Page](https://t.co/rFPMRoqO9y)]
 
 ## 1. Installation
 
