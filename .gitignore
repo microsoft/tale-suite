@@ -173,5 +173,5 @@ logs/
 amlt/
 
 # Website
-website/_site
-website/Gemfile.lock
+docs/website/_site
+docs/website/Gemfile.lock
