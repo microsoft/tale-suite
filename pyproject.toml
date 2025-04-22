@@ -3,11 +3,11 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tales"
-version = "0.0.1"
-description = "Text-Adventure Learning Environment Suite"
+name = "tale-suite"
+version = "1.0.0rc1"
+description = "TALES: Text-Adventure Learning Environment Suite"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 dynamic = ["dependencies"]
 
 classifiers = [
