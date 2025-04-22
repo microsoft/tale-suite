@@ -6,7 +6,7 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <div class="tab-container">
     <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'tab6')">LLM Leader Board</button>
+        <button class="tab-button active" onclick="openTab(event, 'tab6')">Leaderboard</button>
         <button class="tab-button" onclick="openTab(event, 'tab1')"><strong><em>TALES</em></strong></button>
         <button class="tab-button" onclick="openTab(event, 'tab4')">Environments</button>
         <button class="tab-button" onclick="openTab(event, 'tab3')">Scores By Framework</button>
@@ -235,7 +235,7 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
     <!-- Insert Tab 5 content here -->
     <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 9 models. All scores are displayed as percentages.</p>
     <div class="nested-tabs">
-        <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab6-subtab1')">Simplified</button>
+        <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab6-subtab1')">Overview</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab6-subtab2')">Per Framework</button>
     </div>
 
