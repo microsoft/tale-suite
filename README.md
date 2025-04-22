@@ -28,6 +28,10 @@ Alternatively, clone the repository and install locally:
 >
 >     sudo apt update && apt install openjdk-8-jre-headless -y
 
+Alternatively, if the above isn't working:
+
+>      sudo apt-get update && apt-get install default-jre default-jdk
+
 ### Using Docker
 We provide a pre-built docker image at
 
@@ -41,22 +45,27 @@ An example script can be found in the scripts folder.
 
 1.	Run benchmark evaluation on all the games for the specified random agent:
 
+    ```python
     python benchmark.py --agent agents/random.py random
 
 2.	Run benchmark evaluation on a subset of the games:
 
+    ```python
     python benchmark.py --agent agents/random.py random --env textworld
 
 3.	Run benchmark evaluation on specific games:
 
+    ```python
     python benchmark.py --agent agents/random.py random --envs JerichoEnvZork1 JerichoEnvDetective
 
 4.	Run benchmark evaluation using as a HumanAgent:
 
+    ```python
     python benchmark.py --agent agents/human.py human --envs TWCookingLevel1
 
 5.	Run benchmark evaluation where the ground-truth walkthrough is being followed:
 
+    ```python
     python benchmark.py --agent agents/walkthrough.py walkthrough --envs JerichoEnvZork1
 
 
