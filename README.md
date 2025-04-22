@@ -19,7 +19,7 @@ Then, install `tales` directly from PyPI:
 
 Alternatively, clone the repository and install locally:
 
-    git clone https://github.com/microsoft/tales
+    git clone https://github.com/microsoft/tale-suite
     cd tales
     pip install -e .
 
@@ -130,7 +130,7 @@ You can then use this agent by specifying the path to the file and the class nam
         python benchmark.py --agent agents/custom.py my-agent
 
 > [!NOTE]
-> See the [agents folder](https://github.com/microsoft/tales/tree/main/agents) for more concrete examples.
+> See the [agents folder](https://github.com/microsoft/tale-suite/tree/main/agents) for more concrete examples.
 
 ## Citation
 ```
@@ -211,4 +211,4 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 This framework does not collect user's personal data. For more information about Microsoft's privacy policies. Please see [Microsoft Privacy Statement](https://www.microsoft.com/en-ca/privacy/privacystatement).
 
 ## Responsible AI
-Please see our [Responsible AI Statement](https://github.com/microsoft/tales/blob/main/RESPONSIBLE_AI.md).
+Please see our [Responsible AI Statement](https://github.com/microsoft/tale-suite/blob/main/RESPONSIBLE_AI.md).

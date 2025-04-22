@@ -50,8 +50,8 @@ TALES contains a set of text adventure games specifically curated to fulfill our
 
 ### LICENSE
 
-We use the MIT license, please see the [license file](https://github.com/microsoft/tales/blob/main/LICENSE).
+We use the MIT license, please see the [license file](https://github.com/microsoft/tale-suite/blob/main/LICENSE).
 
 ### CONTACT
 
-We welcome feedback and collaboration from our audience. If you have suggestions, questions, or observe unexpected/offensive behavior in our technology, please contact us via [GitHub issues](https://github.com/microsoft/tales/issues) or at textworld@microsoft.com.
+We welcome feedback and collaboration from our audience. If you have suggestions, questions, or observe unexpected/offensive behavior in our technology, please contact us via [GitHub issues](https://github.com/microsoft/tale-suite/issues) or at textworld@microsoft.com.

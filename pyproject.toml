@@ -32,8 +32,8 @@ dev = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/microsoft/tales"
-"Bug Tracker" = "https://github.com/microsoft/tales/issues"
+"Homepage" = "https://github.com/microsoft/tale-suite"
+"Bug Tracker" = "https://github.com/microsoft/tale-suite/issues"
 
 [tool.black]
 line-length = 88
