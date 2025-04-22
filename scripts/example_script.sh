@@ -1,5 +1,13 @@
 # This is an example script to show how to use a self-hosted model with vllm to run the twb
-# Make sure the model you use is already registered with the llm package (see .config/io.datasette.llm/extra-openai-models.yaml for an example)
+model=""
+
+cat <<EOL >> .config/io.datasette.llm/extra-openai-models.yaml
+
+  - model_id: $model
+    model_name: $model
+    api_base: "http://127.0.0.1:8002/v1"
+EOL
+
 export WANDB_API_KEY=''
 # Makes a log folder for vllm. This may error out if you already have a logs folder
 mkdir logs 
