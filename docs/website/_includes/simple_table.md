@@ -2,8 +2,8 @@
 <table class="model-scores simplified-scores">
     <thead>
     <tr>
-        <th>Model</th>
         <th>Rank</th>
+        <th>Model</th>
         <th>Organization</th>
         <th>Model Type</th>
         <th>TALES Score</th>
@@ -11,232 +11,232 @@
     </thead>
     <tbody>
     <tr>
-        <td><strong>claude-3.7-sonnet</strong></td>
         <td>1</td>
+        <td><strong>claude-3.7-sonnet</strong></td>
         <td>Anthropic</td>
         <td>Reasoning</td>
         <td>52.5%</td>
     </tr>
     <tr>
-        <td><strong>claude-3.5-sonnet-latest</strong></td>
         <td>2</td>
+        <td><strong>claude-3.5-sonnet-latest</strong></td>
         <td>Anthropic</td>
         <td>Non-reasoning</td>
         <td>50.4%</td>
     </tr>
     <tr>
-        <td><strong>gemini-2.5-pro-preview*</strong></td>
         <td>3</td>
+        <td><strong>gemini-2.5-pro-preview*</strong></td>
         <td>Google</td>
         <td>Non-reasoning</td>
-        <td>49.2%</td>
+        <td>48.8%</td>
     </tr>
     <tr>
-        <td><strong>o1</strong></td>
         <td>4</td>
+        <td><strong>o1</strong></td>
         <td>Anthropic</td>
         <td>Reasoning</td>
         <td>44.2%</td>
     </tr>
     <tr>
-        <td><strong>gpt-4o</strong></td>
         <td>5</td>
+        <td><strong>gpt-4o</strong></td>
         <td>OpenAI</td>
         <td>Non-reasoning</td>
         <td>40.6%</td>
     </tr>
     <tr>
-        <td><strong>claude-3.5-haiku</strong></td>
         <td>6</td>
+        <td><strong>claude-3.5-haiku</strong></td>
         <td>Anthropic</td>
         <td>Non-reasoning</td>
         <td>39.6%</td>
     </tr>
     <tr>
-        <td><strong>Llama-3.1-405B-Instruct</strong></td>
         <td>7</td>
+        <td><strong>Llama-3.1-405B-Instruct</strong></td>
         <td>Meta</td>
         <td>Non-reasoning</td>
         <td>36.4%</td>
     </tr>
     <tr>
-        <td><strong>gemini-2.0-flash</strong></td>
         <td>8</td>
+        <td><strong>gemini-2.0-flash</strong></td>
         <td>Google</td>
         <td>Non-reasoning</td>
         <td>35.0%</td>
     </tr>
     <tr>
-        <td><strong>Llama-3.3-70B-Instruct</strong></td>
         <td>9</td>
+        <td><strong>Llama-3.3-70B-Instruct</strong></td>
         <td>Meta</td>
         <td>Non-reasoning</td>
         <td>32.8%</td>
     </tr>
     <tr>
-        <td><strong>Llama-3.1-70B-Instruct</strong></td>
         <td>10</td>
+        <td><strong>Llama-3.1-70B-Instruct</strong></td>
         <td>Meta</td>
         <td>Non-reasoning</td>
         <td>32.0%</td>
     </tr>
     <tr>
-        <td><strong>Qwen2.5-72B-Instruct</strong></td>
         <td>11</td>
+        <td><strong>Qwen2.5-72B-Instruct</strong></td>
         <td>Alibaba</td>
         <td>Non-reasoning</td>
         <td>30.7%</td>
     </tr>
     <tr>
-        <td><strong>Mistral-Large-Instruct-2407</strong></td>
         <td>12</td>
+        <td><strong>Mistral-Large-Instruct-2407</strong></td>
         <td>Mistral AI</td>
         <td>Non-reasoning</td>
         <td>30.3%</td>
     </tr>
     <tr>
-        <td><strong>gpt-4o-mini</strong></td>
         <td>13</td>
+        <td><strong>gpt-4o-mini</strong></td>
         <td>OpenAI</td>
         <td>Non-reasoning</td>
         <td>21.8%</td>
     </tr>
     <tr>
-        <td><strong>Llama-4-Scout-17B-16E-Instruct</strong></td>
         <td>14</td>
+        <td><strong>Llama-4-Scout-17B-16E-Instruct</strong></td>
         <td>Meta</td>
         <td>Non-reasoning</td>
         <td>19.8%</td>
     </tr>
     <tr>
-        <td><strong>Llama-4-Maverick-17B-128E-Instruct</strong></td>
         <td>15</td>
+        <td><strong>Llama-4-Maverick-17B-128E-Instruct</strong></td>
         <td>Meta</td>
         <td>Non-reasoning</td>
         <td>15.5%</td>
     </tr>
     <tr>
-        <td><strong>Mistral-Small-Instruct-2409</strong></td>
         <td>16</td>
+        <td><strong>Mistral-Small-Instruct-2409</strong></td>
         <td>Mistral AI</td>
         <td>Non-reasoning</td>
         <td>14.8%</td>
     </tr>
     <tr>
-        <td><strong>Llama-3.1-8B-Instruct</strong></td>
         <td>17</td>
+        <td><strong>Llama-3.1-8B-Instruct</strong></td>
         <td>Meta</td>
         <td>Non-reasoning</td>
         <td>13.9%</td>
     </tr>
     <tr>
-        <td><strong>DeepSeek-R1</strong></td>
         <td>18</td>
+        <td><strong>DeepSeek-R1</strong></td>
         <td>DeepSeek AI</td>
         <td>Reasoning</td>
         <td>12.4%</td>
     </tr>
     <tr>
-        <td><strong>Qwen2.5-7B-Instruct</strong></td>
         <td>19</td>
+        <td><strong>Qwen2.5-7B-Instruct</strong></td>
         <td>Alibaba</td>
         <td>Non-reasoning</td>
         <td>11.7%</td>
     </tr>
     <tr>
-        <td><strong>Llama-3.2-3B-Instruct</strong></td>
         <td>20</td>
+        <td><strong>Llama-3.2-3B-Instruct</strong></td>
         <td>Meta</td>
         <td>Non-reasoning</td>
         <td>10.4%</td>
     </tr>
     <tr>
-        <td><strong>phi-4</strong></td>
         <td>21</td>
+        <td><strong>phi-4</strong></td>
         <td>Microsoft</td>
         <td>Non-reasoning</td>
         <td>10.3%</td>
     </tr>
     <tr>
-        <td><strong>Mistral-Small-24B-Instruct-2501</strong></td>
         <td>22</td>
+        <td><strong>Mistral-Small-24B-Instruct-2501</strong></td>
         <td>Mistral AI</td>
         <td>Non-reasoning</td>
         <td>8.8%</td>
     </tr>
     <tr>
-        <td><strong>DeepSeek-R1-Distill-Llama-70B</strong></td>
         <td>23</td>
+        <td><strong>DeepSeek-R1-Distill-Llama-70B</strong></td>
         <td>DeepSeek AI</td>
         <td>Reasoning</td>
         <td>8.4%</td>
     </tr>
     <tr>
-        <td><strong>Ministral-8B-Instruct-2410</strong></td>
         <td>24</td>
+        <td><strong>Ministral-8B-Instruct-2410</strong></td>
         <td>Mistral AI</td>
         <td>Non-reasoning</td>
         <td>4.6%</td>
     </tr>
     <tr>
-        <td><strong>Mistral-Small-3.1-24B-Instruct-2503</strong></td>
         <td>25</td>
+        <td><strong>Mistral-Small-3.1-24B-Instruct-2503</strong></td>
         <td>Mistral AI</td>
         <td>Non-reasoning</td>
         <td>4.5%</td>
     </tr>
     <tr>
-        <td><strong>Mixtral-8x22B-Instruct-v0.1</strong></td>
         <td>26</td>
+        <td><strong>Mixtral-8x22B-Instruct-v0.1</strong></td>
         <td>Mistral AI</td>
         <td>Non-reasoning</td>
         <td>3.7%</td>
     </tr>
     <tr>
-        <td><strong>Llama-3.2-1B-Instruct</strong></td>
         <td>27</td>
+        <td><strong>Llama-3.2-1B-Instruct</strong></td>
         <td>Meta</td>
         <td>Non-reasoning</td>
         <td>3.3%</td>
     </tr>
     <tr>
-        <td><strong>Phi-3-mini-128k-instruct</strong></td>
         <td>28</td>
+        <td><strong>Phi-3-mini-128k-instruct</strong></td>
         <td>Microsoft</td>
         <td>Non-reasoning</td>
         <td>2.2%</td>
     </tr>
     <tr>
-        <td><strong>Phi-3.5-MoE-instruct</strong></td>
         <td>29</td>
+        <td><strong>Phi-3.5-MoE-instruct</strong></td>
         <td>Microsoft</td>
         <td>Non-reasoning</td>
         <td>1.7%</td>
     </tr>
     <tr>
-        <td><strong>Phi-4-mini-instruct</strong></td>
         <td>30</td>
+        <td><strong>Phi-4-mini-instruct</strong></td>
         <td>Microsoft</td>
         <td>Non-reasoning</td>
         <td>1.5%</td>
     </tr>
     <tr>
-        <td><strong>Mixtral-8x7B-Instruct-v0.1</strong></td>
         <td>31</td>
+        <td><strong>Mixtral-8x7B-Instruct-v0.1</strong></td>
         <td>Mistral AI</td>
         <td>Non-reasoning</td>
         <td>1.3%</td>
     </tr>
     <tr>
-        <td><strong>Phi-3.5-mini-instruct</strong></td>
         <td>32</td>
+        <td><strong>Phi-3.5-mini-instruct</strong></td>
         <td>Microsoft</td>
         <td>Non-reasoning</td>
         <td>1.0%</td>
     </tr>
     <tr>
-        <td><strong>Phi-3-medium-128k-instruct</strong></td>
         <td>33</td>
+        <td><strong>Phi-3-medium-128k-instruct</strong></td>
         <td>Microsoft</td>
         <td>Non-reasoning</td>
         <td>0.7%</td>

@@ -234,6 +234,8 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 <div id="tab6" class="tab-content">
     <!-- Insert Tab 5 content here -->
     <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 9 models. All scores are displayed as percentages.</p>
+    <p class="asterisk-note"><small>* indicates we do not have all 5 seeds for the LLM. This will be updated once the runs are finished.</small></p>
+
     <div class="nested-tabs">
         <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab6-subtab1')">Overview</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab6-subtab2')">Per Framework</button>
