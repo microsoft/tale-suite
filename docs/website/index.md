@@ -24,7 +24,12 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
     We present results over a range of LLMs, open- and closed-weights, performing a qualitative analysis on the top performing models.
     Despite an impressive showing on synthetic games, even the top LLM-driven agents fail to achieve 12% on games designed for human enjoyment</p>
 </div>
-    <p><img src="assets/figs/figure1_eric.png" alt="figure1" /></p>
+    <!-- <video controls autoplay muted loop width="100%" poster="assets/figs/figure1_eric.png">
+        <source src="assets/videos/figure1v4.mp4" type="video/mp4">
+        <img src="assets/figs/figure1_eric.png" alt="figure1" />
+        Your browser does not support the video tag.
+    </video> -->
+    <img src="assets/figs/figure1_eric.png" alt="figure1" />
     <p id="main-description">An example of an agent playing through a text-adventure game. Thought traces are fabricated for illustration. For text-adventure games, due to their length and the variety of puzzles required for progression, players must make use of a range of different reasoning skills to solve roadblocks and continue through the game. Because of the long-range, causal dependencies often found in these games, a single mistake at any step can lead to a breakdown in gameplay later on.</p>
 </div>
 

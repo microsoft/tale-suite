@@ -484,3 +484,7 @@ a:hover { text-decoration: underline; }
   .simplified-table-container .model-scores th:nth-child(2), .simplified-table-container .model-scores td:nth-child(2) { width: 40%; }
   .simplified-table-container .model-scores th:nth-child(3), .simplified-table-container .model-scores td:nth-child(3), .simplified-table-container .model-scores th:nth-child(4), .simplified-table-container .model-scores td:nth-child(4), .simplified-table-container .model-scores td:nth-child(5) { width: 10; } }
 .asterisk-note { font-size: 0.85em; color: #666; margin-top: -10px; margin-bottom: 15px; font-style: italic; }
+
+.video-container { width: 100%; margin: 1em 0; position: relative; }
+
+.video-container video { width: 100%; display: block; }

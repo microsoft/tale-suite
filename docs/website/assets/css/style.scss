@@ -536,3 +536,14 @@
   margin-bottom: 15px;
   font-style: italic;
 }
+
+.video-container {
+  width: 100%;
+  margin: 1em 0;
+  position: relative;
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+}

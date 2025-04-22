@@ -20,7 +20,7 @@ Then, install `tales` directly from PyPI:
 Alternatively, clone the repository and install locally:
 
     git clone https://github.com/microsoft/tale-suite
-    cd tales
+    cd tale-suite
     pip install -e .
 
 > [!WARNING]

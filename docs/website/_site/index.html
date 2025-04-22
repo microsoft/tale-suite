@@ -25,13 +25,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=8532f88cfc8762a66904c60ca7c826084c13acfb">
+    <link rel="stylesheet" href="/assets/css/style.css?v=43e70524ec99ff02d73db6722c235fc26c5922a0">
     <link rel="stylesheet" href="/assets/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <!-- Microsoft WcpConsent library -->
     <script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
-    
+
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Analytics -->
@@ -50,17 +50,21 @@
   <body>
     <!-- Microsoft cookie banner placeholder -->
     <div id="cookie-banner"></div>
-    
+
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
       <h1 class="project-name"><strong><em>T A L E S</em></h1>
       <p><img src="assets/figs/static_banner.png" alt="banner" /></p>
       <h2 class="project-tagline"><em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A</em></strong><em>dventure</em> <strong><em>L</em></strong><em>earning</em> <strong><em>E</em></strong><em>nvironment</em> <strong><em>S</em></strong><em>uite</em></h2>
-      
-        <a href="https://github.com/microsoft/text-games-benchmark" class="btn">View on GitHub</a>
-      
-      
+      <a href="https://github.com/microsoft/text-games-benchmark" class="btn">
+        <img src="assets/figs/github-mark.svg" alt="GitHub" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
+        Code
+      </a>
+      <a href="https://arxiv.org/abs/2504.14128" class="btn">
+        <img src="assets/figs/arxiv-logomark-small.svg" alt="ArXiV" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
+        Paper
+      </a>
     </header>
 
     <main id="content" class="main-content" role="main">
@@ -68,7 +72,7 @@
 
 <div class="tab-container">
     <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'tab6')">LLM Leader Board</button>
+        <button class="tab-button active" onclick="openTab(event, 'tab6')">Leaderboard</button>
         <button class="tab-button" onclick="openTab(event, 'tab1')"><strong><em>TALES</em></strong></button>
         <button class="tab-button" onclick="openTab(event, 'tab4')">Environments</button>
         <button class="tab-button" onclick="openTab(event, 'tab3')">Scores By Framework</button>
@@ -86,7 +90,12 @@
     We present results over a range of LLMs, open- and closed-weights, performing a qualitative analysis on the top performing models.
     Despite an impressive showing on synthetic games, even the top LLM-driven agents fail to achieve 12% on games designed for human enjoyment</p>
 </div>
-    <p><img src="assets/figs/figure1_eric.png" alt="figure1" /></p>
+    <!-- <video controls autoplay muted loop width="100%" poster="assets/figs/figure1_eric.png">
+        <source src="assets/videos/figure1v4.mp4" type="video/mp4">
+        <img src="assets/figs/figure1_eric.png" alt="figure1" />
+        Your browser does not support the video tag.
+    </video> -->
+    <img src="assets/figs/figure1_eric.png" alt="figure1" />
     <p id="main-description">An example of an agent playing through a text-adventure game. Thought traces are fabricated for illustration. For text-adventure games, due to their length and the variety of puzzles required for progression, players must make use of a range of different reasoning skills to solve roadblocks and continue through the game. Because of the long-range, causal dependencies often found in these games, a single mistake at any step can lead to a breakdown in gameplay later on.</p>
 </div>
 
@@ -299,7 +308,7 @@
     <p class="asterisk-note"><small>* indicates we do not have all 5 seeds for the LLM. This will be updated once the runs are finished.</small></p>
 
     <div class="nested-tabs">
-        <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab6-subtab1')">Simplified</button>
+        <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab6-subtab1')">Overview</button>
         <button class="nested-tab-button" onclick="openNestedTab(event, 'tab6-subtab2')">Per Framework</button>
     </div>
 
@@ -903,7 +912,7 @@
       }
   }
 </script></main>
-    
+
     <!-- Initialize Microsoft WCP Consent -->
     <script>
       (function() {
@@ -922,11 +931,11 @@
             setTimeout(initializeWcp, 500); // Try again after 500ms
           }
         }
-        
+
         function onConsentChanged(newConsent) {
           console.log("Consent changed: ", newConsent);
         }
-        
+
         // Call initialization function when the page loads
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', initializeWcp);
