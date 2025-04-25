@@ -175,3 +175,4 @@ amlt/
 # Website
 docs/website/_site
 docs/website/Gemfile.lock
+docs/website/assets/figs/*.jsonl
