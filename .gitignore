@@ -175,3 +175,7 @@ amlt/
 # Website
 docs/website/_site
 docs/website/Gemfile.lock
+
+# Secret in-developmentstuff
+scripts/secret_scripts/
+*.json

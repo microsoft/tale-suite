@@ -1,32 +1,173 @@
 import argparse
 
-import gymnasium as gym
+import llm
+import numpy as np
+from tenacity import (
+    retry,
+    retry_if_exception,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
-from agents.llm import LLMAgent
+import tales
 from tales.agent import register
-from tales.utils import merge_messages
+from tales.token import get_token_counter
+from tales.utils import (
+    format_messages_to_markdown,
+    is_recoverable_error,
+    merge_messages,
+    messages2conversation,
+)
+
+import os
+import json
+
+SYSTEM_PROMPT = (
+    "You are playing a text-based game and your goal is to finish it with the highest score."
+    " Upon reading the text observation, provide a *single* short phrase to interact with the game, e.g. `get lamp` (without the backticks)."
+    " When stuck, try using the `help` command to see what commands are available."
+)
+
+RESET_PROMPT = (
+    "The game has just reset. Try to get to the same score you had before but faster."
+    " If you have extra steps, continue to play and try to get a higher score than before."
+)
 
 
-# For the LLMWlkThrAgent, the sysprompt is initialized in the __init__ function as we need to change it once we extract the walkthrough from the env
-class LLMWalkThroughAgent(LLMAgent):
+class LLMWalkthroughAgent(tales.Agent):
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.sys_prompt = "Not Initialized"
+        self.llm = kwargs["llm"]
+        self.model = llm.get_model(self.llm)
+        self.token_counter = get_token_counter(self.model)
+        self.allows_system_prompt = self.llm not in ["o1-mini", "o1-preview"]
+
+        # Provide the API key, if one is needed and has been provided
+        self.model.key = llm.get_key(
+            kwargs.get("key"), kwargs["llm"], self.model.key_env_var
+        ) or llm.get_key(None, self.model.needs_key, self.model.key_env_var)
+
+        self.seed = kwargs["seed"]
+        self.rng = np.random.RandomState(self.seed)
+
+        self.history = []
+        self.context_limit = kwargs["context_limit"]
+        if self.context_limit is not None:
+            assert self.context_limit > 0, "--context-limit must be greater than 0."
+
+        self.act_temp = kwargs["act_temp"]
+        self.conversation = kwargs["conversation"]
+        self.walkthrough_mask = kwargs["walkthrough_mask"]
+        self.reset_idx = -1
 
     @property
     def uid(self):
         return (
-            f"LLMAgent_{self.llm}"
+            f"LLMWalkthroughAgent_{self.llm}"
             f"_s{self.seed}"
             f"_c{self.context_limit}"
             f"_t{self.act_temp}"
-            f"_conv{self.conversation is not None}"
-            f"Walkthrough Agent"
+            f"_conv{self.conversation}"
         )
 
+    @property
+    def params(self):
+        return {
+            "agent_type": "llm-walkthrough",
+            "llm": self.llm,
+            "seed": self.seed,
+            "context_limit": self.context_limit,
+            "act_temp": self.act_temp,
+            "conversation": self.conversation,
+            "walkthrough_mask": self.walkthrough_mask
+        }
+
+    @retry(
+        retry=retry_if_exception(is_recoverable_error),
+        wait=wait_random_exponential(multiplier=1, max=40),
+        stop=stop_after_attempt(100),
+    )
+    def _llm_call_from_conversation(self, conversation, *args, **kwargs):
+        response = conversation.prompt(*args, **kwargs)
+        response.duration_ms()  # Forces the response to be computed.
+        return response
+
+    def _llm_call_from_messages(self, messages, *args, **kwargs):
+        conversation = messages2conversation(self.model, messages)
+        prompt = messages[-1]["content"]
+        system = messages[0]["content"] if self.allows_system_prompt else None
+
+        return self._llm_call_from_conversation(
+            conversation, prompt=prompt, system=system, *args, **kwargs
+        )
+
+    def reset(self, obs, info, env_name):
+        # Load the gold trajectory and dump it into the history
+
+        with open('/root/text-games-benchmark/one_game.json', 'r') as file:
+            walkthroughs = json.load(file)
+        # assert len(self.history) > 0
+        walkthrough = walkthroughs[env_name]
+        if self.walkthrough_mask > 0:
+            # Randomly mask some actions in the walkthrough.
+            num_steps = len(walkthrough) - 1
+            num_masked = int(num_steps * self.walkthrough_mask)
+            if num_masked > 0:
+                indices = self.rng.choice(
+                    num_steps, size=num_masked, replace=False
+                )
+                for i in indices:
+                    step_key = "step " + str(i + 1)
+                    print(f"Masking step {i + 1} ({step_key})")
+                    print(f"Original action: {walkthrough[step_key]['assistant']}")
+                    walkthrough[step_key]['assistant'] = "MASKED_ACTION"
+
+        for i in range(1, len(walkthrough)):
+            step_key = "step " + str(i)
+            obs = walkthrough[step_key]['user']
+            action = walkthrough[step_key]['assistant']
+            self.history.append((f"{obs}\n> ", f"{action}\n"))
+        
+        self.history.append(("game reset\n>", RESET_PROMPT))
+
+    def act(self, obs, reward, done, infos):
+        print(len(self.history))
+        messages = self.build_messages(f"{obs}\n> ")
+        llm_kwargs = {
+            "temperature": self.act_temp,
+            "max_tokens": 100,  # Text actions are short phrases.
+            "seed": self.seed,
+            "stream": False,
+        }
+        if self.llm in [
+            "claude-3.5-haiku",
+            "claude-3.5-sonnet",
+            "claude-3.5-sonnet-latest",
+        ]:
+            # For these models, we cannot set the seed.
+            llm_kwargs.pop("seed")
+
+        if "gemini" in self.llm or "gemma" in self.llm:
+            # For these models, we cannot set the seed and max_tokens has a different name.
+            llm_kwargs.pop("seed")
+            llm_kwargs["max_output_tokens"] = llm_kwargs.pop("max_tokens")
+
+        response = self._llm_call_from_messages(messages, **llm_kwargs)
+
+        action = response.text().strip()
+        self.history.append((f"{obs}\n> ", f"{action}\n"))
+
+        # Compute usage statistics
+        stats = {
+            "prompt": format_messages_to_markdown(messages),
+            "response": response.text(),
+            "nb_tokens": self.token_counter(messages=messages, text=response.text()),
+        }
+
+        return action, stats
+
     def build_messages(self, observation):
-        messages = [{"role": "system", "content": self.sys_prompt}]
+        messages = [{"role": "system", "content": SYSTEM_PROMPT}]
         limit = self.context_limit or len(self.history) + 1
 
         for i, (obs, action) in enumerate(self.history[-limit:]):
@@ -52,43 +193,14 @@ class LLMWalkThroughAgent(LLMAgent):
         if not self.allows_system_prompt:
             # Make sure the system prompt is added to the following message.
             messages.pop(0)
-            messages[1]["content"] = f"{self.sys_prompt}\n\n{messages[1]['content']}"
+            messages[1]["content"] = f"{SYSTEM_PROMPT}\n\n{messages[1]['content']}"
 
         return messages
-
-    def reset(self, obs, info, env_name):
-        walkthrough = info.get("extra.walkthrough")
-        if walkthrough is None or len(walkthrough) < 1:
-            raise ValueError("Walkthrough not initalized: Check the environment")
-
-        # Check if the walkthrough is valid.
-        env = gym.make(f"tales/{env_name}-v0", disable_env_checker=True)
-
-        _, _ = env.reset()
-
-        for act in walkthrough:
-            _, _, _, info_ = env.step(act)
-
-        if info_["score"] != info_["max_score"]:
-            raise ValueError(
-                "Provided walkthrough does not successfully complete game."
-            )
-
-        numbered_walkthrough = ", ".join(
-            f"{i + 1}.){act}" for i, act in enumerate(walkthrough)
-        )
-        self.sys_prompt = (
-            "You are playing a text-based game and your goal is to finish it with the highest score."
-            " The following is a walkthrough in the form of a list of actions to beat the game."
-            " You should follow this walkthrough as closely as possible to get the maximum score"
-            " You must ONLY respond with the action you wish to take with no other special tokens."
-            f"Walkthrough: {numbered_walkthrough}"
-        )
 
 
 def build_argparser(parser=None):
     parser = parser or argparse.ArgumentParser()
-    group = parser.add_argument_group("LLMAgent settings")
+    group = parser.add_argument_group("LLMWalkthroughAgent settings")
 
     group.add_argument(
         "--llm",
@@ -110,19 +222,20 @@ def build_argparser(parser=None):
     group.add_argument(
         "--context-limit",
         type=int,
-        default=10,
-        help="Limit context for LLM (in conversation turns). Default: %(default)s",
+        help="Limit context for LLM (in conversation turns). Default: no limit.",
+    )
+    
+    group.add_argument(
+        "--walkthrough-mask",
+        default=0.0,
+        type=float,
+        help="Percent of walkthrough actions to mask. Rounded down. Default: %(default)s",
     )
     group.add_argument(
         "--conversation",
-        action="store_true",
+        default=True,
+        action=argparse.BooleanOptionalAction,
         help="Enable conversation mode. Otherwise, use single prompt.",
-    )
-    group.add_argument(
-        "--wlkthr-limit",
-        type=int,
-        default=10000,
-        help="Number of walkthrough actions to provide the LLM. Default: %(default)s",
     )
 
     return parser
@@ -131,8 +244,8 @@ def build_argparser(parser=None):
 register(
     name="llm-walkthrough",
     desc=(
-        "This agent uses the ground-truth walkthrough from the environment to attempt to progress through the game."
+        "This agent loads the trajectory (walkthrough) of another LLM and uses a LLM attempt to optimize the provided trajectory."
     ),
-    klass=LLMWalkThroughAgent,
+    klass=LLMWalkthroughAgent,
     add_arguments=build_argparser,
 )

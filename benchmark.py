@@ -89,6 +89,7 @@ def evaluate(agent, env_name, args):
         "admissible_commands": args.admissible_commands,
         **agent.params,
     }
+    print(agent.params)
     wandb_run = wandb.init(
         project="tales",
         config=wandb_config,

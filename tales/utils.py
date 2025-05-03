@@ -141,6 +141,7 @@ def messages2conversation(model, messages):
             prompt = None
 
     return Conversation(model, responses=responses)
+    
 
 
 def format_messages_to_markdown(messages):
