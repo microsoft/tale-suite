@@ -49,10 +49,13 @@ def evaluate(agent, env_name, args):
             return summary
 
     run_name = f"{env_name} - {agent.uid}"
-    if args.wandb and not args.force_all:
+    if args.wandb:# and not args.force_all:
         # Check if there already exists a run with the same name using Wandb API.
         wandb_api = wandb.Api()
-        wandb_runs = wandb_api.runs(filters={"display_name": run_name})
+        wandb_runs = wandb_api.runs(
+            "pearls-lab/text-games-benchmark",
+            filters={"display_name": run_name, "tags": {"$ne": "without-help"},},
+        )
         if wandb_runs:
             wandb_run = wandb_runs[0]
             log.info(f"Previous evaluation found: {wandb_run.url} ({wandb_run.state})")
@@ -187,6 +190,7 @@ def evaluate(agent, env_name, args):
                     "episode/normalized_score": norm_score,
                     "episode/normalized_highscore": norm_highscore,
                     "episode/token_usage": stats["nb_tokens"],
+                    "episode/token_usage_thinking": stats.get("nb_tokens_thinking", 0),
                 },
                 step=step,
             )
@@ -194,7 +198,9 @@ def evaluate(agent, env_name, args):
             # fmt: off
             results.append([
                 step, score, max_score, norm_score, moves,
-                prev_obs, action, feedback, stats["prompt"], stats["response"], stats.get("thinking"), stats["nb_tokens"]
+                prev_obs, action, feedback,
+                stats["prompt"], stats["response"], stats.get("thinking"),
+                stats["nb_tokens"], stats["nb_tokens_prompt"], stats["nb_tokens_response"], stats.get("nb_tokens_thinking", 0),
             ])
             # fmt: on
 
@@ -256,7 +262,9 @@ def evaluate(agent, env_name, args):
     # fmt: off
     columns = [
         "Step", "Score", "Max Score", "Normalized Score", "Moves",
-        "Observation", "Action", "Feedback", "Prompt", "Response", "Thinking", "Token Usage"
+        "Observation", "Action", "Feedback",
+        "Prompt", "Response", "Thinking",
+        "Token Usage", "Prompt Tokens", "Response Tokens", "Thinking Tokens",
     ]
     # fmt: on
     df = pd.DataFrame(results, columns=columns)
@@ -270,6 +278,9 @@ def evaluate(agent, env_name, args):
         "total/Wins": stats["nb_wins"],
         "total/Resets": stats["nb_resets"],
         "total/Tokens": df["Token Usage"].sum(),
+        "total/Prompt Tokens": df["Prompt Tokens"].sum(),
+        "total/Response Tokens": df["Response Tokens"].sum(),
+        "total/Thinking Tokens": df["Thinking Tokens"].sum(),
         "final/Highscore": stats["highscore"],
         "final/Game Max Score": stats["max_score"],
         "final/Normalized Score": stats["norm_score"],
