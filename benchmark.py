@@ -195,7 +195,7 @@ def evaluate(agent, env_name, args):
             # fmt: off
             results.append([
                 step, score, max_score, norm_score, moves,
-                prev_obs, action, feedback, stats["prompt"], stats["response"], stats.get("thinking"), stats["nb_tokens"]
+                prev_obs, action, feedback, stats["prompt"], stats["response"], stats.get("thinking"), stats["nb_tokens"], stats.get("tools_used"), stats.get("notepad")
             ])
             # fmt: on
 
@@ -257,7 +257,7 @@ def evaluate(agent, env_name, args):
     # fmt: off
     columns = [
         "Step", "Score", "Max Score", "Normalized Score", "Moves",
-        "Observation", "Action", "Feedback", "Prompt", "Response", "Thinking", "Token Usage"
+        "Observation", "Action", "Feedback", "Prompt", "Response", "Thinking", "Token Usage", "Tools used", "Notepad"
     ]
     # fmt: on
     df = pd.DataFrame(results, columns=columns)

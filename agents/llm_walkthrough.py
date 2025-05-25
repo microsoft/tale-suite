@@ -104,7 +104,7 @@ class LLMWalkthroughAgent(tales.Agent):
     def reset(self, obs, info, env_name):
         # Load the gold trajectory and dump it into the history
 
-        with open('/root/text-games-benchmark/one_game.json', 'r') as file:
+        with open('one_game.json', 'r') as file:
             walkthroughs = json.load(file)
         # assert len(self.history) > 0
         walkthrough = walkthroughs[env_name]
@@ -131,7 +131,6 @@ class LLMWalkthroughAgent(tales.Agent):
         self.history.append(("game reset\n>", RESET_PROMPT))
 
     def act(self, obs, reward, done, infos):
-        print(len(self.history))
         messages = self.build_messages(f"{obs}\n> ")
         llm_kwargs = {
             "temperature": self.act_temp,
@@ -162,6 +161,7 @@ class LLMWalkthroughAgent(tales.Agent):
             "prompt": format_messages_to_markdown(messages),
             "response": response.text(),
             "nb_tokens": self.token_counter(messages=messages, text=response.text()),
+            "history_length": len(self.history)
         }
 
         return action, stats

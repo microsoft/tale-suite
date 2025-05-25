@@ -95,15 +95,8 @@ class LLMCustomAgent(tales.Agent):
         for message in messages:
             raw_input.append(message['content'])
 
-        # print("___________________DEBUG___________________")
-        # print(repr(raw_input))
-        # print("___________________DEBUG___________________")
         response = self.model.prompt("".join(raw_input), **llm_kwargs)
-        # print(self.model)
-        # print("___________________DEBUG___________________")
-        # print(response)
-        # print(response.text().replace("\n", ""))
-        # print("___________________DEBUG___________________")
+
         action = response.text().strip().replace("\n", "")
         self.history.append((f"{obs}\n", f"{action}\n"))
 
