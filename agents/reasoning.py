@@ -134,6 +134,19 @@ class ReasoningAgent(tales.Agent):
             # For these models, we cannot set the seed and max_tokens has a different name.
             llm_kwargs.pop("seed")
 
+        if self.llm in ["o3"]:
+            llm_kwargs.pop("temperature")
+            llm_kwargs["stream"] = False
+        
+        if self.llm in [
+            "gpt-5"
+        ]:
+            # max tokens and temperature not supported in GPT-5, so we remove them.
+            llm_kwargs.pop("temperature")
+            
+            llm_kwargs["stream"] = False
+            llm_kwargs["reasoning_effort"] = self.reasoning_effort
+
         messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(messages, **llm_kwargs)
         response_text = response.text()
@@ -141,6 +154,7 @@ class ReasoningAgent(tales.Agent):
         action = response.text().strip()
 
         thinking = None
+        thinking_tokens = 0
         if "DeepSeek-R1" in self.llm:
             # Strip the reasoning <think> and </think>.
             reasoning_end = action.find("</think>")
@@ -184,6 +198,8 @@ class ReasoningAgent(tales.Agent):
             thinking = "".join(
                 [item.get("thinking", "") for item in response.json()["content"]]
             )
+        elif self.llm in ["gpt-5"]:
+            thinking_tokens = response.json()["usage"]["completion_tokens_details"]["reasoning_tokens"]
 
         self.history.append((f"{obs}\n> ", f"{action}\n"))
 
@@ -193,6 +209,7 @@ class ReasoningAgent(tales.Agent):
             "thinking": thinking,
             "response": response_text,
             "nb_tokens": self.token_counter(messages=messages, text=response_text),
+            "token_usage_thinking": thinking_tokens,
         }
 
         if thinking is not None:

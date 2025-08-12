@@ -106,6 +106,15 @@ class LLMAgent(tales.Agent):
             # For these models, we cannot set the seed.
             llm_kwargs.pop("seed")
 
+        if self.llm in [
+            "gpt-5",
+            "gpt-5-mini",
+            "gpt-5-nano"
+        ]:
+        # max tokens and temperature not supported in GPT-5, so we remove them.
+            llm_kwargs.pop("max_tokens")
+            llm_kwargs.pop("temperature")
+
         if "gemini" in self.llm or "gemma" in self.llm:
             # For these models, we cannot set the seed and max_tokens has a different name.
             llm_kwargs.pop("seed")

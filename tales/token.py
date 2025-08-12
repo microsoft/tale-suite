@@ -22,6 +22,7 @@ def get_token_counter(model: Optional[Model] = None):
     try:
         return OpenAITokenCounter(model.model_id)
     except KeyError:
+        print("This failed, trying HuggingFace tokenizer...")
         pass
 
     # Try to load from transformers.
@@ -44,6 +45,9 @@ class TokenCounter:
 class OpenAITokenCounter(TokenCounter):
     def __init__(self, model: str):
         self.model = model
+        if 'gpt-5' in model:
+            # For GPT-5, we use the 'gpt-4o' encoding
+            self.model = 'gpt-4o'
         if self.model in tiktoken.model.MODEL_TO_ENCODING:
             self.tokenize = tiktoken.encoding_for_model(self.model).encode
         else:

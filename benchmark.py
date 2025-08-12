@@ -135,6 +135,7 @@ def evaluate(agent, env_name, args):
             "episode/normalized_score": score / max_score,
             "episode/normalized_highscore": highscore / max_score,
             "episode/token_usage": 0,
+            "episode/token_usage_thinking": 0,
         },
         step=0,
     )
@@ -179,15 +180,21 @@ def evaluate(agent, env_name, args):
             msg = msg.format(step, time.time() - start_time, score, moves, action)
             log.info(msg)
 
-            wandb_run.log(
-                {
+            wandb_log_info = {
                     "episode/moves": moves,
                     "episode/score": score,
                     "episode/highscore": highscore,
                     "episode/normalized_score": norm_score,
                     "episode/normalized_highscore": norm_highscore,
                     "episode/token_usage": stats["nb_tokens"],
-                },
+                }
+
+            # Only for chatgpt reasoning models    
+            if "token_usage_thinking" in stats: 
+                wandb_log_info["episode/token_usage_thinking"] = stats["token_usage_thinking"]
+
+            wandb_run.log(
+                wandb_log_info,
                 step=step,
             )
 
