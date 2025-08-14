@@ -93,9 +93,13 @@ class ReasoningAgent(tales.Agent):
         stop=stop_after_attempt(100),
     )
     def _llm_call_from_conversation(self, conversation, *args, **kwargs):
-        response = conversation.prompt(*args, **kwargs)
-        response.duration_ms()  # Forces the response to be computed.
-        return response
+        for i in range(10):
+            response = conversation.prompt(*args, **kwargs)
+            response.duration_ms()  # Forces the response to be computed.
+            if response.text():
+                return response  # Non-empty response, otherwise retry.
+
+        return ""
 
     def _llm_call_from_messages(self, messages, *args, **kwargs):
         conversation = messages2conversation(self.model, messages)
@@ -118,10 +122,10 @@ class ReasoningAgent(tales.Agent):
             else:
                 llm_kwargs["max_tokens"] = self.reasoning_effort
 
-        elif self.llm in ["o1", "o1-preview", "o3-mini", "o4-mini", "o3"]:
+        elif self.llm in ["o1", "o1-preview", "o3-mini", "o4-mini", "o3", "gpt-5", "gpt-5-mini", "gpt-5-nano"]:
             llm_kwargs["reasoning_effort"] = self.reasoning_effort
 
-        if self.llm in ["o1", "o1-mini", "o1-preview", "o3-mini", "o4-mini", "o3", "claude-3.7-sonnet"]:
+        if self.llm in ["o1", "o1-mini", "o1-preview", "o3-mini", "o4-mini", "o3", "claude-3.7-sonnet", "gpt-5", "gpt-5-mini", "gpt-5-nano"]:
             # For these models, we cannot set the temperature.
             llm_kwargs.pop("temperature")
 
@@ -139,7 +143,6 @@ class ReasoningAgent(tales.Agent):
         messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(messages, **llm_kwargs)
         response_text = response.text()
-
         action = response.text().strip()
 
         if action == "":
@@ -230,10 +233,10 @@ class ReasoningAgent(tales.Agent):
 
         if self.llm in ["gemini-2.5-pro-preview-03-25", "gemini-2.5-pro-preview-05-06"]:
             stats["nb_tokens_prompt"] = response.usage().input
-            stats["nb_tokens_thinking"] = response.usage().details["thoughtsTokenCount"]
+            stats["nb_tokens_thinking"] = response.usage().details.get("thoughtsTokenCount", 0)
             stats["nb_tokens_response"] = response.usage().output
 
-        elif self.llm in ["o1", "o1-mini", "o1-preview", "o3-mini", "o4-mini", "o3"]:
+        elif self.llm in ["o1", "o1-mini", "o1-preview", "o3-mini", "o4-mini", "o3", "gpt-5", "gpt-5-mini", "gpt-5-nano"]:
             # stats["nb_tokens_prompt"] = self.token_counter(messages=messages),
             # stats["nb_tokens_response"] = self.token_counter(text=response_text)
             stats["nb_tokens_prompt"] = response.usage().input
