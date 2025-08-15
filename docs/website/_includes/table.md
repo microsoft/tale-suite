@@ -13,13 +13,49 @@
     </thead>
     <tbody>
     <tr>
-        <td><strong>claude-3.7-sonnet</strong></td>
+        <td><strong>o3 (medium)</strong></td>
+        <td>100.0%</td>
+        <td>91.9%</td>
+        <td>88.3%</td>
+        <td>93.0%</td>
+        <td>15.7%</td>
+        <td>58.7%</td>
+    </tr>
+    <tr>
+        <td>o3 (high)</td>
+        <td>100.0%</td>
+        <td>89.6%</td>
+        <td>81.7%</td>
+        <td>93.1%</td>
+        <td>16.1%</td>
+        <td>58.0%</td>
+    </tr>
+    <tr>
+        <td>o3 (low)</td>
+        <td>99.1%</td>
+        <td>89.8%</td>
+        <td>70.0%</td>
+        <td>88.3%</td>
+        <td>14.2%</td>
+        <td>54.8%</td>
+    </tr>
+    <tr>
+        <td>claude-3.7-sonnet (thinking)</td>
         <td>97.3%</td>
         <td>91.3%</td>
         <td>83.3%</td>
         <td>76.5%</td>
         <td>12.5%</td>
         <td>52.5%</td>
+    </tr>
+    <tr>
+        <td>claude-3.7-sonnet</td>
+        <td>97.3%</td>
+        <td>95.8%</td>
+        <td>81.7%</td>
+        <td>72.4%</td>
+        <td>13.0%</td>
+        <td>52.1%</td>
     </tr>
     <tr>
         <td>claude-3.5-sonnet-latest</td>
@@ -31,13 +67,13 @@
         <td>50.4%</td>
     </tr>
     <tr>
-        <td>gemini-2.5-pro-preview*</td>
-        <td>98.5%</td>
-        <td>91.8%</td>
-        <td>75.0%</td>
-        <td>64.2%</td>
-        <td>12.4%</td>
-        <td>48.8%</td>
+        <td>gpt-4.1</td>
+        <td>95.3%</td>
+        <td>92.5%</td>
+        <td>83.3%</td>
+        <td>76.1%</td>
+        <td>6.8%</td>
+        <td>49.9%</td>
     </tr>
     <tr>
         <td>o1</td>
@@ -85,6 +121,15 @@
         <td>35.0%</td>
     </tr>
     <tr>
+        <td>Qwen3-32B</td>
+        <td>79.5%</td>
+        <td>68.9%</td>
+        <td>48.3%</td>
+        <td>49.8%</td>
+        <td>4.0%</td>
+        <td>34.3%</td>
+    </tr>
+    <tr>
         <td>Llama-3.3-70B-Instruct</td>
         <td>69.6%</td>
         <td>77.2%</td>
@@ -119,6 +164,15 @@
         <td>46.1%</td>
         <td>5.8%</td>
         <td>30.3%</td>
+    </tr>
+    <tr>
+        <td>gpt-4.1-mini</td>
+        <td>62.1%</td>
+        <td>74.5%</td>
+        <td>5.0%</td>
+        <td>41.9%</td>
+        <td>3.4%</td>
+        <td>27.1%</td>
     </tr>
     <tr>
         <td>gpt-4o-mini</td>
@@ -200,6 +254,15 @@
         <td>8.9%</td>
         <td>1.6%</td>
         <td>10.3%</td>
+    </tr>
+    <tr>
+        <td>gpt-4.1-nano</td>
+        <td>12.8%</td>
+        <td>38.7%</td>
+        <td>0.0%</td>
+        <td>9.4%</td>
+        <td>3.6%</td>
+        <td>10.0%</td>
     </tr>
     <tr>
         <td>Mistral-Small-24B-Instruct-2501</td>
