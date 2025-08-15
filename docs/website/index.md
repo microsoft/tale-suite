@@ -16,7 +16,6 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 
 <div id="tab1" class="tab-content active">
     <!-- Content for main tab without nested tabs -->
-    <p class="author-tagline"><em>Anonymized for review</em></p>
      <div class="abstract-container">
     <p class="abstract-tagline">Abstract</p>
     <p>Reasoning is an essential skill to enable Large Language Models (LLMs) to interact with the world. As tasks become more complex, they demand increasingly sophisticated and diverse reasoning capabilities for sequential decision-making, requiring structured reasoning over the context history to determine the next best action.
@@ -44,27 +43,27 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 </div>
 
 <div id="tab2-subtab1" class="nested-tab-content active">
-    <h2 id="tw_all_games">Scores for all Textworld games for Top 9 models</h2>
+    <h2 id="tw_all_games">Scores for all Textworld games for Top 10 models</h2>
     <p><img src="assets/figs/textworld_all_games.png" alt="tw_allgames chart" /></p>
 </div>
 
 <div id="tab2-subtab2" class="nested-tab-content">
-    <h2 id="twx_all_games">Scores for all Textworld Express games for Top 9 models</h2>
+    <h2 id="twx_all_games">Scores for all Textworld Express games for Top 10 models</h2>
     <p><img src="assets/figs/textworld_express_all_games.png" alt="twx_allgames chart" /></p>
 </div>
 
 <div id="tab2-subtab3" class="nested-tab-content">
-    <h2 id="alfworld_all_games">Scores for all Alfworld games for Top 9 models</h2>
+    <h2 id="alfworld_all_games">Scores for all Alfworld games for Top 10 models</h2>
     <p><img src="assets/figs/alfworld_all_games.png" alt="alfw_allgames chart" /></p>
 </div>
 
 <div id="tab2-subtab4" class="nested-tab-content">
-    <h2 id="scienceworld_all_games">Scores for all Scienceworld games for Top 9 models</h2>
+    <h2 id="scienceworld_all_games">Scores for all Scienceworld games for Top 10 models</h2>
     <p><img src="assets/figs/scienceworld_all_games.png" alt="sciencew_allgames chart" /></p>
 </div>
 
 <div id="tab2-subtab5" class="nested-tab-content">
-    <h2 id="jericho_all_games">Scores for all Jericho games for Top 9 models</h2>
+    <h2 id="jericho_all_games">Scores for all Jericho games for Top 10 models</h2>
     <p><img src="assets/figs/jericho_all_games.png" alt="jericho_allgames chart" /></p>
 </div>
 </div>
@@ -238,8 +237,7 @@ description: "<em>the</em> <strong><em>T</em></strong><em>ext</em> <strong><em>A
 
 <div id="tab6" class="tab-content">
     <!-- Insert Tab 5 content here -->
-    <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 9 models. All scores are displayed as percentages.</p>
-    <p class="asterisk-note"><small>* indicates we do not have all 5 seeds for the LLM. This will be updated once the runs are finished.</small></p>
+    <p>All LLM Scores can be found below. For the graphs in other visualizations, we used only the top 10 models. All scores are displayed as percentages.</p>
 
     <div class="nested-tabs">
         <button class="nested-tab-button active" onclick="openNestedTab(event, 'tab6-subtab1')">Overview</button>
