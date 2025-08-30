@@ -6,7 +6,18 @@ from tales.config import TALES_CACHE_HOME, TALES_FORCE_DOWNLOAD
 from tales.utils import download
 
 GAMES_URLS = "https://github.com/BYU-PCCL/z-machine-games/raw/master/jericho-game-suite"
+GAMES_JSON_URL = "https://raw.githubusercontent.com/microsoft/tale-suite/refs/heads/main/tales/jericho/games.json"
 TALES_CACHE_JERICHO = pjoin(TALES_CACHE_HOME, "jericho")
+
+# Check if the games json exists, and if not, then download it.
+if not os.path.exists(pjoin(os.path.dirname(__file__), "games.json")) or TALES_FORCE_DOWNLOAD:
+    download(
+        GAMES_JSON_URL,
+        dst=pjoin(os.path.dirname(__file__)),
+        desc="Downloading Jericho games.json",
+        force=TALES_FORCE_DOWNLOAD,
+    )
+
 
 
 with open(pjoin(os.path.dirname(__file__), "games.json")) as f:
