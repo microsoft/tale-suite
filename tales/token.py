@@ -46,6 +46,10 @@ class OpenAITokenCounter(TokenCounter):
         self.model = model
         if self.model in tiktoken.model.MODEL_TO_ENCODING:
             self.tokenize = tiktoken.encoding_for_model(self.model).encode
+        elif self.model in ("o4-mini", "o3", "gpt-5", "gpt-5-mini", "gpt-5-nano"):
+            self.tokenize = tiktoken.encoding_for_model("o3-mini").encode
+        elif self.model in ("gpt-4.1", "gpt-4.1-nano", "gpt-4.1-mini"):
+            self.tokenize = tiktoken.encoding_for_model("gpt-4o").encode
         else:
             self.tokenize = tiktoken.encoding_for_model(self.model.split("_")[0]).encode
 

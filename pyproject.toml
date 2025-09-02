@@ -4,11 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tale-suite"
-version = "1.0.0rc1"
 description = "TALES: Text-Adventure Learning Environment Suite"
 readme = "README.md"
 requires-python = ">=3.12"
-dynamic = ["dependencies"]
+dynamic = ["dependencies", "version"]
 
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -18,6 +17,7 @@ classifiers = [
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
+version = {attr = "tales.version.__version__"}
 
 [tool.setuptools.packages.find]
 exclude = ["wandb/*", "logs/*", "website/*"]

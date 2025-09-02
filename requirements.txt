@@ -13,13 +13,12 @@ wandb
 numpy
 pandas
 
-# llm>=0.18.0
-llm @ git+https://github.com/MarcCote/llm.git@add_extra_body_option
+llm>=0.27.1
 llm-anthropic
 llm-gemini
-llm-azure-openai @ git+https://github.com/MarcCote/llm-azure-openai.git@generic_ad_auth
+llm-azure-openai
 anthropic
 google-genai
-tiktoken
+tiktoken>=0.11.0
 tenacity
 transformers

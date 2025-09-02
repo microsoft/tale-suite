@@ -42,9 +42,13 @@ def prepare_twcooking_data(force=TALES_FORCE_DOWNLOAD):
 def get_cooking_game(difficulty, split="test"):
     prepare_twcooking_data()  # make sure the data is ready
     if split == "train":
-        cooking_dir = pjoin(TALES_CACHE_TWCOOKING_TRAIN, f"difficulty_level_{difficulty}")
+        cooking_dir = pjoin(
+            TALES_CACHE_TWCOOKING_TRAIN, f"difficulty_level_{difficulty}"
+        )
     elif split == "test":
-        cooking_dir = pjoin(TALES_CACHE_TWCOOKING_TEST, f"difficulty_level_{difficulty}")
-        
+        cooking_dir = pjoin(
+            TALES_CACHE_TWCOOKING_TEST, f"difficulty_level_{difficulty}"
+        )
+
     game_files = glob.glob(pjoin(cooking_dir, "*.z8"))
     return game_files

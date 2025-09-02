@@ -157,6 +157,7 @@ def is_recoverable_error(exception):
     # List of exceptions thrown by various libraries that can be retried.
     recoverable_errors = [
         "openai.APIStatusError",
+        "openai.PermissionDeniedError",
         "openai.APITimeoutError",
         "openai.error.Timeout",
         "openai.error.RateLimitError",
@@ -168,6 +169,7 @@ def is_recoverable_error(exception):
         "openai.InternalServerError",
         "anthropic.error.RateLimitError",
         "anthropic.InternalServerError",
+        "anthropic.APIConnectionError",
         "anthropic.OverloadedError",
         "anthropic.APIStatusError",
         "anthropic._exceptions.OverloadedError",
