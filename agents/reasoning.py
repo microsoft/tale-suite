@@ -122,10 +122,30 @@ class ReasoningAgent(tales.Agent):
             else:
                 llm_kwargs["max_tokens"] = self.reasoning_effort
 
-        elif self.llm in ["o1", "o1-preview", "o3-mini", "o4-mini", "o3", "gpt-5", "gpt-5-mini", "gpt-5-nano"]:
+        elif self.llm in [
+            "o1",
+            "o1-preview",
+            "o3-mini",
+            "o4-mini",
+            "o3",
+            "gpt-5",
+            "gpt-5-mini",
+            "gpt-5-nano",
+        ]:
             llm_kwargs["reasoning_effort"] = self.reasoning_effort
 
-        if self.llm in ["o1", "o1-mini", "o1-preview", "o3-mini", "o4-mini", "o3", "claude-3.7-sonnet", "gpt-5", "gpt-5-mini", "gpt-5-nano"]:
+        if self.llm in [
+            "o1",
+            "o1-mini",
+            "o1-preview",
+            "o3-mini",
+            "o4-mini",
+            "o3",
+            "claude-3.7-sonnet",
+            "gpt-5",
+            "gpt-5-mini",
+            "gpt-5-nano",
+        ]:
             # For these models, we cannot set the temperature.
             llm_kwargs.pop("temperature")
 
@@ -165,7 +185,9 @@ class ReasoningAgent(tales.Agent):
                     100  # Text actions should be short phrases but deepseek forces thought process by starting the generation with <think>.
                 )
                 llm_kwargs["temperature"] = self.act_temp
-                llm_kwargs["extra_body"] = {"chat_template_kwargs": {"enable_thinking": False}}
+                llm_kwargs["extra_body"] = {
+                    "chat_template_kwargs": {"enable_thinking": False}
+                }
                 response = self._llm_call_from_messages(messages, **llm_kwargs)
                 response_text += "</think>" + response.text()
                 action = response_text.strip()
@@ -233,23 +255,38 @@ class ReasoningAgent(tales.Agent):
 
         if self.llm in ["gemini-2.5-pro-preview-03-25", "gemini-2.5-pro-preview-05-06"]:
             stats["nb_tokens_prompt"] = response.usage().input
-            stats["nb_tokens_thinking"] = response.usage().details.get("thoughtsTokenCount", 0)
+            stats["nb_tokens_thinking"] = response.usage().details.get(
+                "thoughtsTokenCount", 0
+            )
             stats["nb_tokens_response"] = response.usage().output
 
-        elif self.llm in ["o1", "o1-mini", "o1-preview", "o3-mini", "o4-mini", "o3", "gpt-5", "gpt-5-mini", "gpt-5-nano"]:
+        elif self.llm in [
+            "o1",
+            "o1-mini",
+            "o1-preview",
+            "o3-mini",
+            "o4-mini",
+            "o3",
+            "gpt-5",
+            "gpt-5-mini",
+            "gpt-5-nano",
+        ]:
             # stats["nb_tokens_prompt"] = self.token_counter(messages=messages),
             # stats["nb_tokens_response"] = self.token_counter(text=response_text)
             stats["nb_tokens_prompt"] = response.usage().input
             stats["nb_tokens_response"] = response.usage().output
             # For these models, we need to look at the API response
-            #stats["nb_tokens_thinking"] = response.usage().details["completion_tokens_details"]["reasoning_tokens"]
-            stats["nb_tokens_thinking"] = response.response_json["usage"]["completion_tokens_details"]["reasoning_tokens"]
+            # stats["nb_tokens_thinking"] = response.usage().details["completion_tokens_details"]["reasoning_tokens"]
+            stats["nb_tokens_thinking"] = response.response_json["usage"][
+                "completion_tokens_details"
+            ]["reasoning_tokens"]
 
         else:
-            stats["nb_tokens_prompt"] = self.token_counter(messages=messages),
-            stats["nb_tokens_thinking"] = self.token_counter(text=thinking) if thinking else 0
+            stats["nb_tokens_prompt"] = (self.token_counter(messages=messages),)
+            stats["nb_tokens_thinking"] = (
+                self.token_counter(text=thinking) if thinking else 0
+            )
             stats["nb_tokens_response"] = self.token_counter(text=response_text)
-
 
         stats["nb_tokens"] = (
             stats["nb_tokens_prompt"]
