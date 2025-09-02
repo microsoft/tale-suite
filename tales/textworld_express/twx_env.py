@@ -10,13 +10,13 @@ TASKS = twx_data.TASKS
 class TextWorldExpressEnv(gym.Env):
 
     def __init__(
-        self, game_name, game_params, admissible_commands=False, *args, **kwargs
+        self, game_name, game_params, admissible_commands=False, split="test", *args, **kwargs
     ):
         self.game_name = game_name
         self.game_params = game_params
         self.admissible_commands = admissible_commands
         self.env = twx.TextWorldExpressEnv(envStepLimit=np.inf)
-        self.seeds = twx_data.get_seeds(split="test", env=self.env)
+        self.seeds = twx_data.get_seeds(split=split, env=self.env)
         self.seed = self.seeds[0]
 
     def reset(self, *, seed=None, options=None):
