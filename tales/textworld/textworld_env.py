@@ -5,6 +5,7 @@ from textworld.envs.wrappers import Filter
 
 from . import textworld_data
 
+
 class TextWorldEnv(gym.Env):
     def __init__(self, gamefile, admissible_commands=False, *args, **kwargs):
         self.infos = textworld.EnvInfos(
@@ -25,7 +26,7 @@ class TextWorldEnv(gym.Env):
 
         if self.env is None:
             self.env = textworld.start(self.gamefile, self.infos, wrappers=[Filter])
-            
+
         return self.env.reset()
 
     def step(self, action):
