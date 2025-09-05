@@ -10,7 +10,13 @@ TASKS = twx_data.TASKS
 class TextWorldExpressEnv(gym.Env):
 
     def __init__(
-        self, game_name, game_params, admissible_commands=False, split="test", *args, **kwargs
+        self,
+        game_name,
+        game_params,
+        admissible_commands=False,
+        split="test",
+        *args,
+        **kwargs,
     ):
         self.game_name = game_name
         self.game_params = game_params
