@@ -34,9 +34,9 @@ class TextWorldEnv(gym.Env):
 
 
 class TWCookingEnv(TextWorldEnv):
-    def __init__(self, difficulty, *args, **kwargs):
-        self.gamefiles = sorted(textworld_data.get_cooking_game(difficulty))
-        super().__init__(self.gamefiles[0], *args, **kwargs)
+    def __init__(self, all_gamefiles, start_gamefile, *args, **kwargs):
+        self.gamefiles = all_gamefiles
+        super().__init__(start_gamefile, *args, **kwargs)
 
     def reset(self, *, seed=None, options=None):
         if seed is not None:

@@ -42,6 +42,7 @@ We provide a pre-built docker image at
 An example script can be found in the scripts folder.
 
 ## 2. Getting Started
+0.  For training details, please see the README.md in the tales folder.
 
 1.	Run benchmark evaluation on all the games for the specified random agent:
 

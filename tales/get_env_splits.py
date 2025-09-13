@@ -2,8 +2,8 @@
 import glob
 from os.path import join as pjoin
 
+import tales.jericho as jericho
 from tales.alfworld import alfworld_data, alfworld_env
-from tales.jericho import jericho_data
 from tales.scienceworld import scienceworld_data, scienceworld_env
 from tales.textworld import textworld_data, textworld_env
 from tales.textworld_express import twx_data, twx_env
@@ -111,14 +111,14 @@ def get_alfworld_env_splits(games_per_task=2):
 
 def get_jericho_env_splits():
     # For jericho, we just use the predefined train/test split.
-    jericho_data.prepare_jericho_data()  # make sure the data is ready
-    all_games = sorted(jericho_data.GAMES_INFOS.keys())
-    train_games = jericho_data.JERICHO_TRAIN_GAMES
+    jericho.jericho_data.prepare_jericho_data()  # make sure the data is ready
+    all_games = sorted(jericho.jericho_data.GAMES_INFOS.keys())
+    train_games = jericho.jericho_data.JERICHO_TRAIN_GAMES
     test_games = [g for g in all_games if g not in train_games]
 
     # Get the game files:
-    train_games_files = [jericho_data.get_game(g) for g in train_games]
-    test_games_files = [jericho_data.get_game(g) for g in test_games]
+    train_games_files = [jericho.jericho_data.get_game(g) for g in train_games]
+    test_games_files = [jericho.jericho_data.get_game(g) for g in test_games]
 
     return train_games_files, test_games_files
 
