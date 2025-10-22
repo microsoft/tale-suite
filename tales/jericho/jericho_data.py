@@ -8,35 +8,6 @@ from tales.utils import download
 
 GAMES_URLS = "https://github.com/BYU-PCCL/z-machine-games/raw/master/jericho-game-suite"
 TALES_CACHE_JERICHO = pjoin(TALES_CACHE_HOME, "jericho")
-JERICHO_TRAIN_GAMES = [
-    "loose",
-    "karn",
-    "ballyhoo",
-    "zork2",
-    "adventureland",
-    "omniquest",
-    "weapon",
-    "905",
-    "wishbringer",
-    "night",
-    "tryst205",
-    "zork3",
-    "murdac",
-    "afflicted",
-    "moonlit",
-    "dragon",
-    "reverb",
-    "jewel",
-    "enter",
-    "snacktime",
-    "enchanter",
-    "acorncourt",
-    "huntdark",
-    "gold",
-    "yomomma",
-    "inhumane",
-    "zenon",
-]
 
 
 with open(importlib_files("tales") / "jericho" / "games.json") as f:
