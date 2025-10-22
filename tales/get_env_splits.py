@@ -2,9 +2,7 @@
 import glob
 from os.path import join as pjoin
 
-import tales.jericho as jericho
 from tales.alfworld import alfworld_data, alfworld_env
-from tales.scienceworld import scienceworld_data, scienceworld_env
 from tales.textworld import textworld_data, textworld_env
 from tales.textworld_express import twx_data, twx_env
 
@@ -109,20 +107,6 @@ def get_alfworld_env_splits(games_per_task=2):
     return train_games_files, test_games_files
 
 
-def get_jericho_env_splits():
-    # For jericho, we just use the predefined train/test split.
-    jericho.jericho_data.prepare_jericho_data()  # make sure the data is ready
-    all_games = sorted(jericho.jericho_data.GAMES_INFOS.keys())
-    train_games = jericho.jericho_data.JERICHO_TRAIN_GAMES
-    test_games = [g for g in all_games if g not in train_games]
-
-    # Get the game files:
-    train_games_files = [jericho.jericho_data.get_game(g) for g in train_games]
-    test_games_files = [jericho.jericho_data.get_game(g) for g in test_games]
-
-    return train_games_files, test_games_files
-
-
 class GeneralTALESEnv:
     # A general env wrapper such that the train/test files gotten from the above functions can easily just be plugged into an env and ran.
     # This returns a 'fake' batch env that will always deterministically cycle through the provided env file/seeds unless explicitly told to randomize (for training)
@@ -163,23 +147,9 @@ class GeneralTALESEnv:
             self.env = alfworld_env.ALFWorldEnv(
                 self.game_files[self.env_idx], *args, **kwargs
             )
-        elif env_name == "scienceworld":
-            self.game_files = scienceworld_data.get_task_names()
-            self.env = scienceworld_env.ScienceWorldEnv(
-                task_name=self.game_files[self.env_idx], split=split, *args, **kwargs
-            )
-        elif env_name == "jericho":
-            self.train_envs, self.test_envs = get_jericho_env_splits()
-            if split == "train":
-                self.game_files = self.train_envs
-            else:
-                self.game_files = self.test_envs
-            self.env = textworld_env.TextWorldEnv(
-                self.game_files[self.env_idx], *args, **kwargs
-            )
         else:
             raise ValueError(
-                f"Environment {env_name} not supported. Supported envs are textworld, twx, alfworld, scienceworld, and jericho."
+                f"Unknown environment name: {env_name}, please choose from textworld, twx, or alfworld."
             )
 
     # Not sure if this is right, need to double check w/ Marc
@@ -204,17 +174,6 @@ class GeneralTALESEnv:
             )
         elif self.env_name == "alfworld":
             self.env = alfworld_env.ALFWorldEnv(
-                self.game_files[self.env_idx], *self.args, **self.kwargs
-            )
-        elif self.env_name == "scienceworld":
-            self.env = scienceworld_env.ScienceWorldEnv(
-                task_name=self.game_files[self.env_idx],
-                split=self.split,
-                *self.args,
-                **self.kwargs,
-            )
-        elif self.env_name == "jericho":
-            self.env = textworld_env.TextWorldEnv(
                 self.game_files[self.env_idx], *self.args, **self.kwargs
             )
         else:

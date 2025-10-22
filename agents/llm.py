@@ -102,6 +102,7 @@ class LLMAgent(tales.Agent):
             "claude-3.5-haiku",
             "claude-3.5-sonnet",
             "claude-3.5-sonnet-latest",
+            "claude-3.7-sonnet",
         ]:
             # For these models, we cannot set the seed.
             llm_kwargs.pop("seed")
@@ -120,8 +121,11 @@ class LLMAgent(tales.Agent):
         stats = {
             "prompt": format_messages_to_markdown(messages),
             "response": response.text(),
-            "nb_tokens": self.token_counter(messages=messages, text=response.text()),
+            "nb_tokens_prompt": self.token_counter(messages=messages),
+            "nb_tokens_response": self.token_counter(text=response.text()),
         }
+
+        stats["nb_tokens"] = stats["nb_tokens_prompt"] + stats["nb_tokens_response"]
 
         return action, stats
 

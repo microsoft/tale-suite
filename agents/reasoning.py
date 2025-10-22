@@ -40,6 +40,8 @@ class ReasoningAgent(tales.Agent):
             "o1-mini",
             "o1-preview",
             "o3-mini",
+            "o4-mini",
+            "o3",
         ]
 
         # Provide the API key, if one is needed and has been provided
@@ -91,9 +93,13 @@ class ReasoningAgent(tales.Agent):
         stop=stop_after_attempt(100),
     )
     def _llm_call_from_conversation(self, conversation, *args, **kwargs):
-        response = conversation.prompt(*args, **kwargs)
-        response.duration_ms()  # Forces the response to be computed.
-        return response
+        for i in range(10):
+            response = conversation.prompt(*args, **kwargs)
+            response.duration_ms()  # Forces the response to be computed.
+            if response.text():
+                return response  # Non-empty response, otherwise retry.
+
+        return ""
 
     def _llm_call_from_messages(self, messages, *args, **kwargs):
         conversation = messages2conversation(self.model, messages)
@@ -116,10 +122,30 @@ class ReasoningAgent(tales.Agent):
             else:
                 llm_kwargs["max_tokens"] = self.reasoning_effort
 
-        elif self.llm in ["o1", "o1-preview", "o3-mini"]:
+        elif self.llm in [
+            "o1",
+            "o1-preview",
+            "o3-mini",
+            "o4-mini",
+            "o3",
+            "gpt-5",
+            "gpt-5-mini",
+            "gpt-5-nano",
+        ]:
             llm_kwargs["reasoning_effort"] = self.reasoning_effort
 
-        if self.llm in ["o1", "o1-mini", "o1-preview", "o3-mini", "claude-3.7-sonnet"]:
+        if self.llm in [
+            "o1",
+            "o1-mini",
+            "o1-preview",
+            "o3-mini",
+            "o4-mini",
+            "o3",
+            "claude-3.7-sonnet",
+            "gpt-5",
+            "gpt-5-mini",
+            "gpt-5-nano",
+        ]:
             # For these models, we cannot set the temperature.
             llm_kwargs.pop("temperature")
 
@@ -137,10 +163,43 @@ class ReasoningAgent(tales.Agent):
         messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(messages, **llm_kwargs)
         response_text = response.text()
-
         action = response.text().strip()
 
+        if action == "":
+            # If the action is empty, we need to retry.
+            action = "(empty)"
+
         thinking = None
+        if "Qwen3" in self.llm:
+            # Strip the reasoning <think> and </think>.
+            reasoning_end = action.find("</think>")
+            if reasoning_end == -1:
+                # Send another request to get the action with the current reasoning.
+                messages.append(
+                    {
+                        "role": "assistant",
+                        "content": response_text.strip() + "</think>",
+                    }
+                )
+                llm_kwargs["max_tokens"] = (
+                    100  # Text actions should be short phrases but deepseek forces thought process by starting the generation with <think>.
+                )
+                llm_kwargs["temperature"] = self.act_temp
+                llm_kwargs["extra_body"] = {
+                    "chat_template_kwargs": {"enable_thinking": False}
+                }
+                response = self._llm_call_from_messages(messages, **llm_kwargs)
+                response_text += "</think>" + response.text()
+                action = response_text.strip()
+                reasoning_end = action.find("</think>") + len("</think>")
+            else:
+                reasoning_end += len("</think>")
+
+            # Extract the reasoning part from the response.
+            thinking = action[:reasoning_end].strip()
+            # Extract the action part from the response.
+            action = action[reasoning_end:].strip()
+
         if "DeepSeek-R1" in self.llm:
             # Strip the reasoning <think> and </think>.
             reasoning_end = action.find("</think>")
@@ -192,11 +251,48 @@ class ReasoningAgent(tales.Agent):
             "prompt": format_messages_to_markdown(messages),
             "thinking": thinking,
             "response": response_text,
-            "nb_tokens": self.token_counter(messages=messages, text=response_text),
         }
 
-        if thinking is not None:
-            stats["nb_tokens"] += self.token_counter(text=thinking)
+        if self.llm in ["gemini-2.5-pro-preview-03-25", "gemini-2.5-pro-preview-05-06"]:
+            stats["nb_tokens_prompt"] = response.usage().input
+            stats["nb_tokens_thinking"] = response.usage().details.get(
+                "thoughtsTokenCount", 0
+            )
+            stats["nb_tokens_response"] = response.usage().output
+
+        elif self.llm in [
+            "o1",
+            "o1-mini",
+            "o1-preview",
+            "o3-mini",
+            "o4-mini",
+            "o3",
+            "gpt-5",
+            "gpt-5-mini",
+            "gpt-5-nano",
+        ]:
+            # stats["nb_tokens_prompt"] = self.token_counter(messages=messages),
+            # stats["nb_tokens_response"] = self.token_counter(text=response_text)
+            stats["nb_tokens_prompt"] = response.usage().input
+            stats["nb_tokens_response"] = response.usage().output
+            # For these models, we need to look at the API response
+            # stats["nb_tokens_thinking"] = response.usage().details["completion_tokens_details"]["reasoning_tokens"]
+            stats["nb_tokens_thinking"] = response.response_json["usage"][
+                "completion_tokens_details"
+            ]["reasoning_tokens"]
+
+        else:
+            stats["nb_tokens_prompt"] = (self.token_counter(messages=messages),)
+            stats["nb_tokens_thinking"] = (
+                self.token_counter(text=thinking) if thinking else 0
+            )
+            stats["nb_tokens_response"] = self.token_counter(text=response_text)
+
+        stats["nb_tokens"] = (
+            stats["nb_tokens_prompt"]
+            + stats["nb_tokens_response"]
+            + stats["nb_tokens_thinking"]
+        )
 
         return action, stats
 
