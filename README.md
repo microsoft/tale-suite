@@ -120,6 +120,10 @@ Additional vLLM parameters can be passed via cmdline:
     # Multi-GPU inference with tensor parallelism
     python benchmark.py --agent agents/vllm_agent.py vllm-zero-shot --model meta-llama/Llama-3.1-70B-Instruct --tensor-parallel-size 4 --top-p 0.9 --repetition-penalty 1.1 --conversation
 
+For reasoning models (QwQ, DeepSeek-R1) that support chain-of-thought:
+
+    python benchmark.py --agent agents/vllm_reasoning.py vllm-reasoning --model Qwen/QwQ-32B-Preview --reasoning-effort medium --conversation --envs TWCookingLevel1
+
 ## 4. Building Custom Agents
 
 To build a custom agent, you need to create a new file (e.g., `custom.py`) in the agents folder and implement the `Agent` class and implement the proper arguments parser.
