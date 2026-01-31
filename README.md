@@ -105,6 +105,21 @@ You can check that everything is working properly with this simple command:
 
     llm -m meta-llama/Llama-3.1-8B-Instruct "Hi. What's your name?"
 
+### Using vLLM directly
+
+For direct vLLM integration without API overhead, use the `vllm_agent`:
+
+    pip install vllm
+
+Then run benchmarks with local models:
+
+    python benchmark.py --agent agents/vllm_agent.py vllm-zero-shot --model meta-llama/Llama-3.1-8B-Instruct --conversation --envs TWCookingLevel1
+
+Additional vLLM parameters can be passed via cmdline:
+
+    # Multi-GPU inference with tensor parallelism
+    python benchmark.py --agent agents/vllm_agent.py vllm-zero-shot --model meta-llama/Llama-3.1-70B-Instruct --tensor-parallel-size 4 --top-p 0.9 --repetition-penalty 1.1 --conversation
+
 ## 4. Building Custom Agents
 
 To build a custom agent, you need to create a new file (e.g., `custom.py`) in the agents folder and implement the `Agent` class and implement the proper arguments parser.
