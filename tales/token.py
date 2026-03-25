@@ -107,11 +107,20 @@ class ClaudeTokenCounter(TokenCounter):
             system = messages[0]["content"]
             messages.pop(0)
 
-        return self.client.beta.messages.count_tokens(
+        nb_tokens = self.client.messages.count_tokens(
             model=self.model,
             messages=messages,
             system=system,
         ).input_tokens
+
+        if text is not None:
+            # Remove the boilerplate tokens needed for the count_tokens(...).
+            # i.e. [{"role": "assistant", "content": ""}]
+            nb_tokens -= (
+                16 - 3
+            )  # 16 tokens for the boilerplate, minus 3 for <|im_*|> tokens.
+
+        return nb_tokens
 
 
 class GeminiTokenCounter(TokenCounter):

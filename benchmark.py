@@ -49,13 +49,10 @@ def evaluate(agent, env_name, args):
             return summary
 
     run_name = f"{env_name} - {agent.uid}"
-    if args.wandb:# and not args.force_all:
+    if args.wandb and not args.force_all:
         # Check if there already exists a run with the same name using Wandb API.
         wandb_api = wandb.Api()
-        wandb_runs = wandb_api.runs(
-            "pearls-lab/text-games-benchmark",
-            filters={"display_name": run_name, "tags": {"$ne": "without-help"},},
-        )
+        wandb_runs = wandb_api.runs(filters={"display_name": run_name})
         if wandb_runs:
             wandb_run = wandb_runs[0]
             log.info(f"Previous evaluation found: {wandb_run.url} ({wandb_run.state})")
@@ -408,6 +405,7 @@ def _maybe_load_agent_module():
     if args.agent:
         print(f"Importing agent(s) from {args.agent}.")
         for agent_file in glob.glob(args.agent):
+            print(f"Importing {agent_file}...")
             agent_dirname = os.path.dirname(agent_file)
             agent_filename, _ = os.path.splitext(os.path.basename(agent_file))
             if f"{agent_dirname}.{agent_filename}" in sys.modules:

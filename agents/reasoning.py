@@ -34,6 +34,7 @@ CLAUDE_MODELS = [
     "claude-4-opus",
     "claude-sonnet-4.5",
     "claude-haiku-4.5",
+    "claude-opus-4.5",
     "claude-opus-4.6",
     "claude-sonnet-4.6",
 ]
@@ -153,6 +154,9 @@ class ReasoningAgent(tales.Agent):
 
         elif self.llm in OPENAI_MODELS:
             llm_kwargs["reasoning_effort"] = self.reasoning_effort
+
+        elif self.llm in CLAUDE_MODELS:
+            llm_kwargs["thinking_effort"] = self.reasoning_effort
 
         if self.llm in OPENAI_MODELS + CLAUDE_MODELS:
             # For these models, we cannot set the temperature.
@@ -280,8 +284,17 @@ class ReasoningAgent(tales.Agent):
                 "completion_tokens_details"
             ]["reasoning_tokens"]
 
+        elif self.llm in CLAUDE_MODELS:
+            stats["nb_tokens_prompt"] = self.token_counter(messages=messages)
+            stats["nb_tokens_response"] = self.token_counter(text=response_text)
+            stats["nb_tokens_thinking"] = 0
+            if thinking:
+                stats["nb_tokens_thinking"] = (
+                    response.usage().output - self.token_counter(text=response_text)
+                )
+
         else:
-            stats["nb_tokens_prompt"] = (self.token_counter(messages=messages),)
+            stats["nb_tokens_prompt"] = self.token_counter(messages=messages)
             stats["nb_tokens_thinking"] = (
                 self.token_counter(text=thinking) if thinking else 0
             )
