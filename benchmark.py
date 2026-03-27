@@ -19,11 +19,65 @@ from tqdm import tqdm
 import tales
 from tales.logger import log, setup_logging
 from tales.utils import NumpyEncoder
+from tales.wandb_utils import fetch_run_trajectory, find_matching_run
 
 os.environ["WANDB_MODE"] = "disabled"
 
 
 def evaluate(agent, env_name, args):
+    # Fetch trajectory if continuing from a previous run.
+    trajectory_df = None
+    continue_from = getattr(args, "continue_from", None)
+    if continue_from:
+        # Auto-find matching run if no explicit run ID was provided.
+        if continue_from == "auto":
+            continue_from = find_matching_run(env_name, agent.params, args.game_seed)
+            if continue_from is None:
+                log.info(
+                    colored(
+                        f"No matching previous run found for {env_name}. "
+                        f"Running from scratch.",
+                        "yellow",
+                    )
+                )
+
+    if continue_from:
+        original_config, trajectory_df = fetch_run_trajectory(continue_from)
+
+        # Validate that the game matches.
+        original_game = original_config.get("game")
+        if original_game and original_game != env_name:
+            raise ValueError(
+                f"Environment mismatch: --continue-from run played '{original_game}' "
+                f"but current run targets '{env_name}'."
+            )
+
+        # Override game_seed from original run to ensure deterministic replay.
+        original_seed = original_config.get("game_seed")
+        if original_seed is not None and original_seed != args.game_seed:
+            log.info(
+                f"Overriding --game-seed from {args.game_seed} to {original_seed} "
+                f"(from original run)."
+            )
+            args.game_seed = original_seed
+
+        # Truncate trajectory if it has more steps than the target.
+        if len(trajectory_df) > args.nb_steps:
+            log.info(
+                f"Trajectory has {len(trajectory_df)} steps but target is {args.nb_steps}. "
+                f"Truncating replay to {args.nb_steps} steps."
+            )
+            trajectory_df = trajectory_df.iloc[: args.nb_steps]
+
+        replay_steps = len(trajectory_df)
+        log.info(
+            colored(
+                f"Continuing from run {continue_from}: "
+                f"replaying {replay_steps} steps, then LLM takes over up to {args.nb_steps}.",
+                "cyan",
+            )
+        )
+
     env_params = (
         f"a{int(args.admissible_commands)}_s{args.game_seed}_steps{args.nb_steps}"
     )
@@ -89,6 +143,10 @@ def evaluate(agent, env_name, args):
         "admissible_commands": args.admissible_commands,
         **agent.params,
     }
+    if trajectory_df is not None:
+        wandb_config["continued_from_run_id"] = original_config["_run_id"]
+        wandb_config["continued_from_run_url"] = original_config["_run_url"]
+        wandb_config["replay_steps"] = len(trajectory_df)
     wandb_run = wandb.init(
         project="tales",
         config=wandb_config,
@@ -138,10 +196,147 @@ def evaluate(agent, env_name, args):
         },
         step=0,
     )
+
+    # Replay phase: feed recorded actions to the environment (no LLM calls).
+    replay_steps = 0
+    if trajectory_df is not None:
+        replay_steps = len(trajectory_df)
+        log.info(colored(f"Replaying {replay_steps} steps...", "cyan"))
+
+        replay_pbar = tqdm(
+            trajectory_df.iterrows(),
+            total=args.nb_steps,
+            desc=f"  {env_name} (replay)",
+            unit="steps",
+            leave=False,
+        )
+        for _, row in replay_pbar:
+            step = int(row["Step"])
+            action = str(row["Action"])
+
+            replay_pbar.set_postfix_str(
+                f"Score: {info['score']}/{info['max_score']} ({info['score']/info['max_score']:.1%})"
+            )
+
+            prev_obs = obs
+
+            # Feed the recorded action to the environment.
+            if "\n" in action.strip():
+                obs = "The game only allows one action per step."
+            else:
+                obs, _, done, info = env.step(action)
+
+            score = info["score"]
+            moves = info["moves"]
+            feedback = info["feedback"]
+            norm_score = score / max_score
+            highscore = max(score, highscore)
+            norm_highscore = highscore / max_score
+
+            if (
+                args.admissible_commands
+                and info["admissible_commands"]
+                and action not in info["admissible_commands"]
+            ):
+                nb_invalid_actions += 1
+
+            # Verify replay fidelity by comparing observations.
+            logged_obs = row.get("Observation")
+            if logged_obs is not None and isinstance(logged_obs, str):
+                if prev_obs.strip() != logged_obs.strip():
+                    log.warning(
+                        f"Replay divergence at step {step}:\n"
+                        f"  Expected: {logged_obs[:200]!r}\n"
+                        f"  Got:      {prev_obs[:200]!r}"
+                    )
+
+            # Build agent history so it has context for subsequent LLM calls.
+            agent.history.append((f"{prev_obs}\n> ", f"{action}\n"))
+
+            msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s} (replay)"
+            msg = msg.format(step, time.time() - start_time, score, moves, action)
+            log.info(msg)
+
+            # Log to wandb with original token usage from the trajectory.
+            nb_tokens = row.get("Token Usage", 0) or 0
+            nb_tokens_thinking = row.get("Thinking Tokens", 0) or 0
+            wandb_run.log(
+                {
+                    "episode/moves": moves,
+                    "episode/score": score,
+                    "episode/highscore": highscore,
+                    "episode/normalized_score": norm_score,
+                    "episode/normalized_highscore": norm_highscore,
+                    "episode/token_usage": nb_tokens,
+                    "episode/token_usage_thinking": nb_tokens_thinking,
+                },
+                step=step,
+            )
+
+            # Store results with original token usage from the trajectory.
+            # fmt: off
+            results.append([
+                step, score, max_score, norm_score, moves,
+                prev_obs, action, feedback,
+                row.get("Prompt", ""), row.get("Response", ""), row.get("Thinking"),
+                row.get("Token Usage", 0) or 0, row.get("Prompt Tokens", 0) or 0,
+                row.get("Response Tokens", 0) or 0, row.get("Thinking Tokens", 0) or 0,
+            ])
+            # fmt: on
+
+            if not done:
+                log.debug(obs)
+
+            if done:
+                if info["won"]:
+                    nb_wins += 1
+                    if highscore == max_score:
+                        log.debug(obs)
+                        # Don't break during replay; continue replaying.
+                        # Don't reset either — the original run broke here.
+                        continue
+                elif info["lost"]:
+                    nb_losts += 1
+
+                # Reset the game just like the original run did.
+                last_obs = obs
+                obs, info = env.reset()
+                obs = last_obs + "\n\n-= Restarting =-\n" + obs
+                agent.reset(obs, info, env_name)
+                nb_resets += 1
+
+                log.debug(f"{obs}")
+
+        replay_pbar.close()
+
+        if highscore == max_score:
+            log.info(
+                colored(
+                    f"Replay complete: game already won with max score ({highscore}/{max_score}). "
+                    f"No further steps needed.",
+                    "green",
+                )
+            )
+            # Skip the LLM loop entirely.
+            replay_steps = args.nb_steps
+        else:
+            log.info(
+                colored(
+                    f"Replay complete: {replay_steps} steps, score={score}, highscore={highscore}. "
+                    f"LLM takes over from step {replay_steps + 1}.",
+                    "cyan",
+                )
+            )
+
     try:
 
         pbar = tqdm(
-            range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
+            range(replay_steps + 1, args.nb_steps + 1),
+            initial=replay_steps,
+            total=args.nb_steps,
+            desc=f"  {env_name}",
+            unit="steps",
+            leave=False,
         )
         for step in pbar:
             pbar.set_postfix_str(
@@ -455,6 +650,11 @@ def parse_args():
                             help="Force overwriting only log files that have failed.")
         general_group.add_argument("--debug", action="store_true",
                             help="Debug mode.")
+        general_group.add_argument("--continue-from", dest="continue_from",
+                            nargs="?", const="auto",
+                            help="Continue from a previous wandb run. "
+                                 "Pass a run ID to replay a specific run, or use without a value to auto-find "
+                                 "a matching run based on the current config (game, agent, seed).")
 
         subgroup = general_group.add_mutually_exclusive_group()
         subgroup.add_argument(

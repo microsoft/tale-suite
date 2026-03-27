@@ -75,6 +75,29 @@ In order to benchmark a given LLM acting as language agent playing text-based ga
 
     python benchmark.py --agent agents/llm.py zero-shot --envs TWCookingLevel1
 
+### Continuing a Previous Run
+
+If you have a previous run that was limited to N steps (e.g., 100), you can extend it to more steps (e.g., 1000) using the `--continue-from` flag. This replays the original trajectory without making LLM calls, then lets the LLM take over for the remaining steps.
+
+**With an explicit run ID:**
+
+    python benchmark.py reasoning --llm gpt-4o --conversation --continue-from <wandb_run_id> --nb-steps 1000 --envs JerichoEnvZork1 --wandb
+
+**Auto-find matching run** (searches wandb for a run matching the current game, agent, and seed):
+
+    python benchmark.py reasoning --llm gpt-4o --conversation --continue-from --nb-steps 1000 --envs JerichoEnvZork1 --wandb
+
+**How it works:**
+1. Fetches the original run's config and rollout from the wandb API (or auto-finds one)
+2. Recreates the environment with the same seed for deterministic replay
+3. Replays all recorded actions (no LLM calls, preserving original token usage stats)
+4. Verifies observations match the logged trajectory (warns on divergence)
+5. Hands off to the LLM agent for the remaining steps
+6. Logs as a new wandb run referencing the original run ID
+
+> [!NOTE]
+> The `--continue-from` flag expects a wandb run ID (e.g., `abc123de`) from the `pearls-lab/text-games-benchmark` project, or no value to auto-find. The agent type and parameters must match the original run. When auto-finding, if no matching run is found, the game runs from scratch.
+
 ### API-based LLMs
 
 `llm` natively supports OpenAI models and self-hosted models that offer an OpenAI-compatible API (e.g. like vLLM does - more on this below).
