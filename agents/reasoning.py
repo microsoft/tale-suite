@@ -28,6 +28,36 @@ SYSTEM_PROMPT = (
 
 DEEPSEEK_CHAT_TEMPLATE_NO_THINK = "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<｜User｜>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<｜Assistant｜><｜tool▁calls▁begin｜><｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{{'<｜tool▁calls▁end｜><｜end▁of▁sentence｜>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<｜tool▁outputs▁end｜>' + message['content'] + '<｜end▁of▁sentence｜>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<｜Assistant｜>' + content + '<｜end▁of▁sentence｜>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<｜tool▁outputs▁begin｜><｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<｜tool▁outputs▁end｜>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<｜Assistant｜><think>\\n</think>\\n'}}{% endif %}"
 
+CLAUDE_MODELS = [
+    "claude-3.7-sonnet",
+    "claude-4-sonnet",
+    "claude-4-opus",
+    "claude-sonnet-4.5",
+    "claude-haiku-4.5",
+    "claude-opus-4.5",
+    "claude-opus-4.6",
+    "claude-sonnet-4.6",
+]
+
+OPENAI_MODELS = [
+    "o1",
+    "o1-mini",
+    "o1-preview",
+    "o3-mini",
+    "o4-mini",
+    "o3",
+    "gpt-5.1",
+    "gpt-5.2",
+    "gpt-5",
+    "gpt-5-mini",
+    "gpt-5-nano",
+]
+
+GEMINI_MODELS = [
+    "gemini-2.5-pro",
+    "gemini-3-pro-preview",
+]
+
 
 class ReasoningAgent(tales.Agent):
 
@@ -117,42 +147,25 @@ class ReasoningAgent(tales.Agent):
             "stream": True,  # Should prevent openai.APITimeoutError
         }
         if isinstance(self.reasoning_effort, int):
-            if self.llm in ["claude-3.7-sonnet"]:
+            if self.llm in CLAUDE_MODELS:
                 llm_kwargs["thinking_budget"] = self.reasoning_effort
             else:
                 llm_kwargs["max_tokens"] = self.reasoning_effort
 
-        elif self.llm in [
-            "o1",
-            "o1-preview",
-            "o3-mini",
-            "o4-mini",
-            "o3",
-            "gpt-5",
-            "gpt-5-mini",
-            "gpt-5-nano",
-        ]:
+        elif self.llm in OPENAI_MODELS:
             llm_kwargs["reasoning_effort"] = self.reasoning_effort
 
-        if self.llm in [
-            "o1",
-            "o1-mini",
-            "o1-preview",
-            "o3-mini",
-            "o4-mini",
-            "o3",
-            "claude-3.7-sonnet",
-            "gpt-5",
-            "gpt-5-mini",
-            "gpt-5-nano",
-        ]:
+        elif self.llm in CLAUDE_MODELS:
+            llm_kwargs["thinking_effort"] = self.reasoning_effort
+
+        if self.llm in OPENAI_MODELS + CLAUDE_MODELS:
             # For these models, we cannot set the temperature.
             llm_kwargs.pop("temperature")
 
         if self.llm in ["o3-mini"]:
             llm_kwargs.pop("stream")
 
-        if self.llm in ["claude-3.7-sonnet"]:
+        if self.llm in CLAUDE_MODELS:
             llm_kwargs["thinking"] = 1
             llm_kwargs.pop("seed")
 
@@ -238,7 +251,7 @@ class ReasoningAgent(tales.Agent):
             # Extract the action part from the response.
             action = action[reasoning_end:].strip()
 
-        elif self.llm in ["claude-3.7-sonnet"]:
+        elif self.llm in CLAUDE_MODELS:
             # Extract the thinking part from the response JSON.
             thinking = "".join(
                 [item.get("thinking", "") for item in response.json()["content"]]
@@ -253,24 +266,14 @@ class ReasoningAgent(tales.Agent):
             "response": response_text,
         }
 
-        if self.llm in ["gemini-2.5-pro-preview-03-25", "gemini-2.5-pro-preview-05-06"]:
+        if self.llm in GEMINI_MODELS:
             stats["nb_tokens_prompt"] = response.usage().input
             stats["nb_tokens_thinking"] = response.usage().details.get(
                 "thoughtsTokenCount", 0
             )
             stats["nb_tokens_response"] = response.usage().output
 
-        elif self.llm in [
-            "o1",
-            "o1-mini",
-            "o1-preview",
-            "o3-mini",
-            "o4-mini",
-            "o3",
-            "gpt-5",
-            "gpt-5-mini",
-            "gpt-5-nano",
-        ]:
+        elif self.llm in OPENAI_MODELS:
             # stats["nb_tokens_prompt"] = self.token_counter(messages=messages),
             # stats["nb_tokens_response"] = self.token_counter(text=response_text)
             stats["nb_tokens_prompt"] = response.usage().input
@@ -281,8 +284,17 @@ class ReasoningAgent(tales.Agent):
                 "completion_tokens_details"
             ]["reasoning_tokens"]
 
+        elif self.llm in CLAUDE_MODELS:
+            stats["nb_tokens_prompt"] = self.token_counter(messages=messages)
+            stats["nb_tokens_response"] = self.token_counter(text=response_text)
+            stats["nb_tokens_thinking"] = 0
+            if thinking:
+                stats["nb_tokens_thinking"] = (
+                    response.usage().output - self.token_counter(text=response_text)
+                )
+
         else:
-            stats["nb_tokens_prompt"] = (self.token_counter(messages=messages),)
+            stats["nb_tokens_prompt"] = self.token_counter(messages=messages)
             stats["nb_tokens_thinking"] = (
                 self.token_counter(text=thinking) if thinking else 0
             )

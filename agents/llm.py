@@ -25,6 +25,20 @@ SYSTEM_PROMPT = (
     " When stuck, try using the `help` command to see what commands are available."
 )
 
+CLAUDE_MODELS = [
+    "claude-3.5-haiku",
+    "claude-3.5-sonnet",
+    "claude-3.5-sonnet-latest",
+    "claude-3.7-sonnet",
+    "claude-4-sonnet",
+    "claude-4-opus",
+    "claude-opus-4.5",
+    "claude-opus-4.6",
+    "claude-sonnet-4.5",
+    "claude-sonnet-4.6",
+    "claude-haiku-4.5",
+]
+
 
 class LLMAgent(tales.Agent):
 
@@ -98,12 +112,7 @@ class LLMAgent(tales.Agent):
             "seed": self.seed,
             "stream": False,
         }
-        if self.llm in [
-            "claude-3.5-haiku",
-            "claude-3.5-sonnet",
-            "claude-3.5-sonnet-latest",
-            "claude-3.7-sonnet",
-        ]:
+        if self.llm in CLAUDE_MODELS:
             # For these models, we cannot set the seed.
             llm_kwargs.pop("seed")
 

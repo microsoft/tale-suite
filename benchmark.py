@@ -405,6 +405,7 @@ def _maybe_load_agent_module():
     if args.agent:
         print(f"Importing agent(s) from {args.agent}.")
         for agent_file in glob.glob(args.agent):
+            print(f"Importing {agent_file}...")
             agent_dirname = os.path.dirname(agent_file)
             agent_filename, _ = os.path.splitext(os.path.basename(agent_file))
             if f"{agent_dirname}.{agent_filename}" in sys.modules:
