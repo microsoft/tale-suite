@@ -9,12 +9,14 @@ TASK_NAMES = scienceworld_data.get_task_names()
 
 class ScienceWorldEnv(gym.Env):
 
-    def __init__(self, task_name, admissible_commands=False, *args, **kwargs):
+    def __init__(
+        self, task_name, admissible_commands=False, split="Test", *args, **kwargs
+    ):
         self.task_name = task_name
         self.admissible_commands = admissible_commands
         self.env = scienceworld.ScienceWorldEnv(self.task_name, envStepLimit=np.inf)
         self.variations = scienceworld_data.get_variations(
-            self.task_name, split="test", env=self.env
+            self.task_name, split=split, env=self.env
         )
         self.variation = self.variations[0]
 
