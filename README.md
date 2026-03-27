@@ -77,7 +77,12 @@ In order to benchmark a given LLM acting as language agent playing text-based ga
 
 ### Continuing a Previous Run
 
-If you have a previous run that was limited to N steps (e.g., 100), you can extend it to more steps (e.g., 1000) using the `--continue-from` flag. This replays the original trajectory without making LLM calls, then lets the LLM take over for the remaining steps.
+Use the `--continue-from` flag to replay a previous wandb-logged trajectory. The replay is deterministic (no LLM calls) and preserves the original token usage stats. This is useful for:
+
+- **Extending** a short run (e.g., 100 steps → 1000): replays the original trajectory, then lets the LLM take over for the remaining steps.
+- **Reproducing** a previous run exactly: set `--nb-steps` equal to or less than the original run's length to replay without any new LLM calls.
+
+When auto-finding, the longest matching run is always selected and truncated to `--nb-steps` if needed.
 
 **With an explicit run ID:**
 
@@ -88,12 +93,14 @@ If you have a previous run that was limited to N steps (e.g., 100), you can exte
     python benchmark.py reasoning --llm gpt-4o --conversation --continue-from --nb-steps 1000 --envs JerichoEnvZork1 --wandb
 
 **How it works:**
-1. Fetches the original run's config and rollout from the wandb API (or auto-finds one)
-2. Recreates the environment with the same seed for deterministic replay
-3. Replays all recorded actions (no LLM calls, preserving original token usage stats)
-4. Verifies observations match the logged trajectory (warns on divergence)
-5. Hands off to the LLM agent for the remaining steps
-6. Logs as a new wandb run referencing the original run ID
+1. Fetches the original run's config and rollout from the wandb API (or auto-finds the longest matching run)
+2. Truncates the trajectory to `--nb-steps` if the original run is longer
+3. Recreates the environment with the same seed for deterministic replay
+4. Replays recorded actions (no LLM calls, preserving original token usage stats)
+5. Verifies observations match the logged trajectory (warns on divergence)
+6. If the game completed during replay (max score reached), stops early
+7. Otherwise, hands off to the LLM agent for any remaining steps
+8. Logs as a new wandb run referencing the original run ID
 
 > [!NOTE]
 > The `--continue-from` flag expects a wandb run ID (e.g., `abc123de`) from the `pearls-lab/text-games-benchmark` project, or no value to auto-find. The agent type and parameters must match the original run. When auto-finding, if no matching run is found, the game runs from scratch.
