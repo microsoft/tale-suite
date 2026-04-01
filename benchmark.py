@@ -19,11 +19,317 @@ from tqdm import tqdm
 import tales
 from tales.logger import log, setup_logging
 from tales.utils import NumpyEncoder
+from tales.wandb_utils import WANDB_PROJECT, fetch_run_trajectory, find_matching_run
 
 os.environ["WANDB_MODE"] = "disabled"
 
 
+def _make_state(obs, info):
+    """Create mutable game state dict."""
+    return {
+        "step": 0,
+        "score": 0,
+        "moves": 0,
+        "highscore": 0,
+        "max_score": info["max_score"],
+        "nb_wins": 0,
+        "nb_losts": 0,
+        "nb_resets": 0,
+        "nb_invalid_actions": 0,
+        "obs": obs,
+        "done": False,
+        "info": info,
+        "results": [],
+    }
+
+
+def _step_env(env, state, action):
+    """Execute an action and update state. Returns (prev_obs, feedback)."""
+    prev_obs = state["obs"]
+
+    if "\n" in action.strip():
+        state["obs"] = "The game only allows one action per step."
+    else:
+        obs, _, done, info = env.step(action)
+        state["obs"] = obs
+        state["done"] = done
+        state["info"] = info
+
+    state["score"] = state["info"]["score"]
+    state["moves"] = state["info"]["moves"]
+    state["highscore"] = max(state["score"], state["highscore"])
+
+    return prev_obs, state["info"]["feedback"]
+
+
+def _check_invalid(state, action, admissible_commands):
+    """Track invalid actions when admissible commands are enabled."""
+    if (
+        admissible_commands
+        and state["info"]["admissible_commands"]
+        and action not in state["info"]["admissible_commands"]
+    ):
+        state["nb_invalid_actions"] += 1
+
+
+def _handle_done(env, agent, state, env_name, break_on_max=True):
+    """Handle game-over (win/loss/reset). Returns True if loop should break."""
+    if not state["done"]:
+        return False
+
+    if state["info"]["won"]:
+        state["nb_wins"] += 1
+        if state["highscore"] == state["max_score"]:
+            log.debug(state["obs"])
+            if break_on_max:
+                return True  # Break: no reason to play more.
+            else:
+                return False  # Replay: don't break or reset.
+    elif state["info"]["lost"]:
+        state["nb_losts"] += 1
+
+    # Restart the game to try for a better score.
+    last_obs = state["obs"]
+    obs, info = env.reset()
+    state["obs"] = last_obs + "\n\n-= Restarting =-\n" + obs
+    state["info"] = info
+    agent.reset(state["obs"], info, env_name)
+    state["nb_resets"] += 1
+    log.debug(state["obs"])
+    return False
+
+
+def _record_step(state, prev_obs, action, feedback, token_stats, wandb_run):
+    """Append step to results and log to wandb."""
+    s = state
+    norm_score = s["score"] / s["max_score"]
+    norm_highscore = s["highscore"] / s["max_score"]
+
+    wandb_run.log(
+        {
+            "episode/moves": s["moves"],
+            "episode/score": s["score"],
+            "episode/highscore": s["highscore"],
+            "episode/normalized_score": norm_score,
+            "episode/normalized_highscore": norm_highscore,
+            "episode/token_usage": token_stats["nb_tokens"],
+            "episode/token_usage_thinking": token_stats.get("nb_tokens_thinking", 0),
+        },
+        step=s["step"],
+    )
+
+    # fmt: off
+    s["results"].append([
+        s["step"], s["score"], s["max_score"], norm_score, s["moves"],
+        prev_obs, action, feedback,
+        token_stats["prompt"], token_stats["response"], token_stats.get("thinking"),
+        token_stats["nb_tokens"], token_stats["nb_tokens_prompt"],
+        token_stats["nb_tokens_response"], token_stats.get("nb_tokens_thinking", 0),
+    ])
+    # fmt: on
+
+
+def replay_trajectory(
+    env, agent, trajectory_df, state, wandb_run, args, env_name, start_time
+):
+    """Replay recorded actions through the environment (no LLM calls).
+
+    Feeds each action from the trajectory to the environment, verifies
+    observations match, and builds agent history for subsequent LLM play.
+    """
+    replay_steps = len(trajectory_df)
+    log.info(colored(f"Replaying {replay_steps} steps...", "cyan"))
+
+    replay_pbar = tqdm(
+        trajectory_df.iterrows(),
+        total=args.nb_steps,
+        desc=f"  {env_name} (replay)",
+        unit="steps",
+        leave=False,
+    )
+    for _, row in replay_pbar:
+        state["step"] = int(row["Step"])
+        action = str(row["Action"])
+
+        replay_pbar.set_postfix_str(
+            f"Score: {state['info']['score']}/{state['info']['max_score']}"
+            f" ({state['info']['score']/state['info']['max_score']:.1%})"
+        )
+
+        prev_obs, feedback = _step_env(env, state, action)
+        _check_invalid(state, action, args.admissible_commands)
+
+        # Verify replay fidelity.
+        logged_obs = row.get("Observation")
+        if logged_obs is not None and isinstance(logged_obs, str):
+            if prev_obs.strip() != logged_obs.strip():
+                log.warning(
+                    f"Replay divergence at step {state['step']}:\n"
+                    f"  Expected: {logged_obs[:200]!r}\n"
+                    f"  Got:      {prev_obs[:200]!r}"
+                )
+
+        # Build agent history for subsequent LLM calls.
+        agent.history.append((f"{prev_obs}\n> ", f"{action}\n"))
+
+        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s} (replay)"
+        msg = msg.format(
+            state["step"],
+            time.time() - start_time,
+            state["score"],
+            state["moves"],
+            action,
+        )
+        log.info(msg)
+
+        # Use original token stats from the trajectory.
+        token_stats = {
+            "prompt": row.get("Prompt", "") or "",
+            "response": row.get("Response", "") or "",
+            "thinking": row.get("Thinking"),
+            "nb_tokens": row.get("Token Usage", 0) or 0,
+            "nb_tokens_prompt": row.get("Prompt Tokens", 0) or 0,
+            "nb_tokens_response": row.get("Response Tokens", 0) or 0,
+            "nb_tokens_thinking": row.get("Thinking Tokens", 0) or 0,
+        }
+        _record_step(state, prev_obs, action, feedback, token_stats, wandb_run)
+
+        if not state["done"]:
+            log.debug(state["obs"])
+
+        _handle_done(env, agent, state, env_name, break_on_max=False)
+
+    replay_pbar.close()
+
+    if state["highscore"] == state["max_score"]:
+        log.info(
+            colored(
+                f"Replay complete: game already won with max score "
+                f"({state['highscore']}/{state['max_score']}). No further steps needed.",
+                "green",
+            )
+        )
+        return args.nb_steps  # Signal: skip the play loop.
+    else:
+        log.info(
+            colored(
+                f"Replay complete: {replay_steps} steps, score={state['score']}, "
+                f"highscore={state['highscore']}. "
+                f"LLM takes over from step {replay_steps + 1}.",
+                "cyan",
+            )
+        )
+        return replay_steps
+
+
+def play_with_agent(
+    env, agent, state, wandb_run, args, env_name, start_time, start_step
+):
+    """Play the game with the LLM agent from start_step to nb_steps."""
+    pbar = tqdm(
+        range(start_step, args.nb_steps + 1),
+        initial=start_step - 1,
+        total=args.nb_steps,
+        desc=f"  {env_name}",
+        unit="steps",
+        leave=False,
+    )
+    for step in pbar:
+        state["step"] = step
+        pbar.set_postfix_str(
+            f"Score: {state['info']['score']}/{state['info']['max_score']}"
+            f" ({state['info']['score']/state['info']['max_score']:.1%})"
+        )
+
+        action, stats = agent.act(
+            state["obs"], state["score"], state["done"], state["info"]
+        )
+        log.debug(colored(f"> {action}", "green"))
+
+        if args.debug:
+            breakpoint()
+
+        prev_obs, feedback = _step_env(env, state, action)
+        _check_invalid(state, action, args.admissible_commands)
+
+        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
+        msg = msg.format(
+            step, time.time() - start_time, state["score"], state["moves"], action
+        )
+        log.info(msg)
+
+        token_stats = {
+            "prompt": stats["prompt"],
+            "response": stats["response"],
+            "thinking": stats.get("thinking"),
+            "nb_tokens": stats["nb_tokens"],
+            "nb_tokens_prompt": stats["nb_tokens_prompt"],
+            "nb_tokens_response": stats["nb_tokens_response"],
+            "nb_tokens_thinking": stats.get("nb_tokens_thinking", 0),
+        }
+        _record_step(state, prev_obs, action, feedback, token_stats, wandb_run)
+
+        if not state["done"]:
+            log.debug(state["obs"])
+
+        if _handle_done(env, agent, state, env_name, break_on_max=True):
+            break
+
+
 def evaluate(agent, env_name, args):
+    # Fetch trajectory if continuing from a previous run.
+    trajectory_df = None
+    continue_from = getattr(args, "continue_from", None)
+    if continue_from:
+        # Auto-find matching run if no explicit run ID was provided.
+        if continue_from == "auto":
+            continue_from = find_matching_run(env_name, agent.params, args.game_seed)
+            if continue_from is None:
+                log.info(
+                    colored(
+                        f"No matching previous run found for {env_name}. "
+                        f"Running from scratch.",
+                        "yellow",
+                    )
+                )
+
+    if continue_from:
+        original_config, trajectory_df = fetch_run_trajectory(continue_from)
+
+        # Validate that the game matches.
+        original_game = original_config.get("game")
+        if original_game and original_game != env_name:
+            raise ValueError(
+                f"Environment mismatch: --continue-from run played '{original_game}' "
+                f"but current run targets '{env_name}'."
+            )
+
+        # Override game_seed from original run to ensure deterministic replay.
+        original_seed = original_config.get("game_seed")
+        if original_seed is not None and original_seed != args.game_seed:
+            log.info(
+                f"Overriding --game-seed from {args.game_seed} to {original_seed} "
+                f"(from original run)."
+            )
+            args.game_seed = original_seed
+
+        # Truncate trajectory if it has more steps than the target.
+        if len(trajectory_df) > args.nb_steps:
+            log.info(
+                f"Trajectory has {len(trajectory_df)} steps but target is {args.nb_steps}. "
+                f"Truncating replay to {args.nb_steps} steps."
+            )
+            trajectory_df = trajectory_df.iloc[: args.nb_steps]
+
+        replay_steps = len(trajectory_df)
+        log.info(
+            colored(
+                f"Continuing from run {continue_from}: "
+                f"replaying {replay_steps} steps, then LLM takes over up to {args.nb_steps}.",
+                "cyan",
+            )
+        )
+
     env_params = (
         f"a{int(args.admissible_commands)}_s{args.game_seed}_steps{args.nb_steps}"
     )
@@ -89,8 +395,12 @@ def evaluate(agent, env_name, args):
         "admissible_commands": args.admissible_commands,
         **agent.params,
     }
+    if trajectory_df is not None:
+        wandb_config["continued_from_run_id"] = original_config["_run_id"]
+        wandb_config["continued_from_run_url"] = original_config["_run_url"]
+        wandb_config["replay_steps"] = len(trajectory_df)
     wandb_run = wandb.init(
-        project="tales",
+        project=WANDB_PROJECT,
         config=wandb_config,
         reinit=True,
         name=run_name,
@@ -113,124 +423,47 @@ def evaluate(agent, env_name, args):
 
     log.debug(f"Environment reset.\n{obs}\n")
 
-    status = "running"
-    max_score = info["max_score"]
-    step = 0
-    nb_resets = 0
-    nb_wins = 0
-    nb_losts = 0
-    nb_resets = 0
-    nb_invalid_actions = 0
-    moves = 0
-    highscore = 0
-    score = 0
-    done = False
-    results = []
+    state = _make_state(obs, info)
 
     wandb_run.log(
         {
-            "episode/moves": moves,
-            "episode/score": score,
-            "episode/highscore": highscore,
-            "episode/normalized_score": score / max_score,
-            "episode/normalized_highscore": highscore / max_score,
+            "episode/moves": 0,
+            "episode/score": 0,
+            "episode/highscore": 0,
+            "episode/normalized_score": 0,
+            "episode/normalized_highscore": 0,
             "episode/token_usage": 0,
         },
         step=0,
     )
-    try:
 
-        pbar = tqdm(
-            range(1, args.nb_steps + 1), desc=f"  {env_name}", unit="steps", leave=False
+    # Replay phase (if continuing from a previous run).
+    replay_steps = 0
+    if trajectory_df is not None:
+        replay_steps = replay_trajectory(
+            env, agent, trajectory_df, state, wandb_run, args, env_name, start_time
         )
-        for step in pbar:
-            pbar.set_postfix_str(
-                f"Score: {info['score']}/{info['max_score']} ({info['score']/info['max_score']:.1%})"
-            )
-            action, stats = agent.act(obs, score, done, info)
-            log.debug(colored(f"> {action}", "green"))
 
-            if args.debug:
-                breakpoint()
-
-            prev_obs = obs
-
-            # Force one action per step.
-            if "\n" in action.strip():
-                obs = "The game only allows one action per step."
-            else:
-                obs, _, done, info = env.step(action)
-
-            score = info["score"]
-            moves = info["moves"]
-            feedback = info["feedback"]
-            norm_score = score / max_score
-            highscore = max(score, highscore)
-            norm_highscore = highscore / max_score
-
-            if (
-                args.admissible_commands
-                and info["admissible_commands"]
-                and action not in info["admissible_commands"]
-            ):
-                nb_invalid_actions += 1
-
-            msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
-            msg = msg.format(step, time.time() - start_time, score, moves, action)
-            log.info(msg)
-
-            wandb_run.log(
-                {
-                    "episode/moves": moves,
-                    "episode/score": score,
-                    "episode/highscore": highscore,
-                    "episode/normalized_score": norm_score,
-                    "episode/normalized_highscore": norm_highscore,
-                    "episode/token_usage": stats["nb_tokens"],
-                    "episode/token_usage_thinking": stats.get("nb_tokens_thinking", 0),
-                },
-                step=step,
-            )
-
-            # fmt: off
-            results.append([
-                step, score, max_score, norm_score, moves,
-                prev_obs, action, feedback,
-                stats["prompt"], stats["response"], stats.get("thinking"),
-                stats["nb_tokens"], stats["nb_tokens_prompt"], stats["nb_tokens_response"], stats.get("nb_tokens_thinking", 0),
-            ])
-            # fmt: on
-
-            if not done:
-                log.debug(obs)
-
-            if done:
-                if info["won"]:
-                    nb_wins += 1
-                    if highscore == max_score:
-                        log.debug(obs)
-                        break  # No reason to play that game more.
-                elif info["lost"]:
-                    nb_losts += 1
-
-                # Replay the game in the hope of achieving a better score.
-                last_obs = obs
-                obs, info = env.reset()
-                obs = last_obs + "\n\n-= Restarting =-\n" + obs
-                agent.reset(obs, info, env_name)
-                nb_resets += 1
-
-                log.debug(f"{obs}")
-
+    # Play phase (LLM-driven).
+    status = "running"
+    try:
+        play_with_agent(
+            env,
+            agent,
+            state,
+            wandb_run,
+            args,
+            env_name,
+            start_time,
+            start_step=replay_steps + 1,
+        )
         status = "finished"
 
     except KeyboardInterrupt as e:
         status = "killed"
         log.critical(colored(f"{env_name} (killed)", "red"))
         log.error(str(e))
-        time.sleep(
-            1
-        )  # Give time for the user to issue another ctrl+c to cancel the script.
+        time.sleep(1)
         if args.debug:
             raise
 
@@ -243,16 +476,16 @@ def evaluate(agent, env_name, args):
 
     env.close()
 
-    stats = {
-        "nb_steps": step,
-        "nb_moves": moves,
-        "nb_invalid_actions": nb_invalid_actions,
-        "nb_losts": nb_losts,
-        "nb_wins": nb_wins,
-        "nb_resets": nb_resets,
-        "highscore": highscore,
-        "max_score": max_score,
-        "norm_score": highscore / max_score,
+    final_stats = {
+        "nb_steps": state["step"],
+        "nb_moves": state["moves"],
+        "nb_invalid_actions": state["nb_invalid_actions"],
+        "nb_losts": state["nb_losts"],
+        "nb_wins": state["nb_wins"],
+        "nb_resets": state["nb_resets"],
+        "highscore": state["highscore"],
+        "max_score": state["max_score"],
+        "norm_score": state["highscore"] / state["max_score"],
         "duration": time.time() - start_time,
     }
 
@@ -264,28 +497,28 @@ def evaluate(agent, env_name, args):
         "Token Usage", "Prompt Tokens", "Response Tokens", "Thinking Tokens",
     ]
     # fmt: on
-    df = pd.DataFrame(results, columns=columns)
+    df = pd.DataFrame(state["results"], columns=columns)
     df.to_json(rollouts_file, orient="records", lines=True)
 
     wandb_stats = {
-        "total/Env. Steps": stats["nb_steps"],
-        "total/Game Moves": stats["nb_moves"],
-        "total/Invalid Actions": stats["nb_invalid_actions"],
-        "total/Losts": stats["nb_losts"],
-        "total/Wins": stats["nb_wins"],
-        "total/Resets": stats["nb_resets"],
+        "total/Env. Steps": final_stats["nb_steps"],
+        "total/Game Moves": final_stats["nb_moves"],
+        "total/Invalid Actions": final_stats["nb_invalid_actions"],
+        "total/Losts": final_stats["nb_losts"],
+        "total/Wins": final_stats["nb_wins"],
+        "total/Resets": final_stats["nb_resets"],
         "total/Tokens": df["Token Usage"].sum(),
         "total/Prompt Tokens": df["Prompt Tokens"].sum(),
         "total/Response Tokens": df["Response Tokens"].sum(),
         "total/Thinking Tokens": df["Thinking Tokens"].sum(),
-        "final/Highscore": stats["highscore"],
-        "final/Game Max Score": stats["max_score"],
-        "final/Normalized Score": stats["norm_score"],
-        "final/Duration": stats["duration"],
+        "final/Highscore": final_stats["highscore"],
+        "final/Game Max Score": final_stats["max_score"],
+        "final/Normalized Score": final_stats["norm_score"],
+        "final/Duration": final_stats["duration"],
     }
     wandb_run.log(
         {"episode/rollout": wandb.Table(dataframe=df), **wandb_stats},
-        step=stats["nb_steps"],
+        step=final_stats["nb_steps"],
     )
 
     # Save summary.
@@ -295,7 +528,7 @@ def evaluate(agent, env_name, args):
         "env_params": env_params,
         "wandb_run_id": wandb_run.id,
         "wandb_url": wandb_run.url,
-        **stats,
+        **final_stats,
         **wandb_stats,
     }
 
@@ -455,6 +688,11 @@ def parse_args():
                             help="Force overwriting only log files that have failed.")
         general_group.add_argument("--debug", action="store_true",
                             help="Debug mode.")
+        general_group.add_argument("--continue-from", dest="continue_from",
+                            nargs="?", const="auto",
+                            help="Continue from a previous wandb run. "
+                                 "Pass a run ID to replay a specific run, or use without a value to auto-find "
+                                 "a matching run based on the current config (game, agent, seed).")
 
         subgroup = general_group.add_mutually_exclusive_group()
         subgroup.add_argument(
