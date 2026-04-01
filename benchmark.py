@@ -19,7 +19,7 @@ from tqdm import tqdm
 import tales
 from tales.logger import log, setup_logging
 from tales.utils import NumpyEncoder
-from tales.wandb_utils import fetch_run_trajectory, find_matching_run
+from tales.wandb_utils import WANDB_PROJECT, fetch_run_trajectory, find_matching_run
 
 os.environ["WANDB_MODE"] = "disabled"
 
@@ -400,7 +400,7 @@ def evaluate(agent, env_name, args):
         wandb_config["continued_from_run_url"] = original_config["_run_url"]
         wandb_config["replay_steps"] = len(trajectory_df)
     wandb_run = wandb.init(
-        project=os.environ.get("WANDB_PROJECT", "tales"),
+        project=WANDB_PROJECT,
         config=wandb_config,
         reinit=True,
         name=run_name,
