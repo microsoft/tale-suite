@@ -103,7 +103,7 @@ When auto-finding, the longest matching run is always selected and truncated to 
 8. Logs as a new wandb run referencing the original run ID
 
 > [!NOTE]
-> The `--continue-from` flag expects a wandb run ID (e.g., `abc123de`) from the `pearls-lab/text-games-benchmark` project, or no value to auto-find. The agent type and parameters must match the original run. When auto-finding, if no matching run is found, the game runs from scratch.
+> The `--continue-from` flag expects a wandb run ID (e.g., `abc123de`) from your wandb project, or no value to auto-find. The agent type and parameters must match the original run. When auto-finding, if no matching run is found, the game runs from scratch.
 
 ### API-based LLMs
 

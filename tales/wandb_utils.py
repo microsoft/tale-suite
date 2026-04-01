@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import tempfile
 
 import pandas as pd
@@ -7,7 +8,7 @@ import wandb
 
 log = logging.getLogger("tales")
 
-WANDB_PROJECT = "pearls-lab/text-games-benchmark"
+WANDB_PROJECT = os.environ.get("WANDB_PROJECT", "tales")
 
 ROLLOUT_COLUMNS = [
     "Step",
