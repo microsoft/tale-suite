@@ -33,7 +33,7 @@ class Agent:
 AGENTS = {}
 
 
-def register(name: str, desc: str, klass: callable, add_arguments: callable) -> None:
+def register(name: str, desc: str, klass: type, add_arguments: callable) -> None:
     """ Register a new type of Agent.
 
     Arguments:
@@ -60,7 +60,9 @@ def register(name: str, desc: str, klass: callable, add_arguments: callable) -> 
         >>>          klass=RandomAgent,
         >>>          add_arguments=_add_arguments)
     """
-    if name in AGENTS:
-        raise ValueError(f"Agent '{name}' already registered.")
+    if name in AGENTS and str(klass) != str(AGENTS[name][1]):
+        raise ValueError(
+            f"Agent '{name}' already registered from {AGENTS.get(name)[1]}."
+        )
 
     AGENTS[name] = (desc, klass, add_arguments)

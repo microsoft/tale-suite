@@ -75,6 +75,36 @@ In order to benchmark a given LLM acting as language agent playing text-based ga
 
     python benchmark.py --agent agents/llm.py zero-shot --envs TWCookingLevel1
 
+### Continuing a Previous Run
+
+Use the `--continue-from` flag to replay a previous wandb-logged trajectory. The replay is deterministic (no LLM calls) and preserves the original token usage stats. This is useful for:
+
+- **Extending** a short run (e.g., 100 steps → 1000): replays the original trajectory, then lets the LLM take over for the remaining steps.
+- **Reproducing** a previous run exactly: set `--nb-steps` equal to or less than the original run's length to replay without any new LLM calls.
+
+When auto-finding, the longest matching run is always selected and truncated to `--nb-steps` if needed.
+
+**With an explicit run ID:**
+
+    python benchmark.py reasoning --llm gpt-4o --conversation --continue-from <wandb_run_id> --nb-steps 1000 --envs JerichoEnvZork1 --wandb
+
+**Auto-find matching run** (searches wandb for a run matching the current game, agent, and seed):
+
+    python benchmark.py reasoning --llm gpt-4o --conversation --continue-from --nb-steps 1000 --envs JerichoEnvZork1 --wandb
+
+**How it works:**
+1. Fetches the original run's config and rollout from the wandb API (or auto-finds the longest matching run)
+2. Truncates the trajectory to `--nb-steps` if the original run is longer
+3. Recreates the environment with the same seed for deterministic replay
+4. Replays recorded actions (no LLM calls, preserving original token usage stats)
+5. Verifies observations match the logged trajectory (warns on divergence)
+6. If the game completed during replay (max score reached), stops early
+7. Otherwise, hands off to the LLM agent for any remaining steps
+8. Logs as a new wandb run referencing the original run ID
+
+> [!NOTE]
+> The `--continue-from` flag expects a wandb run ID (e.g., `abc123de`) from your wandb project, or no value to auto-find. The agent type and parameters must match the original run. When auto-finding, if no matching run is found, the game runs from scratch.
+
 ### API-based LLMs
 
 `llm` natively supports OpenAI models and self-hosted models that offer an OpenAI-compatible API (e.g. like vLLM does - more on this below).

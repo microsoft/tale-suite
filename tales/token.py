@@ -46,9 +46,11 @@ class OpenAITokenCounter(TokenCounter):
         self.model = model
         if self.model in tiktoken.model.MODEL_TO_ENCODING:
             self.tokenize = tiktoken.encoding_for_model(self.model).encode
-        elif self.model in ("o4-mini", "o3", "gpt-5", "gpt-5-mini", "gpt-5-nano"):
+        elif self.model.startswith("gpt-5"):
+            self.tokenize = tiktoken.encoding_for_model("gpt-5").encode
+        elif self.model in ("o4-mini", "o3"):
             self.tokenize = tiktoken.encoding_for_model("o3-mini").encode
-        elif self.model in ("gpt-4.1", "gpt-4.1-nano", "gpt-4.1-mini"):
+        elif self.model.startswith("gpt-4.1"):
             self.tokenize = tiktoken.encoding_for_model("gpt-4o").encode
         else:
             self.tokenize = tiktoken.encoding_for_model(self.model.split("_")[0]).encode
@@ -99,11 +101,20 @@ class ClaudeTokenCounter(TokenCounter):
             system = messages[0]["content"]
             messages.pop(0)
 
-        return self.client.beta.messages.count_tokens(
+        nb_tokens = self.client.messages.count_tokens(
             model=self.model,
             messages=messages,
             system=system,
         ).input_tokens
+
+        if text is not None:
+            # Remove the boilerplate tokens needed for the count_tokens(...).
+            # i.e. [{"role": "assistant", "content": ""}]
+            nb_tokens -= (
+                16 - 3
+            )  # 16 tokens for the boilerplate, minus 3 for <|im_*|> tokens.
+
+        return nb_tokens
 
 
 class GeminiTokenCounter(TokenCounter):
@@ -112,6 +123,9 @@ class GeminiTokenCounter(TokenCounter):
         from google import genai
 
         self.model = model.model_id
+        # Strip 'gemini/' prefix if present
+        if self.model.startswith("gemini/"):
+            self.model = self.model[len("gemini/") :]
         self.client = genai.Client(api_key=model.get_key())
 
     def __call__(self, *, messages=None, text=None):
