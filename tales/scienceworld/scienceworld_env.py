@@ -10,7 +10,7 @@ TASK_NAMES = scienceworld_data.get_task_names()
 class ScienceWorldEnv(gym.Env):
 
     def __init__(
-        self, task_name, admissible_commands=False, split="Test", *args, **kwargs
+        self, task_name, admissible_commands=False, split="test", *args, **kwargs
     ):
         self.task_name = task_name
         self.admissible_commands = admissible_commands
