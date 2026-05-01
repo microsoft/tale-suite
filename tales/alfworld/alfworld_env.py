@@ -50,9 +50,9 @@ class ALFWorldEnv(gym.Env):
 
 class ALFWorldTask(ALFWorldEnv):
 
-    def __init__(self, task_type, split, *args, **kwargs):
-        self.gamefiles = sorted(alfworld_data.get_alfworld_game(task_type, split))
-        super().__init__(self.gamefiles[0], *args, **kwargs)
+    def __init__(self, all_gamefiles, start_gamefile, *args, **kwargs):
+        self.gamefiles = all_gamefiles
+        super().__init__(start_gamefile, *args, **kwargs)
 
     def reset(self, *, seed=None, options=None):
         if seed is not None:
