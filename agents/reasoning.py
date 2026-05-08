@@ -90,7 +90,11 @@ class ReasoningAgent(tales.Agent):
 
         self.act_temp = kwargs["act_temp"]
         self.cot_temp = kwargs["cot_temp"]
-        self.reasoning_effort = kwargs["reasoning_effort"]
+        reasoning_effort = kwargs["reasoning_effort"]
+        # --reasoning-effort may be a numeric string (e.g., "1024"); convert to int.
+        if isinstance(reasoning_effort, str) and reasoning_effort.isdigit():
+            reasoning_effort = int(reasoning_effort)
+        self.reasoning_effort = reasoning_effort
         self.conversation = kwargs["conversation"]
 
     @property
@@ -124,13 +128,32 @@ class ReasoningAgent(tales.Agent):
         stop=stop_after_attempt(100),
     )
     def _llm_call_from_conversation(self, conversation, *args, **kwargs):
-        for i in range(10):
-            response = conversation.prompt(*args, **kwargs)
-            response.duration_ms()  # Forces the response to be computed.
-            if response.text():
-                return response  # Non-empty response, otherwise retry.
+        extra_body = kwargs.pop("extra_body", None)
+        if extra_body:
+            # Monkey-patch model.build_kwargs to inject extra_body into API call
+            original_build_kwargs = self.model.__class__.build_kwargs
 
-        return ""
+            def patched_build_kwargs(self_model, prompt, stream):
+                result = original_build_kwargs(self_model, prompt, stream)
+                result["extra_body"] = extra_body
+                return result
+
+            self.model.__class__.build_kwargs = patched_build_kwargs
+
+        try:
+            for i in range(10):
+                response = conversation.prompt(*args, **kwargs)
+                response.duration_ms()  # Forces the response to be computed.
+                if response.text():
+                    return response  # Non-empty response, otherwise retry.
+                # Remove the failed empty response from conversation to prevent accumulation
+                if conversation.responses:
+                    conversation.responses.pop()
+        finally:
+            if extra_body:
+                self.model.__class__.build_kwargs = original_build_kwargs
+
+        return response  # Return last response even if empty
 
     def _llm_call_from_messages(self, messages, *args, **kwargs):
         conversation = messages2conversation(self.model, messages)
@@ -195,9 +218,13 @@ class ReasoningAgent(tales.Agent):
                         "content": response_text.strip() + "</think>",
                     }
                 )
-                llm_kwargs["max_tokens"] = (
-                    100  # Text actions should be short phrases but deepseek forces thought process by starting the generation with <think>.
+                messages.append(
+                    {
+                        "role": "user",
+                        "content": "> ",
+                    }
                 )
+                llm_kwargs["max_tokens"] = 100  # Text actions should be short phrases.
                 llm_kwargs["temperature"] = self.act_temp
                 llm_kwargs["extra_body"] = {
                     "chat_template_kwargs": {"enable_thinking": False}
@@ -214,7 +241,7 @@ class ReasoningAgent(tales.Agent):
             # Extract the action part from the response.
             action = action[reasoning_end:].strip()
 
-        if "DeepSeek-R1" in self.llm:
+        if "DeepSeek-R1" in self.llm or "DeepSeek-V4" in self.llm:
             # Strip the reasoning <think> and </think>.
             reasoning_end = action.find("</think>")
             if reasoning_end == -1:

@@ -1,0 +1,17 @@
+# Ignore everything by default
+*
+
+# Only include what's needed for the image
+!requirements.txt
+!pyproject.toml
+!MANIFEST.in
+!benchmark.py
+!print_results.py
+!tales/
+!agents/
+!docker/entrypoint.sh
+
+# Exclude build artifacts within included dirs
+**/__pycache__/
+**/*.pyc
+**/*.egg-info/

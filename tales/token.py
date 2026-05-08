@@ -60,14 +60,26 @@ class HuggingFaceTokenCounter(TokenCounter):
     def __init__(self, model: str):
         self.model = model
         try:
-            self.tokenize = AutoTokenizer.from_pretrained(self.model).tokenize
-        except OSError:
-            msg = (
-                f"Tokenizer not found for model {self.model},"
-                " make sure you have access to the model"
-                " (e.g., HuggingFace API key is correctly set)."
-            )
-            raise ValueError(msg)
+            self.tokenize = AutoTokenizer.from_pretrained(
+                self.model, trust_remote_code=True
+            ).tokenize
+        except (OSError, AttributeError, Exception) as e:
+            if isinstance(e, OSError):
+                msg = (
+                    f"Tokenizer not found for model {self.model},"
+                    " make sure you have access to the model"
+                    " (e.g., HuggingFace API key is correctly set)."
+                )
+                raise ValueError(msg)
+            # Some models (e.g., DeepSeek-V4) have config issues with transformers;
+            # fall back to loading tokenizer only without full config validation.
+            try:
+                self.tokenize = AutoTokenizer.from_pretrained(
+                    self.model, trust_remote_code=True, use_fast=True
+                ).tokenize
+            except Exception:
+                # Last resort: use tiktoken cl100k_base as approximate counter
+                self.tokenize = tiktoken.get_encoding("cl100k_base").encode
 
     def __call__(self, *, messages=None, text=None):
         nb_tokens = 0
