@@ -206,77 +206,59 @@ class ReasoningAgent(tales.Agent):
             # If the action is empty, we need to retry.
             action = "(empty)"
 
+        # --- Extract thinking from <think> tags (generic for all open models) ---
         thinking = None
-        if "Qwen3" in self.llm:
-            # Strip the reasoning <think> and </think>.
+        if "<think>" in action or "</think>" in action:
             reasoning_end = action.find("</think>")
             if reasoning_end == -1:
-                # Send another request to get the action with the current reasoning.
-                messages.append(
-                    {
-                        "role": "assistant",
-                        "content": response_text.strip() + "</think>",
-                    }
-                )
-                messages.append(
-                    {
-                        "role": "user",
-                        "content": "> ",
-                    }
-                )
-                llm_kwargs["max_tokens"] = 100  # Text actions should be short phrases.
-                llm_kwargs["temperature"] = self.act_temp
-                llm_kwargs["extra_body"] = {
-                    "chat_template_kwargs": {"enable_thinking": False}
-                }
-                response = self._llm_call_from_messages(messages, **llm_kwargs)
-                response_text += "</think>" + response.text()
-                action = response_text.strip()
-                reasoning_end = action.find("</think>") + len("</think>")
-            else:
-                reasoning_end += len("</think>")
-
-            # Extract the reasoning part from the response.
-            thinking = action[:reasoning_end].strip()
-            # Extract the action part from the response.
-            action = action[reasoning_end:].strip()
-
-        if "DeepSeek-R1" in self.llm or "DeepSeek-V4" in self.llm:
-            # Strip the reasoning <think> and </think>.
-            reasoning_end = action.find("</think>")
-            if reasoning_end == -1:
-                # Send another request to get the action with the current reasoning.
-                messages.append(
-                    {
-                        "role": "assistant",
-                        "content": "<think>\n" + response_text.strip() + "\n</think>",
-                    }
-                )
-                # prompt = "// Thinking exceeded the length limit. Based on the thoughts so far, provide your chosen action on a single line while respecting the desired format.\n> "
-                # messages.append({"role": "user", "content": prompt})
-                llm_kwargs["max_tokens"] = (
-                    100  # Text actions should be short phrases but deepseek forces thought process by starting the generation with <think>.
-                )
-                llm_kwargs["temperature"] = self.act_temp
-                llm_kwargs["extra_body"] = {
-                    "chat_template": DEEPSEEK_CHAT_TEMPLATE_NO_THINK,
-                }
-                response = self._llm_call_from_messages(messages, **llm_kwargs)
-                response_text += "\n" + response.text()
-                action = response.text().strip()
-                reasoning_end = action.find("</think>")
-                if reasoning_end == -1:
-                    reasoning_end = (
-                        0  # Give up and use the entire response as the action.
+                # Thinking exceeded token budget — send follow-up to get action.
+                if "DeepSeek-R1" in self.llm or "DeepSeek-V4" in self.llm:
+                    # DeepSeek requires a custom chat template to suppress thinking.
+                    messages.append(
+                        {
+                            "role": "assistant",
+                            "content": "<think>\n"
+                            + response_text.strip()
+                            + "\n</think>",
+                        }
                     )
+                    llm_kwargs["max_tokens"] = 100
+                    llm_kwargs["temperature"] = self.act_temp
+                    llm_kwargs["extra_body"] = {
+                        "chat_template": DEEPSEEK_CHAT_TEMPLATE_NO_THINK,
+                    }
+                    response = self._llm_call_from_messages(messages, **llm_kwargs)
+                    response_text += "\n" + response.text()
+                    action = response.text().strip()
+                    reasoning_end = action.find("</think>")
+                    if reasoning_end == -1:
+                        reasoning_end = (
+                            0  # Give up and use the entire response as the action.
+                        )
+                    else:
+                        reasoning_end += len("</think>")
                 else:
-                    reasoning_end += len("</think>")
+                    # Generic: use chat_template_kwargs (Qwen3, MiniMax, etc.)
+                    messages.append(
+                        {
+                            "role": "assistant",
+                            "content": response_text.strip() + "</think>",
+                        }
+                    )
+                    messages.append({"role": "user", "content": "> "})
+                    llm_kwargs["max_tokens"] = 100
+                    llm_kwargs["temperature"] = self.act_temp
+                    llm_kwargs["extra_body"] = {
+                        "chat_template_kwargs": {"enable_thinking": False}
+                    }
+                    response = self._llm_call_from_messages(messages, **llm_kwargs)
+                    response_text += "</think>" + response.text()
+                    action = response_text.strip()
+                    reasoning_end = action.find("</think>") + len("</think>")
             else:
                 reasoning_end += len("</think>")
 
-            # Extract the reasoning part from the response.
             thinking = action[:reasoning_end].strip()
-            # Extract the action part from the response.
             action = action[reasoning_end:].strip()
 
         elif self.llm in CLAUDE_MODELS:
