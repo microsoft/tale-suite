@@ -10,6 +10,8 @@
 !tales/
 !agents/
 !docker/entrypoint.sh
+!docker/templates/
+!docker/templates/**
 
 # Exclude build artifacts within included dirs
 **/__pycache__/

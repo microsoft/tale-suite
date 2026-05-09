@@ -212,7 +212,7 @@ class ReasoningAgent(tales.Agent):
             reasoning_end = action.find("</think>")
             if reasoning_end == -1:
                 # Thinking exceeded token budget — send follow-up to get action.
-                if "DeepSeek-R1" in self.llm or "DeepSeek-V4" in self.llm:
+                if "DeepSeek-R1" in self.llm:
                     # DeepSeek requires a custom chat template to suppress thinking.
                     messages.append(
                         {

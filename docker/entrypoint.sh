@@ -27,6 +27,15 @@ SERVER_ARGS="${SERVER_ARGS:-${VLLM_ARGS:-}}"
 if [ -n "$MODEL_NAME" ] && [ -z "$SERVER_URL" ]; then
     SERVER_LOG="/tmp/server.log"
 
+    # --- Auto-detect chat template for models that don't ship one ---
+    CHAT_TEMPLATE_ARG=""
+    if [ -n "$CHAT_TEMPLATE" ]; then
+        CHAT_TEMPLATE_ARG="--chat-template ${CHAT_TEMPLATE}"
+    elif echo "${MODEL_NAME}" | grep -qi "DeepSeek-V4"; then
+        CHAT_TEMPLATE_ARG="--chat-template /app/docker/templates/deepseek_v4.jinja2"
+        echo "Auto-detected DeepSeek-V4 model — using custom chat template"
+    fi
+
     if [ "$SERVER_TYPE" = "sglang" ]; then
         # ===================== SGLang =====================
         echo "Starting SGLang server for ${MODEL_NAME} on port ${SERVER_PORT}..."
@@ -48,6 +57,10 @@ if [ -n "$MODEL_NAME" ] && [ -z "$SERVER_URL" ]; then
 
         if [ -n "$SERVER_ARGS" ]; then
             SGLANG_EXTRA_ARGS="${SGLANG_EXTRA_ARGS} ${SERVER_ARGS}"
+        fi
+
+        if [ -n "$CHAT_TEMPLATE_ARG" ]; then
+            SGLANG_EXTRA_ARGS="${SGLANG_EXTRA_ARGS} ${CHAT_TEMPLATE_ARG}"
         fi
 
         if [ -n "$LOG_DIR" ]; then
@@ -94,6 +107,9 @@ if [ -n "$MODEL_NAME" ] && [ -z "$SERVER_URL" ]; then
         fi
         if [ -n "$SERVER_ARGS" ]; then
             VLLM_EXTRA_ARGS="${VLLM_EXTRA_ARGS} ${SERVER_ARGS}"
+        fi
+        if [ -n "$CHAT_TEMPLATE_ARG" ]; then
+            VLLM_EXTRA_ARGS="${VLLM_EXTRA_ARGS} ${CHAT_TEMPLATE_ARG}"
         fi
         ROPE_SCALING_ARGS=""
         if [ -n "$MAX_MODEL_LEN" ]; then

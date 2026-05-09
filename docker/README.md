@@ -50,6 +50,7 @@ docker build -f docker/Dockerfile.sglang -t tales-sglang .
 | `SERVER_PORT` | `8000` | Port for the inference server |
 | `SERVER_URL` | *(auto)* | Set to skip local server startup and use an external endpoint |
 | `SERVER_ARGS` | | Extra CLI args passed to the server |
+| `CHAT_TEMPLATE` | *(auto)* | Path to Jinja2 chat template file. Auto-detected for DeepSeek-V4 |
 | `SERVER_WAIT_TIMEOUT` | `600` | Abort if server produces no log output for this many seconds |
 | `GPU_COUNT` | `1` | Number of GPUs (sets tensor parallelism) |
 | `DP_SIZE` | | Data parallel size (TP = GPU_COUNT / DP_SIZE) |
