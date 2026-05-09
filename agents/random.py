@@ -40,6 +40,9 @@ class RandomAgent(tales.Agent):
             "prompt": None,
             "response": None,
             "nb_tokens": self.token_counter(text=obs),
+            "nb_tokens_prompt": self.token_counter(text=obs),
+            "nb_tokens_response": 0,
+            "nb_tokens_thinking": 0,
         }
 
         if "admissible_commands" in info:
