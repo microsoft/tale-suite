@@ -260,6 +260,15 @@ class ReasoningAgent(tales.Agent):
             # follow-up call below.
             if "<think>" in action and "</think>" not in action:
                 # Thinking exceeded token budget — send follow-up to get action.
+                # Capture the unclosed thinking content before recovery.
+                _idx = action.index("<think>") + len("<think>")
+                _unclosed = action[_idx:].strip()
+                if _unclosed:
+                    thinking = (
+                        (thinking + "\n\n" + _unclosed).strip()
+                        if thinking
+                        else _unclosed
+                    )
                 if "DeepSeek-R1" in self.llm:
                     # DeepSeek requires a custom chat template to suppress thinking.
                     messages.append(
@@ -327,7 +336,15 @@ class ReasoningAgent(tales.Agent):
                 [item.get("thinking", "") for item in response.json()["content"]]
             )
 
-        self.history.append((f"{obs}\n> ", f"{action}\n"))
+        # For Mistral-native models, keep a short thinking stub in history so
+        # the model sees the <think> pattern and continues to reason on later
+        # turns.  Full thinking would bloat context (~1 KiB/step × 100 steps).
+        if any(m in self.llm for m in MISTRAL_NATIVE_MODELS) and thinking:
+            stub = thinking[:120].rsplit(" ", 1)[0] + "..."
+            history_action = f"<think>\n{stub}\n</think>\n{action}\n"
+        else:
+            history_action = f"{action}\n"
+        self.history.append((f"{obs}\n> ", history_action))
 
         # Compute usage statistics
         stats = {
