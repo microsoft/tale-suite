@@ -27,6 +27,17 @@ SYSTEM_PROMPT = (
     " When stuck, try using the `help` command to see what commands are available."
 )
 
+# Suffix appended to the system prompt for models that need explicit
+# thinking instructions (e.g. Magistral, which uses a native Mistral
+# tokenizer and doesn't auto-inject thinking via chat template).
+THINKING_INSTRUCTION = (
+    "\n\nYour thinking process must follow the template below:\n"
+    "<think>\n"
+    "Your thoughts or draft.\n"
+    "</think>\n\n"
+    "After thinking, provide ONLY the game command."
+)
+
 DEEPSEEK_CHAT_TEMPLATE_NO_THINK = "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<｜User｜>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<｜Assistant｜><｜tool▁calls▁begin｜><｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{{'<｜tool▁calls▁end｜><｜end▁of▁sentence｜>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<｜tool▁outputs▁end｜>' + message['content'] + '<｜end▁of▁sentence｜>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<｜Assistant｜>' + content + '<｜end▁of▁sentence｜>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<｜tool▁outputs▁begin｜><｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<｜tool▁outputs▁end｜>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<｜Assistant｜><think>\\n</think>\\n'}}{% endif %}"
 
 CLAUDE_MODELS = [
@@ -140,10 +151,6 @@ class ReasoningAgent(tales.Agent):
             "reasoning_effort": self.reasoning_effort,
         }
 
-    def _is_mistral_native(self):
-        """Check if current model uses Mistral native tokenizer."""
-        return any(m in self.llm for m in MISTRAL_NATIVE_MODELS)
-
     @retry(
         retry=retry_if_exception(is_recoverable_error),
         wait=wait_random_exponential(multiplier=1, max=40),
@@ -151,8 +158,6 @@ class ReasoningAgent(tales.Agent):
     )
     def _llm_call_from_conversation(self, conversation, *args, **kwargs):
         extra_body = kwargs.pop("extra_body", None)
-        patches_applied = []
-
         if extra_body:
             # Monkey-patch model.build_kwargs to inject extra_body into API call
             original_build_kwargs = self.model.__class__.build_kwargs
@@ -163,7 +168,6 @@ class ReasoningAgent(tales.Agent):
                 return result
 
             self.model.__class__.build_kwargs = patched_build_kwargs
-            patches_applied.append(("build_kwargs", original_build_kwargs))
 
         try:
             for i in range(10):
@@ -171,22 +175,12 @@ class ReasoningAgent(tales.Agent):
                 response.duration_ms()  # Forces the response to be computed.
                 if response.text():
                     return response  # Non-empty response, otherwise retry.
-                # For Mistral models with reasoning parser, the model may return
-                # reasoning but empty content. Accept if reasoning is present.
-                if self._is_mistral_native():
-                    rj = response.response_json
-                    if isinstance(rj, dict):
-                        choices = rj.get("choices", [])
-                        if choices:
-                            msg = choices[0].get("message", {})
-                            if msg.get("reasoning") or msg.get("reasoning_content"):
-                                return response
                 # Remove the failed empty response from conversation to prevent accumulation
                 if conversation.responses:
                     conversation.responses.pop()
         finally:
-            for attr, original in reversed(patches_applied):
-                setattr(self.model.__class__, attr, original)
+            if extra_body:
+                self.model.__class__.build_kwargs = original_build_kwargs
 
         return response  # Return last response even if empty
 
@@ -233,37 +227,18 @@ class ReasoningAgent(tales.Agent):
             llm_kwargs.pop("seed")
 
         # For open models served via vLLM/SGLang, enable thinking mode explicitly.
-        # Skip for Mistral-native models (they use --enable-reasoning at server level).
+        # Magistral/Mistral-native models use a non-Jinja2 tokenizer that doesn't
+        # support chat_template_kwargs — they produce <think> tags naturally.
         if self.llm not in OPENAI_MODELS + CLAUDE_MODELS + GEMINI_MODELS:
-            if self._is_mistral_native():
-                # Mistral uses vLLM's reasoning parser: thinking goes to the
-                # `reasoning` field. Use non-streaming so response_json has
-                # the full completion structure (streaming loses reasoning in
-                # combine_chunks). 24B model on B200 is fast enough.
-                llm_kwargs["stream"] = False
-            else:
+            if not any(m in self.llm for m in MISTRAL_NATIVE_MODELS):
                 llm_kwargs["extra_body"] = {
                     "chat_template_kwargs": {"enable_thinking": True}
                 }
 
         messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(messages, **llm_kwargs)
-        response_text = response.text() or ""
-        action = response_text.strip()
-
-        # For models using vLLM's reasoning parser (e.g., Mistral), thinking
-        # is in the `reasoning` field of the API response, not in `content`.
-        # Reconstruct <think>...</think> wrapper so existing parsing handles it.
-        if self._is_mistral_native():
-            rj = response.json()
-            if isinstance(rj, dict):
-                choices = rj.get("choices", [])
-                if choices:
-                    msg = choices[0].get("message", {})
-                    reasoning = msg.get("reasoning") or msg.get("reasoning_content")
-                    if reasoning:
-                        action = f"<think>{reasoning}</think>{action}"
-                        response_text = action
+        response_text = response.text()
+        action = response.text().strip()
 
         if action == "":
             # If the action is empty, we need to retry.
@@ -302,6 +277,21 @@ class ReasoningAgent(tales.Agent):
                     }
                     response = self._llm_call_from_messages(messages, **llm_kwargs)
                     response_text += "\n" + response.text()
+                    action = response.text().strip()
+                elif any(m in self.llm for m in MISTRAL_NATIVE_MODELS):
+                    # Mistral-native: just ask for action without thinking
+                    messages.append(
+                        {
+                            "role": "assistant",
+                            "content": response_text.strip() + "</think>",
+                        }
+                    )
+                    messages.append({"role": "user", "content": "> "})
+                    llm_kwargs["max_tokens"] = 100
+                    llm_kwargs["temperature"] = self.act_temp
+                    llm_kwargs.pop("extra_body", None)
+                    response = self._llm_call_from_messages(messages, **llm_kwargs)
+                    response_text += "</think>" + response.text()
                     action = response.text().strip()
                 else:
                     # Generic: use chat_template_kwargs (Qwen3, MiniMax, etc.)
@@ -389,7 +379,13 @@ class ReasoningAgent(tales.Agent):
         return action, stats
 
     def build_messages(self, observation):
-        messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+        system_prompt = SYSTEM_PROMPT
+        # Magistral/Mistral-native models need explicit thinking instructions
+        # since their tokenizer doesn't inject them via chat template.
+        if any(m in self.llm for m in MISTRAL_NATIVE_MODELS):
+            system_prompt += THINKING_INSTRUCTION
+
+        messages = [{"role": "system", "content": system_prompt}]
         limit = self.context_limit or len(self.history) + 1
 
         for i, (obs, action) in enumerate(self.history[-limit:]):
@@ -414,7 +410,7 @@ class ReasoningAgent(tales.Agent):
 
         if not self.allows_system_prompt:
             # Make sure the system prompt is added to the following message.
-            messages[1]["content"] = f"{SYSTEM_PROMPT}\n\n{messages[1]['content']}"
+            messages[1]["content"] = f"{system_prompt}\n\n{messages[1]['content']}"
             messages.pop(0)
 
         return messages

@@ -86,9 +86,11 @@ if [ -n "$MODEL_NAME" ] && [ -z "$SERVER_URL" ]; then
         # ===================== vLLM (default) =====================
         echo "Starting vLLM server for ${MODEL_NAME} on port ${SERVER_PORT}..."
         VLLM_EXTRA_ARGS="${VLLM_EXTRA_ARGS:---trust-remote-code}"
-        if [ -n "$REASONING_PARSER" ] && [ "$AGENT_TYPE" != "reasoning" ]; then
-            # Skip reasoning parser when using reasoning agent — it handles <think> tags itself
-            VLLM_EXTRA_ARGS="${VLLM_EXTRA_ARGS} --reasoning-parser ${REASONING_PARSER}"
+        if [ -n "$REASONING_PARSER" ]; then
+            # Enable vLLM's reasoning parser to separate thinking from content.
+            # Always add it (even for reasoning agent) — Mistral-native models
+            # require the parser for ANY thinking output.
+            VLLM_EXTRA_ARGS="${VLLM_EXTRA_ARGS} --reasoning-config {\"reasoning_parser\":\"${REASONING_PARSER}\"}"
         fi
         if [ "$AGENT_TYPE" = "reasoning" ]; then
             # Reasoning agent may send custom chat templates to control thinking mode
