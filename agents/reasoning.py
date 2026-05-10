@@ -1,4 +1,5 @@
 import argparse
+import re
 
 import llm
 import numpy as np
@@ -38,6 +39,14 @@ CLAUDE_MODELS = [
     "claude-sonnet-4.6",
 ]
 
+# Capture every <think>…</think> block so we can strip ALL of them from
+# the final action.  Some chat templates (notably MiniMax-M2.5 with
+# ``enable_thinking: True``) emit an empty ``<think></think>`` immediately
+# followed by the model's *real* think block then the action — a single
+# pass that stops at the first ``</think>`` would leak the second block
+# into the action and the game would reject the multi-line input.
+_THINK_RE = re.compile(r"<think>(.*?)</think>", re.DOTALL)
+
 OPENAI_MODELS = [
     "o1",
     "o1-mini",
@@ -57,6 +66,15 @@ OPENAI_MODELS = [
 GEMINI_MODELS = [
     "gemini-2.5-pro",
     "gemini-3-pro-preview",
+]
+
+# Models using Mistral native tokenizer — don't support chat_template_kwargs.
+# Thinking is handled via --enable-reasoning --reasoning-parser at the server level
+# and surfaces in the API response's `reasoning` field.
+MISTRAL_NATIVE_MODELS = [
+    "Magistral",
+    "Mistral-Small-3",
+    "Mistral-Large",
 ]
 
 
@@ -122,6 +140,10 @@ class ReasoningAgent(tales.Agent):
             "reasoning_effort": self.reasoning_effort,
         }
 
+    def _is_mistral_native(self):
+        """Check if current model uses Mistral native tokenizer."""
+        return any(m in self.llm for m in MISTRAL_NATIVE_MODELS)
+
     @retry(
         retry=retry_if_exception(is_recoverable_error),
         wait=wait_random_exponential(multiplier=1, max=40),
@@ -129,6 +151,8 @@ class ReasoningAgent(tales.Agent):
     )
     def _llm_call_from_conversation(self, conversation, *args, **kwargs):
         extra_body = kwargs.pop("extra_body", None)
+        patches_applied = []
+
         if extra_body:
             # Monkey-patch model.build_kwargs to inject extra_body into API call
             original_build_kwargs = self.model.__class__.build_kwargs
@@ -139,6 +163,7 @@ class ReasoningAgent(tales.Agent):
                 return result
 
             self.model.__class__.build_kwargs = patched_build_kwargs
+            patches_applied.append(("build_kwargs", original_build_kwargs))
 
         try:
             for i in range(10):
@@ -146,12 +171,22 @@ class ReasoningAgent(tales.Agent):
                 response.duration_ms()  # Forces the response to be computed.
                 if response.text():
                     return response  # Non-empty response, otherwise retry.
+                # For Mistral models with reasoning parser, the model may return
+                # reasoning but empty content. Accept if reasoning is present.
+                if self._is_mistral_native():
+                    rj = response.response_json
+                    if isinstance(rj, dict):
+                        choices = rj.get("choices", [])
+                        if choices:
+                            msg = choices[0].get("message", {})
+                            if msg.get("reasoning") or msg.get("reasoning_content"):
+                                return response
                 # Remove the failed empty response from conversation to prevent accumulation
                 if conversation.responses:
                     conversation.responses.pop()
         finally:
-            if extra_body:
-                self.model.__class__.build_kwargs = original_build_kwargs
+            for attr, original in reversed(patches_applied):
+                setattr(self.model.__class__, attr, original)
 
         return response  # Return last response even if empty
 
@@ -198,15 +233,37 @@ class ReasoningAgent(tales.Agent):
             llm_kwargs.pop("seed")
 
         # For open models served via vLLM/SGLang, enable thinking mode explicitly.
+        # Skip for Mistral-native models (they use --enable-reasoning at server level).
         if self.llm not in OPENAI_MODELS + CLAUDE_MODELS + GEMINI_MODELS:
-            llm_kwargs["extra_body"] = {
-                "chat_template_kwargs": {"enable_thinking": True}
-            }
+            if self._is_mistral_native():
+                # Mistral uses vLLM's reasoning parser: thinking goes to the
+                # `reasoning` field. Use non-streaming so response_json has
+                # the full completion structure (streaming loses reasoning in
+                # combine_chunks). 24B model on B200 is fast enough.
+                llm_kwargs["stream"] = False
+            else:
+                llm_kwargs["extra_body"] = {
+                    "chat_template_kwargs": {"enable_thinking": True}
+                }
 
         messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(messages, **llm_kwargs)
-        response_text = response.text()
-        action = response.text().strip()
+        response_text = response.text() or ""
+        action = response_text.strip()
+
+        # For models using vLLM's reasoning parser (e.g., Mistral), thinking
+        # is in the `reasoning` field of the API response, not in `content`.
+        # Reconstruct <think>...</think> wrapper so existing parsing handles it.
+        if self._is_mistral_native():
+            rj = response.json()
+            if isinstance(rj, dict):
+                choices = rj.get("choices", [])
+                if choices:
+                    msg = choices[0].get("message", {})
+                    reasoning = msg.get("reasoning") or msg.get("reasoning_content")
+                    if reasoning:
+                        action = f"<think>{reasoning}</think>{action}"
+                        response_text = action
 
         if action == "":
             # If the action is empty, we need to retry.
@@ -215,8 +272,18 @@ class ReasoningAgent(tales.Agent):
         # --- Extract thinking from <think> tags (generic for all open models) ---
         thinking = None
         if "<think>" in action or "</think>" in action:
-            reasoning_end = action.find("</think>")
-            if reasoning_end == -1:
+            # First pass: strip every closed <think>…</think> block.  Some
+            # chat templates emit an empty ``<think></think>`` *and* the
+            # real one; we must take all of them, not just the first.
+            closed_blocks = _THINK_RE.findall(action)
+            if closed_blocks:
+                non_empty = [b.strip() for b in closed_blocks if b.strip()]
+                thinking = "\n\n".join(non_empty) if non_empty else ""
+                action = _THINK_RE.sub("", action).strip()
+            # If after stripping there's still an unclosed <think> tag
+            # (token budget exhausted mid-thought), fall through to the
+            # follow-up call below.
+            if "<think>" in action and "</think>" not in action:
                 # Thinking exceeded token budget — send follow-up to get action.
                 if "DeepSeek-R1" in self.llm:
                     # DeepSeek requires a custom chat template to suppress thinking.
@@ -236,13 +303,6 @@ class ReasoningAgent(tales.Agent):
                     response = self._llm_call_from_messages(messages, **llm_kwargs)
                     response_text += "\n" + response.text()
                     action = response.text().strip()
-                    reasoning_end = action.find("</think>")
-                    if reasoning_end == -1:
-                        reasoning_end = (
-                            0  # Give up and use the entire response as the action.
-                        )
-                    else:
-                        reasoning_end += len("</think>")
                 else:
                     # Generic: use chat_template_kwargs (Qwen3, MiniMax, etc.)
                     messages.append(
@@ -259,13 +319,17 @@ class ReasoningAgent(tales.Agent):
                     }
                     response = self._llm_call_from_messages(messages, **llm_kwargs)
                     response_text += "</think>" + response.text()
-                    action = response_text.strip()
-                    reasoning_end = action.find("</think>") + len("</think>")
-            else:
-                reasoning_end += len("</think>")
-
-            thinking = action[:reasoning_end].strip()
-            action = action[reasoning_end:].strip()
+                    action = response.text().strip()
+                # Re-strip any think blocks that came back in the follow-up.
+                followup_blocks = _THINK_RE.findall(action)
+                if followup_blocks:
+                    fu_non_empty = [b.strip() for b in followup_blocks if b.strip()]
+                    if fu_non_empty:
+                        joined = "\n\n".join(fu_non_empty)
+                        thinking = (
+                            (thinking + "\n\n" + joined).strip() if thinking else joined
+                        )
+                    action = _THINK_RE.sub("", action).strip()
 
         elif self.llm in CLAUDE_MODELS:
             # Extract the thinking part from the response JSON.
