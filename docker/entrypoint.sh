@@ -111,10 +111,8 @@ if [ -n "$MODEL_NAME" ] && [ -z "$SERVER_URL" ]; then
         if [ -n "$CHAT_TEMPLATE_ARG" ]; then
             VLLM_EXTRA_ARGS="${VLLM_EXTRA_ARGS} ${CHAT_TEMPLATE_ARG}"
         fi
-        ROPE_SCALING_ARGS=""
         if [ -n "$MAX_MODEL_LEN" ]; then
             VLLM_EXTRA_ARGS="${VLLM_EXTRA_ARGS} --max-model-len ${MAX_MODEL_LEN}"
-            ROPE_SCALING_ARGS='--rope-scaling {"rope_type":"yarn","factor":4.0,"original_max_position_embeddings":32768}'
         fi
         if [ -n "$LOG_DIR" ]; then
             SERVER_LOG_PERSIST="${LOG_DIR}/${MODEL_SLUG}-${TIMESTAMP}-vllm.log"
@@ -123,7 +121,7 @@ if [ -n "$MODEL_NAME" ] && [ -z "$SERVER_URL" ]; then
                 --served-model-name "${MODEL_NAME}" \
                 --port "${SERVER_PORT}" \
                 --host 0.0.0.0 \
-                ${VLLM_EXTRA_ARGS} ${ROPE_SCALING_ARGS} \
+                ${VLLM_EXTRA_ARGS} \
                 > >(tee "$SERVER_LOG" >> "$SERVER_LOG_PERSIST") 2>&1 &
         else
             python -m vllm.entrypoints.openai.api_server \
@@ -131,7 +129,7 @@ if [ -n "$MODEL_NAME" ] && [ -z "$SERVER_URL" ]; then
                 --served-model-name "${MODEL_NAME}" \
                 --port "${SERVER_PORT}" \
                 --host 0.0.0.0 \
-                ${VLLM_EXTRA_ARGS} ${ROPE_SCALING_ARGS} \
+                ${VLLM_EXTRA_ARGS} \
                 > "$SERVER_LOG" 2>&1 &
         fi
     fi
@@ -257,12 +255,12 @@ if [ -n "$EXTRA_ARGS" ]; then
 fi
 
 # --- Parallelism ---
-# PARALLEL=0 (default): run all seeds concurrently, each with full env list.
-# PARALLEL=1: fully sequential (legacy behavior).
-# PARALLEL=N: cap at N concurrent processes; if N > N_SEEDS, split envs into chunks too.
+# PARALLEL=0 or unset: fully sequential (one game at a time).
+# PARALLEL=N: run N games concurrently within each seed; seeds are always sequential.
+# Strategy: complete all games for seed 1, then seed 2, etc.
 PARALLEL="${PARALLEL:-0}"
 
-# Resolve the full environment list (needed for splitting when PARALLEL > N_SEEDS).
+# Resolve the full environment list.
 resolve_envs() {
     if [ -z "$ENVS" ]; then
         python -c "import tales; print(' '.join(tales.envs))"
@@ -312,79 +310,66 @@ run_work_unit() {
     return $rc
 }
 
-# Determine effective concurrency
-if [ "$PARALLEL" -eq 0 ] 2>/dev/null; then
-    EFFECTIVE_PARALLEL=$N_SEEDS
-elif [ "$PARALLEL" -eq 1 ] 2>/dev/null; then
+# Determine parallelism (within each seed)
+if [ "$PARALLEL" -le 1 ] 2>/dev/null; then
     EFFECTIVE_PARALLEL=1
 else
     EFFECTIVE_PARALLEL=$PARALLEL
 fi
 
-# Calculate env splits per seed
-if [ "$EFFECTIVE_PARALLEL" -gt "$N_SEEDS" ]; then
-    GAMES_PER_SEED=$(( (EFFECTIVE_PARALLEL + N_SEEDS - 1) / N_SEEDS ))
+# Resolve envs to split across parallel workers
+RESOLVED_ENVS=$(resolve_envs)
+N_ENVS=$(echo "$RESOLVED_ENVS" | wc -w)
+
+# Number of env chunks per seed = min(EFFECTIVE_PARALLEL, N_ENVS)
+if [ "$EFFECTIVE_PARALLEL" -gt "$N_ENVS" ]; then
+    N_CHUNKS=$N_ENVS
 else
-    GAMES_PER_SEED=1
+    N_CHUNKS=$EFFECTIVE_PARALLEL
 fi
 
-echo "Parallelism: PARALLEL=${PARALLEL} (effective=${EFFECTIVE_PARALLEL}, seeds=${N_SEEDS}, env_splits_per_seed=${GAMES_PER_SEED})"
+echo "Parallelism: PARALLEL=${EFFECTIVE_PARALLEL} workers per seed, seeds=${N_SEEDS} (sequential), envs=${N_ENVS}, chunks=${N_CHUNKS}"
 
-# Resolve envs if we need to split them
-if [ "$GAMES_PER_SEED" -gt 1 ]; then
-    RESOLVED_ENVS=$(resolve_envs)
-    echo "Resolved ${#RESOLVED_ENVS[@]} environments for splitting into ${GAMES_PER_SEED} chunks per seed."
-fi
-
-# --- Execute work units ---
-RUNNING=0
+# --- Execute work units: one seed at a time, parallel games within ---
 FAILURES=0
 TOTAL_UNITS=0
 
 for i in $(seq 1 ${N_SEEDS}); do
     SEED="${SEED_PREFIX}${i}"
+    echo "=== Starting seed ${i}/${N_SEEDS} (${SEED}) ==="
+    RUNNING=0
 
-    if [ "$GAMES_PER_SEED" -gt 1 ]; then
-        for chunk_idx in $(seq 0 $((GAMES_PER_SEED - 1))); do
-            CHUNK=$(get_chunk "$RESOLVED_ENVS" "$GAMES_PER_SEED" "$chunk_idx")
+    if [ "$N_CHUNKS" -le 1 ]; then
+        # Single worker: run all envs sequentially
+        TOTAL_UNITS=$((TOTAL_UNITS + 1))
+        LABEL="seed${i}"
+        ENVS_ARG=""
+        [ -n "$ENVS" ] && ENVS_ARG="$ENVS"
+        run_work_unit "$SEED" "$ENVS_ARG" "$LABEL" || FAILURES=$((FAILURES + 1))
+    else
+        # Multiple workers: split envs into chunks, run in parallel
+        for chunk_idx in $(seq 0 $((N_CHUNKS - 1))); do
+            CHUNK=$(get_chunk "$RESOLVED_ENVS" "$N_CHUNKS" "$chunk_idx")
             [ -z "$CHUNK" ] && continue
             TOTAL_UNITS=$((TOTAL_UNITS + 1))
             LABEL="seed${i}/chunk$((chunk_idx+1))"
 
-            if [ "$EFFECTIVE_PARALLEL" -le 1 ]; then
-                run_work_unit "$SEED" "$CHUNK" "$LABEL" || FAILURES=$((FAILURES + 1))
-            else
-                run_work_unit "$SEED" "$CHUNK" "$LABEL" &
-                RUNNING=$((RUNNING + 1))
-                if [ "$RUNNING" -ge "$EFFECTIVE_PARALLEL" ]; then
-                    wait -n || FAILURES=$((FAILURES + 1))
-                    RUNNING=$((RUNNING - 1))
-                fi
-            fi
-        done
-    else
-        TOTAL_UNITS=$((TOTAL_UNITS + 1))
-        LABEL="seed${i}/${N_SEEDS}"
-        ENVS_ARG=""
-        [ -n "$ENVS" ] && ENVS_ARG="$ENVS"
-
-        if [ "$EFFECTIVE_PARALLEL" -le 1 ]; then
-            run_work_unit "$SEED" "$ENVS_ARG" "$LABEL" || FAILURES=$((FAILURES + 1))
-        else
-            run_work_unit "$SEED" "$ENVS_ARG" "$LABEL" &
+            run_work_unit "$SEED" "$CHUNK" "$LABEL" &
             RUNNING=$((RUNNING + 1))
             if [ "$RUNNING" -ge "$EFFECTIVE_PARALLEL" ]; then
                 wait -n || FAILURES=$((FAILURES + 1))
                 RUNNING=$((RUNNING - 1))
             fi
-        fi
-    fi
-done
+        done
 
-# Wait for remaining background jobs
-while [ "$RUNNING" -gt 0 ]; do
-    wait -n || FAILURES=$((FAILURES + 1))
-    RUNNING=$((RUNNING - 1))
+        # Wait for all chunks of this seed to finish before next seed
+        while [ "$RUNNING" -gt 0 ]; do
+            wait -n || FAILURES=$((FAILURES + 1))
+            RUNNING=$((RUNNING - 1))
+        done
+    fi
+
+    echo "=== Seed ${i}/${N_SEEDS} complete ==="
 done
 
 if [ "$FAILURES" -gt 0 ]; then

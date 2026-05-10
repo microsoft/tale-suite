@@ -197,6 +197,12 @@ class ReasoningAgent(tales.Agent):
             # For these models, we cannot set the seed and max_tokens has a different name.
             llm_kwargs.pop("seed")
 
+        # For open models served via vLLM/SGLang, enable thinking mode explicitly.
+        if self.llm not in OPENAI_MODELS + CLAUDE_MODELS + GEMINI_MODELS:
+            llm_kwargs["extra_body"] = {
+                "chat_template_kwargs": {"enable_thinking": True}
+            }
+
         messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(messages, **llm_kwargs)
         response_text = response.text()
