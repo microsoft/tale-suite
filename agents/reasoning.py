@@ -1,8 +1,10 @@
 import argparse
+import os
 import re
 
 import llm
 import numpy as np
+from openai import OpenAI
 from tenacity import (
     retry,
     retry_if_exception,
@@ -57,6 +59,7 @@ CLAUDE_MODELS = [
 # pass that stops at the first ``</think>`` would leak the second block
 # into the action and the game would reject the multi-line input.
 _THINK_RE = re.compile(r"<think>(.*?)</think>", re.DOTALL)
+_GEMMA_CHANNEL_RE = re.compile(r"<\|channel>thought\n(.*?)<channel\|>", re.DOTALL)
 
 OPENAI_MODELS = [
     "o1",
@@ -126,6 +129,22 @@ class ReasoningAgent(tales.Agent):
         self.reasoning_effort = reasoning_effort
         self.conversation = kwargs["conversation"]
 
+        # Detect vLLM-served models and use OpenAI client directly.
+        # The `llm` library doesn't expose message.reasoning_content,
+        # which vLLM populates when --reasoning-parser is configured.
+        server_type = os.environ.get("SERVER_TYPE", "vllm")
+        self.server_url = os.environ.get("SERVER_URL") or os.environ.get("VLLM_URL")
+        self.reasoning_parser = os.environ.get("REASONING_PARSER")
+        self.use_vllm_client = (
+            self.server_url is not None
+            and server_type == "vllm"
+            and self.llm not in OPENAI_MODELS + CLAUDE_MODELS + GEMINI_MODELS
+        )
+        self._is_gptoss = "gpt-oss" in self.llm.lower()
+        if self.use_vllm_client:
+            api_key = os.environ.get("OPENAI_API_KEY", "not-needed")
+            self.client = OpenAI(base_url=self.server_url, api_key=api_key)
+
     @property
     def uid(self):
         return (
@@ -193,7 +212,154 @@ class ReasoningAgent(tales.Agent):
             conversation, prompt=prompt, system=system, *args, **kwargs
         )
 
+    @retry(
+        retry=retry_if_exception(is_recoverable_error),
+        wait=wait_random_exponential(multiplier=1, max=40),
+        stop=stop_after_attempt(100),
+    )
+    def _vllm_call(self, messages, **kwargs):
+        """Call vLLM-served model via OpenAI-compatible client."""
+        for _ in range(10):
+            response = self.client.chat.completions.create(
+                model=self.llm,
+                messages=messages,
+                **kwargs,
+            )
+            content = response.choices[0].message.content or ""
+            if content.strip():
+                return response
+        return response
+
+    def _act_vllm(self, messages):
+        """Act using the vLLM OpenAI-compatible client (accesses reasoning field)."""
+        kwargs = {"temperature": self.cot_temp, "seed": self.seed}
+        extra_body = {}
+
+        if self._is_gptoss:
+            # gpt-oss: template-level reasoning effort control (Harmony channels)
+            extra_body["chat_template_kwargs"] = {"reasoning_effort": "high"}
+        else:
+            is_mistral = any(m in self.llm for m in MISTRAL_NATIVE_MODELS)
+            # Models using prompt-based thinking (no parser) don't need
+            # enable_thinking — it can confuse templates that don't support it.
+            uses_prompt_thinking = "nemotron" in self.llm.lower()
+            if not is_mistral and not uses_prompt_thinking:
+                extra_body.setdefault("chat_template_kwargs", {})[
+                    "enable_thinking"
+                ] = True
+            if isinstance(self.reasoning_effort, int) and self.reasoning_parser:
+                extra_body["thinking_token_budget"] = self.reasoning_effort
+
+        # Gemma4: vLLM parser bug strips channel tokens; request them back
+        is_gemma4 = "gemma-4" in self.llm.lower() or "gemma4" in self.llm.lower()
+        if is_gemma4:
+            extra_body["skip_special_tokens"] = False
+
+        if isinstance(self.reasoning_effort, int):
+            kwargs["max_tokens"] = self.reasoning_effort + 512
+        else:
+            kwargs["max_tokens"] = 2048
+
+        if extra_body:
+            kwargs["extra_body"] = extra_body
+
+        response = self._vllm_call(messages, **kwargs)
+        msg = response.choices[0].message
+
+        # Extract thinking from API reasoning field (populated by --reasoning-parser).
+        # vLLM versions use either "reasoning" or "reasoning_content".
+        thinking = (
+            getattr(msg, "reasoning", None)
+            or getattr(msg, "reasoning_content", None)
+            or None
+        )
+        action = (msg.content or "").strip()
+
+        # Fallback: parse <think> tags if no reasoning from API
+        if thinking is None and ("<think>" in action or "</think>" in action):
+            closed_blocks = _THINK_RE.findall(action)
+            if closed_blocks:
+                non_empty = [b.strip() for b in closed_blocks if b.strip()]
+                thinking = "\n\n".join(non_empty) if non_empty else ""
+                action = _THINK_RE.sub("", action).strip()
+            elif "</think>" in action:
+                # Template-injected <think>: only </think> in output
+                parts = action.split("</think>", 1)
+                thinking = parts[0].strip()
+                action = parts[1].strip() if len(parts) > 1 else ""
+
+        # Fallback: gemma4 channel tokens (vLLM parser bug in v0.20.0)
+        if thinking is None and "<|channel>" in action:
+            m = _GEMMA_CHANNEL_RE.search(action)
+            if m:
+                thinking = m.group(1).strip()
+                action = _GEMMA_CHANNEL_RE.sub("", action).strip()
+                # Clean remaining special tokens from action
+                for tag in ("<|channel>", "<channel|>", "<|turn>", "<turn|>"):
+                    action = action.replace(tag, "")
+                action = action.strip()
+
+        # Recovery: if token budget exhausted with no action, follow-up call
+        if not action and response.choices[0].finish_reason == "length":
+            follow_up = messages.copy()
+            if thinking:
+                follow_up.append(
+                    {"role": "assistant", "content": f"<think>\n{thinking}\n</think>"}
+                )
+            follow_up.append({"role": "user", "content": "> "})
+            recovery_kwargs = {
+                "temperature": self.act_temp,
+                "seed": self.seed,
+                "max_tokens": 100,
+            }
+            is_mistral = any(m in self.llm for m in MISTRAL_NATIVE_MODELS)
+            if not is_mistral and not self._is_gptoss:
+                recovery_kwargs["extra_body"] = {
+                    "chat_template_kwargs": {"enable_thinking": False}
+                }
+            recovery = self._vllm_call(follow_up, **recovery_kwargs)
+            action = (recovery.choices[0].message.content or "").strip()
+            action = _THINK_RE.sub("", action).strip()
+
+        if not action:
+            action = "(empty)"
+
+        # Compute usage statistics
+        usage = response.usage
+        response_text = msg.content or ""
+        stats = {
+            "prompt": format_messages_to_markdown(messages),
+            "thinking": thinking,
+            "response": response_text,
+            "nb_tokens_prompt": usage.prompt_tokens if usage else 0,
+            "nb_tokens_thinking": self.token_counter(text=thinking) if thinking else 0,
+            "nb_tokens_response": usage.completion_tokens if usage else 0,
+        }
+        stats["nb_tokens"] = (
+            stats["nb_tokens_prompt"]
+            + stats["nb_tokens_response"]
+            + stats["nb_tokens_thinking"]
+        )
+
+        return action, thinking, stats
+
     def act(self, obs, reward, done, infos):
+        # --- vLLM path: use OpenAI client to access reasoning field ---
+        if self.use_vllm_client:
+            messages = self.build_messages(f"{obs}\n> ")
+            action, thinking, stats = self._act_vllm(messages)
+
+            # History management
+            if any(m in self.llm for m in MISTRAL_NATIVE_MODELS) and thinking:
+                stub = thinking[:120].rsplit(" ", 1)[0] + "..."
+                history_action = f"<think>\n{stub}\n</think>\n{action}\n"
+            else:
+                history_action = f"{action}\n"
+            self.history.append((f"{obs}\n> ", history_action))
+
+            return action, stats
+
+        # --- Existing llm library path (API models: OpenAI, Claude, Gemini) ---
         llm_kwargs = {
             "temperature": self.cot_temp,
             "seed": self.seed,
@@ -255,6 +421,11 @@ class ReasoningAgent(tales.Agent):
                 non_empty = [b.strip() for b in closed_blocks if b.strip()]
                 thinking = "\n\n".join(non_empty) if non_empty else ""
                 action = _THINK_RE.sub("", action).strip()
+            elif "</think>" in action:
+                # Template-injected <think>: only </think> in output
+                parts = action.split("</think>", 1)
+                thinking = parts[0].strip()
+                action = parts[1].strip() if len(parts) > 1 else ""
             # If after stripping there's still an unclosed <think> tag
             # (token budget exhausted mid-thought), fall through to the
             # follow-up call below.
@@ -397,9 +568,13 @@ class ReasoningAgent(tales.Agent):
 
     def build_messages(self, observation):
         system_prompt = SYSTEM_PROMPT
-        # Magistral/Mistral-native models need explicit thinking instructions
-        # since their tokenizer doesn't inject them via chat template.
-        if any(m in self.llm for m in MISTRAL_NATIVE_MODELS):
+        # Models that need explicit thinking instructions in the prompt
+        # because their tokenizer/template doesn't inject them automatically.
+        needs_think_instruction = (
+            any(m in self.llm for m in MISTRAL_NATIVE_MODELS)
+            or "nemotron" in self.llm.lower()
+        )
+        if needs_think_instruction:
             system_prompt += THINKING_INSTRUCTION
 
         messages = [{"role": "system", "content": system_prompt}]

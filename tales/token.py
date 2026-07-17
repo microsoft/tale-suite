@@ -13,6 +13,10 @@ def get_token_counter(model: Optional[Model] = None):
     if model is None or model.model_id == "gpt-4o":
         return OpenAITokenCounter("gpt-4o")
 
+    # When serving locally via vLLM, skip API-based counters and use HF tokenizer
+    if os.environ.get("SERVER_TYPE") == "vllm":
+        return HuggingFaceTokenCounter(model.model_id)
+
     if "claude-" in model.model_id:
         return ClaudeTokenCounter(model)
 

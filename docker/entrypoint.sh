@@ -86,6 +86,24 @@ if [ -n "$MODEL_NAME" ] && [ -z "$SERVER_URL" ]; then
         # ===================== vLLM (default) =====================
         echo "Starting vLLM server for ${MODEL_NAME} on port ${SERVER_PORT}..."
         VLLM_EXTRA_ARGS="${VLLM_EXTRA_ARGS:---trust-remote-code}"
+        # --- Auto-detect reasoning parser for known model families ---
+        if [ -z "$REASONING_PARSER" ] && [ "$AGENT_TYPE" = "reasoning" ]; then
+            case "$MODEL_NAME" in
+                *DeepSeek-R1*|*deepseek-r1*) REASONING_PARSER="deepseek_r1" ;;
+                *DeepSeek-V3*|*DeepSeek-V4*|*deepseek-v3*|*deepseek-v4*) REASONING_PARSER="deepseek_v3" ;;
+                *Qwen3*|*qwen3*) REASONING_PARSER="qwen3" ;;
+                *gpt-oss*) REASONING_PARSER="openai_gptoss" ;;
+                *Magistral*|*Mistral-Small*|*Mistral-Large*) REASONING_PARSER="mistral" ;;
+                *MiniMax-M2*|*minimax-m2*) REASONING_PARSER="minimax_m2_append_think" ;;
+                *gemma-4*|*gemma4*) REASONING_PARSER="gemma4" ;;
+                # Nemotron: uses <think> text tags but Llama-3.3 tokenizer lacks
+                # special <think>/<think> token IDs — no vLLM parser works.
+                # Thinking is triggered via THINKING_INSTRUCTION in the prompt.
+            esac
+            if [ -n "$REASONING_PARSER" ]; then
+                echo "Auto-detected reasoning parser: ${REASONING_PARSER}"
+            fi
+        fi
         if [ -n "$REASONING_PARSER" ]; then
             # Enable vLLM's reasoning parser to separate thinking from content.
             # Always add it (even for reasoning agent) — Mistral-native models
@@ -139,6 +157,9 @@ if [ -n "$MODEL_NAME" ] && [ -z "$SERVER_URL" ]; then
     SERVER_PID=$!
     SERVER_URL="http://localhost:${SERVER_PORT}/v1"
 fi
+
+# Export vars so the Python benchmark process can detect vLLM mode
+export SERVER_URL SERVER_TYPE REASONING_PARSER
 
 # --- Configure LLM model endpoint ---
 if [ -n "$SERVER_URL" ] && [ -n "$MODEL_NAME" ]; then
@@ -194,6 +215,19 @@ if [ -n "$SERVER_URL" ]; then
     echo "${SERVER_TYPE} server is ready (took ${elapsed}s)."
 fi
 
+# --- Sanity check: verify thinking traces before full benchmark ---
+if [ -n "$SERVER_URL" ] && [ "$AGENT_TYPE" = "reasoning" ] && [ "${SKIP_SANITY_CHECK}" != "true" ]; then
+    echo ""
+    echo "Running thinking trace sanity check..."
+    if python scripts/sanity_check.py --model "${MODEL_NAME}" --server-url "${SERVER_URL}" --reasoning-parser "${REASONING_PARSER:-}"; then
+        echo "Sanity check passed, proceeding with benchmark."
+    else
+        echo "WARNING: Sanity check FAILED — model may not produce thinking traces."
+        echo "Set SKIP_SANITY_CHECK=true to bypass. Continuing anyway..."
+    fi
+    echo ""
+fi
+
 # --- Run benchmark ---
 # If args are passed directly, use them; otherwise build from env vars.
 if [ $# -gt 0 ]; then
@@ -202,7 +236,12 @@ if [ $# -gt 0 ]; then
 fi
 
 # Build command from env vars
+# Build command from env vars
 AGENT_TYPE="${AGENT_TYPE:-zero-shot}"
+# Auto-switch to reasoning agent when REASONING_EFFORT is set
+if [ -n "$REASONING_EFFORT" ] && [ "$AGENT_TYPE" = "zero-shot" ]; then
+    AGENT_TYPE="reasoning"
+fi
 # Auto-detect agent file from type if not explicitly set
 if [ -z "$AGENT_FILE" ]; then
     case "$AGENT_TYPE" in
@@ -250,6 +289,9 @@ fi
 
 if [ -n "$REASONING_EFFORT" ]; then
     BASE_CMD="${BASE_CMD} --reasoning-effort ${REASONING_EFFORT}"
+elif [ "$AGENT_TYPE" = "reasoning" ]; then
+    # Default thinking budget for reasoning agent when not explicitly set
+    BASE_CMD="${BASE_CMD} --cot-max-tokens 1024"
 fi
 
 if [ -n "$EXTRA_ARGS" ]; then

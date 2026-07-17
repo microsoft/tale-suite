@@ -9,6 +9,7 @@
 !print_results.py
 !tales/
 !agents/
+!scripts/
 !docker/entrypoint.sh
 !docker/templates/
 !docker/templates/**
