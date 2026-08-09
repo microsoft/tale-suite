@@ -293,3 +293,9 @@
     20, 2029, 0, -1, 0, 1, 29, "you",
     29, "Room #-3001", 0
   },
+  {
+    "C67524E24D735B7E85AEB2B3DDA37747",
+    "*** You have avoided something irrevocable ***", "*** You have died ***",
+    41, 5389, 0, -1, 0, 1, 53, "you",
+    42, "Hallway", 0
+  },

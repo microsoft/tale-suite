@@ -84,4 +84,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `69105keys` | `69105Keys.z5` | `504a55860aa9268250c48a7f190e0207` | authored `100/100` | no authored loss | 45 | native + TALE | per-game checkpoint |
 | `stormy` | `stormy.z5` | `68c90d8e14ac80e896abd2ddd9a39d80` | synthetic `1/1` | no authored loss | 189 | native + TALE | per-game checkpoint |
 | `appall` | `appall.z5` | `4cce9402aeed36b5e612ca7ac1410502` | synthetic `1/1` | no authored loss | 29 | native + TALE | per-game checkpoint |
+| `primer` | `Primer.z5` | `c67524e24d735b7e85aeb2b3dda37747` | synthetic `1/1` | no authored loss | 53 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
