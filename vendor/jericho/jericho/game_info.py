@@ -529,6 +529,15 @@ ludite = {
     "max_word_length": 9
 }
 
+minimalist = {
+    "name": "minimalist",
+    "rom": "The_Minimalist_Game.z5",
+    "seed": 1,
+    "walkthrough": "/yes",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",
