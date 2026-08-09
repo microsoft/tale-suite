@@ -78,7 +78,7 @@ def convert(profile):
             "inventory_objects": None,
             "named_objects": named_objects,
             "state_change_command": None,
-            "victory_text": profile["terminal_prose_substring"],
+            "victory_text": profile["victory_substring"],
             "loss_commands": None,
         },
         "caveats": profile.get("caveats", ""),
