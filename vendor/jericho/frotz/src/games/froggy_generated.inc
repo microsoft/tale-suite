@@ -257,3 +257,9 @@
     20, 2449, 0, -1, 0, 1, 39, "you",
     39, "Alley behind Casino", 0
   },
+  {
+    "B6F5E6EE3E14C5313C8B98C052C64BDD",
+    "*** You have won ***", "*** You have died ***",
+    20, 2494, 0, -1, 0, 1, 40, "you",
+    25, "South Location", 0
+  },
