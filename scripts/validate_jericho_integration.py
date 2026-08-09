@@ -170,6 +170,19 @@ EXPECTED = {
         "victory_text": "You have won",
         "loss_commands": None,
     },
+    "ludite": {
+        "commands": 2,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 20,
+        "world_objects": 31,
+        "inventory_objects": None,
+        "named_objects": {20: "you", 25: "The Oven"},
+        "state_change_command": None,
+        "victory_text": "You have won",
+        "loss_commands": None,
+    },
 }
 
 

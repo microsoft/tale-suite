@@ -520,6 +520,15 @@ paranoia = {
     "max_word_length": 9
 }
 
+ludite = {
+    "name": "ludite",
+    "rom": "ludite.z5",
+    "seed": 1,
+    "walkthrough": "/pray",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",
