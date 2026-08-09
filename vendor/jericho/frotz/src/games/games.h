@@ -487,6 +487,21 @@ int   kiiwi_ignore_attr_diff            (zword obj_num, zword attr_idx);
 int   kiiwi_ignore_attr_clr             (zword obj_num, zword attr_idx);
 void  kiiwi_clean_world_objs            (zobject* objs);
 
+zword* stars_ram_addrs                  (int*);
+char** stars_intro_actions              (int*);
+int   stars_victory                     (void);
+char* stars_clean_observation           (char*);
+int   stars_game_over                   (void);
+int   stars_get_num_world_objs          (void);
+int   stars_get_self_object_num         (void);
+int   stars_get_moves                   (void);
+short stars_get_score                   (void);
+int   stars_max_score                   (void);
+int   stars_ignore_moved_obj            (zword obj_num, zword dest_num);
+int   stars_ignore_attr_diff            (zword obj_num, zword attr_idx);
+int   stars_ignore_attr_clr             (zword obj_num, zword attr_idx);
+void  stars_clean_world_objs            (zobject* objs);
+
 zword* night_ram_addrs                  (int*);
 char** night_intro_actions              (int*);
 int   night_victory                     (void);

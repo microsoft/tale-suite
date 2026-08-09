@@ -33,7 +33,12 @@ def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD, games=None):
             continue
 
         link = game_info.get("download_url", f"{GAMES_URLS}/{filename}")
-        download(link, dst=TALES_CACHE_JERICHO, force=force)
+        download(
+            link,
+            dst=TALES_CACHE_JERICHO,
+            force=force,
+            filename=filename,
+        )
 
 
 def get_game(game):

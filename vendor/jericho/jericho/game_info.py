@@ -421,6 +421,15 @@ kiiwii = {
     "max_word_length": 9
 }
 
+stars = {
+    "name": "stars",
+    "rom": "stars.z5",
+    "seed": 1,
+    "walkthrough": "sleep",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

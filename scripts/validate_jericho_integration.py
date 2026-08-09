@@ -19,8 +19,27 @@ EXPECTED = {
         "max_score": 1,
         "player_object": 42,
         "world_objects": 45,
-        "inventory_object": 45,
-    }
+        "inventory_objects": [45],
+        "named_objects": {45: "bird"},
+        "state_change_command": "take bird",
+        "victory_text": "You have made a friend for life.",
+        "loss_commands": None,
+    },
+    "stars": {
+        "commands": 1,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 20,
+        "world_objects": 38,
+        "inventory_objects": [],
+        "named_objects": {20: "(self object)", 29: "Bedroom"},
+        "state_change_command": None,
+        "victory_text": "Christmas has won",
+        "loss_commands": ["down", "out", "attack zrblm"],
+        "loss_moves": 3,
+        "loss_text": "You have died",
+    },
 }
 
 
@@ -51,12 +70,12 @@ def validate(game: str) -> None:
         for replay in range(2):
             env.reset()
             initial_hash = env.get_world_state_hash()
-            bird_hash = None
+            changed_hash = None
             final_observation = ""
             for command in commands:
                 final_observation, _, _, _ = env.step(command)
-                if command == "take bird":
-                    bird_hash = env.get_world_state_hash()
+                if command == expected["state_change_command"]:
+                    changed_hash = env.get_world_state_hash()
 
             if not env.victory() or env.game_over():
                 raise AssertionError(
@@ -77,19 +96,42 @@ def validate(game: str) -> None:
 
             world = env.get_world_objects(clean=True)
             inventory_objects = [obj.num for obj in env.get_inventory()]
-            if inventory_objects != [expected["inventory_object"]]:
+            if inventory_objects != expected["inventory_objects"]:
                 raise AssertionError(
-                    f"{game}: expected inventory object "
-                    f"{expected['inventory_object']}, got {inventory_objects}"
+                    f"{game}: expected inventory objects "
+                    f"{expected['inventory_objects']}, got {inventory_objects}"
                 )
-            if world[expected["inventory_object"]].name != "bird":
-                raise AssertionError(f"{game}: cleaned bird object name is missing")
-            if bird_hash is None or bird_hash == initial_hash:
+            for obj_num, name in expected["named_objects"].items():
+                if world[obj_num].name != name:
+                    raise AssertionError(
+                        f"{game}: object {obj_num} should be named {name!r}"
+                    )
+            if (
+                expected["state_change_command"] is not None
+                and (changed_hash is None or changed_hash == initial_hash)
+            ):
                 raise AssertionError(
-                    f"{game}: taking the bird did not change world state"
+                    f"{game}: {expected['state_change_command']!r} did not "
+                    "change world state"
                 )
-            if "You have made a friend for life." not in final_observation:
+            if expected["victory_text"] not in final_observation:
                 raise AssertionError(f"{game}: expected victory text is missing")
+
+        if expected["loss_commands"] is not None:
+            env.reset()
+            initial_hash = env.get_world_state_hash()
+            for command in expected["loss_commands"]:
+                loss_observation, _, _, _ = env.step(command)
+            if env.victory() or not env.game_over():
+                raise AssertionError(f"{game}: authored loss was not detected")
+            if env.get_score() != 0:
+                raise AssertionError(f"{game}: loss should not award score")
+            if env.get_moves() != expected["loss_moves"]:
+                raise AssertionError(f"{game}: incorrect move count after loss")
+            if env.get_world_state_hash() == initial_hash:
+                raise AssertionError(f"{game}: loss path did not change world state")
+            if expected["loss_text"] not in loss_observation:
+                raise AssertionError(f"{game}: expected loss text is missing")
     finally:
         env.close()
 

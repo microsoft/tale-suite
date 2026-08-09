@@ -150,6 +150,13 @@
     "download_url": "https://ifarchive.org/if-archive/games/zcode/kiiwii.z5",
     "md5": "6c8a04ec6adff4a4cab98e89d87a19d8"
   },
+  "stars": {
+    "filename": "stars.z5",
+    "info": "https://ifdb.org/viewgame?id=dqklf0b4j4m05960",
+    "link": "https://ifarchive.org/if-archive/games/mini-comps/speedif/SpeedIF_Scenario1.zip",
+    "download_url": "https://unbox.ifarchive.org/?url=https%3A%2F%2Fifarchive.org%2Fif-archive%2Fgames%2Fmini-comps%2Fspeedif%2FSpeedIF_Scenario1.zip&open=stars.z5",
+    "md5": "def7d72aa9085cff8988aacaa84613eb"
+  },
   "library": {
     "filename": "library.z5",
     "info": "http://ifdb.tads.org/viewgame?id=400zakqderzjnu1i",

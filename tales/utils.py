@@ -33,12 +33,13 @@ def mkdirs(dirpath: str) -> str:
     return dirpath
 
 
-def download(url, dst, desc=None, force=False):
+def download(url, dst, desc=None, force=False, filename=None):
     """Download a remote file using HTTP get request.
 
     Args:
         url (str): URL where to get the file.
         dst (str): Destination folder where to save the file.
+        filename (str, optional): Override the filename derived from the URL.
         force (bool, optional):
             Download again if it exists]. Defaults to False.
 
@@ -49,7 +50,7 @@ def download(url, dst, desc=None, force=False):
         This code is inspired by
         https://github.com/huggingface/transformers/blob/v4.0.0/src/transformers/file_utils.py#L1069
     """
-    filename = url.split("/")[-1]
+    filename = filename or url.split("/")[-1]
     path = pjoin(mkdirs(dst), filename)
 
     if os.path.isfile(path) and not force:

@@ -195,6 +195,7 @@ INTERFACE_OBJECT =  $(INTERFACE_DIR)/frotz_interface.o \
 		$(GAMES_DIR)/jewel.o \
 		$(GAMES_DIR)/karn.o \
 		$(GAMES_DIR)/kiiwii.o \
+		$(GAMES_DIR)/stars.o \
 		$(GAMES_DIR)/library.o \
 		$(GAMES_DIR)/loose.o \
 		$(GAMES_DIR)/lostpig.o \
