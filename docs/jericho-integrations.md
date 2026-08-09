@@ -57,4 +57,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `harmonic` | `harmonic.z8` | `6dddb6f8f6d717c5114f3e65a1483069` | authored `0/999` | no authored loss | 210 | native + TALE | per-game checkpoint |
 | `janitor` | `janitor.z5` | `7d92e79827879833c29893f7763ac8c5` | authored `100/100` | no authored loss | 249 | native + TALE | per-game checkpoint |
 | `sgate` | `sgate.z5` | `0f4aa6883492af34a2bdccc559e732fd` | synthetic `1/1` | no authored loss | 452 | native + TALE | per-game checkpoint |
+| `suvehnux` | `suvehnux.z5` | `360022f8b0cdcc6a1fbcbbfd8f06e995` | synthetic `1/1` | no authored loss | 93 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->

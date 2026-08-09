@@ -131,3 +131,9 @@
     20, 22139, 0, -1, 0, 1, 452, "you",
     99, "Entrance"
   },
+  {
+    "360022F8B0CDCC6A1FBCBBFD8F06E995",
+    "*** You have in some indefinable way won the game ***", "*** You have died ***",
+    20, 7813, 0, -1, 0, 1, 93, "you",
+    25, "Vault"
+  },
