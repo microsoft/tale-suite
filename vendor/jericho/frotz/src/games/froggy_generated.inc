@@ -107,3 +107,9 @@
     10, 21357, 0, -1, 0, 1, 394, "you",
     93, "Orchestra Pit,in Midair"
   },
+  {
+    "03EA48558BA26CCB6B7BFD510F92E57D",
+    "*** You have won ***", "*** You have died ***",
+    20, 1966, 0, -1, 0, 1, 27, "you",
+    24, "Hallway"
+  },

@@ -53,4 +53,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `tpold` | `tpold.z5` | `4183f42c01c073e7801f75f96ef658ba` | synthetic `1/1` | no authored loss | 26 | native + TALE | per-game checkpoint |
 | `gourmetgaffe` | `GourmetGaffe.z5` | `e4e84994605cc55839d6d07bcc9de8fd` | authored `3/3` | no authored loss | 65 | native + TALE | per-game checkpoint |
 | `aug4` | `Aug4.z8` | `157890dd6b3137864563eca7b535b5bc` | synthetic `1/1` | no authored loss | 394 | native + TALE | per-game checkpoint |
+| `camping` | `camping.z5` | `03ea48558ba26ccb6b7bfd510f92e57d` | synthetic `1/1` | no authored loss | 27 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
