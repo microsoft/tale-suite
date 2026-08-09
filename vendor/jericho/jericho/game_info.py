@@ -565,6 +565,15 @@ i0 = {
     "max_word_length": 9
 }
 
+peacock = {
+    "name": "peacock",
+    "rom": "Peacock.z5",
+    "seed": 1,
+    "walkthrough": "enter opening",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

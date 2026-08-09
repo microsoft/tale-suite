@@ -118,6 +118,7 @@ BINDINGS_DICT = {
     '8c1d5939360084cb1ddb6a413fa5f7fe' : passthemilk,
     'b4852ac4c00e4ce2d74efd35cae6b753' : forms,
     'ded233e32455e9e40022c128916b45ad' : i0,
+    '38eb6eae52d22a20ca89a27cd88ab9b0' : peacock,
     'daf57133d346442b983bd333fb586cc4' : library,
     '31a0c1e360dce94aa5bece5240691d17' : loose,
     'aaf0b90fbb31717481c02832bf412070' : lostpig,
