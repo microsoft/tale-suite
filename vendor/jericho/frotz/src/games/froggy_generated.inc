@@ -113,3 +113,9 @@
     20, 1966, 0, -1, 0, 1, 27, "you",
     24, "Hallway"
   },
+  {
+    "6DDDB6F8F6D717C5114F3E65A1483069",
+    "*** You have won ***", "*** You have died ***",
+    20, 15300, 0, 15298, 0, 999, 210, "you",
+    31, "Inside your house"
+  },
