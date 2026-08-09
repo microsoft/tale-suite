@@ -203,3 +203,9 @@
     19, 2090, 0, 2088, 0, 3, 29, "yourself",
     27, "The Bar"
   },
+  {
+    "60C60992CFF6852DEB371042F375AA28",
+    "It's a life, at least.", "*** You have died ***",
+    20, 9390, 0, -1, 0, 1, 155, "you",
+    155, "Outside the Theatre"
+  },

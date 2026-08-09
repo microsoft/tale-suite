@@ -69,4 +69,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `visitor` | `visitor.z5` | `8a188d7bd06ffe890f536781f3f347bb` | synthetic `1/1` | no authored loss | 36 | native + TALE | per-game checkpoint |
 | `swanglass` | `swanglass.z5` | `1a56dddbe247503a0140699c16842226` | synthetic `1/1` | no authored loss | 51 | native + TALE | per-game checkpoint |
 | `paparazzi` | `Paparazzi.z5` | `5b9b200067df09b09a5746a3b56704cb` | authored `1/3` | no authored loss | 29 | native + TALE | per-game checkpoint |
+| `misdirection` | `Misdirection.z5` | `60c60992cff6852deb371042f375aa28` | synthetic `1/1` | no authored loss | 155 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->

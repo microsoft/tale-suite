@@ -1776,5 +1776,55 @@
       "loss_commands": null
     },
     "caveats": "None."
+  },
+  "misdirection": {
+    "key": "misdirection",
+    "title": "Misdirection",
+    "rom": "Misdirection.z5",
+    "md5": "60c60992cff6852deb371042f375aa28",
+    "seed": 1,
+    "walkthrough": [
+      "l",
+      "drop cake. put hat on rat. attack hat. take hat. open jar. put rat in jar. up. out"
+    ],
+    "native": {
+      "victory_text": "It's a life, at least.",
+      "loss_text": "*** You have died ***",
+      "player_object": 20,
+      "moves_address": 9390,
+      "moves_base": 0,
+      "score_address": -1,
+      "score_base": 0,
+      "max_score": 1,
+      "world_objects": 155,
+      "player_name": "you",
+      "location_object": 155,
+      "location_name": "Outside the Theatre"
+    },
+    "tale": {
+      "filename": "Misdirection.z5",
+      "info": "Misdirection",
+      "md5": "60c60992cff6852deb371042f375aa28",
+      "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+      "archive_filename": "the-large-game-collection.zip",
+      "archive_member": "the-large-game-collection/Misdirection.z5"
+    },
+    "validation": {
+      "commands": 2,
+      "moves": 2,
+      "score": 1,
+      "max_score": 1,
+      "player_object": 20,
+      "world_objects": 155,
+      "inventory_objects": null,
+      "named_objects": {
+        "20": "you",
+        "155": "Outside the Theatre"
+      },
+      "state_change_command": null,
+      "victory_text": "It's a life, at least.",
+      "loss_commands": null
+    },
+    "caveats": "No authored score; use synthetic completion score 1/1. Canonical input intentionally packs multiple period-separated parser actions."
   }
 }
