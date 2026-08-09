@@ -239,3 +239,9 @@
     20, 2195, 0, -1, 0, 1, 32, "you",
     30, "Above the cones", 0
   },
+  {
+    "661C4A19F6C49F0274CCF2C1C9F73C53",
+    "The bills tumble in the dark and on the dirt", "*** You have died ***",
+    60, 7924, 0, -1, 0, 1, 60, "you",
+    58, "Air Conditioner Outlook", 0
+  },

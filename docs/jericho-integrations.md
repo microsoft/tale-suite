@@ -75,4 +75,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `coloromc` | `coloromc.z5` | `eabcf705d9125ad9c9c0e08e9ab53e7a` | synthetic `1/1` | no authored loss | 44 | native + TALE | per-game checkpoint |
 | `thegreat` | `thegreat.z5` | `2b9dca9e2db6ef689551a5852519547d` | synthetic `1/1` | no authored loss | 35 | native + TALE | per-game checkpoint |
 | `chkn_oo` | `chkn-oo.z5` | `53c4694d1da1140b600e2fe9a30be4b5` | synthetic `1/1` | no authored loss | 32 | native + TALE | per-game checkpoint |
+| `more` | `More.z8` | `661c4a19f6c49f0274ccf2c1c9f73c53` | synthetic `1/1` | no authored loss | 60 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
