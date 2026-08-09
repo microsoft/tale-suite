@@ -175,6 +175,15 @@
     "archive_member": "the-large-game-collection/internal.z5",
     "md5": "72381aa65f38812ab02a9d1cb4a8cc54"
   },
+  "noroom": {
+    "filename": "noroom.z5",
+    "info": "https://ifdb.org/search?searchfor=noroom",
+    "link": "https://github.com/BYU-PCCL/z-machine-games/blob/master/the-large-game-collection.zip",
+    "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+    "archive_filename": "the-large-game-collection.zip",
+    "archive_member": "the-large-game-collection/noroom.z5",
+    "md5": "315505ce659aaa5217e4c9f22e390d88"
+  },
   "library": {
     "filename": "library.z5",
     "info": "http://ifdb.tads.org/viewgame?id=400zakqderzjnu1i",

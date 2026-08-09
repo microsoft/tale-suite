@@ -519,6 +519,7 @@ void  lily_clean_world_objs             (zobject* objs);
 
 enum FROGGY_GAME {
   FROGGY_INTERNAL,
+  FROGGY_NOROOM,
   FROGGY_GAME_COUNT
 };
 

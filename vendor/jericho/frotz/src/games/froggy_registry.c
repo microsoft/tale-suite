@@ -33,6 +33,11 @@ static const froggy_game froggy_games[FROGGY_GAME_COUNT] = {
     20, 19772, 0, -1, 0, 1, 333, "you",
     53, "Township of Sebastian"
   },
+  [FROGGY_NOROOM] = {
+    "*** You have won ***", "*** You have died ***",
+    20, 2557, 0, 2555, 0, 1, 37, "you",
+    22, "Darkness"
+  },
 };
 
 static int current_froggy_game = FROGGY_INTERNAL;
