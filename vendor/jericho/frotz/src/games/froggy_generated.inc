@@ -143,3 +143,9 @@
     15, 1055, 0, 1053, 0, 100, 17, "yourself",
     16, "The Town Square"
   },
+  {
+    "C1FDE20E5AB5D607FB1003F5ECF1C590",
+    "THE END! ***", "*** You have died ***",
+    50, 6777, 0, -1, 0, 1, 50, "you",
+    49, "staircase"
+  },

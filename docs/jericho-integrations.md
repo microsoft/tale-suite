@@ -59,4 +59,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `sgate` | `sgate.z5` | `0f4aa6883492af34a2bdccc559e732fd` | synthetic `1/1` | no authored loss | 452 | native + TALE | per-game checkpoint |
 | `suvehnux` | `suvehnux.z5` | `360022f8b0cdcc6a1fbcbbfd8f06e995` | synthetic `1/1` | no authored loss | 93 | native + TALE | per-game checkpoint |
 | `booth` | `booth.z5` | `fb9ade0ec1d0d9171ef70d57d052bc8c` | authored `100/100` | no authored loss | 17 | native + TALE | per-game checkpoint |
+| `that_damn_elevator` | `That_Damn_Elevator.z5` | `c1fde20e5ab5d607fb1003f5ecf1c590` | synthetic `1/1` | no authored loss | 50 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
