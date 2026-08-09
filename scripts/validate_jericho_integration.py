@@ -144,6 +144,19 @@ EXPECTED = {
         "victory_text": "You have won",
         "loss_commands": None,
     },
+    "theemptyroom": {
+        "commands": 2,
+        "moves": 2,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 41,
+        "world_objects": 85,
+        "inventory_objects": None,
+        "named_objects": {41: "you", 44: "White Room"},
+        "state_change_command": None,
+        "victory_text": "You win",
+        "loss_commands": None,
+    },
 }
 
 
