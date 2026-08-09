@@ -281,3 +281,9 @@
     20, 3347, 0, 3345, 0, 100, 45, "you",
     27, "Vault Antechamber", 0
   },
+  {
+    "68C90D8E14AC80E896ABD2DDD9A39D80",
+    "*** The novel will write itself at this rate. ***", "*** You have died ***",
+    20, 9781, 0, -1, 0, 1, 189, "you",
+    78, "cyberpunk", 0
+  },
