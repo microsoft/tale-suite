@@ -21,6 +21,10 @@ import subprocess
 
 BASEPATH = os.path.dirname(os.path.abspath(__file__))
 FROTZPATH = os.path.join(BASEPATH, 'frotz')
+subprocess.check_call([
+    sys.executable,
+    os.path.join(BASEPATH, 'scripts', 'generate_froggy_registry.py'),
+])
 subprocess.check_call(['make', 'clean'], cwd=FROTZPATH)
 subprocess.check_call(['make', 'library', '-j', '4'], cwd=FROTZPATH)
 
@@ -43,7 +47,11 @@ setup(name='jericho',
         'pytest',
     ],
     package_dir={'jericho': 'jericho'},
-    package_data={'jericho': ['libfrotz.so', 'clubfloyd_verb_counts.json']},
+    package_data={'jericho': [
+        'libfrotz.so',
+        'clubfloyd_verb_counts.json',
+        'froggy_bindings.json',
+    ]},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",

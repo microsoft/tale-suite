@@ -541,6 +541,7 @@ enum FROGGY_GAME {
 };
 
 void  froggy_set_game                   (int game);
+int   froggy_select_game                (const char* md5_hash);
 zword* froggy_ram_addrs                 (int*);
 char** froggy_intro_actions             (int*);
 int   froggy_victory                    (void);

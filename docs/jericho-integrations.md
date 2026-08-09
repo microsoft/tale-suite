@@ -31,3 +31,7 @@ detection, score/move reporting, player metadata, and world-object extraction.
 
 The archive-backed entries use the pinned BYU-PCCL large-game collection at
 commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
+
+<!-- generated batch start -->
+| Game key | ROM | MD5 | Score model | Loss | World objects | Validation | Commit |
+| --- | --- | --- | --- | --- | ---: | --- | --- |<!-- generated batch end -->

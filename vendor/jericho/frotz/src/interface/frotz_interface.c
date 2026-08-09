@@ -245,62 +245,7 @@ void load_rom_bindings(char *story_file) {
     ROM_IDX = STARS_;
   } else if (strcmp(md5_hash, "1EA30C4F5F20BC00DDBE8EDDB93ACC03") == 0) {
     ROM_IDX = LILY_;
-  } else if (strcmp(md5_hash, "72381AA65F38812AB02A9D1CB4A8CC54") == 0) {
-    froggy_set_game(FROGGY_INTERNAL);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "315505CE659AAA5217E4C9F22E390D88") == 0) {
-    froggy_set_game(FROGGY_NOROOM);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "24B9DB33BA5F6B7EC7C822F192AE96AA") == 0) {
-    froggy_set_game(FROGGY_PANCAKE_DETECTIVES);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "8415999D3C9F7FF50A0A1339283F3B5D") == 0) {
-    froggy_set_game(FROGGY_BANANA);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "4780282041BF6C1F5952A5771B432E43") == 0) {
-    froggy_set_game(FROGGY_MRP);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "5F45F6F8625F7B6304FD56CB3A88F77D") == 0) {
-    froggy_set_game(FROGGY_PUTPBAA);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "C9AA2222B3FCB8F32F4587BC8C20E98C") == 0) {
-    froggy_set_game(FROGGY_ANNOY);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "BEA8643693FC28497BD6AD3D8206E9FA") == 0) {
-    froggy_set_game(FROGGY_EMPTY_ROOM);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "BAE9BA79E584CCD0673E8EE850562035") == 0) {
-    froggy_set_game(FROGGY_PARANOIA);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "5C00C9753A69F0F200A026212A6D1C2E") == 0) {
-    froggy_set_game(FROGGY_LUDITE);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "3B19CA2D5B211F75F88A14C7DBDD2006") == 0) {
-    froggy_set_game(FROGGY_MINIMALIST);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "8C1D5939360084CB1DDB6A413FA5F7FE") == 0) {
-    froggy_set_game(FROGGY_PASS_THE_MILK);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "B4852AC4C00E4CE2D74EFD35CAE6B753") == 0) {
-    froggy_set_game(FROGGY_FORMS);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "DED233E32455E9E40022C128916B45AD") == 0) {
-    froggy_set_game(FROGGY_I0);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "38EB6EAE52D22A20CA89A27CD88AB9B0") == 0) {
-    froggy_set_game(FROGGY_PEACOCK);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "BEE55B4BDD4096119CC56DD68F13EB8F") == 0) {
-    froggy_set_game(FROGGY_PUTPBAD);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "BC49BFDE10DF06D574CEF218A158CE02") == 0) {
-    froggy_set_game(FROGGY_SERVICE);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "BD6D1300D20E710A600EEDF60604D7A9") == 0) {
-    froggy_set_game(FROGGY_SPOT);
-    ROM_IDX = FROGGY_;
-  } else if (strcmp(md5_hash, "081D4490251AC92B3FAB67546A755DCE") == 0) {
-    froggy_set_game(FROGGY_DAY_IN_LIFE);
+  } else if (froggy_select_game(md5_hash)) {
     ROM_IDX = FROGGY_;
   } else if (strcmp(md5_hash, "DAF57133D346442B983BD333FB586CC4") == 0) {
     ROM_IDX = LIBRARY_;

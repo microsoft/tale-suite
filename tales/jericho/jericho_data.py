@@ -15,6 +15,11 @@ TALES_CACHE_JERICHO = pjoin(TALES_CACHE_HOME, "jericho")
 with open(importlib_files("tales") / "jericho" / "games.json") as f:
     GAMES_INFOS = json.load(f)
 
+with (importlib_files("jericho") / "froggy_bindings.json").open() as f:
+    GAMES_INFOS.update(
+        {key: game["tale"] for key, game in json.load(f).items()}
+    )
+
 # Remove known games that are not working.
 GAMES_INFOS.pop("hollywood", None)
 GAMES_INFOS.pop("theatre", None)

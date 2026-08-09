@@ -15,7 +15,9 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import collections
+import json
 import re
+from importlib.resources import files as importlib_files
 from .game_info import *
 
 #: List of illegal actions that manipulate game state.
@@ -157,6 +159,17 @@ BINDINGS_DICT = {
     'ffda9ee2d428fa2fa8e75a1914ff6959' : zork3,
     'd8e1578470cbc676e013e03d72c93141' : ztuu
 }
+
+with (importlib_files("jericho") / "froggy_bindings.json").open() as manifest_file:
+    for game in json.load(manifest_file).values():
+        BINDINGS_DICT[game["md5"]] = {
+            "name": game["key"],
+            "rom": game["rom"],
+            "seed": game.get("seed", 1),
+            "walkthrough": "/".join(game["walkthrough"]),
+            "grammar": snacktime["grammar"],
+            "max_word_length": game.get("max_word_length", 9),
+        }
 
 
 TemplateAction = collections.namedtuple('TemplateAction', 'action, template_id, obj_ids')

@@ -306,6 +306,15 @@ EXPECTED = {
     },
 }
 
+with (importlib_files("jericho") / "froggy_bindings.json").open() as manifest_file:
+    for key, game in json.load(manifest_file).items():
+        expected = game["validation"]
+        expected["named_objects"] = {
+            int(obj_num): name
+            for obj_num, name in expected["named_objects"].items()
+        }
+        EXPECTED[key] = expected
+
 
 def validate(game: str) -> None:
     games_path = importlib_files("tales") / "jericho" / "games.json"
