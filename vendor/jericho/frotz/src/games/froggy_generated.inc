@@ -245,3 +245,9 @@
     60, 7924, 0, -1, 0, 1, 60, "you",
     58, "Air Conditioner Outlook", 0
   },
+  {
+    "B1EA2E641A5A4B69CA288F6533216CB3",
+    "*** You have won ***", "*** You have died ***",
+    20, 3199, 0, -1, 0, 1, 60, "you",
+    52, "Foyer", 0
+  },
