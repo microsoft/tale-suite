@@ -167,3 +167,9 @@
     20, 2089, 0, -1, 0, 1, 28, "you",
     24, "The Land of No TOAST"
   },
+  {
+    "5CFE7F24C029D0C2A5F8F718727494E0",
+    "*** You are off to go slay the Hydra ***", "*** You have died ***",
+    20, 2821, 0, -1, 0, 1, 43, "you",
+    36, "In Eurystheus's throne room"
+  },

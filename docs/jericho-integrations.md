@@ -63,4 +63,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `vision` | `vision.z5` | `96fec95dc857390c70270a9ede4ab24e` | synthetic `1/1` | no authored loss | 35 | native + TALE | per-game checkpoint |
 | `exterminate` | `Exterminate.z5` | `c682a544a8d61b889841323c3478954f` | synthetic `1/1` | no authored loss | 29 | native + TALE | per-game checkpoint |
 | `toastless` | `toastless.z5` | `c795d81413f4147516a5c58faa62d5c0` | synthetic `1/1` | no authored loss | 28 | native + TALE | per-game checkpoint |
+| `lion` | `lion.z5` | `5cfe7f24c029d0c2a5f8f718727494e0` | synthetic `1/1` | no authored loss | 43 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
