@@ -233,3 +233,9 @@
     20, 2623, 0, -1, 0, 1, 35, "you",
     29, "Cave Exit", 0
   },
+  {
+    "53C4694D1DA1140B600E2FE9A30BE4B5",
+    "*** You have won ***", "*** You have died ***",
+    20, 2195, 0, -1, 0, 1, 32, "you",
+    30, "Above the cones", 0
+  },
