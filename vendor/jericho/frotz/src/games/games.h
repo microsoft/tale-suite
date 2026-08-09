@@ -517,6 +517,27 @@ int   lily_ignore_attr_diff             (zword obj_num, zword attr_idx);
 int   lily_ignore_attr_clr              (zword obj_num, zword attr_idx);
 void  lily_clean_world_objs             (zobject* objs);
 
+enum FROGGY_GAME {
+  FROGGY_INTERNAL,
+  FROGGY_GAME_COUNT
+};
+
+void  froggy_set_game                   (int game);
+zword* froggy_ram_addrs                 (int*);
+char** froggy_intro_actions             (int*);
+int   froggy_victory                    (void);
+char* froggy_clean_observation          (char*);
+int   froggy_game_over                  (void);
+int   froggy_get_num_world_objs         (void);
+int   froggy_get_self_object_num        (void);
+int   froggy_get_moves                  (void);
+short froggy_get_score                  (void);
+int   froggy_max_score                  (void);
+int   froggy_ignore_moved_obj           (zword obj_num, zword dest_num);
+int   froggy_ignore_attr_diff           (zword obj_num, zword attr_idx);
+int   froggy_ignore_attr_clr            (zword obj_num, zword attr_idx);
+void  froggy_clean_world_objs           (zobject* objs);
+
 zword* night_ram_addrs                  (int*);
 char** night_intro_actions              (int*);
 int   night_victory                     (void);

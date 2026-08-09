@@ -53,6 +53,19 @@ EXPECTED = {
         "victory_text": "I have won",
         "loss_commands": None,
     },
+    "internal": {
+        "commands": 2,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 20,
+        "world_objects": 333,
+        "inventory_objects": None,
+        "named_objects": {20: "you", 53: "Township of Sebastian"},
+        "state_change_command": None,
+        "victory_text": "You have won!",
+        "loss_commands": None,
+    },
 }
 
 

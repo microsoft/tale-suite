@@ -19,7 +19,7 @@ static int froggy_read_word(int address) {
   return (((short) zmp[address]) << 8) | zmp[address + 1];
 }
 
-static char* froggy_clean_observation(char* obs) {
+static char* froggy_macro_clean_observation(char* obs) {
   char* prompt = strrchr(obs, '>');
   if (prompt != NULL && prompt > obs) {
     *(prompt - 1) = '\0';
@@ -42,7 +42,7 @@ static char* froggy_clean_observation(char* obs) {
   }                                                                         \
                                                                             \
   char* prefix##_clean_observation(char* obs) {                             \
-    return froggy_clean_observation(obs);                                   \
+    return froggy_macro_clean_observation(obs);                             \
   }                                                                         \
                                                                             \
   int prefix##_victory() {                                                  \
