@@ -765,5 +765,56 @@
       "loss_commands": null
     },
     "caveats": "No authored score; use synthetic completion score 1/1. Canonical input intentionally packs multiple period-separated parser actions."
+  },
+  "vgame": {
+    "key": "vgame",
+    "title": "V-GAME",
+    "rom": "vgame.z8",
+    "md5": "e6ca7605efc9299c14c7b38f1b4a2e7f",
+    "seed": 1,
+    "walkthrough": [
+      "3",
+      "",
+      "awake"
+    ],
+    "native": {
+      "victory_text": "*** You have finished studying for your history test ***",
+      "loss_text": "*** You have died ***",
+      "player_object": 20,
+      "moves_address": 29636,
+      "moves_base": 0,
+      "score_address": -1,
+      "score_base": 0,
+      "max_score": 1,
+      "world_objects": 500,
+      "player_name": "you",
+      "location_object": 88,
+      "location_name": "Salon"
+    },
+    "tale": {
+      "filename": "vgame.z8",
+      "info": "V-GAME",
+      "md5": "e6ca7605efc9299c14c7b38f1b4a2e7f",
+      "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+      "archive_filename": "the-large-game-collection.zip",
+      "archive_member": "the-large-game-collection/vgame.z8"
+    },
+    "validation": {
+      "commands": 3,
+      "moves": 2,
+      "score": 1,
+      "max_score": 1,
+      "player_object": 20,
+      "world_objects": 500,
+      "inventory_objects": null,
+      "named_objects": {
+        "20": "you",
+        "88": "Salon"
+      },
+      "state_change_command": null,
+      "victory_text": "the page, then another, and then another, until at long last you see the words you've been waiting for: CHAPTER 13. The midterm only covers the first twelve chapters! You're done! *** You have finished studying for your history test ***",
+      "loss_commands": null
+    },
+    "caveats": "No authored score; use synthetic completion score 1/1."
   }
 }

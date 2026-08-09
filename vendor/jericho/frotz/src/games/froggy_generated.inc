@@ -83,3 +83,9 @@
     20, 2658, 0, -1, 0, 1, 42, "you",
     37, "Under King Charles' Bed"
   },
+  {
+    "E6CA7605EFC9299C14C7B38F1B4A2E7F",
+    "*** You have finished studying for your history test ***", "*** You have died ***",
+    20, 29636, 0, -1, 0, 1, 500, "you",
+    88, "Salon"
+  },

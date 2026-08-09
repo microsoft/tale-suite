@@ -49,4 +49,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `pants` | `pants.z5` | `4135145cac4aa4febde213fa1260387a` | synthetic `1/1` | no authored loss | 28 | native + TALE | per-game checkpoint |
 | `ptap` | `ptap.z5` | `8a139ddc62255699fac257b2f005ee7a` | synthetic `1/1` | no authored loss | 29 | native + TALE | per-game checkpoint |
 | `brat` | `brat.z5` | `06e1a2bf8355b095dd6fb288a42761c0` | synthetic `1/1` | no authored loss | 42 | native + TALE | per-game checkpoint |
+| `vgame` | `vgame.z8` | `e6ca7605efc9299c14c7b38f1b4a2e7f` | synthetic `1/1` | no authored loss | 500 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
