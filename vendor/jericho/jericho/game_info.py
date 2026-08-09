@@ -601,6 +601,15 @@ spot = {
     "max_word_length": 9
 }
 
+dayinlife = {
+    "name": "dayinlife",
+    "rom": "DayInLife.z5",
+    "seed": 1,
+    "walkthrough": "insert wrapper into trash can",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

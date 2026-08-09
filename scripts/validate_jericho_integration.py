@@ -291,6 +291,19 @@ EXPECTED = {
         "victory_text": "You have won",
         "loss_commands": None,
     },
+    "dayinlife": {
+        "commands": 1,
+        "moves": 1,
+        "score": 0,
+        "max_score": 57,
+        "player_object": 45,
+        "world_objects": 70,
+        "inventory_objects": None,
+        "named_objects": {45: "you", 46: "Parking lot"},
+        "state_change_command": None,
+        "victory_text": "YOU WON! Way to clean up. Victory is yours!",
+        "loss_commands": None,
+    },
 }
 
 
