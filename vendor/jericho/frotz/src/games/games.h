@@ -502,6 +502,21 @@ int   stars_ignore_attr_diff            (zword obj_num, zword attr_idx);
 int   stars_ignore_attr_clr             (zword obj_num, zword attr_idx);
 void  stars_clean_world_objs            (zobject* objs);
 
+zword* lily_ram_addrs                   (int*);
+char** lily_intro_actions               (int*);
+int   lily_victory                      (void);
+char* lily_clean_observation            (char*);
+int   lily_game_over                    (void);
+int   lily_get_num_world_objs           (void);
+int   lily_get_self_object_num          (void);
+int   lily_get_moves                    (void);
+short lily_get_score                    (void);
+int   lily_max_score                    (void);
+int   lily_ignore_moved_obj             (zword obj_num, zword dest_num);
+int   lily_ignore_attr_diff             (zword obj_num, zword attr_idx);
+int   lily_ignore_attr_clr              (zword obj_num, zword attr_idx);
+void  lily_clean_world_objs             (zobject* objs);
+
 zword* night_ram_addrs                  (int*);
 char** night_intro_actions              (int*);
 int   night_victory                     (void);

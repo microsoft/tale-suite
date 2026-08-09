@@ -1,5 +1,7 @@
 import json
 import os
+import shutil
+import zipfile
 from importlib.resources import files as importlib_files
 from os.path import join as pjoin
 
@@ -30,6 +32,24 @@ def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD, games=None):
 
         game_file = pjoin(TALES_CACHE_JERICHO, filename)
         if os.path.isfile(game_file) and not force:
+            continue
+
+        archive_url = game_info.get("archive_url")
+        if archive_url is not None:
+            archive_filename = game_info["archive_filename"]
+            archive_file = download(
+                archive_url,
+                dst=TALES_CACHE_JERICHO,
+                force=force,
+                filename=archive_filename,
+            )
+            archive_member = game_info.get("archive_member", filename)
+            temp_game_file = f"{game_file}.tmp"
+            with zipfile.ZipFile(archive_file) as archive:
+                with archive.open(archive_member) as src:
+                    with open(temp_game_file, "wb") as dst:
+                        shutil.copyfileobj(src, dst)
+            os.replace(temp_game_file, game_file)
             continue
 
         link = game_info.get("download_url", f"{GAMES_URLS}/{filename}")

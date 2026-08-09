@@ -157,6 +157,15 @@
     "download_url": "https://unbox.ifarchive.org/?url=https%3A%2F%2Fifarchive.org%2Fif-archive%2Fgames%2Fmini-comps%2Fspeedif%2FSpeedIF_Scenario1.zip&open=stars.z5",
     "md5": "def7d72aa9085cff8988aacaa84613eb"
   },
+  "lily": {
+    "filename": "lily.z5",
+    "info": "https://ifdb.org/viewgame?id=14bs7ru8t0r4d60j",
+    "link": "https://github.com/BYU-PCCL/z-machine-games/blob/master/the-large-game-collection.zip",
+    "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+    "archive_filename": "the-large-game-collection.zip",
+    "archive_member": "the-large-game-collection/lily.z5",
+    "md5": "1ea30c4f5f20bc00ddbe8eddb93acc03"
+  },
   "library": {
     "filename": "library.z5",
     "info": "http://ifdb.tads.org/viewgame?id=400zakqderzjnu1i",

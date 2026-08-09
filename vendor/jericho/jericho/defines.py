@@ -103,6 +103,7 @@ BINDINGS_DICT = {
     'ec55791be814db3663ad1aec0d6b7690' : karn,
     '6c8a04ec6adff4a4cab98e89d87a19d8' : kiiwii,
     'def7d72aa9085cff8988aacaa84613eb' : stars,
+    '1ea30c4f5f20bc00ddbe8eddb93acc03' : lily,
     'daf57133d346442b983bd333fb586cc4' : library,
     '31a0c1e360dce94aa5bece5240691d17' : loose,
     'aaf0b90fbb31717481c02832bf412070' : lostpig,

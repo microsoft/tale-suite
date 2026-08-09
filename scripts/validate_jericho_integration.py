@@ -40,6 +40,19 @@ EXPECTED = {
         "loss_moves": 3,
         "loss_text": "You have died",
     },
+    "lily": {
+        "commands": 2,
+        "moves": 1,
+        "score": 0,
+        "max_score": 10,
+        "player_object": 31,
+        "world_objects": 244,
+        "inventory_objects": None,
+        "named_objects": {30: "Bathroom", 31: "you"},
+        "state_change_command": None,
+        "victory_text": "I have won",
+        "loss_commands": None,
+    },
 }
 
 
@@ -96,7 +109,10 @@ def validate(game: str) -> None:
 
             world = env.get_world_objects(clean=True)
             inventory_objects = [obj.num for obj in env.get_inventory()]
-            if inventory_objects != expected["inventory_objects"]:
+            if (
+                expected["inventory_objects"] is not None
+                and inventory_objects != expected["inventory_objects"]
+            ):
                 raise AssertionError(
                     f"{game}: expected inventory objects "
                     f"{expected['inventory_objects']}, got {inventory_objects}"

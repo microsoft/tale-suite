@@ -430,6 +430,15 @@ stars = {
     "max_word_length": 9
 }
 
+lily = {
+    "name": "lily",
+    "rom": "lily.z5",
+    "seed": 1,
+    "walkthrough": "/win",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",
