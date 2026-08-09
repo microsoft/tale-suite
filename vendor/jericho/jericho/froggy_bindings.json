@@ -1424,5 +1424,56 @@
       "loss_commands": null
     },
     "caveats": "No authored score; use synthetic completion score 1/1."
+  },
+  "toastless": {
+    "key": "toastless",
+    "title": "The Epitome of Toastlessness",
+    "rom": "toastless.z5",
+    "md5": "c795d81413f4147516a5c58faa62d5c0",
+    "seed": 1,
+    "walkthrough": [
+      "",
+      "drop no toast",
+      "eat toast"
+    ],
+    "native": {
+      "victory_text": "*** You have won ***",
+      "loss_text": "*** You have died ***",
+      "player_object": 20,
+      "moves_address": 2089,
+      "moves_base": 0,
+      "score_address": -1,
+      "score_base": 0,
+      "max_score": 1,
+      "world_objects": 28,
+      "player_name": "you",
+      "location_object": 24,
+      "location_name": "The Land of No TOAST"
+    },
+    "tale": {
+      "filename": "toastless.z5",
+      "info": "The Epitome of Toastlessness",
+      "md5": "c795d81413f4147516a5c58faa62d5c0",
+      "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+      "archive_filename": "the-large-game-collection.zip",
+      "archive_member": "the-large-game-collection/toastless.z5"
+    },
+    "validation": {
+      "commands": 3,
+      "moves": 2,
+      "score": 1,
+      "max_score": 1,
+      "player_object": 20,
+      "world_objects": 28,
+      "inventory_objects": null,
+      "named_objects": {
+        "20": "you",
+        "24": "The Land of No TOAST"
+      },
+      "state_change_command": null,
+      "victory_text": "*** You have won ***",
+      "loss_commands": null
+    },
+    "caveats": "No authored score; use synthetic completion score 1/1."
   }
 }

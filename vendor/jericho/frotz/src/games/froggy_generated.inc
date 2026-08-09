@@ -161,3 +161,9 @@
     20, 2324, 0, -1, 0, 1, 29, "you",
     26, "Bedroom"
   },
+  {
+    "C795D81413F4147516A5C58FAA62D5C0",
+    "*** You have won ***", "*** You have died ***",
+    20, 2089, 0, -1, 0, 1, 28, "you",
+    24, "The Land of No TOAST"
+  },

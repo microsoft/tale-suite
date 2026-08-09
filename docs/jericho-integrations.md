@@ -62,4 +62,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `that_damn_elevator` | `That_Damn_Elevator.z5` | `c1fde20e5ab5d607fb1003f5ecf1c590` | synthetic `1/1` | no authored loss | 50 | native + TALE | per-game checkpoint |
 | `vision` | `vision.z5` | `96fec95dc857390c70270a9ede4ab24e` | synthetic `1/1` | no authored loss | 35 | native + TALE | per-game checkpoint |
 | `exterminate` | `Exterminate.z5` | `c682a544a8d61b889841323c3478954f` | synthetic `1/1` | no authored loss | 29 | native + TALE | per-game checkpoint |
+| `toastless` | `toastless.z5` | `c795d81413f4147516a5c58faa62d5c0` | synthetic `1/1` | no authored loss | 28 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
