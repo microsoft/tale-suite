@@ -37,4 +37,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `beingsteve` | `BeingSteve.z5` | `b78d869c43db2c02298aa9f06f7201ca` | synthetic `1/1` | no authored loss | 44 | native + TALE | per-game checkpoint |
 | `ill` | `ill.z5` | `4fd66f9b00bda0373e06e40208a278bc` | synthetic `1/1` | no authored loss | 36 | native + TALE | per-game checkpoint |
+| `donkeykong` | `donkeykong.z5` | `408d2f0574042fc3ec9cd463ce225893` | synthetic `1/1` | no authored loss | 28 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->

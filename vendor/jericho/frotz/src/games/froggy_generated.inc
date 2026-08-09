@@ -11,3 +11,9 @@
     20, 2266, 0, -1, 0, 1, 36, "you",
     26, "Monotrain station"
   },
+  {
+    "408D2F0574042FC3EC9CD463CE225893",
+    "And for a few moments, you are lord of the air.", "*** You have died ***",
+    20, 2015, 0, -1, 0, 1, 28, "you",
+    24, "The Roof of the World"
+  },
