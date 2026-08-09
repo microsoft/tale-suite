@@ -35,3 +35,9 @@
     20, 2042, 0, -1, 0, 1, 27, "you",
     24, "In a bunker"
   },
+  {
+    "59B2636AE2978C318B59DDA478CB40C9",
+    "The world is done with it.", "*** You have died ***",
+    41, 8386, 0, 8436, 0, 666, 76, "you",
+    47, "Onstage at the Cherrywood Lounge"
+  },
