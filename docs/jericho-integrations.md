@@ -67,4 +67,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `youhavetoputthebabynewye` | `YouHaveToPutTheBabyNewYe.z5` | `4ee7231cd383003428d1885e32da17da` | synthetic `1/1` | no authored loss | 45 | native + TALE | per-game checkpoint |
 | `lms_tvg` | `LMS_TVG.z5` | `3fa37496d707d0e3fde1b552e9481b8c` | authored `0/1620` | no authored loss | 129 | native + TALE | per-game checkpoint |
 | `visitor` | `visitor.z5` | `8a188d7bd06ffe890f536781f3f347bb` | synthetic `1/1` | no authored loss | 36 | native + TALE | per-game checkpoint |
+| `swanglass` | `swanglass.z5` | `1a56dddbe247503a0140699c16842226` | synthetic `1/1` | no authored loss | 51 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->

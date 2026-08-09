@@ -191,3 +191,9 @@
     20, 2415, 0, -1, 0, 1, 36, "you",
     24, "Gladys's Room"
   },
+  {
+    "1A56DDDBE247503A0140699C16842226",
+    "*** You have won ***", "*** You have died ***",
+    20, 3310, 0, -1, 0, 1, 51, "you",
+    37, "Away from the Lake"
+  },
