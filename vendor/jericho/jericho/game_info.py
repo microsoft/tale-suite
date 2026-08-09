@@ -592,6 +592,15 @@ service = {
     "max_word_length": 9
 }
 
+spot = {
+    "name": "spot",
+    "rom": "spot.z5",
+    "seed": 1,
+    "walkthrough": "/jump on spot",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

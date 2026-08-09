@@ -278,6 +278,19 @@ EXPECTED = {
         "victory_text": "You have won",
         "loss_commands": None,
     },
+    "spot": {
+        "commands": 2,
+        "moves": 1,
+        "score": 1000,
+        "max_score": 1000,
+        "player_object": 20,
+        "world_objects": 25,
+        "inventory_objects": None,
+        "named_objects": {20: "you", 24: "In a room with the spot"},
+        "state_change_command": None,
+        "victory_text": "You have won",
+        "loss_commands": None,
+    },
 }
 
 

@@ -121,6 +121,7 @@ BINDINGS_DICT = {
     '38eb6eae52d22a20ca89a27cd88ab9b0' : peacock,
     'bee55b4bdd4096119cc56dd68f13eb8f' : putpbad,
     'bc49bfde10df06d574cef218a158ce02' : service,
+    'bd6d1300d20e710a600eedf60604d7a9' : spot,
     'daf57133d346442b983bd333fb586cc4' : library,
     '31a0c1e360dce94aa5bece5240691d17' : loose,
     'aaf0b90fbb31717481c02832bf412070' : lostpig,

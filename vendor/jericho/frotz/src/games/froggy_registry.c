@@ -114,6 +114,11 @@ static const froggy_game froggy_games[FROGGY_GAME_COUNT] = {
     20, 2011, 0, 2009, 0, 42, 28, "you",
     26, "Chinese Restaurant"
   },
+  [FROGGY_SPOT] = {
+    "*** You have won ***", "*** You have died ***",
+    20, 1897, 0, 1895, 0, 1000, 25, "you",
+    24, "In a room with the spot"
+  },
 };
 
 static int current_froggy_game = FROGGY_INTERNAL;
