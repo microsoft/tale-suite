@@ -46,4 +46,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `taxes` | `taxes.z5` | `f1601f01196fe64bf764ff1fca5caac6` | authored `99/99` | no authored loss | 27 | native + TALE | per-game checkpoint |
 | `sdoor` | `sdoor.z5` | `ec5c74f4027ee8ae87ca9afa8d78c874` | synthetic `1/1` | no authored loss | 139 | native + TALE | per-game checkpoint |
 | `aisle` | `Aisle.z5` | `e3dfab39accfabcd26f1e90afdd39529` | synthetic `1/1` | no authored loss | 65 | native + TALE | per-game checkpoint |
+| `pants` | `pants.z5` | `4135145cac4aa4febde213fa1260387a` | synthetic `1/1` | no authored loss | 28 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->

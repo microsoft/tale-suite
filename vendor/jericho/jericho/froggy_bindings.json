@@ -618,5 +618,54 @@
       "loss_commands": null
     },
     "caveats": "No authored score; use synthetic completion score 1/1. Blank/menu actions are required and preserved verbatim."
+  },
+  "pants": {
+    "key": "pants",
+    "title": "HAPPY BIRTHDAY DYLAN",
+    "rom": "pants.z5",
+    "md5": "4135145cac4aa4febde213fa1260387a",
+    "seed": 1,
+    "walkthrough": [
+      "happy birthday dylan"
+    ],
+    "native": {
+      "victory_text": "HAPPY 60TH B-DAY, BOBBY BOY!",
+      "loss_text": "*** Froggy authored loss ***",
+      "player_object": 20,
+      "moves_address": 2094,
+      "moves_base": 0,
+      "score_address": -1,
+      "score_base": 0,
+      "max_score": 1,
+      "world_objects": 28,
+      "player_name": "you",
+      "location_object": 24,
+      "location_name": "Rockets, Sprockets and Pants: The Office"
+    },
+    "tale": {
+      "filename": "pants.z5",
+      "info": "HAPPY BIRTHDAY DYLAN",
+      "md5": "4135145cac4aa4febde213fa1260387a",
+      "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+      "archive_filename": "the-large-game-collection.zip",
+      "archive_member": "the-large-game-collection/pants.z5"
+    },
+    "validation": {
+      "commands": 1,
+      "moves": 1,
+      "score": 1,
+      "max_score": 1,
+      "player_object": 20,
+      "world_objects": 28,
+      "inventory_objects": null,
+      "named_objects": {
+        "20": "you",
+        "24": "Rockets, Sprockets and Pants: The Office"
+      },
+      "state_change_command": null,
+      "victory_text": "HAPPY 60TH B-DAY, BOBBY BOY! *** You have died ***",
+      "loss_commands": null
+    },
+    "caveats": "No authored score; use synthetic completion score 1/1."
   }
 }

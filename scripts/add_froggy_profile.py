@@ -30,6 +30,11 @@ def convert(profile):
     location_name = profile["location_name"]
     if not location_name or len(location_name) >= 64:
         location_name = profile["title"]
+    loss_text = profile["loss_substring"]
+    if " ".join(loss_text.split()) in " ".join(
+        profile["terminal_prose_substring"].split()
+    ):
+        loss_text = "*** Froggy authored loss ***"
     named_objects = {str(player_object): profile["player_display_name"]}
     if location_object and location_object != player_object:
         named_objects[str(location_object)] = location_name
@@ -43,7 +48,7 @@ def convert(profile):
         "walkthrough": profile["walkthrough"],
         "native": {
             "victory_text": profile["victory_substring"],
-            "loss_text": profile["loss_substring"],
+            "loss_text": loss_text,
             "player_object": player_object,
             "moves_address": profile["moves_ram_address"],
             "moves_base": profile["moves_base"],

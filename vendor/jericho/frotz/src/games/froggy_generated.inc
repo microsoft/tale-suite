@@ -65,3 +65,9 @@
     20, 3320, 0, -1, 0, 1, 65, "you",
     26, "Aisle"
   },
+  {
+    "4135145CAC4AA4FEBDE213FA1260387A",
+    "HAPPY 60TH B-DAY, BOBBY BOY!", "*** Froggy authored loss ***",
+    20, 2094, 0, -1, 0, 1, 28, "you",
+    24, "Rockets, Sprockets and Pants: The Office"
+  },
