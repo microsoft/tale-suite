@@ -17,3 +17,9 @@
     20, 2015, 0, -1, 0, 1, 28, "you",
     24, "The Roof of the World"
   },
+  {
+    "02F6683A7DCF18BD76191F7DB4BD8458",
+    "*** Bear Grylls then takes you back to society! ***", "*** You have died ***",
+    41, 5738, 0, -1, 0, 1, 58, "you",
+    44, "Desert 10"
+  },
