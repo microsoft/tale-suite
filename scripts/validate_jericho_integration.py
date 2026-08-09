@@ -426,7 +426,7 @@ def validate(game: str) -> None:
             admissible_commands=False,
         )
         try:
-            tale_env.reset(seed=1)
+            tale_env.reset(seed=expected.get("seed", 1))
             final_observation = ""
             final_info = {}
             for command in commands:

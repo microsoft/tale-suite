@@ -44,7 +44,7 @@ def convert(profile):
         "title": profile["title"],
         "rom": profile["rom_filename"],
         "md5": profile["md5"],
-        "seed": 1,
+        "seed": profile.get("seed", 1),
         "walkthrough": profile["walkthrough"],
         "native": {
             "victory_text": profile["victory_substring"],
@@ -70,6 +70,7 @@ def convert(profile):
         },
         "validation": {
             "commands": len(profile["walkthrough"]),
+            "seed": profile.get("seed", 1),
             "moves": profile["final_moves"],
             "score": profile["final_score"],
             "max_score": profile["max_score"],

@@ -275,3 +275,9 @@
     20, 2338, 0, -1, 0, 1, 35, "you",
     24, "Convention Floor", 0
   },
+  {
+    "504A55860AA9268250C48A7F190E0207",
+    "*** You have won ***", "*** You have died ***",
+    20, 3347, 0, 3345, 0, 100, 45, "you",
+    27, "Vault Antechamber", 0
+  },
