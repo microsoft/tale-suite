@@ -173,3 +173,9 @@
     20, 2821, 0, -1, 0, 1, 43, "you",
     36, "In Eurystheus's throne room"
   },
+  {
+    "4EE7231CD383003428D1885E32DA17DA",
+    "*** Happy New Year! ***", "*** You have died ***",
+    41, 4524, 0, -1, 0, 1, 45, "you",
+    42, "unknown"
+  },
