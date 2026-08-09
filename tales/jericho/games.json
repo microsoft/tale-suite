@@ -265,6 +265,15 @@
     "archive_member": "the-large-game-collection/The_Minimalist_Game.z5",
     "md5": "3b19ca2d5b211f75f88a14c7dbdd2006"
   },
+  "passthemilk": {
+    "filename": "Fingertips-PleasePasstheMilkPlease.z8",
+    "info": "https://ifdb.org/search?searchfor=Please+Pass+the+Milk+Please",
+    "link": "https://github.com/BYU-PCCL/z-machine-games/blob/master/the-large-game-collection.zip",
+    "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+    "archive_filename": "the-large-game-collection.zip",
+    "archive_member": "the-large-game-collection/Fingertips-PleasePasstheMilkPlease.z8",
+    "md5": "8c1d5939360084cb1ddb6a413fa5f7fe"
+  },
   "library": {
     "filename": "library.z5",
     "info": "http://ifdb.tads.org/viewgame?id=400zakqderzjnu1i",

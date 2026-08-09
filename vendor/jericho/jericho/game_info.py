@@ -538,6 +538,15 @@ minimalist = {
     "max_word_length": 9
 }
 
+passthemilk = {
+    "name": "passthemilk",
+    "rom": "Fingertips-PleasePasstheMilkPlease.z8",
+    "seed": 1,
+    "walkthrough": "pass milk to sam",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

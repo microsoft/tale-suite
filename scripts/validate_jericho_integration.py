@@ -196,6 +196,19 @@ EXPECTED = {
         "victory_text": "You have won",
         "loss_commands": None,
     },
+    "passthemilk": {
+        "commands": 1,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 46,
+        "world_objects": 59,
+        "inventory_objects": None,
+        "named_objects": {45: "chair", 46: "you"},
+        "state_change_command": None,
+        "victory_text": "You passed the milk.",
+        "loss_commands": None,
+    },
 }
 
 
