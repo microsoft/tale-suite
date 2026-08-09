@@ -1223,5 +1223,55 @@
       "loss_commands": null
     },
     "caveats": "No authored score; use synthetic completion score 1/1."
+  },
+  "booth": {
+    "key": "booth",
+    "title": "Pick Up the Phone Booth and Die",
+    "rom": "booth.z5",
+    "md5": "fb9ade0ec1d0d9171ef70d57d052bc8c",
+    "seed": 1,
+    "walkthrough": [
+      "push booth",
+      "look"
+    ],
+    "native": {
+      "victory_text": "*** You have won ***",
+      "loss_text": "*** You have died ***",
+      "player_object": 15,
+      "moves_address": 1055,
+      "moves_base": 0,
+      "score_address": 1053,
+      "score_base": 0,
+      "max_score": 100,
+      "world_objects": 17,
+      "player_name": "yourself",
+      "location_object": 16,
+      "location_name": "The Town Square"
+    },
+    "tale": {
+      "filename": "booth.z5",
+      "info": "Pick Up the Phone Booth and Die",
+      "md5": "fb9ade0ec1d0d9171ef70d57d052bc8c",
+      "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+      "archive_filename": "the-large-game-collection.zip",
+      "archive_member": "the-large-game-collection/booth.z5"
+    },
+    "validation": {
+      "commands": 2,
+      "moves": 3,
+      "score": 100,
+      "max_score": 100,
+      "player_object": 15,
+      "world_objects": 17,
+      "inventory_objects": null,
+      "named_objects": {
+        "15": "yourself",
+        "16": "The Town Square"
+      },
+      "state_change_command": null,
+      "victory_text": "*** You have won ***",
+      "loss_commands": null
+    },
+    "caveats": "None."
   }
 }

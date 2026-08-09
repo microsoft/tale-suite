@@ -137,3 +137,9 @@
     20, 7813, 0, -1, 0, 1, 93, "you",
     25, "Vault"
   },
+  {
+    "FB9ADE0EC1D0D9171EF70D57D052BC8C",
+    "*** You have won ***", "*** You have died ***",
+    15, 1055, 0, 1053, 0, 100, 17, "yourself",
+    16, "The Town Square"
+  },
