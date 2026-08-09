@@ -149,3 +149,9 @@
     50, 6777, 0, -1, 0, 1, 50, "you",
     49, "staircase"
   },
+  {
+    "96FEC95DC857390C70270A9EDE4AB24E",
+    "*** Enslave Tibet ***", "*** You have died ***",
+    20, 2393, 0, -1, 0, 1, 35, "you",
+    24, "Your Bedroom...maybe..."
+  },
