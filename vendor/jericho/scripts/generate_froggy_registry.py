@@ -33,7 +33,8 @@ def generate_native(games):
                 f"{native.get('score_base', 0)}, {native['max_score']}, "
                 f"{native['world_objects']}, {c_string(native['player_name'])},",
                 f"    {native.get('location_object', 0)}, "
-                f"{c_string(native.get('location_name', ''))}",
+                f"{c_string(native.get('location_name', ''))}, "
+                f"{native.get('victory_moves', 0)}",
                 "  },",
             ]
         )

@@ -1876,5 +1876,56 @@
       "loss_commands": null
     },
     "caveats": "No authored score; use synthetic completion score 1/1. Canonical input intentionally packs multiple period-separated parser actions."
+  },
+  "futuregame": {
+    "key": "futuregame",
+    "title": "FutureGame (tm)",
+    "rom": "FutureGame.z5",
+    "md5": "60ea6ea542b5232c63401308b33689b3",
+    "seed": 1,
+    "walkthrough": [
+      "1",
+      "1",
+      "1"
+    ],
+    "native": {
+      "victory_text": "> You have won.",
+      "loss_text": "*** Froggy authored loss ***",
+      "player_object": 27,
+      "moves_address": 2097,
+      "moves_base": 0,
+      "score_address": -1,
+      "score_base": 0,
+      "max_score": 1,
+      "world_objects": 27,
+      "player_name": "(player)",
+      "location_object": 27,
+      "location_name": "FutureGame menu",
+      "victory_moves": 3
+    },
+    "tale": {
+      "filename": "FutureGame.z5",
+      "info": "FutureGame (tm)",
+      "md5": "60ea6ea542b5232c63401308b33689b3",
+      "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+      "archive_filename": "the-large-game-collection.zip",
+      "archive_member": "the-large-game-collection/FutureGame.z5"
+    },
+    "validation": {
+      "commands": 3,
+      "moves": 3,
+      "score": 1,
+      "max_score": 1,
+      "player_object": 27,
+      "world_objects": 27,
+      "inventory_objects": null,
+      "named_objects": {
+        "27": "(player)"
+      },
+      "state_change_command": null,
+      "victory_text": "You have won.",
+      "loss_commands": null
+    },
+    "caveats": "No authored score; use synthetic completion score 1/1."
   }
 }

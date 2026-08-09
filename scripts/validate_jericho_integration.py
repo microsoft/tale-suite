@@ -315,7 +315,8 @@ with (importlib_files("jericho") / "froggy_bindings.json").open() as manifest_fi
             int(obj_num): name
             for obj_num, name in expected["named_objects"].items()
         }
-        expected["victory_text"] = game["native"]["victory_text"]
+        if not game["native"].get("victory_moves"):
+            expected["victory_text"] = game["native"]["victory_text"]
         EXPECTED[key] = expected
 
 

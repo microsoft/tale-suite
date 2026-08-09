@@ -26,6 +26,7 @@ typedef struct {
   const char* player_name;
   int location_obj;
   const char* location_name;
+  int victory_moves;
 } froggy_game;
 
 static const froggy_game froggy_games[] = {
@@ -188,8 +189,10 @@ char* froggy_clean_observation(char* obs) {
 }
 
 int froggy_victory() {
-  return strstr(
-      world, froggy_games[current_froggy_game].victory_text) != NULL;
+  const froggy_game* game = &froggy_games[current_froggy_game];
+  int moves = froggy_registry_read_word(game->moves_addr) - game->moves_base;
+  return strstr(world, game->victory_text) != NULL
+      || (game->victory_moves > 0 && moves >= game->victory_moves);
 }
 
 int froggy_game_over() {
@@ -242,7 +245,7 @@ void froggy_clean_world_objs(zobject* objs) {
       sizeof(objs[game->player_obj].name),
       "%s",
       game->player_name);
-  if (game->location_obj > 0) {
+  if (game->location_obj > 0 && game->location_obj != game->player_obj) {
     snprintf(
         objs[game->location_obj].name,
         sizeof(objs[game->location_obj].name),

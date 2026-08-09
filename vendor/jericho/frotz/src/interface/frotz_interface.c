@@ -1440,7 +1440,8 @@ int get_num_world_objs() {
 }
 
 int game_over() {
-  return emulator_halted > 0 || (*game_over_fns[ROM_IDX])();
+  return (emulator_halted > 0 && !(*victory_fns[ROM_IDX])())
+      || (*game_over_fns[ROM_IDX])();
 }
 
 int victory() {

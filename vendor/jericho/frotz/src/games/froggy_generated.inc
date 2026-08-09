@@ -3,215 +3,221 @@
     "B78D869C43DB2C02298AA9F06F7201CA",
     "You leave your apartment to go teach youngins about compisition.", "*** You have died ***",
     41, 4936, 0, -1, 0, 1, 44, "you",
-    42, "Being Steve"
+    42, "Being Steve", 0
   },
   {
     "4FD66F9B00BDA0373E06E40208A278BC",
     "*** I have won ***", "*** You have died ***",
     20, 2266, 0, -1, 0, 1, 36, "you",
-    26, "Monotrain station"
+    26, "Monotrain station", 0
   },
   {
     "408D2F0574042FC3EC9CD463CE225893",
     "And for a few moments, you are lord of the air.", "*** You have died ***",
     20, 2015, 0, -1, 0, 1, 28, "you",
-    24, "The Roof of the World"
+    24, "The Roof of the World", 0
   },
   {
     "02F6683A7DCF18BD76191F7DB4BD8458",
     "*** Bear Grylls then takes you back to society! ***", "*** You have died ***",
     41, 5738, 0, -1, 0, 1, 58, "you",
-    44, "Desert 10"
+    44, "Desert 10", 0
   },
   {
     "08BEF3EBA638521148007CADE5ABA8F8",
     "*** You are sold to pirates and have a glorious career on the open sea ***", "*** You have died ***",
     43, 8314, 540, -1, 0, 1, 70, "you",
-    59, "Glass"
+    59, "Glass", 0
   },
   {
     "2729183D93E379A608CE1C79F4407497",
     "*** You have won ***", "*** You have died ***",
     20, 2042, 0, -1, 0, 1, 27, "you",
-    24, "In a bunker"
+    24, "In a bunker", 0
   },
   {
     "59B2636AE2978C318B59DDA478CB40C9",
     "The world is done with it.", "*** You have died ***",
     41, 8386, 0, 8436, 0, 666, 76, "you",
-    47, "Onstage at the Cherrywood Lounge"
+    47, "Onstage at the Cherrywood Lounge", 0
   },
   {
     "C0F18C7BFD71AAFC09A70C5FBA084C7D",
     "***You have spared the being***", "*** You have died ***",
     53, 3510, 0, -1, 0, 1, 56, "Motive Nexus",
-    14, "(Map)"
+    14, "(Map)", 0
   },
   {
     "F1601F01196FE64BF764FF1FCA5CAAC6",
     "*** You have won ***", "*** You have died ***",
     20, 1993, 0, 1991, 0, 99, 27, "you",
-    25, "Front Door"
+    25, "Front Door", 0
   },
   {
     "EC5C74F4027EE8AE87CA9AFA8D78C874",
     "*** The Christian Coalition withdraws their sponsorship ***", "*** You have died ***",
     20, 9714, 0, -1, 0, 1, 139, "you",
-    127, "On the set"
+    127, "On the set", 0
   },
   {
     "E3DFAB39ACCFABCD26F1E90AFDD39529",
     "But not the only story...", "*** You have died ***",
     20, 3320, 0, -1, 0, 1, 65, "you",
-    26, "Aisle"
+    26, "Aisle", 0
   },
   {
     "4135145CAC4AA4FEBDE213FA1260387A",
     "HAPPY 60TH B-DAY, BOBBY BOY!", "*** Froggy authored loss ***",
     20, 2094, 0, -1, 0, 1, 28, "you",
-    24, "Rockets, Sprockets and Pants: The Office"
+    24, "Rockets, Sprockets and Pants: The Office", 0
   },
   {
     "8A139DDC62255699FAC257B2F005EE7A",
     "*** You have won ***", "*** You have died ***",
     20, 2062, 0, -1, 0, 1, 29, "you",
-    24, "The Classroom"
+    24, "The Classroom", 0
   },
   {
     "06E1A2BF8355B095DD6FB288A42761C0",
     "*** All's well that ends well ***", "*** You have died ***",
     20, 2658, 0, -1, 0, 1, 42, "you",
-    37, "Under King Charles' Bed"
+    37, "Under King Charles' Bed", 0
   },
   {
     "E6CA7605EFC9299C14C7B38F1B4A2E7F",
     "*** You have finished studying for your history test ***", "*** You have died ***",
     20, 29636, 0, -1, 0, 1, 500, "you",
-    88, "Salon"
+    88, "Salon", 0
   },
   {
     "4183F42C01C073E7801F75F96EF658BA",
     "*** You have seen it all. ***", "*** You have died ***",
     20, 1910, 0, -1, 0, 1, 26, "you",
-    26, "Youth"
+    26, "Youth", 0
   },
   {
     "E4E84994605CC55839D6D07BCC9DE8FD",
     "*** You have won ***", "*** You have died ***",
     42, 6615, 0, 6613, 0, 3, 65, "you",
-    41, "The Queen's Dungeon"
+    41, "The Queen's Dungeon", 0
   },
   {
     "157890DD6B3137864563ECA7B535B5BC",
     "*** You have won ***", "*** You have died ***",
     10, 21357, 0, -1, 0, 1, 394, "you",
-    93, "Orchestra Pit,in Midair"
+    93, "Orchestra Pit,in Midair", 0
   },
   {
     "03EA48558BA26CCB6B7BFD510F92E57D",
     "*** You have won ***", "*** You have died ***",
     20, 1966, 0, -1, 0, 1, 27, "you",
-    24, "Hallway"
+    24, "Hallway", 0
   },
   {
     "6DDDB6F8F6D717C5114F3E65A1483069",
     "*** You have won ***", "*** You have died ***",
     20, 15300, 0, 15298, 0, 999, 210, "you",
-    31, "Inside your house"
+    31, "Inside your house", 0
   },
   {
     "7D92E79827879833C29893F7763AC8C5",
     "*** You have won ***", "*** You have died ***",
     20, 13736, 0, 13734, 0, 100, 249, "you",
-    152, "The Break Room"
+    152, "The Break Room", 0
   },
   {
     "0F4AA6883492AF34A2BDCCC559E732FD",
     "*** You have won ***", "*** You have died ***",
     20, 22139, 0, -1, 0, 1, 452, "you",
-    99, "Entrance"
+    99, "Entrance", 0
   },
   {
     "360022F8B0CDCC6A1FBCBBFD8F06E995",
     "*** You have in some indefinable way won the game ***", "*** You have died ***",
     20, 7813, 0, -1, 0, 1, 93, "you",
-    25, "Vault"
+    25, "Vault", 0
   },
   {
     "FB9ADE0EC1D0D9171EF70D57D052BC8C",
     "*** You have won ***", "*** You have died ***",
     15, 1055, 0, 1053, 0, 100, 17, "yourself",
-    16, "The Town Square"
+    16, "The Town Square", 0
   },
   {
     "C1FDE20E5AB5D607FB1003F5ECF1C590",
     "THE END! ***", "*** You have died ***",
     50, 6777, 0, -1, 0, 1, 50, "you",
-    49, "staircase"
+    49, "staircase", 0
   },
   {
     "96FEC95DC857390C70270A9EDE4AB24E",
     "*** Enslave Tibet ***", "*** You have died ***",
     20, 2393, 0, -1, 0, 1, 35, "you",
-    24, "Your Bedroom...maybe..."
+    24, "Your Bedroom...maybe...", 0
   },
   {
     "C682A544A8D61B889841323C3478954F",
     "*** CONGRATULATE! CONGRATULATE! ***", "*** You have died ***",
     20, 2324, 0, -1, 0, 1, 29, "you",
-    26, "Bedroom"
+    26, "Bedroom", 0
   },
   {
     "C795D81413F4147516A5C58FAA62D5C0",
     "*** You have won ***", "*** You have died ***",
     20, 2089, 0, -1, 0, 1, 28, "you",
-    24, "The Land of No TOAST"
+    24, "The Land of No TOAST", 0
   },
   {
     "5CFE7F24C029D0C2A5F8F718727494E0",
     "*** You are off to go slay the Hydra ***", "*** You have died ***",
     20, 2821, 0, -1, 0, 1, 43, "you",
-    36, "In Eurystheus's throne room"
+    36, "In Eurystheus's throne room", 0
   },
   {
     "4EE7231CD383003428D1885E32DA17DA",
     "*** Happy New Year! ***", "*** You have died ***",
     41, 4524, 0, -1, 0, 1, 45, "you",
-    42, "unknown"
+    42, "unknown", 0
   },
   {
     "3FA37496D707D0E3FDE1B552E9481B8C",
     "*** YOU WON!", "*** You have died ***",
     46, 12410, 0, 12408, 0, 1620, 129, "you",
-    54, "Hill"
+    54, "Hill", 0
   },
   {
     "8A188D7BD06FFE890F536781F3F347BB",
     "You are Gladys's friend.", "*** You have died ***",
     20, 2415, 0, -1, 0, 1, 36, "you",
-    24, "Gladys's Room"
+    24, "Gladys's Room", 0
   },
   {
     "1A56DDDBE247503A0140699C16842226",
     "*** You have won ***", "*** You have died ***",
     20, 3310, 0, -1, 0, 1, 51, "you",
-    37, "Away from the Lake"
+    37, "Away from the Lake", 0
   },
   {
     "5B9B200067DF09B09A5746A3B56704CB",
     "You have won", "*** You have died ***",
     19, 2090, 0, 2088, 0, 3, 29, "yourself",
-    27, "The Bar"
+    27, "The Bar", 0
   },
   {
     "60C60992CFF6852DEB371042F375AA28",
     "It's a life, at least.", "*** You have died ***",
     20, 9390, 0, -1, 0, 1, 155, "you",
-    155, "Outside the Theatre"
+    155, "Outside the Theatre", 0
   },
   {
     "BFDA5AAD80F10B640D4189711D13FF74",
     "To Be Continued in The Brokeback Citizen of the Year!", "*** You have died ***",
     95, 11192, 0, -1, 0, 1, 98, "you",
-    84, "Bank"
+    84, "Bank", 0
+  },
+  {
+    "60EA6EA542B5232C63401308B33689B3",
+    "> You have won.", "*** Froggy authored loss ***",
+    27, 2097, 0, -1, 0, 1, 27, "(player)",
+    27, "FutureGame menu", 3
   },
