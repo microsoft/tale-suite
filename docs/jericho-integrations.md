@@ -65,4 +65,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `toastless` | `toastless.z5` | `c795d81413f4147516a5c58faa62d5c0` | synthetic `1/1` | no authored loss | 28 | native + TALE | per-game checkpoint |
 | `lion` | `lion.z5` | `5cfe7f24c029d0c2a5f8f718727494e0` | synthetic `1/1` | no authored loss | 43 | native + TALE | per-game checkpoint |
 | `youhavetoputthebabynewye` | `YouHaveToPutTheBabyNewYe.z5` | `4ee7231cd383003428d1885e32da17da` | synthetic `1/1` | no authored loss | 45 | native + TALE | per-game checkpoint |
+| `lms_tvg` | `LMS_TVG.z5` | `3fa37496d707d0e3fde1b552e9481b8c` | authored `0/1620` | no authored loss | 129 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
