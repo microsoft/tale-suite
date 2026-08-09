@@ -484,6 +484,15 @@ mrp = {
     "max_word_length": 9
 }
 
+putpbaa = {
+    "name": "putpbaa",
+    "rom": "PUTPBAA.z5",
+    "seed": 1,
+    "walkthrough": "/win",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

@@ -260,6 +260,9 @@ void load_rom_bindings(char *story_file) {
   } else if (strcmp(md5_hash, "4780282041BF6C1F5952A5771B432E43") == 0) {
     froggy_set_game(FROGGY_MRP);
     ROM_IDX = FROGGY_;
+  } else if (strcmp(md5_hash, "5F45F6F8625F7B6304FD56CB3A88F77D") == 0) {
+    froggy_set_game(FROGGY_PUTPBAA);
+    ROM_IDX = FROGGY_;
   } else if (strcmp(md5_hash, "DAF57133D346442B983BD333FB586CC4") == 0) {
     ROM_IDX = LIBRARY_;
   } else if (strcmp(md5_hash, "31A0C1E360DCE94AA5BECE5240691D17") == 0) {

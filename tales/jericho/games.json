@@ -211,6 +211,15 @@
     "archive_member": "the-large-game-collection/mr-p.z5",
     "md5": "4780282041bf6c1f5952a5771b432e43"
   },
+  "putpbaa": {
+    "filename": "PUTPBAA.z5",
+    "info": "https://ifdb.org/search?searchfor=PUTPBAA",
+    "link": "https://github.com/BYU-PCCL/z-machine-games/blob/master/the-large-game-collection.zip",
+    "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+    "archive_filename": "the-large-game-collection.zip",
+    "archive_member": "the-large-game-collection/PUTPBAA.z5",
+    "md5": "5f45f6f8625f7b6304fd56cb3a88f77d"
+  },
   "library": {
     "filename": "library.z5",
     "info": "http://ifdb.tads.org/viewgame?id=400zakqderzjnu1i",
