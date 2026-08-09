@@ -157,6 +157,19 @@ EXPECTED = {
         "victory_text": "You win",
         "loss_commands": None,
     },
+    "paranoia": {
+        "commands": 2,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 41,
+        "world_objects": 64,
+        "inventory_objects": None,
+        "named_objects": {41: "you", 42: "Playroom"},
+        "state_change_command": None,
+        "victory_text": "You have won",
+        "loss_commands": None,
+    },
 }
 
 

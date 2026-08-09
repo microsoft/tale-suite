@@ -511,6 +511,15 @@ theemptyroom = {
     "max_word_length": 9
 }
 
+paranoia = {
+    "name": "paranoia",
+    "rom": "Paranoia.z5",
+    "seed": 1,
+    "walkthrough": "/e",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",
