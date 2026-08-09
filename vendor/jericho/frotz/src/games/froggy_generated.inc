@@ -197,3 +197,9 @@
     20, 3310, 0, -1, 0, 1, 51, "you",
     37, "Away from the Lake"
   },
+  {
+    "5B9B200067DF09B09A5746A3B56704CB",
+    "You have won", "*** You have died ***",
+    19, 2090, 0, 2088, 0, 3, 29, "yourself",
+    27, "The Bar"
+  },
