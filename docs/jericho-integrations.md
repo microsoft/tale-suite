@@ -72,4 +72,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `misdirection` | `Misdirection.z5` | `60c60992cff6852deb371042f375aa28` | synthetic `1/1` | no authored loss | 155 | native + TALE | per-game checkpoint |
 | `tcoty` | `TCOTY.z5` | `bfda5aad80f10b640d4189711d13ff74` | synthetic `1/1` | no authored loss | 98 | native + TALE | per-game checkpoint |
 | `futuregame` | `FutureGame.z5` | `60ea6ea542b5232c63401308b33689b3` | synthetic `1/1` | no authored loss | 27 | native + TALE | per-game checkpoint |
+| `coloromc` | `coloromc.z5` | `eabcf705d9125ad9c9c0e08e9ab53e7a` | synthetic `1/1` | no authored loss | 44 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->

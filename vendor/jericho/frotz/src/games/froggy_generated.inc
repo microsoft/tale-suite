@@ -221,3 +221,9 @@
     27, 2097, 0, -1, 0, 1, 27, "(player)",
     27, "FutureGame menu", 3
   },
+  {
+    "EABCF705D9125AD9C9C0E08E9AB53E7A",
+    "It was worth the wait.", "*** You have died ***",
+    42, 4568, 0, -1, 0, 1, 44, "you",
+    43, "Balcony", 0
+  },
