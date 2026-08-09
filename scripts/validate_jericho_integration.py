@@ -105,6 +105,19 @@ EXPECTED = {
         "victory_text": "won the drinking contest",
         "loss_commands": None,
     },
+    "mrp": {
+        "commands": 2,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 20,
+        "world_objects": 183,
+        "inventory_objects": None,
+        "named_objects": {20: "you", 33: "bed"},
+        "state_change_command": None,
+        "victory_text": "You have won",
+        "loss_commands": None,
+    },
 }
 
 

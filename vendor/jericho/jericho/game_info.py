@@ -475,6 +475,15 @@ banana = {
     "max_word_length": 9
 }
 
+mrp = {
+    "name": "mrp",
+    "rom": "mr-p.z5",
+    "seed": 1,
+    "walkthrough": "/win",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",
