@@ -466,6 +466,15 @@ pancakedetectives = {
     "max_word_length": 9
 }
 
+banana = {
+    "name": "banana",
+    "rom": "banana.z5",
+    "seed": 1,
+    "walkthrough": "/wake",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

@@ -254,6 +254,9 @@ void load_rom_bindings(char *story_file) {
   } else if (strcmp(md5_hash, "24B9DB33BA5F6B7EC7C822F192AE96AA") == 0) {
     froggy_set_game(FROGGY_PANCAKE_DETECTIVES);
     ROM_IDX = FROGGY_;
+  } else if (strcmp(md5_hash, "8415999D3C9F7FF50A0A1339283F3B5D") == 0) {
+    froggy_set_game(FROGGY_BANANA);
+    ROM_IDX = FROGGY_;
   } else if (strcmp(md5_hash, "DAF57133D346442B983BD333FB586CC4") == 0) {
     ROM_IDX = LIBRARY_;
   } else if (strcmp(md5_hash, "31A0C1E360DCE94AA5BECE5240691D17") == 0) {

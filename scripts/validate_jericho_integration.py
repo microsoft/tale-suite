@@ -92,6 +92,19 @@ EXPECTED = {
         "victory_text": "Ah-ha! Caught blue-mouthed!",
         "loss_commands": None,
     },
+    "banana": {
+        "commands": 2,
+        "moves": 1,
+        "score": -1,
+        "max_score": 10,
+        "player_object": 20,
+        "world_objects": 57,
+        "inventory_objects": None,
+        "named_objects": {20: "you", 27: "Happy Parrot Bar"},
+        "state_change_command": None,
+        "victory_text": "won the drinking contest",
+        "loss_commands": None,
+    },
 }
 
 

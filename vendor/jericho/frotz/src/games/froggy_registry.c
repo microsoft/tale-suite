@@ -43,6 +43,11 @@ static const froggy_game froggy_games[FROGGY_GAME_COUNT] = {
     41, 5959, 0, -1, 0, 1, 58, "you",
     42, "Kitchen"
   },
+  [FROGGY_BANANA] = {
+    "*** You have won the drinking contest! ***", "*** You have died ***",
+    20, 3833, 0, 3831, 0, 10, 57, "you",
+    27, "Happy Parrot Bar"
+  },
 };
 
 static int current_froggy_game = FROGGY_INTERNAL;
