@@ -457,6 +457,15 @@ noroom = {
     "max_word_length": 9
 }
 
+pancakedetectives = {
+    "name": "pancakedetectives",
+    "rom": "TheGreatPancakeDetectives.z5",
+    "seed": 1,
+    "walkthrough": "x sherbert's mouth",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

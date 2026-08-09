@@ -38,6 +38,11 @@ static const froggy_game froggy_games[FROGGY_GAME_COUNT] = {
     20, 2557, 0, 2555, 0, 1, 37, "you",
     22, "Darkness"
   },
+  [FROGGY_PANCAKE_DETECTIVES] = {
+    "Ah-ha! Caught blue-mouthed!", "*** You have died ***",
+    41, 5959, 0, -1, 0, 1, 58, "you",
+    42, "Kitchen"
+  },
 };
 
 static int current_froggy_game = FROGGY_INTERNAL;

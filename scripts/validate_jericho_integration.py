@@ -79,6 +79,19 @@ EXPECTED = {
         "victory_text": "You have won",
         "loss_commands": None,
     },
+    "pancakedetectives": {
+        "commands": 1,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 41,
+        "world_objects": 58,
+        "inventory_objects": None,
+        "named_objects": {41: "you", 42: "Kitchen"},
+        "state_change_command": None,
+        "victory_text": "Ah-ha! Caught blue-mouthed!",
+        "loss_commands": None,
+    },
 }
 
 

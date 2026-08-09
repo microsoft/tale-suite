@@ -106,6 +106,7 @@ BINDINGS_DICT = {
     '1ea30c4f5f20bc00ddbe8eddb93acc03' : lily,
     '72381aa65f38812ab02a9d1cb4a8cc54' : internal,
     '315505ce659aaa5217e4c9f22e390d88' : noroom,
+    '24b9db33ba5f6b7ec7c822f192ae96aa' : pancakedetectives,
     'daf57133d346442b983bd333fb586cc4' : library,
     '31a0c1e360dce94aa5bece5240691d17' : loose,
     'aaf0b90fbb31717481c02832bf412070' : lostpig,
