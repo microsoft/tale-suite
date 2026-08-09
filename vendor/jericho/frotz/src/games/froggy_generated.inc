@@ -155,3 +155,9 @@
     20, 2393, 0, -1, 0, 1, 35, "you",
     24, "Your Bedroom...maybe..."
   },
+  {
+    "C682A544A8D61B889841323C3478954F",
+    "*** CONGRATULATE! CONGRATULATE! ***", "*** You have died ***",
+    20, 2324, 0, -1, 0, 1, 29, "you",
+    26, "Bedroom"
+  },
