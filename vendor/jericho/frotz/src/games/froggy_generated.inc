@@ -209,3 +209,9 @@
     20, 9390, 0, -1, 0, 1, 155, "you",
     155, "Outside the Theatre"
   },
+  {
+    "BFDA5AAD80F10B640D4189711D13FF74",
+    "To Be Continued in The Brokeback Citizen of the Year!", "*** You have died ***",
+    95, 11192, 0, -1, 0, 1, 98, "you",
+    84, "Bank"
+  },
