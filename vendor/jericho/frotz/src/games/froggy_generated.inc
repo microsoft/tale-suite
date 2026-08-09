@@ -71,3 +71,9 @@
     20, 2094, 0, -1, 0, 1, 28, "you",
     24, "Rockets, Sprockets and Pants: The Office"
   },
+  {
+    "8A139DDC62255699FAC257B2F005EE7A",
+    "*** You have won ***", "*** You have died ***",
+    20, 2062, 0, -1, 0, 1, 29, "you",
+    24, "The Classroom"
+  },
