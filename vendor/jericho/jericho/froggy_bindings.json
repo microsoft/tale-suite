@@ -866,5 +866,56 @@
       "loss_commands": null
     },
     "caveats": "No authored score; use synthetic completion score 1/1."
+  },
+  "gourmetgaffe": {
+    "key": "gourmetgaffe",
+    "title": "Gourmet Gaffe",
+    "rom": "GourmetGaffe.z5",
+    "md5": "e4e84994605cc55839d6d07bcc9de8fd",
+    "seed": 1,
+    "walkthrough": [
+      "",
+      "open door",
+      "w"
+    ],
+    "native": {
+      "victory_text": "*** You have won ***",
+      "loss_text": "*** You have died ***",
+      "player_object": 42,
+      "moves_address": 6615,
+      "moves_base": 0,
+      "score_address": 6613,
+      "score_base": 0,
+      "max_score": 3,
+      "world_objects": 65,
+      "player_name": "you",
+      "location_object": 41,
+      "location_name": "The Queen's Dungeon"
+    },
+    "tale": {
+      "filename": "GourmetGaffe.z5",
+      "info": "Gourmet Gaffe",
+      "md5": "e4e84994605cc55839d6d07bcc9de8fd",
+      "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+      "archive_filename": "the-large-game-collection.zip",
+      "archive_member": "the-large-game-collection/GourmetGaffe.z5"
+    },
+    "validation": {
+      "commands": 3,
+      "moves": 2,
+      "score": 3,
+      "max_score": 3,
+      "player_object": 42,
+      "world_objects": 65,
+      "inventory_objects": null,
+      "named_objects": {
+        "42": "you",
+        "41": "The Queen's Dungeon"
+      },
+      "state_change_command": null,
+      "victory_text": "*** You have won ***",
+      "loss_commands": null
+    },
+    "caveats": "None."
   }
 }

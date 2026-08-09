@@ -95,3 +95,9 @@
     20, 1910, 0, -1, 0, 1, 26, "you",
     26, "Youth"
   },
+  {
+    "E4E84994605CC55839D6D07BCC9DE8FD",
+    "*** You have won ***", "*** You have died ***",
+    42, 6615, 0, 6613, 0, 3, 65, "you",
+    41, "The Queen's Dungeon"
+  },
