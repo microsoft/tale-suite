@@ -269,3 +269,9 @@
     20, 2010, 0, 2008, 0, 12, 28, "you",
     26, "Outside your apartment building", 0
   },
+  {
+    "4CAD8EFDA0FA8F4973A1610DB4B07949",
+    "*** You have won ***", "*** You have died ***",
+    20, 2338, 0, -1, 0, 1, 35, "you",
+    24, "Convention Floor", 0
+  },

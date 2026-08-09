@@ -80,4 +80,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `sahara` | `sahara.z5` | `7af185c953b27f0b0b449d0b23a1a6cf` | synthetic `1/1` | no authored loss | 39 | native + TALE | per-game checkpoint |
 | `koan` | `koan.z5` | `b6f5e6ee3e14c5313c8b98c052c64bdd` | synthetic `1/1` | no authored loss | 40 | native + TALE | per-game checkpoint |
 | `butler` | `butler.z5` | `9ce59a417b267245e1cb16b7424fb42c` | authored `12/12` | no authored loss | 28 | native + TALE | per-game checkpoint |
+| `dsw_speedo` | `dsw_speedo.z5` | `4cad8efda0fa8f4973a1610db4b07949` | synthetic `1/1` | no authored loss | 35 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
