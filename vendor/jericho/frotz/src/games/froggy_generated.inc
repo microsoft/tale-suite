@@ -47,3 +47,9 @@
     53, 3510, 0, -1, 0, 1, 56, "Motive Nexus",
     14, "(Map)"
   },
+  {
+    "F1601F01196FE64BF764FF1FCA5CAAC6",
+    "*** You have won ***", "*** You have died ***",
+    20, 1993, 0, 1991, 0, 99, 27, "you",
+    25, "Front Door"
+  },
