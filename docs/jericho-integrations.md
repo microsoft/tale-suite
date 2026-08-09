@@ -77,4 +77,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `chkn_oo` | `chkn-oo.z5` | `53c4694d1da1140b600e2fe9a30be4b5` | synthetic `1/1` | no authored loss | 32 | native + TALE | per-game checkpoint |
 | `more` | `More.z8` | `661c4a19f6c49f0274ccf2c1c9f73c53` | synthetic `1/1` | no authored loss | 60 | native + TALE | per-game checkpoint |
 | `travel` | `travel.z5` | `b1ea2e641a5a4b69ca288f6533216cb3` | synthetic `1/1` | no authored loss | 60 | native + TALE | per-game checkpoint |
+| `sahara` | `sahara.z5` | `7af185c953b27f0b0b449d0b23a1a6cf` | synthetic `1/1` | no authored loss | 39 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->

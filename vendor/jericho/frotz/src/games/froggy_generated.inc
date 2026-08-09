@@ -251,3 +251,9 @@
     20, 3199, 0, -1, 0, 1, 60, "you",
     52, "Foyer", 0
   },
+  {
+    "7AF185C953B27F0B0B449D0B23A1A6CF",
+    "*** You have won ***", "*** You have died ***",
+    20, 2449, 0, -1, 0, 1, 39, "you",
+    39, "Alley behind Casino", 0
+  },
