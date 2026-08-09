@@ -77,3 +77,9 @@
     20, 2062, 0, -1, 0, 1, 29, "you",
     24, "The Classroom"
   },
+  {
+    "06E1A2BF8355B095DD6FB288A42761C0",
+    "*** All's well that ends well ***", "*** You have died ***",
+    20, 2658, 0, -1, 0, 1, 42, "you",
+    37, "Under King Charles' Bed"
+  },
