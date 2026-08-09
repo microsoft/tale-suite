@@ -110,6 +110,7 @@ BINDINGS_DICT = {
     '8415999d3c9f7ff50a0a1339283f3b5d' : banana,
     '4780282041bf6c1f5952a5771b432e43' : mrp,
     '5f45f6f8625f7b6304fd56cb3a88f77d' : putpbaa,
+    'c9aa2222b3fcb8f32f4587bc8c20e98c' : annoy,
     'daf57133d346442b983bd333fb586cc4' : library,
     '31a0c1e360dce94aa5bece5240691d17' : loose,
     'aaf0b90fbb31717481c02832bf412070' : lostpig,

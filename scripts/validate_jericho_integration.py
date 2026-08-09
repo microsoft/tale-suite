@@ -131,6 +131,19 @@ EXPECTED = {
         "victory_text": "You win",
         "loss_commands": None,
     },
+    "annoy": {
+        "commands": 1,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 20,
+        "world_objects": 28,
+        "inventory_objects": None,
+        "named_objects": {20: "you", 24: "West End"},
+        "state_change_command": None,
+        "victory_text": "You have won",
+        "loss_commands": None,
+    },
 }
 
 
