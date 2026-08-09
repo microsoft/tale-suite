@@ -116,6 +116,7 @@ BINDINGS_DICT = {
     '5c00c9753a69f0f200a026212a6d1c2e' : ludite,
     '3b19ca2d5b211f75f88a14c7dbdd2006' : minimalist,
     '8c1d5939360084cb1ddb6a413fa5f7fe' : passthemilk,
+    'b4852ac4c00e4ce2d74efd35cae6b753' : forms,
     'daf57133d346442b983bd333fb586cc4' : library,
     '31a0c1e360dce94aa5bece5240691d17' : loose,
     'aaf0b90fbb31717481c02832bf412070' : lostpig,
