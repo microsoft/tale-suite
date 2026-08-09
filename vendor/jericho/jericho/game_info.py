@@ -556,6 +556,15 @@ forms = {
     "max_word_length": 9
 }
 
+i0 = {
+    "name": "i0",
+    "rom": "I-0.z5",
+    "seed": 1,
+    "walkthrough": "/win",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

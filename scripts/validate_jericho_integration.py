@@ -222,6 +222,19 @@ EXPECTED = {
         "victory_text": "You have won",
         "loss_commands": None,
     },
+    "i0": {
+        "commands": 2,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 29,
+        "world_objects": 309,
+        "inventory_objects": None,
+        "named_objects": {29: "you", 43: "In your car"},
+        "state_change_command": None,
+        "victory_text": "You have won",
+        "loss_commands": None,
+    },
 }
 
 
