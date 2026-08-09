@@ -125,3 +125,9 @@
     20, 13736, 0, 13734, 0, 100, 249, "you",
     152, "The Break Room"
   },
+  {
+    "0F4AA6883492AF34A2BDCCC559E732FD",
+    "*** You have won ***", "*** You have died ***",
+    20, 22139, 0, -1, 0, 1, 452, "you",
+    99, "Entrance"
+  },

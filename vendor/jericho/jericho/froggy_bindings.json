@@ -1121,5 +1121,56 @@
       "loss_commands": null
     },
     "caveats": "None."
+  },
+  "sgate": {
+    "key": "sgate",
+    "title": "S-Gate",
+    "rom": "sgate.z5",
+    "md5": "0f4aa6883492af34a2bdccc559e732fd",
+    "seed": 1,
+    "walkthrough": [
+      "",
+      "take all",
+      "win"
+    ],
+    "native": {
+      "victory_text": "*** You have won ***",
+      "loss_text": "*** You have died ***",
+      "player_object": 20,
+      "moves_address": 22139,
+      "moves_base": 0,
+      "score_address": -1,
+      "score_base": 0,
+      "max_score": 1,
+      "world_objects": 452,
+      "player_name": "you",
+      "location_object": 99,
+      "location_name": "Entrance"
+    },
+    "tale": {
+      "filename": "sgate.z5",
+      "info": "S-Gate",
+      "md5": "0f4aa6883492af34a2bdccc559e732fd",
+      "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+      "archive_filename": "the-large-game-collection.zip",
+      "archive_member": "the-large-game-collection/sgate.z5"
+    },
+    "validation": {
+      "commands": 3,
+      "moves": 2,
+      "score": 1,
+      "max_score": 1,
+      "player_object": 20,
+      "world_objects": 452,
+      "inventory_objects": null,
+      "named_objects": {
+        "20": "you",
+        "99": "Entrance"
+      },
+      "state_change_command": null,
+      "victory_text": "*** You have won ***",
+      "loss_commands": null
+    },
+    "caveats": "No authored score; use synthetic completion score 1/1."
   }
 }
