@@ -101,3 +101,9 @@
     42, 6615, 0, 6613, 0, 3, 65, "you",
     41, "The Queen's Dungeon"
   },
+  {
+    "157890DD6B3137864563ECA7B535B5BC",
+    "*** You have won ***", "*** You have died ***",
+    10, 21357, 0, -1, 0, 1, 394, "you",
+    93, "Orchestra Pit,in Midair"
+  },
