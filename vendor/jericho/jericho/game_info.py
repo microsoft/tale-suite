@@ -583,6 +583,15 @@ putpbad = {
     "max_word_length": 9
 }
 
+service = {
+    "name": "service",
+    "rom": "service.z5",
+    "seed": 1,
+    "walkthrough": "/out",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",

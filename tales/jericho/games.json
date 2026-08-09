@@ -310,6 +310,15 @@
     "archive_member": "the-large-game-collection/putpbad.z5",
     "md5": "bee55b4bdd4096119cc56dd68f13eb8f"
   },
+  "service": {
+    "filename": "service.z5",
+    "info": "https://ifdb.org/search?searchfor=Chinese+Restaurant",
+    "link": "https://github.com/BYU-PCCL/z-machine-games/blob/master/the-large-game-collection.zip",
+    "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+    "archive_filename": "the-large-game-collection.zip",
+    "archive_member": "the-large-game-collection/service.z5",
+    "md5": "bc49bfde10df06d574cef218a158ce02"
+  },
   "library": {
     "filename": "library.z5",
     "info": "http://ifdb.tads.org/viewgame?id=400zakqderzjnu1i",

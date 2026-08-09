@@ -265,6 +265,19 @@ EXPECTED = {
         "loss_text": "You have died",
         "loss_world_change": False,
     },
+    "service": {
+        "commands": 2,
+        "moves": 1,
+        "score": 42,
+        "max_score": 42,
+        "player_object": 20,
+        "world_objects": 28,
+        "inventory_objects": None,
+        "named_objects": {20: "you", 26: "Chinese Restaurant"},
+        "state_change_command": None,
+        "victory_text": "You have won",
+        "loss_commands": None,
+    },
 }
 
 
