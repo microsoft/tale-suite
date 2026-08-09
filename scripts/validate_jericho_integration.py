@@ -6,8 +6,10 @@ import json
 from importlib.resources import files as importlib_files
 from pathlib import Path
 
+import gymnasium as gym
 from jericho import FrotzEnv
 
+import tales  # noqa: F401 - importing registers TALE Suite environments.
 from tales.jericho import jericho_data
 
 
@@ -317,9 +319,7 @@ with (importlib_files("jericho") / "froggy_bindings.json").open() as manifest_fi
 
 
 def validate(game: str) -> None:
-    games_path = importlib_files("tales") / "jericho" / "games.json"
-    with games_path.open() as games_file:
-        game_info = json.load(games_file)[game]
+    game_info = jericho_data.GAMES_INFOS[game]
 
     game_path = Path(jericho_data.get_game(game))
     digest = hashlib.md5(game_path.read_bytes()).hexdigest()
@@ -413,6 +413,35 @@ def validate(game: str) -> None:
                 raise AssertionError(f"{game}: expected loss text is missing")
     finally:
         env.close()
+
+    tale_observations = []
+    for replay in range(2):
+        tale_env = gym.make(
+            f"tales/JerichoEnv{game.title()}-v0",
+            disable_env_checker=True,
+            admissible_commands=False,
+        )
+        try:
+            tale_env.reset(seed=1)
+            final_observation = ""
+            final_info = {}
+            for command in commands:
+                final_observation, _, _, final_info = tale_env.step(command)
+            if not final_info["won"] or final_info["lost"]:
+                raise AssertionError(
+                    f"{game}: TALE replay {replay + 1} is not a clean victory"
+                )
+            if final_info["score"] != expected["score"]:
+                raise AssertionError(f"{game}: incorrect TALE final score")
+            if final_info["max_score"] != expected["max_score"]:
+                raise AssertionError(f"{game}: incorrect TALE maximum score")
+            if final_info["moves"] != expected["moves"]:
+                raise AssertionError(f"{game}: incorrect TALE move count")
+            tale_observations.append(final_observation)
+        finally:
+            tale_env.close()
+    if tale_observations[0] != tale_observations[1]:
+        raise AssertionError(f"{game}: TALE replays were not deterministic")
 
     print(
         f"{game}: validated {len(commands)} commands, "

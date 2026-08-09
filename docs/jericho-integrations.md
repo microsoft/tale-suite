@@ -34,4 +34,6 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 
 <!-- generated batch start -->
 | Game key | ROM | MD5 | Score model | Loss | World objects | Validation | Commit |
-| --- | --- | --- | --- | --- | ---: | --- | --- |<!-- generated batch end -->
+| --- | --- | --- | --- | --- | ---: | --- | --- |
+| `beingsteve` | `BeingSteve.z5` | `b78d869c43db2c02298aa9f06f7201ca` | synthetic `1/1` | no authored loss | 44 | native + TALE | per-game checkpoint |
+<!-- generated batch end -->
