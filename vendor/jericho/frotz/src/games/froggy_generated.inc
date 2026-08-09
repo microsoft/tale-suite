@@ -53,3 +53,9 @@
     20, 1993, 0, 1991, 0, 99, 27, "you",
     25, "Front Door"
   },
+  {
+    "EC5C74F4027EE8AE87CA9AFA8D78C874",
+    "*** The Christian Coalition withdraws their sponsorship ***", "*** You have died ***",
+    20, 9714, 0, -1, 0, 1, 139, "you",
+    127, "On the set"
+  },

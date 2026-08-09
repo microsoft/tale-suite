@@ -44,4 +44,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `the_day_that_love_came_to_play` | `The Day That Love Came To Play.z8` | `59b2636ae2978c318b59dda478cb40c9` | authored `666/666` | no authored loss | 76 | native + TALE | per-game checkpoint |
 | `fallen` | `fallen.z5` | `c0f18c7bfd71aafc09a70c5fba084c7d` | synthetic `1/1` | no authored loss | 56 | native + TALE | per-game checkpoint |
 | `taxes` | `taxes.z5` | `f1601f01196fe64bf764ff1fca5caac6` | authored `99/99` | no authored loss | 27 | native + TALE | per-game checkpoint |
+| `sdoor` | `sdoor.z5` | `ec5c74f4027ee8ae87ca9afa8d78c874` | synthetic `1/1` | no authored loss | 139 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->
