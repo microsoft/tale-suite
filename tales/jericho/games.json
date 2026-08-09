@@ -143,6 +143,13 @@
     "link": "http://mirror.ifarchive.org/if-archive/games/zcode/karn.z5",
     "md5": "ec55791be814db3663ad1aec0d6b7690"
   },
+  "kiiwii": {
+    "filename": "kiiwii.z5",
+    "info": "https://ifdb.org/viewgame?id=vyhpiu9vlxf64nn0",
+    "link": "https://ifarchive.org/if-archive/games/zcode/kiiwii.z5",
+    "download_url": "https://ifarchive.org/if-archive/games/zcode/kiiwii.z5",
+    "md5": "6c8a04ec6adff4a4cab98e89d87a19d8"
+  },
   "library": {
     "filename": "library.z5",
     "info": "http://ifdb.tads.org/viewgame?id=400zakqderzjnu1i",

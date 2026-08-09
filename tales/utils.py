@@ -75,7 +75,7 @@ def download(url, dst, desc=None, force=False):
 
         r.raise_for_status()  # Bad request.
         content_length = r.headers.get("Content-Length")
-        total = resume_size + int(content_length)
+        total = resume_size + int(content_length) if content_length else None
         pbar = tqdm(
             unit="B",
             initial=resume_size,

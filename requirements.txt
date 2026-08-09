@@ -1,6 +1,6 @@
 tatsu==5.8.3
 gymnasium>=1.0.0
-jericho>=3.3.0
+jericho @ git+https://github.com/t-ccui_microsoft/tale-suite-code-harness.git@copilot/jericho-telemetry#subdirectory=vendor/jericho
 textworld[pddl]>=1.6.2rc3
 textworld-express>=1.1.0rc5
 scienceworld>=1.2.2

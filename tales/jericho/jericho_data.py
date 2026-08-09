@@ -18,22 +18,26 @@ GAMES_INFOS.pop("hollywood", None)
 GAMES_INFOS.pop("theatre", None)
 
 
-def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD):
+def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD, games=None):
     os.makedirs(TALES_CACHE_JERICHO, exist_ok=True)
 
-    for name, game_info in GAMES_INFOS.items():
+    selected = GAMES_INFOS.items()
+    if games is not None:
+        selected = ((name, GAMES_INFOS[name]) for name in games)
+
+    for name, game_info in selected:
         filename = game_info["filename"]
 
         game_file = pjoin(TALES_CACHE_JERICHO, filename)
         if os.path.isfile(game_file) and not force:
             continue
 
-        link = f"{GAMES_URLS}/{filename}"
+        link = game_info.get("download_url", f"{GAMES_URLS}/{filename}")
         download(link, dst=TALES_CACHE_JERICHO, force=force)
 
 
 def get_game(game):
-    prepare_jericho_data()  # make sure the data is ready
+    prepare_jericho_data(games=[game])  # make sure the requested game is ready
 
     game_info = GAMES_INFOS[game]
     game_file = pjoin(TALES_CACHE_JERICHO, game_info["filename"])
