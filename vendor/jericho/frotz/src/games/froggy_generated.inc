@@ -185,3 +185,9 @@
     46, 12410, 0, 12408, 0, 1620, 129, "you",
     54, "Hill"
   },
+  {
+    "8A188D7BD06FFE890F536781F3F347BB",
+    "You are Gladys's friend.", "*** You have died ***",
+    20, 2415, 0, -1, 0, 1, 36, "you",
+    24, "Gladys's Room"
+  },
