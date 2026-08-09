@@ -39,6 +39,7 @@ EXPECTED = {
         "loss_commands": ["down", "out", "attack zrblm"],
         "loss_moves": 3,
         "loss_text": "You have died",
+        "loss_world_change": True,
     },
     "lily": {
         "commands": 2,
@@ -248,6 +249,22 @@ EXPECTED = {
         "victory_text": "You have won",
         "loss_commands": None,
     },
+    "putpbad": {
+        "commands": 1,
+        "moves": 1,
+        "score": 1,
+        "max_score": 1,
+        "player_object": 41,
+        "world_objects": 44,
+        "inventory_objects": None,
+        "named_objects": {41: "you", 42: "Lowell Prison yard"},
+        "state_change_command": None,
+        "victory_text": "escaped Lowell Prison dead in a pine box",
+        "loss_commands": ["take box"],
+        "loss_moves": 1,
+        "loss_text": "You have died",
+        "loss_world_change": False,
+    },
 }
 
 
@@ -339,7 +356,10 @@ def validate(game: str) -> None:
                 raise AssertionError(f"{game}: loss should not award score")
             if env.get_moves() != expected["loss_moves"]:
                 raise AssertionError(f"{game}: incorrect move count after loss")
-            if env.get_world_state_hash() == initial_hash:
+            if (
+                expected["loss_world_change"]
+                and env.get_world_state_hash() == initial_hash
+            ):
                 raise AssertionError(f"{game}: loss path did not change world state")
             if expected["loss_text"] not in loss_observation:
                 raise AssertionError(f"{game}: expected loss text is missing")

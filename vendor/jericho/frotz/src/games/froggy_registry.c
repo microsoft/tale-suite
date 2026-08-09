@@ -103,6 +103,12 @@ static const froggy_game froggy_games[FROGGY_GAME_COUNT] = {
     20, 11073, 0, -1, 0, 1, 138, "you",
     86, "Peacock Chamber"
   },
+  [FROGGY_PUTPBAD] = {
+    "*** You escaped Lowell Prison dead in a pine box. ***",
+    "*** You have died ***",
+    41, 4538, 0, -1, 0, 1, 44, "you",
+    42, "Lowell Prison yard"
+  },
 };
 
 static int current_froggy_game = FROGGY_INTERNAL;

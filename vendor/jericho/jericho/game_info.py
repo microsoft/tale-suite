@@ -574,6 +574,15 @@ peacock = {
     "max_word_length": 9
 }
 
+putpbad = {
+    "name": "putpbad",
+    "rom": "putpbad.z5",
+    "seed": 1,
+    "walkthrough": "enter box",
+    "grammar": snacktime["grammar"],
+    "max_word_length": 9
+}
+
 sorcerer = {
     "name": "sorcerer",
     "rom": "sorcerer.z3",
