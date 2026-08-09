@@ -263,3 +263,9 @@
     20, 2494, 0, -1, 0, 1, 40, "you",
     25, "South Location", 0
   },
+  {
+    "9CE59A417B267245E1CB16B7424FB42C",
+    "*** You have won ***", "*** You have died ***",
+    20, 2010, 0, 2008, 0, 12, 28, "you",
+    26, "Outside your apartment building", 0
+  },
