@@ -59,3 +59,9 @@
     20, 9714, 0, -1, 0, 1, 139, "you",
     127, "On the set"
   },
+  {
+    "E3DFAB39ACCFABCD26F1E90AFDD39529",
+    "But not the only story...", "*** You have died ***",
+    20, 3320, 0, -1, 0, 1, 65, "you",
+    26, "Aisle"
+  },

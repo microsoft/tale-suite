@@ -568,5 +568,55 @@
       "loss_commands": null
     },
     "caveats": "No authored score; use synthetic completion score 1/1."
+  },
+  "aisle": {
+    "key": "aisle",
+    "title": "Aisle",
+    "rom": "Aisle.z5",
+    "md5": "e3dfab39accfabcd26f1e90afdd39529",
+    "seed": 1,
+    "walkthrough": [
+      "",
+      "ask brunette out"
+    ],
+    "native": {
+      "victory_text": "But not the only story...",
+      "loss_text": "*** You have died ***",
+      "player_object": 20,
+      "moves_address": 3320,
+      "moves_base": 0,
+      "score_address": -1,
+      "score_base": 0,
+      "max_score": 1,
+      "world_objects": 65,
+      "player_name": "you",
+      "location_object": 26,
+      "location_name": "Aisle"
+    },
+    "tale": {
+      "filename": "Aisle.z5",
+      "info": "Aisle",
+      "md5": "e3dfab39accfabcd26f1e90afdd39529",
+      "archive_url": "https://raw.githubusercontent.com/BYU-PCCL/z-machine-games/bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea/the-large-game-collection.zip",
+      "archive_filename": "the-large-game-collection.zip",
+      "archive_member": "the-large-game-collection/Aisle.z5"
+    },
+    "validation": {
+      "commands": 2,
+      "moves": 1,
+      "score": 1,
+      "max_score": 1,
+      "player_object": 20,
+      "world_objects": 65,
+      "inventory_objects": null,
+      "named_objects": {
+        "20": "you",
+        "26": "Aisle"
+      },
+      "state_change_command": null,
+      "victory_text": "time--not since the breakup with Clare and the Rome business. Well, it's about time you started being yourself again. And the perfect way to start? You walk up to the brunette, \"Do you fancy going for a drink after this?\" ---------- The end of the story. The end of a story. But not the only story...",
+      "loss_commands": null
+    },
+    "caveats": "No authored score; use synthetic completion score 1/1. Blank/menu actions are required and preserved verbatim."
   }
 }
