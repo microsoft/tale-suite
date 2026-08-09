@@ -27,9 +27,12 @@ ARCHIVE_URL = (
 def convert(profile):
     player_object = profile["player_object"]
     location_object = profile["location_object"]
+    location_name = profile["location_name"]
+    if not location_name or len(location_name) >= 64:
+        location_name = profile["title"]
     named_objects = {str(player_object): profile["player_display_name"]}
     if location_object and location_object != player_object:
-        named_objects[str(location_object)] = profile["location_name"]
+        named_objects[str(location_object)] = location_name
 
     return {
         "key": profile["key"],
@@ -50,7 +53,7 @@ def convert(profile):
             "world_objects": profile["world_object_count"],
             "player_name": profile["player_display_name"],
             "location_object": location_object,
-            "location_name": profile["location_name"],
+            "location_name": location_name,
         },
         "tale": {
             "filename": profile["rom_filename"],

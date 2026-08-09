@@ -23,3 +23,9 @@
     41, 5738, 0, -1, 0, 1, 58, "you",
     44, "Desert 10"
   },
+  {
+    "08BEF3EBA638521148007CADE5ABA8F8",
+    "*** You are sold to pirates and have a glorious career on the open sea ***", "*** You have died ***",
+    43, 8314, 540, -1, 0, 1, 70, "you",
+    59, "Glass"
+  },

@@ -39,4 +39,5 @@ commit `bfd7544aa1f50549fc327bd4eb3bc8144bfd80ea`.
 | `ill` | `ill.z5` | `4fd66f9b00bda0373e06e40208a278bc` | synthetic `1/1` | no authored loss | 36 | native + TALE | per-game checkpoint |
 | `donkeykong` | `donkeykong.z5` | `408d2f0574042fc3ec9cd463ce225893` | synthetic `1/1` | no authored loss | 28 | native + TALE | per-game checkpoint |
 | `magic_muffin_the_desert` | `Magic_Muffin_-_The_Desert.z5` | `02f6683a7dcf18bd76191f7db4bd8458` | synthetic `1/1` | no authored loss | 58 | native + TALE | per-game checkpoint |
+| `glass` | `Glass.z5` | `08bef3eba638521148007cade5aba8f8` | synthetic `1/1` | no authored loss | 70 | native + TALE | per-game checkpoint |
 <!-- generated batch end -->

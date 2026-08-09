@@ -237,8 +237,16 @@ int froggy_ignore_attr_clr(zword obj_num, zword attr_idx) {
 
 void froggy_clean_world_objs(zobject* objs) {
   const froggy_game* game = &froggy_games[current_froggy_game];
-  strcpy(objs[game->player_obj].name, game->player_name);
+  snprintf(
+      objs[game->player_obj].name,
+      sizeof(objs[game->player_obj].name),
+      "%s",
+      game->player_name);
   if (game->location_obj > 0) {
-    strcpy(objs[game->location_obj].name, game->location_name);
+    snprintf(
+        objs[game->location_obj].name,
+        sizeof(objs[game->location_obj].name),
+        "%s",
+        game->location_name);
   }
 }
