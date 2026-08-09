@@ -390,7 +390,9 @@ def validate(game: str) -> None:
                     f"{game}: {expected['state_change_command']!r} did not "
                     "change world state"
                 )
-            if expected["victory_text"] not in final_observation:
+            normalized_observation = " ".join(final_observation.split())
+            normalized_victory_text = " ".join(expected["victory_text"].split())
+            if normalized_victory_text not in normalized_observation:
                 raise AssertionError(f"{game}: expected victory text is missing")
 
         if expected["loss_commands"] is not None:

@@ -5,3 +5,9 @@
     41, 4936, 0, -1, 0, 1, 44, "you",
     42, "Being Steve"
   },
+  {
+    "4FD66F9B00BDA0373E06E40208A278BC",
+    "*** I have won ***", "*** You have died ***",
+    20, 2266, 0, -1, 0, 1, 36, "you",
+    26, "Monotrain station"
+  },
