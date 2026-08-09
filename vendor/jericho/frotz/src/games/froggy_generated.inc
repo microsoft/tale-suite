@@ -41,3 +41,9 @@
     41, 8386, 0, 8436, 0, 666, 76, "you",
     47, "Onstage at the Cherrywood Lounge"
   },
+  {
+    "C0F18C7BFD71AAFC09A70C5FBA084C7D",
+    "***You have spared the being***", "*** You have died ***",
+    53, 3510, 0, -1, 0, 1, 56, "Motive Nexus",
+    14, "(Map)"
+  },
