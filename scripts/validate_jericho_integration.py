@@ -424,9 +424,11 @@ def validate(game: str) -> None:
             f"tales/JerichoEnv{game.title()}-v0",
             disable_env_checker=True,
             admissible_commands=False,
+            game_state=True,
         )
         try:
-            tale_env.reset(seed=expected.get("seed", 1))
+            _, initial_info = tale_env.reset(seed=expected.get("seed", 1))
+            initial_tale_hash = initial_info["world_state_hash"]
             final_observation = ""
             final_info = {}
             for command in commands:
@@ -441,7 +443,30 @@ def validate(game: str) -> None:
                 raise AssertionError(f"{game}: incorrect TALE maximum score")
             if final_info["moves"] != expected["moves"]:
                 raise AssertionError(f"{game}: incorrect TALE move count")
-            tale_observations.append(final_observation)
+            if final_info["player_object"]["num"] != expected["player_object"]:
+                raise AssertionError(f"{game}: incorrect TALE player object")
+            if len(final_info["world_objects"]) != expected["world_objects"]:
+                raise AssertionError(f"{game}: incorrect TALE world object count")
+            for obj_num, name in expected["named_objects"].items():
+                obj = next(
+                    obj
+                    for obj in final_info["world_objects"]
+                    if obj["num"] == obj_num
+                )
+                if obj["name"] != name:
+                    raise AssertionError(
+                        f"{game}: TALE object {obj_num} should be named {name!r}"
+                    )
+            tale_observations.append(
+                (
+                    final_observation,
+                    initial_tale_hash,
+                    final_info["world_state_hash"],
+                    final_info["player_object"],
+                    final_info["inventory"],
+                    final_info["world_objects"],
+                )
+            )
         finally:
             tale_env.close()
     if tale_observations[0] != tale_observations[1]:
