@@ -43,4 +43,5 @@ benchmark_splits = {
 
 
 def download():
+    """Download all native and catalog-backed Jericho games."""
     prepare_jericho_data()

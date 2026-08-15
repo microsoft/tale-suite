@@ -17,6 +17,11 @@ Then, install `tales` directly from PyPI:
 > [!WARNING]
 > The name of the Python package on PyPI is `tale-suite` and not `tales`.
 
+Jericho games download automatically when first opened. To pre-download the
+native and expanded Jericho catalogs into the TALES cache, run:
+
+    python -c "from tales.jericho import download; download()"
+
 Alternatively, clone the repository and install locally:
 
     git clone https://github.com/microsoft/tale-suite

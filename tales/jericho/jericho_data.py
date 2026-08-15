@@ -48,6 +48,7 @@ for metadata in get_game_catalog().games:
 
 def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD, games=None):
     os.makedirs(TALES_CACHE_JERICHO, exist_ok=True)
+    archive_files = {}
 
     selected = GAMES_INFOS.items()
     if games is not None:
@@ -64,12 +65,16 @@ def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD, games=None):
         archive_url = game_info.get("archive_url")
         if archive_url is not None:
             archive_filename = game_info["archive_filename"]
-            archive_file = download(
-                archive_url,
-                dst=TALES_CACHE_JERICHO,
-                force=force,
-                filename=archive_filename,
-            )
+            archive_key = (archive_url, archive_filename)
+            archive_file = archive_files.get(archive_key)
+            if archive_file is None:
+                archive_file = download(
+                    archive_url,
+                    dst=TALES_CACHE_JERICHO,
+                    force=force,
+                    filename=archive_filename,
+                )
+                archive_files[archive_key] = archive_file
             archive_member = game_info.get("archive_member", filename)
             temp_game_file = f"{game_file}.tmp"
             with zipfile.ZipFile(archive_file) as archive:
@@ -79,7 +84,7 @@ def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD, games=None):
             os.replace(temp_game_file, game_file)
             continue
 
-        link = game_info.get("download_url", f"{GAMES_URLS}/{filename}")
+        link = game_info.get("download_url") or f"{GAMES_URLS}/{filename}"
         download(
             link,
             dst=TALES_CACHE_JERICHO,
