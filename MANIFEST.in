@@ -2,7 +2,9 @@ include requirements.txt
 include README.md
 include LICENSE
 include pyproject.toml
+include tales/jericho/game_catalog.jsonl
 include tales/jericho/games.json
+include tales/jericho/walkthroughs.jsonl
 
 global-exclude */__pycache__/*
 

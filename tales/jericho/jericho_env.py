@@ -3,6 +3,9 @@ import textworld
 from textworld.envs.wrappers import Filter
 
 from . import jericho_data
+from .evaluation import get_winning_walkthrough
+from .telemetry import CatalogTelemetry
+from .walkthrough_catalog import get_walkthrough
 
 
 class JerichoEnv(gym.Env):
@@ -12,10 +15,17 @@ class JerichoEnv(gym.Env):
         game,
         admissible_commands=False,
         game_state=False,
+        walkthrough_id=None,
         *args,
         **kwargs,
     ):
         gamefile = jericho_data.get_game(game)
+        game_info = jericho_data.GAMES_INFOS[game]
+        self.game = game
+        self.game_selector = game_info["md5"]
+        self.walkthrough = get_walkthrough(self.game_selector, walkthrough_id)
+        if self.walkthrough is None:
+            self.walkthrough = get_winning_walkthrough(self.game_selector)
         self.game_state = game_state
         self.infos = textworld.EnvInfos(
             score=True,
@@ -28,6 +38,9 @@ class JerichoEnv(gym.Env):
             extras=["walkthrough"],
         )
         self.env = textworld.start(gamefile, self.infos, wrappers=[Filter])
+        self.telemetry = CatalogTelemetry(
+            self.game_selector, self.native_env.is_fully_supported
+        )
 
     @property
     def native_env(self):
@@ -66,6 +79,10 @@ class JerichoEnv(gym.Env):
         return self.native_env.get_inventory()
 
     def _augment_info(self, info):
+        if self.walkthrough is not None:
+            info["extra.walkthrough"] = list(self.walkthrough.actions)
+            info["extra.walkthrough_metadata"] = self.walkthrough.metadata()
+
         if not self.game_state:
             return info
 
@@ -83,10 +100,23 @@ class JerichoEnv(gym.Env):
         return info
 
     def reset(self, *, seed=None, options=None):
+        if seed is None and self.walkthrough is not None:
+            seed = self.walkthrough.seed
+        super().reset(seed=seed, options=options)
         self.env.seed(seed)
         observation, info = self.env.reset()
+        self.telemetry.reset()
+        _, info = self.telemetry.adapt(observation, False, info)
+        self.last_score = info["score"]
         return observation, self._augment_info(info)
 
     def step(self, action):
-        observation, score, done, info = self.env.step(action)
-        return observation, score, done, self._augment_info(info)
+        observation, _score, done, info = self.env.step(action)
+        self.telemetry.step(action)
+        done, info = self.telemetry.adapt(observation, done, info)
+        reward = info["score"] - self.last_score
+        self.last_score = info["score"]
+        return observation, reward, done, self._augment_info(info)
+
+    def close(self):
+        self.env.close()

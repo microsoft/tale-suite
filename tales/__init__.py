@@ -13,6 +13,7 @@ root_dir = os.path.dirname(os.path.abspath(__file__))
 tasks = []
 envs = []
 envs_per_task = defaultdict(list)
+benchmark_splits = {}
 
 _exclude_path = ["__pycache__", "tests"]
 
@@ -39,6 +40,7 @@ for task in tasks:
             for env_name, version in environments:
                 envs.append(env_name)
                 envs_per_task[task].append(env_name)
+            benchmark_splits.update(getattr(module, "benchmark_splits", {}))
         else:
             warnings.warn(
                 "Failed to load `{}.environments`. Skipping the task.".format(task),
@@ -57,4 +59,11 @@ for task in tasks:
 envs_per_task = dict(envs_per_task)
 env2task = {env: task for task, envs in envs_per_task.items() for env in envs}
 
-__all__ = ["Agent", "__version__", "envs", "envs_per_task", "tasks"]
+__all__ = [
+    "Agent",
+    "__version__",
+    "benchmark_splits",
+    "envs",
+    "envs_per_task",
+    "tasks",
+]

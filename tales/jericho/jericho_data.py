@@ -4,9 +4,16 @@ import shutil
 import zipfile
 from importlib.resources import files as importlib_files
 from os.path import join as pjoin
+from pathlib import Path
 
 from tales.config import TALES_CACHE_HOME, TALES_FORCE_DOWNLOAD
 from tales.utils import download
+
+from .game_catalog import (
+    catalog_game_info,
+    catalog_registration_key,
+    get_game_catalog,
+)
 
 GAMES_URLS = "https://github.com/BYU-PCCL/z-machine-games/raw/master/jericho-game-suite"
 TALES_CACHE_JERICHO = pjoin(TALES_CACHE_HOME, "jericho")
@@ -24,6 +31,20 @@ with (importlib_files("jericho") / "froggy_bindings.json").open() as f:
 GAMES_INFOS.pop("hollywood", None)
 GAMES_INFOS.pop("theatre", None)
 
+CATALOG_REGISTRATION_KEYS = {}
+for metadata in get_game_catalog().games:
+    registration_key = catalog_registration_key(metadata, GAMES_INFOS)
+    CATALOG_REGISTRATION_KEYS[metadata.md5] = registration_key
+    existing = GAMES_INFOS.get(registration_key)
+    if existing is None:
+        game_info = catalog_game_info(metadata)
+        game_info["cache_filename"] = (
+            f"{registration_key}{Path(metadata.filename).suffix}"
+        )
+        GAMES_INFOS[registration_key] = game_info
+    elif existing.get("md5", "").lower() == metadata.md5:
+        existing.update(catalog_game_info(metadata))
+
 
 def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD, games=None):
     os.makedirs(TALES_CACHE_JERICHO, exist_ok=True)
@@ -35,7 +56,8 @@ def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD, games=None):
     for name, game_info in selected:
         filename = game_info["filename"]
 
-        game_file = pjoin(TALES_CACHE_JERICHO, filename)
+        cache_filename = game_info.get("cache_filename", filename)
+        game_file = pjoin(TALES_CACHE_JERICHO, cache_filename)
         if os.path.isfile(game_file) and not force:
             continue
 
@@ -62,7 +84,7 @@ def prepare_jericho_data(force=TALES_FORCE_DOWNLOAD, games=None):
             link,
             dst=TALES_CACHE_JERICHO,
             force=force,
-            filename=filename,
+            filename=cache_filename,
         )
 
 
@@ -70,5 +92,8 @@ def get_game(game):
     prepare_jericho_data(games=[game])  # make sure the requested game is ready
 
     game_info = GAMES_INFOS[game]
-    game_file = pjoin(TALES_CACHE_JERICHO, game_info["filename"])
+    game_file = pjoin(
+        TALES_CACHE_JERICHO,
+        game_info.get("cache_filename", game_info["filename"]),
+    )
     return game_file

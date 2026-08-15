@@ -667,7 +667,8 @@ def parse_args():
         parser.formatter_class = argparse.RawTextHelpFormatter
         general_group = parser.add_argument_group('General settings')
 
-        general_group.add_argument("--envs", metavar="env", nargs="+", choices=tales.envs + tales.tasks,
+        general_group.add_argument("--envs", metavar="env", nargs="+",
+                            choices=tales.envs + tales.tasks + list(tales.benchmark_splits),
                             help="Interactive text environments to evaluate the agent(s)."
                                 f" Available:\n{pretty_print_tasks(disable_print=True)}")
         general_group.add_argument("--game-seed", type=int,
@@ -753,7 +754,11 @@ def main():
     args.envs = [  # Expand tasks into their respective environments.
         env
         for task in args.envs
-        for env in (tales.envs_per_task[task] if task in tales.tasks else [task])
+        for env in (
+            tales.envs_per_task[task]
+            if task in tales.tasks
+            else tales.benchmark_splits.get(task, [task])
+        )
     ]
 
     benchmark(agent, args)
