@@ -9,6 +9,20 @@ import wandb
 log = logging.getLogger("tales")
 
 WANDB_PROJECT = os.environ.get("WANDB_PROJECT", "tales")
+WANDB_ENTITY = os.environ.get("WANDB_ENTITY", None)
+
+
+def _wandb_path(project=None):
+    """Return 'entity/project' path for wandb API calls."""
+    proj = project or WANDB_PROJECT
+    entity = WANDB_ENTITY
+    if "/" in proj:
+        # Already has entity/project format.
+        return proj
+    if entity:
+        return f"{entity}/{proj}"
+    return proj
+
 
 ROLLOUT_COLUMNS = [
     "Step",
@@ -29,7 +43,7 @@ ROLLOUT_COLUMNS = [
 ]
 
 
-def find_matching_run(env_name, agent_params, game_seed, project=WANDB_PROJECT):
+def find_matching_run(env_name, agent_params, game_seed, project=None):
     """Find a matching wandb run based on game and agent config fields.
 
     Searches the wandb project for finished runs that match the core experiment
@@ -72,7 +86,7 @@ def find_matching_run(env_name, agent_params, game_seed, project=WANDB_PROJECT):
         filters["config.agent_type"] = agent_type
 
     try:
-        runs = api.runs(project, filters=filters, order="-created_at")
+        runs = api.runs(_wandb_path(project), filters=filters, order="-created_at")
     except wandb.errors.CommError as e:
         log.warning(f"Failed to search wandb runs: {e}")
         return None
@@ -106,7 +120,7 @@ def find_matching_run(env_name, agent_params, game_seed, project=WANDB_PROJECT):
     return best_run.id
 
 
-def fetch_run_trajectory(run_id, project=WANDB_PROJECT):
+def fetch_run_trajectory(run_id, project=None):
     """Fetch run config and rollout trajectory from wandb.
 
     Args:
@@ -124,7 +138,7 @@ def fetch_run_trajectory(run_id, project=WANDB_PROJECT):
         ValueError: If the run or rollout data cannot be found.
     """
     api = wandb.Api()
-    run_path = f"{project}/{run_id}"
+    run_path = f"{_wandb_path(project)}/{run_id}"
     log.info(f"Fetching run {run_path} from wandb...")
 
     try:
