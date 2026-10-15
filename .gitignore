@@ -178,3 +178,6 @@ amlt/
 # Website
 docs/website/_site
 docs/website/Gemfile.lock
+
+# Private Jericho walkthrough catalog: never commit it.
+tales/jericho/walkthroughs.jsonl

@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import json
+import warnings
 from dataclasses import dataclass
 from functools import lru_cache
 from importlib.resources import files as importlib_files
 from typing import Any
+
+from tales.config import TALES_NO_WALKTHROUGHS
 
 
 @dataclass(frozen=True)
@@ -117,6 +120,19 @@ class WalkthroughCatalog:
 @lru_cache(maxsize=1)
 def get_catalog() -> WalkthroughCatalog:
     resource = importlib_files("tales.jericho").joinpath("walkthroughs.jsonl")
+    if TALES_NO_WALKTHROUGHS:
+        warnings.warn(
+            "TALES_NO_WALKTHROUGHS is set: the private Jericho walkthrough catalog is "
+            "not loaded, so the Jericho benchmark splits defined by verified "
+            "walkthroughs are empty and envs carry no catalog walkthrough."
+        )
+        return WalkthroughCatalog(())
+    if not resource.is_file():
+        raise FileNotFoundError(
+            f"Jericho walkthrough catalog not found at {resource}. It is private and "
+            "not part of the repository: copy it there, or set TALES_NO_WALKTHROUGHS=1 "
+            "to load Jericho without walkthroughs."
+        )
     walkthroughs = []
     with resource.open(encoding="utf-8") as catalog_file:
         for line_number, line in enumerate(catalog_file, start=1):

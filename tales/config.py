@@ -14,3 +14,13 @@ TALES_FORCE_DOWNLOAD = os.getenv("TALES_FORCE_DOWNLOAD", "false").lower() in (
     "t",
     "1",
 )
+
+# The Jericho walkthrough catalog (tales/jericho/walkthroughs.jsonl) is kept private
+# and is not part of the repository. Without it, loading Jericho fails unless this
+# flag is set, in which case Jericho loads with no walkthroughs.
+TALES_NO_WALKTHROUGHS = os.getenv("TALES_NO_WALKTHROUGHS", "false").lower() in (
+    "yes",
+    "true",
+    "t",
+    "1",
+)

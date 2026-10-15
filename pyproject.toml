@@ -23,7 +23,7 @@ version = {attr = "tales.version.__version__"}
 exclude = ["wandb/*", "logs/*", "website/*"]
 
 [tool.setuptools.package-data]
-"tales.jericho" = ["game_catalog.jsonl", "games.json", "walkthroughs.jsonl"]
+"tales.jericho" = ["game_catalog.jsonl", "games.json"]
 
 
 [project.optional-dependencies]
