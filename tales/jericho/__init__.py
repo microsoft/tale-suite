@@ -28,10 +28,9 @@ for game, infos in GAMES_INFOS.items():
 
 benchmark_splits = {
     "jericho-original": [
-        record.environment
-        for record in get_evaluation_games(
-            new=False, registration_keys=CATALOG_REGISTRATION_KEYS
-        )
+        f"JerichoEnv{game.id.title()}"
+        for game in get_game_catalog().games
+        if not game.new
     ],
     "jericho-new": [
         record.environment

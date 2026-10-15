@@ -22,6 +22,7 @@ class GameMetadata:
     archive_url: str | None
     archive_filename: str | None
     archive_member: str | None
+    max_score: int | None = None
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "GameMetadata":
@@ -39,6 +40,7 @@ class GameMetadata:
             archive_url=data.get("archive_url"),
             archive_filename=data.get("archive_filename"),
             archive_member=data.get("archive_member"),
+            max_score=data.get("max_score"),
         )
 
 
@@ -112,7 +114,7 @@ def catalog_registration_key(
 
 
 def catalog_game_info(game: GameMetadata) -> dict[str, Any]:
-    return {
+    info = {
         "filename": game.filename,
         "md5": game.md5,
         "catalog_id": game.id,
@@ -123,3 +125,6 @@ def catalog_game_info(game: GameMetadata) -> dict[str, Any]:
         "archive_filename": game.archive_filename,
         "archive_member": game.archive_member,
     }
+    if game.max_score is not None:
+        info["max_score"] = game.max_score
+    return info

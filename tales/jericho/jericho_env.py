@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+
 import gymnasium as gym
 import textworld
 from textworld.envs.wrappers import Filter
@@ -6,6 +9,38 @@ from . import jericho_data
 from .evaluation import get_winning_walkthrough
 from .telemetry import CatalogTelemetry
 from .walkthrough_catalog import get_walkthrough
+
+
+def _textworld_gamefile(gamefile):
+    """Give extension-based TextWorld detection a canonical Z-machine suffix."""
+    path = Path(gamefile)
+    if path.suffix in {f".z{version}" for version in range(1, 9)}:
+        return str(path)
+
+    with path.open("rb") as handle:
+        version = handle.read(1)
+    if not version or not 1 <= version[0] <= 8:
+        return str(path)
+
+    expected_suffix = f".z{version[0]}"
+    if path.suffix == expected_suffix:
+        return str(path)
+
+    alias = path.with_name(f"{path.name}{expected_suffix}")
+    try:
+        if alias.samefile(path):
+            return str(alias)
+    except FileNotFoundError:
+        pass
+
+    temporary = alias.with_name(f".{alias.name}.{os.getpid()}.tmp")
+    try:
+        temporary.unlink(missing_ok=True)
+        os.link(path, temporary)
+        os.replace(temporary, alias)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return str(alias)
 
 
 class JerichoEnv(gym.Env):
@@ -35,11 +70,19 @@ class JerichoEnv(gym.Env):
             feedback=True,
             moves=True,
             admissible_commands=admissible_commands,
-            extras=["walkthrough"],
+            # The curated catalog is authoritative and is injected below.
+            # Some supported ROM bindings omit Jericho's native walkthrough.
+            extras=[],
         )
-        self.env = textworld.start(gamefile, self.infos, wrappers=[Filter])
+        self.env = textworld.start(
+            _textworld_gamefile(gamefile),
+            self.infos,
+            wrappers=[Filter],
+        )
         self.telemetry = CatalogTelemetry(
-            self.game_selector, self.native_env.is_fully_supported
+            self.game_selector,
+            self.native_env.is_fully_supported,
+            max_score=game_info.get("max_score"),
         )
 
     @property
@@ -59,9 +102,7 @@ class JerichoEnv(gym.Env):
             "parent": obj.parent,
             "sibling": obj.sibling,
             "child": obj.child,
-            "attributes": [
-                index for index, enabled in enumerate(obj.attr) if enabled
-            ],
+            "attributes": [index for index, enabled in enumerate(obj.attr) if enabled],
             "properties": list(obj.properties),
         }
 

@@ -20,15 +20,20 @@ def _catalog_routes(game: str) -> tuple[Walkthrough, ...]:
 
 
 class CatalogTelemetry:
-    def __init__(self, game: str, supported: bool):
+    def __init__(
+        self,
+        game: str,
+        supported: bool,
+        *,
+        max_score: int | None = None,
+    ):
         self.supported = supported
+        self.max_score = max_score
         self.routes = _catalog_routes(game)
         self.reset()
 
     def reset(self) -> None:
-        self.progress: dict[str, int | None] = {
-            route.id: 0 for route in self.routes
-        }
+        self.progress: dict[str, int | None] = {route.id: 0 for route in self.routes}
         self.terminal_route_id = None
         self.terminal_route_outcome = None
         self.winning_route_id = None
@@ -71,45 +76,67 @@ class CatalogTelemetry:
 
     def adapt(self, observation: str, done: bool, info: dict) -> tuple[bool, dict]:
         reported_score = _reported_score(observation)
+        effective_max_score = _effective_max_score(
+            info,
+            reported_score,
+            self.max_score,
+        )
+        adapted = dict(info)
+        adapted["score"] = _normalize_native_score(
+            adapted.get("score"),
+            effective_max_score,
+        )
+        native_score_changed = adapted.get("score") != info.get("score")
         won_from_text = _looks_like_win(observation)
-        won_from_score = _has_full_score(info, reported_score)
+        won_from_score = _has_full_score(adapted, reported_score, self.max_score)
         route_outcome = self.terminal_route_outcome
         if route_outcome is not None:
             won = route_outcome == "won"
             lost = route_outcome == "ended" and (
-                bool(info.get("lost")) or _looks_like_loss(observation)
+                bool(adapted.get("lost")) or _looks_like_loss(observation)
             )
             ended = route_outcome == "ended" and not lost
         elif self.following_catalog_route:
-            won = bool(info.get("won"))
-            lost = not won and bool(info.get("lost"))
+            won = bool(adapted.get("won"))
+            lost = not won and bool(adapted.get("lost"))
             ended = done and not won and not lost
         else:
-            won = bool(info.get("won")) or won_from_text or won_from_score
+            won = bool(adapted.get("won")) or won_from_text or won_from_score
             lost = not won and (
-                bool(info.get("lost")) or _looks_like_loss(observation)
+                bool(adapted.get("lost")) or _looks_like_loss(observation)
             )
             ended = not won and not lost and _looks_like_end(observation)
-        adapted = dict(info)
         adapted["won"] = won
         adapted["lost"] = lost
 
         if self.supported:
-            self.binary_score = (
-                self.binary_score
-                or info.get("max_score") == 0
-                or (reported_score is not None and reported_score[1] == 0)
+            self.binary_score = self.binary_score or (
+                self.max_score is None
+                and (
+                    info.get("max_score") == 0
+                    or (reported_score is not None and reported_score[1] == 0)
+                )
             )
             binary_score = self.binary_score
             if binary_score:
                 adapted["score"] = int(won)
                 adapted["max_score"] = 1
             elif reported_score is not None:
-                adapted["score"], adapted["max_score"] = reported_score
+                adapted["score"] = reported_score[0]
+                adapted["max_score"] = effective_max_score
+            elif self.max_score is not None:
+                adapted["max_score"] = effective_max_score
             if not (won or lost or ended):
                 return (
                     done,
-                    adapted if binary_score or reported_score is not None else info,
+                    (
+                        adapted
+                        if binary_score
+                        or reported_score is not None
+                        or self.max_score is not None
+                        or native_score_changed
+                        else info
+                    ),
                 )
             if won or lost or ended:
                 adapted["extra.catalog_telemetry"] = {
@@ -120,7 +147,8 @@ class CatalogTelemetry:
                         "native"
                         if info.get("won")
                         else (
-                            "walkthrough" if route_outcome == "won"
+                            "walkthrough"
+                            if route_outcome == "won"
                             else (
                                 "terminal"
                                 if won_from_text
@@ -216,6 +244,7 @@ def _looks_like_end(observation: str) -> bool:
     return bool(
         re.search(r"\*{3}\s*the end[.!?]?\s*\*{3}", normalized)
         or _has_restart_prompt(normalized)
+        or "command (undo/quit)?" in normalized
         or "press enter to quit the game" in normalized
         or "this adventure is over" in normalized
     )
@@ -225,14 +254,13 @@ def _has_restart_prompt(normalized: str) -> bool:
     return "would you like to restart, restore" in normalized
 
 
-def _has_full_score(info: dict, reported_score: tuple[int, int] | None) -> bool:
-    if reported_score is not None:
-        score, max_score = reported_score
-        if max_score > 0 and score >= max_score:
-            return True
-
-    score = info.get("score")
-    max_score = info.get("max_score")
+def _has_full_score(
+    info: dict,
+    reported_score: tuple[int, int] | None,
+    known_max_score: int | None = None,
+) -> bool:
+    score = reported_score[0] if reported_score is not None else info.get("score")
+    max_score = _effective_max_score(info, reported_score, known_max_score)
     if (
         isinstance(score, (int, float))
         and isinstance(max_score, (int, float))
@@ -241,6 +269,41 @@ def _has_full_score(info: dict, reported_score: tuple[int, int] | None) -> bool:
     ):
         return True
     return False
+
+
+def _effective_max_score(
+    info: dict,
+    reported_score: tuple[int, int] | None,
+    known_max_score: int | None,
+) -> int | None:
+    candidates = [
+        value
+        for value in (
+            known_max_score,
+            reported_score[1] if reported_score is not None else None,
+            info.get("max_score"),
+        )
+        if isinstance(value, (int, float)) and not isinstance(value, bool) and value > 0
+    ]
+    return int(max(candidates)) if candidates else None
+
+
+def _normalize_native_score(score, max_score: int | None):
+    """Convert unsigned Z-machine representations of negative scores."""
+    if (
+        not isinstance(score, int)
+        or isinstance(score, bool)
+        or not isinstance(max_score, int)
+        or isinstance(max_score, bool)
+        or max_score < 0
+        or score <= max_score
+    ):
+        return score
+
+    for modulus in (1 << 8, 1 << 16):
+        if max_score < modulus // 2 <= score < modulus:
+            return score - modulus
+    return score
 
 
 def _reported_score(observation: str) -> tuple[int, int] | None:

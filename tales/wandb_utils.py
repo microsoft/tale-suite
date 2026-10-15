@@ -22,10 +22,14 @@ ROLLOUT_COLUMNS = [
     "Prompt",
     "Response",
     "Thinking",
+    "Thinking Is Summary",
     "Token Usage",
     "Prompt Tokens",
     "Response Tokens",
     "Thinking Tokens",
+    "Proposed Action",
+    "Action Was Blocked",
+    "Blocked State Command",
 ]
 
 

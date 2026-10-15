@@ -208,6 +208,25 @@ test_env = gym.make(
 )
 ```
 
+## JAZ Jericho harness
+
+The experimental Harness-as-a-Language runner gives a model a persistent,
+restricted Python REPL with recursive `invoke(...)` and scoped `step(...)` /
+`observe()` functions for long-horizon Jericho evaluation.
+
+```bash
+python scripts/run_jaz_jericho.py \
+  --models gpt-6-astra \
+  --games JerichoEnvZork1 \
+  --seeds 202411061 202411062 202411063 202411064 202411065 \
+  --reasoning-effort max \
+  --max-model-calls 500
+```
+
+See [`JAZ_JERICHO_HARNESS.md`](JAZ_JERICHO_HARNESS.md) for the protocol,
+sandbox, accounting rules, artifacts, transport comparison, and trajectory
+viewer.
+
 ## Citation
 ```
 @article{cui2025tales,

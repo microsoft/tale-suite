@@ -5,6 +5,7 @@ import importlib
 import json
 import logging
 import os
+import re
 import sys
 import time
 from functools import partial
@@ -18,10 +19,87 @@ from tqdm import tqdm
 
 import tales
 from tales.logger import log, setup_logging
+from tales.observation_rewriter import apply_keyword_aliases
 from tales.utils import NumpyEncoder
 from tales.wandb_utils import WANDB_PROJECT, fetch_run_trajectory, find_matching_run
 
 os.environ["WANDB_MODE"] = "disabled"
+
+BLOCKED_STATE_COMMANDS = frozenset(
+    {"save", "load", "restore", "undo", "script", "transcript"}
+)
+BLOCKED_LEADING_INTERPRETER_COMMANDS = frozenset(
+    {
+        "abstract",
+        "actions",
+        "changes",
+        "gonear",
+        "goto",
+        "predictable",
+        "purloin",
+        "random",
+        "recording",
+        "replay",
+        "routines",
+        "scope",
+        "showobj",
+        "showverb",
+        "timers",
+        "trace",
+        "tree",
+    }
+)
+INVALID_STATE_COMMAND_ACTION = "talesblockedcommand"
+INVALID_UNSAFE_ACTION = "talesunsafeaction"
+ENTER_GAME_ACTION = "<ENTER>"
+BACKSPACE_GAME_ACTION = "<BACKSPACE>"
+WASTED_STEP_FEEDBACK = "The rejected action was discarded; this step was wasted."
+_ACTION_WORD_RE = re.compile(r"[a-z]+")
+OBSERVATION_REWRITE_STAT_KEYS = (
+    "rewritten_observation",
+    "observation_rewrite_prompt",
+    "observation_rewrite_model",
+    "observation_rewrite_nb_tokens",
+    "observation_rewrite_nb_tokens_prompt",
+    "observation_rewrite_nb_tokens_response",
+    "observation_rewrite_nb_tokens_thinking",
+    "observation_rewrite_cache_read_tokens",
+    "observation_rewrite_cache_write_tokens",
+    "observation_rewrite_duration",
+    "pre_alias_rewritten_observation",
+    "observation_keyword_alias_profile",
+    "observation_keyword_alias_replacements",
+    "observation_keyword_alias_replacement_count",
+)
+
+
+def _blocked_state_command(action):
+    """Return the first disabled interpreter command in an action."""
+    words = _ACTION_WORD_RE.findall(action.casefold())
+    for word in words:
+        # Z-machine versions 1-3 compare only the first six dictionary
+        # characters, so "restoring" and "restorx" invoke RESTORE in Zork I.
+        if word.startswith("restor"):
+            return "restore"
+        if word in BLOCKED_STATE_COMMANDS:
+            return word
+    if words and words[0] in BLOCKED_LEADING_INTERPRETER_COMMANDS:
+        return words[0]
+    return None
+
+
+def _resolve_action(action, disable_state_commands):
+    """Resolve a proposed action to the text that may reach the environment."""
+    if action.strip().casefold() in {"<enter>", "<return>"}:
+        return "", None
+    if action.strip().casefold() == "<backspace>":
+        return "\x08", None
+    if not disable_state_commands:
+        return action, None
+    blocked_command = _blocked_state_command(action)
+    if blocked_command is None:
+        return action, None
+    return INVALID_STATE_COMMAND_ACTION, blocked_command
 
 
 def _make_state(obs, info):
@@ -36,6 +114,11 @@ def _make_state(obs, info):
         "nb_losts": 0,
         "nb_resets": 0,
         "nb_invalid_actions": 0,
+        "nb_blocked_state_commands": 0,
+        "nb_wasted_steps": 0,
+        "nb_translated_actions": 0,
+        "nb_actions_with_canonical_keywords": 0,
+        "nb_environment_steps": 0,
         "obs": obs,
         "done": False,
         "info": info,
@@ -93,40 +176,172 @@ def _handle_done(env, agent, state, env_name, break_on_max=True):
     obs, info = env.reset()
     state["obs"] = last_obs + "\n\n-= Restarting =-\n" + obs
     state["info"] = info
+    state["done"] = False
     agent.reset(state["obs"], info, env_name)
     state["nb_resets"] += 1
     log.debug(state["obs"])
     return False
 
 
-def _record_step(state, prev_obs, action, feedback, token_stats, wandb_run):
+def _record_step(
+    state,
+    prev_obs,
+    action,
+    feedback,
+    token_stats,
+    wandb_run,
+    *,
+    proposed_action,
+    blocked_state_command,
+    action_was_wasted=False,
+    unsafe_proposed_action=None,
+    unsafe_action_reason=None,
+    unsafe_action_source=None,
+    translated_action=None,
+    action_keyword_alias_replacements=None,
+    action_canonical_keyword_matches=None,
+    executed_action=None,
+    environment_step_called=False,
+):
     """Append step to results and log to wandb."""
     s = state
     norm_score = s["score"] / s["max_score"]
     norm_highscore = s["highscore"] / s["max_score"]
 
-    wandb_run.log(
-        {
-            "episode/moves": s["moves"],
-            "episode/score": s["score"],
-            "episode/highscore": s["highscore"],
-            "episode/normalized_score": norm_score,
-            "episode/normalized_highscore": norm_highscore,
-            "episode/token_usage": token_stats["nb_tokens"],
-            "episode/token_usage_thinking": token_stats.get("nb_tokens_thinking", 0),
-        },
-        step=s["step"],
-    )
+    step_metrics = {
+        "episode/moves": s["moves"],
+        "episode/score": s["score"],
+        "episode/highscore": s["highscore"],
+        "episode/normalized_score": norm_score,
+        "episode/normalized_highscore": norm_highscore,
+        "episode/token_usage": token_stats["nb_tokens"],
+        "episode/token_usage_thinking": token_stats.get("nb_tokens_thinking", 0),
+        "episode/blocked_state_commands": s["nb_blocked_state_commands"],
+        "episode/wasted_steps": s["nb_wasted_steps"],
+        "episode/translated_actions": s["nb_translated_actions"],
+        "episode/actions_with_canonical_keywords": s[
+            "nb_actions_with_canonical_keywords"
+        ],
+        "episode/environment_steps": s["nb_environment_steps"],
+    }
+    if token_stats.get("rewritten_observation") is not None:
+        step_metrics["episode/observation_rewrite_token_usage"] = token_stats.get(
+            "observation_rewrite_nb_tokens", 0
+        )
+    wandb_run.log(step_metrics, step=s["step"])
 
     # fmt: off
     s["results"].append([
         s["step"], s["score"], s["max_score"], norm_score, s["moves"],
         prev_obs, action, feedback,
         token_stats["prompt"], token_stats["response"], token_stats.get("thinking"),
+        token_stats.get("thinking_is_summary"),
         token_stats["nb_tokens"], token_stats["nb_tokens_prompt"],
         token_stats["nb_tokens_response"], token_stats.get("nb_tokens_thinking", 0),
+        proposed_action, blocked_state_command is not None, blocked_state_command,
+        action_was_wasted, unsafe_proposed_action, unsafe_action_reason,
+        unsafe_action_source,
+        token_stats.get("rewritten_observation"),
+        token_stats.get("observation_rewrite_prompt"),
+        token_stats.get("observation_rewrite_model"),
+        token_stats.get("observation_rewrite_nb_tokens"),
+        token_stats.get("observation_rewrite_nb_tokens_prompt"),
+        token_stats.get("observation_rewrite_nb_tokens_response"),
+        token_stats.get("observation_rewrite_nb_tokens_thinking"),
+        token_stats.get("observation_rewrite_cache_read_tokens"),
+        token_stats.get("observation_rewrite_cache_write_tokens"),
+        token_stats.get("observation_rewrite_duration"),
+        token_stats.get("pre_alias_rewritten_observation"),
+        token_stats.get("observation_keyword_alias_profile"),
+        token_stats.get("observation_keyword_alias_replacements"),
+        token_stats.get("observation_keyword_alias_replacement_count"),
+        translated_action if translated_action is not None else proposed_action,
+        translated_action is not None and translated_action != proposed_action,
+        action_keyword_alias_replacements or [],
+        sum(
+            item.get("count", 0)
+            for item in (action_keyword_alias_replacements or [])
+        ),
+        action_canonical_keyword_matches or [],
+        sum(
+            item.get("count", 0)
+            for item in (action_canonical_keyword_matches or [])
+        ),
+        executed_action,
+        environment_step_called,
     ])
     # fmt: on
+
+    rewrite_file = s.get("observation_rewrite_file")
+    if rewrite_file and token_stats.get("rewritten_observation") is not None:
+        rewrite_record = {
+            "Step": s["step"],
+            "Observation": prev_obs,
+            "Rewritten Observation": token_stats["rewritten_observation"],
+            "Observation Rewrite Prompt": token_stats.get("observation_rewrite_prompt"),
+            "Observation Rewrite Model": token_stats.get("observation_rewrite_model"),
+            "Observation Rewrite Token Usage": token_stats.get(
+                "observation_rewrite_nb_tokens"
+            ),
+            "Observation Rewrite Prompt Tokens": token_stats.get(
+                "observation_rewrite_nb_tokens_prompt"
+            ),
+            "Observation Rewrite Response Tokens": token_stats.get(
+                "observation_rewrite_nb_tokens_response"
+            ),
+            "Observation Rewrite Thinking Tokens": token_stats.get(
+                "observation_rewrite_nb_tokens_thinking"
+            ),
+            "Observation Rewrite Cache Read Tokens": token_stats.get(
+                "observation_rewrite_cache_read_tokens"
+            ),
+            "Observation Rewrite Cache Write Tokens": token_stats.get(
+                "observation_rewrite_cache_write_tokens"
+            ),
+            "Observation Rewrite Duration": token_stats.get(
+                "observation_rewrite_duration"
+            ),
+            "Pre-Alias Rewritten Observation": token_stats.get(
+                "pre_alias_rewritten_observation"
+            ),
+            "Observation Keyword Alias Profile": token_stats.get(
+                "observation_keyword_alias_profile"
+            ),
+            "Observation Keyword Alias Replacements": token_stats.get(
+                "observation_keyword_alias_replacements"
+            ),
+            "Observation Keyword Alias Replacement Count": token_stats.get(
+                "observation_keyword_alias_replacement_count"
+            ),
+            "Proposed Action": proposed_action,
+            "Translated Action": (
+                translated_action if translated_action is not None else proposed_action
+            ),
+            "Action Was Translated": (
+                translated_action is not None and translated_action != proposed_action
+            ),
+            "Action Keyword Alias Replacements": (
+                action_keyword_alias_replacements or []
+            ),
+            "Action Keyword Alias Replacement Count": sum(
+                item.get("count", 0)
+                for item in (action_keyword_alias_replacements or [])
+            ),
+            "Action Canonical Keyword Matches": (
+                action_canonical_keyword_matches or []
+            ),
+            "Action Canonical Keyword Match Count": sum(
+                item.get("count", 0)
+                for item in (action_canonical_keyword_matches or [])
+            ),
+            "Executed Action": executed_action,
+            "Environment Step Called": environment_step_called,
+            "Action": action,
+        }
+        with open(rewrite_file, "a", encoding="utf-8") as writer:
+            json.dump(rewrite_record, writer, cls=NumpyEncoder)
+            writer.write("\n")
+            writer.flush()
 
 
 def replay_trajectory(
@@ -149,15 +364,65 @@ def replay_trajectory(
     )
     for _, row in replay_pbar:
         state["step"] = int(row["Step"])
-        action = str(row["Action"])
+        recorded_action = str(row["Action"])
+        proposed_value = row.get("Proposed Action")
+        proposed_action = (
+            proposed_value if isinstance(proposed_value, str) else recorded_action
+        )
+        translated_value = row.get("Translated Action")
+        translated_action = (
+            translated_value if isinstance(translated_value, str) else recorded_action
+        )
+        action_keyword_alias_replacements = row.get("Action Keyword Alias Replacements")
+        if not isinstance(action_keyword_alias_replacements, list):
+            action_keyword_alias_replacements = []
+        action_canonical_keyword_matches = row.get("Action Canonical Keyword Matches")
+        if not isinstance(action_canonical_keyword_matches, list):
+            action_canonical_keyword_matches = []
+        if translated_action != proposed_action:
+            state["nb_translated_actions"] += 1
+        if action_canonical_keyword_matches:
+            state["nb_actions_with_canonical_keywords"] += 1
+        action, detected_block = _resolve_action(
+            recorded_action,
+            getattr(args, "disable_state_commands", False),
+        )
+        recorded_block = row.get("Blocked State Command")
+        blocked_state_command = (
+            recorded_block.strip()
+            if isinstance(recorded_block, str) and recorded_block.strip()
+            else detected_block
+        )
+        action_was_wasted = row.get("Action Was Wasted") is True
+        if blocked_state_command is not None and not action_was_wasted:
+            raise ValueError(
+                "Cannot replay a blocked state command that was not recorded "
+                "as a wasted step."
+            )
+        unsafe_proposed_action = row.get("Unsafe Proposed Action")
+        unsafe_action_reason = row.get("Unsafe Action Reason")
+        unsafe_action_source = row.get("Unsafe Action Source")
+        if blocked_state_command is not None:
+            state["nb_blocked_state_commands"] += 1
+        if action_was_wasted:
+            state["nb_wasted_steps"] += 1
 
         replay_pbar.set_postfix_str(
             f"Score: {state['info']['score']}/{state['info']['max_score']}"
             f" ({state['info']['score']/state['info']['max_score']:.1%})"
         )
 
-        prev_obs, feedback = _step_env(env, state, action)
-        _check_invalid(state, action, args.admissible_commands)
+        if action_was_wasted:
+            prev_obs = state["obs"]
+            feedback = row.get("Feedback") or WASTED_STEP_FEEDBACK
+            executed_action = None
+            environment_step_called = False
+        else:
+            prev_obs, feedback = _step_env(env, state, action)
+            state["nb_environment_steps"] += 1
+            executed_action = action
+            environment_step_called = True
+            _check_invalid(state, action, args.admissible_commands)
 
         # Verify replay fidelity.
         logged_obs = row.get("Observation")
@@ -170,7 +435,11 @@ def replay_trajectory(
                 )
 
         # Build agent history for subsequent LLM calls.
-        agent.history.append((f"{prev_obs}\n> ", f"{action}\n"))
+        rewritten_value = row.get("Rewritten Observation")
+        history_observation = (
+            rewritten_value if isinstance(rewritten_value, str) else prev_obs
+        )
+        agent.history.append((f"{history_observation}\n> ", f"{proposed_action}\n"))
 
         msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s} (replay)"
         msg = msg.format(
@@ -187,12 +456,51 @@ def replay_trajectory(
             "prompt": row.get("Prompt", "") or "",
             "response": row.get("Response", "") or "",
             "thinking": row.get("Thinking"),
+            "thinking_is_summary": row.get("Thinking Is Summary"),
             "nb_tokens": row.get("Token Usage", 0) or 0,
             "nb_tokens_prompt": row.get("Prompt Tokens", 0) or 0,
             "nb_tokens_response": row.get("Response Tokens", 0) or 0,
             "nb_tokens_thinking": row.get("Thinking Tokens", 0) or 0,
         }
-        _record_step(state, prev_obs, action, feedback, token_stats, wandb_run)
+        for key, column in zip(
+            OBSERVATION_REWRITE_STAT_KEYS,
+            (
+                "Rewritten Observation",
+                "Observation Rewrite Prompt",
+                "Observation Rewrite Model",
+                "Observation Rewrite Token Usage",
+                "Observation Rewrite Prompt Tokens",
+                "Observation Rewrite Response Tokens",
+                "Observation Rewrite Thinking Tokens",
+                "Observation Rewrite Cache Read Tokens",
+                "Observation Rewrite Cache Write Tokens",
+                "Observation Rewrite Duration",
+                "Pre-Alias Rewritten Observation",
+                "Observation Keyword Alias Profile",
+                "Observation Keyword Alias Replacements",
+                "Observation Keyword Alias Replacement Count",
+            ),
+        ):
+            token_stats[key] = row.get(column)
+        _record_step(
+            state,
+            prev_obs,
+            action,
+            feedback,
+            token_stats,
+            wandb_run,
+            proposed_action=proposed_action,
+            blocked_state_command=blocked_state_command,
+            action_was_wasted=action_was_wasted,
+            unsafe_proposed_action=unsafe_proposed_action,
+            unsafe_action_reason=unsafe_action_reason,
+            unsafe_action_source=unsafe_action_source,
+            translated_action=translated_action,
+            action_keyword_alias_replacements=(action_keyword_alias_replacements),
+            action_canonical_keyword_matches=(action_canonical_keyword_matches),
+            executed_action=executed_action,
+            environment_step_called=environment_step_called,
+        )
 
         if not state["done"]:
             log.debug(state["obs"])
@@ -236,25 +544,100 @@ def play_with_agent(
     )
     for step in pbar:
         state["step"] = step
+        environment = getattr(env, "unwrapped", env)
+        refresh_context = getattr(
+            environment,
+            "set_submitted_step_context",
+            None,
+        )
+        if callable(refresh_context):
+            state["obs"] = refresh_context(state["obs"], step)
         pbar.set_postfix_str(
             f"Score: {state['info']['score']}/{state['info']['max_score']}"
             f" ({state['info']['score']/state['info']['max_score']:.1%})"
         )
 
-        action, stats = agent.act(
+        proposed_action, stats = agent.act(
             state["obs"], state["score"], state["done"], state["info"]
         )
-        log.debug(colored(f"> {action}", "green"))
+        action_was_unsafe = stats.get("action_was_unsafe") is True
+        unsafe_proposed_action = stats.get("unsafe_action")
+        unsafe_action_reason = stats.get("unsafe_action_reason")
+        unsafe_action_source = stats.get("unsafe_action_source")
+        if action_was_unsafe and proposed_action != INVALID_UNSAFE_ACTION:
+            raise ValueError("Unsafe action did not use the canonical sentinel.")
+        alias_profile = getattr(args, "observation_keyword_alias_profile", None)
+        canonical_action_result = apply_keyword_aliases(
+            proposed_action,
+            alias_profile,
+        )
+        action_canonical_keyword_matches = [
+            item.as_dict() for item in canonical_action_result.replacements
+        ]
+        if action_canonical_keyword_matches:
+            state["nb_actions_with_canonical_keywords"] += 1
+        action_alias_result = apply_keyword_aliases(
+            proposed_action,
+            alias_profile,
+            reverse=True,
+        )
+        translated_action = action_alias_result.text
+        action_keyword_alias_replacements = [
+            item.as_dict() for item in action_alias_result.replacements
+        ]
+        if translated_action != proposed_action:
+            state["nb_translated_actions"] += 1
+        action, blocked_state_command = _resolve_action(
+            translated_action,
+            getattr(args, "disable_state_commands", False),
+        )
+        if blocked_state_command is not None:
+            state["nb_blocked_state_commands"] += 1
+            log.warning(
+                "Blocked state command %r in proposed action %r; executing %r.",
+                blocked_state_command,
+                proposed_action,
+                action,
+            )
+        action_was_wasted = action_was_unsafe or blocked_state_command is not None
+        if action_was_wasted:
+            state["nb_wasted_steps"] += 1
+        logged_proposal = (
+            unsafe_proposed_action if action_was_unsafe else proposed_action
+        )
+        log.debug(colored(f"> {logged_proposal!r}", "green"))
 
         if args.debug:
             breakpoint()
 
-        prev_obs, feedback = _step_env(env, state, action)
-        _check_invalid(state, action, args.admissible_commands)
+        if action_was_wasted:
+            prev_obs = state["obs"]
+            feedback = WASTED_STEP_FEEDBACK
+            executed_action = None
+            environment_step_called = False
+            log.warning(
+                "Discarded action before env.step; step %d was wasted "
+                "(blocked_state_command=%r, unsafe_reason=%r, proposal=%r).",
+                step,
+                blocked_state_command,
+                unsafe_action_reason,
+                logged_proposal,
+            )
+        else:
+            prev_obs, feedback = _step_env(env, state, action)
+            state["nb_environment_steps"] += 1
+            executed_action = action
+            environment_step_called = True
+            _check_invalid(state, action, args.admissible_commands)
 
-        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}\tAction: {:20s}"
+        msg = "{:5d}. Time: {:9.2f}\tScore: {:3d}\tMove: {:5d}" "\tAction: {:20s}{}"
         msg = msg.format(
-            step, time.time() - start_time, state["score"], state["moves"], action
+            step,
+            time.time() - start_time,
+            state["score"],
+            state["moves"],
+            action,
+            " (wasted)" if action_was_wasted else "",
         )
         log.info(msg)
 
@@ -262,12 +645,34 @@ def play_with_agent(
             "prompt": stats["prompt"],
             "response": stats["response"],
             "thinking": stats.get("thinking"),
+            "thinking_is_summary": stats.get("thinking_is_summary"),
             "nb_tokens": stats["nb_tokens"],
             "nb_tokens_prompt": stats["nb_tokens_prompt"],
             "nb_tokens_response": stats["nb_tokens_response"],
             "nb_tokens_thinking": stats.get("nb_tokens_thinking", 0),
         }
-        _record_step(state, prev_obs, action, feedback, token_stats, wandb_run)
+        token_stats.update(
+            {key: stats.get(key) for key in OBSERVATION_REWRITE_STAT_KEYS}
+        )
+        _record_step(
+            state,
+            prev_obs,
+            action,
+            feedback,
+            token_stats,
+            wandb_run,
+            proposed_action=proposed_action,
+            blocked_state_command=blocked_state_command,
+            action_was_wasted=action_was_wasted,
+            unsafe_proposed_action=unsafe_proposed_action,
+            unsafe_action_reason=unsafe_action_reason,
+            unsafe_action_source=unsafe_action_source,
+            translated_action=translated_action,
+            action_keyword_alias_replacements=(action_keyword_alias_replacements),
+            action_canonical_keyword_matches=(action_canonical_keyword_matches),
+            executed_action=executed_action,
+            environment_step_called=environment_step_called,
+        )
 
         if not state["done"]:
             log.debug(state["obs"])
@@ -330,14 +735,38 @@ def evaluate(agent, env_name, args):
             )
         )
 
+    state_policy = "_nostate1" if getattr(args, "disable_state_commands", False) else ""
+    rewriter_model = getattr(args, "observation_rewriter_model", None)
+    rewrite_policy = ""
+    if rewriter_model:
+        safe_rewriter_model = re.sub(r"[^a-zA-Z0-9.-]+", "-", rewriter_model)
+        rewrite_effort = getattr(args, "observation_rewriter_reasoning_effort", "max")
+        rewrite_policy = f"_rewrite-{safe_rewriter_model}-{rewrite_effort}"
+        rewrite_condition_sha256 = agent.params.get(
+            "observation_rewrite_condition_sha256"
+        )
+        if rewrite_condition_sha256:
+            rewrite_policy += f"-{rewrite_condition_sha256[:12]}"
+    alias_profile = getattr(args, "observation_keyword_alias_profile", None)
+    alias_policy = ""
+    if alias_profile:
+        safe_alias_profile = re.sub(r"[^a-zA-Z0-9.-]+", "-", alias_profile)
+        alias_policy = f"_aliases-{safe_alias_profile}"
     env_params = (
-        f"a{int(args.admissible_commands)}_s{args.game_seed}_steps{args.nb_steps}"
+        f"a{int(args.admissible_commands)}{state_policy}{rewrite_policy}"
+        f"{alias_policy}"
+        f"_s{args.game_seed}_steps{args.nb_steps}"
     )
     logdir = pjoin(args.log_dir, f"{env_name}")
     os.makedirs(logdir, exist_ok=True)
     summary_file = pjoin(logdir, f"{env_params}.json")
     rollouts_file = pjoin(logdir, f"{env_params}.jsonl")
     log_file = pjoin(logdir, f"{env_params}.log")
+    rewrite_file = (
+        pjoin(logdir, f"{env_params}.observation_rewrites.jsonl")
+        if rewriter_model
+        else None
+    )
 
     # Create new file handler for this env evaluation.
     fh = log.add_new_file_handler(log_file)
@@ -393,6 +822,7 @@ def evaluate(agent, env_name, args):
         "max_steps": args.nb_steps,
         "game_seed": args.game_seed,
         "admissible_commands": args.admissible_commands,
+        "disable_state_commands": getattr(args, "disable_state_commands", False),
         **agent.params,
     }
     if trajectory_df is not None:
@@ -405,6 +835,9 @@ def evaluate(agent, env_name, args):
         reinit=True,
         name=run_name,
     )
+    if rewrite_file:
+        with open(rewrite_file, "w", encoding="utf-8"):
+            pass
 
     env = gym.make(
         f"tales/{env_name}-v0",
@@ -424,6 +857,7 @@ def evaluate(agent, env_name, args):
     log.debug(f"Environment reset.\n{obs}\n")
 
     state = _make_state(obs, info)
+    state["observation_rewrite_file"] = rewrite_file
 
     wandb_run.log(
         {
@@ -433,6 +867,9 @@ def evaluate(agent, env_name, args):
             "episode/normalized_score": 0,
             "episode/normalized_highscore": 0,
             "episode/token_usage": 0,
+            "episode/translated_actions": 0,
+            "episode/actions_with_canonical_keywords": 0,
+            "episode/environment_steps": 0,
         },
         step=0,
     )
@@ -480,6 +917,13 @@ def evaluate(agent, env_name, args):
         "nb_steps": state["step"],
         "nb_moves": state["moves"],
         "nb_invalid_actions": state["nb_invalid_actions"],
+        "nb_blocked_state_commands": state["nb_blocked_state_commands"],
+        "nb_wasted_steps": state["nb_wasted_steps"],
+        "nb_translated_actions": state["nb_translated_actions"],
+        "nb_actions_with_canonical_keywords": state[
+            "nb_actions_with_canonical_keywords"
+        ],
+        "nb_environment_steps": state["nb_environment_steps"],
         "nb_losts": state["nb_losts"],
         "nb_wins": state["nb_wins"],
         "nb_resets": state["nb_resets"],
@@ -493,8 +937,28 @@ def evaluate(agent, env_name, args):
     columns = [
         "Step", "Score", "Max Score", "Normalized Score", "Moves",
         "Observation", "Action", "Feedback",
-        "Prompt", "Response", "Thinking",
+        "Prompt", "Response", "Thinking", "Thinking Is Summary",
         "Token Usage", "Prompt Tokens", "Response Tokens", "Thinking Tokens",
+        "Proposed Action", "Action Was Blocked", "Blocked State Command",
+        "Action Was Wasted", "Unsafe Proposed Action", "Unsafe Action Reason",
+        "Unsafe Action Source",
+        "Rewritten Observation", "Observation Rewrite Prompt",
+        "Observation Rewrite Model", "Observation Rewrite Token Usage",
+        "Observation Rewrite Prompt Tokens", "Observation Rewrite Response Tokens",
+        "Observation Rewrite Thinking Tokens",
+        "Observation Rewrite Cache Read Tokens",
+        "Observation Rewrite Cache Write Tokens",
+        "Observation Rewrite Duration",
+        "Pre-Alias Rewritten Observation",
+        "Observation Keyword Alias Profile",
+        "Observation Keyword Alias Replacements",
+        "Observation Keyword Alias Replacement Count",
+        "Translated Action", "Action Was Translated",
+        "Action Keyword Alias Replacements",
+        "Action Keyword Alias Replacement Count",
+        "Action Canonical Keyword Matches",
+        "Action Canonical Keyword Match Count",
+        "Executed Action", "Environment Step Called",
     ]
     # fmt: on
     df = pd.DataFrame(state["results"], columns=columns)
@@ -504,6 +968,13 @@ def evaluate(agent, env_name, args):
         "total/Env. Steps": final_stats["nb_steps"],
         "total/Game Moves": final_stats["nb_moves"],
         "total/Invalid Actions": final_stats["nb_invalid_actions"],
+        "total/Blocked State Commands": final_stats["nb_blocked_state_commands"],
+        "total/Wasted Steps": final_stats["nb_wasted_steps"],
+        "total/Translated Actions": final_stats["nb_translated_actions"],
+        "total/Actions With Canonical Keywords": final_stats[
+            "nb_actions_with_canonical_keywords"
+        ],
+        "total/Environment Steps": final_stats["nb_environment_steps"],
         "total/Losts": final_stats["nb_losts"],
         "total/Wins": final_stats["nb_wins"],
         "total/Resets": final_stats["nb_resets"],
@@ -516,6 +987,23 @@ def evaluate(agent, env_name, args):
         "final/Normalized Score": final_stats["norm_score"],
         "final/Duration": final_stats["duration"],
     }
+    if rewriter_model:
+        wandb_stats.update(
+            {
+                "total/Observation Rewrite Tokens": df[
+                    "Observation Rewrite Token Usage"
+                ].sum(),
+                "total/Observation Rewrite Prompt Tokens": df[
+                    "Observation Rewrite Prompt Tokens"
+                ].sum(),
+                "total/Observation Rewrite Response Tokens": df[
+                    "Observation Rewrite Response Tokens"
+                ].sum(),
+                "total/Observation Rewrite Thinking Tokens": df[
+                    "Observation Rewrite Thinking Tokens"
+                ].sum(),
+            }
+        )
     wandb_run.log(
         {"episode/rollout": wandb.Table(dataframe=df), **wandb_stats},
         step=final_stats["nb_steps"],
@@ -530,7 +1018,10 @@ def evaluate(agent, env_name, args):
         "wandb_url": wandb_run.url,
         **final_stats,
         **wandb_stats,
+        "agent_params": agent.params,
     }
+    if rewrite_file:
+        summary["observation_rewrites_file"] = rewrite_file
 
     with open(summary_file, "w") as f:
         json.dump(summary, f, indent=2, sort_keys=True, cls=NumpyEncoder)
@@ -538,6 +1029,8 @@ def evaluate(agent, env_name, args):
     wandb.save(rollouts_file)
     wandb.save(log_file)
     wandb.save(summary_file)
+    if rewrite_file:
+        wandb.save(rewrite_file)
 
     wandb_run.finish(exit_code=int(status != "finished"))
 
@@ -641,14 +1134,18 @@ def _maybe_load_agent_module():
             print(f"Importing {agent_file}...")
             agent_dirname = os.path.dirname(agent_file)
             agent_filename, _ = os.path.splitext(os.path.basename(agent_file))
-            if f"{agent_dirname}.{agent_filename}" in sys.modules:
+            module_name = f"{agent_dirname}.{agent_filename}"
+            if module_name in sys.modules:
                 continue
 
-            spec = importlib.util.spec_from_file_location(
-                f"{agent_dirname}.{agent_filename}", agent_file
-            )
+            spec = importlib.util.spec_from_file_location(module_name, agent_file)
             module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
+            sys.modules[module_name] = module
+            try:
+                spec.loader.exec_module(module)
+            except BaseException:
+                sys.modules.pop(module_name, None)
+                raise
 
 
 def parse_args():
@@ -677,9 +1174,13 @@ def parse_args():
                             help="Maximum number of steps per game.")
         general_group.add_argument("--admissible-commands", action="store_true",
                             help="Enable admissible commands.")
+        general_group.add_argument("--disable-state-commands", action="store_true",
+                            help="Replace save/load/restore/undo actions with an invalid command.")
 
         general_group.add_argument("--log-dir", default="logs",
                             help="Folder where to save verbose log information.")
+        general_group.add_argument("--work-dir",
+                            help="Working directory used by the game interpreter.")
 
         general_group.add_argument("--wandb", action="store_true",
                             help="Log to wandb")
@@ -739,6 +1240,7 @@ def main():
     agent.new = partial(Agent, **vars(args))
 
     # Create logging directory.
+    args.log_dir = os.path.abspath(os.path.expanduser(args.log_dir))
     args.log_dir = pjoin(args.log_dir, f"tales_{agent.uid.replace('/', '-')}")
     os.makedirs(args.log_dir, exist_ok=True)
     setup_logging(args)
@@ -749,6 +1251,12 @@ def main():
     if args.wandb:
         os.environ["WANDB_MODE"] = "online"
         os.environ.pop("WANDB_RUN_ID", None)
+
+    if args.work_dir:
+        args.work_dir = os.path.abspath(os.path.expanduser(args.work_dir))
+        os.makedirs(args.work_dir, exist_ok=True)
+        os.environ["WANDB_DISABLE_GIT"] = "true"
+        os.chdir(args.work_dir)
 
     args.envs = args.envs or tales.envs
     args.envs = [  # Expand tasks into their respective environments.
