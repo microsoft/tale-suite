@@ -39,6 +39,7 @@ from scripts.jaz_jericho_harness import (
     _write_artifact_manifests,
     aggregate_results,
     _is_budget_exhaustion,
+    _is_context_budget_exhaustion,
     _originated_in_repl,
     _return_validator,
     split_copilot_conversation,
@@ -804,6 +805,32 @@ def test_budget_exception_groups_are_recognized():
 
     assert _is_budget_exhaustion(grouped) is True
     assert _is_budget_exhaustion(mixed) is False
+
+
+def test_context_budget_exception_groups_are_recognized():
+    grouped = ExceptionGroup(
+        "context hooks",
+        [
+            RuntimeError(
+                "Request exceeds the model's prompt budget after reserving output"
+            ),
+            ExceptionGroup(
+                "nested",
+                [RuntimeError("Maximum context length exceeded")],
+            ),
+        ],
+    )
+    mixed = ExceptionGroup(
+        "mixed",
+        [
+            RuntimeError("Context window exceeded"),
+            ValueError("real failure"),
+        ],
+    )
+
+    assert _is_context_budget_exhaustion(grouped) is True
+    assert _is_context_budget_exhaustion(mixed) is False
+    assert _is_context_budget_exhaustion(RuntimeError("Prompt is too long")) is True
 
 
 def test_repl_originated_exceptions_are_distinguished_from_harness_failures():

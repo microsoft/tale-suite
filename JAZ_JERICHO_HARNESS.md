@@ -52,7 +52,7 @@ python scripts/run_jaz_jericho.py \
 | Provider state | Every JAZ completion uses a fresh Copilot session with memory, config discovery, custom instructions, and native tools disabled. Full JAZ conversation history is sent explicitly. |
 | Provider integrity | A turn requires an exact served-model match and at least one usage event. Multiple events are accepted only as a CAPI automatic continuation chain in which every preceding call ended at the output-length limit. A final content-filter or output-limit event becomes recoverable zero-action REPL feedback rather than executable model code. |
 | Telemetry | ATIF invoke trace, per-completion Copilot telemetry, per-action Jericho log, model metadata, config, and final summary. |
-| Score | TALES high score divided by catalog maximum, capped naturally by the environment. LLM-call-budget exhaustion is an ordinary valid outcome. Provider/infrastructure failures and action-safety-limit termination are invalid. |
+| Score | TALES high score divided by catalog maximum, capped naturally by the environment. LLM-call-budget and model-context-budget exhaustion are ordinary valid resource-limit outcomes. Provider/infrastructure failures and action-safety-limit termination are invalid. |
 
 The CLI runs each episode in a disposable worker process, including when
 `--concurrency 1` is selected. This contains a native Jericho timeout or REPL

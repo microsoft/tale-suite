@@ -1416,6 +1416,23 @@ def _is_budget_exhaustion(exc: BaseException) -> bool:
     return False
 
 
+def _is_context_budget_exhaustion(exc: BaseException) -> bool:
+    if isinstance(exc, BaseExceptionGroup):
+        return bool(exc.exceptions) and all(
+            _is_context_budget_exhaustion(child) for child in exc.exceptions
+        )
+    message = str(exc).lower()
+    return any(
+        marker in message
+        for marker in (
+            "request exceeds the model's prompt budget",
+            "context window exceeded",
+            "maximum context length",
+            "prompt is too long",
+        )
+    )
+
+
 def _originated_in_repl(exc: BaseException) -> bool:
     traceback_cursor = exc.__traceback__
     while traceback_cursor is not None:
@@ -1673,6 +1690,20 @@ def run_jaz_episode(config: JAZRunConfig) -> dict[str, Any]:
                 score_valid = False
             else:
                 status = "model_call_budget_exhausted"
+                score_valid = controller is not None
+        elif _is_context_budget_exhaustion(exc):
+            game_result = controller.summary() if controller is not None else {}
+            if game_result.get("environment_errors"):
+                status = "failed_environment_step"
+                score_valid = False
+            elif game_result.get("completion_reason") == "max_score":
+                status = "completed_max_score"
+                score_valid = True
+            elif game_result.get("completion_reason") == "action_safety_limit":
+                status = "failed_action_safety_limit"
+                score_valid = False
+            else:
+                status = "model_context_budget_exhausted"
                 score_valid = controller is not None
         elif controller is not None and _originated_in_repl(exc):
             game_result = controller.summary()
