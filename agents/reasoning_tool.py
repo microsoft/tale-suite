@@ -8,13 +8,14 @@ result). Past reasoning goes back with each assistant turn (--keep-reasoning), a
 Same as Astra:
 - A reply with no tool call: its text is the action (action_source "text"; Beam's wire-token junk is cut as in
   plain-text mode).
-- A malformed reply (several calls, a call to another tool, unparsable or non-string arguments): retried.
-Difference from Astra: retries are capped at TOOL_RETRIES with a new sampling seed each time (vLLM is seeded, so an
-identical retry would repeat the same output), then the step falls back to the first game_action call's action,
-else the text. TALES' own system prompt is unchanged (our runs don't block state commands, and Break-In's title
-Enter is sent by the environment).
+Difference from Astra: a malformed reply (several calls, a call to another tool, unparsable or non-string arguments)
+is not retried by default (TOOL_RETRIES = 0; Astra retried). The step takes the first game_action call's action, else
+the text. With TOOL_RETRIES > 0, each retry uses a new sampling seed (vLLM is seeded, so an identical retry would
+repeat the same output); the 500-step Beam runs used TOOL_RETRIES = 4. TALES' own system prompt is unchanged (our
+runs don't block state commands, and Break-In's title Enter is sent by the environment).
 
-The step's Response holds a JSON record: source, content, tool_calls, retries and the malformed attempts.
+The step's Response holds a JSON record: source, content, tool_calls, retries (re-requests made) and the malformed
+replies.
 Requests are non-streaming, straight to the server's /v1/chat/completions (the `llm` library doesn't pass tools here).
 
 Muse Spark (llama.cpp, --reasoning-format none; 2026-10-24): llama.cpp's Muse handler constrains generation with a
@@ -64,7 +65,7 @@ GAME_ACTION_TOOL = {
     },
 }
 TOOL_RESULT = "Action recorded."
-TOOL_RETRIES = 4  # Extra attempts after a malformed reply.
+TOOL_RETRIES = 0  # Extra attempts after a malformed reply (the 500-step Beam runs used 4).
 RETRY_SEED_STEP = 1_000_003
 MUSE_MESSAGE_ANY = re.compile(
     r"(?:<\|start\|>assistant)?\s*to=([\w.\-]+)<\|message\|>(.*?)(?:<\|eom\|>|<\|eot\|>|<\|end\|>|(?=<\|start\|>)|$)", re.S
@@ -245,7 +246,7 @@ class ReasoningToolAgent(ReasoningAgent):
         self.sources.append(source)
 
         record = {"source": source, "content": raw if self.muse else content, "tool_calls": message.get("tool_calls"),
-                  "retries": len(malformed), "malformed": malformed}
+                  "retries": attempt, "malformed": malformed}
         display = [dict(m, content=m.get("content") if not m.get("tool_calls") else
                         "[game_action] " + m["tool_calls"][0]["function"]["arguments"]) for m in messages]
         stats = {
