@@ -1,4 +1,6 @@
 import argparse
+import logging
+import re
 
 import llm
 import numpy as np
@@ -25,6 +27,43 @@ SYSTEM_PROMPT = (
     " Upon reading the text observation, provide a *single* short phrase to interact with the game, e.g. `get lamp` (without the backticks)."
     " When stuck, try using the `help` command to see what commands are available."
 )
+
+# vLLM 0.26 streaming with the gemma4 reasoning parser leaks Gemma's stop token into the content when the model answers
+# without thinking ("go north<turn|>", sometimes "<eos>"). Non-streaming responses don't have it. Left in, the token
+# goes back into the history as a real end-of-turn marker in the middle of the model's turn.
+GEMMA_LEAKED_STOP = re.compile(r"(?:\s*(?:<turn\|>|<eos>))+\s*$")
+
+# Beam-1.0 (vLLM nightly and llama.cpp alike, official template) often doesn't end its turn after the game command: it
+# appends the closing tag of its own XML tool-call syntax ("get leaflet\n</rfl:parameter>") or goes on with Harmony wire
+# tokens (an imagined next turn, a hallucinated `to=bash` call). Its tokenizer doesn't mark those tokens special, so they
+# reach the content; TALES rejects them as several actions, and once they are in the history the template refuses the
+# next request ("Pass plain text in API fields, not Harmony wire tags"). The action is cut at the first wire token or rfl
+# tag (user decisions 2026-10-23: the trailing tag first, widened to any wire token after 8/10 runs crashed); the raw text
+# stays in the step's Response.
+BEAM_MODELS = ("reflection/Beam-1.0-501B-A23B-NVFP4",)
+BEAM_JUNK = re.compile(r"<\|[a-z_]+\|>|</?rfl:")
+
+
+def cut_beam_junk(text):
+    """Text before the first Harmony wire token or rfl tag, without the trailing whitespace and stray '|' before it."""
+    match = BEAM_JUNK.search(text)
+    return text if match is None else text[: match.start()].rstrip().rstrip("|").rstrip()
+
+COMPACT_PROMPT = (
+    "// Context compaction. This session is about to end and you will continue playing in a brand-new session that"
+    " starts with only your summary and the next observation; nothing else from this session will be kept."
+    " Write the summary for your future self now and make sure to keep the most relevant details for finishing the"
+    " game with the highest score: the map of locations visited and how they connect, your current location and"
+    " inventory, treasures and important objects found and where they are, puzzles encountered and what you tried"
+    " (including what failed), dangers, and your plan for what to do next."
+    " Reply with the summary only, not a game command."
+)
+COMPACT_HEADER = "// Summary of your play so far, written by you at the end of your previous session:\n"
+THINK_CAP_PROMPT = (
+    "// Your thinking was cut off at the length limit. Based on the thoughts so far, reply now with your chosen"
+    " action on a single line.\n> "
+)
+THINK_CAP_RETRY_TOKENS = 4096  # Token cap for the follow-up call that asks for the action alone.
 
 DEEPSEEK_CHAT_TEMPLATE_NO_THINK = "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<｜User｜>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<｜Assistant｜><｜tool▁calls▁begin｜><｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{{'<｜tool▁calls▁end｜><｜end▁of▁sentence｜>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<｜tool▁outputs▁end｜>' + message['content'] + '<｜end▁of▁sentence｜>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<｜Assistant｜>' + content + '<｜end▁of▁sentence｜>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<｜tool▁outputs▁begin｜><｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<｜tool▁outputs▁end｜>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<｜Assistant｜><think>\\n</think>\\n'}}{% endif %}"
 
@@ -53,6 +92,37 @@ OPENAI_MODELS = [
     "gpt-5-mini",
     "gpt-5-nano",
 ]
+
+# Served by a local vLLM with a reasoning parser: the reasoning streams separately from the action (delta.reasoning).
+LOCAL_REASONING_MODELS = [
+    "arcee-ai/Trinity-Large-Thinking-W4A16",
+    "thinkingmachines/Inkling-Small-NVFP4",  # Unusable on A100: vLLM's Inkling attention needs SM90+.
+    "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
+    "google/gemma-4-31B-it",
+    "unsloth/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL",  # llama.cpp llama-server (no vLLM/SGLang path for Muse on A100).
+    "unsloth/DeepSeek-V4-Flash-0731-UD-Q8_K_XL",  # llama.cpp llama-server (vLLM's DeepSeek V4 sparse MLA needs SM90+).
+    "Qwen/Qwen3.8-27B",
+    "reflection/Beam-1.0-501B-A23B-NVFP4",  # vLLM main (nightly). llama.cpp's Beam port breaks multi-turn (#30735).
+]
+
+# Muse Spark Open writes Harmony-style messages addressed by recipient: reasoning to=self, optional progress notes
+# to=commentary, the answer to=user. llama.cpp's parser merges the commentary into the content with no separator
+# ("...room for essential gear.drop leaflet"), which the game rejects and which then fills the history. So its server runs
+# with --reasoning-format none and the agent splits the raw text itself (user, 2026-10-20: keep the final message):
+# thinking = to=self, action = to=user, commentary dropped. The raw text stays in the step's Response.
+MUSE_RAW_MODELS = ("unsloth/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL",)
+MUSE_MESSAGE = re.compile(
+    r"(?:<\|start\|>assistant)?\s*to=(\w+)<\|message\|>(.*?)(?:<\|eom\|>|<\|eot\|>|<\|end\|>|(?=<\|start\|>)|$)", re.S
+)
+
+
+def split_muse_messages(raw):
+    """{recipient: text} from raw Muse output; repeated recipients are joined with blank lines."""
+    parts = {}
+    for recipient, body in MUSE_MESSAGE.findall(raw):
+        parts.setdefault(recipient, []).append(body.strip())
+    return {recipient: "\n\n".join(bodies) for recipient, bodies in parts.items()}
+
 
 GEMINI_MODELS = [
     "gemini-2.5-pro",
@@ -92,6 +162,18 @@ class ReasoningAgent(tales.Agent):
         self.cot_temp = kwargs["cot_temp"]
         self.reasoning_effort = kwargs["reasoning_effort"]
         self.conversation = kwargs["conversation"]
+        self.openrouter_provider = kwargs.get("openrouter_provider")
+        self.keep_reasoning = kwargs.get("keep_reasoning", False)
+        self.think_cap = kwargs.get("think_cap")
+        if self.think_cap is not None and self.llm not in LOCAL_REASONING_MODELS:
+            raise ValueError("--think-cap is only wired for LOCAL_REASONING_MODELS models.")
+        self.compact = kwargs.get("compact")
+        if self.compact is not None:
+            assert self.compact > 0, "--compact must be greater than 0."
+            assert self.conversation, "--compact needs --conversation."
+        self.summary = None
+        if self.keep_reasoning and not (self.llm.startswith("openrouter/") or self.llm in LOCAL_REASONING_MODELS):
+            raise ValueError("--keep-reasoning is only wired for openrouter/ and LOCAL_REASONING_MODELS models.")
 
     @property
     def uid(self):
@@ -103,6 +185,9 @@ class ReasoningAgent(tales.Agent):
             f"_actT{self.act_temp}"
             f"_cotT{self.cot_temp}"
             f"_effort{self.reasoning_effort}"
+            + ("_keepR" if self.keep_reasoning else "")
+            + (f"_compact{self.compact}" if self.compact else "")
+            + (f"_cap{self.think_cap}" if self.think_cap else "")
         )
 
     @property
@@ -116,6 +201,10 @@ class ReasoningAgent(tales.Agent):
             "act_temp": self.act_temp,
             "cot_temp": self.cot_temp,
             "reasoning_effort": self.reasoning_effort,
+            "openrouter_provider": self.openrouter_provider,
+            "keep_reasoning": self.keep_reasoning,
+            "compact": self.compact,
+            "think_cap": self.think_cap,
         }
 
     @retry(
@@ -129,6 +218,9 @@ class ReasoningAgent(tales.Agent):
             response.duration_ms()  # Forces the response to be computed.
             if response.text():
                 return response  # Non-empty response, otherwise retry.
+            if self.think_cap and (response.response_json or {}).get("reasoning"):
+                # Thinking hit --think-cap before the action; act() asks for the action instead of a rerun.
+                return response
 
         return ""
 
@@ -147,13 +239,35 @@ class ReasoningAgent(tales.Agent):
             "seed": self.seed,
             "stream": True,  # Should prevent openai.APITimeoutError
         }
-        if isinstance(self.reasoning_effort, int):
+        if self.think_cap:
+            # Covers thinking plus action: vLLM's reasoning parser streams both from one generation.
+            llm_kwargs["max_tokens"] = self.think_cap
+        if self.llm.startswith("openrouter/"):
+            # OpenRouter via llm-openrouter 0.6 (chat completions): reasoning goes in the request's reasoning
+            # object (effort or token budget), never as max_tokens on the whole output.
+            if self.openrouter_provider:
+                # Pin one provider, no fallback, so seed/quantization stay fixed across calls.
+                llm_kwargs["provider"] = {
+                    "order": [self.openrouter_provider],
+                    "allow_fallbacks": False,
+                }
+            if isinstance(self.reasoning_effort, int):
+                llm_kwargs["reasoning_max_tokens"] = self.reasoning_effort
+            elif self.reasoning_effort:
+                llm_kwargs["reasoning_effort"] = self.reasoning_effort
+
+        elif isinstance(self.reasoning_effort, int):
             if self.llm in CLAUDE_MODELS:
                 llm_kwargs["thinking_budget"] = self.reasoning_effort
             else:
                 llm_kwargs["max_tokens"] = self.reasoning_effort
 
         elif self.llm in OPENAI_MODELS:
+            llm_kwargs["reasoning_effort"] = self.reasoning_effort
+
+        elif self.llm in LOCAL_REASONING_MODELS and self.reasoning_effort != "default":
+            # vLLM hands reasoning_effort to the chat template (needs `reasoning: true` in extra-openai-models.yaml).
+            # "default" is a run-name label for models without effort control (Trinity): nothing is sent.
             llm_kwargs["reasoning_effort"] = self.reasoning_effort
 
         elif self.llm in CLAUDE_MODELS:
@@ -170,22 +284,28 @@ class ReasoningAgent(tales.Agent):
             llm_kwargs["thinking"] = 1
             llm_kwargs.pop("seed")
 
-        if "gemini" in self.llm or "gemma" in self.llm:
+        if ("gemini" in self.llm or "gemma" in self.llm) and self.llm not in LOCAL_REASONING_MODELS:
             # For these models, we cannot set the seed and max_tokens has a different name.
             llm_kwargs.pop("seed")
 
+        compaction = None
+        if self.compact and len(self.history) >= self.compact:
+            compaction = self._compact_history(llm_kwargs)
+
         messages = self.build_messages(f"{obs}\n> ")
         response = self._llm_call_from_messages(messages, **llm_kwargs)
-        response_text = response.text()
-        action = response.text().strip()
+        response_text = self._response_text(response)
+        action = response_text.strip()
 
         if action == "":
             # If the action is empty, we need to retry.
             action = "(empty)"
 
         thinking = None
-        if "Qwen3" in self.llm:
-            # Strip the reasoning <think> and </think>.
+        stats_thinking = None  # Differs from thinking only when --think-cap cut the thinking off.
+        if "Qwen3" in self.llm and self.llm not in LOCAL_REASONING_MODELS:
+            # Strip the reasoning <think> and </think>. (Not for LOCAL_REASONING_MODELS such as Qwen3.8: their server's
+            # reasoning parser already splits the thinking off, handled below.)
             reasoning_end = action.find("</think>")
             if reasoning_end == -1:
                 # Send another request to get the action with the current reasoning.
@@ -252,20 +372,50 @@ class ReasoningAgent(tales.Agent):
             # Extract the action part from the response.
             action = action[reasoning_end:].strip()
 
+        elif self.llm.startswith("openrouter/") or self.llm in LOCAL_REASONING_MODELS:
+            # Reasoning text streamed in delta.reasoning, kept by patches/llm-0.31.1-keep-reasoning.patch.
+            thinking = (response.response_json or {}).get("reasoning")
+            if self.think_cap and not response_text.strip():
+                # The thinking hit --think-cap with no action. Show the model its cut-off thinking and ask once
+                # for the action alone. History keeps only the follow-up's thinking, not the cut-off text.
+                cut_thinking = thinking or ""
+                logging.getLogger("tales").info(
+                    f"Thinking hit --think-cap {self.think_cap}; asking for the action."
+                )
+                messages = messages + [
+                    {"role": "assistant", "content": "(thinking cut off)", "reasoning": cut_thinking},
+                    {"role": "user", "content": THINK_CAP_PROMPT},
+                ]
+                llm_kwargs["max_tokens"] = THINK_CAP_RETRY_TOKENS
+                response = self._llm_call_from_messages(messages, **llm_kwargs)
+                response_text = self._response_text(response)
+                action = response_text.strip() or "(empty)"
+                thinking = (response.response_json or {}).get("reasoning")
+                stats_thinking = f"{cut_thinking}\n[cut off at --think-cap {self.think_cap}]\n{thinking or ''}"
+
         elif self.llm in CLAUDE_MODELS:
             # Extract the thinking part from the response JSON.
             thinking = "".join(
                 [item.get("thinking", "") for item in response.json()["content"]]
             )
 
-        self.history.append((f"{obs}\n> ", f"{action}\n"))
+        self.history.append((f"{obs}\n> ", f"{action}\n", thinking))
+        if stats_thinking is None:
+            stats_thinking = thinking
 
         # Compute usage statistics
         stats = {
             "prompt": format_messages_to_markdown(messages),
-            "thinking": thinking,
+            "thinking": stats_thinking,
             "response": response_text,
+            "compaction": compaction,
         }
+        if self.llm in MUSE_RAW_MODELS:
+            # Keep the raw output, commentary included, in the step's Response.
+            stats["response"] = (response.response_json or {}).get("muse_raw", response_text)
+        if self.llm in BEAM_MODELS:
+            # Keep the raw output, cut junk included, in the step's Response.
+            stats["response"] = (response.response_json or {}).get("beam_raw", response_text)
 
         if self.llm in GEMINI_MODELS:
             stats["nb_tokens_prompt"] = response.usage().input
@@ -284,6 +434,16 @@ class ReasoningAgent(tales.Agent):
             stats["nb_tokens_thinking"] = response.response_json["usage"][
                 "completion_tokens_details"
             ]["reasoning_tokens"]
+
+        elif self.llm.startswith("openrouter/"):
+            usage = response.usage()
+            details = usage.details or {}
+            stats["nb_tokens_prompt"] = usage.input
+            stats["nb_tokens_thinking"] = (
+                details.get("completion_tokens_details") or {}
+            ).get("reasoning_tokens", 0) or 0
+            # Some providers report fewer completion tokens than reasoning tokens.
+            stats["nb_tokens_response"] = max(0, usage.output - stats["nb_tokens_thinking"])
 
         elif self.llm in CLAUDE_MODELS:
             stats["nb_tokens_prompt"] = self.token_counter(messages=messages)
@@ -309,11 +469,52 @@ class ReasoningAgent(tales.Agent):
 
         return action, stats
 
+    def _response_text(self, response):
+        text = response.text()
+        if self.llm.startswith("google/gemma") and self.llm in LOCAL_REASONING_MODELS:
+            text = GEMMA_LEAKED_STOP.sub("", text)
+        if self.llm in BEAM_MODELS:
+            response.response_json = {**(response.response_json or {}), "beam_raw": text}
+            text = cut_beam_junk(text)
+        if self.llm in MUSE_RAW_MODELS:
+            messages = split_muse_messages(text)
+            # Downstream code reads the thinking from response_json["reasoning"], as for the other local models.
+            response.response_json = {
+                **(response.response_json or {}),
+                "reasoning": messages.get("self") or None,
+                "muse_raw": text,
+            }
+            text = messages.get("user", "")
+        return text
+
+    def _compact_history(self, llm_kwargs):
+        """Ask the model to summarize the session, then restart the history from that summary (--compact N)."""
+        messages = self.build_messages(COMPACT_PROMPT)
+        nb_steps = len(self.history)
+        response = self._llm_call_from_messages(messages, **llm_kwargs)
+        self.summary = self._response_text(response).strip()
+        logging.getLogger("tales").info(f"Compaction after {nb_steps} steps:\n{self.summary}")
+        self.history = []
+        # Everything about the compaction call, saved with the step that triggered it (benchmark.py's Compaction column).
+        response_json = response.response_json or {}
+        return {
+            "nb_steps": nb_steps,
+            "prompt": format_messages_to_markdown(messages),
+            "response": self._response_text(response),
+            "summary": self.summary,
+            "thinking": response_json.get("reasoning") or response_json.get("reasoning_content"),
+            "usage": response_json.get("usage"),
+        }
+
     def build_messages(self, observation):
         messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+        if self.summary:
+            # The summary from the last compaction is the start of the first observation of the new session.
+            messages.append({"role": "user", "content": f"{COMPACT_HEADER}{self.summary}"})  # merge_messages adds the blank line.
         limit = self.context_limit or len(self.history) + 1
 
-        for i, (obs, action) in enumerate(self.history[-limit:]):
+        for i, (obs, action, *rest) in enumerate(self.history[-limit:]):
+            thinking = rest[0] if rest else None  # benchmark.py's --continue-from replay stores (obs, action) only.
             if len(self.history) >= limit and i == 0:
                 # Add the current observation.
                 obs = (
@@ -321,7 +522,11 @@ class ReasoningAgent(tales.Agent):
                 )
 
             messages.append({"role": "user", "content": obs})
-            messages.append({"role": "assistant", "content": action})
+            message = {"role": "assistant", "content": action}
+            if self.keep_reasoning and thinking:
+                # Send the step's own reasoning back with its action (models meant to keep past thinking in context).
+                message["reasoning"] = thinking
+            messages.append(message)
 
         messages.append({"role": "user", "content": observation})
 
@@ -367,6 +572,29 @@ def build_argparser(parser=None):
         type=float,
         default=0.0,
         help="Temperature for LLM when doing chain-of-thoughts. Default: %(default)s",
+    )
+    group.add_argument(
+        "--openrouter-provider",
+        default=None,
+        help="Pin OpenRouter models to this provider (e.g. DeepInfra), no fallback.",
+    )
+    group.add_argument(
+        "--think-cap",
+        type=int,
+        help="Max tokens per call (thinking plus action) for LOCAL_REASONING_MODELS. If the thinking hits it"
+        " before the action, the agent asks once more for the action alone. Default: no cap",
+    )
+    group.add_argument(
+        "--compact",
+        type=int,
+        default=None,
+        metavar="N",
+        help="Every N steps, have the model summarize its play and start a new history from that summary. Default: off",
+    )
+    group.add_argument(
+        "--keep-reasoning",
+        action="store_true",
+        help="Keep each past step's reasoning in the conversation history (off in canonical TALES).",
     )
     subgroup = group.add_mutually_exclusive_group(required=True)
     subgroup.add_argument(

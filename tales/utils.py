@@ -108,6 +108,10 @@ def merge_messages(messages):
     return messages_out
 
 
+# Models served by llama.cpp's llama-server, which reads a past turn's reasoning only from `reasoning_content`.
+LLAMACPP_MODELS = ("unsloth/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL",)
+
+
 def messages2conversation(model, messages):
     messages = merge_messages(messages)  # Just in case.
     responses = []
@@ -135,6 +139,11 @@ def messages2conversation(model, messages):
             )
             response._done = True
             response._chunks = [message["content"]]
+            if message.get("reasoning"):
+                # Read back by the patched llm openai plugin (patches/llm-0.31.1-keep-reasoning.patch).
+                response.response_json = {"replay_reasoning": message["reasoning"]}
+                if model.model_id in LLAMACPP_MODELS:
+                    response.response_json["replay_reasoning_field"] = "reasoning_content"
             responses.append(response)
 
             system = None

@@ -24,6 +24,20 @@ from tales.wandb_utils import WANDB_PROJECT, fetch_run_trajectory, find_matching
 os.environ["WANDB_MODE"] = "disabled"
 
 
+# fmt: off
+# 400 error texts when the request no longer fits the served context window: vLLM's, then llama.cpp llama-server's.
+CONTEXT_FULL_MARKERS = ("maximum context length", "exceeds the available context size")
+
+ROLLOUT_COLUMNS = [
+    "Step", "Score", "Max Score", "Normalized Score", "Moves",
+    "Observation", "Action", "Feedback",
+    "Prompt", "Response", "Thinking",
+    "Token Usage", "Prompt Tokens", "Response Tokens", "Thinking Tokens",
+    "Compaction",
+]
+# fmt: on
+
+
 def _make_state(obs, info):
     """Create mutable game state dict."""
     return {
@@ -40,6 +54,7 @@ def _make_state(obs, info):
         "done": False,
         "info": info,
         "results": [],
+        "steps_file": None,  # When set, each step's row is appended here as it is played (see _record_step).
     }
 
 
@@ -125,8 +140,14 @@ def _record_step(state, prev_obs, action, feedback, token_stats, wandb_run):
         token_stats["prompt"], token_stats["response"], token_stats.get("thinking"),
         token_stats["nb_tokens"], token_stats["nb_tokens_prompt"],
         token_stats["nb_tokens_response"], token_stats.get("nb_tokens_thinking", 0),
+        token_stats.get("compaction"),
     ])
     # fmt: on
+
+    if s["steps_file"]:
+        # Write each step as it is played, so a run that dies without reaching the final dump keeps its trajectory.
+        with open(s["steps_file"], "a") as f:
+            f.write(json.dumps(dict(zip(ROLLOUT_COLUMNS, s["results"][-1]))) + "\n")
 
 
 def replay_trajectory(
@@ -266,6 +287,7 @@ def play_with_agent(
             "nb_tokens_prompt": stats["nb_tokens_prompt"],
             "nb_tokens_response": stats["nb_tokens_response"],
             "nb_tokens_thinking": stats.get("nb_tokens_thinking", 0),
+            "compaction": stats.get("compaction"),
         }
         _record_step(state, prev_obs, action, feedback, token_stats, wandb_run)
 
@@ -424,6 +446,9 @@ def evaluate(agent, env_name, args):
     log.debug(f"Environment reset.\n{obs}\n")
 
     state = _make_state(obs, info)
+    state["steps_file"] = pjoin(logdir, f"{env_params}.steps.jsonl")
+    if os.path.exists(state["steps_file"]):
+        os.remove(state["steps_file"])  # Left over from an earlier attempt at this same run; this one starts afresh.
 
     wandb_run.log(
         {
@@ -446,6 +471,7 @@ def evaluate(agent, env_name, args):
 
     # Play phase (LLM-driven).
     status = "running"
+    end_reason = None
     try:
         play_with_agent(
             env,
@@ -468,11 +494,19 @@ def evaluate(agent, env_name, args):
             raise
 
     except Exception as e:
-        status = "failed"
-        log.critical(colored(f"{env_name} ({e!r})", "red"))
-        log.error(str(e), exc_info=True)
-        if args.debug:
-            raise
+        if any(marker in str(e) for marker in CONTEXT_FULL_MARKERS):
+            # The next request no longer fits in the model's context window. By the user's rule this ends the rollout:
+            # the episode counts as finished with the score reached; the step that didn't fit was never played.
+            status = "finished"
+            end_reason = "context_full"
+            state["step"] -= 1
+            log.warning(colored(f"{env_name} (context full after {state['step']} steps): {e}", "yellow"))
+        else:
+            status = "failed"
+            log.critical(colored(f"{env_name} ({e!r})", "red"))
+            log.error(str(e), exc_info=True)
+            if args.debug:
+                raise
 
     env.close()
 
@@ -489,15 +523,7 @@ def evaluate(agent, env_name, args):
         "duration": time.time() - start_time,
     }
 
-    # fmt: off
-    columns = [
-        "Step", "Score", "Max Score", "Normalized Score", "Moves",
-        "Observation", "Action", "Feedback",
-        "Prompt", "Response", "Thinking",
-        "Token Usage", "Prompt Tokens", "Response Tokens", "Thinking Tokens",
-    ]
-    # fmt: on
-    df = pd.DataFrame(state["results"], columns=columns)
+    df = pd.DataFrame(state["results"], columns=ROLLOUT_COLUMNS)
     df.to_json(rollouts_file, orient="records", lines=True)
 
     wandb_stats = {
@@ -524,6 +550,7 @@ def evaluate(agent, env_name, args):
     # Save summary.
     summary = {
         "status": status,
+        "end_reason": end_reason,
         "env_name": env_name,
         "env_params": env_params,
         "wandb_run_id": wandb_run.id,

@@ -1,0 +1,55 @@
+--- a/llm/default_plugins/openai_models.py
++++ b/llm/default_plugins/openai_models.py
+@@ -559,6 +559,7 @@
+     medium = "medium"
+     high = "high"
+     xhigh = "xhigh"
++    max = "max"  # Local patch: Inkling-family chat templates accept max.
+ 
+ 
+ class VerbosityEnum(str, Enum):
+@@ -778,7 +779,15 @@
+                     )
+                 prev_text = prev_response.text_or_raise()
+                 if prev_text:
+-                    messages.append({"role": "assistant", "content": prev_text})
++                    assistant_message = {"role": "assistant", "content": prev_text}
++                    # Replay the turn's saved reasoning (OpenRouter's message.reasoning) when the caller put it in
++                    # response_json, so models that expect their past thinking in context get it.
++                    prev_json = prev_response.response_json or {}
++                    prev_reasoning = prev_json.get("replay_reasoning")
++                    if prev_reasoning:
++                        # llama.cpp's llama-server reads only reasoning_content; the caller picks the field.
++                        assistant_message[prev_json.get("replay_reasoning_field", "reasoning")] = prev_reasoning
++                    messages.append(assistant_message)
+                 tool_calls = prev_response.tool_calls_or_raise()
+                 if tool_calls:
+                     messages.append(
+@@ -1140,6 +1149,7 @@
+ 
+ def combine_chunks(chunks: List) -> dict:
+     content = ""
++    reasoning = ""  # TALES patch: streamed reasoning text (OpenRouter `reasoning`, vLLM `reasoning_content`)
+     role = None
+     finish_reason = None
+     # If any of them have log probability, we're going to persist
+@@ -1165,6 +1175,10 @@
+             role = choice.delta.role
+             if choice.delta.content is not None:
+                 content += choice.delta.content
++            extra = getattr(choice.delta, "model_extra", None) or {}
++            delta_reasoning = extra.get("reasoning") or extra.get("reasoning_content")
++            if isinstance(delta_reasoning, str):
++                reasoning += delta_reasoning
+             if choice.finish_reason is not None:
+                 finish_reason = choice.finish_reason
+ 
+@@ -1177,6 +1191,8 @@
+     }
+     if logprobs:
+         combined["logprobs"] = logprobs
++    if reasoning:
++        combined["reasoning"] = reasoning
+     if chunks:
+         for key in ("id", "object", "model", "created", "index"):
+             value = getattr(chunks[0], key, None)

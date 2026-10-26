@@ -16,8 +16,28 @@ def get_token_counter(model: Optional[Model] = None):
     if "claude-" in model.model_id:
         return ClaudeTokenCounter(model)
 
+    elif model.model_id.startswith("google/gemma"):
+        # Hugging Face id of a locally served Gemma (vLLM): count with its own tokenizer, not the Gemini API.
+        return HuggingFaceTokenCounter(model.model_id)
+
+    elif "Muse-Spark-Open" in model.model_id and not model.model_id.startswith("openrouter/"):
+        # Locally served GGUF quant (llama.cpp): count with the ungated BF16 mirror's tokenizer.
+        return HuggingFaceTokenCounter("unsloth/Muse-Spark-Open-816B-A42B")
+
+    elif "DeepSeek-V4-Flash-0731" in model.model_id and not model.model_id.startswith("openrouter/"):
+        # Locally served GGUF quant (llama.cpp): count with the original checkpoint's tokenizer.
+        return HuggingFaceTokenCounter("deepseek-ai/DeepSeek-V4-Flash-0731")
+
+    elif "Beam-1.0-501B-A23B" in model.model_id and not model.model_id.startswith("openrouter/"):
+        # Locally served GGUF quant (llama.cpp): count with the original checkpoint's tokenizer.
+        return HuggingFaceTokenCounter("reflection/Beam-1.0-501B-A23B")
+
     elif "gemini" in model.model_id or "gemma" in model.model_id:
         return GeminiTokenCounter(model)
+
+    elif model.model_id.startswith("openrouter/"):
+        # Token stats for OpenRouter models come from the API's usage field; this counter is only a fallback.
+        return OpenAITokenCounter("gpt-4o")
 
     try:
         return OpenAITokenCounter(model.model_id)

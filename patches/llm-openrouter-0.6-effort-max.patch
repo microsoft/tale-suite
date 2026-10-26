@@ -1,0 +1,27 @@
+--- a/llm_openrouter.py	2026-10-17 16:50:28.105804285 +0000
++++ b/llm_openrouter.py	2026-10-17 16:50:28.112204562 +0000
+@@ -38,9 +38,15 @@
+ 
+ 
+ class ReasoningEffortEnum(str, Enum):
++    # OpenRouter also accepts these for some models (e.g. Inkling: max/high/medium/low/minimal/none;
++    # Muse Spark Open: xhigh/high/medium/low).
++    none = "none"
++    minimal = "minimal"
+     low = "low"
+     medium = "medium"
+     high = "high"
++    xhigh = "xhigh"
++    max = "max"
+ 
+ 
+ class _mixin:
+@@ -54,7 +60,7 @@
+             default=None,
+         )
+         reasoning_effort: Optional[ReasoningEffortEnum] = Field(
+-            description='One of "high", "medium", or "low" to control reasoning effort',
++            description='One of "max", "xhigh", "high", "medium", "low", "minimal" or "none" to control reasoning effort',
+             default=None,
+         )
+         reasoning_max_tokens: Optional[int] = Field(
