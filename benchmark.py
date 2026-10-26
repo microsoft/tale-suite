@@ -19,7 +19,13 @@ from tqdm import tqdm
 import tales
 from tales.logger import log, setup_logging
 from tales.utils import NumpyEncoder
-from tales.wandb_utils import WANDB_PROJECT, fetch_run_trajectory, find_matching_run
+from tales.wandb_utils import (
+    WANDB_ENTITY,
+    WANDB_PROJECT,
+    _wandb_path,
+    fetch_run_trajectory,
+    find_matching_run,
+)
 
 os.environ["WANDB_MODE"] = "disabled"
 
@@ -244,6 +250,9 @@ def play_with_agent(
         action, stats = agent.act(
             state["obs"], state["score"], state["done"], state["info"]
         )
+        thinking = stats.get("thinking")
+        if thinking:
+            log.debug(colored(f"💭 {thinking}", "cyan"))
         log.debug(colored(f"> {action}", "green"))
 
         if args.debug:
@@ -358,31 +367,40 @@ def evaluate(agent, env_name, args):
     if args.wandb and not args.force_all:
         # Check if there already exists a run with the same name using Wandb API.
         wandb_api = wandb.Api()
-        wandb_runs = wandb_api.runs(filters={"display_name": run_name})
+        wandb_runs = wandb_api.runs(_wandb_path(), filters={"display_name": run_name})
         if wandb_runs:
             wandb_run = wandb_runs[0]
             log.info(f"Previous evaluation found: {wandb_run.url} ({wandb_run.state})")
             if wandb_run.state in ("finished", "running"):
-                log.info(colored("Skipped, already exists.", "yellow"))
-                log.removeHandler(fh)
-                summary = {
-                    "status": wandb_run.state,
-                    "env_name": env_name,
-                    "env_params": env_params,
-                    "wandb_run_id": wandb_run.id,
-                    "wandb_url": wandb_run.url,
-                    "nb_steps": wandb_run.summary["total/Env. Steps"],
-                    "nb_moves": wandb_run.summary["total/Game Moves"],
-                    "nb_invalid_actions": wandb_run.summary["total/Invalid Actions"],
-                    "nb_losts": wandb_run.summary["total/Losts"],
-                    "nb_wins": wandb_run.summary["total/Wins"],
-                    "nb_resets": wandb_run.summary["total/Resets"],
-                    "highscore": wandb_run.summary["final/Highscore"],
-                    "max_score": wandb_run.summary["final/Game Max Score"],
-                    "norm_score": wandb_run.summary["final/Normalized Score"],
-                    "duration": wandb_run.summary["final/Duration"],
-                }
-                return summary
+                if "total/Env. Steps" not in wandb_run.summary:
+                    log.info(
+                        colored(
+                            "Previous run has no summary data, re-running.", "yellow"
+                        )
+                    )
+                else:
+                    log.info(colored("Skipped, already exists.", "yellow"))
+                    log.removeHandler(fh)
+                    summary = {
+                        "status": wandb_run.state,
+                        "env_name": env_name,
+                        "env_params": env_params,
+                        "wandb_run_id": wandb_run.id,
+                        "wandb_url": wandb_run.url,
+                        "nb_steps": wandb_run.summary["total/Env. Steps"],
+                        "nb_moves": wandb_run.summary["total/Game Moves"],
+                        "nb_invalid_actions": wandb_run.summary[
+                            "total/Invalid Actions"
+                        ],
+                        "nb_losts": wandb_run.summary["total/Losts"],
+                        "nb_wins": wandb_run.summary["total/Wins"],
+                        "nb_resets": wandb_run.summary["total/Resets"],
+                        "highscore": wandb_run.summary["final/Highscore"],
+                        "max_score": wandb_run.summary["final/Game Max Score"],
+                        "norm_score": wandb_run.summary["final/Normalized Score"],
+                        "duration": wandb_run.summary["final/Duration"],
+                    }
+                    return summary
 
     # initialize wandb
     wandb_config = {
@@ -401,6 +419,7 @@ def evaluate(agent, env_name, args):
         wandb_config["replay_steps"] = len(trajectory_df)
     wandb_run = wandb.init(
         project=WANDB_PROJECT,
+        entity=WANDB_ENTITY,
         config=wandb_config,
         reinit=True,
         name=run_name,
