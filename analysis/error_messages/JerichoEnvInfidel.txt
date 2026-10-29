@@ -1,0 +1,718 @@
+# Invalid Action Messages: JerichoEnvInfidel
+# Total unique error messages: 711
+# Total error occurrences: 9683
+#
+# Format: count | message
+#===============================================================================
+
+   653 | I don't understand that sentence.
+   340 | You find nothing unusual.
+   340 | I don't know the word "resolve".
+   313 | I don't know the word "`unlock".
+   305 | I don't know the word "`help`".
+   285 | You can't see any water here!
+   275 | You can't go that way.\n\nYou hear a plane flying high overhead, outside the tent.
+   264 | I beg your pardon?
+   242 | What do you want to open?
+   215 | I don't know the word "use".
+   201 | I can't find a verb in that sentence!
+   174 | I don't know the word "you".
+   156 | I don't know the word "**go".
+   154 | I don't know the word "outside".
+   119 | You can't see any key here!
+   117 | You can't go that way.
+   107 | I don't know the word "`examine".
+   106 | I don't know the word "-".
+   105 | What do you want to dig in?
+   101 | Time passes...
+   101 | I don't know the word "`open".
+    92 | There is nothing but sand there.
+    92 | I don't know the word "supplies".
+    92 | I don't know the word "`inspect".
+    91 | I don't know the word "am".
+    87 | What do you want to dig the hole with?
+    84 | I don't know the word "try".
+    78 | You can't see any box here!
+    77 | What do you want to unlock the trunk with?
+    76 | I don't know the word "word".
+    73 | You already have it.
+    73 | I don't know the word "text".
+    66 | I don't know the word "**dig**".
+    63 | I don't know the word "way".
+    61 | I don't know the word "`look".
+    56 | I don't know the word "progress".
+    54 | I don't know the word "check".
+    54 | I don't know the word "none".
+    52 | I don't know the word "bash".
+    52 | I don't know the word ">".
+    49 | I don't know the word "coordinates".
+    47 | I don't know the word "apologize".
+    47 | I don't know the word "```help".
+    45 | What do you want to listen to?
+    42 | I don't know the word "firepit".
+    41 | I don't know the word "remember".
+    41 | You can't see any shovel here!
+    41 | I don't know the word "something".
+    39 | I don't know the word "`use".
+    38 | I don't know the word "**out**".
+    37 | I don't know the word "zero".
+    36 | You can't see any map here!
+    36 | I don't know the word "these".
+    36 | I don't know the word "if".
+    34 | There is nothing but sand there.\n\nYou hear a plane flying high overhead, outside the tent.
+    32 | I don't know the word "numbers".
+    32 | You can't see any rock here!
+    32 | I don't know the word "nothing".
+    30 | What do you want to search?
+    29 | I don't know the word "solve".
+    29 | You don't have that.
+    28 | I don't know the word "watch".
+    28 | I don't know the word "**south**".
+    28 | I don't know the word "(to".
+    27 | I don't know the word "tool".
+    26 | I don't know the word "keep".
+    26 | You can't see any canteen here!
+    25 | What do you want to break the padlock with?
+    25 | I don't know the word "path".
+    24 | There is nothing but sand there.\n\nIt sounds as if the plane is circling.
+    23 | I don't know the word "location".
+    23 | I don't know the word "method".
+    22 | I don't know the word "be".
+    22 | I don't know the word "```enter".
+    21 | I don't know the word "write".
+    21 | I don't know the word "anything".
+    21 | I don't know the word "memorize".
+    20 | What do you want to dig the sand with?
+    20 | I don't know the word "oasis".
+    19 | I don't know the word "position".
+    19 | I don't know the word "object".
+    19 | I don't know the word "land".
+    19 | I don't know the word "`get".
+    19 | You can't see any padlock here!
+    18 | I don't know the word "return".
+    18 | I don't know the word "deeper".
+    18 | I don't know the word "**action:**".
+    18 | I don't know the word "means".
+    18 | I don't know the word "open:".
+    18 | I don't know the word "`insert".
+    18 | I don't know the word "`put".
+    18 | I don't know the word "`place".
+    17 | I don't know the word "mind".
+    17 | I don't know the word "openmind".
+    17 | I don't know the word "```".
+    16 | I don't know the word "about".
+    15 | I don't know the word "tools".
+    15 | You're not carrying the map.
+    14 | I don't know the word "**dig".
+    14 | I don't know the word "item".
+    14 | I don't know the word "there".
+    14 | I don't know the word "not".
+    14 | You can't enter the tent from here.
+    14 | I don't know the word "voices".
+    14 | I don't know the word "`enter".
+    14 | I don't know the word "(i".
+    13 | I don't know the word "record".
+    13 | You can't see any knapsack here!
+    13 | What do you want to climb down?
+    13 | You can't see any pick axe here!
+    13 | You can't see any trunk here!
+    13 | What do you want to eat?
+    13 | I don't know the word "has".
+    13 | I don't know the word "markings".
+    12 | I don't know the word "reading".
+    12 | I don't know the word "figures".
+    12 | I don't know the word "carefully".
+    12 | You can't see any pyramid here!
+    12 | I don't know the word "fire".
+    12 | I don't know the word "mouth".
+    12 | What do you want to hit the padlock with?
+    12 | I don't know the word "calculate".
+    12 | What do you want to break the lock with?
+    12 | I don't know the word "`go".
+    11 | I don't know the word "focus".
+    11 | I don't know the word "values".
+    11 | You can't see any area here!
+    11 | What do you want to drink?
+    11 | You can't see any note here!
+    11 | I don't know the word "`stand".
+    11 | I don't know the word "towards".
+    10 | I don't know the word "recall".
+    10 | I don't know the word "compass".
+    10 | What do you want to break the crate with?
+    10 | I don't know the word "surroundings".
+    10 | It is already open.
+    10 | I don't know the word "call".
+    10 | I don't know the word "as".
+    10 | I don't know the word "gained".
+    10 | I don't know the word "forward".
+    10 | I don't know the word "nil".
+     9 | I don't know the word "details".
+     9 | I don't know the word "points".
+     9 | I don't know the word "*".
+     9 | I don't know the word "continue".
+     9 | I don't know the word "nearby".
+     9 | I don't know the word "contains".
+     9 | I don't know the word "more".
+     9 | What do you want to smash the lock with?
+     9 | I don't know the word "openstanding".
+     9 | I don't know the word "`check".
+     9 | I don't know the word "let's".
+     8 | I don't know the word "pay".
+     8 | I don't know the word "information".
+     8 | You can't see any digits here!
+     8 | I don't know the word "spot".
+     8 | I don't know the word "memory".
+     8 | You can't see any button here!
+     8 | I don't know the word "camp".
+     8 | I don't know the word "degrees".
+     8 | I don't know the word "sound".
+     8 | I don't know the word "encampment".
+     8 | I don't know the word "items".
+     8 | You can't see any food here!
+     8 | What do you want to unlock the padlock with?
+     8 | What do you want to climb up?
+     8 | I don't know the word "reeds".
+     8 | I don't know the word "gone".
+     7 | I don't know the word "data".
+     7 | I don't know the word "think".
+     7 | I don't know the word "track".
+     7 | You can't see any hole here!
+     7 | I don't know the word "noise".
+     7 | I don't know the word "investigate".
+     7 | You can't move the trunk.
+     7 | I don't know the word "closer".
+     7 | You are already standing, I think.
+     7 | I don't know the word "stop".
+     7 | I don't know the word "`search".
+     7 | I don't know the word "`climb".
+     7 | I don't know the word "`move".
+     7 | I don't know the word "pedestal".
+     7 | You can't see any symbols here!
+     7 | I don't know the word "absent".
+     6 | I don't know the word "mark".
+     6 | I don't know the word "closely".
+     6 | You don't have a key.
+     6 | What do you want to cut the thickets with?
+     6 | I don't know the word "near".
+     6 | There is nothing but sand there.\n\nYou can barely hear the plane.
+     6 | I don't know the word "landing".
+     6 | You can't see any southern flap here!
+     6 | I don't know the word "heavy".
+     6 | You can't take it; thus, you can't shake it!
+     6 | I don't know the word "latitude".
+     6 | I don't know the word "clues".
+     6 | I don't know the word "ration".
+     6 | I don't know the word "rations".
+     6 | I don't know the word "course".
+     6 | I don't know the word "still".
+     6 | You can't move the flap.\n\nIt sounds as if the plane is circling.
+     6 | I don't know the word "people".
+     6 | I don't know the word "`sit".
+     6 | I don't know the word "`wake".
+     6 | I don't know the word "now".
+     6 | I don't know the word "spaceship".
+     6 | I don't know the word "`key".
+     6 | I don't know the word "(assuming".
+     6 | I don't know the word "i'situation".
+     6 | I don't know the word "nada".
+     6 | I don't know the word "naught".
+     6 | I don't know the word "zilch".
+     6 | I don't know the word "zip".
+     6 | I don't know the word "void".
+     6 | I don't know the word "nix".
+     6 | I don't know the word "null".
+     6 | I don't know the word "sandless".
+     6 | I don't know the word "lacks".
+     6 | I don't know the word "bare".
+     6 | I don't know the word "without".
+     6 | I don't know the word "vacant".
+     6 | I don't know the word "missing".
+     6 | I don't know the word "barren".
+     6 | I don't know the word "holds".
+     6 | I don't know the word "only".
+     6 | I don't know the word "goose".
+     5 | You don't have a key.\n\nYou hear a plane flying high overhead, outside the tent.
+     5 | I don't know the word "measurement".
+     5 | I don't know the word "thought".
+     5 | I don't know the word "activate".
+     5 | You can't see any foil here!
+     5 | What do you want to break the trunk with?
+     5 | I don't know the word "multiply".
+     5 | I don't know the word "another".
+     5 | I don't know the word "lit".
+     5 | There's nothing to fill it with. Except for maybe some sand.
+     5 | I don't know the word "commit".
+     5 | I don't know the word "rescue".
+     5 | What do you want to hit the lock with?
+     5 | What do you want to look in?
+     5 | I don't know the word "dirt".
+     5 | I don't know the word "openlook".
+     5 | I don't know the word "`take".
+     5 | I don't know the word "`look`".
+     5 | I don't know the word "`leave".
+     5 | I don't know the word "`exit".
+     5 | I don't know the word "arrow".
+     5 | I don't know the word "completed".
+     5 | I don't know the word "finished".
+     5 | I don't know the word "ended".
+     5 | I don't know the word "possible".
+     5 | I don't know the word "achieved".
+     5 | I don't know the word "received".
+     5 | I don't know the word "shelter".
+     5 | I don't know the word "shade".
+     5 | You can't see any cover here!
+     5 | I don't know the word "signs".
+     5 | I don't know the word "(trying".
+     5 | I don't know the word "filled".
+     5 | I don't know the word "devoid".
+     5 | I don't know the word "equals".
+     5 | I don't know the word "sans".
+     4 | I don't know the word "display".
+     4 | I don't know the word "displayed".
+     4 | I don't know the word "shown".
+     4 | What do you want to place the note in?
+     4 | I don't know the word "consideration".
+     4 | I don't know the word "have".
+     4 | You can't see any navigation box here!
+     4 | You can't see any nile here!
+     4 | You can't see any rope here!
+     4 | I don't know the word "**examine".
+     4 | You can't see any trunk lock here!
+     4 | I don't know the word "pockets".
+     4 | I don't know the word "full".
+     4 | I don't know the word "approach".
+     4 | I don't know the word "mechanism".
+     4 | You already have it.\nIf you don't drink something, and now, you're gonna be history.
+     4 | You can't see any steps here!
+     4 | What do you want to get out?
+     4 | You can't go that way.\nEven in the tent the heat starts to get to you.
+     4 | I don't know the word "trail".
+     4 | I don't know the word "package".
+     4 | I don't know the word "entrance".
+     4 | I don't know the word "rotate".
+     4 | You already have it.\n\nAt last, your luck seems to be changing. A large crate lands right before you, its parachute flapping in the breeze. The parachute breaks away from the crate and drifts off in the wind.
+     4 | I don't know the word "study".
+     4 | You can't see any such thing here!
+     4 | I don't know the word "longer".
+     4 | I don't know the word "while".
+     4 | I don't know the word "arrive".
+     4 | I don't know the word "`up`".
+     4 | I don't know the word "`rise`".
+     4 | I don't know the word "tunnel".
+     4 | I don't know the word "(it".
+     4 | I don't know the word "will".
+     4 | I don't know the word "```er".
+     4 | I don't know the word "dunes".
+     4 | I don't know the word "descend".
+     4 | I don't know the word "duck".
+     4 | I don't know the word "crouch".
+     4 | I don't know the word "crawl".
+     4 | I don't know the word "cipher".
+     4 | I don't know the word "blank".
+     4 | I don't know the word "absence".
+     3 | I don't know the word "heed".
+     3 | I don't know the word "exact".
+     3 | I don't know the word "precise".
+     3 | I don't know the word "remembrance".
+     3 | I don't know the word "awareness".
+     3 | I don't know the word "attention".
+     3 | What do you want to hit the trunk with?
+     3 | You already have it.\nEven in the tent the heat starts to get to you.
+     3 | You can't see any river here!
+     3 | You already have it.\nYou'd better drink something, and soon!
+     3 | I don't know the word "lockpick".
+     3 | I don't know the word "leg".
+     3 | You can't see any pit here!
+     3 | I don't know the word "speak".
+     3 | I don't know the word "useful".
+     3 | I don't know the word "thoroughly".
+     3 | I don't know the word "lips".
+     3 | I don't know the word "face".
+     3 | You can't see any inspection sticker here!
+     3 | I don't know the word "pool".
+     3 | You can't do that.
+     3 | You can't see any cube here!
+     3 | You can't see any south flap here!
+     3 | I don't know the word "side".
+     3 | I don't know the word "lid".
+     3 | What do you want to burn the padlock with?
+     3 | I don't know the word "person".
+     3 | I don't know the word "man".
+     3 | I don't know the word "i'".
+     3 | I don't know the word "fetch".
+     3 | I don't know the word "openmindstanding".
+     3 | I don't know the word "openmind:".
+     3 | I don't know the word "openmindmind".
+     3 | I don't know the word "mindmind".
+     3 | I don't know the word "t".
+     3 | I don't know the word "type".
+     3 | I don't know the word "`examine`".
+     3 | I don't know the word "`explore".
+     3 | I don't know the word "show".
+     3 | I don't know the word "taken".
+     3 | I don't know the word "locked".
+     3 | I don't know the word "rumbling".
+     3 | You can't see any sarcophagus here!
+     3 | I don't know the word "them".
+     3 | I don't know the word "team".
+     3 | I don't know the word "passage".
+     3 | I don't know the word "journal".
+     3 | I don't know the word "orb".
+     3 | I don't know the word "`describe".
+     3 | I don't know the word "(open".
+     3 | I don't know the word "suggest".
+     3 | I don't know the word "````".
+     3 | I don't know the word "beg".
+     3 | I don't know the word "```;".
+     3 | I don't know the word "i's".
+     3 | I don't know the word "(you".
+     3 | I don't know the word "th".
+     3 | I see no thickets here.
+     3 | I don't know the word "dune".
+     3 | I don't know the word "hill".
+     3 | I don't know the word "mound".
+     3 | I don't know the word "just".
+     2 | I don't know the word "readings".
+     2 | I don't know the word "jot".
+     2 | I don't know the word "attend".
+     2 | I don't know the word "acknowledge".
+     2 | I don't know the word "recognize".
+     2 | I don't know the word "observe".
+     2 | I don't know the word "specific".
+     2 | I don't know the word "retain".
+     2 | I don't know the word "revisit".
+     2 | What do you want to dig the enlarged hole with?
+     2 | You can't see any work tent here!
+     2 | I don't know the word "excavations".
+     2 | You are already standing, I think.\n\nYou hear a plane flying high overhead, outside the tent.
+     2 | I don't know the word "force".
+     2 | I don't know the word "using".
+     2 | You aren't wearing it!\nYou'd better drink something, and soon!
+     2 | What do you want to empty?
+     2 | You can't see any cot here!
+     2 | I don't know the word "slowly".
+     2 | I don't know the word "aside".
+     2 | You can't see any southern wall here!
+     2 | There is nothing but sand there.\n\nIt sounds as if the plane is flying off.
+     2 | You already have it.\nYour stomach growls in hunger.
+     2 | I don't know the word "repeat".
+     2 | I don't know the word "thing".
+     2 | I don't know the word "material".
+     2 | You can't see any crate here!
+     2 | I don't know the word "objects".
+     2 | I don't know the word "how".
+     2 | I don't know the word "chin".
+     2 | You can't see any matchbook here!
+     2 | I don't know the word "catch".
+     2 | I don't know the word "stick".
+     2 | I don't know the word "longitude".
+     2 | I don't know the word "undo".
+     2 | There's nothing to fill it with.\nYou'd better drink something, and soon!
+     2 | What do you want to dig the trunk with?
+     2 | I don't know the word "unwrap".
+     2 | What do you want to dig the steps with?
+     2 | I don't know the word "ramp".
+     2 | I don't know the word "slope".
+     2 | I don't know the word "who".
+     2 | You can't see any axe here!
+     2 | I don't know the word "big".
+     2 | You can't see any player here!
+     2 | I don't know the word "do".
+     2 | I don't know the word "phrase".
+     2 | I don't know the word "openmindmindmind".
+     2 | I don't know the word "opent".
+     2 | What do you want to examine?
+     2 | I don't know the word "openprot".
+     2 | I don't know the word "openate".
+     2 | I don't know the word "response".
+     2 | I don't know the word "open?".
+     2 | I don't know the word "`commands`".
+     2 | I don't know the word "`inventory`".
+     2 | I don't know the word "`move`".
+     2 | I don't know the word "`go`".
+     2 | I don't know the word "`stand`".
+     2 | I don't know the word "idol".
+     2 | I don't know the word "chamber".
+     2 | I don't know the word "made".
+     2 | I don't know the word "staff".
+     2 | What do you want to run?
+     2 | I don't know the word "crystal".
+     2 | I don't know the word "scepter".
+     2 | You can't see any book here!
+     2 | I don't know the word "chest".
+     2 | I don't know the word "glow".
+     2 | I don't know the word "```use".
+     2 | You can't go that way.\nYou wipe your fevered brow.
+     2 | I don't know the word "workers".
+     2 | I don't know the word "milk".
+     2 | I don't know the word "runes".
+     2 | I don't know the word "pry".
+     2 | What do you want to burn the thickets with?
+     2 | I don't know the word "bereft".
+     2 | I don't know the word "dismount".
+     2 | I don't know the word "scramble".
+     2 | I don't know the word "egg".
+     2 | I don't know the word "it's".
+     2 | I don't know the word "stoop".
+     2 | I don't know the word "squat".
+     2 | I don't know the word "kneel".
+     2 | I don't know the word "bend".
+     2 | I don't know the word "low".
+     2 | I don't know the word "creep".
+     2 | I don't know the word "vacuum".
+     2 | I don't know the word "state".
+     2 | I don't know the word "less".
+     2 | I don't know the word "wrap".
+     2 | It is already open.\nYour stomach growls in hunger.
+     1 | I don't know the word "definite".
+     1 | I don't know the word "certain".
+     1 | I don't know the word "known".
+     1 | I don't know the word "site".
+     1 | I don't know the word "mentally".
+     1 | I don't know the word "thoughts".
+     1 | I don't know the word "yourself".
+     1 | I don't know the word "heart".
+     1 | I don't know the word "spirit".
+     1 | I don't know the word "soul".
+     1 | I don't know the word "know".
+     1 | I don't know the word "notice".
+     1 | I don't know the word "concentrate".
+     1 | I don't know the word "store".
+     1 | I don't know the word "consider".
+     1 | I don't know the word "info".
+     1 | I don't know the word "specifics".
+     1 | I don't know the word "user".
+     1 | I don't know the word "don't".
+     1 | I don't know the word "sun".
+     1 | I don't know the word "upward".
+     1 | There is nothing behind the trunk.
+     1 | I don't know the word "x".
+     1 | There is nothing but sand there.\nEven in the tent the heat starts to get to you.
+     1 | There is nothing behind the army cot.\nEven in the tent the heat starts to get to you.
+     1 | I don't know the word "aim".
+     1 | I don't know the word "strong".
+     1 | You can't see any southern flaps here!
+     1 | I don't know the word "ignore".
+     1 | I don't know the word "digging".
+     1 | I don't know the word "or".
+     1 | I don't know the word "sounds".
+     1 | I don't know the word "hear".
+     1 | You're not carrying the hole.\nYou scowl at the sun, cursing its searing heat.
+     1 | I don't know the word "toward".
+     1 | You can't take it; thus, you can't shake it!\n\nThe sound of something heavy landing comes from nearby.
+     1 | I don't know the word "new".
+     1 | I don't know the word "fuel".
+     1 | I don't know the word "burnable".
+     1 | You can't see any trunk padlock here!
+     1 | I don't know the word "gear".
+     1 | I don't know the word "equipment".
+     1 | I don't know the word "things".
+     1 | You can't see any for key here!
+     1 | I don't know the word "ways".
+     1 | I don't know the word "access".
+     1 | What do you want to give the navigation box to?
+     1 | I don't know the word "writing".
+     1 | I don't know the word "body".
+     1 | I don't know the word "swig".
+     1 | You're not carrying the ancient map.
+     1 | You're not carrying the stone cube.
+     1 | You already have it.\nLike a grape, left out in the sun too long, you turn into a raisin for lack of water.\n \n   ****  You have died  **** \n\nYou feel yourself disembodied in a deep blackness. A voice from the void, or perhaps it's just your dying thoughts, rings in your ears.\n\n"Obsessions are the torment of men's souls, reaching out for something greater than life has offered. Perhaps this is what makes the difference between an ordinary mortal and an adventurer!" It is the last thing you hear.\n\nYour score is 5 out of a possible 400, in 78 moves.\nThis score gives you the rank of a fumbling beginner.\nDo you wish to start the game again? (Y is affirmative):
+     1 | I don't know the word "bank".
+     1 | I don't know the word "scoop".
+     1 | I don't know the word "waist".
+     1 | I don't know the word "teaspoon".
+     1 | I don't know the word "herd".
+     1 | What do you want to put the shovel in?
+     1 | What do you want to wave at?
+     1 | I don't know the word "shine".
+     1 | You can't go that way.\nYour stomach growls in hunger.
+     1 | I don't know the word "turkey".
+     1 | I don't know the word "copy".
+     1 | I don't know the word "route".
+     1 | I don't know the word "direction".
+     1 | There is nothing behind the trunk.\n\nYou hear a plane flying high overhead, outside the tent.
+     1 | You can't reach into that.
+     1 | There is nothing but sand there.\n\nThe sound of something heavy landing comes from nearby.
+     1 | It is already open.\nIf you don't drink something, and now, you're gonna be history.
+     1 | What do you want to unlock the box with?
+     1 | I don't know the word "pole".
+     1 | I don't know the word "east/west".
+     1 | What do you want to cut the padlock with?
+     1 | I don't know the word "knife".
+     1 | You can't do that.\nIf you don't drink something, and now, you're gonna be history.
+     1 | You can't go that way.\n\nThe sound of something heavy landing comes from nearby.
+     1 | You're not carrying the map.\nEven in the tent the heat starts to get to you.
+     1 | You can't see any beef here!
+     1 | What do you want to break the cot with?
+     1 | I don't know the word "wider".
+     1 | I don't know the word "other".
+     1 | I don't know the word "sides".
+     1 | What do you want to dig the wall with?
+     1 | I don't know the word "incline".
+     1 | What do you want to dig the stairs with?
+     1 | You can't see any stairs here!
+     1 | I don't know the word "upwards".
+     1 | I don't know the word "higher".
+     1 | I don't know the word "voice".
+     1 | I don't know the word "guard".
+     1 | I don't know the word "everything".
+     1 | You can't see any of pit here!
+     1 | I don't know the word "gently".
+     1 | I don't know the word "openlookate".
+     1 | I don't know the word "openmindfully".
+     1 | I don't know the word "you'm".
+     1 | I don't know the word "open't".
+     1 | I don't know the word "openmindate".
+     1 | I don't know the word "openmindmindlook".
+     1 | I don't know the word "openmindend".
+     1 | I don't know the word "openlook:".
+     1 | I don't know the word "openmindmind:".
+     1 | I don't know the word "tr".
+     1 | I don't know the word "ap".
+     1 | I don't know the word "text:".
+     1 | I don't know the word "tention".
+     1 | I don't know the word "openear".
+     1 | I don't know the word "correct".
+     1 | I don't know the word "the:".
+     1 | I don't know the word "t1".
+     1 | I don't know the word "text?".
+     1 | I don't know the word "openitate".
+     1 | I don't know the word "openen".
+     1 | I don't know the word "openidate".
+     1 | I don't know the word "openid".
+     1 | I don't know the word "openmindstepmind".
+     1 | I don't know the word "mindmindmind".
+     1 | I don't know the word "openmindset".
+     1 | I don't know the word "apassistant".
+     1 | I don't know the word "apent".
+     1 | I don't know the word "`describe`".
+     1 | I don't know the word "`status`".
+     1 | I don't know the word "`walk`".
+     1 | I don't know the word "`north`".
+     1 | I don't know the word "`turn`".
+     1 | I don't know the word "`inspect`".
+     1 | I don't know the word "`check`".
+     1 | I don't know the word "`open`".
+     1 | I don't know the word "`unlock`".
+     1 | I don't know the word "`use`".
+     1 | I don't know the word "`take`".
+     1 | I don't know the word "`get`".
+     1 | I don't know the word "`pick".
+     1 | I don't know the word "`find`".
+     1 | I don't know the word "`search`".
+     1 | I don't know the word "`enter`".
+     1 | What do you want to pat?
+     1 | I don't know the word "bowl".
+     1 | You can't see any charred remains here!
+     1 | I don't know the word "magnificent".
+     1 | I don't know the word "sealed".
+     1 | I don't know the word "pharaoh".
+     1 | I don't know the word "khephren".
+     1 | You can't see any scrolls here!
+     1 | I don't know the word "turns".
+     1 | You can't see any statue here!
+     1 | I don't know the word "intricately".
+     1 | I don't know the word "expert".
+     1 | I don't know the word "point".
+     1 | I don't know the word "expedition".
+     1 | I don't know the word "even".
+     1 | You can't see any hieroglyphs here!
+     1 | I see no match here.
+     1 | You can't see any stone here!
+     1 | You can't see any left here!
+     1 | You can't see any scroll here!
+     1 | I don't know the word "covered".
+     1 | I don't know the word "amulet".
+     1 | I don't know the word "eye".
+     1 | I don't know the word "are".
+     1 | What do you want to place the stone in?
+     1 | I don't know the word "empt".
+     1 | I don't know the word "rustles".
+     1 | I don't know the word "old".
+     1 | What do you want to shake?
+     1 | You can't see any opening here!
+     1 | You can't see any arms here!
+     1 | I don't know the word "depression".
+     1 | I don't know the word "```â?".
+     1 | I don't know the word "i't".
+     1 | I don't know the word "```:`move".
+     1 | I don't know the word "efined".
+     1 | I don't know the word "same".
+     1 | I don't know the word "contains:".
+     1 | I don't know the word "complete".
+     1 | I don't know the word "opened".
+     1 | I don't know the word "uncovered".
+     1 | I don't know the word "revealed".
+     1 | I don't know the word "visible".
+     1 | I don't know the word "i'sundersand".
+     1 | I don't know the word "```en".
+     1 | I don't know the word "don's".
+     1 | I don't know the word "```i".
+     1 | I don't know the word "would".
+     1 | I don't know the word ">open".
+     1 | I don't know the word "(this".
+     1 | I don't know the word "(examine".
+     1 | I don't know the word "this".
+     1 | I don't know the word "game".
+     1 | I don't know the word "```repeatedly".
+     1 | I don't know the word "```tion".
+     1 | I don't know the word "slip".
+     1 | I don't know the word "displaced".
+     1 | I don't know the word "negatory".
+     1 | I don't know the word "got".
+     1 | I don't know the word "dug".
+     1 | I don't know the word "keeps".
+     1 | I don't know the word "lost".
+     1 | I don't know the word "elsewhere".
+     1 | I don't know the word "shows".
+     1 | I don't know the word "announce".
+     1 | I don't know the word "barada".
+     1 | I don't know the word "nikto".
+     1 | I don't know the word "robot".
+     1 | I don't know the word "guy".
+     1 | I don't know the word "both".
+     1 | I don't know the word "craft".
+     1 | You can't see any ship here!
+     1 | I don't know the word "duo".
+     1 | I don't know the word "ahead".
+     1 | I don't know the word "gap".
+     1 | I don't know the word "unfilled".
+     1 | I don't know the word "fills".
+     1 | I don't know the word "top".
+     1 | I don't know the word "pile".
+     1 | I don't know the word "bow".
+     1 | I don't know the word "sneak".
+     1 | I don't know the word "nought".
+     1 | I don't know the word "niente".
+     1 | I don't know the word "occupied".
+     1 | I don't know the word "bupkis".
+     1 | I don't know the word "hole's".
+     1 | I don't know the word "never".
+     1 | I don't know the word "minus".
+     1 | I don't know the word "subtracted".
+     1 | I don't know the word "stayed".
+     1 | I don't know the word "pure".
+     1 | I don't know the word "comprises".
+     1 | I don't know the word "nonexistent".
+     1 | I don't know the word "vanished".
+     1 | I don't know the word "gets".
+     1 | I don't know the word "refuses".
+     1 | I don't know the word "held".
+     1 | I don't know the word "went".
+     1 | I don't know the word "declare".
+     1 | I don't know the word "utter".
+     1 | There's nothing to fill it with. Except for maybe some sand.\nYou'd better drink something, and soon!
+     1 | You can't enter the tent from here.\nYour stomach growls in hunger.
+     1 | I don't know the word "orient".
+     1 | You're not carrying the tent.
+     1 | You can't move the trunk.\n\nIt sounds as if the plane is circling.
+     1 | I don't see any hole here.
+     1 | I don't know the word "bed".
+     1 | I don't know the word "combine".
+     1 | I don't know the word "spread".
+     1 | I don't know the word "bury".
+     1 | I don't know the word "lay".
+     1 | I don't know the word "shoot".
+     1 | I don't know the word "flash".
+     1 | You're not carrying the inspection sticker.
+     1 | You're not carrying the piece of dried beef.

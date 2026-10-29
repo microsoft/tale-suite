@@ -1,0 +1,48 @@
+# Invalid Action Messages: TWCookingLevel4
+# Total unique error messages: 41
+# Total error occurrences: 7978
+#
+# Format: count | message
+#===============================================================================
+
+  4015 | That's not a verb I recognise.
+  1578 | You can't see any such thing.
+  1100 | I beg your pardon?
+   398 | You seem to want to talk to someone, but I can't see whom.
+   270 | I only understood you as far as wanting to take inventory.
+    83 | It isn't something you can switch.
+    78 | You need to take the block of cheese first.
+    78 | You can't go that way.
+    44 | It isn't something you can open.
+    41 | What do you want to cook the block of cheese with?
+    34 | What do you want to open?
+    32 | You still miss something.
+    32 | You can't begin with a comma.
+    24 | That's not something you can sit down on.
+    23 | That was a rhetorical question.\n\n\nThat's not a verb I recognise.
+    21 | I only understood you as far as wanting to put the block of cheese on the stove.
+    19 | I only understood you as far as wanting to read the cookbook.
+    17 | (with the block of cheese)\nYou need to take the block of cheese first.
+    14 | Cooking requires a source of heat.
+    10 | Time passes.
+     7 | I didn't understand that sentence.
+     7 | I only understood you as far as wanting to examine the stove.
+     7 | It is fixed in place.
+     7 | This dangerous act would achieve little.
+     6 | But you aren't in anything at the moment.
+     6 | I only understood you as far as wanting to open south.
+     5 | What do you want to move?
+     4 | That can't contain things.
+     2 | You can't see inside, since the fridge is closed.
+     2 | You couldn't pay me to eat that fried block of cheese.
+     2 | I only understood you as far as wanting to (go) in.
+     2 | You can't use multiple objects with that verb.
+     2 | I only understood you as far as wanting to exit.
+     1 | I only understood you as far as wanting to check inside.
+     1 | That's already open.
+     1 | I only understood you as far as wanting to open inside.
+     1 | I only understood you as far as wanting to clean up.
+     1 | I only understood you as far as wanting to (go) s.
+     1 | I only understood you as far as wanting to listen.
+     1 | What do you want to check?
+     1 | You already have that.

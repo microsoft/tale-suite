@@ -1,0 +1,135 @@
+# Invalid Action Messages: JerichoEnvBalances
+# Total unique error messages: 128
+# Total error occurrences: 15403
+#
+# Format: count | message
+#===============================================================================
+
+  5503 | That's not a verb I recognise.
+  4304 | You can't see any such thing.
+  1209 | You seem to want to talk to someone, but I can't see whom.
+  1197 | I only understood you as far as wanting to look.
+   633 | You haven't got that spell committed to memory. [Type "spells" to see what you do remember.]
+   327 | I beg your pardon?
+   242 | You see nothing special about the chestnut horse.
+   217 | I only understood you as far as wanting to inventory.
+   192 | That's not something you need to refer to in the course of this game.
+   166 | I didn't understand that sentence.
+   137 | You find nothing of interest.
+   137 | You already have that.
+   109 | You see nothing special about the tortoise.
+    86 | You see nothing special about the left pan.
+    68 | You see nothing special about the right pan.
+    63 | You can't see inside, since the cedarwood box is closed.
+    62 | You can't go that way.
+    58 | I only understood you as far as wanting to think.
+    57 | Time passes.
+    53 | Violence isn't the answer to this one.
+    33 | I only understood you as far as wanting to exit.
+    25 | Nothing obvious happens.
+    24 | You see nothing special about the floor.
+    24 | Which do you mean, the cubical Temple or a featureless white cube?
+    22 | I only understood you as far as wanting to learn the frotz spell.
+    21 | But you aren't in anything at the moment.
+    21 | I only understood you as far as wanting to in.
+    19 | You can only do that to something animate.
+    17 | Which do you mean, the gnusto spell or the spell book?
+    14 | There is no reply.
+    14 | I only understood you as far as wanting to ride the chestnut horse.
+    14 | I only understood you as far as wanting to north.
+    14 | I only understood you as far as wanting to cast the gnusto spell.
+    13 | I only understood you as far as wanting to quit.
+    13 | You see nothing special about the wooden furniture.
+    12 | I don't think much is to be achieved by that.
+    11 | You see nothing special about the ceiling.
+    11 | I only understood you as far as wanting to turn the cedarwood box.
+    10 | I only understood you as far as wanting to pray.
+    10 | I only understood you as far as wanting to search the cedarwood box.
+    10 | I only understood you as far as wanting to write the magic burin on the silver coin.
+    10 | I only understood you as far as wanting to       7 cj df x c   prdW   idqgdmgdq    mcwdxw.
+     9 | I only understood you as far as wanting to get the cedarwood box.
+     8 | You see nothing special about the winged horse.
+     8 | That's not something you can open.
+     8 | I only understood you as far as wanting to search the wooden furniture.
+     8 | I only understood you as far as wanting to write the magic burin on the chewed scroll.
+     8 | Which do you mean, the featureless white cube or the prize cube?
+     7 | You haven't got that.
+     7 | I only understood you as far as wanting to write the magic burin on the spell book.
+     6 | Which do you mean, the crumpled scroll or the chewed scroll?
+     6 | I only understood you as far as wanting to write the magic burin on the cedarwood box.
+     5 | This dangerous act would achieve little.
+     5 | I only understood you as far as wanting to learn the lleps spell.
+     5 | I only understood you as far as wanting to cast a spell at the cedarwood box.
+     5 | I only understood you as far as wanting to rub the silver coin.
+     4 | I only understood you as far as wanting to go the north wall.
+     4 | That's not something you can switch.
+     4 | I only understood you as far as wanting to drop the cedarwood box.
+     4 | I only understood you as far as wanting to shine the silver coin.
+     3 | I only understood you as far as wanting to look at the cedarwood box.
+     3 | Which do you mean, the gnusto spell, the frotz spell, the yomin spell, the rezrov spell or the spell book?
+     3 | I only understood you as far as wanting to cast a spell at the gnusto spell.
+     3 | You can't go that way.\n\nTiny in the blue sky, a tortoise flaps across the sun.
+     3 | Which do you mean, a featureless white cube or the cubical Temple?
+     3 | I only understood you as far as wanting to cast the frotz spell.
+     3 | I only understood you as far as wanting to open the cedarwood box.
+     3 | You see nothing special about the east wall.
+     3 | You see nothing special about the pile of oats.
+     3 | I only understood you as far as wanting to look at the chestnut horse.
+     3 | I only understood you as far as wanting to hold the silver coin.
+     2 | That's already open.
+     2 | Which do you mean, the featureless white cube or the cubical Temple?
+     2 | You see nothing special about the north wall.
+     2 | I only understood you as far as wanting to cast the rezrov spell.
+     2 | I only understood you as far as wanting to cast the bozbar spell.
+     2 | I only understood you as far as wanting to cast the gnusto spell on Helistar's grimoire.
+     2 | I only understood you as far as wanting to jump.
+     2 | I only understood you as far as wanting to cast a spell at the shiny scroll.
+     2 | I only understood you as far as wanting to cut the perfect sapphire.
+     2 | I only understood you as far as wanting to attack the hissing snake.
+     2 | But you aren't on the chestnut horse at the moment.
+     2 | I only understood you as far as wanting to cast the gnusto spell on the cedarwood box.
+     2 | I only understood you as far as wanting to south.
+     2 | I only understood you as far as wanting to ride the winged horse.
+     2 | I only understood you as far as wanting to sing.
+     2 | I only understood you as far as wanting to wave the silver coin.
+     2 | I only understood you as far as wanting to turn the silver coin on.
+     2 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+     2 | You see nothing special about the south wall.
+     2 | I only understood you as far as wanting to break the cedarwood box.
+     1 | I only understood you as far as wanting to light the ceiling.
+     1 | I only understood you as far as wanting to enter the shiny scroll.
+     1 | I only understood you as far as wanting to learn the gnusto spell.
+     1 | Which do you mean, the "frotz" cube or the featureless white cube?
+     1 | Which do you mean, a gold coin, the bronze coin or the silver coin?
+     1 | I only understood you as far as wanting to learn the rezrov spell.
+     1 | I only understood you as far as wanting to memorize the lleps spell.
+     1 | I only understood you as far as wanting to cast a spell at the lleps spell.
+     1 | You can't see "self" (yourself) at the moment.
+     1 | Which do you mean, the cubical Temple or the featureless white cube?
+     1 | I only understood you as far as wanting to learn the bozbar spell.
+     1 | I only understood you as far as wanting to learn the mortin spell.
+     1 | I only understood you as far as wanting to touch the cedarwood box.
+     1 | I only understood you as far as wanting to look inside the cedarwood box.
+     1 | I only understood you as far as wanting to cast the gnusto spell on the spell book.
+     1 | I only understood you as far as wanting to wave the magic burin.
+     1 | I only understood you as far as wanting to wave the shiny scroll.
+     1 | I only understood you as far as wanting to copy the rezrov spell to the chewed scroll.
+     1 | I only understood you as far as wanting to break the perfect sapphire.
+     1 | Which do you mean, a featureless white cube or the prize cube?
+     1 | I only understood you as far as wanting to look at the shiny scroll.
+     1 | I only understood you as far as wanting to take the pile of oats.
+     1 | I only understood you as far as wanting to no.
+     1 | I only understood you as far as wanting to go the ceiling.
+     1 | You see nothing special about the west wall.
+     1 | You see nothing special about the northeast wall.
+     1 | You see nothing special about the northwest wall.
+     1 | You see nothing special about the southeast wall.
+     1 | You see nothing special about the southwest wall.
+     1 | I only understood you as far as wanting to smash the cedarwood box.
+     1 | I only understood you as far as wanting to cast a spell at the rezrov spell.
+     1 | I only understood you as far as wanting to cast a spell at the silver coin.
+     1 | I only understood you as far as wanting to cut the cedarwood box.
+     1 | I only understood you as far as wanting to throw the silver coin.
+     1 | I only understood you as far as wanting to hold the ceiling.
+     1 | I only understood you as far as wanting to shine the cedarwood box.
+     1 | I only understood you as far as wanting to hold the cedarwood box.

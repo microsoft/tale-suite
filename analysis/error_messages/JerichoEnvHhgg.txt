@@ -1,0 +1,560 @@
+# Invalid Action Messages: JerichoEnvHhgg
+# Total unique error messages: 553
+# Total error occurrences: 12235
+#
+# Format: count | message
+#===============================================================================
+
+  1116 | There was no verb in that sentence!
+   913 | Time passes...
+   808 | I don't know the word ">".
+   680 | It's too dark to see!
+   628 | It is pitch black.
+   495 | I don't know the word "dealer".
+   385 | I don't know the word "`examine".
+   357 | You can't go that way.
+   336 | I don't know the word "as".
+   283 | You can't reach it from the bed. The effort almost kills you.
+   253 | I don't know the word "`look`".
+   229 | I don't know the word "`help`".
+   212 | I don't know the word "`feel".
+   196 | I beg your pardon?
+   188 | I don't know the word "**action:**".
+   179 | I don't know the word "you".
+   166 | I don't know the word "resolve".
+   166 | You used the word "again" in a way that I don't understand.
+   164 | I don't know the word "`feel`".
+   152 | You can't do that while you're lying down!
+   129 | You used the word "south" in a way that I don't understand.
+   129 | You see nothing special about the telephone.
+   127 | I don't know the word "use".
+   107 | You're not holding your gown.
+   107 | I don't know the word "**command:**".
+   104 | I don't know the word "navigate".
+    96 | You can't see Ford here!
+    86 | You are already standing.
+    80 | I don't know the word "**stand**".
+    78 | You used the word "go" in a way that I don't understand.
+    69 | I don't know the word "try".
+    68 | You used the word "move" in a way that I don't understand.
+    61 | I don't know the word "(i'm".
+    60 | You used the word "exit" in a way that I don't understand.
+    59 | You used the word "step" in a way that I don't understand.
+    59 | You used the word "place" in a way that I don't understand.
+    52 | You used the word "leave" in a way that I don't understand.
+    50 | What do you want to listen to?
+    49 | I don't know the word "feet".
+    48 | I don't know the word "still".
+    47 | I don't know the word "legs".
+    46 | You used the word "proceed" in a way that I don't understand.
+    41 | I don't know the word "`stand`".
+    37 | You used the word "stop" in a way that I don't understand.
+    37 | It is already open.
+    36 | You can't see Prosser here!
+    36 | I don't know the word "```".
+    35 | You used the word "help" in a way that I don't understand.
+    34 | You find nothing unusual.
+    33 | You can't see any analgesic here!
+    32 | You can't move your curtains.
+    32 | What do you want to feel?
+    32 | I don't know the word "dial".
+    32 | You used the word "close" in a way that I don't understand.
+    30 | You can't see any thing here!
+    30 | I don't know the word "progress".
+    30 | I don't know the word "apologize".
+    29 | I don't know the word "nearby".
+    28 | You can't see that here!
+    28 | I don't know the word "something".
+    28 | I don't know the word "bypass".
+    25 | You can't go that way.\nThe bulldozer rumbles slowly toward your home.
+    25 | I don't know the word "forward".
+    25 | I don't know the word "slowly".
+    25 | I don't know the word "`take`".
+    24 | I don't know the word "gave".
+    22 | I don't know the word "carefully".
+    21 | I don't know the word "doorway".
+    21 | You used the word "walk" in a way that I don't understand.
+    20 | I don't know the word "plans".
+    19 | I don't know the word "match".
+    19 | There's nothing there. Well, there are a few soiled handkerchiefs, a book you thought you'd lost, a couple of foreign coins, and something else which can't be fully described in a family game, but nothing you'd actually want.
+    19 | I don't know the word "`look".
+    18 | You used the word "put" in a way that I don't understand.
+    18 | I don't know the word "arms".
+    18 | I don't know the word "reach".
+    18 | I don't know the word "-".
+    18 | I don't know the word "`inventory`".
+    17 | I don't know the word "check".
+    17 | I don't know the word "surroundings".
+    17 | I don't know the word "foot".
+    17 | I don't know the word "things".
+    17 | I don't know the word "```help".
+    16 | I don't know the word "instead".
+    16 | I don't know the word "not".
+    15 | You're not holding the flathead screwdriver.
+    15 | You used the word "hello" in a way that I don't understand.
+    15 | You're not holding the towel.
+    15 | I don't know the word "noise".
+    14 | You're not holding the telephone.
+    14 | I don't know the word "will".
+    14 | You already have it.
+    14 | I don't know the word "**look**".
+    14 | I don't know the word "steady".
+    14 | I don't know the word "voice".
+    14 | I don't know the word "```look".
+    13 | I don't know the word "operator".
+    13 | What do you want to call?
+    13 | You see nothing special about the wall.
+    13 | I don't know the word "closer".
+    13 | I don't know the word "right".
+    13 | I don't know the word "edge".
+    12 | I don't know the word "do".
+    12 | What do you want to go through?
+    12 | I don't know the word "left".
+    12 | I don't know the word "sorry".
+    11 | You can't see any buffered analgesic here!
+    11 | I don't know the word "while".
+    11 | I don't know the word "body".
+    11 | I don't know the word "straight".
+    11 | I don't know the word "ahead".
+    11 | I don't know the word "yourself".
+    11 | I don't know the word "that".
+    11 | I don't know the word "`commands`".
+    11 | I don't know the word "`quit`".
+    10 | I don't know the word "if".
+    10 | You can't move your hand.
+    10 | I don't know the word "calm".
+    10 | I don't know the word "pitch".
+    10 | I don't know the word "`touch`".
+     9 | You used the word "why" in a way that I don't understand.
+     9 | I don't know the word "sounds".
+     9 | I don't know the word "remain".
+     9 | What do you want to phone?
+     9 | I don't know the word "edges".
+     9 | I don't know the word "corners".
+     9 | I don't know the word "`turn".
+     8 | I don't know the word "hallway".
+     8 | You see nothing special about your curtains.
+     8 | I don't know the word "think".
+     8 | I don't know the word "lean".
+     8 | I don't know the word "moment".
+     8 | I don't know the word "breathe".
+     8 | I don't know the word "moving".
+     8 | I don't know the word "furniture".
+     8 | I don't know the word "mess".
+     7 | I don't know the word "pass".
+     7 | I don't know the word "continue".
+     7 | What do you want to search?
+     7 | I don't know the word "lying".
+     7 | You can't see any junk mail here!
+     7 | I don't know the word "persuade".
+     7 | I don't know the word "promise".
+     7 | I don't know the word "grope".
+     7 | You see nothing special about the ground.
+     7 | I don't know the word "flashlight".
+     7 | What do you want to move?
+     7 | There is nothing on the bed.
+     7 | What do you want to touch?
+     7 | I don't know the word "let's".
+     7 | I don't know the word "figure's".
+     7 | I don't know the word "or".
+     7 | I don't know the word "i'".
+     7 | You used the word "sure" in a way that I don't understand.
+     6 | What do you want to get?
+     6 | I don't know the word "someone".
+     6 | I don't know the word "council".
+     6 | You can't see anything, smell anything, feel anything, or taste anything, and do not even know where you are or who you are or how you got there.
+     6 | There's nothing you can taste, nothing you can see, nothing you can feel, nothing you can smell, you do not even know who you are.
+     6 | I don't know the word "closed".
+     6 | I don't know the word "tap".
+     6 | I don't know the word "balance".
+     6 | What do you want to stop?
+     6 | I don't know the word "side".
+     6 | I don't know the word "hair".
+     6 | I don't know the word "breathing".
+     6 | I don't know the word "grasp".
+     6 | I don't know the word "halt".
+     6 | I don't know the word "orb".
+     6 | I don't know the word "`use".
+     6 | You can't see any mail here!
+     6 | You can't see any tree here!
+     6 | I don't know the word "snatch".
+     6 | I don't know the word "regain".
+     5 | I don't know the word "passage".
+     5 | You can't move your curtains.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nToo bad you never found an aspirin for your hangover.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     5 | You see nothing special about pocket fluff.
+     5 | I don't know the word "too".
+     5 | You used the word "lie" in a way that I don't understand.
+     5 | You can't see any towel here!
+     5 | I don't know the word "come".
+     5 | You're not holding the bed.
+     5 | You are already standing.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nToo bad you never found an aspirin for your hangover.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     5 | I don't know the word "sound".
+     5 | I don't know the word "unscrew".
+     5 | I don't know the word "screw".
+     5 | You used the word "west" in a way that I don't understand.
+     5 | I don't know the word "doctor".
+     5 | I don't know the word "now".
+     5 | What do you want to what?
+     5 | I don't know the word "situation".
+     5 | You used the word "thanks" in a way that I don't understand.
+     5 | I don't know the word "bye".
+     5 | I don't know the word "`open`".
+     5 | I don't know the word "`examine`".
+     5 | I don't know the word "`turn`".
+     5 | I don't know the word "`what".
+     5 | I don't know the word "`list`".
+     5 | I don't know the word "`go`".
+     5 | I don't know the word "(whichever".
+     4 | You used the word "enter" in a way that I don't understand.
+     4 | You used the word "stay" in a way that I don't understand.
+     4 | You can't go that way.\nThe bulldozer piles into the side of your home.\n\nYour home collapses in a cloud of dust, and a stray flying brick hits you squarely on the back of the head. You try to think of some suitable last words, but what with the confusion of the moment and the spinning of your head, you are unable to compose anything pithy and expire in silence.
+     4 | I don't know the word "swear".
+     4 | I don't know the word "this".
+     4 | I don't know the word "going".
+     4 | I don't know the word "be".
+     4 | I don't know the word "tighten".
+     4 | I don't know the word "you've".
+     4 | I don't know the word "path".
+     4 | I don't know the word "footsteps".
+     4 | What do you want to kick?
+     4 | I don't know the word "surfaces".
+     4 | You used the word "what" in a way that I don't understand.
+     4 | I don't know the word "says".
+     4 | You can't see any machine here!
+     4 | You can't see any computer here!
+     4 | You used the word "north" in a way that I don't understand.
+     4 | I don't know the word "locked".
+     4 | You can't see any box here!
+     4 | I don't know the word "crystal".
+     4 | I don't know the word "glowing".
+     4 | I don't know the word "genghis".
+     4 | I don't know the word "arrangement".
+     4 | I don't know the word "father".
+     4 | I don't know the word "spinning".
+     4 | I don't know the word "freeze".
+     3 | I don't know the word "let".
+     3 | You're not holding lots of beer.
+     3 | I don't know the word "how".
+     3 | You can't see any aunt here!
+     3 | I don't know the word "apply".
+     3 | I don't know the word "quietly".
+     3 | I don't know the word "undo".
+     3 | I don't know the word "aside".
+     3 | I don't know the word "would".
+     3 | You can't see any in front of bulldozer here!
+     3 | I don't know the word "tight".
+     3 | I don't know the word "skin".
+     3 | I don't know the word "know".
+     3 | I don't know the word "understand".
+     3 | You can't move your head.
+     3 | I don't know the word "table".
+     3 | You can't see any button here!
+     3 | I don't know the word "explains".
+     3 | I don't know the word "fits".
+     3 | I don't know the word "made".
+     3 | I don't know the word "creaks".
+     3 | I don't know the word "commands".
+     3 | I don't know the word "figure".
+     3 | I don't know the word "`right`".
+     3 | I don't know the word "`back`".
+     3 | I don't know the word "`light".
+     3 | I don't know the word "`strike".
+     3 | I don't know the word "`ignite".
+     3 | I don't know the word "`score`".
+     3 | I don't know the word "`save`".
+     3 | I don't know the word "`load`".
+     3 | I don't know the word "`undo`".
+     3 | I don't know the word "`redo`".
+     3 | I don't know the word "complain".
+     3 | You can't see any letter here!
+     3 | I don't know the word "collect".
+     3 | I don't know the word "crouch".
+     3 | I don't know the word "screws".
+     3 | You are already wearing it.
+     2 | You see nothing special about your curtains.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nBetter luck next life.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     2 | I don't know the word "information".
+     2 | I don't know the word "notice".
+     2 | I don't know the word "convince".
+     2 | You're not holding the loose pile of junk mail.\n\nAn announcement is coming over the ship's intercom. "Eo tchoorkgryosho tcavimba ba r oulps gwrop ws ga bhuvimborkkon or gimbzitwrofimr ggryfime hfim ofimoshkonquiorkquip wimbz zkwa owrow ca bzitvuposhoshs gs gtru oe hwroe hirbz zl mvupvuposhfud oi szitirbl mhuvr gthaimbirbosh ox jkwau na bo strul morkerloll oerli ld tchoflukoneftw corkork oollz zo tvupfimfluwroe hosholl."
+     2 | You can't see any dispenser button here!
+     2 | You see nothing special about the airlock.\n\nFord points at the outer door. "In about two minutes, it will open and we'll be ejected into the vacuum of space. But don't panic, I'll think of something."
+     2 | What do you want to enjoy?
+     2 | I don't know the word "should".
+     2 | I don't know the word "we".
+     2 | I don't know the word "solve".
+     2 | I don't know the word "breath".
+     2 | I don't know the word "(empty)".
+     2 | You're not holding the digital watch.
+     2 | I don't know the word "loudly".
+     2 | I don't know the word "shouting".
+     2 | I don't know the word "recall".
+     2 | I don't know the word "attempt".
+     2 | I don't know the word "trying".
+     2 | You used the word "where" in a way that I don't understand.
+     2 | I don't know the word "suitcase".
+     2 | You see nothing special about pocket fluff.\n\n"Drink the beer," urges Ford. "It will help cushion your system against the coming shock of the matter transference beam."
+     2 | I don't know the word "ancestors".
+     2 | What do you want to smell?
+     2 | I don't know the word "sing".
+     2 | You can't do that.
+     2 | You can't go that way.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nToo bad you never found an aspirin for your hangover.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     2 | What do you want to look in?
+     2 | I don't know the word "you'd".
+     2 | What do you want to refuse?
+     2 | You can't get into your hand!
+     2 | I don't know the word "state".
+     2 | I don't know the word "echo".
+     2 | I don't know the word "heartbeat".
+     2 | I don't know the word "longer".
+     2 | You used the word "hold" in a way that I don't understand.
+     2 | You used the word "grab" in a way that I don't understand.
+     2 | I don't know the word "knees".
+     2 | It is already open.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nToo bad you never found an aspirin for your hangover.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     2 | I don't know the word "vicinity".
+     2 | I don't know the word "it's".
+     2 | I don't know the word "instructions".
+     2 | I don't know the word "model".
+     2 | I don't know the word "hums".
+     2 | I don't know the word "password".
+     2 | I don't know the word "stuck".
+     2 | I don't know the word "rotary".
+     2 | I don't know the word "makes".
+     2 | I don't know the word "beeps".
+     2 | You used the word "who" in a way that I don't understand.
+     2 | I don't know the word "end".
+     2 | I don't know the word "card".
+     2 | I don't know the word "symbol".
+     2 | I don't know the word "cave".
+     2 | I don't know the word "headline".
+     2 | I don't know the word "`surroundings`".
+     2 | I don't know the word "`feelpardu".
+     2 | I don't know the word "```help`".
+     2 | I don't know the word "interact".
+     2 | I don't know the word "include".
+     2 | I don't know the word "i'sur".
+     2 | I don't know the word "ancestry".
+     2 | I don't know the word "vantage".
+     2 | You can't see any hook here!
+     2 | I don't know the word "duck".
+     2 | I don't know the word "grip".
+     2 | I don't know the word "recover".
+     2 | I don't know the word "pounce".
+     2 | You're already wearing your gown!
+     2 | You're not holding your curtains.
+     1 | I don't know the word "disassemble".
+     1 | You used the word "cover" in a way that I don't understand.
+     1 | I don't know the word "gadget".
+     1 | I don't know the word "mysterious".
+     1 | You can't see any aunt's gift here!
+     1 | You can't see any gift here!
+     1 | I don't know the word "force".
+     1 | I don't know the word "garden".
+     1 | I don't know the word "friend".
+     1 | I don't know the word "can".
+     1 | You used the word "tell" in a way that I don't understand.
+     1 | You used the word "drink" in a way that I don't understand.
+     1 | There's nothing you can taste, nothing you can see, nothing you can feel, nothing you can smell, you do not even know who you are.\n\nWhen will you come to your senses and solve this puzzle?
+     1 | You can't see any sandwich here!
+     1 | I don't know the word "surface".
+     1 | I don't know the word "<br>listen".
+     1 | You see nothing special about the sales brochure.
+     1 | You see nothing special about Ford Prefect.\n\nFord glances uncomfortably at the sky. He offers you the towel again.
+     1 | You see nothing special about the jukebox.
+     1 | You see nothing special about the barman.
+     1 | I don't know the word "ford's".
+     1 | You used the word "protest" in a way that I don't understand.
+     1 | I don't know the word "swap".
+     1 | I don't know the word "site".
+     1 | I don't know the word "want".
+     1 | I don't know the word "breaths".
+     1 | I don't know the word "source".
+     1 | I don't know the word "by".
+     1 | You see nothing special about the telephone.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nToo bad you never found an aspirin for your hangover.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     1 | I don't know the word "have".
+     1 | You used the word "wait" in a way that I don't understand.
+     1 | I don't know the word "won't".
+     1 | It is already open.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nNext time, try turning on the light.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     1 | I don't know the word "stabilize".
+     1 | I don't know the word "anything".
+     1 | I don't know the word "closely".
+     1 | I don't know the word "swaying".
+     1 | I don't know the word "lunge".
+     1 | You used the word "screaming" in a way that I don't understand.
+     1 | I don't know the word "bend".
+     1 | I don't know the word "lunging".
+     1 | I don't know the word "reaching".
+     1 | I don't know the word "groan".
+     1 | I don't know the word "whimper".
+     1 | I don't know the word "yelling".
+     1 | I don't know the word "consider".
+     1 | I don't know the word "reflect".
+     1 | I don't know the word "wonder".
+     1 | I don't know the word "confused".
+     1 | I don't know the word "lost".
+     1 | I don't know the word "disoriented".
+     1 | I don't know the word "unsure".
+     1 | I don't know the word "bad".
+     1 | I don't know the word "shift".
+     1 | I don't know the word "change".
+     1 | I don't know the word "fall".
+     1 | I don't know the word "silent".
+     1 | I don't know the word "talking".
+     1 | I don't know the word "making".
+     1 | I don't know the word "ignore".
+     1 | You can't go that way.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nBetter luck next life.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     1 | I don't know the word "clinic".
+     1 | I don't know the word "gate".
+     1 | I don't know the word "ss".
+     1 | I don't know the word "world".
+     1 | I don't know the word "money".
+     1 | You can't use multiple direct objects with "order".
+     1 | You can't give a thing your aunt gave you which you don't know what it is to a dog!
+     1 | I don't know the word "reason".
+     1 | I don't know the word "roll".
+     1 | I don't know the word "way".
+     1 | I don't know the word "plan".
+     1 | I don't know the word "democracy".
+     1 | You can't get into Mr. Prosser!
+     1 | I don't know the word "relieve".
+     1 | You can't get into the towel!
+     1 | I don't know the word "orders".
+     1 | I don't know the word "leopard".
+     1 | I don't know the word "spread".
+     1 | I don't know the word "cellar".
+     1 | I don't know the word "steps".
+     1 | I don't know the word "release".
+     1 | You're not holding the wall.
+     1 | I don't know the word "there".
+     1 | You can't move the door.
+     1 | I don't know the word "ring".
+     1 | I don't know the word "emergency".
+     1 | What do you want to go to?
+     1 | I don't know the word "condition".
+     1 | I don't know the word "realize".
+     1 | I don't know the word "headboard".
+     1 | I don't know the word "hard".
+     1 | What do you want to hear?
+     1 | I don't know the word "downstairs".
+     1 | I don't know the word "essential".
+     1 | I don't know the word "seems".
+     1 | I don't know the word "apologies".
+     1 | I don't know the word "need".
+     1 | I don't know the word "ladder".
+     1 | I don't know the word "alleyway".
+     1 | I don't know the word "bench".
+     1 | I don't know the word "quiet".
+     1 | I don't know the word "suit".
+     1 | I don't know the word "faster".
+     1 | I don't know the word "flat".
+     1 | You can't see any nothing here!
+     1 | I don't know the word "officer".
+     1 | I don't know the word "when".
+     1 | I don't know the word "precautions".
+     1 | I don't know the word "nurse".
+     1 | I don't know the word "scrubs".
+     1 | I don't know the word "harm".
+     1 | I don't know the word "hospital".
+     1 | I don't know the word "uniform".
+     1 | I don't know the word "waking".
+     1 | I don't know the word "outfit".
+     1 | I don't know the word "clothing".
+     1 | I don't know the word "surgery".
+     1 | I don't know the word "team".
+     1 | I don't know the word "reassures".
+     1 | I don't know the word "procedure".
+     1 | I don't know the word "shakes".
+     1 | I don't know the word "nods".
+     1 | I don't know the word "protection".
+     1 | I don't know the word "agencies".
+     1 | I don't know the word "gathering".
+     1 | I don't know the word "square".
+     1 | I don't know the word "shaking".
+     1 | What do you want to fight?
+     1 | I don't know the word "clicks".
+     1 | You can't see any black box here!
+     1 | I don't know the word "opens".
+     1 | I don't know the word "goodbye".
+     1 | I don't know the word "good".
+     1 | I don't know the word "humming".
+     1 | I don't know the word "sequence".
+     1 | You used the word "east" in a way that I don't understand.
+     1 | You can't see any key here!
+     1 | I don't know the word "metallic".
+     1 | I don't know the word "wooden".
+     1 | You can't see any opening here!
+     1 | I don't know the word "tunnel".
+     1 | I don't know the word "upstairs".
+     1 | I don't know the word "looks".
+     1 | I don't know the word "pieces".
+     1 | I don't know the word "smiles".
+     1 | I don't know the word "portal".
+     1 | I don't know the word "standing".
+     1 | You can't see any liquid here!
+     1 | I don't know the word "pedestal".
+     1 | I don't know the word "sphere".
+     1 | I don't know the word "beckons".
+     1 | I don't know the word "`list".
+     1 | I don't know the word "`surroundings".
+     1 | I don't know the word "```feelpard`feelpardon`redo`repeatedly`".
+     1 | I don't know the word "```help`help`feeluct`feelim".
+     1 | I don't know the word "```help`feelpard`help`help`help`help`help`s`help`help`re`help`fe".
+     1 | I don't know the word "`rest".
+     1 | I don't know the word "can'".
+     1 | I don't know the word "```help`help`help`help".
+     1 | I don't know the word "```forward".
+     1 | I don't know the word "```restart".
+     1 | I don't know the word "```enter".
+     1 | I don't know the word "```feelpard`feelpardon`redo`restart".
+     1 | I don't know the word "```help`help`redo`re".
+     1 | I don't know the word "```feelpardon`help`help`feelizpardon`feel".
+     1 | I don't know the word "``".
+     1 | I don't know the word "```it".
+     1 | I don't know the word "```use".
+     1 | I don't know the word "```s".
+     1 | I don't know the word "```turn`turn`turn`turn`s".
+     1 | I don't know the word "```turn`turn`turn`turn`turn`it".
+     1 | I don't know the word "```turn`turn`turn`it".
+     1 | I don't know the word "previous".
+     1 | I don't know the word "response".
+     1 | I don't know the word "was".
+     1 | I don't know the word "words".
+     1 | I don't know the word "send".
+     1 | I don't know the word "add".
+     1 | I don't know the word "i't`".
+     1 | I don't know the word "don'suggest".
+     1 | I don't know the word "i's".
+     1 | I don't know the word "voices".
+     1 | I don't know the word "brace".
+     1 | I don't know the word "stagger".
+     1 | You used the word "southwest" in a way that I don't understand.
+     1 | I don't know the word "squeeze".
+     1 | You can't go that way.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nNext time, try turning on the light.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     1 | I don't know the word "straighten".
+     1 | I don't know the word "creep".
+     1 | I don't know the word "rush".
+     1 | I don't know the word "seize".
+     1 | I don't know the word "tug".
+     1 | I don't know the word "yank".
+     1 | I don't know the word "gather".
+     1 | I don't know the word "any".
+     1 | I don't know the word "compose".
+     1 | I don't know the word "wrest".
+     1 | I don't know the word "turning".
+     1 | I don't know the word "stretch".
+     1 | I don't know the word "stumble".
+     1 | You are already standing.\nThe bulldozer rumbles slowly toward your home.
+     1 | You can't do that while you're lying down!\n\nWith a terrible grinding of gears the bulldozer comes to an abrupt halt just in front of you. It shakes, shudders, and emits noxious substances all over your rose bed. Prosser is incoherent with rage.\n\nMoments later, your friend Ford Prefect arrives. He hardly seems to notice your predicament, but keeps glancing nervously at the sky. He says "Hello, Arthur," takes a towel from his battered leather satchel, and offers it to you.
+     1 | You see nothing special about the telephone.\n\nAstoundingly, a bulldozer pokes through your wall. However, you have no time for surprise because the ceiling is collapsing on you as your home is unexpectedly demolished to make way for a new bypass. You are seriously injured in the process, but on your way to the hospital a fleet of Vogon Constructor ships unexpectedly arrives and demolishes the Earth to make way for a new hyperspace bypass.\n\nBetter luck next life.\n\nWe are about to give you your score. Put on your peril-sensitive sunglasses now. (Hit RETURN or ENTER when ready.)
+     1 | I don't know the word "belt".
+     1 | I don't know the word "bedpost".
+     1 | I don't know the word "wipe".
+     1 | I don't know the word "mend".
+     1 | I don't know the word "faucet".
+     1 | I don't know the word "tracks".
+     1 | You can't see any bulldozer here!
+     1 | You already have it.\nThe bulldozer rumbles slowly toward your home.
+     1 | I don't know the word "rename".
+     1 | I don't know the word "alias".
+     1 | I don't know the word "unfold".
+     1 | You aren't wearing that!
+     1 | I don't know the word "scrape".

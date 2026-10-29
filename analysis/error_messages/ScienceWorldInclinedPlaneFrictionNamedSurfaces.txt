@@ -1,0 +1,26 @@
+# Invalid Action Messages: ScienceWorldInclinedPlaneFrictionNamedSurfaces
+# Total unique error messages: 19
+# Total error occurrences: 10730
+#
+# Format: count | message
+#===============================================================================
+
+ 10395 | No known action matches that input.
+   134 | The door is not open.
+    79 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    25 | The cupboard is already open.
+    23 | The drawer isn't open, so you can't see inside.
+    13 | The drawer is already open.
+    10 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+    10 | The cupboard isn't open, so you can't see inside.
+     8 | The door is already open.
+     7 | The stopwatch is already activated.
+     6 | The drain is already open.
+     5 | The freezer isn't open, so you can't see inside.
+     5 | The glass jar isn't open, so you can't see inside.
+     3 | The large cupboard isn't open, so you can't see inside.
+     2 | You can't pick up a gas directly.
+     2 | The drawer is already closed.
+     1 | The large cupboard is already open.
+     1 | The fridge is already open.
+     1 | You can't pour a gas directly.

@@ -1,0 +1,19 @@
+# Invalid Action Messages: ScienceWorldMeasureMeltingPointUnknownSubstance
+# Total unique error messages: 12
+# Total error occurrences: 11949
+#
+# Format: count | message
+#===============================================================================
+
+ 11492 | No known action matches that input.
+   343 | The door is not open.
+    54 | The door is already open.
+    16 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+    12 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    10 | The drawer isn't open, so you can't see inside.
+     8 | The oven isn't open, so you can't see inside.
+     6 | You can't pick up a gas directly.
+     3 | The oven is already open.
+     3 | The drawer is already open.
+     1 | The large cupboard is already open.
+     1 | The oven is already closed.

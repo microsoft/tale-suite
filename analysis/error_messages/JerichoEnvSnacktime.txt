@@ -1,0 +1,117 @@
+# Invalid Action Messages: JerichoEnvSnacktime
+# Total unique error messages: 110
+# Total error occurrences: 9242
+#
+# Format: count | message
+#===============================================================================
+
+  4571 | That's not a trick you know.
+  1744 | You can't see any such thing.
+  1110 | You seem to want to talk to someone, but I can't see whom.
+   356 | I only understood you as far as wanting to in.
+   207 | I only understood you as far as wanting to bark.
+   149 | I only understood you as far as wanting to shake the shiny can.
+   134 | I only understood you as far as wanting to paw.
+   101 | I only understood you as far as wanting to take inventory.
+    83 | I only understood you as far as wanting to look.
+    74 | I didn't understand that sentence.
+    72 | I only understood you as far as wanting to look at the box of light.
+    60 | I only understood you as far as wanting to change channel.
+    42 | Nothing obvious happens.
+    37 | I only understood you as far as wanting to whine.
+    29 | You already have that.
+    27 | I only understood you as far as wanting to shake your pet.
+    22 | I only understood you as far as wanting to wait.
+    20 | I only understood you as far as wanting to examine the hot thing.
+    19 | I only understood you as far as wanting to jump on your pet.
+    19 | You find nothing of interest.
+    18 | I only understood you as far as wanting to about.
+    17 | I only understood you as far as wanting to take the shiny can.
+    17 | I only understood you as far as wanting to get the shiny can.
+    14 | I only understood you as far as wanting to drop the shiny can.
+    14 | I only understood you as far as wanting to howl.
+    12 | I only understood you as far as wanting to beg.
+    12 | What do you want to examine: the small bowl or the large bowl?
+    11 | That's already open.
+    10 | I only understood you as far as wanting to close the white door.
+     9 | I only understood you as far as wanting to jump.
+     9 | But you aren't in anything at the moment.
+     9 | I only understood you as far as wanting to bark at your pet.
+     8 | I only understood you as far as wanting to wake your pet.
+     8 | I only understood you as far as wanting to open the jars.
+     8 | I only understood you as far as wanting to lick your pet.
+     7 | That's not something you can open.
+     7 | I only understood you as far as wanting to hints.
+     6 | I only understood you as far as wanting to scratch the door for the water room.
+     6 | I only understood you as far as wanting to sleep.
+     6 | That's not something you can enter.
+     6 | I only understood you as far as wanting to go west.
+     5 | I only understood you as far as wanting to examine the stuff.
+     5 | That's not something you can close.
+     5 | There is nothing on the tall thing.
+     5 | I only understood you as far as wanting to jump up.
+     5 | What do you want to take: the leftovers, the jars or the sandwich fixings?
+     5 | I only understood you as far as wanting to speak.
+     4 | What do you want to jump on: the high bed or your low bed?
+     4 | I only understood you as far as wanting to use the shiny can.
+     4 | You can't see inside, since the cold box is closed.
+     4 | I only understood you as far as wanting to wag tail.
+     4 | I only understood you as far as wanting to open west.
+     4 | What do you want to eat: the leftovers, the jars or the sandwich fixings?
+     4 | What do you want to search?
+     4 | I only understood you as far as wanting to think.
+     4 | I only understood you as far as wanting to get up.
+     3 | You can't use multiple objects with that verb.
+     3 | What do you want to examine: the high bed or your low bed?
+     3 | What do you want to put things on: the high bed or your low bed?
+     3 | What do you want to play with?
+     3 | But you aren't holding that.
+     3 | I only understood you as far as wanting to yip.
+     3 | I only understood you as far as wanting to sing.
+     3 | I only understood you as far as wanting to examine the thing you can't scratch.
+     2 | I only understood you as far as wanting to examine the shiny can.
+     2 | What do you want to get in: the high bed or your low bed?
+     2 | I only understood you as far as wanting to spin around.
+     2 | I only understood you as far as wanting to take the jars.
+     2 | I only understood you as far as wanting to open the shiny can with the shiny can.
+     2 | I only understood you as far as wanting to take the sandwich fixings.
+     2 | I only understood you as far as wanting to scratch your pet.
+     2 | I only understood you as far as wanting to stand up.
+     2 | I only understood you as far as wanting to touch your pet.
+     2 | I only understood you as far as wanting to touch the shiny can.
+     2 | I only understood you as far as wanting to stand.
+     2 | What do you want to scratch: the small bowl or the large bowl?
+     2 | I only understood you as far as wanting to chase.
+     2 | I only understood you as far as wanting to whimper.
+     2 | I only understood you as far as wanting to make sandwich.
+     2 | I only understood you as far as wanting to open the door for the water room.
+     1 | What do you want to drop the dino on: the high bed or your low bed?
+     1 | I only understood you as far as wanting to get the little soft things.
+     1 | I only understood you as far as wanting to drop the dino.
+     1 | What do you want to fetch: the square soft thing or the little soft things?
+     1 | I only understood you as far as wanting to examine the jars.
+     1 | I only understood you as far as wanting to open the sandwich fixings.
+     1 | What do you want to look at: the small bowl or the large bowl?
+     1 | I only understood you as far as wanting to pick up the shiny can.
+     1 | I only understood you as far as wanting to sniff the shiny can.
+     1 | I only understood you as far as wanting to examine your pet.
+     1 | I only understood you as far as wanting to throw the dino.
+     1 | There's nothing suitable to drink here.
+     1 | What do you want to get on: the high bed or your low bed?
+     1 | What do you want to look under: the high bed or your low bed?
+     1 | I only understood you as far as wanting to help.
+     1 | What do you want to ask your pet for?
+     1 | I only understood you as far as wanting to lie down.
+     1 | I only understood you as far as wanting to smash the shiny can.
+     1 | What do you want to get: the leftovers, the jars or the sandwich fixings?
+     1 | I only understood you as far as wanting to roll over.
+     1 | I only understood you as far as wanting to talk.
+     1 | I only understood you as far as wanting to examine the cold box.
+     1 | There is nothing on the four-legged thing.
+     1 | I only understood you as far as wanting to take the little soft things.
+     1 | I only understood you as far as wanting to wave the magic wand.
+     1 | It's already all lit up and flickering with stuff happening inside.
+     1 | That's not something you can sit down on.
+     1 | I only understood you as far as wanting to open east.
+     1 | I only understood you as far as wanting to examine west.
+     1 | That doesn't seem to be something you can unlock.

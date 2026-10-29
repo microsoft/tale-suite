@@ -1,0 +1,903 @@
+# Invalid Action Messages: JerichoEnvSorcerer
+# Total unique error messages: 896
+# Total error occurrences: 13148
+#
+# Format: count | message
+#===============================================================================
+
+  2207 | It's too dark to see!
+  1051 | I beg your pardon?
+   627 | That sentence isn't one I recognize.
+   394 | Time passes...
+   374 | I don't know the word "`open".
+   349 | I don't know the word ">".
+   315 | You can't go that way.\n\nThe locusts swarm over you and pick you clean to the bones.\n\n...and a moment later you wake up in a cold sweat and realize you've been dreaming.\n\nSORCERER\nInfocom interactive fiction - a fantasy story\nCopyright (c) 1984 by Infocom, Inc. All rights reserved.\nSORCERER is a trademark of Infocom, Inc.\nRelease 18 / Serial number 860904\n\nYour frotz spell seems to have worn off during the night, and it is now pitch black.
+   287 | You find nothing unusual.
+   264 | I don't know the word "`".
+   224 | You can't go that way.
+   194 | There was no verb in that sentence!
+   179 | You see nothing special about the table.
+   178 | You can't see any key here!
+   155 | You don't have the yomin spell committed to memory!
+   130 | I don't know the word "**action:**".
+   104 | I don't know the word "`get".
+   101 | I don't know the word "user".
+    95 | I don't know the word "`move".
+    95 | You can't see any tree here!
+    92 | You used the word "light" in a way that I don't understand.
+    89 | I don't know the word "apologies".
+    79 | I don't know the word "address".
+    79 | I don't know the word "ap".
+    77 | You see nothing special about the parrot.
+    75 | What do you want to search?
+    74 | You can't see any door here!
+    73 | There is nothing but dust there.
+    72 | I don't know the word "**feel**".
+    70 | I don't know the word "**cast".
+    68 | You used the word "north" in a way that I don't understand.
+    68 | I don't know the word "`examine".
+    67 | I don't know the word "`use".
+    66 | What do you want to frotz?
+    64 | There is nothing on the bed.
+    63 | I don't know the word "use".
+    61 | I don't know the word "type:".
+    60 | What do you want to eat?
+    58 | I don't know the word "word".
+    56 | I don't know the word "`climb".
+    50 | I don't know the word "food".
+    49 | I don't know the word "something".
+    48 | You used the word "proceed" in a way that I don't understand.
+    47 | I don't know the word "`go".
+    45 | I don't know the word "`look".
+    43 | What do you want to listen to?
+    41 | I don't know the word "`advance".
+    38 | You see nothing special about the ground.
+    38 | I don't know the word "**look".
+    36 | You see nothing special about the morgia plant.
+    34 | You can't see any lamp here!
+    33 | I don't know the word "doorbell".
+    32 | You can't see any parrot here!
+    32 | What do you want to light?
+    32 | You used the word "lock" in a way that I don't understand.
+    32 | I don't know the word "torch".
+    31 | You can't see any water here!
+    31 | I don't know the word "hiding".
+    30 | It is already open.
+    30 | I don't know the word "higher".
+    29 | You already have that spell inscribed in your book!
+    29 | You see nothing special about the parrot.\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"
+    28 | I don't know the word "`travel".
+    27 | I don't know the word "`run".
+    27 | I don't know the word "apologize".
+    27 | I don't know the word "`attack".
+    26 | You can't see Belboz here!
+    26 | You used the word "take" in a way that I don't understand.
+    26 | I don't know the word "write".
+    26 | I don't know the word "consult".
+    26 | I don't know the word "`hide".
+    25 | I don't know the word "*".
+    25 | I don't know the word "`escape".
+    24 | You can't drink that!
+    24 | I don't know the word "`help`".
+    24 | What do you want to ask?
+    24 | I don't know the word "`strike".
+    23 | I don't know the word "nothing".
+    23 | I don't know the word "spectacles".
+    23 | I don't know the word "`leave".
+    23 | I don't know the word "`depart".
+    22 | You can't see any amulet here!
+    22 | I don't know the word "**examine".
+    22 | I don't know the word "`head".
+    21 | I don't know the word "type".
+    21 | I don't know the word "cup".
+    21 | I don't know the word "`proceed".
+    20 | I don't know the word "**read".
+    20 | You can't see any gnusto yomin spell book here!
+    19 | You see nothing special about the wall.
+    19 | I don't know the word "order:".
+    19 | I don't know the word "sound".
+    18 | You can't see any bloodworm here!
+    18 | You see nothing special about the gnarled tree.\n\nThe snake begins wrapping itself around your torso, squeezing the life out of you...\n\n...and a moment later you wake up in a cold sweat and realize you've been dreaming.\n\nSORCERER\nInfocom interactive fiction - a fantasy story\nCopyright (c) 1984 by Infocom, Inc. All rights reserved.\nSORCERER is a trademark of Infocom, Inc.\nRelease 18 / Serial number 860904\n\nYour frotz spell seems to have worn off during the night, and it is now pitch black.
+    18 | You can't see any trunk here!
+    18 | I don't know the word "hear".
+    17 | You don't have the yomin spell committed to memory!\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+    17 | You don't have the yomin spell committed to memory!\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+    17 | I don't know the word "glow".
+    17 | What do you want to open?
+    16 | What do you want to examine?
+    16 | I don't know the word "order".
+    16 | You don't have the vezza spell committed to memory!
+    16 | I don't know the word "`observe".
+    16 | I don't know the word "`evade".
+    16 | I don't know the word "weapon".
+    16 | I don't know the word "[1]:".
+    16 | I don't know the word "![the".
+    15 | You can't see any amulet here!\nHideous parasites descend upon you and tear the flesh from your bones, gnaw the eyes from your sockets, and feast upon your very brain tissue. Amazingly, you do not die, and your body regenerates itself as you await the next attack...
+    15 | I don't know the word "footsteps".
+    15 | I don't know the word "`check".
+    15 | I don't know the word "you".
+    15 | You can't go that way.\n\nThe locusts are much closer now, blotting out the sun like a black storm cloud.
+    14 | I don't know the word "another".
+    14 | I don't know the word "this".
+    14 | I don't know the word "**take".
+    13 | I don't know the word "quarters".
+    13 | I don't know the word "ring".
+    13 | I don't know the word "tea".
+    13 | You don't have the yomin spell committed to memory!\n\n"Squawk! Now where can I hide this key? Squawk!"
+    13 | What do you want to drink?
+    13 | I don't know the word "xyzzy".
+    13 | I don't know the word "mindshield".
+    13 | I don't know the word "noise".
+    13 | You don't have the yomin spell committed to memory!\n\n"Squawk! Pollibar want a cracker! Squawk!"
+    13 | I don't know the word "`dodge".
+    12 | You see nothing special about the perch.
+    12 | I don't know the word "carefully".
+    12 | You can't read about things in an infotater.
+    12 | You're not holding the ochre vial.
+    12 | I don't know the word "name".
+    12 | I don't know the word "`avoid".
+    12 | You used the word "small" in a way that I don't understand.
+    12 | I don't know the word "`fight".
+    12 | You can't see any receptacle here!
+    11 | I don't know the word "flint".
+    11 | I don't know the word "candle".
+    11 | You already have it.
+    11 | You don't have the gnarled tree.
+    11 | What do you want to fire?
+    11 | I don't know the word "`inspect".
+    11 | I don't know the word "`turn".
+    10 | You can't see any potion here!
+    10 | I don't know the word "`up`".
+    10 | I don't know the word "`n`".
+    10 | I don't know the word "`quit`".
+    10 | I don't know the word "`q`".
+    10 | I don't know the word "let".
+    10 | I don't know the word "spellbook".
+    10 | You used the word "east" in a way that I don't understand.
+    10 | You see nothing special about the black button.
+    10 | You can't go that way.\n\nThe Guild Hall doorbell chimes.
+    10 | What do you want to feel?
+    10 | You see nothing special about the parrot.\n\nYou are now a bit thirsty.
+    10 | You are already wearing it.\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+    10 | I don't know the word "`walk".
+    10 | I don't know the word "`notice".
+    10 | What do you want to play?
+    10 | I don't know the word "lumos".
+    10 | I don't know the word "`hit".
+     9 | I don't know the word "grope".
+     9 | You see nothing special about the perch.\n\n"Squawk! Belboz, the Circle is waiting for you. Squawk!"
+     9 | You can't go that way.\n\nYou are now quite hungry.
+     9 | You can't take it; thus, you can't shake it!\n\nThe snake begins wrapping itself around your torso, squeezing the life out of you...\n\n...and a moment later you wake up in a cold sweat and realize you've been dreaming.\n\nSORCERER\nInfocom interactive fiction - a fantasy story\nCopyright (c) 1984 by Infocom, Inc. All rights reserved.\nSORCERER is a trademark of Infocom, Inc.\nRelease 18 / Serial number 860904\n\nYour frotz spell seems to have worn off during the night, and it is now pitch black.
+     9 | I don't know the word "scribe".
+     9 | You don't have the pulver spell committed to memory!
+     9 | I don't know the word "sequence".
+     9 | I don't know the word "foot".
+     9 | What do you want to move?
+     9 | I don't know the word "`engage".
+     9 | I don't know the word "`snake`".
+     9 | I don't know the word "`slash".
+     9 | I don't know the word "`activate".
+     9 | I don't know the word "disbelieve".
+     8 | I don't know the word "fumble".
+     8 | You can't see any frotz yourself here!
+     8 | I don't know the word "recite".
+     8 | I don't know the word "illuminate".
+     8 | You used the word "unlock" in a way that I don't understand.
+     8 | You used the word "open" in a way that I don't understand.
+     8 | You don't have the yomin spell committed to memory!\n\n"Squawk! Belboz, the Circle is waiting for you. Squawk!"
+     8 | You can't go that way.\n\nThe snake begins wrapping itself around your torso, squeezing the life out of you...\n\n...and a moment later you wake up in a cold sweat and realize you've been dreaming.\n\nSORCERER\nInfocom interactive fiction - a fantasy story\nCopyright (c) 1984 by Infocom, Inc. All rights reserved.\nSORCERER is a trademark of Infocom, Inc.\nRelease 18 / Serial number 860904\n\nYour frotz spell seems to have worn off during the night, and it is now pitch black.
+     8 | You can't see any wall engraving here!
+     8 | I don't know the word "any".
+     8 | I don't know the word "fruit".
+     8 | You don't have that!
+     8 | You can't see any infotater here!
+     8 | You can't see any frotz spell book here!
+     8 | I don't know the word "forward".
+     8 | What do you want to send for?
+     8 | I don't know the word "map".
+     8 | What do you want to touch?
+     8 | I don't know the word "term".
+     8 | I don't know the word "reflection".
+     8 | I don't know the word "`battle".
+     8 | I don't know the word "`combat".
+     8 | I don't know the word "`approach".
+     7 | You can't see any wall hanging here!
+     7 | I don't know the word "there".
+     7 | I don't know the word "upstairs".
+     7 | You see nothing special about ochre potion.
+     7 | I don't know the word "`look`".
+     7 | I don't know the word "`examine`".
+     7 | You don't have the yomin spell committed to memory!\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"
+     7 | I don't know the word "surroundings".
+     7 | I don't know the word "try".
+     7 | I don't know the word "snack".
+     7 | I don't know the word "glasses".
+     7 | I don't know the word "bread".
+     7 | You don't have the yomin spell committed to memory!\n\nYou are now a bit hungry.
+     7 | I don't know the word "them".
+     7 | I don't know the word "candles".
+     7 | I don't know the word "`flee".
+     7 | I don't know the word "`kill".
+     7 | I don't know the word "`swing".
+     7 | I don't know the word "`switch".
+     7 | I don't know the word "`operate".
+     7 | I don't know the word "mean".
+     7 | I don't know the word "```".
+     6 | I don't know the word "items".
+     6 | You can't see any frotz lamp here!
+     6 | I don't know the word "darkness".
+     6 | You can't see any bloodworm here!\nHideous parasites descend upon you and tear the flesh from your bones, gnaw the eyes from your sockets, and feast upon your very brain tissue. Amazingly, you do not die, and your body regenerates itself as you await the next attack...
+     6 | I don't know the word "downstairs".
+     6 | You see nothing special about the issue of Popular Enchanting.
+     6 | You see nothing special about the morgia plant.\n\nYou are now a bit hungry.
+     6 | You can't read about things in an issue of Popular Enchanting.
+     6 | I don't know the word "`run`".
+     6 | What do you want to rezrov?
+     6 | I don't know the word "`take".
+     6 | You see nothing special about the white button.
+     6 | You used the word "south" in a way that I don't understand.
+     6 | I don't know the word "sounds".
+     6 | I don't know the word "edible".
+     6 | You don't have the gaspar spell committed to memory!
+     6 | I don't know the word "`watch".
+     6 | I don't know the word "`ensure".
+     6 | You see nothing special about the signpost.
+     6 | I don't know the word "*you".
+     6 | I don't know the word "`scan".
+     6 | I don't know the word "mirror".
+     5 | You used the word "inventory" in a way that I don't understand.
+     5 | I don't know the word "explore".
+     5 | You can't see any pockets here!
+     5 | You don't have the yomin spell committed to memory!\n\nYou are now extremely hungry.
+     5 | You see nothing special about the table.\n\nYou are now somewhat thirsty.
+     5 | You don't have the yomin spell committed to memory!\n\nYou are now quite thirsty.
+     5 | You can't drink that!\n\nYou are now a bit hungry.
+     5 | I don't know the word "undo".
+     5 | I don't know the word "`northeast`".
+     5 | I don't know the word "`ne`".
+     5 | I don't know the word "`go`".
+     5 | I don't know the word "`flee`".
+     5 | I don't know the word "`east`".
+     5 | I don't know the word "`inventory`".
+     5 | I don't know the word "`wait`".
+     5 | I don't know the word "`attack`".
+     5 | I don't know the word "`kill`".
+     5 | I don't know the word "`take`".
+     5 | I don't know the word "`get`".
+     5 | I don't know the word "`tree`".
+     5 | I don't know the word "`hellhound`".
+     5 | I don't know the word "`path`".
+     5 | I don't know the word "`a`".
+     5 | I don't know the word "`i`".
+     5 | I don't know the word "`l`".
+     5 | I don't know the word "`x`".
+     5 | I don't know the word "`d`".
+     5 | I don't know the word "`u`".
+     5 | I don't know the word "`s`".
+     5 | I don't know the word "`w`".
+     5 | I don't know the word "`e`".
+     5 | I don't know the word "`f`".
+     5 | I don't know the word "`c`".
+     5 | I don't know the word "`r`".
+     5 | I don't know the word "`t`".
+     5 | I don't know the word "`h`".
+     5 | I don't know the word "`p`".
+     5 | I don't know the word "`m`".
+     5 | I don't know the word "`b`".
+     5 | I don't know the word "`k`".
+     5 | I don't know the word "`j`".
+     5 | I don't know the word "`g`".
+     5 | I don't know the word "`v`".
+     5 | I don't know the word "`y`".
+     5 | I don't know the word "`z`".
+     5 | I don't know the word "`o`".
+     5 | I don't know the word "`1`".
+     5 | I don't know the word "`2`".
+     5 | I don't know the word "`3`".
+     5 | I don't know the word "`4`".
+     5 | I don't know the word "`5`".
+     5 | I don't know the word "`6`".
+     5 | I don't know the word "`7`".
+     5 | I don't know the word "`8`".
+     5 | I don't know the word "`9`".
+     5 | I don't know the word "`0`".
+     5 | I don't know the word "looking".
+     5 | What do you want to climb?
+     5 | You can't see any magazine here!
+     5 | I don't know the word "berries".
+     5 | You can't go that way.\n\nYou are now extremely hungry.
+     5 | You can't see any brass receptacle here!
+     5 | I don't know the word "meal".
+     5 | You can't see any yomin spell book here!
+     5 | I don't know the word "make".
+     5 | I don't know the word "form".
+     5 | What do you want to hand?
+     5 | You don't have the pulver spell committed to memory!\n\nYou are now incredibly thirsty.
+     5 | I don't know the word "-".
+     5 | I don't know the word "if".
+     5 | I don't know the word "orb".
+     5 | I don't know the word "goodbye".
+     5 | What do you want to cast?
+     5 | I don't know the word "`apply".
+     5 | I don't know the word "`wield".
+     5 | I don't know the word "`confront".
+     5 | I don't know the word "`face".
+     5 | I don't know the word "`encounter".
+     5 | I don't know the word "`meet".
+     5 | I don't know the word "`light".
+     5 | I don't know the word "speak".
+     5 | I don't know the word "whisper".
+     5 | I don't know the word "```use".
+     5 | You can't see any calendar here!
+     5 | I don't know the word "duty".
+     4 | I don't know the word "locate".
+     4 | I don't know the word "objects".
+     4 | I don't know the word "things".
+     4 | You can't see any match here!
+     4 | What do you want to poke the pockets with?
+     4 | There is nothing but dust there.\n\nYou are now a bit thirsty.
+     4 | I don't know the word "item".
+     4 | What do you want to attack?
+     4 | You can't give an infotater to a parrot!
+     4 | You can't see any perch here!
+     4 | I don't know the word "rang".
+     4 | You see nothing special about the parrot.\n\nYou are now incredibly thirsty.\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"
+     4 | You see nothing special about the table.\n\nYou are now somewhat hungry.
+     4 | I don't know the word "think".
+     4 | I don't know the word "code".
+     4 | I don't know the word "password".
+     4 | I don't know the word "provisions".
+     4 | You see nothing special about the morgia plant.\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     4 | You don't have the meef spell committed to memory!
+     4 | You see nothing special about the parrot.\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+     4 | You can't see any berzio potion here!
+     4 | You see nothing special about the morgia plant.\n\nThe Guild Hall doorbell chimes.
+     4 | You can't go that way.\n\nYou are now quite thirsty.
+     4 | You used the word "help" in a way that I don't understand.
+     4 | I don't know the word "progress".
+     4 | You see nothing special about the parrot.\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     4 | You can't go that way.\n\nYou are now a bit hungry.
+     4 | There is nothing on the bed.\n\nThe Guild Hall doorbell chimes.
+     4 | You used the word "drink" in a way that I don't understand.
+     4 | I don't know the word "safety".
+     4 | You don't have the izyuk spell committed to memory!
+     4 | I don't know the word "by".
+     4 | You can't go that way.\n\nYou are now a bit thirsty.
+     4 | I don't know the word "specs".
+     4 | You see nothing special about the parrot.\n\nYou are now a bit hungry.\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+     4 | You used the word "of" in a way that I don't understand.
+     4 | I don't know the word "anything".
+     4 | I don't know the word "p".
+     4 | I don't know the word "package".
+     4 | I don't know the word "outside".
+     4 | What do you want to hand the door to?
+     4 | I don't know the word "`ignite".
+     4 | I don't know the word "safe".
+     4 | I don't know the word "`retreat".
+     4 | I don't know the word "image".
+     4 | You can't see any forest here!
+     4 | You used the word "where" in a way that I don't understand.
+     4 | I don't know the word "`weapon".
+     4 | I don't know the word "`stab".
+     4 | I don't know the word "sword".
+     3 | I don't know the word "spots".
+     3 | I don't know the word "areas".
+     3 | You can't see any for a lamp here!
+     3 | I don't know the word "fingers".
+     3 | I don't know the word "investigate".
+     3 | You can't see any frotz self here!
+     3 | You can't see any frotz area here!
+     3 | I don't know the word "teacup".
+     3 | You can't go that way.\n\nYou are now somewhat hungry.
+     3 | I don't know the word "closely".
+     3 | I don't know the word "doorframe".
+     3 | You see nothing special about the parrot.\n\nYou are now somewhat hungry.
+     3 | You see nothing special about the parrot.\n\nThe Guild Hall doorbell chimes.
+     3 | You see nothing special about the morgia plant.\n\n"Squawk! Belboz, the Circle is waiting for you. Squawk!"
+     3 | You can't see any spell book here!\nHideous parasites descend upon you and tear the flesh from your bones, gnaw the eyes from your sockets, and feast upon your very brain tissue. Amazingly, you do not die, and your body regenerates itself as you await the next attack...
+     3 | You can't see any of bed here!\nHideous parasites descend upon you and tear the flesh from your bones, gnaw the eyes from your sockets, and feast upon your very brain tissue. Amazingly, you do not die, and your body regenerates itself as you await the next attack...
+     3 | You can't see that spell here!
+     3 | There is nothing but dust there.\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     3 | What do you want to izyuk?
+     3 | You can't see any black button here!
+     3 | I don't know the word "transcribe".
+     3 | You can't see any morgia plant here!
+     3 | You can't move the sturdy trunk.
+     3 | You don't have the yomin spell committed to memory!\n\nYou are now extremely thirsty.\n\nYou are now very hungry.
+     3 | You are already wearing it.
+     3 | I don't know the word "back".
+     3 | You don't have the yomin spell committed to memory!\n\nYou are now quite hungry.
+     3 | You don't have the yomin spell committed to memory!\n\nYou are now very thirsty.
+     3 | I don't know the word "bell".
+     3 | You can't see any issue here!
+     3 | You used the word "your" in a way that I don't understand.
+     3 | What do you want to who?
+     3 | You see nothing special about the table.\n\nYou are now a bit thirsty.
+     3 | I don't know the word "`monitor".
+     3 | I don't know the word "`secure".
+     3 | I don't know the word "`confirm".
+     3 | I don't know the word "`verify".
+     3 | I don't know the word "`validate".
+     3 | I don't know the word "`guarantee".
+     3 | I don't know the word "`promise".
+     3 | I don't know the word "`vow".
+     3 | I don't know the word "`pledge".
+     3 | I don't know the word "`commit".
+     3 | I don't know the word "`dedicate".
+     3 | I don't know the word "`devote".
+     3 | I don't know the word "`concentrate".
+     3 | I don't know the word "`focus".
+     3 | I don't know the word "escape".
+     3 | I don't know the word "*get".
+     3 | I don't know the word "**get".
+     3 | I don't know the word "ing".
+     3 | I don't know the word "entry".
+     3 | You used the word "hide" in a way that I don't understand.
+     3 | I don't know the word "bookshelf".
+     3 | I don't know the word "history".
+     3 | I don't know the word "`defeat".
+     3 | I don't know the word "`employ".
+     3 | I don't know the word "`utilize".
+     3 | I don't know the word "`near".
+     3 | I don't know the word "`grab".
+     3 | I don't know the word "`exit".
+     3 | I don't know the word "current".
+     3 | I don't know the word "prepare".
+     3 | I don't know the word "pinch".
+     3 | I don't know the word "corner".
+     3 | I don't know the word "seal".
+     3 | I don't know the word "mug".
+     3 | You can't see any red button here!
+     3 | I don't know the word "second".
+     2 | I don't know the word "places".
+     2 | I don't know the word "spaces".
+     2 | You used the word "eat" in a way that I don't understand.
+     2 | I don't know the word "everything".
+     2 | You can't use multiple direct objects with "frotz".
+     2 | I don't know the word "air".
+     2 | You can't see any frotz room here!
+     2 | You used the word "hand" in a way that I don't understand.
+     2 | I don't know the word "object".
+     2 | What do you want to fight?
+     2 | I don't know the word "front".
+     2 | I don't know the word "clues".
+     2 | I don't know the word "entrance".
+     2 | I don't know the word "more".
+     2 | You don't have the yomin spell committed to memory!\n\nYou are feeling tired.
+     2 | You can't go that way.\n\n"Squawk! Belboz, the Circle is waiting for you. Squawk!"
+     2 | You see nothing special about the perch.\n\nYou are now quite hungry.
+     2 | You see nothing special about ochre potion.\n\nYou are now incredibly thirsty.
+     2 | I don't know the word "pray".
+     2 | I don't know the word "die".
+     2 | There is nothing but dust there.\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"
+     2 | You can't see any izyuk yourself here!\nHideous parasites descend upon you and tear the flesh from your bones, gnaw the eyes from your sockets, and feast upon your very brain tissue. Amazingly, you do not die, and your body regenerates itself as you await the next attack...
+     2 | You can't see any rezrov door here!\nHideous parasites descend upon you and tear the flesh from your bones, gnaw the eyes from your sockets, and feast upon your very brain tissue. Amazingly, you do not die, and your body regenerates itself as you await the next attack...
+     2 | You can't go that way.\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+     2 | I don't know the word "lumin".
+     2 | I don't know the word "detect".
+     2 | I don't know the word "zifmia".
+     2 | I don't know the word "gandalf".
+     2 | You see nothing special about the parrot.\n\nYou are now incredibly thirsty.
+     2 | I don't know the word "cracker".
+     2 | You already have that spell inscribed in your book!\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     2 | You see nothing special about the morgia plant.\n\nYou are now a bit thirsty.
+     2 | You can't see any gaspar scroll here!
+     2 | I don't know the word "story".
+     2 | I don't know the word "jehoram".
+     2 | You used the word "west" in a way that I don't understand.
+     2 | You can't see any stairs here!
+     2 | I don't know the word "lobby".
+     2 | You see nothing special about the white button.\n\nYou are now very thirsty.
+     2 | I don't know the word "cellar".
+     2 | You see nothing special about the white button.\n\nYou are now quite thirsty.
+     2 | I don't know the word "reverse".
+     2 | I don't know the word "snackable".
+     2 | I don't know the word "nourishment".
+     2 | You can't go that way.\n\nYou are now very thirsty.
+     2 | You can't go that way.\n\nYou pass out from lack of food and water.\n \n    ****  You have died  ****\n\nUnfortunately, you made no provisions for your untimely death.\n\nYour score is 5 of a possible 400, in 73 moves. This puts you in the class of Charlatan.\n\nWould you like to restart the game from the beginning, restore a saved game position, or end this session of the game? (Type RESTART, RESTORE, or QUIT):
+     2 | I don't know the word "whereabouts".
+     2 | I don't know the word "systematically".
+     2 | I don't know the word "individually".
+     2 | I don't see what you're referring to.
+     2 | I don't know the word "wind".
+     2 | You see nothing special about the perch.\n\nThe Guild Hall doorbell chimes.
+     2 | You don't have the vezza spell committed to memory!\n\n"Squawk! Now where can I hide this key? Squawk!"
+     2 | You can't see any gnusto yomin journal here!
+     2 | You don't have the pulver spell committed to memory!\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"
+     2 | You can't give a small key to a parrot!
+     2 | You see nothing special about the table.\n\nThe Guild Hall doorbell chimes.
+     2 | You can't see any desk here!
+     2 | I don't know the word "way".
+     2 | I don't know the word "direction".
+     2 | You used the word "what" in a way that I don't understand.
+     2 | I don't know the word "now".
+     2 | You used the word "match" in a way that I don't understand.
+     2 | I don't know the word "knob".
+     2 | I don't know the word "face".
+     2 | What do you want to learn?
+     2 | I don't know the word "rations".
+     2 | It is already open.\n\nYou are now quite thirsty.
+     2 | What do you want to read?
+     2 | What do you want to press?
+     2 | I don't know the word "`inspect`".
+     2 | I don't know the word "`shoot".
+     2 | I don't know the word "`evaluate".
+     2 | I don't know the word "`assess".
+     2 | I don't know the word "`analyze".
+     2 | I don't know the word "`study".
+     2 | I don't know the word "`survey".
+     2 | I don't know the word "`explore".
+     2 | I don't know the word "`investigate".
+     2 | I don't know the word "`gaze".
+     2 | I don't know the word "`stare".
+     2 | I don't know the word "`fix".
+     2 | I don't know the word "`lock".
+     2 | I don't know the word "`make".
+     2 | I don't know the word "`zero".
+     2 | I don't know the word "`direct".
+     2 | I don't know the word "`point".
+     2 | I don't know the word "`navigate".
+     2 | I don't know the word "`steer".
+     2 | I don't know the word "`guide".
+     2 | I don't know the word "`lead".
+     2 | I don't know the word "`follow".
+     2 | I don't know the word "`safeguard".
+     2 | I don't know the word "`defend".
+     2 | I don't know the word "*apologies".
+     2 | I don't know the word "problem!".
+     2 | I don't know the word "`puzzle`".
+     2 | I don't know the word "worries!".
+     2 | I don't know the word "seems".
+     2 | I don't know the word "appears".
+     2 | I don't know the word "`ignore".
+     2 | I don't know the word "`block".
+     2 | I don't know the word "`parry".
+     2 | I don't know the word "how".
+     2 | It is already open.\n\nYou are now a bit thirsty.
+     2 | I don't know the word "`draw".
+     2 | I don't know the word "`seize".
+     2 | I don't know the word "`catch".
+     2 | I don't know the word "`capture".
+     2 | I don't know the word "`cut".
+     2 | I don't know the word "`slice".
+     2 | I don't know the word "`start".
+     2 | I don't know the word "`punch".
+     2 | I don't know the word "`deal".
+     2 | I don't know the word "```m".
+     2 | I don't know the word "don's".
+     2 | I don't know the word "invisiclues".
+     2 | You're not holding the ochre vial.\n\nYou are now extremely hungry.
+     2 | You see nothing special about the passage.
+     2 | You can't read about things in an infotater.\n\n"Squawk! Now where can I hide this key? Squawk!"
+     2 | I don't know the word "illusions".
+     2 | You can't see any volume here!
+     2 | You see nothing special about the cobweb.
+     2 | I don't know the word "caskly".
+     2 | What do you want to ask the parrot for?
+     2 | I don't know the word "news".
+     2 | I don't know the word "rumors".
+     2 | I don't know the word "gossip".
+     2 | I don't know the word "left".
+     2 | I don't know the word "gone".
+     2 | You don't have the vezza spell committed to memory!\n\nYou pass out from lack of food and water.\n \n    ****  You have died  ****\n\nUnfortunately, you made no provisions for your untimely death.\n\nYour score is 15 of a possible 400, in 73 moves. This puts you in the class of Charlatan.\n\nWould you like to restart the game from the beginning, restore a saved game position, or end this session of the game? (Type RESTART, RESTORE, or QUIT):
+     2 | I don't know the word "brew".
+     2 | You can't see any tiny box here!
+     2 | I don't know the word "goblet".
+     2 | You can't see Jeearr here!
+     2 | You used the word "drop" in a way that I don't understand.
+     2 | I don't know the word "beds".
+     2 | You can't see any star here!
+     2 | You can't see any encyclopedia here!
+     2 | You can't see any white button here!
+     2 | Nothing happens.
+     1 | I don't know the word "nooks".
+     1 | I don't know the word "crannies".
+     1 | I don't know the word "corners".
+     1 | I don't know the word "crevices".
+     1 | I don't know the word "alcoves".
+     1 | I don't know the word "niches".
+     1 | I don't know the word "recesses".
+     1 | I don't know the word "cavities".
+     1 | I don't know the word "kitchen".
+     1 | It is already open.\n\nYou are now somewhat thirsty.
+     1 | You can't see any for lamp here!
+     1 | You can't see any your room here!
+     1 | You can't see any pocket here!
+     1 | I don't know the word "belongings".
+     1 | You used the word "stuff" in a way that I don't understand.
+     1 | I don't know the word "locations".
+     1 | You're not carrying the parrot.
+     1 | I don't know the word "space".
+     1 | I don't know the word "sift".
+     1 | I don't know the word "stick".
+     1 | I don't know the word "sharp".
+     1 | I don't know the word "tool".
+     1 | I don't know the word "pencil".
+     1 | I don't know the word "pen".
+     1 | I don't know the word "thing".
+     1 | I don't know the word "piece".
+     1 | I don't know the word "part".
+     1 | I don't know the word "element".
+     1 | I don't know the word "flashlight".
+     1 | You don't have the yomin spell committed to memory!\n\nYou are now a bit hungry.\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+     1 | You can't see any spell book here!
+     1 | You don't have the yomin spell committed to memory!\n\nYou are now somewhat hungry.
+     1 | There is nothing but dust there.\n\nYou are now incredibly thirsty.
+     1 | You don't have the pulver spell committed to memory!\n\nYou are now extremely hungry.
+     1 | I don't know the word "cleesh".
+     1 | There is nothing on the bed.\n\nYou are beginning to tire.
+     1 | There is nothing but dust there.\n\nYou are beginning to tire.
+     1 | I don't know the word "<ctrl-c>".
+     1 | There is nothing but dust there.\n\n"Squawk! Belboz, the Circle is waiting for you. Squawk!"
+     1 | I don't know the word "swear".
+     1 | There is nothing but dust there.\n\nYou are beginning to tire.\n\n"Squawk! Belboz, the Circle is waiting for you. Squawk!"
+     1 | You see nothing special about the morgia plant.\n\nYou are feeling tired.\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"
+     1 | I don't know the word "<setting>bloodworm</setting>".
+     1 | You can't read about things in an infotater.\n\nYou are getting more and more tired.
+     1 | You see nothing special about the ground.\n\n"Squawk! Now where can I hide this key? Squawk!"
+     1 | You see nothing special about the morgia plant.\n\nYou are now a bit hungry.\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     1 | You don't have that spell, if indeed that is a spell.\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+     1 | I don't know the word "yonah".
+     1 | I don't know the word "enlight".
+     1 | I don't know the word "lorinu".
+     1 | I don't know the word "feznu".
+     1 | You can't give a journal to a parrot!
+     1 | You can't see any cast spell here!
+     1 | You don't have the pulver spell committed to memory!\n\n"Squawk! Now where can I hide this key? Squawk!"
+     1 | You don't have the izyuk spell committed to memory!\n\nYou are now quite hungry.
+     1 | You can't go that way.\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     1 | You can't go that way.\n\nYou are now incredibly thirsty.
+     1 | You don't have the vezza spell committed to memory!\n\nYou are now quite hungry.
+     1 | There is nothing behind the parrot.\n\n"Squawk! Belboz, the Circle is waiting for you. Squawk!"
+     1 | You don't have the yomin spell committed to memory!\n\nYou are now incredibly thirsty.
+     1 | You already have that spell inscribed in your book!\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"
+     1 | You already have that spell inscribed in your book!\n\nYou pass out from lack of food and water.\n \n    ****  You have died  ****\n\nUnfortunately, you made no provisions for your untimely death.\n\nYour score is 5 of a possible 400, in 73 moves. This puts you in the class of Charlatan.\n\nWould you like to restart the game from the beginning, restore a saved game position, or end this session of the game? (Type RESTART, RESTORE, or QUIT):
+     1 | You can't go that way.\n\nYou are now somewhat thirsty.\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     1 | You can't give a magic amulet to a parrot!\n\nYou are now quite hungry.
+     1 | I don't know the word "zemar".
+     1 | I don't know the word "feznik".
+     1 | I don't know the word "baldur".
+     1 | I don't know the word "yerffo".
+     1 | I don't know the word "plover".
+     1 | I don't know the word "abracadabra".
+     1 | You already have that spell inscribed in your book!\n\nYou are now incredibly thirsty.
+     1 | You already have that spell inscribed in your book!\n\nYou are now extremely hungry.
+     1 | You already have that spell inscribed in your book!\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+     1 | You already have that spell inscribed in your book!\n\n"Squawk! Pollibar want a cracker! Squawk!"
+     1 | You don't have the yomin spell committed to memory!\n\nYou pass out from lack of food and water.\n \n    ****  You have died  ****\n\nUnfortunately, you made no provisions for your untimely death.\n\nYour score is 5 of a possible 400, in 72 moves. This puts you in the class of Charlatan.\n\nWould you like to restart the game from the beginning, restore a saved game position, or end this session of the game? (Type RESTART, RESTORE, or QUIT):
+     1 | You see nothing special about the morgia plant.\n\nYou are now a bit thirsty.\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+     1 | You can't see any wooden door here!
+     1 | There is nothing but dust there.\n\nYou are now very thirsty.
+     1 | I don't know the word "teeth".
+     1 | I don't know the word "claws".
+     1 | You used the word "secret" in a way that I don't understand.
+     1 | It is already open.\n\nYou are now quite hungry.
+     1 | You can't see any scroll here!
+     1 | It is already open.\n\n"Squawk! Belboz, the Circle is waiting for you. Squawk!"
+     1 | You see nothing special about the cobweb.\n\nYou are now very thirsty.
+     1 | I don't know the word "movement".
+     1 | I don't know the word "tap".
+     1 | You already have it.\n\nYou are now quite thirsty.
+     1 | I don't know the word "after".
+     1 | I don't know the word "flask".
+     1 | I don't know the word "moment".
+     1 | You can't go that way.\n\nYou are now extremely thirsty.\n\nYou are now very hungry.
+     1 | You used the word "exit" in a way that I don't understand.
+     1 | I don't know the word "container".
+     1 | I don't know the word "sustenance".
+     1 | I don't know the word "eatable".
+     1 | I don't know the word "morsel".
+     1 | You used the word "bite" in a way that I don't understand.
+     1 | I don't know the word "foodstuff".
+     1 | I don't know the word "bite-sized".
+     1 | You can't go that way.\n\nYou are now somewhat thirsty.
+     1 | I don't know the word "location".
+     1 | I don't know the word "color".
+     1 | I don't know the word "pattern".
+     1 | I don't know the word "specific".
+     1 | I don't know the word "separately".
+     1 | I don't know the word "clockwise".
+     1 | I don't know the word "randomly".
+     1 | I don't know the word "sequentially".
+     1 | You can't see any spell here!
+     1 | You see nothing special about the parrot.\n\nYou are now a bit thirsty.\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"
+     1 | You can't see any chest here!
+     1 | You can't go that way.\n\nYou are feeling tired.
+     1 | You can't see any bed here!
+     1 | You see nothing special about the red button.
+     1 | I don't know the word "beasts".
+     1 | You can't see any of bed here!
+     1 | You don't have the yomin spell committed to memory!\n\nYou are now a bit thirsty.
+     1 | There is nothing but dust there.\n\nYou are now extremely thirsty.\n\nYou are now very hungry.
+     1 | You see nothing special about the parrot.\n\n"Squawk! Now where can I hide this key? Squawk!"
+     1 | You see nothing special about the parrot.\n\nYou pass out from lack of food and water.\n \n    ****  You have died  ****\n\nUnfortunately, you made no provisions for your untimely death.\n\nYour score is 5 of a possible 400, in 73 moves. This puts you in the class of Charlatan.\n\nWould you like to restart the game from the beginning, restore a saved game position, or end this session of the game? (Type RESTART, RESTORE, or QUIT):
+     1 | You don't have the yomin spell committed to memory!\n\nYou are now somewhat hungry.\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     1 | You see nothing special about the morgia plant.\n\n"Squawk! Now where can I hide this key? Squawk!"
+     1 | You can't give a tiny box to a parrot!
+     1 | You can't do that.
+     1 | There is nothing on the bed.\n\nYou are now a bit hungry.
+     1 | You are already wearing it.\n\nYou are now extremely hungry.
+     1 | You can't see any path here!
+     1 | You can't see any magic amulet here!
+     1 | You can't see that person here!
+     1 | There is nothing but dust there.\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+     1 | I don't know the word "chime".
+     1 | I don't know the word "blorb".
+     1 | I don't know the word "vaxum".
+     1 | You used the word "ochre" in a way that I don't understand.
+     1 | You see nothing special about the morgia plant.\n\nYou are feeling tired.\n\n"Squawk! Belboz, the Circle is waiting for you. Squawk!"
+     1 | I don't know the word "different".
+     1 | I don't know the word "slowly".
+     1 | I don't know the word "create".
+     1 | I don't know the word "conjure".
+     1 | I don't know the word "hunger".
+     1 | I don't know the word "near".
+     1 | What do you want to insert the key in?
+     1 | What do you want to push?
+     1 | I don't know the word "garden".
+     1 | I don't know the word "ny".
+     1 | I don't know the word "11530".
+     1 | I don't know the word "dept".
+     1 | I don't know the word "z5".
+     1 | I don't know the word "meat".
+     1 | What do you want to where?
+     1 | What do you want to knock at?
+     1 | I don't know the word "approach".
+     1 | You don't have the vezza spell committed to memory!\n\nYou are now somewhat hungry.
+     1 | I don't know the word "someone".
+     1 | What do you want to feed the parrot to?
+     1 | I don't know the word "sequence:".
+     1 | I don't know the word "`search`".
+     1 | I don't know the word "`investigate`".
+     1 | I don't know the word "`explore`".
+     1 | I don't know the word "`navigate`".
+     1 | I don't know the word "`orient`".
+     1 | I don't know the word "`map`".
+     1 | I don't know the word "`draw`".
+     1 | I don't know the word "`sketch`".
+     1 | I don't know the word "`chart`".
+     1 | I don't know the word "`plot`".
+     1 | I don't know the word "`sharpen".
+     1 | I don't know the word "`hone".
+     1 | I don't know the word "`refine".
+     1 | I don't know the word "`polish".
+     1 | I don't know the word "`smooth".
+     1 | I don't know the word "`calm".
+     1 | I don't know the word "`soothe".
+     1 | I don't know the word "`comfort".
+     1 | I don't know the word "`reassure".
+     1 | I don't know the word "`encourage".
+     1 | I don't know the word "`motivate".
+     1 | I don't know the word "`inspire".
+     1 | I don't know the word "`spark".
+     1 | I don't know the word "`kindle".
+     1 | I don't know the word "`stoke".
+     1 | I don't know the word "`fuel".
+     1 | I don't know the word "`energize".
+     1 | I don't know the word "`revitalize".
+     1 | I don't know the word "`rejuvenate".
+     1 | I don't know the word "`refresh".
+     1 | I don't know the word "`track".
+     1 | I don't know the word "`keep".
+     1 | I don't know the word "`maintain".
+     1 | I don't know the word "`preserve".
+     1 | I don't know the word "`protect".
+     1 | I don't know the word "`shield".
+     1 | I don't know the word "`guard".
+     1 | I don't know the word "apï¿?og".
+     1 | I don't know the word "`c".
+     1 | I don't know the word "*the".
+     1 | I don't know the word "apot".
+     1 | I don't know the word "*path".
+     1 | I don't know the word "aprep".
+     1 | I don't know the word "problem".
+     1 | I don't know the word "`obs".
+     1 | I don't know the word "`challenge`".
+     1 | I don't know the word "`riddle`".
+     1 | I don't know the word "`brainteaser`".
+     1 | You used the word "run" in a way that I don't understand.
+     1 | I don't know the word "apologiesely".
+     1 | I don't know the word "apently".
+     1 | I don't know the word "apolo".
+     1 | I don't know the word "aplications".
+     1 | I don't know the word "ingeraly".
+     1 | I don't know the word "or".
+     1 | I don't know the word "backtick".
+     1 | You can't go that way.\n\nThe hellhound reaches you and tears you apart with its powerful teeth.\n\n...and a moment later you wake up in a cold sweat and realize you've been dreaming.\n\nSORCERER\nInfocom interactive fiction - a fantasy story\nCopyright (c) 1984 by Infocom, Inc. All rights reserved.\nSORCERER is a trademark of Infocom, Inc.\nRelease 18 / Serial number 860904\n\nYour frotz spell seems to have worn off during the night, and it is now pitch black.
+     1 | I don't know the word "f".
+     1 | You see nothing special about the gnarled tree.\n\nThe hellhound reaches you and tears you apart with its powerful teeth.\n\n...and a moment later you wake up in a cold sweat and realize you've been dreaming.\n\nSORCERER\nInfocom interactive fiction - a fantasy story\nCopyright (c) 1984 by Infocom, Inc. All rights reserved.\nSORCERER is a trademark of Infocom, Inc.\nRelease 18 / Serial number 860904\n\nYour frotz spell seems to have worn off during the night, and it is now pitch black.
+     1 | I don't know the word "castling".
+     1 | You are already in the bed!
+     1 | I don't know the word "ï¿?".
+     1 | I don't know the word "**".
+     1 | I don't know the word "asterisks".
+     1 | I don't know the word "upon".
+     1 | I don't know the word "cold".
+     1 | I don't know the word "medal".
+     1 | I don't know the word "wolf".
+     1 | I don't know the word "permission".
+     1 | You used the word "i" in a way that I don't understand.
+     1 | I don't know the word "danger".
+     1 | I don't know the word "heart".
+     1 | I don't know the word "pedestal".
+     1 | I don't know the word "future".
+     1 | I don't know the word "`chop".
+     1 | I don't know the word "`hack".
+     1 | I don't know the word "`fend".
+     1 | I don't know the word "`ward".
+     1 | I don't know the word "`repel".
+     1 | I don't know the word "`pick".
+     1 | I don't know the word "`obtain".
+     1 | I don't know the word "`acquire".
+     1 | I don't know the word "`retrieve".
+     1 | I don't know the word "`grasp".
+     1 | I don't know the word "`hold".
+     1 | I don't know the word "`initiate".
+     1 | I don't know the word "`begin".
+     1 | I don't know the word "`commence".
+     1 | I don't know the word "`reach".
+     1 | I don't know the word "`touch".
+     1 | I don't know the word "`contact".
+     1 | I don't know the word "`interact".
+     1 | I don't know the word "`handle".
+     1 | I don't know the word "`manage".
+     1 | I don't know the word "`address".
+     1 | I don't know the word "`snake".
+     1 | I don't know the word "situation:".
+     1 | I don't know the word "don'situation".
+     1 | I don't know the word "````".
+     1 | I don't know the word "```s:".
+     1 | I don't know the word "```situation:".
+     1 | I don't know the word "don't".
+     1 | I don't know the word "don'situation:".
+     1 | I don't know the word "```reformatting".
+     1 | I don't know the word "```ther".
+     1 | I don't know the word "```enter".
+     1 | I don't know the word "neurs".
+     1 | I don't know the word "```user".
+     1 | I don't know the word "understand".
+     1 | You can't drink that!\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     1 | You see nothing special about the perch.\n\nYou are now somewhat thirsty.
+     1 | I don't know the word "scold".
+     1 | I don't know the word "sesame".
+     1 | You can't see any nymph here!
+     1 | You see nothing special about the morgia plant.\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"
+     1 | You see nothing special about the perch.\n\n"Squawk! Where did I leave my spectacles? Squawk!"
+     1 | I don't know the word "sneak".
+     1 | I don't know the word "creep".
+     1 | You used the word "southern" in a way that I don't understand.
+     1 | You see nothing special about the doorway.
+     1 | I don't know the word "vessel".
+     1 | I don't know the word "pluck".
+     1 | I don't know the word "beak".
+     1 | I don't know the word "mouth".
+     1 | You see nothing special about the morgia plant.\n\nYou are now quite thirsty.
+     1 | I don't know the word "infusion".
+     1 | You already have it.\n\nYou are now quite hungry.
+     1 | You don't have the wall hanging.
+     1 | I don't know the word "shutter".
+     1 | It is already closed.
+     1 | You can't see any tenets here!
+     1 | I don't know the word "curtains".
+     1 | You don't have the yomin spell committed to memory!\n\nThe Guild Hall doorbell chimes.\n\n"Squawk! This tea is cold! Get me another cup. Squawk!"
+     1 | I don't know the word "article".
+     1 | I don't know the word "leaf".
+     1 | You see nothing special about the doorway.\n\nYou are beginning to tire.
+     1 | I don't know the word "b".
+     1 | You see nothing special about the black button.\n\nYou are beginning to tire.
+     1 | You can't see any gray button here!
+     1 | You can't see any breath here!\nHideous parasites descend upon you and tear the flesh from your bones, gnaw the eyes from your sockets, and feast upon your very brain tissue. Amazingly, you do not die, and your body regenerates itself as you await the next attack...
+     1 | I don't know the word "unroll".
+     1 | You can't see any journal here!
+     1 | You can't see any purple button here!
+     1 | You can't move the table.
+     1 | You can't see any kingdom here!
+     1 | You can't see any evil here!
+     1 | You can't see any guild here!
+     1 | I don't know the word "ii".
+     1 | I don't know the word "quote".
+     1 | I don't know the word "two".
+     1 | You can't see any inscription here!
+     1 | You used the word "push" in a way that I don't understand.
+     1 | You can't drink that!\n\nYou are now extremely thirsty.\n\nYou are now very hungry.
+     1 | You can't go that way.\n\n"Squawk! You should never have let down your mindshield, you doddering old Enchanter. Squawk!"

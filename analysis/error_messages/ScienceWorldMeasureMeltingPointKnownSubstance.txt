@@ -1,0 +1,19 @@
+# Invalid Action Messages: ScienceWorldMeasureMeltingPointKnownSubstance
+# Total unique error messages: 12
+# Total error occurrences: 10709
+#
+# Format: count | message
+#===============================================================================
+
+ 10212 | No known action matches that input.
+   451 | The door is not open.
+    13 | The door is already open.
+     9 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+     7 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+     5 | You can't pick up a gas directly.
+     4 | The oven is already closed.
+     3 | The oven is already activated.
+     2 | The book (Beowulf) isn't open, so you can't see inside.
+     1 | The oven is already open.
+     1 | The book (Sherlock Holmes) isn't open, so you can't see inside.
+     1 | The picture isn't open, so you can't see inside.

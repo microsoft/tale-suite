@@ -1,0 +1,11 @@
+# Invalid Action Messages: ScienceWorldLifespanShortestLived
+# Total unique error messages: 4
+# Total error occurrences: 10515
+#
+# Format: count | message
+#===============================================================================
+
+ 10440 | No known action matches that input.
+    67 | The door is not open.
+     5 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+     3 | The door is already open.

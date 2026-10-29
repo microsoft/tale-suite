@@ -1,0 +1,12 @@
+# Invalid Action Messages: ALFWorldPickHeatThenPlaceInRecepSeen
+# Total unique error messages: 5
+# Total error occurrences: 19476
+#
+# Format: count | message
+#===============================================================================
+
+ 19456 | Nothing happens.
+     9 | There's nothing special about apple 1.
+     7 | There's nothing special about egg 1.
+     3 | There's nothing special about butterknife 1.
+     1 | There's nothing special about knife 2.

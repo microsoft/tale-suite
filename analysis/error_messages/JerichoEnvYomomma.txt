@@ -1,0 +1,142 @@
+# Invalid Action Messages: JerichoEnvYomomma
+# Total unique error messages: 135
+# Total error occurrences: 14155
+#
+# Format: count | message
+#===============================================================================
+
+  4352 | That verb is not used in this game.
+  3065 | You can't see any such thing.
+  1349 | (To interact with people you can TALK TO them, INSULT them or SHOW things to them.)
+   825 | You seem to want to talk to someone, but I can't see whom.
+   824 | I only understood you as far as wanting to take inventory.
+   645 | Time passes.
+   286 | You must supply a noun.
+   279 | I beg your pardon?
+   274 | I didn't understand that sentence.
+   237 | I only understood you as far as wanting to look.
+   188 | You don't have anything to say to Norbert right now.
+   176 | You find nothing of interest.
+   153 | There's nothing you really want to say to him.
+   120 | You can't go that way.
+   113 | You can't see inside, since the satchel is closed.
+   110 | I only understood you as far as wanting to search the bouncer.
+    77 | I only understood you as far as wanting to search the corner table.
+    76 | You are already there.
+    67 | I only understood you as far as wanting to search the table.
+    66 | (To interact with people you can TALK TO them, INSULT them or SHOW things to them.)\n\n"Joe Mahma! No way!" you gasp.\n\n"I see you know me, kid. Good to know somebody still does."\n\nOf course you know who Joe Mahma is. Everybody knows Joe Mahma. He's a living legend, the infamous grandmaster of Yo Momma insult battles.\n\n"Look, kid, you want my help or not?"
+    50 | What do you want to ask Joe Mahma for?
+    49 | I only understood you as far as wanting to leave.
+    47 | I only understood you as far as wanting to search Joe Mahma.
+    46 | I only understood you as far as wanting to insult Ralph.
+    43 | I only understood you as far as wanting to insult Norbert.
+    39 | You don't have any money.
+    34 | Which do you mean, the cola, the tonic, the gin, the wine, the beer, or the vodka?
+    30 | You don't have any money. Besides it's very hard to get a drink without papers here.
+    24 | There is nothing on the counter.
+    23 | You can only do that to something animate.
+    22 | There's nothing under the speaker.
+    18 | But you aren't in anything at the moment.
+    18 | I only understood you as far as wanting to in.
+    16 | You can't see inside, since the satchel is closed.\n\nRalph puts a coin into the jukebox and pushes the rap button.\n\nRalph returns from the jukebox.
+    15 | You can't use multiple objects with that verb.
+    15 | Which do you mean, the bouncer, or the commotion?
+    15 | I only understood you as far as wanting to insult Joe Mahma.
+    14 | Nothing obvious happens.
+    12 | What do you want to put on?
+    12 | I only understood you as far as wanting to play ass.
+    11 | I only understood you as far as wanting to insult the Sleaze.
+    11 | What do you want to search?
+    11 | You don't have enough coins to really buy anything. Besides it's very hard to get a drink without papers here.
+    11 | You don't have enough coins to really buy anything.
+    11 | I only understood you as far as wanting to open the satchel.
+    10 | I only understood you as far as wanting to exit.
+    10 | I only understood you as far as wanting to search the dark shadows.
+    10 | I only understood you as far as wanting to examine the satchel.
+    10 | Which do you mean, Vincent, or the commotion?
+    10 | You must supply a noun.\n\nThat verb is not used in this game.
+     9 | I only understood you as far as wanting to look behind the bouncer.
+     9 | You must supply a noun.\n\nYou see the mysterious stranger in the southeast corner table waving again for you to come closer.
+     7 | You already have that.
+     6 | (To interact with people you can TALK TO them, INSULT them or SHOW things to them.)\n\nThe Sleaze decides he needs a refill and applies the mouthspray a couple more times.
+     6 | There's nothing to find from the machines.
+     6 | You don't have any money.\n\nThe Sleaze decides he needs a refill and applies the mouthspray a couple more times.
+     6 | You can't go that way.\n\nThe Sleaze decides he needs a refill and applies the mouthspray a couple more times.
+     6 | Which do you mean, Norbert, or the commotion?
+     6 | There is nothing on the chair.
+     6 | What do you want to ask Ralph for?
+     5 | You don't have any money. Besides it's very hard to get a drink without papers here.\n\nThe Sleaze decides he needs a refill and applies the mouthspray a couple more times.
+     5 | I only understood you as far as wanting to examine the jukebox.
+     5 | I only understood you as far as wanting to search southeast.
+     5 | I only understood you as far as wanting to look at southeast.
+     5 | I only understood you as far as wanting to examine the missing portrait.
+     5 | That's not something you can open.
+     5 | I only understood you as far as wanting to play the music.
+     5 | I only understood you as far as wanting to examine southeast.
+     4 | I only understood you as far as wanting to insult the guard.
+     4 | I only understood you as far as wanting to turn down.
+     4 | I only understood you as far as wanting to look at the Escapade game.
+     4 | You already have those.
+     4 | I only understood you as far as wanting to insult Vincent.
+     4 | You must name something more substantial.
+     3 | I only understood you as far as wanting to examine the portraits.
+     3 | I only understood you as far as wanting to examine the Gus portrait.
+     3 | Which do you mean, the Missy Maestro portrait, the Gus portrait, the Doc Stockholm portrait, the Hetty R portrait, the Slick Joe Mittens portrait, or the missing portrait?
+     3 | I only understood you as far as wanting to about.
+     3 | You aren't holding the bubblegum.
+     3 | I only understood you as far as wanting to search the jukebox.
+     2 | I only understood you as far as wanting to insult the bouncer.
+     2 | What do you want to challenge?
+     2 | I only understood you as far as wanting to examine the track jacket.
+     2 | I only understood you as far as wanting to search the track jacket.
+     2 | That's not something you can switch.
+     2 | There is nothing on the corner table.
+     2 | I only understood you as far as wanting to buy the cola.
+     2 | (To interact with people you can TALK TO them, INSULT them or SHOW things to them.)\n\nThe Sleaze is engaged in a staring contest with your boobs.
+     2 | I only understood you as far as wanting to look at the portraits.
+     2 | I only understood you as far as wanting to turn the volume knob.
+     2 | What do you want to look behind?
+     2 | I only understood you as far as wanting to look under the bouncer.
+     2 | I only understood you as far as wanting to take the satchel.
+     2 | I only understood you as far as wanting to help.
+     2 | Which do you mean, the VIP lounge, the Artist hangout, the Arcade corner, or the Dark corner?
+     2 | What do you want to show yourself?
+     2 | But you aren't in anything at the moment.\n\nYou see the mysterious stranger in the southeast corner table waving again for you to come closer.
+     2 | What do you want to ask Norbert for?
+     2 | I only understood you as far as wanting to listen.
+     2 | I only understood you as far as wanting to insult Gus.
+     2 | I only understood you as far as wanting to search the missing portrait.
+     2 | That's not something you can enter.
+     1 | I only understood you as far as wanting to order the beer.
+     1 | I only understood you as far as wanting to change the jukebox.
+     1 | I only understood you as far as wanting to wait.
+     1 | There is nothing on the table.
+     1 | I only understood you as far as wanting to drop the business card.
+     1 | I only understood you as far as wanting to put the bubblegum on the business card.
+     1 | I only understood you as far as wanting to look at the table.
+     1 | I only understood you as far as wanting to look behind the table.
+     1 | I only understood you as far as wanting to examine Gus's posse.
+     1 | You don't have enough coins to really buy anything. Besides it's very hard to get a drink without papers here.\n\n"Why don't you know who an' you know who go you know where with you know what an' do you know what using you know what?" the Sleaze suggests. You do your best to ignore him.
+     1 | I only understood you as far as wanting to examine the Escapade game.
+     1 | Which do you mean, rap, techno, r&b, jazz, rock, or ass?
+     1 | I only understood you as far as wanting to look at the satchel.
+     1 | I only understood you as far as wanting to check the track jacket.
+     1 | I only understood you as far as wanting to listen to Gus's posse.
+     1 | What do you want to scrape the bubblegum with?
+     1 | I only understood you as far as wanting to look behind the corner table.
+     1 | I only understood you as far as wanting to look under the corner table.
+     1 | I only understood you as far as wanting to search Ralph.
+     1 | I only understood you as far as wanting to search the guard.
+     1 | I only understood you as far as wanting to search Britney.
+     1 | I only understood you as far as wanting to insult Britney.
+     1 | You are already there.\n\nThe Sleaze decides he needs a refill and applies the mouthspray a couple more times.
+     1 | You already have a glass of cola.
+     1 | You already have a glass of cola.\n\nA glare hits you in the eye. It seems to have come from the Sleaze's bleached row of unnaturally white teeth.
+     1 | I only understood you as far as wanting to get outside.
+     1 | What do you want to move?
+     1 | You must supply a noun.\n\nYou seem to want to talk to someone, but I can't see whom.
+     1 | I only understood you as far as wanting to in to.
+     1 | I only understood you as far as wanting to it.
+     1 | I only understood you as far as wanting to n.
+     1 | (To interact with people you can TALK TO them, INSULT them or SHOW things to them.)\n\n"Why don't you know who an' you know who go you know where with you know what an' do you know what using you know what?" the Sleaze suggests. You do your best to ignore him.
+     1 | You don't have any motor oil.

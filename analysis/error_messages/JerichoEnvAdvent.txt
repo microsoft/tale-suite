@@ -1,0 +1,78 @@
+# Invalid Action Messages: JerichoEnvAdvent
+# Total unique error messages: 71
+# Total error occurrences: 6925
+#
+# Format: count | message
+#===============================================================================
+
+  2926 | That's not a verb I recognise.
+   928 | You can't see any such thing.
+   778 | You can't go that way.
+   572 | I beg your pardon?
+   337 | I only understood you as far as wanting to in.
+   284 | [Comment NOT recorded.]
+   157 | You seem to want to talk to someone, but I can't see whom.
+   100 | Nothing happens.
+    79 | But you aren't in the well house.
+    68 | That's not something you can enter.
+    67 | I don't think much is to be achieved by that.
+    64 | I only understood you as far as wanting to use.
+    50 | You see nothing special about the stream.
+    44 | That's not something you need to refer to in the course of this game.
+    44 | I only understood you as far as wanting to take inventory.
+    41 | What do you want to unlock the steel grate with?
+    39 | I only understood you as far as wanting to fill the small bottle.
+    39 | You can't get by the snake.
+    28 | You see nothing unexpected in that direction.
+    26 | You find nothing of interest.
+    24 | I didn't understand that sentence.
+    20 | I only understood you as far as wanting to examine the well house.
+    15 | That doesn't seem to be something you can unlock.
+    14 | What do you want to get?
+    13 | It seems to be locked.
+    12 | You can't go that way.\n\nA threatening little dwarf comes out of the shadows!
+    11 | You already have that.
+    10 | I only understood you as far as wanting to jump.
+     8 | I only understood you as far as wanting to pour the small bottle.
+     8 | What do you want to pour water on?
+     7 | You can't go that way.\n\nThe dwarf throws a nasty little knife at you, but misses!
+     6 | What do you want to examine?
+     5 | I only understood you as far as wanting to down.
+     5 | I only understood you as far as wanting to get the brass lantern.
+     5 | Violence isn't the answer to this one.
+     5 | What do you want to unlock the well house with?
+     5 | I only understood you as far as wanting to climb the ground.
+     5 | Time passes.
+     4 | I only understood you as far as wanting to on.
+     4 | I only understood you as far as wanting to get the set of keys.
+     4 | I only understood you as far as wanting to open the west.
+     4 | I only understood you as far as wanting to swim.
+     4 | That's already open.
+     3 | That's already on.
+     3 | What do you want to climb?
+     3 | I only understood you as far as wanting to get the small bottle.
+     3 | That's not something you can open.
+     3 | There's nothing suitable to drink here.
+     3 | I only understood you as far as wanting to push the small bottle in.
+     3 | I only understood you as far as wanting to cover the 2-inch slit.
+     3 | I only understood you as far as wanting to kill the threatening little dwarf.
+     2 | You see nothing special about the streambed.
+     2 | I only understood you as far as wanting to examine the stream.
+     2 | I only understood you as far as wanting to pour the stream.
+     2 | You can't go that way.\n\nThe dwarf throws a nasty little axe at you, misses, curses, and runs away.
+     2 | What do you want to search?
+     2 | But you aren't in anything at the moment.
+     2 | I only understood you as far as wanting to open the east.
+     2 | I only understood you as far as wanting to look down.
+     2 | What do you want to squeeze?
+     2 | I only understood you as far as wanting to dive.
+     2 | I only understood you as far as wanting to squeeze the small bottle.
+     2 | I only understood you as far as wanting to enter the south.
+     1 | I only understood you as far as wanting to catch the little bird.
+     1 | I only understood you as far as wanting to climb the outside.
+     1 | I only understood you as far as wanting to empty the small bottle.
+     1 | What do you want to insert the rare coins in?
+     1 | What do you want to look to?
+     1 | What do you want to get the?
+     1 | What do you want to look?
+     1 | Which do you mean, the stream or the well house?

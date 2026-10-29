@@ -1,0 +1,22 @@
+# Invalid Action Messages: ScienceWorldChemistryMixPaintTertiaryColor
+# Total unique error messages: 15
+# Total error occurrences: 13261
+#
+# Format: count | message
+#===============================================================================
+
+ 12693 | No known action matches that input.
+   285 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+   228 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    25 | The large cupboard is already open.
+    13 | The door is not open.
+     3 | The drawer is already open.
+     2 | The large cupboard isn't open, so you can't see inside.
+     2 | terminal 2 on black wire is already connected, and must be disconnected before it can be connected to something else
+     2 | terminal 1 on green wire is already connected, and must be disconnected before it can be connected to something else
+     2 | terminal 1 on orange wire is already connected, and must be disconnected before it can be connected to something else
+     2 | The switch is already activated.
+     1 | The door is already open.
+     1 | You can't dunk something into itself.
+     1 | The drawer isn't open, so you can't see inside.
+     1 | You can't move something into itself.

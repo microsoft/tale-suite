@@ -1,0 +1,19 @@
+# Invalid Action Messages: ScienceWorldInclinedPlaneFrictionUnnamedSurfaces
+# Total unique error messages: 12
+# Total error occurrences: 12211
+#
+# Format: count | message
+#===============================================================================
+
+ 11903 | No known action matches that input.
+   177 | The door is not open.
+    76 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    33 | The door is already open.
+    12 | The stopwatch is already activated.
+     3 | The sink is already activated.
+     2 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+     1 | The stopwatch is already deactivated.
+     1 | anode on switch is already connected, and must be disconnected before it can be connected to something else
+     1 | The drawer is already open.
+     1 | The bee hive is already open.
+     1 | The bee hive isn't open, so you can't see inside.

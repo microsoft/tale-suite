@@ -1,0 +1,35 @@
+# Invalid Action Messages: ScienceWorldFreeze
+# Total unique error messages: 28
+# Total error occurrences: 13969
+#
+# Format: count | message
+#===============================================================================
+
+ 13390 | No known action matches that input.
+   153 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+   101 | The ultra low temperature freezer is already activated.
+    96 | The door is not open.
+    37 | The door is already open.
+    35 | The ultra low temperature freezer is already open.
+    32 | The drawer isn't open, so you can't see inside.
+    18 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    13 | The freezer is already activated.
+    13 | The freezer is already open.
+    12 | The sink is already activated.
+    12 | The ultra low temperature freezer isn't open, so you can't see inside.
+    11 | The ultra low temperature freezer is already closed.
+     8 | The cupboard isn't open, so you can't see inside.
+     6 | You can't pick up a gas directly.
+     5 | The freezer isn't open, so you can't see inside.
+     4 | The fridge isn't open, so you can't see inside.
+     4 | The glass jar isn't open, so you can't see inside.
+     3 | The drain is already closed.
+     3 | The drain is already open.
+     2 | The oven is already open.
+     2 | The fridge is already open.
+     2 | terminal 1 on red wire is already connected, and must be disconnected before it can be connected to something else
+     2 | anode on switch is already connected, and must be disconnected before it can be connected to something else
+     2 | The freezer is already closed.
+     1 | The blast furnace isn't open, so you can't see inside.
+     1 | The oven is already activated.
+     1 | The cupboard is already open.

@@ -1,0 +1,12 @@
+# Invalid Action Messages: ScienceWorldLifespanLongestLived
+# Total unique error messages: 5
+# Total error occurrences: 10191
+#
+# Format: count | message
+#===============================================================================
+
+ 10077 | No known action matches that input.
+    90 | The door is not open.
+    13 | The door is already open.
+    10 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+     1 | The bee hive is already open.

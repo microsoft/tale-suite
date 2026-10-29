@@ -1,0 +1,219 @@
+# Invalid Action Messages: JerichoEnvTrinity
+# Total unique error messages: 212
+# Total error occurrences: 4047
+#
+# Format: count | message
+#===============================================================================
+
+  2033 | Time passes.
+   272 | [This story can't understand the word "proceed" when you use it that way.]
+   201 | [There are too many nouns in that sentence.]
+   126 | You're already in Kensington Gardens.
+    81 | You're not holding a small coin.
+    80 | [There aren't any verbs in that sentence.]
+    79 | You're not holding a gnomon.
+    63 | You're already as close as anyone wants to get to the Albert Memorial.
+    60 | You can't see that here.
+    59 | You see nothing unusual in the perambulator.
+    56 | You're not holding that.
+    49 | You're not holding a wristwatch.
+    39 | You can't see any base here.
+    35 | You're not holding anything, but you're wearing a wristwatch. You also have a credit card and a seven-sided coin in your pocket.
+    27 | You can't see any umbrella here.
+    27 | [This story can't understand the word "reach" when you use it that way.]
+    27 | You can't see the bicyclists anymore.
+    26 | [This story can't understand the word "get" when you use it that way.]
+    22 | You see nothing interesting in the perambulator.
+    21 | You can't see any boy here.
+    17 | You're not holding a seven-sided coin.
+    15 | You can't see any wabe here.
+    14 | You're not holding an umbrella.
+    14 | [This story can't understand the word "help" when you use it that way.]
+    13 | You're not holding a bag.
+    12 | You see nothing unusual.
+    12 | You see nothing unusual on the ground.
+    11 | [This story can't understand the word "climb" when you use it that way.]
+    11 | You don't see anything unusual about the soccer ball.
+    11 | It's already open.
+    10 | You can't see any stick here.
+    10 | You can't see any paper boat here.
+    10 | You see nothing unusual under the sculpture.
+     9 | [This story can't understand the word "knock" when you use it that way.]
+     9 | [Adverbs (such as "carefully") aren't needed to complete this story.]
+     8 | [This story can't understand the word "drop" when you use it that way.]
+     8 | [This story can't understand the word "grab" when you use it that way.]
+     8 | You can't see any ladder here.
+     7 | [This story can't understand the word "open" when you use it that way.]
+     7 | [This story can't understand the word "pull" when you use it that way.]
+     7 | You can't see any at the moment.
+     7 | [There aren't enough nouns in that sentence.]
+     7 | You can't see any gnomon here.
+     7 | You can't see any bird woman here.
+     7 | You can't see any cover here.
+     7 | You can't see any pedestal here.
+     6 | [This story can't understand the word "take" when you use it that way.]
+     6 | You see nothing unusual about the soccer ball.
+     6 | You don't see anything interesting about the soccer ball.
+     6 | [This story can't understand the word "move" when you use it that way.]
+     6 | You're already holding the bag of crumbs.
+     6 | You don't have any bubble-blowing equipment.\n\nThe boy pulls the bubble wand out of the dish, puts it to his lips and blows a big soap bubble.
+     6 | You see nothing interesting on the ground.
+     6 | You see nothing extraordinary on the ground.
+     6 | [The word "understand" isn't in the vocabulary that you can use.]
+     5 | You can't see any seven-sided coin here.
+     5 | You don't see anything unusual about the headphones.\n\nThe boy dips the bubble wand in the dish and swishes it around.
+     5 | You can't see any notice here.
+     5 | You can't see any large bird here.
+     5 | You can't see any plane here.
+     5 | You're already holding the small coin.
+     5 | You can't see any screw here.
+     5 | You can't see any plaque here.
+     5 | You can't see any face here.
+     5 | You see nothing interesting under the sculpture.
+     5 | You don't see anything extraordinary under the sculpture.
+     5 | You don't see anything special about your ankle.
+     5 | You don't see anything unusual about your ankle.
+     5 | You don't see anything interesting about your ankle.
+     5 | You don't see anything extraordinary about your ankle.
+     5 | You see nothing special on your foot.
+     5 | You see nothing unusual on your foot.
+     5 | You see nothing interesting on your foot.
+     5 | You see nothing extraordinary on your foot.
+     5 | You see nothing special under the sculpture.
+     4 | You can't see any paper bird here.
+     4 | [Adverbs (such as "closely") aren't needed to complete this story.]
+     4 | [This story can't understand the word "throw" when you use it that way.]
+     4 | [This story can't understand the word "inventory" when you use it that way.]
+     4 | You can't see any edge grass here.
+     4 | You see nothing special.
+     4 | [This story can't understand the word "bring" when you use it that way.]
+     4 | [This story can't understand the word "make" when you use it that way.]
+     4 | You can't see any soap here.
+     4 | You see nothing interesting.
+     4 | You see nothing special on the ground.
+     4 | You're not holding the wristwatch.
+     4 | [This story can't understand the word "advance" when you use it that way.]
+     4 | [This story doesn't recognize the word "understand."]
+     3 | You see nothing interesting about the soccer ball.
+     3 | You can't see any map here.
+     3 | You can't see any dish here.
+     3 | You don't see anything unusual under the toadstool.\n\nThe edge of the shadow disappears northward.
+     3 | You can't see any bubble wand here.
+     3 | You can't see any soapy paper bird here.
+     3 | You see nothing interesting inside the perambulator.
+     3 | You can't see any sundial here.
+     3 | You already have a paper bag.
+     3 | You're not holding a soccer ball.
+     3 | You see nothing unusual inside the threaded hole.
+     3 | [This story can't understand the word "stand" when you use it that way.]
+     3 | [This story can't understand the word "let" when you use it that way.]
+     3 | You can't see any bench here.
+     3 | You can't see any thirty p here.
+     3 | [You don't need to use the word "understand" to complete this story.]
+     3 | [This story can't understand the word "no" when you use it that way.]
+     2 | You can't see the shadow now.
+     2 | You're not holding a bag of crumbs.
+     2 | [This story can't understand the word "shake" when you use it that way.]
+     2 | You can't see any ruby here.
+     2 | You can't see any bird feed here.
+     2 | [This story doesn't recognize the word "`understand`."]
+     2 | [Adverbs (such as "gently") aren't needed to complete this story.]
+     2 | [Adverbs (such as "quickly") aren't needed to complete this story.]
+     2 | [This story can't understand the word "loosen" when you use it that way.]
+     2 | You don't see anything unusual under the tree.
+     2 | [This story can't understand the word "poke" when you use it that way.]
+     2 | [This story can't understand the word "touch" when you use it that way.]
+     2 | You can't see any coin here.
+     2 | You can't see any paper plane here.
+     2 | You can't see any big bird here.
+     2 | You're already holding the paper bird.
+     2 | You're already holding the small coin.\n\n"Feed the birds!" hollers the bird woman.
+     2 | You can't see any wand here.
+     2 | [This story can't understand the word "force" when you use it that way.]
+     2 | [This story can't understand the word "lower" when you use it that way.]
+     2 | You can't see any poem here.
+     2 | [This story can't understand the word "score" when you use it that way.]
+     2 | You see nothing extraordinary under the tree.
+     2 | You see nothing extraordinary.
+     2 | You don't see anything interesting.
+     2 | You're not holding a paper bird.
+     2 | [This story can't understand the word "service" when you use it that way.]
+     2 | You don't see anything extraordinary.\n\nSirens are howling all around you. Children, sensing fear in the air, begin to whimper for their nannies.
+     2 | You can't see any dial here.
+     2 | You can't see any fence here.
+     2 | You don't see anything unusual.\n\nSirens are howling all around you. Children, sensing fear in the air, begin to whimper for their nannies.
+     2 | There's nothing unusual in the clearing around the sundial.
+     2 | You can't see any bicycles here.
+     2 | You're not holding a paper bag.
+     2 | You're already holding the credit card.\n\n"Thirty p for the starving birds!"
+     2 | You're already holding the small coin.\n\n"Feed the birds!"
+     2 | [This story can't understand the word "pay" when you use it that way.]
+     2 | You can't put anything under that.
+     2 | You're already holding the gnomon.
+     1 | You're not holding any pigeons.
+     1 | You can't see any dish soapy water here.
+     1 | [This story can't understand the word "hook" when you use it that way.]
+     1 | It's already unfolded.\n\nIt's not likely that the piece of paper would go very far.
+     1 | [This story can't understand the word "cross" when you use it that way.]
+     1 | You can't see any fifty p here.
+     1 | You don't see anything unusual about the headphones.\n\nThe boy snaps his fingers to the headphone music as the soap bubble bursts with a flabby pop.\n                                           Atoms or systems into ruin hurled,        And now a bubble burst, and now a world.                                                                   -- Alexander Pope
+     1 | You can't see any paper bag here.
+     1 | Nothing happens.
+     1 | You see nothing unusual about the headphones.\n\nThe boy dips the bubble wand in the dish and swishes it around.
+     1 | You don't see anything interesting about the headphones.\n\nThe boy pulls the bubble wand out of the dish, puts it to his lips and blows a big soap bubble.
+     1 | You're not holding a perambulator.
+     1 | You can't see any shelter here.
+     1 | You can't see any rock here.
+     1 | You can't see any stone here.
+     1 | You're already holding the small coin.\n\n[Please try to express that another way.]
+     1 | [This story can't understand the word "use" when you use it that way.]
+     1 | You can't see any north path here.
+     1 | You can't see any clearing here.
+     1 | You can't see any east path here.
+     1 | [This story can't understand the word "nudge" when you use it that way.]
+     1 | [This story can't understand the word "approach" when you use it that way.]
+     1 | [This story can't understand the word "push" when you use it that way.]
+     1 | You're not holding a tree.
+     1 | You can't see any parrot's mouth here.
+     1 | You can't see any airplane here.
+     1 | You're already holding the piece of paper.
+     1 | You can't see any west door here.
+     1 | You see nothing unusual inside the perambulator.
+     1 | You're already holding the small coin.\n\n"Thirty p for the starving birds!"
+     1 | You're already holding the bag of crumbs.\n\n"Thirty p for the starving birds!"
+     1 | You're already holding the bag of crumbs.\n\n"Feed the birds!" yells the bird woman.
+     1 | You're already holding the bag of crumbs.\n\n"Feed the hungry birds!" cries the bird woman.
+     1 | You see nothing unusual under the bench.
+     1 | You can't see any splinter here.
+     1 | You don't have any bubble-blowing equipment.
+     1 | You can't see any long water edge here.
+     1 | You can't see any eastern path here.
+     1 | You see nothing interesting inside the threaded hole.
+     1 | You can't see any hard here.
+     1 | You can't see any object here.
+     1 | You can't see any stem here.
+     1 | [This story can't understand the word "lift" when you use it that way.]
+     1 | You don't see anything special.
+     1 | You can't see any edge here.
+     1 | You don't see anything unusual.
+     1 | You can't see any ball here.
+     1 | You don't see anything extraordinary.
+     1 | [This story can't understand the word "focus" when you use it that way.]
+     1 | [This story can't understand the word "yes" when you use it that way.]
+     1 | You're already holding the credit card.\n\n"Feed the hungry birds!" yells the bird woman.
+     1 | You see nothing unusual in the paper bag.
+     1 | You see nothing interesting under the bench.
+     1 | [Adverbs (such as "slowly") aren't needed to complete this story.]
+     1 | You can't see any falling umbrella here.
+     1 | [This story can't understand the word "release" when you use it that way.]
+     1 | You see nothing extraordinary about the soccer ball.
+     1 | You can't see any east door here.
+     1 | You can't see any wheel here.
+     1 | You don't see anything unusual about the headphones.\n\nThe boy pulls the bubble wand out of the dish, puts it to his lips and blows a big soap bubble.
+     1 | You don't see anything extraordinary about the soccer ball.
+     1 | You see nothing unusual under the tree.
+     1 | You can't see any soccer ball here.
+     1 | You can't see any bag here.
+     1 | You're not holding anything, but you're wearing a wristwatch. You also have a credit card in your pocket.
+     1 | You see nothing unusual on the bench.
+     1 | You can't see any hole here.

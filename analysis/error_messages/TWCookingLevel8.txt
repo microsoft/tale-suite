@@ -1,0 +1,80 @@
+# Invalid Action Messages: TWCookingLevel8
+# Total unique error messages: 73
+# Total error occurrences: 9699
+#
+# Format: count | message
+#===============================================================================
+
+  4093 | That's not a verb I recognise.
+  2139 | I beg your pardon?
+  1740 | You can't see any such thing.
+   272 | I only understood you as far as wanting to take inventory.
+   251 | You still miss something.
+   196 | You seem to want to talk to someone, but I can't see whom.
+   151 | You can't go that way.
+    76 | What do you want to dice the block of cheese with?
+    73 | What do you want to dice the banana with?
+    56 | Which do you mean, the north, the northeast, the northwest, the south, the southeast, the southwest, the east, the west, the up, the down, the inside or the outside?
+    52 | What do you want to open?
+    39 | Which do you mean, the purple potato or the yellow potato?
+    32 | You need to take the block of cheese first.
+    31 | I only understood you as far as wanting to (go) in.
+    29 | I only understood you as far as wanting to open south.
+    28 | What do you want to slice the purple potato with?
+    27 | The banana is already diced.
+    25 | I didn't understand that sentence.
+    24 | It isn't something you can switch.
+    23 | That was a rhetorical question.\n\n\nThat's not a verb I recognise.
+    22 | (with the banana)\nThe banana is already diced.
+    20 | It isn't something you can open.
+    20 | You need to take the purple potato first.
+    18 | You need to take the banana first.
+    18 | (with the purple potato)\nThe purple potato is already sliced.
+    17 | What do you want to cook the block of cheese with?
+    14 | You already have that.
+    14 | That's already open.
+    13 | That's not something you can sit down on.
+    12 | The purple potato is already sliced.
+    12 | What do you want to slice the yellow potato with?
+    11 | It is fixed in place.
+     9 | What do you want to cook the yellow potato with?
+     7 | That's not something you can enter.
+     7 | (with the block of cheese)\nYou need to take the block of cheese first.
+     7 | What do you want to cook the banana with?
+     7 | Time passes.
+     7 | You have to be more specific!
+     7 | You can't begin with a comma.
+     7 | You can't use multiple objects with that verb.
+     6 | You can't see inside, since the fridge is closed.
+     6 | The block of cheese is already diced.
+     6 | (with the yellow potato)\nCutting something requires a knife.
+     6 | But you aren't in anything at the moment.
+     6 | What do you want to dice the yellow potato with?
+     5 | This dangerous act would achieve little.
+     5 | You need to take the yellow potato first.
+     5 | (with the yellow potato)\nYou need to take the yellow potato first.
+     5 | Cutting something requires a knife.
+     4 | What do you want to slice the block of cheese with?
+     4 | I only understood you as far as wanting to read the cookbook.
+     3 | I only understood you as far as wanting to wait.
+     3 | (with the purple potato)\nYou need to take the purple potato first.
+     3 | You couldn't pay me to eat that diced fried block of cheese.
+     3 | I only understood you as far as wanting to open inside.
+     2 | (with the block of cheese)\nThe block of cheese is already diced.
+     2 | I only understood you as far as wanting to search the counter.
+     2 | You couldn't pay me to eat that diced roasted banana.
+     2 | What do you want to eat?
+     2 | What do you want to ask yourself for?
+     1 | I only understood you as far as wanting to search the fridge.
+     1 | I only understood you as far as wanting to slice the purple potato with the counter.
+     1 | No, you can't set that to anything.
+     1 | I only understood you as far as wanting to search the table.
+     1 | What do you want to cook the purple potato with?
+     1 | I only understood you as far as wanting to examine inside.
+     1 | I only understood you as far as wanting to examine the counter.
+     1 | You couldn't pay me to eat that raw yellow potato.
+     1 | Which do you mean, the yellow potato or the purple potato?
+     1 | You can't talk to the shelf.
+     1 | (with the banana)\nYou need to take the banana first.
+     1 | What do you want to dice the purple potato with?
+     1 | I only understood you as far as wanting to open frosted-glass door.

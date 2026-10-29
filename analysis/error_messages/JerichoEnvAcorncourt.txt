@@ -1,0 +1,164 @@
+# Invalid Action Messages: JerichoEnvAcorncourt
+# Total unique error messages: 157
+# Total error occurrences: 18446
+#
+# Format: count | message
+#===============================================================================
+
+  6920 | That's not a verb I recognise.
+  5226 | You can't see any such thing.
+   766 | You seem to want to talk to someone, but I can't see whom.
+   639 | I only understood you as far as wanting to fill the tin bucket.
+   551 | I beg your pardon?
+   461 | I only understood you as far as wanting to look.
+   439 | I don't think much is to be achieved by that.
+   431 | I only understood you as far as wanting to turn the hand crank and rope assembly.
+   392 | I only understood you as far as wanting to pull the hand crank and rope assembly.
+   347 | You find nothing of interest.
+   246 | You can't use multiple objects with that verb.
+   210 | Time passes.
+   182 | You can't go that way.
+   128 | I only understood you as far as wanting to climb the tree.
+   113 | I only understood you as far as wanting to search the squirrels nest.
+   109 | You can't go that way.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.
+    94 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+    77 | I only understood you as far as wanting to inventory.
+    64 | That's not something you can enter.
+    62 | I didn't understand that sentence.
+    62 | What do you want to look up in?
+    48 | I only understood you as far as wanting to examine the squirrels nest.
+    43 | You already have that.
+    35 | I only understood you as far as wanting to examine the iron gate.
+    32 | That's not something you can enter.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.
+    28 | What do you want to turn on?
+    27 | Violence isn't the answer to this one.
+    27 | You can only do that to something animate.
+    27 | I only understood you as far as wanting to stand.
+    25 | It seems to be locked.
+    25 | I only understood you as far as wanting to hit the squirrels nest.
+    25 | What do you want to turn off?
+    23 | I only understood you as far as wanting to turn the hand crank and rope assembly on.
+    22 | I only understood you as far as wanting to examine the tree.
+    21 | You see nothing special about the east wall.
+    19 | I only understood you as far as wanting to examine the small water well.
+    17 | You see nothing special about the west wall.
+    16 | I only understood you as far as wanting to examine the tin bucket.
+    16 | What do you want to aim the tennis ball launching machine at?
+    16 | What do you want to unlock the iron gate with?
+    16 | What do you want to get?
+    15 | I only understood you as far as wanting to wait.
+    15 | I only understood you as far as wanting to hit the window.
+    13 | You already have that.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.
+    13 | I only understood you as far as wanting to look at the squirrels nest.
+    13 | I only understood you as far as wanting to climb the floor.
+    12 | I only understood you as far as wanting to hit the tree.
+    12 | I only understood you as far as wanting to in.
+    11 | I only understood you as far as wanting to examine the window.
+     9 | Nothing obvious happens.
+     9 | I only understood you as far as wanting to examine the tennis court.
+     9 | I only understood you as far as wanting to put the tennis ball in the iron gate.
+     9 | I only understood you as far as wanting to aim the tennis ball launching machine.
+     9 | What do you want to examine?
+     9 | I only understood you as far as wanting to search the tree.
+     8 | I only understood you as far as wanting to pull the ceiling.
+     8 | I only understood you as far as wanting to look at the small water well.
+     8 | You see nothing special about the west wall.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.
+     8 | I only understood you as far as wanting to look at the tree.
+     7 | You haven't got that.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.
+     6 | I only understood you as far as wanting to search the tennis court.
+     6 | I only understood you as far as wanting to examine the hand crank and rope assembly.
+     6 | I only understood you as far as wanting to examine the tennis ball launching machine.
+     6 | I only understood you as far as wanting to look at the hand crank and rope assembly.
+     6 | I only understood you as far as wanting to look under the squirrels nest.
+     6 | I only understood you as far as wanting to jump.
+     6 | What do you want to plug the tin bucket with?
+     6 | You haven't got that.
+     6 | I only understood you as far as wanting to turn the tennis ball launching machine.
+     5 | I only understood you as far as wanting to drop the tin bucket.
+     5 | You see nothing special about the floor.
+     5 | I only understood you as far as wanting to search the small water well.
+     5 | What do you want to read in?
+     4 | I only understood you as far as wanting to look at the iron gate.
+     4 | You see nothing special about the north wall.
+     4 | You see nothing special about the south wall.
+     4 | I only understood you as far as wanting to examine the floor.
+     4 | What do you want to search?
+     4 | I only understood you as far as wanting to hit the iron gate.
+     4 | I only understood you as far as wanting to think.
+     4 | What do you want to repair the tin bucket with?
+     3 | I only understood you as far as wanting to check the tin bucket.
+     3 | What do you want to fix the tin bucket with?
+     3 | You can't go that way.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball sails through the now glassless window and disappears.
+     3 | I only understood you as far as wanting to look at the tin bucket.
+     3 | That's not something you can enter.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball sails through the now glassless window and disappears.
+     3 | What do you want to throw?
+     3 | You see nothing special about the east wall.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.
+     3 | I only understood you as far as wanting to check the tree.
+     3 | You can't go that way.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball lands uselessly on the ground.
+     3 | That's already off.
+     3 | But you aren't in anything at the moment.
+     3 | I only understood you as far as wanting to turn the tin bucket.
+     2 | I only understood you as far as wanting to search the iron gate.
+     2 | I only understood you as far as wanting to go the floor.
+     2 | I only understood you as far as wanting to put the green acorn in the iron gate.
+     2 | I only understood you as far as wanting to look at the window.
+     2 | I only understood you as far as wanting to go the west wall.
+     2 | That's not something you can open.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.
+     2 | I only understood you as far as wanting to go the ceiling.
+     2 | What do you want to climb?
+     2 | What do you want to describe?
+     2 | What do you want to aim the ceiling at?
+     2 | I only understood you as far as wanting to open the north wall.
+     2 | I only understood you as far as wanting to walk the floor.
+     2 | I only understood you as far as wanting to put the green acorn in the tin bucket.
+     2 | I only understood you as far as wanting to swing the tin bucket.
+     2 | There's nothing sensible to swing here.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.
+     2 | What do you want to drop those things in?
+     1 | I only understood you as far as wanting to look at the southeast wall.
+     1 | I only understood you as far as wanting to look at the northwest wall.
+     1 | What do you want to fix the tennis court net with?
+     1 | I only understood you as far as wanting to look through the tin bucket.
+     1 | You see nothing special about the floor.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.
+     1 | I only understood you as far as wanting to throw the tin bucket.
+     1 | I only understood you as far as wanting to search the floor.
+     1 | I only understood you as far as wanting to take the hand crank and rope assembly.
+     1 | I only understood you as far as wanting to climb the squirrels nest.
+     1 | I only understood you as far as wanting to open the iron gate.
+     1 | I only understood you as far as wanting to climb the west wall.
+     1 | I only understood you as far as wanting to go the east wall.
+     1 | I only understood you as far as wanting to go the north wall.
+     1 | I only understood you as far as wanting to look at the tennis court.
+     1 | I only understood you as far as wanting to get the small water well.
+     1 | I only understood you as far as wanting to get the tin bucket.
+     1 | I only understood you as far as wanting to climb the east wall.
+     1 | You see nothing special about the east wall.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball sails through the now glassless window and disappears.
+     1 | You see nothing special about the north wall.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball sails through the now glassless window and disappears.
+     1 | You see nothing special about the south wall.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball sails through the now glassless window and disappears.
+     1 | You see nothing special about the west wall.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball lands uselessly on the ground.
+     1 | You already have that.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball lands uselessly on the ground.
+     1 | What do you want to put the tennis ball in?
+     1 | I only understood you as far as wanting to search the tin bucket.
+     1 | I only understood you as far as wanting to adjust the tennis ball launching machine.
+     1 | I only understood you as far as wanting to adjust the tennis ball launching machine to that.
+     1 | What do you want to go inside?
+     1 | What do you want to pull?
+     1 | I only understood you as far as wanting to describe the window.
+     1 | What do you want to take?
+     1 | What do you want to push?
+     1 | What do you want to put the green acorn in?
+     1 | I only understood you as far as wanting to examine the west wall.
+     1 | What do you want to aim?
+     1 | I only understood you as far as wanting to check the iron gate.
+     1 | I only understood you as far as wanting to look in the tin bucket.
+     1 | I only understood you as far as wanting to no.
+     1 | I only understood you as far as wanting to s.
+     1 | I only understood you as far as wanting to enter the east wall.
+     1 | That's not something you can open.
+     1 | I only understood you as far as wanting to smash the tree.
+     1 | You already have that.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball bounces about the branches of the tree before falling back to the ground bellow.
+     1 | You can't go that way.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball bounces about the branches of the tree before falling back to the ground bellow.
+     1 | You see nothing special about the east wall.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball bounces off the nest and back into the court yard.  A startled squirrel dashes away from the collection of well woven twigs and leaves only to tentatively return a minute or two later.
+     1 | That's not something you can open.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball bounces off the nest and back into the court yard.  A startled squirrel dashes away from the collection of well woven twigs and leaves only to tentatively return a minute or two later.
+     1 | It's already open.  The lid must have rusted away long ago.
+     1 | That's not something you can open.\nA tennis ball launches out of the machine driven by the machine's old fashioned spring mechanism.  The ball bounces about the branches of the tree before falling back to the ground bellow.
+     1 | It's already open.  The lid must have rusted away long ago.\nThe ball machine's spring mechanism twangs noisily, and uselessly given nothing to throw, then pulls slowly back into place in preparation for another launch.

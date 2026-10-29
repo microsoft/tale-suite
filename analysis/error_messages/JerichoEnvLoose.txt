@@ -1,0 +1,129 @@
+# Invalid Action Messages: JerichoEnvLoose
+# Total unique error messages: 122
+# Total error occurrences: 6874
+#
+# Format: count | message
+#===============================================================================
+
+  2323 | Pardon? I'm not quite certain what you meant.
+  1169 | You can't see any such thing.
+   675 | I beg your pardon?
+   464 | You seem to want to talk to someone, but I can't see whom.
+   330 | That's not a verb I recognise.
+   323 | I didn't understand that sentence.
+   232 | I only understood you as far as wanting to look.
+   186 | I only understood you as far as wanting to help.
+   162 | I only understood you as far as wanting to apologize.
+   148 | It seems to be locked.
+   120 | Time passes.
+    77 | I only understood you as far as wanting to stand.
+    60 | You find nothing of interest.
+    40 | What do you want to look around?
+    38 | I only understood you as far as wanting to apologize to the egg.
+    27 | I only understood you as far as wanting to hold the rickety wooden fence.
+    22 | I only understood you as far as wanting to climb down the well.
+    22 | But you aren't in anything at the moment.
+    21 | Which do you mean, the floor or the floorboards?
+    18 | You can only do that to something animate.
+    18 | Which do you mean, the teacher's desk or one of the student desks?
+    16 | I only understood you as far as wanting to sing.
+    16 | I only understood you as far as wanting to inventory.
+    16 | I only understood you as far as wanting to wait.
+    15 | But you aren't on the well at the moment.
+    15 | That's already open.
+    15 | I only understood you as far as wanting to fix the rickety wooden fence.
+    14 | I only understood you as far as wanting to look at the egg.
+    10 | I only understood you as far as wanting to go the north wall.
+     8 | I only understood you as far as wanting to tap the schoolhouse door.
+     8 | There is no reply.
+     7 | You can't see inside, since the pot is closed.
+     7 | You can't do that unless you're holding the pot.\n\nThe rustling sounds stop.
+     7 | I only understood you as far as wanting to examine the rickety wooden fence.
+     7 | I only understood you as far as wanting to climb down the rickety wooden fence.
+     7 | I only understood you as far as wanting to down.
+     7 | What do you want to fix the rickety wooden fence to?
+     6 | You already have that.
+     6 | I only understood you as far as wanting to tap the clock tower door.
+     6 | You can't use multiple objects with that verb.
+     6 | You aren't holding the ladder.
+     6 | I only understood you as far as wanting to examine the muddy trail.
+     6 | I only understood you as far as wanting to yes.
+     6 | I only understood you as far as wanting to follow the muddy trail.
+     5 | That's not something you can enter.
+     5 | There is nothing on the tree.
+     5 | I only understood you as far as wanting to catch the egg.
+     5 | You can't see over the fence. You can't see under it. And you can't see around it, either.
+     5 | You can't do that unless you're holding the pot.
+     5 | I only understood you as far as wanting to look at the rickety wooden fence.
+     5 | I only understood you as far as wanting to follow the grassy path.
+     4 | Nothing obvious happens.
+     4 | Which do you mean, the top right drawer, the top left drawer, the middle drawer or the file drawer?
+     4 | You're already in trouble; one more misdeed won't make any difference. You pick up the big, giant bag and sling it over your shoulder.
+     4 | I only understood you as far as wanting to hold the picnic basket.
+     4 | I only understood you as far as wanting to examine the pot.
+     4 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+     4 | I only understood you as far as wanting to search the muddy trail.
+     4 | I only understood you as far as wanting to climb the rickety wooden fence.
+     4 | I only understood you as far as wanting to search the rickety wooden fence.
+     4 | I only understood you as far as wanting to search the tree.
+     4 | Violence isn't the answer to this one.
+     3 | I only understood you as far as wanting to go the floor.
+     3 | There is nothing on the teacher's desk.
+     3 | I only understood you as far as wanting to look at the pink bungalow.
+     3 | I only understood you as far as wanting to go the ceiling.
+     3 | I only understood you as far as wanting to jump down from the rickety wooden fence.
+     3 | I only understood you as far as wanting to go the south wall.
+     3 | I don't think much is to be achieved by that.
+     3 | I only understood you as far as wanting to get some soft wool.
+     3 | I only understood you as far as wanting to think.
+     3 | I only understood you as far as wanting to hold the egg.
+     3 | I only understood you as far as wanting to get the egg.
+     2 | You're not holding the pot.
+     2 | I only understood you as far as wanting to take the picnic basket.
+     2 | I only understood you as far as wanting to go the west wall.
+     2 | I only understood you as far as wanting to pour the pease porridge.
+     2 | I only understood you as far as wanting to go the southwest wall.
+     2 | I only understood you as far as wanting to hold the pot.
+     2 | You can't put anything else in the big, giant bag, because it's stuffed with soft wool.
+     2 | I only understood you as far as wanting to look at the schoolhouse.
+     2 | I only understood you as far as wanting to examine the clock tower.
+     2 | I only understood you as far as wanting to look at the muddy trail.
+     2 | I only understood you as far as wanting to look under the rickety wooden fence.
+     2 | I only understood you as far as wanting to examine the tree.
+     2 | I only understood you as far as wanting to look at the tree.
+     2 | I only understood you as far as wanting to examine the egg.
+     2 | I only understood you as far as wanting to bang the pot.
+     2 | What do you want to knock on?
+     2 | I only understood you as far as wanting to hold the egg's hand.
+     2 | You see nothing special about the floor.
+     2 | I only understood you as far as wanting to clean the ceiling.
+     2 | I only understood you as far as wanting to yell at Bernice.
+     2 | You can't reach the white ruffled curtains from here because the cottage window is closed.
+     1 | Which do you mean, some glossy wool or some curly wool?
+     1 | I only understood you as far as wanting to use the golden hairpin.
+     1 | Which do you mean, some soft wool, some glossy wool or some curly wool?
+     1 | I only understood you as far as wanting to look at the clock tower.
+     1 | I only understood you as far as wanting to climb the ladder.
+     1 | I only understood you as far as wanting to look at the village.
+     1 | I only understood you as far as wanting to examine the stone cottage.
+     1 | I only understood you as far as wanting to look in the pink bungalow.
+     1 | I only understood you as far as wanting to sorry.
+     1 | I only understood you as far as wanting to get the ladder.
+     1 | You can't see inside, since the pot is closed.\n\nThe wolf leans casually on one elbow and watches you, chewing on his toothpick.
+     1 | That's not something you can enter.\n\nThe wolf sneaks up behind you.
+     1 | I only understood you as far as wanting to cover some soft wool.
+     1 | You aren't holding the bent spoon.
+     1 | What do you want to lower the egg in?
+     1 | I only understood you as far as wanting to no.
+     1 | I only understood you as far as wanting to lift the egg.
+     1 | I only understood you as far as wanting to walk the north wall.
+     1 | You can't see inside, since the pot is closed.\n\nYou glance around nervously. The rustling seems very close now.
+     1 | I only understood you as far as wanting to open the west wall.
+     1 | That's already open.\n\n"Did you miss me?" barks the wolf. "I'm back."\n\nThe wolf grins at you as he twirls the toothpick in his mouth.
+     1 | That's already open.\n\nThe wolf shifts the toothpick from one side of his mouth to the other.
+     1 | I only understood you as far as wanting to knock the pink bungalow.
+     1 | I only understood you as far as wanting to open the pink bungalow.
+     1 | I only understood you as far as wanting to down the pink bungalow.
+     1 | You can't do that unless you're holding the pot.\n\n"Don't mind me; I was just leaving," mentions the wolf over his shoulder as he skulks out of sight.
+     1 | There is nothing on the teacher's desk.\n\nThe wolf leans casually on one elbow and watches you, chewing on his toothpick.
+     1 | I only understood you as far as wanting to pick the brass doorknob.

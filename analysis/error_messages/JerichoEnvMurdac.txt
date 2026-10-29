@@ -1,0 +1,24 @@
+# Invalid Action Messages: JerichoEnvMurdac
+# Total unique error messages: 17
+# Total error occurrences: 3665
+#
+# Format: count | message
+#===============================================================================
+
+  1612 | You can't go in that direction
+  1610 | OK
+   220 | I don't see that around here
+   110 | You can't do that
+    31 | You're already holding that
+    18 | You can't go in that direction!\nThe old man of the sea is on your back, his grip on your neck\ngradually tightening
+    18 | There's nothing here you can take easily
+    17 | You're not holding that
+     9 | You can't take that
+     8 | What do you want to do with the lamp
+     4 | What do you want to do with the centaur
+     2 | You can't do that!\nThe old man of the sea is on your back, his grip on your neck\ngradually tightening
+     2 | You're not holding that!\nThe old man of the sea is on your back, his grip on your neck\ngradually tightening
+     1 | You can't go in that direction!\nSuddenly a jet of boiling water strikes you in the back of the neck.\nYou run yelping from the room.\nYou are on a north-south path by the damp passage
+     1 | You can't go in that direction!\nThe old man tightens his grip further, finally throttling you.\n\nOh dear! You seem to have snuffed it.\nYou scored 10 points out of a maximum of 250.\nAnother game, your Extravagance?
+     1 | What do you want to do with the ogres
+     1 | What do you want to do with the key

@@ -1,0 +1,8 @@
+# Invalid Action Messages: TWXTextWorldCommonsense
+# Total unique error messages: 1
+# Total error occurrences: 22955
+#
+# Format: count | message
+#===============================================================================
+
+ 22955 | Unknown action: I'm not sure what you mean.

@@ -1,0 +1,189 @@
+# Invalid Action Messages: JerichoEnvAnchor
+# Total unique error messages: 182
+# Total error occurrences: 10251
+#
+# Format: count | message
+#===============================================================================
+
+  4432 | That's not a verb I recognise.
+  1596 | You can't see any such thing.
+  1039 | Time passes.
+   764 | You seem to want to talk to someone, but I can't see whom.
+   589 | I beg your pardon?
+   220 | I only understood you as far as wanting to wait.
+   199 | I only understood you as far as wanting to inventory.
+   191 | You can't get much lower than the ground.
+   189 | It seems to be locked.
+   116 | I didn't understand that sentence.
+    82 | You find nothing of interest.
+    66 | I only understood you as far as wanting to push the garbage can.
+    50 | I only understood you as far as wanting to search the filing cabinets.
+    30 | There is nothing on the filthy mattress.
+    27 | I only understood you as far as wanting to go the west.
+    27 | I only understood you as far as wanting to go the south.
+    24 | I only understood you as far as wanting to go the east.
+    22 | I only understood you as far as wanting to search the floor.
+    22 | I only understood you as far as wanting to in.
+    20 | You see nothing special at your feet.
+    19 | I only understood you as far as wanting to push the fence.
+    16 | I only understood you as far as wanting to go the southeast.
+    15 | I only understood you as far as wanting to pull yourself.
+    14 | I only understood you as far as wanting to go the north.
+    13 | There is nothing of any worth or interest here, just drifts of trash.
+    12 | You don't have a match.
+    12 | There is nothing of any worth or interest here, just drifts of trash.\n\nYou are getting wet.
+    12 | There's nothing here you can look things up in.
+    12 | I only understood you as far as wanting to shout.
+    12 | I only understood you as far as wanting to go the southwest.
+    12 | That's already open.
+    11 | You can't use multiple objects with that verb.
+    11 | I only understood you as far as wanting to check the trenchcoat.
+    10 | Which do you mean, the sea, the rain or the sewer water?
+    10 | You can't get much lower than the ground.\n\nOverhead, the swollen clouds flicker ominously with a greenish haze of sheet lightning.
+    10 | But you aren't in anything at the moment.
+     9 | I only understood you as far as wanting to toss the wedding ring.
+     8 | There is nothing on the bar.
+     8 | You can't see where the fly is. You're not even sure where the buzzing is coming from.
+     8 | You can't get much lower than the ground.\n\nVery faintly, from somewhere over the rooftops, you hear the faint, quavering strains of a violin.
+     7 | I only understood you as far as wanting to examine the cold, murky coffee.
+     7 | I only understood you as far as wanting to go the northeast.
+     7 | That's not something you can drink.
+     6 | I only understood you as far as wanting to push the umbrella.
+     6 | I only understood you as far as wanting to search the desk.
+     6 | I only understood you as far as wanting to kick the wedding ring.
+     5 | I only understood you as far as wanting to check the fence.
+     5 | You can't get much lower than the ground.\n\nA sudden gust of wind blows a cold spray of rain into your face.
+     5 | There is nothing of any worth or interest here, just drifts of trash.\n\nAnother wave crashes against the rocks, sending a cloud of spray into the air.\n\nYou are getting wet.
+     5 | You can't see inside, since the drawer is closed.
+     5 | I only understood you as far as wanting to look the west.
+     5 | I only understood you as far as wanting to look the floor.
+     5 | You can't get much lower than the ground.\n\nThe clouds overhead mutter restlessly to themselves.
+     5 | That's not something you can tie to things.
+     4 | That doesn't seem to be something you can unlock.
+     4 | I only understood you as far as wanting to knock on the real estate office door.
+     4 | You can't get much lower than the ground.\n\nThe rain slackens off momentarily to a weak drizzle, then returns afresh in a brief, freezing downpour.
+     4 | I only understood you as far as wanting to examine the brick wall.
+     4 | I only understood you as far as wanting to check the real estate office door.
+     4 | I only understood you as far as wanting to hold the umbrella.
+     4 | I only understood you as far as wanting to go the northwest.
+     4 | I only understood you as far as wanting to examine the floor.
+     4 | I only understood you as far as wanting to examine the real estate office door.
+     4 | I only understood you as far as wanting to open the desk.
+     4 | I only understood you as far as wanting to press the button labeled "PLAY".
+     4 | I only understood you as far as wanting to check the desk.
+     4 | I only understood you as far as wanting to swing the wedding ring.
+     4 | I only understood you as far as wanting to throw the wedding ring.
+     3 | Which do you mean, the key to the house or the key to the cellar?
+     3 | You already have that.\n\nYou are getting wet.
+     3 | You can't get much lower than the ground.\n\nIn the distance, you can hear the lonesome keening of a train whistle drifting on the wind.
+     3 | Which do you mean, the bookshelves or The Compleat Manual of Wardes and Seales?
+     3 | You see nothing of interest behind the wine racks.
+     3 | I only understood you as far as wanting to examine the north.
+     3 | Which do you mean, the sea, the rain or the patch of turbulent water?
+     3 | I only understood you as far as wanting to climb the piles of cardboard boxes.
+     3 | What do you want to unlock the drawer with?
+     3 | I only understood you as far as wanting to check the alley.
+     3 | I only understood you as far as wanting to walk the west.
+     3 | I only understood you as far as wanting to knock on the massive bronze door.
+     3 | I only understood you as far as wanting to check the clothes.
+     3 | I only understood you as far as wanting to yell.
+     3 | I only understood you as far as wanting to examine the flask.
+     3 | I only understood you as far as wanting to jump.
+     2 | I only understood you as far as wanting to read the wedding ring.
+     2 | I only understood you as far as wanting to down.
+     2 | What do you want to talk to the proprietor about?
+     2 | Which do you mean, the slip of paper or the newspaper?
+     2 | I only understood you as far as wanting to take the old tin.
+     2 | That's not something you can open.
+     2 | You see nothing of interest behind the desk.
+     2 | You see nothing special above you.
+     2 | I only understood you as far as wanting to examine the old tin.
+     2 | I only understood you as far as wanting to open the transom window with the umbrella.
+     2 | I only understood you as far as wanting to examine the massive bronze door.
+     2 | I only understood you as far as wanting to search the row of dilapidated shacks.
+     2 | I only understood you as far as wanting to examine the locals.
+     2 | I only understood you as far as wanting to drink the cheap whiskey.
+     2 | I only understood you as far as wanting to examine the alley.
+     2 | You already have that.\n\nNot knowing what else to do with it, you wipe the nasty fish oil off on the leg of your pants.
+     2 | I only understood you as far as wanting to search the buildings.
+     2 | There is nothing on the filthy mattress.\n\nOverhead, the swollen clouds flicker ominously with a greenish haze of sheet lightning.
+     2 | I only understood you as far as wanting to search the brick wall.
+     2 | Which do you mean, the wedding ring, the trenchcoat, the clothes or the umbrella?
+     2 | There is nothing on the filthy mattress.\n\nA sudden gust of wind blows a cold spray of rain into your face.
+     2 | You can't open the umbrella while it's in your pocket.\n\nYou are getting wet.
+     2 | You're already standing up.\n\nYou are getting wet.
+     2 | I only understood you as far as wanting to lift the fence.
+     2 | I only understood you as far as wanting to hook the wedding ring.
+     2 | I only understood you as far as wanting to slide the wedding ring.
+     2 | I only understood you as far as wanting to hold the wedding ring.
+     2 | I only understood you as far as wanting to lift the wedding ring.
+     2 | Violence isn't the answer to this one.
+     2 | I only understood you as far as wanting to tie the wedding ring to the umbrella.
+     2 | I only understood you as far as wanting to smell the cold, murky coffee.
+     1 | There is nothing on the table.
+     1 | I only understood you as far as wanting to climb the stone obelisk.
+     1 | You can't see inside, since the old tin is closed.
+     1 | I only understood you as far as wanting to push the floor.
+     1 | Nothing obvious happens.
+     1 | Which do you mean, Edgar Allen Poe's Tales of Mystery and Imagination or The Compleat Manual of Wardes and Seales?
+     1 | You see nothing of interest behind the brick wall.\n\nA sudden gust of wind blows a cold spray of rain into your face.
+     1 | You see nothing of interest behind the brick wall.
+     1 | You already have that.
+     1 | There is nothing of any worth or interest here, just drifts of trash.\n\nOverhead, the swollen clouds flicker ominously with a greenish haze of sheet lightning.
+     1 | You see nothing of interest behind the answering machine.
+     1 | You see nothing of interest behind the telephone.
+     1 | You see nothing of interest behind the papers.
+     1 | I only understood you as far as wanting to climb the garbage can.
+     1 | I only understood you as far as wanting to examine the piles of cardboard boxes.
+     1 | I only understood you as far as wanting to knock on the transom window.
+     1 | I only understood you as far as wanting to lift the umbrella.
+     1 | I only understood you as far as wanting to examine the wall.
+     1 | I only understood you as far as wanting to search the wall.
+     1 | I only understood you as far as wanting to sit on the floor.
+     1 | I only understood you as far as wanting to open the transom window.
+     1 | I only understood you as far as wanting to sit at the table.
+     1 | I only understood you as far as wanting to stand up.
+     1 | I only understood you as far as wanting to kick the floor.
+     1 | I only understood you as far as wanting to examine the gate.
+     1 | I only understood you as far as wanting to sip the cheap whiskey.
+     1 | I only understood you as far as wanting to examine the table.
+     1 | I only understood you as far as wanting to open the massive bronze door.
+     1 | I only understood you as far as wanting to examine the lighthouse.
+     1 | I only understood you as far as wanting to search the trenchcoat.
+     1 | I only understood you as far as wanting to drink the flask.
+     1 | You can't get in a good blow with the old tin; you need something heavier.\n\nIn the distance, you can hear the lonesome keening of a train whistle drifting on the wind.\n\nThe clouds overhead mutter restlessly to themselves.
+     1 | You can't get in a good blow with the lantern; you need something heavier.
+     1 | You can't get in a good blow with the old tin; you need something heavier.
+     1 | I only understood you as far as wanting to examine the parapets.
+     1 | I only understood you as far as wanting to go up the underside of the bridge.
+     1 | I only understood you as far as wanting to examine the buildings.
+     1 | I only understood you as far as wanting to go down the stairs.
+     1 | You can't see inside, since the drawer is closed.\n\nYou can hear a fly buzzing around, somewhere in the room.
+     1 | You can't get much lower than the ground.\n\nIn the distance, you can hear the lonesome keening of a train whistle drifting on the wind.\n\nOverhead, the swollen clouds flicker ominously with a greenish haze of sheet lightning.
+     1 | There's nothing here you can look things up in.\n\nYou are getting wet.
+     1 | That's already closed.\n\nYou are now, sadly, entirely soaked.
+     1 | I only understood you as far as wanting to check the street.
+     1 | I only understood you as far as wanting to search the street.
+     1 | I only understood you as far as wanting to pull the fence.
+     1 | I only understood you as far as wanting to pull the floor.
+     1 | There's nothing here you can look things up in.\n\nThe clouds overhead mutter restlessly to themselves.
+     1 | I only understood you as far as wanting to inside.
+     1 | I only understood you as far as wanting to search the real estate office door.
+     1 | You can't see "him" (Michael) at the moment.
+     1 | What do you want to look?
+     1 | There is nothing on the filthy mattress.\n\nThe rain slackens off momentarily to a weak drizzle, then returns afresh in a brief, freezing downpour.
+     1 | I only understood you as far as wanting to examine the desk.
+     1 | I only understood you as far as wanting to take the cold, murky coffee.
+     1 | You can't see where the fly is. You're not even sure where the buzzing is coming from.\n\nYou can hear a fly buzzing around, somewhere in the room.
+     1 | That's not something you can switch.
+     1 | You don't have a match.\n\nOverhead, the swollen clouds flicker ominously with a greenish haze of sheet lightning.
+     1 | What do you want to lock the real estate office door with?
+     1 | I only understood you as far as wanting to search the papers.
+     1 | I only understood you as far as wanting to examine the iron ring.
+     1 | I only understood you as far as wanting to examine the asylum.
+     1 | I only understood you as far as wanting to open the east.
+     1 | I only understood you as far as wanting to turn the styrofoam cup.
+     1 | I only understood you as far as wanting to empty the flask.
+     1 | I only understood you as far as wanting to pour the cheap whiskey on the massive bronze door.
+     1 | I only understood you as far as wanting to examine the papers.
+     1 | I only understood you as far as wanting to lift the cold, murky coffee.

@@ -1,0 +1,58 @@
+# Invalid Action Messages: TWCookingLevel3
+# Total unique error messages: 51
+# Total error occurrences: 7374
+#
+# Format: count | message
+#===============================================================================
+
+  3327 | That's not a verb I recognise.
+  1077 | I beg your pardon?
+   816 | You can't see any such thing.
+   500 | I only understood you as far as wanting to check the cookbook.
+   453 | I only understood you as far as wanting to take inventory.
+   208 | It isn't something you can switch.
+   165 | You seem to want to talk to someone, but I can't see whom.
+   117 | It isn't something you can open.
+   115 | You need to take the knife first.
+    96 | What do you want to slice the block of cheese with?
+    66 | You need to take the block of cheese first.
+    53 | I didn't understand that sentence.
+    46 | The fridge looks grand. You can't see inside it because the lid's in your way.
+    45 | I only understood you as far as wanting to turn the oven.
+    38 | What do you want to cook the block of cheese with?
+    24 | What do you want to eat?
+    18 | (with the knife)\nYou need to take the purple potato first.
+    18 | I only understood you as far as wanting to take the purple potato.
+    16 | You need to specify how you want to cut the purple potato. Either slice, dice, or chop it.
+    16 | But you aren't in anything at the moment.
+    15 | You still miss something.
+    15 | You need to take the purple potato first.
+    14 | I only understood you as far as wanting to take outside.
+    13 | What do you want to open?
+    12 | You can't see inside, since the fridge is closed.
+    10 | What do you want to slice the purple potato with?
+     9 | Time passes.
+     9 | I only understood you as far as wanting to check the oven.
+     8 | What do you want to read?
+     6 | I only understood you as far as wanting to eat the purple potato.
+     5 | (with the purple potato)\nCutting something requires a knife.
+     5 | I only understood you as far as wanting to wait.
+     5 | I only understood you as far as wanting to turn the stove.
+     4 | You can't go that way.
+     4 | That can't contain things.
+     3 | You already have that.
+     3 | That's already open.
+     3 | That was a rhetorical question.
+     3 | I only understood you as far as wanting to exit.
+     2 | (with the knife)\nYou need to take the block of cheese first.
+     2 | What do you want to cook the purple potato with?
+     1 | I only understood you as far as wanting to slice the block of cheese with the knife.
+     1 | (with the block of cheese)\nCutting something requires a knife.
+     1 | I only understood you as far as wanting to check the purple potato.
+     1 | What do you want to dice the purple potato with?
+     1 | What do you want to take?
+     1 | Which do you mean, the north, the northeast, the northwest, the south, the southeast, the southwest, the east, the west, the up, the down, the inside or the outside?
+     1 | I only understood you as far as wanting to out.
+     1 | (the block of cheese)\nIt isn't something you can switch.
+     1 | You can't use multiple objects with that verb.
+     1 | That was a rhetorical question.\n\n\nThat's not a verb I recognise.

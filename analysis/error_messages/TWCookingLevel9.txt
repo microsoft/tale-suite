@@ -1,0 +1,95 @@
+# Invalid Action Messages: TWCookingLevel9
+# Total unique error messages: 88
+# Total error occurrences: 12408
+#
+# Format: count | message
+#===============================================================================
+
+  5300 | That's not a verb I recognise.
+  2965 | You can't see any such thing.
+  1133 | I beg your pardon?
+   694 | You seem to want to talk to someone, but I can't see whom.
+   416 | Which do you mean, the red onion or the red apple?
+   276 | You still miss something.
+   194 | I only understood you as far as wanting to take inventory.
+   150 | It isn't something you can switch.
+   139 | You need to take the carrot first.
+    99 | Time passes.
+    85 | I only understood you as far as wanting to (go) in.
+    73 | You need to take the white onion first.
+    63 | What do you want to open?
+    62 | You need to take the knife first.
+    59 | You need to take the red hot pepper first.
+    47 | (with the red hot pepper)\nCutting something requires a knife.
+    47 | (with the carrot)\nYou need to take the carrot first.
+    46 | I didn't understand that sentence.
+    40 | You can't begin with a comma.
+    36 | But you aren't in anything at the moment.
+    33 | You can't go that way.
+    31 | What do you want to cook the carrot with?
+    30 | What do you want to cook the red hot pepper with?
+    27 | It isn't something you can open.
+    27 | What do you want to slice the carrot with?
+    20 | That's already open.
+    19 | I only understood you as far as wanting to open frosted-glass door.
+    18 | You need to take the red onion first.
+    18 | I only understood you as far as wanting to get the red hot pepper.
+    15 | You can't use multiple objects with that verb.
+    13 | You can't see inside, since the fridge is closed.
+    13 | You need to specify how you want to cut the red hot pepper. Either slice, dice, or chop it.
+    12 | I only understood you as far as wanting to exit.
+    11 | You already have that.
+    11 | (with the red hot pepper)\nYou need to take the red hot pepper first.
+    11 | Which do you mean, the white onion or the red onion?
+    10 | This dangerous act would achieve little.
+     9 | What do you want to chop the red onion with?
+     9 | What do you want to slice the red hot pepper with?
+     9 | (with the white onion)\nCutting something requires a knife.
+     8 | (with the oven)\nThe oven is fixed in place.
+     8 | It is fixed in place.
+     8 | I only understood you as far as wanting to check frosted-glass door.
+     7 | That's fixed in place.
+     6 | I only understood you as far as wanting to check the counter.
+     6 | (with the red onion)\nCutting something requires a knife.
+     6 | I only understood you as far as wanting to wait.
+     5 | What do you want to cook?
+     5 | You need to take the yellow bell pepper first.
+     5 | You couldn't pay me to eat that sliced carrot.
+     5 | Which do you mean, the red hot pepper or the yellow bell pepper?
+     5 | (with the knife)\nYou need to take the red hot pepper first.
+     5 | I only understood you as far as wanting to get the red onion.
+     5 | What do you want to swallow?
+     4 | I only understood you as far as wanting to take the yellow bell pepper.
+     3 | You couldn't pay me to eat that sliced red hot pepper.
+     3 | (with the carrot)\nCutting something requires a knife.
+     3 | Which do you mean, the yellow bell pepper or the red hot pepper?
+     2 | That's not something you can enter.
+     2 | You can't talk to the carrot.
+     2 | No, you can't set that to anything.
+     2 | I only understood you as far as wanting to read the cookbook.
+     2 | I only understood you as far as wanting to check the oven.
+     2 | What do you want to cook the white onion with?
+     2 | (with the red onion)\nYou need to take the red onion first.
+     2 | The stove is fixed in place.
+     2 | I only understood you as far as wanting to open inside.
+     2 | That's already closed.
+     2 | The carrot is already sliced.
+     1 | What do you want to cook the red onion with?
+     1 | (with the stove)\nThe stove is fixed in place.
+     1 | I only understood you as far as wanting to look the oven.
+     1 | I only understood you as far as wanting to light the stove.
+     1 | Which do you mean, the yellow bell pepper, the red onion, the red hot pepper or the carrot?
+     1 | The red onion is already sliced.
+     1 | The yellow bell pepper is already sliced.
+     1 | I only understood you as far as wanting to put the yellow bell pepper on the counter.
+     1 | What do you want to eat?
+     1 | You need to take the red apple first.
+     1 | I only understood you as far as wanting to put the carrot on the stove.
+     1 | Cooking requires a source of heat.
+     1 | What do you want to set?
+     1 | You can't talk to the shelf.
+     1 | What do you want to read?
+     1 | I only understood you as far as wanting to (go) it.
+     1 | What do you want to cook the yellow bell pepper with?
+     1 | What do you want to drop those things in?
+     1 | You haven't got that.

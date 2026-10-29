@@ -1,0 +1,18 @@
+# Invalid Action Messages: JerichoEnvLostpig
+# Total unique error messages: 11
+# Total error occurrences: 4634
+#
+# Format: count | message
+#===============================================================================
+
+  3409 | Grunk not know what that mean.
+   595 | Grunk not know where that at.
+   291 | Grunk not know who Grunk talking to.
+   133 | Grunk not know what Grunk should say about that.
+   130 | Huh?
+    60 | Grunk not know how to read.
+     7 | Grunk not know why, but OK.
+     5 | Grunk not know where that at.\n\nSnawwwwk!
+     2 | Grunk not know how to read.\n\nPig walk into room from south.
+     1 | Grunk not know how put thing inside same thing as thing that Grunk put.
+     1 | Grunk not know how.

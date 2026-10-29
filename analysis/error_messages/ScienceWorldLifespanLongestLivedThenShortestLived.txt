@@ -1,0 +1,13 @@
+# Invalid Action Messages: ScienceWorldLifespanLongestLivedThenShortestLived
+# Total unique error messages: 6
+# Total error occurrences: 8849
+#
+# Format: count | message
+#===============================================================================
+
+  8710 | No known action matches that input.
+    78 | The door is not open.
+    26 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    18 | The door is already open.
+    14 | axe is already connected, and must be disconnected before it can be connected to something else
+     3 | You can't pick up a gas directly.

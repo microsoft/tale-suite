@@ -1,0 +1,9 @@
+# Invalid Action Messages: TWXSimonSaysWithMemory10
+# Total unique error messages: 2
+# Total error occurrences: 6311
+#
+# Format: count | message
+#===============================================================================
+
+  5164 | Unknown action: I'm not sure what you mean.
+  1147 | Incorrect!

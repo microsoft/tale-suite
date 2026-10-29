@@ -1,0 +1,126 @@
+# Invalid Action Messages: JerichoEnvTemple
+# Total unique error messages: 119
+# Total error occurrences: 8797
+#
+# Format: count | message
+#===============================================================================
+
+  4422 | That's not a verb I recognise.
+  1571 | You can't see any such thing.
+   489 | I only understood you as far as wanting to jump.
+   401 | I beg your pardon?
+   375 | You seem to want to talk to someone, but I can't see whom.
+   285 | I only understood you as far as wanting to look.
+   236 | I didn't understand that sentence.
+    90 | You find nothing of interest.
+    77 | I only understood you as far as wanting to inventory.
+    72 | There is nothing on the desk.
+    55 | There is nothing on the bookshelves.
+    52 | You can't get any good foothold.
+    44 | I only understood you as far as wanting to go the floor.
+    35 | Violence isn't the answer to this one.
+    34 | That's not something you can enter.
+    31 | What do you want to ask Charles Bristow for?
+    22 | That's not something you can open.
+    22 | I only understood you as far as wanting to examine the oak door.
+    21 | That's not something you need to refer to in the course of this game.
+    20 | There is nothing on the black stone table.
+    19 | What do you want to move?
+    18 | What do you want to read?
+    17 | I only understood you as far as wanting to go the ceiling.
+    17 | I only understood you as far as wanting to about.
+    15 | You already have that.
+    15 | That's not something you can open.\n\nCharles is lost in thoughts.
+    14 | What do you want to ask the confused young man for?
+    14 | There is no response.
+    13 | You can't use multiple objects with that verb.
+    12 | I only understood you as far as wanting to examine the black stone table.
+    12 | Which do you mean, a mysterious vial or the vial labelled Mukhtar?
+    11 | There is nothing on the skeleton.
+    11 | There's nothing suitable to drink here.
+     9 | You can only do that to something animate.
+     9 | I only understood you as far as wanting to help.
+     9 | I only understood you as far as wanting to examine the desk.
+     9 | There is nothing on the desk.\n\nCharles is lost in thoughts.
+     7 | You see nothing special about the floor.
+     7 | I only understood you as far as wanting to climb the floor.
+     7 | I only understood you as far as wanting to down.
+     7 | What do you want to examine?
+     6 | I only understood you as far as wanting to open the desk.
+     6 | I only understood you as far as wanting to look at the object.
+     6 | I only understood you as far as wanting to get the object.
+     6 | I don't think much is to be achieved by that.
+     6 | There is nothing on the bookshelves.\n\nCharles is lost in thoughts.
+     5 | I only understood you as far as wanting to read the writing.
+     5 | I only understood you as far as wanting to examine the bookshelves.
+     5 | You see nothing special about the floor.\n\nCharles is lost in thoughts.
+     5 | Which do you mean, the torn clothes or Charles' clothes?
+     5 | What do you want to take?
+     4 | I only understood you as far as wanting to examine the object.
+     4 | I only understood you as far as wanting to stand on Charles' clothes.
+     4 | You can't get any good foothold.\n\nCharles is lost in thoughts.
+     4 | I only understood you as far as wanting to stand on the staircase.
+     4 | There is nothing on the shelves.
+     4 | I only understood you as far as wanting to examine the staircase.
+     4 | I only understood you as far as wanting to search the oak door.
+     4 | I only understood you as far as wanting to check the iron railing.
+     4 | I only understood you as far as wanting to break the mysterious vial.
+     3 | That's not something you can open.\n\nCharles looks nervously around.
+     3 | There is nothing on the desk.\n\nCharles looks nervously around.
+     3 | I only understood you as far as wanting to take the object.
+     3 | I only understood you as far as wanting to read the yellow paper.
+     3 | It seems to be locked.
+     3 | That's not something you can enter.\n\nCharles is lost in thoughts.
+     3 | I only understood you as far as wanting to rub the yellow paper.
+     3 | There is nothing on the black stone table.\n\nCharles looks nervously around.
+     3 | Nothing obvious happens.
+     3 | There is nothing on the bookshelves.\n\nCharles sighs deeply and says  'Will I ever see Miriam again?' to himself.
+     3 | What do you want to describe?
+     3 | That's not something you can open.\n\nThe man gets up from the table and looks around, perplexed. 'I think I've been here before', he mutters.
+     2 | What do you want to search?
+     2 | I only understood you as far as wanting to examine the shelves.
+     2 | I only understood you as far as wanting to search the desk.
+     2 | I only understood you as far as wanting to examine the yellow paper.
+     2 | There is nothing on the black stone table.\n\nCharles is lost in thoughts.
+     2 | I only understood you as far as wanting to knock the object.
+     2 | Which do you mean, the bound volumes or the Caelestae Horriblis?
+     2 | I only understood you as far as wanting to examine the dust.
+     2 | Which do you mean, the vial labelled Mukhtar or a mysterious vial?
+     2 | I only understood you as far as wanting to fill the kettle.
+     2 | What do you want to unlock the oak door with?
+     2 | There is nothing on the black stone table.\n\nCharles sighs deeply and says  'Will I ever see Miriam again?' to himself.
+     2 | Time passes.
+     2 | There is nothing on the desk.\n\nThe man falls silent for a while, and then he says: 'Some parts of my memory have come back now. I remember that my name is Charles Bristow and I studied archeology and history in New England. Something terrible happened but of that I can recall only small fragments.' He looks around the chamber and says with despair in his voice, 'My God, where am I? Will my nightmares never end?'
+     2 | I only understood you as far as wanting to examine the iron railing.
+     2 | I only understood you as far as wanting to in.
+     2 | I only understood you as far as wanting to dust the yellow paper.
+     1 | I only understood you as far as wanting to examine the skeleton.
+     1 | You see nothing special about the floor.\n\nCharles tries to open the door and says 'It's locked. Do you know where the key is?'
+     1 | Which do you mean, the huge statue or the hideous statue?
+     1 | There is nothing on the chair.
+     1 | I only understood you as far as wanting to examine the wooden chest.
+     1 | I only understood you as far as wanting to empty the glass bottle.
+     1 | I only understood you as far as wanting to attack the wooden chest.
+     1 | You see nothing special about the north wall.
+     1 | I only understood you as far as wanting to enter the north wall.
+     1 | I only understood you as far as wanting to break the wooden chest.
+     1 | There is nothing on the bookshelves.\n\nCharles looks nervously around.
+     1 | You can't get any good foothold.\n\nCharles sighs deeply and says  'Will I ever see Miriam again?' to himself.
+     1 | That's not something you can enter.\n\nCharles says 'Oh God, I'm so tired of this. I only want to return home.'
+     1 | I only understood you as far as wanting to look in the oak door.
+     1 | You see nothing special about the ceiling.
+     1 | There is nothing on the bookshelves.\n\nThe man falls silent for a while, and then he says: 'Some parts of my memory have come back now. I remember that my name is Charles Bristow and I studied archeology and history in New England. Something terrible happened but of that I can recall only small fragments.' He looks around the chamber and says with despair in his voice, 'My God, where am I? Will my nightmares never end?'
+     1 | That's not something you can enter.\n\nCharles sighs deeply and says  'Will I ever see Miriam again?' to himself.
+     1 | What do you want to push?
+     1 | What do you want to touch?
+     1 | What do you want to pick up?
+     1 | What do you want to feel?
+     1 | There is nothing on the desk.\n\nCharles sighs deeply and says  'Will I ever see Miriam again?' to himself.
+     1 | You can't get any good foothold.\n\nFrom the other room you can hear the voice of the man on the table calling you back. You return to the study and he says: 'Some parts of my memory have come back now. I remember that my name is Charles Bristow and I studied archeology and history in New England. Something terrible happened but of that I can recall only small fragments.' He looks around the chamber and says with despair in his voice, 'My God, where am I? Will my nightmares never end?'
+     1 | I only understood you as far as wanting to down the mysterious vial.
+     1 | There is nothing on the bookshelves.\n\nThe man asks who you are. You tell him about your dream, and how you ended up here.
+     1 | That's not something you can open.\n\nCharles sighs deeply and says  'Will I ever see Miriam again?' to himself.
+     1 | That's not something you can open.\n\nThe man asks who you are. You tell him about your dream, and how you ended up here.
+     1 | I only understood you as far as wanting to smash the mysterious vial.
+     1 | You already have that.\n\nCharles looks nervously around.
+     1 | I only understood you as far as wanting to rub the mysterious vial.

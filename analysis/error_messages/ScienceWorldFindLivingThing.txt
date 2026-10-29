@@ -1,0 +1,20 @@
+# Invalid Action Messages: ScienceWorldFindLivingThing
+# Total unique error messages: 13
+# Total error occurrences: 12386
+#
+# Format: count | message
+#===============================================================================
+
+ 11901 | No known action matches that input.
+   236 | The door is not open.
+   120 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    69 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+    18 | The door is already open.
+    12 | The large cupboard is already open.
+    12 | The drawer isn't open, so you can't see inside.
+     7 | The large cupboard isn't open, so you can't see inside.
+     4 | The bee hive is already open.
+     3 | You can't pick up a gas directly.
+     2 | The pollen isn't open, so you can't see inside.
+     1 | The bee hive isn't open, so you can't see inside.
+     1 | You can't dunk something into itself.

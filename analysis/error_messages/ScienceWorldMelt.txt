@@ -1,0 +1,40 @@
+# Invalid Action Messages: ScienceWorldMelt
+# Total unique error messages: 33
+# Total error occurrences: 12360
+#
+# Format: count | message
+#===============================================================================
+
+ 11264 | No known action matches that input.
+   523 | The cupboard is already open.
+   216 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+   120 | The door is not open.
+    43 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+    36 | The door is already open.
+    35 | The drawer isn't open, so you can't see inside.
+    16 | The oven isn't open, so you can't see inside.
+    14 | The sink is already activated.
+    14 | The oven is already activated.
+    13 | The oven is already open.
+    13 | The fridge is already open.
+     7 | The cupboard isn't open, so you can't see inside.
+     6 | The freezer isn't open, so you can't see inside.
+     5 | You can't move something into itself.
+     4 | The glass jar isn't open, so you can't see inside.
+     4 | anode on switch is already connected, and must be disconnected before it can be connected to something else
+     4 | anode on battery is already connected, and must be disconnected before it can be connected to something else
+     3 | The drain is already open.
+     3 | The bathtub is already activated.
+     3 | You can't dunk something into itself.
+     2 | The switch is already activated.
+     2 | The fridge isn't open, so you can't see inside.
+     1 | The blast furnace isn't open, so you can't see inside.
+     1 | The bee hive isn't open, so you can't see inside.
+     1 | cathode on switch is already connected, and must be disconnected before it can be connected to something else
+     1 | The glass jar is already open.
+     1 | You can't pour a gas directly.
+     1 | You can't pick up a gas directly.
+     1 | The oven is already closed.
+     1 | The drawer is already open.
+     1 | The blast furnace is already open.
+     1 | The blast furnace is already activated.

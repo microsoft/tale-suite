@@ -1,0 +1,124 @@
+# Invalid Action Messages: JerichoEnvEnter
+# Total unique error messages: 117
+# Total error occurrences: 10089
+#
+# Format: count | message
+#===============================================================================
+
+  4071 | That's not a verb I recognise.
+  2128 | You can't see any such thing.
+   780 | You seem to want to talk to someone, but I can't see whom.
+   544 | I didn't understand that sentence.
+   390 | I only understood you as far as wanting to talk to Queenie.
+   314 | Time passes.
+   265 | That's not something you can enter.
+   193 | I only understood you as far as wanting to look.
+   154 | You already have that.
+   104 | You can't go that way.
+    96 | I only understood you as far as wanting to open the Enterprise Closet.
+    93 | What do you want to get?
+    91 | That's not something you can open.
+    79 | I beg your pardon?
+    63 | I only understood you as far as wanting to wait.
+    56 | You find nothing of interest.
+    50 | I only understood you as far as wanting to inventory.
+    32 | I only understood you as far as wanting to close the Enterprise Closet.
+    29 | I only understood you as far as wanting to go the east wall.
+    28 | You can't see a lot of detail from outside the classroom, but it appears that Ms. Garrulous' famous "Girl Talk" mini-course is going on in room 4.
+    26 | I only understood you as far as wanting to talk to Judy.
+    22 | I only understood you as far as wanting to enter Mr. Pisces' Room.
+    18 | I only understood you as far as wanting to open the door to Room 8.
+    18 | What do you want to unlock the door to the closet with?
+    18 | I only understood you as far as wanting to go the west wall.
+    18 | You can only do that to something animate.
+    17 | That doesn't seem to be something you can unlock.
+    17 | I only understood you as far as wanting to search the Enterprise Closet.
+    16 | I only understood you as far as wanting to open the west wall.
+    16 | I only understood you as far as wanting to enter Ms. Empirious' Room.
+    15 | What do you want to unlock the Enterprise Closet with?
+    15 | What do you want to open?
+    14 | I only understood you as far as wanting to go the south wall.
+    14 | What do you want to ask Judy for?
+    14 | I only understood you as far as wanting to think.
+    13 | What do you want to read in?
+    11 | I only understood you as far as wanting to open the door to the closet.
+    11 | I only understood you as far as wanting to lock the Enterprise Closet.
+    11 | That's not something you can enter.\n\nMr. Alltext starts to leave the cafeteria to the west, but then he seems to remember something and turns to you.\n\n"Oh, by the way, Doug.  Since you'll be in the halls a lot this period, Principal Drenaline would like you to serve as hall monitor.  There's not much to do.  Just make sure kids have hall passes and adults are wearing visitor passes, unless they work here, of course.  If anyone from outside the school doesn't have a visitor's badge, ask the person to go to the office to get one.  If a kid doesn't have a pass, send the person back to class to get one."\n\n"Well," says Mr. Alltext, "I'll head for my classroom now.  You know where to find me if you need me."\n\n"Remember, though, to be quiet in the halls and to avoid entering any classroom more than once.  Of course, that means you'll have to come to my class last, so that you can deliver to a student there and then tell me how things have gone."\n\n"Also, don't forget to leave the closet door locked."\n\n"And, Doug, remember to wear that hall monitor's badge."\n\nMr. Alltext leaves the cafeteria to the west.\n\n"Well, you heard what the man said," adds Judy.  "I'm going to the bathroom.  Wanna come, Queenie?"\n\n"No, thanks," says the new girl.\n\n"Suit yourself," Judy replies, looking a little surprised. "Don't leave without me, OK?"\n\nJudy leaves to the west.\n\nQueenie notices the book that's protruding from your pocket and asks, "What are you reading?"\n\nWhat would you like to say?\n\n[1] Tell Queenie about the book you're carrying.\n[2] "Do you like fantasy novels?"\n[3] "I notice that you're limping a little bit.  Did you hurt your leg?"\n[4] "I notice that you have a little scar. If you don't mind my asking, how did you come by that?"\n\nSelect an option or 0 to say nothin
+    10 | I only understood you as far as wanting to knock on the door to Room 8.
+     9 | You can't use multiple objects with that verb.
+     9 | I only understood you as far as wanting to go the north wall.
+     9 | I only understood you as far as wanting to examine the cake.
+     8 | That doesn't seem to be something you can lock.
+     8 | I only understood you as far as wanting to enter Mr. McDell's Room.
+     8 | I only understood you as far as wanting to enter Ms. Garrulous' Room.
+     7 | I only understood you as far as wanting to look at the cake.
+     7 | You can't take that.
+     7 | What do you want to get in?
+     6 | I only understood you as far as wanting to open the north wall.
+     6 | I only understood you as far as wanting to open the door to Room 4.
+     6 | There is nothing on the shelf.
+     5 | I only understood you as far as wanting to examine the Enterprise Closet.
+     5 | What do you want to knock on?
+     4 | You can't see a lot of detail from outside the classroom, but it appears that Ms. Garrulous' famous "Girl Talk" mini-course is going on in room 4.\nRecovering some of her composure, Stephanie escapes quietly to the north. You imagine that you're feeling almost as relieved as she is at her exit. \n\nYou check your supply of candy grams, noting that all the pops have survived.
+     4 | I only understood you as far as wanting to look at the costumes.
+     4 | I only understood you as far as wanting to examine the costumes.
+     4 | I only understood you as far as wanting to exit.
+     4 | I only understood you as far as wanting to look at the door to the closet.
+     4 | I only understood you as far as wanting to turn the key.
+     3 | I only understood you as far as wanting to lock the door to the cafe.
+     3 | I only understood you as far as wanting to check Stephanie.
+     3 | I only understood you as far as wanting to knock on the west wall.
+     3 | I only understood you as far as wanting to enter Room 6.
+     3 | I only understood you as far as wanting to look at the Enterprise Closet.
+     3 | I only understood you as far as wanting to knock on Mr. Pisces' Room.
+     3 | I only understood you as far as wanting to examine the north wall.
+     3 | Nothing obvious happens.
+     2 | I only understood you as far as wanting to close the door to the cafe.
+     2 | I only understood you as far as wanting to check the envelope.
+     2 | That's already open.
+     2 | You already have that.\n\nJudy returns from the bathroom, entering the cafe from the west.\n\n"Hi, Doug. What's up?" she says.\n\nWhat would you like to say?\n\n[1] Invite Judy to the Valentine's Day Dance.\n[2] "What do you think of Queenie so far?"\n[3] "What do you know about Ms. Empirious? I think we have to go to her class for a delivery."\n[4] "You know, Judy, I'll bet I've seen the mural in the cafeteria a hundred times, but I don't know what it means. What do you make of it?"\n\nSelect an option or 0 to say nothin
+     2 | I only understood you as far as wanting to examine the verse riddle.
+     2 | I only understood you as far as wanting to take the envelope.
+     2 | I only understood you as far as wanting to open Ms. Garrulous' Room.
+     2 | I only understood you as far as wanting to open Ms. Empirious' Room.
+     2 | I only understood you as far as wanting to knock on Ms. Empirious' Room.
+     2 | I only understood you as far as wanting to go the northwest wall.
+     2 | I only understood you as far as wanting to talk to Jim Hastely.
+     2 | You already have that.\n\nJudy returns from the bathroom, entering the cafe from the west.\n\n"Hi, Doug. What's up?" she says.\n\nWhat would you like to say?\n\n[1] "What do you think of Queenie so far?"\n[2] "What do you know about Ms. Empirious? I think we have to go to her class for a delivery."\n[3] "You know, Judy, I'll bet I've seen the mural in the cafeteria a hundred times, but I don't know what it means. What do you make of it?"\n\nSelect an option or 0 to say nothin
+     2 | I only understood you as far as wanting to check the Enterprise Closet.
+     2 | What do you want to go in?
+     2 | I only understood you as far as wanting to look in the costumes.
+     2 | I only understood you as far as wanting to insert the key into the Enterprise Closet.
+     2 | I only understood you as far as wanting to twist the key.
+     2 | I only understood you as far as wanting to no.
+     1 | I only understood you as far as wanting to watch the jar.
+     1 | I only understood you as far as wanting to look in the envelope.
+     1 | I only understood you as far as wanting to examine Queenie.
+     1 | You already have that.\n\nMr. Alltext starts to leave the cafeteria to the west, but then he seems to remember something and turns to you.\n\n"Oh, by the way, Doug.  Since you'll be in the halls a lot this period, Principal Drenaline would like you to serve as hall monitor.  There's not much to do.  Just make sure kids have hall passes and adults are wearing visitor passes, unless they work here, of course.  If anyone from outside the school doesn't have a visitor's badge, ask the person to go to the office to get one.  If a kid doesn't have a pass, send the person back to class to get one."\n\n"Well," says Mr. Alltext, "I'll head for my classroom now.  You know where to find me if you need me."\n\n"Remember, though, to be quiet in the halls and to avoid entering any classroom more than once.  Of course, that means you'll have to come to my class last, so that you can deliver to a student there and then tell me how things have gone."\n\n"Also, don't forget to leave the closet door locked."\n\n"And, Doug, remember to wear that hall monitor's badge."\n\nMr. Alltext leaves the cafeteria to the west.\n\n"Well, you heard what the man said," adds Judy.  "I'm going to the bathroom.  Wanna come, Queenie?"\n\n"No, thanks," says the new girl.\n\n"Suit yourself," Judy replies, looking a little surprised. "Don't leave without me, OK?"\n\nJudy leaves to the west.\n\nQueenie notices the book that's protruding from your pocket and asks, "What are you reading?"\n\nWhat would you like to say?\n\n[1] Tell Queenie about the book you're carrying.\n[2] "Do you like fantasy novels?"\n[3] "I notice that you're limping a little bit.  Did you hurt your leg?"\n[4] "I notice that you have a little scar. If you don't mind my asking, how did you come by that?"\n\nSelect an option or 0 to say nothin
+     1 | I only understood you as far as wanting to look at Mr. Pisces' Room.
+     1 | I only understood you as far as wanting to look at the verse riddle.
+     1 | I only understood you as far as wanting to look at the poster.
+     1 | I only understood you as far as wanting to examine the locker.
+     1 | I only understood you as far as wanting to look at the pocket.
+     1 | I only understood you as far as wanting to examine the book.
+     1 | I only understood you as far as wanting to examine the list.
+     1 | I only understood you as far as wanting to look at the door to Room 8.
+     1 | I only understood you as far as wanting to examine the door to Room 8.
+     1 | I only understood you as far as wanting to examine Mr. Pisces' Room.
+     1 | I only understood you as far as wanting to open Mr. Pisces' Room.
+     1 | I only understood you as far as wanting to enter the east wall.
+     1 | I only understood you as far as wanting to knock on Ms. Garrulous' Room.
+     1 | I only understood you as far as wanting to look in Mr. Pisces' Room.
+     1 | You see nothing special about the north wall.
+     1 | You can't take the cake.  It belongs to Ms. Garrulous' class.
+     1 | You can't take that.\nRecovering some of her composure, Stephanie escapes quietly to the north. You imagine that you're feeling almost as relieved as she is at her exit. \n\nYou check your supply of candy grams, noting that all the pops have survived.
+     1 | What do you want to ask Ms. Empirious for?
+     1 | What do you want to ask Mr. Alltext for?
+     1 | What do you want to look inside?
+     1 | I only understood you as far as wanting to show yourself the list.
+     1 | What do you want to ask Queenie for?
+     1 | What do you want to go inside?
+     1 | I only understood you as far as wanting to push the Enterprise Closet the door to the closet.
+     1 | I only understood you as far as wanting to shut the Enterprise Closet.
+     1 | That's not something you can enter.\n\nJudy returns from the bathroom, entering the cafe from the west.\n\n"Hi, Doug. What's up?" she says.\n\nWhat would you like to say?\n\n[1] Invite Judy to the Valentine's Day Dance.\n[2] "What do you think of Queenie so far?"\n[3] "What do you know about Ms. Empirious? I think we have to go to her class for a delivery."\n[4] "You know, Judy, I'll bet I've seen the mural in the cafeteria a hundred times, but I don't know what it means. What do you make of it?"\n\nSelect an option or 0 to say nothin
+     1 | That's not something you can open.\nAbruptly, Ms. Empirious bursts into laughter, as she retrieves the perfectly inert jar from the aquarium and, not for the first time, the students become ready to kill her.\n\n"Now, Class," says the teacher, "I told you this was perfectly safe, didn't I? If you look closely, as I always urge you to do, you can see that the jar Doug pulled from the water is similar to, but certainly not the same as, the one I used earlier.  And all's well that ends well."\n\n"Now, Enterprisers, you may endeavor to deliver a candy gram or two."

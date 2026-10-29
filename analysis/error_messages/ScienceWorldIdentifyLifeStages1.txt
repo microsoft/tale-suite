@@ -1,0 +1,21 @@
+# Invalid Action Messages: ScienceWorldIdentifyLifeStages1
+# Total unique error messages: 14
+# Total error occurrences: 12522
+#
+# Format: count | message
+#===============================================================================
+
+ 11560 | No known action matches that input.
+   453 | The door is not open.
+   319 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    76 | You can't pick up a gas directly.
+    47 | The door is already open.
+    30 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+    11 | The closet is already open.
+     8 | The blast furnace is already closed.
+     7 | The drawer isn't open, so you can't see inside.
+     4 | The oven is already activated.
+     2 | The sink is already activated.
+     2 | The drawer is already open.
+     2 | The blast furnace isn't open, so you can't see inside.
+     1 | The fridge isn't open, so you can't see inside.

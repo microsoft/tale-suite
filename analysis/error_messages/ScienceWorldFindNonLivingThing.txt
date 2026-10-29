@@ -1,0 +1,17 @@
+# Invalid Action Messages: ScienceWorldFindNonLivingThing
+# Total unique error messages: 10
+# Total error occurrences: 9831
+#
+# Format: count | message
+#===============================================================================
+
+  9158 | No known action matches that input.
+   245 | The door is not open.
+   231 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+   150 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+    15 | The door is already open.
+     8 | You can't pick up a gas directly.
+     7 | The large cupboard is already open.
+     7 | The drawer is already open.
+     5 | The drawer isn't open, so you can't see inside.
+     5 | You can't move something into itself.

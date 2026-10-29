@@ -1,0 +1,149 @@
+# Invalid Action Messages: JerichoEnvSeastalker
+# Total unique error messages: 142
+# Total error occurrences: 3581
+#
+# Format: count | message
+#===============================================================================
+
+  1422 | (What do you want to tell?)
+   290 | You're not holding the microphone!\n\nWhat next?
+   162 | I beg your pardon?
+   135 | It's already on!
+   124 | You find nothing unusual.
+   123 | You can't take the videophone.\nThe alarm bell continues to ring.
+   120 | You can't take Tip.\nThe alarm bell continues to ring.
+   103 | You can't see the Electrical Panel here.
+    83 | It's already open!
+    83 | You can't take the diagram.
+    63 | There's nothing special about the bunch of chemicals.
+    47 | You can't go in that direction.
+    46 | You can't get to the Aquadome that way!
+    43 | You can't take the bunch of chemicals.
+    42 | There's nothing on Kemp's desk.
+    40 | There's nothing there but dust.
+    40 | There's nothing special about the intercom.
+    37 | There's nothing special about the control panel.
+    34 | You can't take the videophone.\nThe alarm bell continues to ring.\n\nWhat next?
+    28 | There's nothing special about the bunch of electronic supplies.
+    27 | There's nothing special about the bunch of mechanical supplies.
+    24 | You can't take Tip.\n\n(Read hidden clue #2 on Infocard #8 in your SEASTALKER package. Don't type the words. Put "videophone" in the blank space.)\nThe alarm bell continues to ring.
+    21 | You're not holding the microphone!
+    16 | You can't take Tip.\nThe alarm bell continues to ring.\n\nWhat next?
+    16 | You can't take the videophone.\n\n(Read hidden clue #2 on Infocard #8 in your SEASTALKER package. Don't type the words. Put "videophone" in the blank space.)\nThe alarm bell continues to ring.
+    16 | You can't see the clue here.\nThe alarm bell continues to ring.
+    15 | You can't take the bunch of mechanical supplies.
+    14 | You can't see the SEASTALKER here.
+    13 | You can't move the bunch of chemicals.
+    12 | You're not holding the SEASTALKER.\nThe alarm bell continues to ring.
+    11 | You can't see the bunch of electronic supplies here.
+    11 | You're already holding it!
+    10 | You can't take the bunch of electronic supplies.
+    10 | There's nothing special about the Universal Tool.
+    10 | You're already holding it!\n\nWhat next?
+    10 | You can't see the bunch of mechanical supplies here.
+     9 | You're not holding the entry hatch.
+     8 | You can't see the chemical supply shelf here.
+     8 | You can't get from here to there, at least not directly.\n\nWhat next?
+     7 | There's nothing special about the lab door.
+     7 | There's nothing special about the viewport.
+     7 | You can't see the bunch of chemicals here.
+     6 | It's already off!
+     6 | You don't need to open the Electrical Panel.
+     6 | There's nothing special about the office door.
+     5 | It's already on!\n\nWhat next?
+     5 | There's nothing behind the chemical supply shelf.
+     5 | I don't see how that will help.
+     5 | You can't do that while the SCIMITAR is here.
+     5 | You can't see the mechanical supply shelf here.
+     5 | You can't see the SEASTALKER here.\n\nWhat next?
+     5 | You can't see the Snark here.\n\nWhat next?
+     5 | You can't see the circuit breaker here.
+     5 | There's nothing there but dust.\n\nWhat next?
+     5 | You can't get from here to there, at least not directly.
+     4 | You don't need to walk around within a room.
+     4 | You can't see the Snark here.
+     4 | You can't see the test tank here.
+     4 | You can't open the reactor starter.
+     4 | You can't take Tip.\n\n(Read hidden clue #2 on Infocard #8 in your SEASTALKER package. Don't type the words. Put "videophone" in the blank space.)\nThe alarm bell continues to ring.\n\nWhat next?
+     4 | You can't take Tip.\n\n(Are you getting tired of seeing "What next?" Well, you won't see it any more.)\nThe alarm bell continues to ring.
+     4 | You can't open the control panel.
+     4 | You can't see the SCIMITAR here.\n\nWhat next?
+     4 | You don't need to take out the Logbook to use it.
+     3 | You can't see the reactor here.
+     3 | It's already closed!
+     3 | You can't see the file drawer here.
+     3 | There's nothing special about the alarm bell.
+     3 | You can't take the Computestor.
+     3 | You're not holding the microphone.
+     3 | You can't take the diagram.\n\nSomething's wrong! The picture vanished from your videophone screen, and the sound conked out!\nTip says, "That's strange! Maybe you should use the Computestor."\n(Oh no! Your score just went down by 3 points!)
+     3 | There's nothing behind the bunch of chemicals.
+     3 | You can't move the Computestor in any particular direction.
+     3 | You're not holding the floor.
+     3 | You can't move the diagram.
+     3 | You can't see the clue here.\nThe alarm bell continues to ring.\n\nWhat next?
+     3 | There's nothing to phone with here.
+     3 | You can't see the diagram here.
+     3 | You can't open the bunch of chemicals.
+     2 | You can't see the work counter here.
+     2 | There's nothing behind the bunch of mechanical supplies.
+     2 | You can't open the control gear.
+     2 | There's nothing special about the south doorway.
+     2 | You can't move the bunch of mechanical supplies.
+     2 | You can't see the power supply here.
+     2 | You can't go from here to there, at least not directly.
+     2 | You can't close the Logbook.
+     2 | You can't see the Electrical Panel here.\n\n(Read hidden clue #2 on Infocard #3 in your SEASTALKER package. Don't type the words. Put "videophone" in the blank space.)
+     2 | There's nothing on the work counter.
+     2 | You can't see the clue here.\n\n(Read hidden clue #2 on Infocard #8 in your SEASTALKER package. Don't type the words. Put "videophone" in the blank space.)\nThe alarm bell continues to ring.
+     2 | You can't get from here to there.
+     2 | You're not holding the SCIMITAR.\n\nSomething's wrong! The picture vanished from your videophone screen, and the sound conked out!\nTip says, "That's strange! Maybe you should use the Computestor."\n(Oh no! Your score just went down by 3 points!)
+     2 | You can't move the videophone in any particular direction.
+     2 | You can't open the videophone.
+     2 | You can't take the videophone.
+     2 | You can't see the access door here.
+     2 | You can't see Tip Randall here.
+     2 | You can't open the SEASTALKER.
+     2 | There's nothing behind the workbench.
+     2 | You're not holding the SCIMITAR.
+     2 | You can't open the videophone.\n\nWhat next?
+     1 | You can't see the compass direction here.
+     1 | You're already in it!
+     1 | You're already at that depth!\n\n\nA speedboat came out of nowhere and almost hit you! It's dangerous on the surface of the bay.
+     1 | You're already at that depth!\n\nThe depth finder warning light is still glowing orange, and the alarm bell is still ringing.\nThe sonarscope still shows an obstacle ahead!
+     1 | You can't see Bly's desk here.
+     1 | There's nothing special about the chair.
+     1 | There's nothing special about the entry hatch.
+     1 | You can't see the sonar here.
+     1 | You can't open the Computestor.
+     1 | There's nothing behind the mechanical supply shelf.
+     1 | You can't move the bunch of electronic supplies.
+     1 | There's nothing behind the electronic supply shelf.
+     1 | There's nothing special about the viewport.\n\nA speedboat came out of nowhere and almost hit you! It's dangerous on the surface of the bay.
+     1 | You're not holding the diagram.
+     1 | You can't get to the Aquadome that way!\n\nSuddenly Sharon says, "I really must go now, John. I'll see you later."\nShe leaves through the office door.
+     1 | You can't see Kemp's desk here.
+     1 | It's already on!\n                                    \n * * . . . . . . . . .\n * * . . . . . . . . .\n * * . . . . . . . . .\n * * . . . . . . . . .\n * * . . . . . . . . .     \n * * . . . + . . . . .   +-- (hdg:E)\n * * * . . . . . . . .     \n * * * * . . . . . . .\n * * * * * . . . . . .\n * * * * * * . . . . .\n * * * * * * * * . . .\n----------------------
+     1 | You're already holding it!\n\n(Are you getting tired of seeing "What next?" Well, you won't see it any more.)
+     1 | You can't move the SCIMITAR.
+     1 | You can't see much from here.
+     1 | You can't see the SEASTALKER here.\n\nSomething's wrong! The picture vanished from your videophone screen, and the sound conked out!\nTip says, "That's strange! Maybe you should use the Computestor."\n(Oh no! Your score just went down by 3 points!)
+     1 | You can't take the videophone.\n\n(Read hidden clue #2 on Infocard #8 in your SEASTALKER package. Don't type the words. Put "videophone" in the blank space.)\nThe alarm bell continues to ring.\n\nWhat next?
+     1 | You can't take the videophone.\n\n(Are you getting tired of seeing "What next?" Well, you won't see it any more.)\nThe alarm bell continues to ring.
+     1 | You're not holding the SEASTALKER.\n\n(Read hidden clue #2 on Infocard #8 in your SEASTALKER package. Don't type the words. Put "videophone" in the blank space.)\nThe alarm bell continues to ring.
+     1 | You're not holding the microphone!\n\n(Are you getting tired of seeing "What next?" Well, you won't see it any more.)
+     1 | You can't open the SCIMITAR.
+     1 | You can't see the compass direction here.\nThe depth finder warning light turns red, and the alarm bell rises to a shriller whine.\n\nIf you don't change course or stop, you'll crash!\nThe depth finder warning light is still glowing red, and the alarm bell is still ringing.
+     1 | You're already underwater.\nThe depth finder warning light is still glowing red, and the alarm bell is still ringing.\n\nIf you don't change course or stop, you'll crash!
+     1 | You can't see the SEASTALKER here.\n\n(Are you getting tired of seeing "What next?" Well, you won't see it any more.)
+     1 | You can't get from here to there, at least not directly.\n\n(Are you getting tired of seeing "What next?" Well, you won't see it any more.)
+     1 | You can't see the left here.
+     1 | You can't open the tank control.
+     1 | There's nothing behind the seat.
+     1 | It's already off!\n\nWhat next?
+     1 | You can't see the Microwave Security Scanner here.
+     1 | You can't see the special Fram Bolt Wrench here.
+     1 | You can't open the bunch of electronic supplies.
+     1 | You can't take the diagram.\n\nWhat next?
+     1 | There's nothing special about the control panel.\n\nWhat next?
+     1 | You can't see the electronic supply shelf here.
+     1 | You can't see the sea wall here.

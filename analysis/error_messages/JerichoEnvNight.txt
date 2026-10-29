@@ -1,0 +1,136 @@
+# Invalid Action Messages: JerichoEnvNight
+# Total unique error messages: 129
+# Total error occurrences: 10143
+#
+# Format: count | message
+#===============================================================================
+
+  4476 | That's not a verb I recognise.
+  1510 | You can't see any such thing.
+  1227 | You seem to want to talk to someone, but I can't see whom.
+   820 | You can't go that way.
+   327 | I only understood you as far as wanting to look.
+   238 | I only understood you as far as wanting to inventory.
+   237 | I only understood you as far as wanting to examine the laser printer.
+   101 | I only understood you as far as wanting to check the internet router.
+    73 | What do you want to search?
+    70 | You find nothing of interest.
+    69 | You see nothing special about the south wall.
+    53 | That's not something you need to refer to in the course of this game.
+    52 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the southeast wall, the northwest wall or the southwest wall?
+    50 | That's not something you can open.
+    44 | I only understood you as far as wanting to check the laser printer.
+    41 | You see nothing special about the buckets.
+    36 | You see nothing special about the gigantic mops.
+    34 | What do you want to get?
+    31 | I only understood you as far as wanting to go the floor.
+    28 | You don't have time to play this stuff!
+    28 | I only understood you as far as wanting to examine the black box.
+    24 | You see nothing special about the cleaning solutions.
+    24 | That's not something you can enter.
+    24 | You see nothing special about the brooms.
+    23 | I only understood you as far as wanting to look at the laser printer.
+    21 | I only understood you as far as wanting to pull the laser printer.
+    19 | I only understood you as far as wanting to think.
+    19 | Time passes.
+    17 | There is nothing on the desk.
+    17 | You see nothing special about the stuff in the lab.\n\nThe red fish darts around furiously for a moment.
+    15 | You see nothing special about the PCs.
+    15 | I only understood you as far as wanting to open the Physics Office.
+    15 | You see nothing special about the dust cloths.
+    15 | That's not something you can switch.
+    14 | You see nothing special about the stuff in the lab.\n\n"Glub, glub."
+    13 | I beg your pardon?
+    13 | There is nothing on the printer table.
+    12 | You see nothing special about the pails.
+    12 | You see nothing special about the northeast wall.
+    12 | I only understood you as far as wanting to open the laser printer.
+    11 | You see nothing special about the Macs.
+    11 | I only understood you as far as wanting to search the laser printer.
+    11 | You see nothing special about the floor.
+    10 | I don't think much is to be achieved by that.
+     9 | You see nothing special about the east wall.
+     9 | You see nothing special about the stuff in the lab.\n\nThe red fish picks at the gravel in the aquarium hopefully.
+     9 | I only understood you as far as wanting to examine the internet router.
+     8 | You see nothing special about the stuff in the lab.\n\nThe red fish swims lazily back and forth a few times.
+     7 | I only understood you as far as wanting to check the desk.
+     7 | You can't go that way.\n\nThe red fish picks at the gravel in the aquarium hopefully.
+     7 | You see nothing special about the stuff in the lab.\n\nThe red fish picks at some algae growing on the aquarium glass.
+     7 | I only understood you as far as wanting to search the computer.
+     7 | You can only do that to something animate.
+     7 | I only understood you as far as wanting to no.
+     6 | I only understood you as far as wanting to examine the south wall.
+     5 | I only understood you as far as wanting to check the computer.
+     5 | I only understood you as far as wanting to examine the desk.
+     5 | I only understood you as far as wanting to examine the water fountain.
+     5 | I only understood you as far as wanting to examine the northeast wall.
+     5 | But you aren't in anything at the moment.
+     4 | I only understood you as far as wanting to examine the large red metal box.
+     4 | I only understood you as far as wanting to examine the Physics Office.
+     4 | That's not something you can open.\n\nThe red fish picks at the gravel in the aquarium hopefully.
+     4 | That's not something you can open.\n\nThe red fish darts around furiously for a moment.
+     4 | I only understood you as far as wanting to examine the aquarium.
+     3 | I only understood you as far as wanting to open the south wall.
+     3 | You see nothing special about the west wall.
+     3 | You see nothing special about the southwest wall.
+     3 | You see nothing special about the southeast wall.
+     3 | You see nothing special about the ceiling.
+     3 | I only understood you as far as wanting to go the east wall.
+     3 | I only understood you as far as wanting to go the ceiling.
+     3 | That's not something you can open.\n\n"Glub, glub."
+     3 | I only understood you as far as wanting to wait.
+     3 | I only understood you as far as wanting to examine the sticker.
+     3 | I only understood you as far as wanting to open the east wall.
+     3 | I only understood you as far as wanting to help.
+     2 | I only understood you as far as wanting to open the desk.
+     2 | I only understood you as far as wanting to check the water fountain.
+     2 | You can't go that way.\n\n"Glub, glub."
+     2 | I only understood you as far as wanting to open the Elevator.
+     2 | You see nothing special about the northwest wall.
+     2 | I only understood you as far as wanting to look under the laser printer.
+     2 | That doesn't seem to be something you can unlock.
+     2 | I only understood you as far as wanting to turn the doorknob.
+     2 | I only understood you as far as wanting to open the north wall.
+     2 | It's already open.
+     2 | I only understood you as far as wanting to look at the internet router.
+     2 | I only understood you as far as wanting to examine the printer table.
+     2 | I only understood you as far as wanting to fix the compile-game icon.
+     2 | I only understood you as far as wanting to restart.
+     2 | That's not something you can open.\n\nThe red fish swims lazily back and forth a few times.
+     1 | I only understood you as far as wanting to search the south wall.
+     1 | I only understood you as far as wanting to check the south wall.
+     1 | I only understood you as far as wanting to pull the south wall.
+     1 | I only understood you as far as wanting to check the sticker.
+     1 | Which do you mean, the white button, the blue button or the green button?
+     1 | You can't go that way.\n\nThe red fish darts around furiously for a moment.
+     1 | I only understood you as far as wanting to examine the sign.
+     1 | You see nothing special about the stuff in the lab.\n\nThe red fish glances at you in a bored fashion.
+     1 | I only understood you as far as wanting to examine the hum.
+     1 | I only understood you as far as wanting to listen the hum.
+     1 | I only understood you as far as wanting to go the west wall.
+     1 | I only understood you as far as wanting to examine the lpr icon.
+     1 | I only understood you as far as wanting to open the lpr icon.
+     1 | What do you want to grope?
+     1 | You can't go that way.\n\nThe red fish glances at you in a bored fashion.
+     1 | You can't go that way.\n\nA little grey mouse scurries into the room.  It seems unusually friendly, and occasionally casts an expectant glance in your direction
+     1 | I only understood you as far as wanting to down.
+     1 | You can't go that way.\n\nThe little grey mouse scurries about, occasionally casting an expectant glance in your direction
+     1 | I only understood you as far as wanting to search the desk.
+     1 | I only understood you as far as wanting to check the floor.
+     1 | I only understood you as far as wanting to look at the computer.
+     1 | You see nothing special about the north wall.
+     1 | You can't use multiple objects with that verb.
+     1 | What do you want to light?
+     1 | What do you want to follow?
+     1 | I only understood you as far as wanting to shut the floor.
+     1 | I only understood you as far as wanting to quit.
+     1 | I only understood you as far as wanting to open the Physics Office door.
+     1 | I only understood you as far as wanting to drop the ftp icon.
+     1 | I only understood you as far as wanting to exit.
+     1 | I only understood you as far as wanting to drag the lpr icon.
+     1 | I only understood you as far as wanting to drag the compile-game icon.
+     1 | That's not something you can open.\n\nThe red fish picks at some algae growing on the aquarium glass.
+     1 | You can't go that way.\n\n\nSomewhere in the distance you hear an organ playing
+     1 | I didn't understand that sentence.
+     1 | I only understood you as far as wanting to cover the doorknob.
+     1 | I only understood you as far as wanting to click the compile-game icon.

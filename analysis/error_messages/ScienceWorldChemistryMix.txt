@@ -1,0 +1,18 @@
+# Invalid Action Messages: ScienceWorldChemistryMix
+# Total unique error messages: 11
+# Total error occurrences: 14927
+#
+# Format: count | message
+#===============================================================================
+
+ 14269 | No known action matches that input.
+   240 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+   185 | The sink is already activated.
+   129 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    69 | The door is not open.
+    19 | The door is already open.
+     6 | The cupboard is already open.
+     4 | The drain is already closed.
+     3 | The drawer isn't open, so you can't see inside.
+     2 | You can't move something into itself.
+     1 | The fridge is already open.

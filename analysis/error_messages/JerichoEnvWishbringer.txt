@@ -1,0 +1,246 @@
+# Invalid Action Messages: JerichoEnvWishbringer
+# Total unique error messages: 239
+# Total error occurrences: 3561
+#
+# Format: count | message
+#===============================================================================
+
+  1125 | (That sentence didn't make sense. Please reword it or try something else.)
+   372 | Time passes.
+   116 | You can't see any note here!\n\nWhat next?
+   110 | You can't do that. Mr. Crisp has hidden them.\n\nMr. Crisp reaches under the service counter and pulls out a mysterious envelope. "We just got this Special Delivery," he snarls, tossing it onto the service counter. "I want you to drop it off right away. That means NOW!"\n\nWhat next?
+   109 | You can't reach the old bone from here. The open grave is too deep.
+   109 | You can't see any service counter here!
+    98 | You can't see any service counter here!\n\nWhat next?
+    93 | You can't see any bone here!
+    84 | You can't do that. It's locked.
+    58 | You're not holding the mysterious envelope.\n\nThe poodle glares at you through eyes red with hatred.
+    57 | You can't go that way.
+    51 | You can't see any envelope here!
+    44 | You can't see any pockets here!
+    43 | You're not holding the mysterious envelope.\n\nYou can smell the poodle's hot breath as it yaps.
+    43 | You can't see any mailbox here!
+    42 | You can't see Magick Shoppe here!
+    37 | You can't see Magick Shoppe here!\n\nWhat next?
+    31 | You can't see any downward trails here!
+    28 | You're not holding the mysterious envelope.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+    26 | You can't see Mr Crisp here!
+    24 | You can't see any umbrella here!
+    23 | You can't see any poodle here!
+    23 | You can't see Miss Voss here!
+    22 | You're not holding the mysterious envelope.\n\nThe poodle circles you warily, snarling and growling with menace.
+    21 | You can't reach the old bone from here. The open grave is too deep.\n\n"Got to go," says the gravedigger, picking up his shovel. "See you soon."\n\nThe old man ambles away to the west.
+    19 | You can't go that way.\n\nThe poodle circles you warily, snarling and growling with menace.
+    19 | You can't see the gravedigger here!
+    18 | You can't see any post office here!
+    18 | You can't go that way.\n\nThe poodle glares at you through eyes red with hatred.
+    18 | You can't go that way.\n\nYou can smell the poodle's hot breath as it yaps.
+    14 | You can't see any rock here!
+    14 | You can't see any upward trails here!
+    14 | You can't see any counter here!\n\nWhat next?
+    13 | You can't go that way.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+    13 | You can't see any stick here!
+    11 | You're not holding the umbrella.\n\nYou can smell the poodle's hot breath as it yaps.
+    11 | You're already holding it.
+    10 | You can't reach the umbrella from here. The open grave is too deep.
+    10 | You can't see any cemetery here!
+    10 | You can't see any pocket here!
+    10 | You're not holding anything.\n\nSomebody inside the Post Office is calling you.\n\nWhat next?
+     9 | You're not holding anything.
+     9 | You're not holding anything.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     9 | You're not holding the umbrella.\n\nThe poodle glares at you through eyes red with hatred.
+     9 | You can't see any signpost here!\n\nWhat next?
+     8 | You see nothing special about the old bone.
+     8 | You can't see any window here!
+     8 | You can't see any cottage window here!
+     8 | You can't see any envelope here!\n\nWhat next?
+     8 | You can't see Wishbringer here!
+     8 | You're not holding the umbrella.\n\nThe poodle circles you warily, snarling and growling with menace.
+     8 | It's already open.\n\nSomebody inside the Post Office is calling you.\n\nWhat next?
+     8 | You're not holding the umbrella.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     7 | You can't go that way.\n\nThe poodle circles you warily, snarling and growling with menace.\n\n(You won't see the "What next?" prompt any more.)
+     7 | You can't see any note here!
+     7 | You can't reach the old bone from here. The open grave is too deep.\n\n"Couldn't ask for a nicer day for diggin' graves."
+     7 | You can't see any stone here!
+     7 | You're not holding the mysterious envelope.\n\n(Try examining the poodle. You might discover something.)
+     7 | You can't see Mr Crisp here!\n\nWhat next?
+     7 | You can't see any message here!
+     6 | You're not holding anything.\n\nThe poodle glares at you through eyes red with hatred.
+     6 | You're not holding anything.\n\nYou can smell the poodle's hot breath as it yaps.
+     6 | You find nothing unusual.
+     6 | You can't reach the old bone from here. The open grave is too deep.\n\n"Sure would like to get a closer look at that mysterious envelope."
+     6 | You can't see any shoe here!
+     6 | You're not holding the mysterious envelope.\n\nMr. Crisp drums his fingers on the service counter impatiently. "Scram, idiot! The Magick Shoppe closes at five o'clock!"\n\nWhat next?
+     6 | You can't see any key here!
+     6 | You can't see any collar here!
+     5 | You can't see any cottage here!
+     5 | It's already open.
+     5 | It's already open.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     5 | You're not holding the violet note.\n\nYou can smell the poodle's hot breath as it yaps.
+     5 | You see nothing interesting about the Post Office.
+     5 | You can't see any map here!
+     5 | You're not holding anything.\n\n(Look around. You might find something the poodle would like.)
+     5 | You see nothing extraordinary.\n\nThe poodle glares at you through eyes red with hatred.
+     5 | There's nothing behind the cottage.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     5 | You see nothing special about yourself.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     5 | You can't see any signpost here!
+     5 | You can't go that way.\n\n(Try examining the poodle. You might discover something.)
+     5 | You can't see any wanted posters here!
+     5 | You can't see any coin here!
+     5 | You're not holding the mysterious envelope.\n\n(Look around. You might find something the poodle would like.)
+     5 | You're not holding the violet note.\n\nThe poodle circles you warily, snarling and growling with menace.
+     5 | You can't move the direction.
+     5 | You're not holding the violet note.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     4 | You can't see any sword here!
+     4 | You can't see any grave here!
+     4 | You can't see that here!
+     4 | You see nothing extraordinary about yourself.
+     4 | You can't go that way.\n\n(Look around. You might find something the poodle would like.)
+     4 | You can't see any tree here!
+     4 | You can't do that. It's locked.\n\nWhat next?
+     4 | You're already holding it.\n\nYou can smell the poodle's hot breath as it yaps.
+     4 | You can't see any sword here!\n\nWhat next?
+     4 | You can't see any mail here!\n\nWhat next?
+     4 | You see nothing extraordinary about the candle.\n\nAs you look around the empty church a little white mouse scurries across the floor and disappears.
+     4 | You see nothing unusual about the old bone.
+     4 | You can't see any dead here!
+     3 | You see nothing extraordinary about the Post Office.
+     3 | It's already closed.
+     3 | You can't see any fountain here!
+     3 | You see nothing special about the candle.
+     3 | You can't go that way.\n\n(Maybe you can bribe the poodle with something.)
+     3 | You can't see any for stick here!
+     3 | You can't go that way.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.\n\nWhat next?
+     3 | You can't see any inventory here!
+     3 | You're not holding the violet note.\n\nThe poodle glares at you through eyes red with hatred.
+     3 | You can't reach the tombstone from here. The open grave is too deep.
+     3 | You can't see any east road here!
+     3 | You can't see any token here!
+     3 | You're not holding anything.\n\nThe poodle circles you warily, snarling and growling with menace.
+     3 | You're not holding anything.\n\n(Try examining the poodle. You might discover something.)
+     3 | You can't see any letter here!\n\nWhat next?
+     3 | It's already open.\n\nMr. Crisp reaches under the service counter and pulls out a mysterious envelope. "We just got this Special Delivery," he snarls, tossing it onto the service counter. "I want you to drop it off right away. That means NOW!"\n\nWhat next?
+     2 | You're not holding the mysterious envelope.
+     2 | You're already holding it.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     2 | You're already holding it.\n\nThe poodle circles you warily, snarling and growling with menace.
+     2 | You see nothing special about yourself.
+     2 | You see nothing unusual about yourself.
+     2 | You can't see any mail here!
+     2 | You're not holding anything.\n\n(It's 4:00 pm. Better hurry! The Magick Shoppe closes in less than an hour!)
+     2 | You see nothing extraordinary.\n\nYou can smell the poodle's hot breath as it yaps.
+     2 | You see nothing extraordinary about yourself.\n\n(Look around. You might find something the poodle would like.)
+     2 | You see nothing unusual about yourself.\n\nThe poodle circles you warily, snarling and growling with menace.
+     2 | You can't see any gate here!
+     2 | You can't see any windows here!
+     2 | You see nothing interesting about the candle.
+     2 | You can't see Miss Voss here!\n\nWhat next?
+     2 | You can't see any money here!
+     2 | You can't see any hill here!\n\nWhat next?
+     2 | You can't see any small rock here!
+     2 | You can't see any stick here!\n\nWhat next?
+     2 | You can't go that way.\n\nThe poodle circles you warily, snarling and growling with menace.\n\nWhat next?
+     2 | You can't see any inventory here!\n\nWhat next?
+     2 | You're not holding the ground.\n\nThe poodle circles you warily, snarling and growling with menace.
+     2 | You can't see any stamp here!
+     2 | You can't enter an impenetrable forest.
+     2 | You can't go that way.\n\n(It's 4:00 pm. Better hurry! The Magick Shoppe closes in less than an hour!)
+     2 | It's already open.\n\nThe Post Office door is closed.
+     2 | You can't do that. Mr. Crisp has hidden them.\n\nMr. Crisp reaches under the service counter and pulls out a mysterious envelope. "We just got this Special Delivery," he snarls, tossing it onto the service counter. "I want you to drop it off right away. That means NOW!"
+     2 | You're not holding the umbrella.\n\n(Look around. You might find something the poodle would like.)
+     2 | You can't see any water here!
+     2 | You can't see any Magick sword here!
+     2 | You can't see any mysterious envelope here!
+     2 | You can't go that way.\n\nSomebody inside the Post Office is calling you.\n\nWhat next?
+     2 | You see nothing unusual about the candle.
+     2 | You can't see any game here!\n\nOkay, what do you want to do now?
+     2 | You can't see any purse here!
+     2 | You see nothing interesting.\n\nThe poodle glares at you through eyes red with hatred.
+     2 | You're not holding anything.\n\nMr. Crisp reaches under the service counter and pulls out a mysterious envelope. "We just got this Special Delivery," he snarls, tossing it onto the service counter. "I want you to drop it off right away. That means NOW!"\n\nWhat next?
+     2 | You can't see any open envelo here!
+     2 | You see nothing extraordinary about the old bone.
+     2 | You're not holding anything.\n\n(Maybe you can bribe the poodle with something.)
+     1 | You can't reach the mysterious envelope from here. The open grave is too deep.
+     1 | It's already open.\n\nYou can smell the poodle's hot breath as it yaps.
+     1 | You can't see any open envelo here!\n\nWhat next?
+     1 | You can't go that way.\n\n(It's 4:00 pm. Better hurry! The Magick Shoppe closes in less than an hour!)\n\nYou can smell the poodle's hot breath as it yaps.
+     1 | You see nothing interesting.
+     1 | You see nothing unusual.
+     1 | You can't see any trees here!
+     1 | You see nothing interesting about yourself.
+     1 | You see nothing interesting.\n\n(Try examining the poodle. You might discover something.)
+     1 | You can't see any my mail here!
+     1 | You can't see any jacket here!
+     1 | You can't see any coat here!
+     1 | You see nothing interesting about the old bone.
+     1 | You see nothing extraordinary about the curtain.\n\nThe curtain opens so quickly it makes you jump.\n\nThe woman standing before you is older than your oldest aunt. Her thin, pale face and bony hands make her look fragile, like a fading signature in an antique book. But her eyes remember everything they have ever seen.\n\nYou appraise one another for a long moment before she breaks the ice. "Welcome in, welcome!" she chortles. "Don't get many visitors this late in the day."\n\nThe room seems oddly quiet all of a sudden.
+     1 | You can't see any east road here!\n\nWhat next?
+     1 | You see nothing interesting.\n\n(Maybe you can bribe the poodle with something.)
+     1 | You see nothing unusual.\n\nYou can smell the poodle's hot breath as it yaps.
+     1 | You can't see any leaves here!
+     1 | You can't see any small stone here!
+     1 | You can't see any tiny rock here!
+     1 | You can't see any tiny stone here!
+     1 | You can't see any small piece here!
+     1 | You can't see any tiny piece here!
+     1 | You can't go that way.\n\nYou can smell the poodle's hot breath as it yaps.\n\n(You won't see the "What next?" prompt any more.)
+     1 | You can't see any opening here!
+     1 | You can't see any violet note here!
+     1 | You're not holding anything.\n\nA voice crackles on the police radio. "Ten-four," Sgt. MacGuffin yawns.\n\n(It's 4:00 pm. Better hurry! The Magick Shoppe closes in less than an hour!)
+     1 | You can't see any Festeron post office here!
+     1 | You can't see any hilltop here!
+     1 | You're already at the bottom of the hill!\n\nThe poodle circles you warily, snarling and growling with menace.
+     1 | You're not holding sound.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     1 | You can't see any for a rock here!
+     1 | You see nothing unusual about the Post Office.
+     1 | You can't see any for bone here!
+     1 | You're not holding the ground.\n\nThe poodle glares at you through eyes red with hatred.
+     1 | You can't see any cottage area here!
+     1 | You can't see any candy here!
+     1 | It's already open.\n\nThe poodle circles you warily, snarling and growling with menace.
+     1 | You can't reach into the big mailbox.\n\nThe lid of the big mailbox squeaks and snaps shut with a clang.
+     1 | You're not holding the mysterious envelope.\n\n(It's 4:00 pm. Better hurry! The Magick Shoppe closes in less than an hour!)\n\nYou can smell the poodle's hot breath as it yaps.
+     1 | You see nothing special about the candle.\n\nAs you look around the empty church a little white mouse scurries across the floor and disappears.
+     1 | You can't see any time here!
+     1 | You see nothing special about the horseshoe.
+     1 | You're not holding the umbrella.\n\n(It's 4:30 pm. Better hurry! The Magick Shoppe closes in less than half an hour!)\n\nYou can smell the poodle's hot breath as it yaps.
+     1 | You're not holding the umbrella.\n\n"There you are, idiot!"\n\nYou wince as Mr. Crisp strides into view and grabs you by the front of your uniform.\n\n"You good-for-nothing numbskull!" he bellows in your face. "I wanted you to deliver that envelope BEFORE five o'clock! Now the Magick Shoppe is closed... and you're FIRED!"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLooks like the story's over. But don't despair! Interactive fiction lets you learn from your mistakes.\n\nYour score is 6 points out of 100, in 120 moves.\n\nDo you want to restart the story, restore a saved position, or quit?\n\n(Type RESTART, RESTORE or QUIT.)
+     1 | You can't see any postcards here!\n\nWhat next?
+     1 | You can't see any post office counter here!\n\nWhat next?
+     1 | You can't see any counter here!
+     1 | You can't do that while Mr. Crisp is wearing the coat!\n\nThe poodle glares at you through eyes red with hatred.
+     1 | You can't see any grave here!\n\nWhat next?
+     1 | You can't reach the old bone from here. The open grave is too deep.\n\n"Sure would like to get a closer look at that mysterious envelope."\n\nWhat next?
+     1 | You can't see any church sign here!
+     1 | You can't see any west road here!
+     1 | You're already at the top of the hill!
+     1 | You can't see any hill here!
+     1 | You can't see that here!\n\nWhat next?
+     1 | You're already holding it.\n\nThe poodle glares at you through eyes red with hatred.
+     1 | You can't see any Magick sword here!\n\nWhat next?
+     1 | You can't see Wishbringer here!\n\nWhat next?
+     1 | You can't see any Princess here!\n\nWhat next?
+     1 | You can't see Wishbri here!\n\nWhat next?
+     1 | You can't see any paper here!
+     1 | You're not holding the mysterious envelope.\n\n(Maybe you can bribe the poodle with something.)
+     1 | You see nothing unusual.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     1 | There's nothing behind the cottage.\n\nThe poodle circles you warily, snarling and growling with menace.
+     1 | You see nothing special.\n\nYou can smell the poodle's hot breath as it yaps.
+     1 | You see nothing special.\n\nThe poodle glares at you through eyes red with hatred.
+     1 | You can't see any mail slot here!
+     1 | You can't see any north door here!
+     1 | You can't see any door here!
+     1 | You can't see any castle here!
+     1 | You can't see any map here!\n\nWhat next?
+     1 | You can't see any castle here!\n\nWhat next?
+     1 | You can't see Wishbringersonicomni here!\n\nWhat next?
+     1 | You can't see any box here!
+     1 | You can't see any whistle here!
+     1 | You can't see any fish here!
+     1 | You can't see any poster here!
+     1 | You see nothing special about the horseshoe.\n\nYou can hear the poodle's sharp little teeth snapping as it nips your heels.
+     1 | You can't see any statue here!
+     1 | You can't see any dirt here!
+     1 | It's too dark to see!
+     1 | You can't see any poodle here!\n\nWhat next?
+     1 | You're not holding the mysterious envelope.\n\nYou can smell the poodle's hot breath as it yaps.\n\n(You won't see the "What next?" prompt any more.)
+     1 | You're not holding anything.\n\n"Couldn't ask for a nicer day for diggin' graves."

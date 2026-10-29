@@ -1,0 +1,83 @@
+# Invalid Action Messages: TWCookingLevel7
+# Total unique error messages: 76
+# Total error occurrences: 10254
+#
+# Format: count | message
+#===============================================================================
+
+  4149 | That's not a verb I recognise.
+  1353 | You can't see any such thing.
+  1283 | I beg your pardon?
+   634 | You seem to want to talk to someone, but I can't see whom.
+   500 | I only understood you as far as wanting to check the cookbook.
+   403 | I only understood you as far as wanting to take inventory.
+   269 | It isn't something you can switch.
+   200 | You still miss something.
+   169 | You need to take the carrot first.
+   128 | It isn't something you can open.
+   121 | (with the carrot)\nYou need to take the carrot first.
+   121 | I didn't understand that sentence.
+   120 | What do you want to slice the carrot with?
+    92 | You need to take the knife first.
+    86 | But you aren't in anything at the moment.
+    79 | Time passes.
+    72 | The fridge looks grand. You can't see inside it because the lid's in your way.
+    35 | This dangerous act would achieve little.
+    35 | You can't begin with a comma.
+    34 | What do you want to cook the carrot with?
+    31 | (with the carrot)\nCutting something requires a knife.
+    27 | You need to take the white onion first.
+    26 | What do you want to open?
+    21 | I only understood you as far as wanting to wait.
+    20 | I only understood you as far as wanting to light the stove.
+    20 | You can't use multiple objects with that verb.
+    19 | What do you want to cook the white onion with?
+    17 | I only understood you as far as wanting to check the oven.
+    15 | I only understood you as far as wanting to open the oven.
+    15 | What do you want to read?
+    14 | What do you want to cook?
+     9 | It is fixed in place.
+     8 | You couldn't pay me to eat that carrot.
+     8 | You can't go that way.
+     6 | The carrot is already sliced.
+     6 | You aren't wearing the white onion.
+     5 | You can't see inside, since the fridge is closed.
+     5 | I only understood you as far as wanting to cut the counter.
+     5 | That's fixed in place.
+     5 | The oven is fixed in place.
+     5 | I only understood you as far as wanting to pull outside.
+     5 | I only understood you as far as wanting to cut the carrot.
+     5 | I only understood you as far as wanting to examine the stove.
+     4 | No, you can't set that to anything.
+     4 | You already have that.
+     4 | The white onion is already sliced.
+     4 | What do you want to chop the white onion with?
+     4 | You aren't wearing the carrot.
+     4 | I only understood you as far as wanting to turn the stove.
+     4 | What do you want to examine?
+     4 | I only understood you as far as wanting to exit.
+     3 | I only understood you as far as wanting to check the stove.
+     3 | I only understood you as far as wanting to put those things on the table.
+     3 | I only understood you as far as wanting to examine the oven.
+     3 | What do you want to slice the white onion with?
+     3 | That can't contain things.
+     2 | I only understood you as far as wanting to close the oven.
+     2 | I only understood you as far as wanting to read the cookbook.
+     2 | That's already open.
+     2 | (with the oven)\nThe oven is fixed in place.
+     2 | (with the knife)\nYou need to take the white onion first.
+     2 | You couldn't pay me to eat that sliced carrot.
+     2 | I only understood you as far as wanting to put the carrot on the stove.
+     1 | I only understood you as far as wanting to look the stove.
+     1 | I only understood you as far as wanting to look the oven.
+     1 | (with the knife)\nThe carrot is already sliced.
+     1 | I only understood you as far as wanting to check the counter.
+     1 | What do you want to slice?
+     1 | The stove is fixed in place.
+     1 | I only understood you as far as wanting to take the white onion.
+     1 | Cooking requires a source of heat.
+     1 | I only understood you as far as wanting to put the carrot in the oven.
+     1 | (with the knife)\nThe white onion is already chopped.
+     1 | I only understood you as far as wanting to put those things on the stove.
+     1 | What do you want to take?
+     1 | I only understood you as far as wanting to (go) in.

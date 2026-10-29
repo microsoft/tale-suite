@@ -1,0 +1,31 @@
+# Invalid Action Messages: ScienceWorldTestConductivity
+# Total unique error messages: 24
+# Total error occurrences: 13605
+#
+# Format: count | message
+#===============================================================================
+
+ 13439 | No known action matches that input.
+    21 | The switch is already activated.
+    18 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    17 | anode on battery is already connected, and must be disconnected before it can be connected to something else
+    14 | terminal 1 on red wire is already connected, and must be disconnected before it can be connected to something else
+    13 | The door is not open.
+    11 | terminal 2 on red wire is already connected, and must be disconnected before it can be connected to something else
+     8 | You can't pick up a gas directly.
+     7 | terminal 1 on black wire is already connected, and must be disconnected before it can be connected to something else
+     6 | cathode on battery is already connected, and must be disconnected before it can be connected to something else
+     6 | terminal 2 on sodium chloride is already connected, and must be disconnected before it can be connected to something else
+     6 | terminal 2 on black wire is already connected, and must be disconnected before it can be connected to something else
+     6 | sodium chloride is already connected, and must be disconnected before it can be connected to something else
+     6 | The door is already open.
+     5 | terminal 1 on sodium chloride is already connected, and must be disconnected before it can be connected to something else
+     5 | terminal 1 on green box is already connected, and must be disconnected before it can be connected to something else
+     4 | anode on switch is already connected, and must be disconnected before it can be connected to something else
+     4 | cathode on blue light bulb is already connected, and must be disconnected before it can be connected to something else
+     2 | terminal 1 on orange wire is already connected, and must be disconnected before it can be connected to something else
+     2 | terminal 2 on green box is already connected, and must be disconnected before it can be connected to something else
+     2 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+     1 | terminal 2 on orange wire is already connected, and must be disconnected before it can be connected to something else
+     1 | cathode on switch is already connected, and must be disconnected before it can be connected to something else
+     1 | anode on blue light bulb is already connected, and must be disconnected before it can be connected to something else

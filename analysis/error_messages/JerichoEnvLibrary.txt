@@ -1,0 +1,101 @@
+# Invalid Action Messages: JerichoEnvLibrary
+# Total unique error messages: 94
+# Total error occurrences: 7951
+#
+# Format: count | message
+#===============================================================================
+
+  2871 | That's not a verb I recognise.
+  2095 | You can't see any such thing.
+   784 | You seem to want to talk to someone, but I can't see whom.
+   376 | I only understood you as far as wanting to enter the rare books door.
+   224 | Time passes.
+   205 | You can't go that way.
+   197 | I didn't understand that sentence.
+   149 | You find nothing of interest.
+   134 | I only understood you as far as wanting to inventory.
+   116 | I beg your pardon?
+    96 | What do you want to ask the circulation desk attendant for?
+    75 | That's not something you can open.
+    71 | You can only do that to something animate.
+    59 | I only understood you as far as wanting to get the biography of Graham Nelson.
+    53 | I only understood you as far as wanting to look.
+    43 | Which do you mean, the howto manual or the security gates?
+    40 | That doesn't seem to be something you can unlock.
+    22 | I only understood you as far as wanting to search the card catalog.
+    20 | What do you want to ask the reference librarian for?
+    19 | What do you want to go in?
+    16 | I only understood you as far as wanting to ask the circulation desk attendant for the ID card.
+    15 | I only understood you as far as wanting to open the north wall.
+    15 | I only understood you as far as wanting to go the north wall.
+    13 | I only understood you as far as wanting to ask the circulation desk attendant for the key.
+    13 | I only understood you as far as wanting to go the east wall.
+    11 | I only understood you as far as wanting to open the card catalog drawer.
+    11 | I don't think much is to be achieved by that.
+    10 | I only understood you as far as wanting to examine the circulation desk.
+    10 | I only understood you as far as wanting to exit.
+     8 | I only understood you as far as wanting to examine the photocopier.
+     8 | I only understood you as far as wanting to check the copier sign.
+     8 | I only understood you as far as wanting to examine the biography of Graham Nelson.
+     8 | I only understood you as far as wanting to take the biography of Graham Nelson.
+     8 | I only understood you as far as wanting to go the ceiling.
+     7 | What do you want to go inside?
+     7 | I only understood you as far as wanting to wait.
+     6 | I only understood you as far as wanting to look at the circulation desk.
+     6 | I only understood you as far as wanting to examine the private door.
+     6 | What do you want to ask the technician for?
+     6 | That's not something you can close.
+     5 | I only understood you as far as wanting to open the circulation desk.
+     5 | I only understood you as far as wanting to open the card catalog.
+     5 | I only understood you as far as wanting to go the floor.
+     5 | I only understood you as far as wanting to go the west wall.
+     5 | I only understood you as far as wanting to take the outdated signs and notices.
+     5 | But you aren't in anything at the moment.
+     4 | I only understood you as far as wanting to examine the rare books door.
+     4 | I only understood you as far as wanting to examine the Computer Screens.
+     4 | Which do you mean, Tom's nametag or Alan's nametag?
+     4 | I only understood you as far as wanting to examine the security gates.
+     4 | I only understood you as far as wanting to check the biography of Graham Nelson.
+     4 | I only understood you as far as wanting to take yourself.
+     3 | I only understood you as far as wanting to read the Computer Screens.
+     3 | What do you want to look inside?
+     3 | I only understood you as far as wanting to open the south wall.
+     2 | What do you want to lock the rare books door with?
+     2 | You can't use multiple objects with that verb.
+     2 | I only understood you as far as wanting to search the card catalog drawer.
+     2 | I only understood you as far as wanting to close the rare books door.
+     2 | I only understood you as far as wanting to examine the east wall.
+     2 | I only understood you as far as wanting to help that.
+     2 | I only understood you as far as wanting to ask the circulation desk attendant for the biography of Graham Nelson.
+     2 | You already have that.
+     1 | I only understood you as far as wanting to look in the ID card.
+     1 | I only understood you as far as wanting to open the private door.
+     1 | I only understood you as far as wanting to examine the technician.
+     1 | I only understood you as far as wanting to read the technician.
+     1 | I only understood you as far as wanting to examine the howto manual.
+     1 | I only understood you as far as wanting to enter the private door.
+     1 | That doesn't seem to be something you can lock.
+     1 | What do you want to lock the private door with?
+     1 | I only understood you as far as wanting to wave the biography of Graham Nelson.
+     1 | I only understood you as far as wanting to open the rare books door.
+     1 | I only understood you as far as wanting to examine the northwest wall.
+     1 | I only understood you as far as wanting to examine the west wall.
+     1 | It seems to be locked.
+     1 | I only understood you as far as wanting to look at the reference librarian.
+     1 | I only understood you as far as wanting to examine the reference desk.
+     1 | I only understood you as far as wanting to search the reference desk.
+     1 | I didn't understand that request for help. The words known to the help subsystem are: author, changes, comments, ftp, inform, intro, and license.
+     1 | I only understood you as far as wanting to pick up the biography of Graham Nelson.
+     1 | I only understood you as far as wanting to read the biography of Graham Nelson.
+     1 | I only understood you as far as wanting to go the south wall.
+     1 | I only understood you as far as wanting to check the ground floor games.
+     1 | I only understood you as far as wanting to examine the card catalog drawer.
+     1 | I only understood you as far as wanting to get the ID card.
+     1 | I only understood you as far as wanting to turn the key.
+     1 | Nothing obvious happens.
+     1 | I only understood you as far as wanting to pull the key.
+     1 | What do you want to get in?
+     1 | That's not something you can switch.
+     1 | I only understood you as far as wanting to examine the circulation desk attendant.
+     1 | I only understood you as far as wanting to examine the ID card.
+     1 | I only understood you as far as wanting to search the ID card.

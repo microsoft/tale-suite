@@ -1,0 +1,24 @@
+# Invalid Action Messages: ScienceWorldGrowFruit
+# Total unique error messages: 17
+# Total error occurrences: 14295
+#
+# Format: count | message
+#===============================================================================
+
+ 13658 | No known action matches that input.
+   179 | The door is not open.
+   137 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+   101 | You can't pick up a gas directly.
+    91 | The door is already open.
+    55 | The sink is already activated.
+    38 | The bee hive is already open.
+    10 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+     8 | The drawer isn't open, so you can't see inside.
+     7 | bee hive is already connected, and must be disconnected before it can be connected to something else
+     4 | The closet isn't open, so you can't see inside.
+     2 | The drain is already closed.
+     1 | The drawer is already open.
+     1 | The cupboard is already open.
+     1 | The blast furnace is already activated.
+     1 | The cupboard is already closed.
+     1 | The cupboard isn't open, so you can't see inside.

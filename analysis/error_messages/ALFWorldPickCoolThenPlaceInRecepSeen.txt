@@ -1,0 +1,12 @@
+# Invalid Action Messages: ALFWorldPickCoolThenPlaceInRecepSeen
+# Total unique error messages: 5
+# Total error occurrences: 19547
+#
+# Format: count | message
+#===============================================================================
+
+ 19529 | Nothing happens.
+    10 | There's nothing special about apple 1.
+     5 | There's nothing special about soapbottle 1.
+     2 | There's nothing special about ladle 1.
+     1 | There's nothing special about egg 1.

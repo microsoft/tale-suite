@@ -1,0 +1,33 @@
+# Invalid Action Messages: ScienceWorldBoil
+# Total unique error messages: 26
+# Total error occurrences: 14554
+#
+# Format: count | message
+#===============================================================================
+
+ 13894 | No known action matches that input.
+   291 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+   135 | The door is not open.
+    42 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    28 | The oven is already activated.
+    28 | The oven isn't open, so you can't see inside.
+    18 | The drawer isn't open, so you can't see inside.
+    18 | The oven is already closed.
+    16 | The door is already open.
+    14 | The oven is already open.
+    14 | You can't pick up a gas directly.
+     9 | The sink is already activated.
+     8 | The drain is already open.
+     7 | The bathtub is already activated.
+     5 | The fridge isn't open, so you can't see inside.
+     4 | The cupboard is already open.
+     4 | The blast furnace isn't open, so you can't see inside.
+     3 | The drawer is already open.
+     3 | The drain is already closed.
+     2 | The freezer isn't open, so you can't see inside.
+     2 | The cupboard isn't open, so you can't see inside.
+     2 | The glass jar isn't open, so you can't see inside.
+     2 | The freezer is already activated.
+     2 | The fridge is already open.
+     2 | The freezer is already open.
+     1 | The oven is already deactivated.

@@ -1,0 +1,189 @@
+# Invalid Action Messages: JerichoEnvWeapon
+# Total unique error messages: 182
+# Total error occurrences: 5647
+#
+# Format: count | message
+#===============================================================================
+
+  2468 | You can't see any such thing.\n\n>
+   739 | I only understood you as far as wanting to talk to Cheryl.\n\n>
+   191 | I only understood you as far as wanting to examine the control surface.\n\n>
+   189 | I didn't understand that sentence.\n\n>
+   187 | I only understood you as far as wanting to inventory.\n\n>
+    98 | I only understood you as far as wanting to reply.\n\n>
+    96 | Which do you mean, the information stud, the powerup stud, the project status stud, the sequence stud or the forcefield stud?\n\n>
+    95 | You can't use multiple objects with that verb.\n\n>
+    91 | Which do you mean, the top sensor or the bottom sensor?\n\n>
+    84 | I only understood you as far as wanting to examine the slab.\n\n>
+    79 | I only understood you as far as wanting to examine the viewscreen.\n\n>
+    72 | I only understood you as far as wanting to no.\n\n>
+    68 | I only understood you as far as wanting to talk.\n\n>
+    64 | I only understood you as far as wanting to examine the monitor hologram.\n\n>
+    60 | I only understood you as far as wanting to examine the cluster of forms.\n\n>
+    59 | I only understood you as far as wanting to touch the control surface.\n\n>
+    50 | I only understood you as far as wanting to look.\n\n>
+    42 | I only understood you as far as wanting to examine the room.\n\n>
+    40 | I only understood you as far as wanting to examine the gleaming curves.\n\n>
+    38 | That's not something you can switch.\n\n>
+    38 | You're not holding the probe.\n\n>
+    36 | Which do you mean, the contact points or the calibration stud?\n\n>
+    33 | I only understood you as far as wanting to look at the gleaming curves.\n\n>
+    29 | I only understood you as far as wanting to examine the white pillar.\n\n>
+    28 | I only understood you as far as wanting to examine the contact points.\n\n>
+    22 | I only understood you as far as wanting to examine the studs.\n\n>
+    21 | There's no way to make it probe repeatedly; you'll have to use the sensors.\n\n>
+    20 | That would accomplish nothing.\n\n>
+    18 | I only understood you as far as wanting to examine the fusion generator bay.\n\n>
+    18 | I only understood you as far as wanting to touch the contact points with the electropulse probe.\n\n>
+    17 | I only understood you as far as wanting to wait.\n\n>
+    17 | I only understood you as far as wanting to look at the cluster of forms.\n\n>
+    17 | There's nothing to feel.\n\n>
+    14 | I only understood you as far as wanting to examine Cheryl.\n\n>
+    14 | I only understood you as far as wanting to examine the electropulse probe.\n\n>
+    14 | I only understood you as far as wanting to examine the notch.\n\n>
+    13 | I only understood you as far as wanting to look at the white pillar.\n\n>
+    13 | I only understood you as far as wanting to ask Cheryl for the Yi-Lono-Mordel.\n\n>
+    13 | I only understood you as far as wanting to activate the electropulse probe.\n\n>
+    12 | I only understood you as far as wanting to touch the contact points.\n\n>
+    11 | I only understood you as far as wanting to look at the monitor hologram.\n\n>
+    11 | I only understood you as far as wanting to probe the contact points.\n\n>
+    10 | Which do you mean, the generator access stud, the information stud, the powerup stud, the project status stud, the sequence stud or the forcefield stud?\n\n>
+    10 | I only understood you as far as wanting to examine the access panel.\n\n>
+    10 | I only understood you as far as wanting to nod.\n\n>
+     9 | There is nothing on the studs.\n\n>
+     9 | I only understood you as far as wanting to reply to Cheryl.\n\n>
+     8 | You're not holding the probe.\n\nCheryl says, "You probably never realized it, Tolan, but the Yi had a somewhat high opinion of themselves. The word Yi isn't just their name--it means 'the end' or 'the ultimate'. The 'Yi-Lono-Mordel' isn't 'the Yi's Lono weapon'; it's 'the final Lono weapon'. They were planning to win their war with it."\n\n>
+     8 | I only understood you as far as wanting to examine the handcuffs.\n\n>
+     8 | I only understood you as far as wanting to trigger the bottom sensor.\n\n>
+     8 | You already have that.\n\n>
+     8 | I only understood you as far as wanting to examine the Yi-Lono-Mordel.\n\n>
+     8 | I only understood you as far as wanting to look at the slab.\n\n>
+     8 | That's not something you can open.\n\n>
+     7 | I only understood you as far as wanting to look at the notch.\n\n>
+     7 | I only understood you as far as wanting to search the control surface.\n\n>
+     7 | You can't go that way.\n\n>
+     6 | I only understood you as far as wanting to ask Cheryl for the key.\n\n>
+     6 | You're not holding the probe.\n\nCheryl says, "So I guess I'll finally make it into the history books by doing it for them."\n\n>
+     6 | Which do you mean, the tool stud, the generator access stud, the information stud, the powerup stud, the project status stud, the sequence stud or the forcefield stud?\n\n>
+     6 | I only understood you as far as wanting to trigger the top sensor.\n\n>
+     6 | That's not something you can switch.\n\nCheryl says, "As you asked, the guards will keep their distance so they won't disturb your concentration. It'll just be you and me. And, since I'm no mechanist, I've got this--just so I can keep tabs on you." She shows you a holographic reproduction of this room, hovering over a black base. "There are sensors for movement, electromagnetic radiation, and I don't know what else, all analyzing this room. This little display lets me monitor the activity everywhere in the room so I can see what you're up to. So don't think you'll get away with anything."\n\n>
+     6 | I only understood you as far as wanting to touch the notch.\n\n>
+     6 | I only understood you as far as wanting to examine the elliptical window.\n\n>
+     6 | I only understood you as far as wanting to wave the electropulse probe.\n\n>
+     5 | I only understood you as far as wanting to touch the top sensor.\n\n>
+     5 | You're not holding the probe.\n\nCheryl says, "Tolan, my superiors don't want you anywhere near here. If they find out, I'll be in a lot of trouble."\n\n>
+     5 | You haven't got that.\n\n>
+     5 | I only understood you as far as wanting to examine the icons.\n\n>
+     5 | I only understood you as far as wanting to adjust the control surface.\n\n>
+     5 | I only understood you as far as wanting to study the icons.\n\n>
+     5 | I only understood you as far as wanting to look at Cheryl.\n\n>
+     5 | You don't have anything useful to probe with.\n\n>
+     4 | You're not holding the probe.\n\nAlthough you cannot see anything happening directly,  Cheryl's monitor hologram lights up with a multi-colored iridescent sphere which slowly fades away. At the same time, a number of smaller points of white appear in the part of the hologram corresponding to the fusion bay, but you cannot make out the details from here; they are somewhat obscured by the glow of the probe.\n\n>
+     4 | You already have that.\n\nAlthough you cannot see anything happening directly,  Cheryl's monitor hologram lights up with a multi-colored iridescent sphere which slowly fades away.\n\n>
+     4 | I only understood you as far as wanting to touch the electropulse probe to the contact points.\n\n>
+     4 | I only understood you as far as wanting to check the slab.\n\n>
+     4 | I only understood you as far as wanting to check the access panel.\n\n>
+     4 | I only understood you as far as wanting to study the monitor hologram.\n\n>
+     4 | I only understood you as far as wanting to help.\n\n>
+     4 | I only understood you as far as wanting to think.\n\n>
+     4 | I only understood you as far as wanting to study the slab.\n\n>
+     3 | I only understood you as far as wanting to adjust the electropulse probe.\n\n>
+     3 | I only understood you as far as wanting to touch the electropulse probe.\n\n>
+     3 | I only understood you as far as wanting to get the electropulse probe.\n\n>
+     3 | You haven't got that.\n\nCheryl says, "You can have this once I'm sure it's safe, Tolan."\n\nShe examines the probe carefully, then aims it so neither end is pointing at either of you, and fiddles with it for a moment.\n\nAlthough you cannot see anything happening directly,  Cheryl's monitor hologram lights up with a multi-colored iridescent sphere which slowly fades away.\n\nCheryl says, "Huh. Just an electromagnetic toy." She sets it down on the slab.\n\n>
+     3 | You're not holding the probe.\n\nCheryl says, "The problem is with the Lono, as you might guess."\n\n>
+     3 | I only understood you as far as wanting to touch the studs.\n\n>
+     3 | I only understood you as far as wanting to open the access panel.\n\n>
+     3 | I only understood you as far as wanting to touch the gleaming curves.\n\n>
+     3 | I only understood you as far as wanting to examine the key.\n\n>
+     3 | I only understood you as far as wanting to activate the notch.\n\n>
+     3 | I only understood you as far as wanting to activate the control surface.\n\n>
+     3 | I only understood you as far as wanting to approach the cluster of forms.\n\n>
+     3 | I only understood you as far as wanting to remove the handcuffs.\n\n>
+     3 | I only understood you as far as wanting to sit on the gleaming curves.\n\n>
+     2 | I only understood you as far as wanting to check the contact points.\n\n>
+     2 | I only understood you as far as wanting to touch the contact points with the top sensor.\n\n>
+     2 | That would accomplish nothing.\n\nCheryl says, "As you asked, the guards will keep their distance so they won't disturb your concentration. It'll just be you and me. And, since I'm no mechanist, I've got this--just so I can keep tabs on you." She shows you a holographic reproduction of this room, hovering over a black base. "There are sensors for movement, electromagnetic radiation, and I don't know what else, all analyzing this room. This little display lets me monitor the activity everywhere in the room so I can see what you're up to. So don't think you'll get away with anything."\n\n>
+     2 | I only understood you as far as wanting to press the contact points the control surface.\n\n>
+     2 | You're not holding the probe.\n\nCheryl says, "Cooperation will payoff in the end."\n\n>
+     2 | I only understood you as far as wanting to examine the installation status display.\n\n>
+     2 | I only understood you as far as wanting to hold the floor.\n\n>
+     2 | There's no way to make it probe repeatedly; you'll have to use the sensors.\n\nCheryl says, "So I guess I'll finally make it into the history books by doing it for them."\n\n>
+     2 | That's not something you can close.\n\n>
+     2 | I only understood you as far as wanting to examine the doorway.\n\n>
+     2 | There's no way to make it probe repeatedly; you'll have to use the sensors.\n\nCheryl says, "Tolan, my superiors don't want you anywhere near here. If they find out, I'll be in a lot of trouble."\n\n>
+     2 | I only understood you as far as wanting to activate the top sensor.\n\n>
+     2 | There's no way to make it probe repeatedly; you'll have to use the sensors.\n\nCheryl says, "You probably never realized it, Tolan, but the Yi had a somewhat high opinion of themselves. The word Yi isn't just their name--it means 'the end' or 'the ultimate'. The 'Yi-Lono-Mordel' isn't 'the Yi's Lono weapon'; it's 'the final Lono weapon'. They were planning to win their war with it."\n\n>
+     2 | But you aren't holding that.\n\n>
+     2 | There is nothing on the slab.\n\n>
+     2 | I only understood you as far as wanting to study the white pillar.\n\n>
+     2 | You can't go that way.\n\nCheryl says, "They're coming back, Tolan. Soon, we think. So before they show up, I'm going to have found a way to put an end to it, with your help."\n\n>
+     2 | I only understood you as far as wanting to break the handcuffs.\n\n>
+     2 | You're not holding the probe.\n\nCheryl says, "All this power. It must be destructive on an unimaginable scale. Or astonishingly subtle."\n\n>
+     2 | You don't have anything useful to probe with.\n\nCheryl says, "This is our chance to make a difference, Tolan. But only if we do it according to my rules. You're going to see what sort of information you can get displayed. As soon as you bring some Yi text up, you stop. You don't touch anything until I say it's ok to continue. Got it?"\n\n>
+     2 | You don't have anything useful to probe with.\n\nCheryl says, "What's on that screen?" She approaches from other side of the slab. "Bah. See if you can find some text there."\n\n>
+     2 | You're not holding the probe.\n\nAlthough you cannot see anything happening directly,  Cheryl's monitor hologram lights up with a multi-colored iridescent sphere which slowly fades away. At the same time, a number of smaller points of white appear in the part of the hologram corresponding to the fusion bay, but you cannot make out the details from here; they are somewhat obscured by the glow of the probe.\n\nCheryl says, "So I guess I'll finally make it into the history books by doing it for them."\n\n>
+     2 | You're not holding the probe.\n\nAlthough you cannot see anything happening directly,  Cheryl's monitor hologram lights up with a multi-colored iridescent sphere which slowly fades away. At the same time, a number of smaller points of white appear in the part of the hologram corresponding to the fusion bay, but you cannot make out the details from here; they are somewhat obscured by the glow of the probe.\n\nCheryl says, "You probably never realized it, Tolan, but the Yi had a somewhat high opinion of themselves. The word Yi isn't just their name--it means 'the end' or 'the ultimate'. The 'Yi-Lono-Mordel' isn't 'the Yi's Lono weapon'; it's 'the final Lono weapon'. They were planning to win their war with it."\n\n>
+     2 | You're not holding the probe.\n\nCheryl says, "Well, we'll know soon enough."\n\n>
+     2 | I only understood you as far as wanting to trigger the contact points.\n\n>
+     2 | I only understood you as far as wanting to cover the electropulse probe.\n\n>
+     2 | That's not something you can enter.\n\n>
+     2 | I only understood you as far as wanting to twist the gleaming curves.\n\n>
+     2 | I only understood you as far as wanting to rotate the gleaming curves.\n\n>
+     2 | What do you want to read in?\n\n>
+     2 | There's no way to make it probe repeatedly; you'll have to use the sensors.\n\nCheryl says, "The problem is with the Lono, as you might guess."\n\n>
+     1 | You're not holding the probe.\n\nAlthough you cannot see anything happening directly,  Cheryl's monitor hologram lights up with a multi-colored iridescent sphere which slowly fades away. At the same time, a number of smaller points of white appear in the part of the hologram corresponding to the fusion bay, but you cannot make out the details from here--unfortunate, since those details are just what you need to make the repairs; they are somewhat obscured by the glow of the probe.\n\nCheryl says, "They're coming back, Tolan. Soon, we think. So before they show up, I'm going to have found a way to put an end to it, with your help."\n\n>
+     1 | You're not holding the probe.\n\n"But," Cheryl continues, "They swore an oath. Apparently the same one they swore against the Yi, millennia ago. They're going to be back, Tolan, back with a vengeance. Soon. So before they show up, I'm going to have found a way to put an end to it--and that's why you're here."\n\n>
+     1 | I only understood you as far as wanting to pull the electropulse probe.\n\n>
+     1 | I only understood you as far as wanting to take the electropulse probe.\n\n>
+     1 | I only understood you as far as wanting to touch the calibration stud.\n\n>
+     1 | You already have that.\n\nCheryl says, "The problem is with the Lono, as you might guess."\n\n>
+     1 | I only understood you as far as wanting to look at the fusion generator bay.\n\n>
+     1 | I only understood you as far as wanting to look at the contact points.\n\n>
+     1 | You're not holding the probe.\n\nCheryl says, "They're coming back, Tolan. Soon, we think. So before they show up, I'm going to have found a way to put an end to it, with your help."\n\n>
+     1 | You don't have anything to shoot with.\n\nCheryl says, "So I guess I'll finally make it into the history books by doing it for them."\n\n>
+     1 | You're not holding the probe.\n\nAlthough you cannot see anything happening directly,  Cheryl's monitor hologram lights up with a multi-colored iridescent sphere which slowly fades away. At the same time, a number of smaller points of white appear in the part of the hologram corresponding to the fusion bay, but you cannot make out the details from here--unfortunate, since those details are just what you need to make the repairs; they are somewhat obscured by the glow of the probe.\n\n>
+     1 | I only understood you as far as wanting to stand.\n\n>
+     1 | I only understood you as far as wanting to trigger the electropulse probe.\n\n>
+     1 | There's nothing to feel.\n\nCheryl says, "So I guess I'll finally make it into the history books by doing it for them."\n\n>
+     1 | I only understood you as far as wanting to look at the elliptical window.\n\n>
+     1 | I only understood you as far as wanting to examine the powerup stud.\n\n>
+     1 | I only understood you as far as wanting to examine the sequence stud.\n\n>
+     1 | I only understood you as far as wanting to examine the forcefield stud.\n\n>
+     1 | I only understood you as far as wanting to look under the slab.\n\n>
+     1 | I only understood you as far as wanting to search the room.\n\n>
+     1 | That would accomplish nothing.\n\nCheryl says, "And of anyone, I'm the only one who will be able to make heads or tails out of whatever information you can dig up."\n\n>
+     1 | I only understood you as far as wanting to touch the slab.\n\n>
+     1 | I only understood you as far as wanting to press the top sensor the handcuffs.\n\n>
+     1 | I only understood you as far as wanting to press the bottom sensor the handcuffs.\n\n>
+     1 | I only understood you as far as wanting to touch the top sensor to the contact points.\n\n>
+     1 | I only understood you as far as wanting to insert the electropulse probe into the contact points.\n\n>
+     1 | I only understood you as far as wanting to rotate the electropulse probe.\n\n>
+     1 | Which do you mean, the calibration stud, the tool stud, the generator access stud, the information stud, the powerup stud, the project status stud, the sequence stud or the forcefield stud?\n\n>
+     1 | I only understood you as far as wanting to turn the electropulse probe.\n\n>
+     1 | I only understood you as far as wanting to put the electropulse probe in the contact points.\n\n>
+     1 | I only understood you as far as wanting to put the electropulse probe on the contact points.\n\n>
+     1 | You already have that.\n\nCheryl says, "Tolan, my superiors don't want you anywhere near here. If they find out, I'll be in a lot of trouble."\n\n>
+     1 | There's no way to make it probe repeatedly; you'll have to use the sensors.\n\nCheryl says, "If I manage to find a way to win the war, they'll forgive me. But I can't tell them about it yet. They don't trust you at all. I don't really trust you. But we've worked together, so I'm sure I can keep you under control, and more importantly, I'm sure you can get me access. I know you can do this. I don't know if anybody else could."\n\n>
+     1 | I only understood you as far as wanting to touch the access panel.\n\n>
+     1 | I only understood you as far as wanting to search the access panel.\n\n>
+     1 | I only understood you as far as wanting to feel the access panel.\n\n>
+     1 | I only understood you as far as wanting to check the control surface.\n\n>
+     1 | I only understood you as far as wanting to study the control surface.\n\n>
+     1 | You can't go that way.\n\nCheryl sighs. "Tolan, do you have any idea how important it is we figure this place out, once and for all?"\n\n>
+     1 | I only understood you as far as wanting to in.\n\n>
+     1 | I only understood you as far as wanting to touch the icons.\n\n>
+     1 | I only understood you as far as wanting to press the notch the icons.\n\n>
+     1 | I only understood you as far as wanting to touch the bottom sensor.\n\n>
+     1 | You're not holding the probe.\n\nCheryl sighs. "Tolan, do you have any idea how important it is we figure this place out, once and for all?"\n\n>
+     1 | There's no way to make it probe repeatedly; you'll have to use the sensors.\n\nCheryl says, "They're coming back, Tolan. Soon, we think. So before they show up, I'm going to have found a way to put an end to it, with your help."\n\n>
+     1 | You already have that.\n\nCheryl says, "Cooperation will payoff in the end."\n\n>
+     1 | You already have that.\n\nCheryl says, "And of anyone, I'm the only one who will be able to make heads or tails out of whatever information you can dig up."\n\n>
+     1 | You already have that.\n\nCheryl says, "So I guess I'll finally make it into the history books by doing it for them."\n\n>
+     1 | You're not wearing that.\n\nAlthough you cannot see anything happening directly,  Cheryl's monitor hologram lights up with a multi-colored iridescent sphere which slowly fades away.\n\nCheryl says, "Well, we'll know soon enough."\n\n>
+     1 | I only understood you as far as wanting to press the white pillar the access panel.\n\n>
+     1 | I only understood you as far as wanting to climb the gleaming curves.\n\n>
+     1 | You can't go that way.\n\nCheryl says, "You probably never realized it, Tolan, but the Yi had a somewhat high opinion of themselves. The word Yi isn't just their name--it means 'the end' or 'the ultimate'. The 'Yi-Lono-Mordel' isn't 'the Yi's Lono weapon'; it's 'the final Lono weapon'. They were planning to win their war with it."\n\n>
+     1 | I only understood you as far as wanting to open the generator access stud.\n\n>
+     1 | I only understood you as far as wanting to stand on the gleaming curves.\n\n>
+     1 | I only understood you as far as wanting to push the gleaming curves the door.\n\n>

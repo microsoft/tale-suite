@@ -1,0 +1,27 @@
+# Invalid Action Messages: ScienceWorldPowerComponentRenewableVsNonrenewableEnergy
+# Total unique error messages: 20
+# Total error occurrences: 16615
+#
+# Format: count | message
+#===============================================================================
+
+ 15634 | No known action matches that input.
+   163 | The switch is already activated.
+   137 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+   125 | anode on switch is already connected, and must be disconnected before it can be connected to something else
+   122 | The nuclear generator is already activated.
+    92 | anode on battery is already connected, and must be disconnected before it can be connected to something else
+    77 | anode on electric motor is already connected, and must be disconnected before it can be connected to something else
+    56 | anode on nuclear generator is already connected, and must be disconnected before it can be connected to something else
+    45 | cathode on nuclear generator is already connected, and must be disconnected before it can be connected to something else
+    41 | terminal 1 on black wire is already connected, and must be disconnected before it can be connected to something else
+    25 | terminal 1 on red wire is already connected, and must be disconnected before it can be connected to something else
+    24 | cathode on switch is already connected, and must be disconnected before it can be connected to something else
+    21 | cathode on electric motor is already connected, and must be disconnected before it can be connected to something else
+    14 | cathode on battery is already connected, and must be disconnected before it can be connected to something else
+    14 | terminal 2 on black wire is already connected, and must be disconnected before it can be connected to something else
+    11 | terminal 2 on red wire is already connected, and must be disconnected before it can be connected to something else
+     6 | terminal 1 on orange wire is already connected, and must be disconnected before it can be connected to something else
+     4 | terminal 2 on orange wire is already connected, and must be disconnected before it can be connected to something else
+     3 | The ultra low temperature freezer is already activated.
+     1 | anode on wind generator is already connected, and must be disconnected before it can be connected to something else

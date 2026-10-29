@@ -1,0 +1,125 @@
+# Invalid Action Messages: JerichoEnv905
+# Total unique error messages: 118
+# Total error occurrences: 10790
+#
+# Format: count | message
+#===============================================================================
+
+  2956 | [!: Noun error.]
+  2131 | [!: Verb error.]
+   941 | [!: You seem to want to talk to someone who is not present.]
+   807 | [!: No command entered.]
+   777 | [!: Noun error. (This could mean a number of things: a noun used in your command may not be present, or it may be present but not visible; it may be scenery you can't interact with; you may have specified too many indirect objects; you may have misspelled something; the list goes on.)]
+   639 | [!: Verb error. (This generally means that the first word of your command was not recognized.)]
+   543 | Time passes.
+   490 | [!: Please give one of the answers above.
+   108 | [!: Command not understood past "take inventory."]
+    92 | [!: Command not understood past "unlock the car."]
+    91 | You're not holding a pen.
+    70 | [!: Please be more specific about what you'd like to take off.]
+    70 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+    68 | You find nothing of interest.
+    63 | You already have that.
+    53 | [!: Command not understood past "use the ID card."]
+    48 | [!: Command not understood past "shower."]
+    45 | You're already wearing that!
+    39 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+    36 | [Comment NOT recorded.]
+    34 | That's already open.
+    31 | [!: Please be more specific.]
+    29 | You're not wearing that.
+    29 | [!: Command not understood past "wash."]
+    28 | There is no shower in this location.
+    27 | [!: That verb cannot take multiple objects.]
+    26 | [!: Command not understood past "go south."]
+    25 | But you aren't in the gold watch.
+    25 | You can't see inside, since the wallet is closed.
+    22 | [!: Command not understood past "unlock the front door."]
+    22 | [!: Command not understood past "use the telephone."]
+    22 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+    21 | But you aren't in the clean clothing.
+    21 | You don't have that.
+    20 | [!: Command not understood past "open the car."]
+    19 | [!: Command not understood past "go east."]
+    19 | [!: Command not understood past "use the keys."]
+    18 | You already have those.
+    17 | [!: Command not understood past "remove the dirty laundry."]
+    15 | There's nothing extraordinary about the sink.
+    13 | [!: Nothing seems to be available. (You may need to be more specific.)]
+    13 | [!: Command not understood.]
+    13 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->47 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->49 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->51 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->53 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+    10 | [!: Command not understood past "in."]
+     9 | [!: Command not understood past "wear the soiled clothing."]
+     9 | But you aren't in the shower.
+     9 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->47 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->49 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+     8 | You can't see inside, since the dresser is closed.
+     8 | You are already here.
+     7 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+     6 | [!: Command not understood past "look in."]
+     6 | [!: Command not understood past "drop the gold watch."]
+     6 | [!: Command not understood past "get the back door."]
+     6 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->47 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->49 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->51 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->53 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->55 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+     5 | You don't have the keys.
+     5 | [!: Command not understood past "use the toaster."]
+     5 | [!: Command not understood past "quit."]
+     5 | You don't have those.
+     5 | [!: Command not understood past "go west."]
+     5 | [!: Command not understood past "search the car."]
+     5 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error. (This generally means that the first word of your command was not recognized.)]
+     5 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->47 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+     4 | That's not something you can switch.
+     4 | That's already open.\n\nThe phone rings.
+     4 | [!: Command not understood past "take the dresser."]
+     3 | [!: Command not understood past "go north."]
+     3 | [!: Command not understood past "open the dresser."]
+     3 | There is nothing on the telephone.
+     3 | [!: Command not understood past "open the west."]
+     3 | [!: Command not understood past "use the wallet."]
+     3 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->47 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->49 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->51 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->53 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->55 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->57 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->59 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+     3 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->47 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->49 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->51 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+     2 | But you aren't in bed.\n\nThe phone rings.
+     2 | But you aren't in the keys.
+     2 | [!: Command not understood past "wear the clean clothing."]
+     2 | That's not something you can open.
+     2 | [!: Command not understood past "open the front door."]
+     2 | [!: Command not understood past "wait."]
+     2 | [!: Command not understood past "stand."]
+     2 | You see nothing valuable amid the piles of dirty laundry.
+     2 | [!: Command not understood past "it."]
+     2 | [!: Command not understood past "shut the ground."]
+     2 | [!: Command not understood past "drop the keys."]
+     1 | But you aren't in the bedroom.
+     1 | [!: Command not understood past "search the dresser."]
+     1 | [!: Command not understood past "break the front door."]
+     1 | [!: Command not understood past "use the driver's license."]
+     1 | [!: Command not understood past "look up."]
+     1 | [!: Command not understood past "take the shower."]
+     1 | [!: Command not understood past "remove the gold watch."]
+     1 | [!: Command not understood past "read the form."]
+     1 | [!: Command not understood past "north out."]
+     1 | [!: Command not understood past "open the bedroom."]
+     1 | [!: Command not understood past "examine the bedroom door."]
+     1 | [!: Command not understood past "lock the front door."]
+     1 | But you aren't in the house.
+     1 | That's not something you can pick up.
+     1 | [!: Command not understood past "search the dirty laundry."]
+     1 | But you aren't in the living room.
+     1 | [!: Command not understood past "search the trunk."]
+     1 | [!: Command not understood past "search the bedroom."]
+     1 | [!: Command not understood past "get the dresser."]
+     1 | But you aren't in the wallet.
+     1 | [!: Command not understood past "examine the dresser."]
+     1 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->47 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->49 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->51 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->53 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->55 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->57 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->59 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->61 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->63 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->65 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->67 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->69 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->71 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->73 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->75 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+     1 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+     1 | [!: Command not understood past "open the living room."]
+     1 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->47 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->49 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->51 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->53 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->55 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->57 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->59 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->61 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error.]
+     1 | [!: Command not understood past "wake."]
+     1 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->47 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->49 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error. (This generally means that the first word of your command was not recognized.)]
+     1 | [!: Command not understood past "east."]
+     1 | [** Programming error: tried to read from -->33 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->35 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->37 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->39 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->41 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->43 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n\n[** Programming error: tried to read from -->45 in the buffer (->) array "parse", which has entries 2 up to 64 **]\n[!: Verb error. (This generally means that the first word of your command was not recognized.)]
+     1 | [!: Command not understood past "unlock the north."]
+     1 | [!: Command not understood past "knock on the west."]
+     1 | [!: Command not understood past "use the form."]
+     1 | You don't have that.\n\nThe phone in the bedroom rings.
+     1 | [!: Command not understood past "open the south."]
+     1 | But you aren't in bed.

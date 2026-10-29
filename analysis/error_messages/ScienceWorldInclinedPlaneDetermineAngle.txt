@@ -1,0 +1,16 @@
+# Invalid Action Messages: ScienceWorldInclinedPlaneDetermineAngle
+# Total unique error messages: 9
+# Total error occurrences: 9880
+#
+# Format: count | message
+#===============================================================================
+
+  9510 | No known action matches that input.
+   195 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+   137 | The door is not open.
+    24 | The door is already open.
+     8 | The stopwatch is already activated.
+     3 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+     1 | The drawer isn't open, so you can't see inside.
+     1 | The drawer is already open.
+     1 | The stopwatch is already deactivated.

@@ -1,0 +1,237 @@
+# Invalid Action Messages: JerichoEnvPartyfoul
+# Total unique error messages: 230
+# Total error occurrences: 10889
+#
+# Format: count | message
+#===============================================================================
+
+  3686 | You can't see any such thing.
+  2720 | That's not a verb I recognise.
+  1140 | I didn't understand that sentence.
+   658 | I beg your pardon?
+   565 | You seem to want to talk to someone, but I can't see whom.
+   361 | Time passes.
+   131 | I only understood you as far as wanting to take inventory.
+    90 | But you aren't in anything at the moment.\n\n"Hey," Frank begins again, "I ever tell you the time I went to Disney World and puked on the Dumbo ride? True story!"
+    84 | I only understood you as far as wanting to leave.
+    81 | But you aren't in anything at the moment.\n\nOnce, I knew this trick where you take a shot glass and you make it vanish under thish napkin, see," says Frank, "Of course you need an empty shot glass. And believe you me, I can empty shot glasses like there's no tomorrow!"
+    80 | What do you want to plug in the hair dryer?
+    67 | But you aren't in anything at the moment.\n\n"Not that my Dad cared, of course," Frank blubbers, "He was always out somewhere, doing these hospital missions over in Africa or some such hell-hole... I mean, didn't the man have priorities?"
+    63 | I only understood you as far as wanting to help.
+    56 | I only understood you as far as wanting to swing the cocktail book.
+    51 | I only understood you as far as wanting to say.
+    51 | Which do you mean, the living room walls, the living room window or the living room ceiling?
+    40 | But you aren't in anything at the moment.\n\n"I could do all sorts of things. Pennies. Cards. I could make all sores of things disappear!" Frank says.\n\n"Well you certainly had success with my bourbon collection," notes Ron.
+    33 | I only understood you as far as wanting to exit.
+    31 | But you aren't in anything at the moment.\n\n"And then I say, who cares? Let's play another round of golf!" Frank finishes and then explodes with laughter.
+    28 | But you aren't in anything at the moment.\n\n"Course," he continues, "I probably shouldna gotten so wasted on Pina Coladas in the Tiki Room, if you know what I'm sayin'." He pats you slyly on the shoulder and you feel a small part of you die on the inside.
+    28 | I only understood you as far as wanting to yell.
+    27 | Which do you mean, the painting of a cabin or the abstract painting?
+    25 | There is no reply.
+    23 | I only understood you as far as wanting to hit Frank Quinlivan.
+    19 | I only understood you as far as wanting to get Frank Quinlivan.
+    19 | But you aren't in anything at the moment.\n\nFrank elbows you on your side, "Can you believe this guy? I mean can you BELIEVE it? Ole cheapskate can't even afford more booze? I mean what kinda party is this supposed to be? Reminds me of that time I went to Salt Lake. I ever tell you about that?"
+    18 | What do you want to plug in the space heater?
+    18 | But you aren't in anything at the moment.\n\n"Hey!" he says, "Speakin' of which, bartender! Gimme another scotch and soda! Easy on the soda."\n\nRon barely looks Frank's way, saying, "I think we can all agree you've had enough, Frank."
+    17 | I only understood you as far as wanting to spill the wine glass.
+    17 | I only understood you as far as wanting to go south.
+    17 | I only understood you as far as wanting to shut Frank Quinlivan.
+    17 | I only understood you as far as wanting to get yourself.
+    17 | But you aren't in anything at the moment.\n\n"See I was tryin' to lift my friend Mike around, but he was one heavy sommabitch, and the wheelbarrow tipped and my thumb got crushed unnerneath, like a grape in Napa Valley!" he says demonstrating with a gut turning squishing sound.
+    16 | I only understood you as far as wanting to go west.
+    15 | I only understood you as far as wanting to pour the wine glass.
+    15 | But you aren't in anything at the moment.\n\n"Well, see a bunch of the fellas and me were goin' to Lost Vegas fer a weekend, and we got waylayed in Utah on account of thish blizzard, see?" says Frank.
+    15 | But you aren't in anything at the moment.\n\n"And let me tell you, my friend," Frank brays, "Salt Lake City is NO Las Vegas!
+    13 | But you aren't in anything at the moment.\n\n"I mean Lost Vegas... wait, did I jess say Lost Vegas? Wow! Thash crazy! I mean Las Vegas," he clarifies, "Well, you know what I mean, I mean I meant. I meant I mean. Woah, are these floors tilted or is it jess me?
+    12 | You find nothing of interest.
+    12 | I only understood you as far as wanting to climb outside.
+    11 | I only understood you as far as wanting to wait.
+    11 | You can't use multiple objects with that verb.
+     9 | I only understood you as far as wanting to turn up.
+     9 | You can't reach over the bar and nab the celery stalk. First, your arms aren't that long, and second, Ron would probably stop you.
+     9 | I only understood you as far as wanting to ask Ron Fincher for the painting of a cabin.
+     9 | What do you want to plug the hair dryer in?
+     9 | What do you want to ask Ron Fincher for?
+     8 | But you aren't in anything at the moment.\n\n"Hey," says Frank, "You're not drinking that wine are you?" He looks at the glass in your hand like a starving man looks at a ham sandwich.
+     7 | You already have that.\n\n"Well, see a bunch of the fellas and me were goin' to Lost Vegas fer a weekend, and we got waylayed in Utah on account of thish blizzard, see?" says Frank.
+     7 | What do you want to plug in the toaster?
+     7 | I only understood you as far as wanting to turn the space heater.
+     7 | I only understood you as far as wanting to pull the pile of coats.
+     7 | I only understood you as far as wanting to drag Frank Quinlivan.
+     7 | But you aren't in anything at the moment.\n\n"In highschool I used to do parties, you know, kid birthdays, er... you know, bar mitzvahs," slurs Frank, "And I'd pull scarves or ties out of people's noses. Course they got all boogery if I'd keep 'em up there for long!" He laughs a sharp braying laugh.
+     6 | I only understood you as far as wanting to pour the singapore sunrise.
+     6 | I only understood you as far as wanting to take the jar of peanut butter.
+     6 | I only understood you as far as wanting to spread the jar of peanut butter on Frank Quinlivan.
+     6 | I only understood you as far as wanting to stand.
+     6 | I only understood you as far as wanting to pull Frank Quinlivan.
+     6 | I only understood you as far as wanting to laugh.
+     6 | What do you want to ask Frank Quinlivan for?
+     6 | But you aren't in anything at the moment.\n\n"So where was I?" he resumes, "Oh yeah, Lost Vegas! Well, they got magic shows there. You know I used to do magic back when I was a kid. Ish true!"
+     6 | But you aren't in anything at the moment.\n\n"Yeah," he continues, "They had to take me to the emergency room and then they sewed a metal thumb nail back onto me. Oh, yeah, I dint tell you, but my thumb nail flew off. Yeah, we think the cat ate it. It had a bloody lookin' hairball later that night. How's the wine, by the way?"
+     5 | I only understood you as far as wanting to go outside.
+     5 | You must name something more substantial.\n\n"Hey," Frank begins again, "I ever tell you the time I went to Disney World and puked on the Dumbo ride? True story!"
+     5 | Which do you mean, Guest room walls or the guest room closet?
+     5 | I only understood you as far as wanting to spill the jar of peanut butter.
+     5 | You aren't carrying the wine glass.\n\n"Of course that was before I got my thumb crushed in thish wheelbarrow accident! Oh, it was a nasty gross terrible thing! Lemme tell you all about it..." says Frank.
+     5 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"Course," he continues, "I probably shouldna gotten so wasted on Pina Coladas in the Tiki Room, if you know what I'm sayin'." He pats you slyly on the shoulder and you feel a small part of you die on the inside.
+     5 | I only understood you as far as wanting to ask Barb Clover for your casserole dish.
+     5 | I only understood you as far as wanting to pull Mark Hill.
+     5 | But you aren't in anything at the moment.
+     5 | I only understood you as far as wanting to no.
+     5 | But you aren't in anything at the moment.\n\n"Of course that was before I got my thumb crushed in thish wheelbarrow accident! Oh, it was a nasty gross terrible thing! Lemme tell you all about it..." says Frank.
+     4 | I only understood you as far as wanting to ask Ron Fincher for the celery stalk.
+     4 | You already have that.\n\n"And let me tell you, my friend," Frank brays, "Salt Lake City is NO Las Vegas!
+     4 | You don't have anything you want to microwave.
+     4 | I only understood you as far as wanting to go north.
+     4 | You aren't carrying the wine glass.\n\n"So where was I?" he resumes, "Oh yeah, Lost Vegas! Well, they got magic shows there. You know I used to do magic back when I was a kid. Ish true!"
+     4 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"I could do all sorts of things. Pennies. Cards. I could make all sores of things disappear!" Frank says.\n\n"Well you certainly had success with my bourbon collection," notes Ron.
+     4 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"And then I say, who cares? Let's play another round of golf!" Frank finishes and then explodes with laughter.
+     4 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"Hey," Frank begins again, "I ever tell you the time I went to Disney World and puked on the Dumbo ride? True story!"
+     4 | That's not something you can switch.
+     4 | You must name something more substantial.\n\n"Hey!" he says, "Speakin' of which, bartender! Gimme another scotch and soda! Easy on the soda."\n\nRon barely looks Frank's way, saying, "I think we can all agree you've had enough, Frank."
+     4 | I only understood you as far as wanting to get outside.
+     4 | I only understood you as far as wanting to get the painting of a cabin.
+     4 | You must name something more substantial.\n\n"And then I say, who cares? Let's play another round of golf!" Frank finishes and then explodes with laughter.
+     4 | You can't go that way.\n\nRon sighs from behind the bar.
+     4 | I only understood you as far as wanting to get Mark Hill.
+     4 | But you aren't in anything at the moment.\n\n"I was just kidding about that, putting scarves up people's noses," he says, "But I did know this trick where you eat a bunch of marshmallows and then vomit them all up into this sculpture like thing and... Hey, are you gonna drink that?" He asks you pointing at your wine glass.
+     3 | I only understood you as far as wanting to turn the hair dryer.
+     3 | I only understood you as far as wanting to take the an appetizer.
+     3 | You can't reach over the bar and nab the celery stalk. First, your arms aren't that long, and second, Ron would probably stop you.\n\n"You know there's no escape," says Ron, looking at you seriously, "The cocktail parties never end. You know, tomorrow we're hosting another one. Another One!"
+     3 | There is no reply.\n\n"My! My! Those men love their football, don't they?" asks Abbey.\n\n"It's worse during the summer," says Barb, "My Chuckie is a Cubs fan." All three of you nod sympathetically.\n\n"Oh dear," says Abbey, "A host's work is never done!" and with that she walks to the den.
+     3 | That's not something you can open.
+     3 | I only understood you as far as wanting to spread the jar of peanut butter on the celery stalk.
+     3 | You already have the stalk of celery.\n\nAbbey enters the kitchen victorious. "I have met the stain, and the stain dissolved!" she says triumphantly.\n\n"I hope you have a wonderful wonderful marriage," says Sandy meekly.\n\n"Well, if it doesn't work out, I can always divorce the jack-ass," says Barb, "Am I right?"
+     3 | Which do you mean, the kitchen counter or the kitchen outlet?
+     3 | There is nothing on the kitchen counter.\n\n"So my sister wants to be the bride's maid," says Barb, "But I'm like, I don't even really like you, you know? I mean, we've been pretty estranged ever since she dropped out of college and joined that commune in Alaska."
+     3 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"Yeah," he continues, "They had to take me to the emergency room and then they sewed a metal thumb nail back onto me. Oh, yeah, I dint tell you, but my thumb nail flew off. Yeah, we think the cat ate it. It had a bloody lookin' hairball later that night. How's the wine, by the way?"
+     3 | What do you want to plug the toaster in?
+     3 | I only understood you as far as wanting to about.
+     3 | I only understood you as far as wanting to shut Ron Fincher.
+     3 | But you aren't in anything at the moment.\n\n"I could do all sorts of things. Pennies. Cards. I could make all sores of things disappear!" Frank says.\n\n"Well you certainly had success with my bourbon collection," notes Ron.\n\nThat's not a verb I recognise.
+     3 | I only understood you as far as wanting to in.
+     3 | You must name something more substantial.\n\n"Well, see a bunch of the fellas and me were goin' to Lost Vegas fer a weekend, and we got waylayed in Utah on account of thish blizzard, see?" says Frank.
+     3 | I only understood you as far as wanting to plug in the hair dryer inside.
+     3 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"Well, see a bunch of the fellas and me were goin' to Lost Vegas fer a weekend, and we got waylayed in Utah on account of thish blizzard, see?" says Frank.
+     2 | I only understood you as far as wanting to cut your casserole dish.
+     2 | You can't reach over the bar and nab the celery stalk. First, your arms aren't that long, and second, Ron would probably stop you.\n\nRon casually stirs his bloody mary with a celery stalk.
+     2 | That's already closed.\n\n"Touch down!!" scream both the men and they give each other high fives.
+     2 | There is no reply.\n\nAbbey swoops in from behind the couch. "Can I interest you boys in some seafood appetizers? They're an old family recipe!"\n\n"Uh, thanks," says your husband, "but we're fine here with the chips."
+     2 | There is no reply.\n\n"Now boys," says Abbey in a half-serious tone, "I am expecting you to stay after the foot ball game and play some party games!"\n\n"Sure, sure." they both respond.
+     2 | I only understood you as far as wanting to put the jar of peanut butter on the carpet.
+     2 | I only understood you as far as wanting to rub the jar of peanut butter.
+     2 | There is no reply.\n\n"Oh dear," Abbey says, "It's so good of you to look in on him like this."
+     2 | I only understood you as far as wanting to go northwest.
+     2 | You already have that.\n\n"So where was I?" he resumes, "Oh yeah, Lost Vegas! Well, they got magic shows there. You know I used to do magic back when I was a kid. Ish true!"
+     2 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"In highschool I used to do parties, you know, kid birthdays, er... you know, bar mitzvahs," slurs Frank, "And I'd pull scarves or ties out of people's noses. Course they got all boogery if I'd keep 'em up there for long!" He laughs a sharp braying laugh.
+     2 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\nFrank stops and rubs his eyes. "It got real quiet out there. I looks at my buddies, with their carts and clubs in hand..."
+     2 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"And let me tell you, my friend," Frank brays, "Salt Lake City is NO Las Vegas!
+     2 | I only understood you as far as wanting to ask Ron Fincher for the an appetizer.
+     2 | You can't see inside, since the guest room closet is closed.
+     2 | You already have that.\n\n"And then I say, who cares? Let's play another round of golf!" Frank finishes and then explodes with laughter.
+     2 | I only understood you as far as wanting to scream.
+     2 | There is no score in this story.
+     2 | You must name something more substantial.\n\n"And let me tell you, my friend," Frank brays, "Salt Lake City is NO Las Vegas!
+     2 | You aren't carrying the wine glass.\n\n"Not that my Dad cared, of course," Frank blubbers, "He was always out somewhere, doing these hospital missions over in Africa or some such hell-hole... I mean, didn't the man have priorities?"
+     2 | Which do you mean, the wine glass or the bloody mary?
+     2 | But you aren't in anything at the moment.\n\nRon sighs from behind the bar.
+     2 | There is no reply.\n\nRon looks at you strangely.
+     2 | What do you want to move?
+     2 | You can't see "him" (Frank Quinlivan) at the moment.
+     2 | I only understood you as far as wanting to speak.
+     2 | I only understood you as far as wanting to take the painting of a cabin.
+     2 | I only understood you as far as wanting to turn Frank Quinlivan.
+     2 | I only understood you as far as wanting to pull your casserole dish.
+     2 | I only understood you as far as wanting to drag Mark Hill.
+     2 | But you aren't in anything at the moment.\n\n"Hey, not to change the subject," Frank says, "But if I wasn't married and you wasn't married, I would totally ask for your phone number..." he says. You resist the urge to cringe.
+     2 | But you aren't in anything at the moment.\n\n"Hey, do you remember what I jess said a little while ago?" he asks you, his eyes barely focusing on your face, "You know, about asking for your number? Please done tell my wife, Sandy. She might not unnerstand, okay?"
+     2 | But you aren't in anything at the moment.\n\n"But what was I talkin' about?" he asks you suddenly bewildered, "Oh yeah! That grade-A asshole of a father of mine!"
+     2 | But you aren't in anything at the moment.\n\n"You know, my ole man was a REAL bastard. Always out workin' at the shelter or doin' some stupid benefit thing. You know he dint even give me an allowance as a kid. Well, I mean, hardly," he says, "Not much of one, I mean."
+     2 | But you aren't in anything at the moment.\n\n"You know, he died lash year," continues Frank, "Aneurism. Out of the blue. I was out on the links, when I got the message."
+     2 | But you aren't in anything at the moment.\n\n"Your father has jess died," recites Frank, "Thash what it said. Thash all the message said."
+     2 | But you aren't in anything at the moment.\n\nFrank stops and rubs his eyes. "It got real quiet out there. I looks at my buddies, with their carts and clubs in hand..."
+     2 | What do you want to talk?
+     2 | What do you want to draw on Frank Quinlivan with?
+     2 | I only understood you as far as wanting to ask Ron Fincher for the bloody mary.
+     2 | That's not something you can switch.\n\n"Hey," says Barb, "You need any help?"\n\n"Oh no! Not at all! You just sit right there and enjoy yourself," commands Abbey.
+     2 | You're already feeling bloated and tired. A corn starched processed food substance coated with orange flavor dust is not going to make you feel any better.\n\nThe lights in the room pulse a tad brighter.\n\nHmm... It seems as if someone has just turned something off in another room.
+     2 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"Your father has jess died," recites Frank, "Thash what it said. Thash all the message said."
+     2 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"See I was tryin' to lift my friend Mike around, but he was one heavy sommabitch, and the wheelbarrow tipped and my thumb got crushed unnerneath, like a grape in Napa Valley!" he says demonstrating with a gut turning squishing sound.
+     2 | I only understood you as far as wanting to kick Frank Quinlivan.
+     2 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"You know, my ole man was a REAL bastard. Always out workin' at the shelter or doin' some stupid benefit thing. You know he dint even give me an allowance as a kid. Well, I mean, hardly," he says, "Not much of one, I mean."
+     2 | I only understood you as far as wanting to jump.
+     1 | I only understood you as far as wanting to turn the hair dryer on.
+     1 | You already have that.\n\n"Hey," says Frank, "You're not drinking that wine are you?" He looks at the glass in your hand like a starving man looks at a ham sandwich.
+     1 | I only understood you as far as wanting to pour the jar of peanut butter.
+     1 | I only understood you as far as wanting to turn the jar of peanut butter.
+     1 | There is no reply.\n\n"You know, dear," Abbey says, "Ronald told me that you were the one who gave Frank the drink that tipped him over."\n\nShe looks at you for a bit and then says, "Next time, perhaps we should think of the consequences of our actions. Hm?"
+     1 | There is no reply.\n\nRon looks at you and says, "You know, if you'd like another drink, all you have to do is order one."
+     1 | You don't have anything you want to microwave.\n\nAbbey Fincher ambles in from the den. "I do hope you're enjoying the party!" she says.
+     1 | I only understood you as far as wanting to smear the jar of peanut butter on the remote control.
+     1 | I only understood you as far as wanting to put the jar of peanut butter on the remote control.
+     1 | There is no reply.\n\n"Oh dear," says Abbey, "A host's work is never done!" and with that she dances to the guest room.
+     1 | I only understood you as far as wanting to spill the singapore sunrise.
+     1 | I only understood you as far as wanting to drop the jar of peanut butter.
+     1 | I only understood you as far as wanting to apply the jar of peanut butter to Frank Quinlivan.
+     1 | That's already off.
+     1 | You already have the paper napkin.\n\nAbbey Fincher dances in from the living room. "You know, Amy," she says, "I shouldn't have to tell you how thrilled I am you could make it to our little shindig."\n\n"Amy dear," Abbey says, plucking the jar of peanut butter from your hands, "I appreciate you helping out, but the spreads belong on the coffee table with the rest of the snacks!"\n\nAbbey leave the kitchen for the den, carrying the jar of peanut butter with her.
+     1 | There is no reply.\n\n"I'm not supposed to wear pure white, because... well look at me!" exclaims Barb, "But screw that. It's my wedding. I'll wear whatever the hell I want."
+     1 | You aren't carrying the wine glass.\n\n"Hey," Frank begins again, "I ever tell you the time I went to Disney World and puked on the Dumbo ride? True story!"
+     1 | You aren't carrying the wine glass.\n\n"I was just kidding about that, putting scarves up people's noses," he says, "But I did know this trick where you eat a bunch of marshmallows and then vomit them all up into this sculpture like thing and... Hey, are you gonna drink that?" He asks you pointing at your wine glass.
+     1 | I only understood you as far as wanting to say that to Frank Quinlivan.
+     1 | I only understood you as far as wanting to ask Ron Fincher for the wine glass.
+     1 | You already have that.\n\n"Of course that was before I got my thumb crushed in thish wheelbarrow accident! Oh, it was a nasty gross terrible thing! Lemme tell you all about it..." says Frank.
+     1 | You already have that.\n\n"Not that my Dad cared, of course," Frank blubbers, "He was always out somewhere, doing these hospital missions over in Africa or some such hell-hole... I mean, didn't the man have priorities?"
+     1 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"I mean Lost Vegas... wait, did I jess say Lost Vegas? Wow! Thash crazy! I mean Las Vegas," he clarifies, "Well, you know what I mean, I mean I meant. I meant I mean. Woah, are these floors tilted or is it jess me?
+     1 | You already have a glass.\n\nFrank elbows you on your side, "Can you believe this guy? I mean can you BELIEVE it? Ole cheapskate can't even afford more booze? I mean what kinda party is this supposed to be? Reminds me of that time I went to Salt Lake. I ever tell you about that?"
+     1 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\nOnce, I knew this trick where you take a shot glass and you make it vanish under thish napkin, see," says Frank, "Of course you need an empty shot glass. And believe you me, I can empty shot glasses like there's no tomorrow!"
+     1 | There is no reply.\n\n"Do you know if it's going to be a boy or a girl?" asks Sandy.\n\n"Nah," Barb says, "I'd rather be surprised. Course, with my luck it'll be a freakin' hermaphrodite."
+     1 | You can't open the dishwasher while it's in the middle of running.
+     1 | You can't see inside, since the guest room closet is closed.\n\nAs he sleeps, Frank lets out a large and messy sounding fart. You make a mental note: First thing tomorrow morning you're getting your coat dry-cleaned.
+     1 | I only understood you as far as wanting to wave inside.
+     1 | What do you want to sit on?
+     1 | That's not something you can sit down on.\n\n"Great party," Barb says to Abbey.\n\n"Oh yes," chimes in Sandy, "It's... It's very nice."\n\n"Well," says Abbey, "I should really check on the rest of the party," and with that she struts to the living room.
+     1 | I only understood you as far as wanting to shout.
+     1 | There is no reply.\n\nThe dog yaps as Abbey bends down and picks him up.
+     1 | There is no reply.\n\nAbbey Fincher dances in from the den. "And how is everyone in this room, hmmm?" She inquires.
+     1 | You don't have time to do that.\n\nRon shakes the concoction together.
+     1 | You can't reach over the bar and nab the celery stalk. First, your arms aren't that long, and second, Ron would probably stop you.\n\nRon checks his watch.
+     1 | You can't reach over the bar and nab the celery stalk. First, your arms aren't that long, and second, Ron would probably stop you.\n\n"Darling, honey," Abbey asks her husband, "How are things at the bar?"\n\n"Fine, dear," he says without emotion.
+     1 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"Hey!" he says, "Speakin' of which, bartender! Gimme another scotch and soda! Easy on the soda."\n\nRon barely looks Frank's way, saying, "I think we can all agree you've had enough, Frank."
+     1 | I only understood you as far as wanting to put the jar of peanut butter on Frank Quinlivan.
+     1 | You're already carrying the jar of peanut butter.\n\nA loud voice announces from the television that the preceding slo-mo three dimensional replay was "brought to you by Cracked Out energy drink. Cracked Out... because you can never have too much energy."
+     1 | That's not something you can stand on.\n\n"Oh dear," says Abbey, "A host's work is never done!" and with that she ambles to the kitchen.
+     1 | That's not something you can close.
+     1 | There is no reply.\n\n"Everything seems to be all right here," Abbey says and with that she saunters to the living room.
+     1 | That's not something you can sit down on.\n\n"Everything seems to be all right here," Abbey says and with that she ambles to the kitchen.
+     1 | You can't go that way.\n\nRon takes a sip from his bloody mary.
+     1 | There is no reply.\n\nRon frowns at you.
+     1 | You can't go that way.\n\nRon looks at you strangely.
+     1 | What do you want to ask Sandy Quinlivan for?
+     1 | There is no reply.\n\n"God," Barb tells Sandy, "I am so sick of being pregnant. I just want it out of me already!"
+     1 | There is no reply.\n\n"Do you know if it's going to be a boy or a girl?" asks Sandy.\n\n"Nah," Barb says, "I'd rather be surprised. Course, with my luck it'll be a freakin' hermaphrodite."\n\nAbbey Fincher dances in from the living room. "You know, Amy," she says, "I shouldn't have to tell you how thrilled I am you could make it to our little shindig."
+     1 | But you aren't in anything at the moment.\n\nRon looks at you strangely.
+     1 | You can't go that way.\n\nRon frowns at you.
+     1 | What do you want to search?
+     1 | You can't go that way.
+     1 | You must name something more substantial.\n\n"I mean Lost Vegas... wait, did I jess say Lost Vegas? Wow! Thash crazy! I mean Las Vegas," he clarifies, "Well, you know what I mean, I mean I meant. I meant I mean. Woah, are these floors tilted or is it jess me?
+     1 | I only understood you as far as wanting to take Frank Quinlivan.
+     1 | You must name something more substantial.
+     1 | There is no reply.\n\nRon checks his watch.
+     1 | You can't go that way.\n\nAbbey Fincher dances in from the kitchen. "And how is everyone in this room, hmmm?" She inquires.
+     1 | There is no reply.\n\n"My goodness!" Abbey says, cornering you by the piano, "You spent so much of your time talking to Frank that we never got a chance to chat. How are things?"\n\n"Fine," you say, "Just fine."
+     1 | I only understood you as far as wanting to talk inside.
+     1 | I only understood you as far as wanting to s.
+     1 | I only understood you as far as wanting to show yourself the painting of a cabin.
+     1 | That's already closed.\n\n"Hey!" he says, "Speakin' of which, bartender! Gimme another scotch and soda! Easy on the soda."\n\nRon barely looks Frank's way, saying, "I think we can all agree you've had enough, Frank."
+     1 | That's not something you can enter.
+     1 | I only understood you as far as wanting to stomp.
+     1 | I only understood you as far as wanting to turn Frank Quinlivan on.
+     1 | You can't get a word in edge wise. It looks like you're going to have to get Frank to shut up before you can ask any questions.\n\n"I was just kidding about that, putting scarves up people's noses," he says, "But I did know this trick where you eat a bunch of marshmallows and then vomit them all up into this sculpture like thing and... Hey, are you gonna drink that?" He asks you pointing at your wine glass.
+     1 | But you aren't on yourself at the moment.\n\nFrank elbows you on your side, "Can you believe this guy? I mean can you BELIEVE it? Ole cheapskate can't even afford more booze? I mean what kinda party is this supposed to be? Reminds me of that time I went to Salt Lake. I ever tell you about that?"
+     1 | I only understood you as far as wanting to spread the jar of peanut butter on the remote control.
+     1 | I only understood you as far as wanting to south.
+     1 | You can't reach over the bar and nab the celery stalk. First, your arms aren't that long, and second, Ron would probably stop you.\n\nAbbey Fincher saunters in from the guest room. "I do hope you're enjoying the party!" she says.
+     1 | There is no reply.\n\nA loud voice announces from the television that the preceding slo-mo three dimensional replay was "brought to you by Cracked Out energy drink. Cracked Out... because you can never have too much energy."
+     1 | I only understood you as far as wanting to smear the jar of peanut butter on Frank Quinlivan.
+     1 | I only understood you as far as wanting to drink the wine glass.

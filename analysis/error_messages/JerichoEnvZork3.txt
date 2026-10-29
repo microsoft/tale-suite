@@ -1,0 +1,574 @@
+# Invalid Action Messages: JerichoEnvZork3
+# Total unique error messages: 567
+# Total error occurrences: 10387
+#
+# Format: count | message
+#===============================================================================
+
+  1087 | That sentence isn't one I recognize.
+  1048 | I beg your pardon?
+   998 | You can't go that way.
+   656 | I don't know the word ">".
+   576 | Time passes...
+   414 | There was no verb in that sentence!
+   333 | I don't know the word "help".
+   325 | I don't know the word "you".
+   285 | I don't know the word "`take".
+   269 | I don't know the word "`get".
+   165 | I don't know the word "you're".
+   116 | I don't know the word "`pick".
+   107 | I don't know the word "`grab".
+   101 | You find nothing unusual.
+   101 | You can't see any rope here.
+   101 | I don't know the word "word".
+    92 | I don't know the word "`obtain".
+    89 | I don't know the word "`retrieve".
+    85 | What do you want to listen to?
+    76 | I don't know the word "`acquire".
+    75 | I don't know the word "apologize".
+    74 | You can't get up the rock face.
+    67 | I don't know the word "```".
+    66 | I don't know the word "appears".
+    62 | It's too dark to see.
+    60 | I don't know the word "footsteps".
+    50 | I don't know the word "use".
+    50 | I don't know the word "**remove".
+    48 | You used the word "again" in a way that I don't understand.
+    48 | You used the word "proceed" in a way that I don't understand.
+    47 | What do you want to climb down?
+    47 | I don't know the word "command".
+    44 | You used the word "back" in a way that I don't understand.
+    38 | You can't see any cliff here.
+    36 | It is already open.
+    36 | I don't know the word "descend".
+    35 | You already have it.
+    30 | I don't know the word "slash".
+    29 | I don't know the word "`examine`".
+    29 | I don't know the word "`look".
+    28 | I don't know the word "area".
+    28 | I don't know the word "*".
+    28 | I don't know the word "`examine".
+    27 | I don't know the word "try".
+    27 | I don't know the word "`turn".
+    27 | I don't know the word "`ignite".
+    27 | I don't know the word "`put".
+    26 | It is already on.
+    24 | There is nothing special to be seen.\nYou are wounded by a lightning thrust!
+    24 | I don't know the word "```less".
+    23 | What do you want to run?
+    23 | I don't know the word "room".
+    23 | You can't see any sword here.
+    22 | I don't know the word "about".
+    22 | You can't see any key here.
+    22 | I don't know the word "goes".
+    21 | You can't go that way.\nAt the edge of the cliff above you, a man appears. He looks down at you and speaks. "Hello, down there! You seem to have a problem. Maybe I can help you." He chuckles in an unsettling sort of way. "Perhaps if you tied that chest to the end of the rope I might be able to drag it up for you.  Then, I'll be more than happy to help you up!"  He laughs again.
+    20 | I don't know the word "**pull".
+    20 | What do you want to search?
+    19 | I don't know the word "duck".
+    19 | I don't know the word "`use".
+    19 | I don't know the word "`light".
+    19 | I don't know the word "`wear".
+    18 | I don't know the word "progress".
+    18 | I don't know the word "**".
+    17 | I don't know the word "dodge".
+    17 | I don't know the word "bow".
+    17 | I don't know the word "opening".
+    17 | What do you want to examine?
+    17 | I don't know the word "`move".
+    17 | I don't know the word "`check".
+    17 | I don't know the word "```enter".
+    16 | You can't see any boat here.
+    16 | What do you want to break the mirror with?
+    16 | I don't know the word "body".
+    16 | You can't see any elvish sword here.
+    16 | You can't see any door here.
+    15 | I don't know the word "force".
+    15 | I don't know the word "who".
+    15 | I don't know the word "surroundings".
+    15 | I don't know the word "sound".
+    15 | I don't know the word "`help`".
+    15 | I don't know the word "`inspect".
+    15 | I don't know the word "`enter".
+    15 | I don't know the word "`activate".
+    13 | What do you want to climb up?
+    13 | I don't know the word "scramble".
+    13 | There is nothing special to be seen.
+    13 | I don't know the word "`go".
+    13 | I don't know the word "`read".
+    12 | I don't know the word "retreat".
+    12 | I don't know the word "hail".
+    12 | There is nothing special to be seen.\nThe hooded figure attempts a thrust, but its weakened state prevents hitting you.
+    12 | You can't see any beach here.
+    12 | You already have it.\nThe hooded figure stabs nonchalantly with its sword and misses.
+    12 | I don't know the word "junction".
+    12 | You used the word "get" in a way that I don't understand.
+    12 | I don't know the word "`explore".
+    12 | I don't know the word "`walk".
+    12 | I don't know the word "`proceed".
+    12 | I don't know the word "`advance".
+    12 | I don't know the word "`climb".
+    11 | I don't know the word "yank".
+    11 | I don't know the word "defend".
+    11 | I don't know the word "closely".
+    11 | I don't know the word "pry".
+    11 | You can't see any carvings here.
+    11 | What do you want to unlock the chest with?
+    11 | I don't know the word "kneel".
+    11 | I don't know the word "`south`".
+    11 | I don't know the word "`descend".
+    11 | I don't know the word "`shine".
+    10 | I don't see a way to open the panel here.
+    10 | I don't know the word "flee".
+    10 | I don't know the word "`ascend".
+    10 | I don't know the word "action".
+     9 | I don't know the word "don't".
+     9 | I don't know the word "carefully".
+     9 | You already have it.\nThe hooded figure thrusts, but you fight back and send it flying to the ground!
+     9 | I don't know the word "parry".
+     9 | You can't move the rubble.
+     9 | It is already open.\nYou seem to hear, from the southwest, the sounds of the sea.
+     9 | I don't know the word "`set".
+     8 | I don't know the word "pillars".
+     8 | I don't know the word "rest".
+     8 | You used the word "lock" in a way that I don't understand.
+     8 | You can't move the Royal Seal of Dimwit Flathead.
+     8 | What do you want to break the chest with?
+     8 | I don't know the word "thank".
+     8 | You can't see any shadows here.
+     8 | You used the word "northeast" in a way that I don't understand.
+     8 | I don't know the word "endless".
+     8 | I don't know the word "don'".
+     8 | There is no ocean here.
+     7 | I don't know the word "direction".
+     7 | You can't go that way.\nThere is a great tremor from within the earth. The entire dungeon shakes violently and loose debris starts to fall from above you.
+     7 | You can't see any rock here.
+     7 | You can't see any figure here.
+     7 | I don't know the word "show".
+     7 | You already have it.\nYou are wounded by a lightning thrust!
+     7 | I don't know the word "finish".
+     7 | You used the word "hello" in a way that I don't understand.
+     7 | I don't know the word "damp".
+     7 | I don't know the word "yield".
+     7 | I don't know the word "crouch".
+     7 | I don't know the word "phrase".
+     7 | I don't know the word "```r".
+     7 | I don't know the word "going".
+     6 | I don't know the word "call".
+     6 | What do you want to break the rock with?
+     6 | You can't see any chest here.
+     6 | There is nothing special to be seen.\nThe hooded figure tries to sneak past your guard, but you twist away.
+     6 | There is nothing on the steel cage.
+     6 | I don't know the word "walls".
+     6 | I don't see a way to open the mirror here.
+     6 | You already have it.\nThe hooded figure tries to sneak past your guard, but you twist away.
+     6 | You used the word "southeast" in a way that I don't understand.
+     6 | What do you want to cut the rope with?
+     6 | You already have it.\nYour quick reflexes cannot stop the hooded figure's stroke!  You are hit!
+     6 | What do you want to block the sword with?
+     6 | I don't know the word "beg".
+     6 | I don't know the word "brush".
+     6 | I don't know the word "```markdown".
+     6 | I don't know the word "hills".
+     6 | You can't see any man here.
+     5 | What do you want to block the figure with?
+     5 | I don't know the word "continue".
+     5 | What do you want to block?
+     5 | You used the word "attack" in a way that I don't understand.
+     5 | I don't know the word "inscription".
+     5 | I don't know the word "inspect".
+     5 | I don't know the word "assistance".
+     5 | I don't know the word "spare".
+     5 | I don't know the word "stop".
+     5 | I don't know the word "point".
+     5 | I don't know the word "advice".
+     5 | You used the word "southwest" in a way that I don't understand.
+     5 | You can't see any knife here.
+     5 | What do you want to sit up?
+     5 | I don't know the word "aside".
+     5 | I don't know the word "crack".
+     5 | I don't know the word "aboard".
+     5 | What do you want to throw the rope off?
+     5 | You can't go that way.\n"Yoo hoo!" calls the man at the brink of the cliff. "Remember me?"
+     5 | You used the word "i" in a way that I don't understand.
+     5 | I don't know the word "-".
+     5 | You used the word "make" in a way that I don't understand.
+     5 | I don't know the word "`hold".
+     5 | I don't know the word "let's".
+     5 | I don't know the word "`place".
+     5 | I don't know the word "hammer".
+     5 | You used the word "move" in a way that I don't understand.
+     5 | You can't see any runes here.
+     5 | I don't know the word "lunge".
+     5 | I don't know the word "crawl".
+     4 | I don't know the word "heal".
+     4 | You already have it.\nThe hooded figure swings its sword and sends yours flying to the ground. Although you are defenseless, the figure reaches for your sword and hands it back to you, nodding grimly.\nThere is a great tremor from within the earth. The entire dungeon shakes violently and loose debris starts to fall from above you.
+     4 | I don't know the word "empty".
+     4 | What do you want to wave?
+     4 | I don't know the word "guidance".
+     4 | You used the word "what" in a way that I don't understand.
+     4 | I don't know the word "waves".
+     4 | I don't know the word "heat".
+     4 | I don't know the word "noise".
+     4 | I don't know the word "bend".
+     4 | I don't know the word "ass".
+     4 | You used the word "pick" in a way that I don't understand.
+     4 | You used the word "take" in a way that I don't understand.
+     4 | I don't know the word "`observe".
+     4 | I don't know the word "`drop".
+     4 | I don't know the word "`leave".
+     4 | I don't know the word "`release".
+     4 | I don't know the word "pool".
+     4 | What do you want to jump in?
+     4 | I don't know the word "```up".
+     4 | I don't know the word "```you".
+     4 | I don't know the word "````".
+     4 | I don't know the word "```light".
+     4 | I don't know the word "plain".
+     4 | What do you want to smash the chest with?
+     4 | I don't know the word "flame".
+     3 | I don't know the word "pillar".
+     3 | I don't know the word "base".
+     3 | I don't know the word "aid".
+     3 | You can't see any bread here.
+     3 | I don't know the word "above".
+     3 | I don't know the word "ascend".
+     3 | I don't know the word "waist".
+     3 | You're not carrying the sword.\nThe hooded figure swings its sword and sends yours flying to the ground. Although you are defenseless, the figure reaches for your sword and hands it back to you, nodding grimly.
+     3 | I don't know the word "gift".
+     3 | There is nothing special to be seen.\nThe hooded figure stabs nonchalantly with its sword and misses.
+     3 | I don't know the word "info".
+     3 | You already have it.\nThe hooded figure swings its sword and sends yours flying to the ground. Although you are defenseless, the figure reaches for your sword and hands it back to you, nodding grimly.
+     3 | I don't know the word "hall".
+     3 | You can't see any jewels here.
+     3 | I don't know the word "current".
+     3 | I don't know the word "lie".
+     3 | You can't see any cover here.
+     3 | I don't know the word "cave".
+     3 | I don't know the word "sea".
+     3 | I don't know the word "surrender".
+     3 | You can't see any ledge here.
+     3 | You can't see any trees here.
+     3 | You used the word "hand" in a way that I don't understand.
+     3 | I don't know the word "die".
+     3 | I don't know the word "be".
+     3 | I don't know the word "am".
+     3 | I don't know the word "assistant".
+     3 | I don't know the word "ap".
+     3 | I don't know the word "have".
+     3 | I don't know the word "seems".
+     3 | I don't know the word "`push".
+     3 | I don't know the word "`pull".
+     3 | I don't know the word "```s".
+     3 | I don't know the word "```moving".
+     3 | I don't know the word "don's".
+     3 | I don't know the word "heading".
+     3 | I don't know the word "disarm".
+     3 | Nothing happens.
+     3 | You can't see any old man here.
+     3 | You can't see any panel here.
+     3 | You can't see any hole here.
+     3 | You can't see any statue here.
+     3 | I don't know the word "men".
+     2 | I don't know the word "peer".
+     2 | I don't know the word "clean".
+     2 | You can't go that way.\nA familiar voice calls down to you. "Are you still there?" he bellows with a coarse laugh. "Well, then, grab onto the rope and we'll see what we can do." The rope drops to within your reach.
+     2 | There is nothing behind the mirror.
+     2 | You can't get up the rock face.\nThere is a great tremor from within the earth. The entire dungeon shakes violently and loose debris starts to fall from above you.
+     2 | You can't see any ship here.
+     2 | You're not carrying the sword.\nYou dodge as the hooded figure comes in low.
+     2 | You used the word "southern" in a way that I don't understand.
+     2 | I don't know the word "coastline".
+     2 | I don't know the word "along".
+     2 | I don't know the word "glowing".
+     2 | You already have it.\nThe hooded figure catches you off guard and wounds you!
+     2 | I don't know the word "explore".
+     2 | You already have it.\nIn your wounded state, you cannot defend yourself against your still-quick opponent. Slowly and carefully, the figure starts to remove its hood as you fall to the ground, dead.\n \n   ****  You have died  **** \n\nYou find yourself deep within the earth in a barren prison cell. Outside the iron-barred window, you can see a great, fiery pit. Flames leap up and very nearly sear your flesh. After a while, footfalls can be heard in the distance, then closer and closer.... The door swings open, and in walks an old man.\n\nHe is dressed simply in a hood and cloak, wearing a few simple jewels, carrying something under one arm, and leaning on a wooden staff. A single key, as if to a massive prison cell, hangs from his belt.\n\nHe raises the staff toward you and you hear him speak, as if in a dream: "I await you, though your journey be long and full of peril. Go then, and let me not wait long!" You feel some great power well up inside you and you fall to the floor. The next moment, you are awakening, as if from a deep slumber.\n\nEndless Stair\nThere is a lamp here.
+     2 | I don't know the word "approach".
+     2 | You already have it.\nA brilliant feint puts you off guard, and the hooded figure slips its sword between your ribs. You are hurt very badly.
+     2 | You can't see any crown here.
+     2 | I don't know the word "my".
+     2 | I don't know the word "name".
+     2 | I don't know the word "your".
+     2 | I don't know the word "tap".
+     2 | What do you want to poke the old man with?
+     2 | I don't know the word "gently".
+     2 | I don't know the word "nod".
+     2 | I don't know the word "against".
+     2 | I don't know the word "sounds".
+     2 | I don't know the word "wield".
+     2 | I don't know the word "sneak".
+     2 | You can't see any brass key here.
+     2 | There is nothing but dust there.
+     2 | I don't know the word "corpse".
+     2 | I don't know the word "clear".
+     2 | I don't know the word "noises".
+     2 | I don't know the word "tunnel".
+     2 | You can't see any object here.
+     2 | What do you want to dig in?
+     2 | I don't know the word "face".
+     2 | I don't know the word "them".
+     2 | I don't know the word "hard".
+     2 | What do you want to smash the rock with?
+     2 | I don't know the word "wound".
+     2 | I don't see what you are referring to.
+     2 | I don't know the word "`go`".
+     2 | I don't know the word "laugh".
+     2 | I don't know the word "smile".
+     2 | I don't know the word "are".
+     2 | I don't know the word "hint".
+     2 | I don't know the word "pass".
+     2 | You can't see any rubble here.
+     2 | I don't know the word "i'm".
+     2 | I don't know the word "single".
+     2 | I don't know the word "correct".
+     2 | I don't know the word "pickup".
+     2 | I don't know the word "you'".
+     2 | I don't know the word "text-based".
+     2 | I don't know the word "understand".
+     2 | I don't know the word "`switch".
+     2 | I don't know the word "`follow".
+     2 | I don't know the word "`descend`".
+     2 | I don't know the word "wolf".
+     2 | You can't see any book here.
+     2 | You can't see any light here.
+     2 | I don't know the word "towards".
+     2 | I don't know the word "location".
+     2 | I don't know the word "present".
+     2 | I don't know the word "```re".
+     2 | I don't know the word "``````".
+     2 | I don't know the word "``".
+     2 | I don't know the word "game".
+     2 | I don't know the word "(pointing".
+     2 | I don't know the word "moving".
+     2 | I don't know the word "ascending".
+     2 | I don't know the word "```your".
+     2 | I don't know the word "you:".
+     2 | I don't know the word "```there".
+     2 | I don't know the word "pictures".
+     2 | I don't know the word "writing".
+     2 | I don't know the word "scrape".
+     2 | What do you want to break the crystals with?
+     2 | I don't know the word "trickle".
+     2 | I don't know the word "twist".
+     2 | I don't know the word "slope".
+     2 | I don't know the word "vegetation".
+     2 | You can't see any boulders here.
+     2 | You used the word "wind" in a way that I don't understand.
+     2 | I don't know the word "whistle".
+     2 | I don't know the word "loudly".
+     2 | You can't see any steps here.
+     2 | I don't know the word "anyone".
+     2 | I don't know the word "bash".
+     2 | You used the word "come" in a way that I don't understand.
+     2 | I don't know the word "sidestep".
+     2 | You used the word "northern" in a way that I don't understand.
+     2 | You can't see any button here.
+     2 | You can't see any mirror here.
+     2 | I don't know the word "commands".
+     2 | You can't see any statues here.
+     2 | I don't know the word "verbs".
+     2 | I don't know the word "flames".
+     2 | I don't know the word "fire".
+     2 | I don't know the word "shine".
+     2 | I don't know the word "rune".
+     2 | I don't know the word "translate".
+     1 | There is nothing special to be seen.\nA brilliant feint puts you off guard, and the hooded figure slips its sword between your ribs. You are hurt very badly.
+     1 | I don't know the word "dip".
+     1 | I don't know the word "wash".
+     1 | I don't know the word "rinse".
+     1 | I don't know the word "submerge".
+     1 | I don't know the word "immerse".
+     1 | I don't know the word "dunk".
+     1 | I don't know the word "splash".
+     1 | I don't know the word "support".
+     1 | You can't see any structure here.
+     1 | I don't know the word "column".
+     1 | I don't know the word "foundation".
+     1 | I don't know the word "user".
+     1 | I don't know the word "study".
+     1 | I don't know the word "rescue".
+     1 | I don't know the word "hack".
+     1 | I don't know the word "located".
+     1 | I don't know the word "**northeast**".
+     1 | I don't know the word "longer".
+     1 | You can't see any treasure here.
+     1 | You can't go that way.\nThe man appears impatient. "Are you coming up then, or not?"
+     1 | You can't go that way.\n"Well, I don't have all day. See you around sometime." Showering you with gravel, he disappears from sight.
+     1 | You can't see any cloaked figure here.
+     1 | What do you want to hit the mirror with?
+     1 | What do you want to oil the door with?
+     1 | You can't see any broken mirror here.
+     1 | I don't know the word "quickly".
+     1 | I don't know the word "repeatedly".
+     1 | I don't know the word "vapor".
+     1 | I don't know the word "coin".
+     1 | You used the word "awake" in a way that I don't understand.
+     1 | I don't know the word "quest".
+     1 | I don't know the word "knowledge".
+     1 | I don't know the word "wisdom".
+     1 | I don't know the word "decipher".
+     1 | I don't know the word "more".
+     1 | I don't know the word "thoroughly".
+     1 | I don't know the word "detail".
+     1 | You can't go that way.\nYou notice that the old man has fallen asleep.
+     1 | I don't know the word "information".
+     1 | I don't know the word "something".
+     1 | I don't know the word "task".
+     1 | I don't know the word "stairway".
+     1 | I don't know the word "still".
+     1 | There is nothing special to be seen.\nThe hooded figure catches you off guard and wounds you!
+     1 | I don't know the word "defeat".
+     1 | It is already open.\nYou seem to hear, from the southwest, the sounds of the sea.\nThere is a great tremor from within the earth. The entire dungeon shakes violently and loose debris starts to fall from above you.
+     1 | You can't do that.\nYou seem to hear, from the southwest, the sounds of the sea.
+     1 | You can't move the dust and debris.
+     1 | You can't see any dungeon here.
+     1 | I don't know the word "same".
+     1 | What do you want to turn?
+     1 | You can't see any stair here.
+     1 | I don't know the word "undo".
+     1 | You're not carrying the sword.\nThe hooded figure catches you off guard and wounds you!
+     1 | There is nothing special to be seen.\nThe hooded figure thrusts, but you fight back and send it flying to the ground!
+     1 | What do you want to look under?
+     1 | You already have it.\nYour "friend", moving quickly, dodges behind some trees and is lost from sight.
+     1 | You already have it.\nThe hooded figure attempts a thrust, but its weakened state prevents hitting you.
+     1 | You can't give a piece of waybread to a sailor!
+     1 | I don't know the word "edge".
+     1 | You're not carrying the sword.\nThe hooded figure thrusts, but you fight back and send it flying to the ground!
+     1 | I don't know the word "assist".
+     1 | I don't know the word "hug".
+     1 | I don't know the word "warm".
+     1 | What do you want to break the sword with?
+     1 | What do you want to break the lantern with?
+     1 | I don't know the word "anything".
+     1 | I don't know the word "silence".
+     1 | I don't know the word "quiet".
+     1 | I don't know the word "might".
+     1 | I don't know the word "falling".
+     1 | I don't know the word "danger".
+     1 | I don't know the word "low".
+     1 | I don't know the word "fall".
+     1 | I don't know the word "sleep".
+     1 | I don't know the word "consciousness".
+     1 | I don't know the word "faint".
+     1 | I don't know the word "collapse".
+     1 | I don't know the word "life".
+     1 | You can't use multiple direct objects with "lose".
+     1 | What do you want to what?
+     1 | I don't know the word "explain".
+     1 | What do you want to describe?
+     1 | What do you want to go with?
+     1 | I don't know the word "hear".
+     1 | You can't see any aqueduct here.
+     1 | I don't know the word "n8?.
+     1 | I don't know the word "a:".
+     1 | I don't know the word "apertain".
+     1 | I don't know the word "apert".
+     1 | I don't know the word "brassword".
+     1 | I don't know the word "brapter".
+     1 | I don't know the word "brassistant".
+     1 | I don't know the word "getget".
+     1 | I don't know the word "p".
+     1 | I don't know the word "upstand".
+     1 | I don't know the word "pickuppick".
+     1 | I don't know the word "upupupup".
+     1 | I don't know the word "*pick".
+     1 | I don't know the word "*'".
+     1 | I don't know the word "do".
+     1 | I don't know the word "examplzork".
+     1 | I don't know the word "acknow".
+     1 | I don't know the word "already".
+     1 | You already have it.\n\nI don't know the word "you".
+     1 | I don't know the word "choose".
+     1 | I don't know the word "brassistant:".
+     1 | I don't know the word "br".
+     1 | I don't know the word "!".
+     1 | I don't know the word "term".
+     1 | I don't know the word "let".
+     1 | I don't know the word "ll".
+     1 | I don't know the word "`lantern`".
+     1 | I don't know the word "`up".
+     1 | I don't know the word "`upward`".
+     1 | I don't know the word "`up`".
+     1 | I don't know the word "`lift".
+     1 | I don't know the word "`attach".
+     1 | I don't know the word "delicate".
+     1 | What do you want to kick?
+     1 | I don't know the word "orb".
+     1 | I don't know the word "fruit".
+     1 | I don't know the word "creature".
+     1 | I don't know the word "animal".
+     1 | You can't see any pedestal here.
+     1 | I don't know the word "box".
+     1 | I don't know the word "```south".
+     1 | I don't know the word "```a".
+     1 | I don't know the word "````````````".
+     1 | I don't know the word "```'".
+     1 | I don't know the word "don'tin".
+     1 | I don't know the word "`````````".
+     1 | I don't know the word "player".
+     1 | I don't know the word "world".
+     1 | You used the word "go" in a way that I don't understand.
+     1 | I don't know the word "travel".
+     1 | I don't know the word "```pardon".
+     1 | I don't know the word "```e".
+     1 | I don't know the word "```rephrase".
+     1 | I don't know the word "```i".
+     1 | I don't know the word "```verbsentireless".
+     1 | I don't know the word "`".
+     1 | I don't know the word "leading".
+     1 | I don't know the word "```print(".
+     1 | I don't know the word "perform".
+     1 | I don't know the word "```go".
+     1 | I don't know the word "```trepeatedly".
+     1 | You used the word "hi" in a way that I don't understand.
+     1 | What do you want to hide?
+     1 | What do you want to hide the me in?
+     1 | I don't know the word "decaying".
+     1 | What do you want to hit the chest with?
+     1 | I don't know the word "punch".
+     1 | You used the word "pull" in a way that I don't understand.
+     1 | You used the word "lift" in a way that I don't understand.
+     1 | I don't know the word "hoist".
+     1 | You used the word "lower" in a way that I don't understand.
+     1 | You used the word "drop" in a way that I don't understand.
+     1 | You already have it.\nYou seem to hear, from the southwest, the sounds of the sea.\nYour "friend" examines his valuables with great pride.
+     1 | I don't know the word "forward".
+     1 | I don't know the word "wrench".
+     1 | I don't know the word "dislodge".
+     1 | I don't know the word "wrest".
+     1 | There's nothing in the sword.
+     1 | I don't know the word "question".
+     1 | I don't know the word "wriggle".
+     1 | I don't know the word "cower".
+     1 | I don't know the word "high".
+     1 | There is nothing special to be seen.\nThe hooded figure swings its sword and sends yours flying to the ground. Although you are defenseless, the figure reaches for your sword and hands it back to you, nodding grimly.
+     1 | I don't know the word "charge".
+     1 | I don't know the word "sweep".
+     1 | You can't see any wide here.
+     1 | I don't know the word "arm".
+     1 | I don't know the word "smite".
+     1 | I don't know the word "evade".
+     1 | I don't know the word "watch".
+     1 | There is nothing behind the tree.\nYou catch, out of the corner of your eye, some movement among the trees.
+     1 | I don't know the word "creep".
+     1 | I don't know the word "closer".
+     1 | It is already open.\nThere is a great tremor from within the earth. The entire dungeon shakes violently and loose debris starts to fall from above you.
+     1 | You used the word "oil" in a way that I don't understand.
+     1 | You can't do that from inside the machine.
+     1 | You can't see any lantern here.
+     1 | You can't take it; thus, you can't shake it!
+     1 | You can't go anywhere holding that chest. The rope is tied around it!
+     1 | I don't know the word "embrace".
+     1 | I don't know the word "salute".
+     1 | I don't know the word "sheath".
+     1 | I don't know the word "inward".
+     1 | There is nothing special to be seen.\nYou dodge as the hooded figure comes in low.
+     1 | There is nothing behind the Royal Seal of Dimwit Flathead.
+     1 | You can't see any seal here.
+     1 | I don't know the word "wedge".
+     1 | You can't do that.
+     1 | You can't see any stone statue here.
+     1 | I don't know the word "fists".
+     1 | I don't know the word "shove".
+     1 | You can't see any mirror and north here.
+     1 | You can't see any beam here.

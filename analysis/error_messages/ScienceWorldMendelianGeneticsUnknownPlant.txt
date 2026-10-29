@@ -1,0 +1,18 @@
+# Invalid Action Messages: ScienceWorldMendelianGeneticsUnknownPlant
+# Total unique error messages: 11
+# Total error occurrences: 13066
+#
+# Format: count | message
+#===============================================================================
+
+ 12717 | No known action matches that input.
+   218 | The door is not open.
+    82 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    18 | The door is already open.
+    13 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+     6 | The sink is already activated.
+     4 | The drawer isn't open, so you can't see inside.
+     3 | The large cupboard isn't open, so you can't see inside.
+     2 | The door is already closed.
+     2 | red box is already connected, and must be disconnected before it can be connected to something else
+     1 | The drawer is already open.

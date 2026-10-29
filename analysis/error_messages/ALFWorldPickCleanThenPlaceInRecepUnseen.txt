@@ -1,0 +1,12 @@
+# Invalid Action Messages: ALFWorldPickCleanThenPlaceInRecepUnseen
+# Total unique error messages: 5
+# Total error occurrences: 17764
+#
+# Format: count | message
+#===============================================================================
+
+ 17741 | Nothing happens.
+     7 | There's nothing special about cellphone 1.
+     7 | There's nothing special about vase 1.
+     5 | There's nothing special about dishsponge 2.
+     4 | There's nothing special about dishsponge 1.

@@ -1,0 +1,98 @@
+# Invalid Action Messages: JerichoEnvDetective
+# Total unique error messages: 91
+# Total error occurrences: 8084
+#
+# Format: count | message
+#===============================================================================
+
+  2604 | That's not a verb I recognise.
+  1838 | You can't see any such thing.
+   718 | I beg your pardon?
+   606 | You seem to want to talk to someone, but I can't see whom.
+   461 | What do you want to read in?
+   347 | I only understood you as far as wanting to inventory.
+   292 | You can't go east from here!\n\n<< Closet >>\nYou are in a closet. There is no reason to be in here. Go west.
+   205 | You already have that.
+   190 | I only understood you as far as wanting to look.
+    97 | You can't go north from here!\n\n<< Music Store >>\nYou walk over to the guy. He jumps up with a wild look, and says "Freeze!". You stop. He motions you to the exit. But you know he'll probably just kill you. You NEED to get the weapon from him or kill him. Best chance: use your gun.
+    69 | You can't go north from here!\n\n<< Outside >>\nYou are outside in the cold. To the east is a dead end. To the west is the rest of the street. Papers are blowing around. It's amazingly cold for this time of year.
+    67 | You see nothing special about the floor.
+    44 | I only understood you as far as wanting to hit the dazed man.
+    41 | You can't go north from here!\n\n<< Closet >>\nYou are in a closet. There is a gun on the floor. Better get it. To exit, go east.
+    41 | You can't go east from here!\n\n<< Outside >>\nYou are outside in the cold. To the east is a dead end. To the west is the rest of the street. Papers are blowing around. It's amazingly cold for this time of year.
+    36 | You can't go west from here!\n\n<< Video Store >>\nYou are still in the video store. You can go north, or east.
+    36 | You can't go west from here!\n\n<< Closet >>\nYou are in a small closet. The room is bare. Why not go east and get back to the situation at hand?
+    29 | You find nothing of interest.
+    24 | I only understood you as far as wanting to attack the dazed man.
+    18 | You can't go north from here!\n\n<< Closet >>\nYou are in a closet. There is a gun on the floor. Better get it. To exit, go east.\n\nYou can see a small black pistol here.
+    16 | You can't see "him" (the dazed man) at the moment.
+    16 | I only understood you as far as wanting to examine the piece of white paper.
+    14 | I only understood you as far as wanting to get the small black pistol.
+    14 | You can't go west from here!\n\n<< Outside >>\nYou are still on the streets. To the north is a restraunt where the mayor ate often. To the east is the Mayor's home.
+    12 | You can't go east from here!\n\n<< Chief's office >>\nYou are standing in the Chief's office. He is telling you "The Mayor was murdered yeaterday night at 12:03 am. I want you to solve it before we get any bad publicity or the FBI has to come in. "Yessir!" You reply. He hands you a sheet of paper. Once you have read it, go north or west.\n\nYou can see a piece of white paper here.
+    12 | You can't go south from here!\n\n<< Closet >>\nYou are in a closet. There is no reason to be in here. Go west.
+    12 | You can't go west from here!\n\n<< Music Store >>\nYou walk over to the guy. He jumps up with a wild look, and says "Freeze!". You stop. He motions you to the exit. But you know he'll probably just kill you. You NEED to get the weapon from him or kill him. Best chance: use your gun.
+    12 | What do you want to shoot?
+    10 | You can't go south from here!\n\n<< Hallway >>\nYou are still in the hallway. You can go north to where there is a police officer who will let you outside, or you can go east or west.
+    10 | That's not something you can open.
+     9 | You can't go north from here!\n\n<< Dining room >>\nYou are in the dining room. You look around and see a note on the table. You can go back east.
+     9 | You can't go out from here!\n\n<< Music Store >>\nYou walk over to the guy. He jumps up with a wild look, and says "Freeze!". You stop. He motions you to the exit. But you know he'll probably just kill you. You NEED to get the weapon from him or kill him. Best chance: use your gun.
+     9 | I only understood you as far as wanting to go the north wall.
+     8 | You see nothing special about the north wall.
+     8 | Time passes.
+     7 | You can't go south from here!\n\n<< Closet >>\nYou are in a small closet. The room is bare. Why not go east and get back to the situation at hand?
+     7 | You can't go south from here!\n\n<< Hallway >>\nYou are in the hallway. To the north is more hallway, and to the east is a door marked "Guests".
+     7 | I only understood you as far as wanting to it.
+     6 | You can't go north from here!\n\n<< Closet >>\nYou are in a small closet. The room is bare. Why not go east and get back to the situation at hand?
+     6 | You can't go north from here!\n\n<< Dining room >>\nYou are in the dining room. You look around and see a note on the table. You can go back east.\n\nYou can see a paper note here.
+     6 | You can't go south from here!\n\n<< Music Store >>\nYou walk over to the guy. He jumps up with a wild look, and says "Freeze!". You stop. He motions you to the exit. But you know he'll probably just kill you. You NEED to get the weapon from him or kill him. Best chance: use your gun.
+     6 | You can't go north from here!\n\n<< Closet >>\nYou are in a closet. There is no reason to be in here. Go south.
+     6 | You can't go south from here!\n\n<< Outside >>\nYou are still on the streets. To the north is a restraunt where the mayor ate often. To the east is the Mayor's home.
+     5 | I only understood you as far as wanting to quit.
+     5 | You can't go out from here!\n\n<< Chief's office >>\nYou are standing in the Chief's office. He is telling you "The Mayor was murdered yeaterday night at 12:03 am. I want you to solve it before we get any bad publicity or the FBI has to come in. "Yessir!" You reply. He hands you a sheet of paper. Once you have read it, go north or west.\n\nYou can see a piece of white paper here.
+     5 | You can't go south from here!\n\n<< Hallway >>\nYou are at the end of the hallway. To the north is a room, while to the west is the rest of the hallway.
+     5 | There is no reply.\nThe dazed man seems to calm down for a moment, but suddenly attacks. Its mouth opens to reveal teeth grotesquely out of proportion to the rest of its body, a fact you notice as those same teeth tear your flesh into tiny pieces.\n\n\n    *** You have died ***\n\n\nIn that game you scored 120 out of a possible 360, in 44 turns.\n\nWould you like to RESTART, RESTORE a saved game, give the FULL score for that game or QUIT?
+     4 | You can't go south from here!\n\n<< Bathroom >>\nYou are in the first bathroom, out of the 5 there is. You notice that it is almost as big as your apartment. You see a knife on the floor here.
+     4 | You can't go up from here!\n\n<< Bedroom >>\nYou are in the bedroom. You noticed that there was a guard guarding the stairs to the 3rd story, because there is remodelling going on there. You see nothing of importance. Go east.
+     4 | I only understood you as far as wanting to in.
+     4 | I only understood you as far as wanting to take the small black pistol.
+     3 | You can't go out from here!\n\n<< Closet >>\nYou are in a closet. There is no reason to be in here. Go west.
+     3 | You can't go south from here!\n\n<< Holding Cells >>\nYou are talking to more guys. But none tell you what you need to know. You can only go west.
+     3 | You can't go east from here!\n\n<< Back of Music Store >>\nYou are in the back of the music store. You ask the guy who's looking at the cool tapes. He looks up at you. "Duh.. no... don't t'ink so... lemme see..." You decide that he's no help. To the west there is a dazed looking man and to the north there is an exit.
+     3 | You can't go west from here!\n\n<< Hallway >>\nYou are in the hallway. To the north is more hallway, and to the east is a door marked "Guests".
+     3 | You can only do that to something animate.
+     3 | What do you want to search?
+     3 | You can't go north from here!\n\n<< Bedroom >>\nYou are in the bedroom. You noticed that there was a guard guarding the stairs to the 3rd story, because there is remodelling going on there. You see nothing of importance. Go east.
+     3 | You can't go north from here!\n\n<< Guest Room >>\nYou are in a guest room. You see that there isn't much here, the murderers ransacked the room. You can go west.
+     2 | I didn't understand that number.
+     2 | You can't go south from here!\n\n<< Chief's office >>\nYou are standing in the Chief's office. He is telling you "The Mayor was murdered yeaterday night at 12:03 am. I want you to solve it before we get any bad publicity or the FBI has to come in. "Yessir!" You reply. He hands you a sheet of paper. Once you have read it, go north or west.\n\nYou can see a piece of white paper here.
+     2 | You can't see "it" (the piece of white paper) at the moment.
+     2 | What do you want to examine?
+     2 | I only understood you as far as wanting to exit.
+     2 | What do you want to attack?
+     2 | You can't go south from here!\n\n<< Bedroom >>\nYou are in the bedroom. You noticed that there was a guard guarding the stairs to the 3rd story, because there is remodelling going on there. You see nothing of importance. Go east.
+     1 | You can't go west from here!\n\n<< Outside >>\nYou pass the guard. He nods at you. You are now outside standing on the street. You can go north and east, your choice. To the north is more of the street, and to the east is a video store.
+     1 | You can't go east from here!\n\n<< Bathroom >>\nYou are in the first bathroom, out of the 5 there is. You notice that it is almost as big as your apartment. You see a knife on the floor here.
+     1 | You can't go north from here!\n\n<< Holding Cells >>\nYou are talking to more guys. But none tell you what you need to know. You can only go west.
+     1 | You can't go west from here!\n\n<< Video Store >>\nYou are in a video store called Brickbuster Video. There are about 3,000 videos here. You can go north, or east.
+     1 | You can't go south from here!\n\n<< Outside >>\nYou are outside in the cold. To the east is a dead end. To the west is the rest of the street. Papers are blowing around. It's amazingly cold for this time of year.
+     1 | You can't go north from here!\n\n<< Closet >>\nYou are in a closet. The closet is of the walk in variety, with about thirty pairs of tennis shoes, ten pairs of heels and about ninety coats and shirts. You start to get claustrophobia. Better get out.
+     1 | You can't go west from here!\n\n<< Closet >>\nYou are in a closet. There is a gun on the floor. Better get it. To exit, go east.\n\nYou can see a small black pistol here.
+     1 | I only understood you as far as wanting to look at the piece of white paper.
+     1 | You can't go in from here!\n\n<< Outside >>\nYou are outside in the cold. To the east is a dead end. To the west is the rest of the street. Papers are blowing around. It's amazingly cold for this time of year.
+     1 | I only understood you as far as wanting to go the east wall.
+     1 | You can't go west from here!\n\n<< Closet >>\nYou are in a closet. There is no reason to be in here. Go south.
+     1 | You can't go east from here!\n\n<< Closet >>\nYou are in a closet. There is no use for being here. Gotta go south.
+     1 | You can't go south from here!\n\n<< Room # 30 >>\nYou enter room 30... after a harrowing gun battle you conk him on the head and take him in. You get promoted and suddenly, with the "Jurrasic Park" theme song playing in your head, you feel proud to be an American. For special info about Exile Games, and to leave this darned game, go up.
+     1 | I only understood you as far as wanting to kill the dazed man.
+     1 | You can't go south from here!\n\n<< Holding Cells >>\nYou are talking to more guys. But none of them tell you what you want. You can only go east.
+     1 | You can't go east from here!\n\n<< Hallway >>\nYou are at the end of the hallway. To the north is a room, while to the west is the rest of the hallway.
+     1 | You can't go out from here!\n\n<< Closet >>\nYou are in a closet. The closet is of the walk in variety, with about thirty pairs of tennis shoes, ten pairs of heels and about ninety coats and shirts. You start to get claustrophobia. Better get out.
+     1 | You can't go south from here!\n\n<< Chief's office >>\nYou are standing in the Chief's office. He is telling you "The Mayor was murdered yeaterday night at 12:03 am. I want you to solve it before we get any bad publicity or the FBI has to come in. "Yessir!" You reply. He hands you a sheet of paper. Once you have read it, go north or west.
+     1 | You can't go north from here!\n\n<< Closet >>\nYou are in a closet. There is no reason to be in here. Go west.
+     1 | You can't go east from here!\n\n<< Backroom >>\nYou are in the backroom of Brickbuster Video. You see a small video on the floor, but you dismiss it as having no potential value to the crime. You can go south.
+     1 | You can't go west from here!\n\n<< Backroom >>\nYou are in the backroom of Brickbuster Video. You see a small video on the floor, but you dismiss it as having no potential value to the crime. You can go south.\n\nYou can see a small black pistol here.
+     1 | You can't go out from here!\n\n<< Closet >>\nYou are in a closet. There is no use for being here. Gotta go south.
+     1 | I only understood you as far as wanting to open the east wall.
+     1 | You can't go west from here!\n\n<< Closet >>\nYou are in a closet. The closet is of the walk in variety, with about thirty pairs of tennis shoes, ten pairs of heels and about ninety coats and shirts. You start to get claustrophobia. Better get out.
+     1 | You can't go south from here!\n\n<< Closet >>\nYou are in a closet. The closet is of the walk in variety, with about thirty pairs of tennis shoes, ten pairs of heels and about ninety coats and shirts. You start to get claustrophobia. Better get out.

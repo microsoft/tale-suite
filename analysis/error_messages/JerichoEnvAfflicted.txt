@@ -1,0 +1,255 @@
+# Invalid Action Messages: JerichoEnvAfflicted
+# Total unique error messages: 248
+# Total error occurrences: 12148
+#
+# Format: count | message
+#===============================================================================
+
+  3517 | You can't see any such thing.
+  3382 | That's not a verb I recognise.
+   654 | You seem to want to talk to someone, but I can't see whom.
+   603 | I beg your pardon?
+   543 | I didn't understand that sentence.
+   503 | I only understood you as far as wanting to look.
+   377 | Time passes.
+   238 | I only understood you as far as wanting to examine the front door.
+   169 | You find nothing of interest.
+   117 | I only understood you as far as wanting to read the aluminum placard.
+   116 | That's not something you can open.
+   113 | I only understood you as far as wanting to look at the front door.
+   100 | I only understood you as far as wanting to search the front door.
+    97 | You see nothing noteworthy about the broken glass.
+    96 | You can't use multiple objects with that verb.
+    78 | I only understood you as far as wanting to read the newspaper.
+    74 | I only understood you as far as wanting to take inventory.
+    56 | I only understood you as far as wanting to note the table.
+    55 | You see nothing noteworthy about the front door.
+    53 | You can only do that to something animate.
+    49 | What do you want to inspect?
+    45 | You can't go that way.
+    33 | There is no reply.
+    31 | I only understood you as far as wanting to search storm gutter.
+    31 | I only understood you as far as wanting to examine Goldschmidt's Pawnshop.
+    31 | I only understood you as far as wanting to note the aluminum placard.
+    30 | You see nothing noteworthy about the ice.
+    30 | I only understood you as far as wanting to note the chair.
+    28 | I only understood you as far as wanting to note the window.
+    27 | You see nothing special about the brass key.
+    26 | I only understood you as far as wanting to note the front door.
+    25 | You already have that.
+    25 | What do you want to enter?
+    24 | You see nothing noteworthy about storm gutter.
+    24 | You see nothing noteworthy about the newspaper.
+    23 | Which do you mean, the linoleum counter or the bar stool?
+    20 | I only understood you as far as wanting to note the ice.
+    19 | I don't think much is to be achieved by that.
+    19 | What do you want to look inside?
+    18 | I only understood you as far as wanting to examine the aluminum placard.
+    18 | You see nothing noteworthy about the mini fridge.
+    18 | What do you want to knock?
+    16 | I only understood you as far as wanting to note the broken glass.
+    15 | I only understood you as far as wanting to exit.
+    14 | You see nothing noteworthy about the green awning.
+    13 | I only understood you as far as wanting to check the aluminum placard.
+    12 | I only understood you as far as wanting to examine the window.
+    12 | I only understood you as far as wanting to go up.
+    12 | I only understood you as far as wanting to check the front door.
+    12 | I only understood you as far as wanting to note the pair of eyes.
+    11 | That's not something you can enter.
+    11 | What do you want to check?
+    10 | I only understood you as far as wanting to examine the ice.
+    10 | That doesn't seem to be something you can unlock.
+    10 | I only understood you as far as wanting to turn the up.
+     9 | But you aren't in anything at the moment.
+     9 | I only understood you as far as wanting to note crumbs.
+     8 | I only understood you as far as wanting to note the green awning.
+     8 | I only understood you as far as wanting to look at storm gutter.
+     7 | I only understood you as far as wanting to turn the stereo.
+     6 | I only understood you as far as wanting to examine storm gutter.
+     6 | I only understood you as far as wanting to note vomit.
+     6 | I only understood you as far as wanting to reach in the trough.
+     6 | You see nothing special about the bed sheet.
+     6 | I only understood you as far as wanting to note the sidewalk.
+     6 | I only understood you as far as wanting to wipe the window.
+     5 | I only understood you as far as wanting to check the table.
+     5 | I only understood you as far as wanting to note the sink.
+     5 | I only understood you as far as wanting to note the rivulets.
+     5 | I only understood you as far as wanting to apply the tourniquet.
+     5 | I only understood you as far as wanting to note the mini fridge.
+     5 | I only understood you as far as wanting to take the brass key.
+     5 | I only understood you as far as wanting to examine the alley door.
+     5 | I only understood you as far as wanting to check your car.
+     5 | I only understood you as far as wanting to note storm gutter.
+     5 | I only understood you as far as wanting to clean the window.
+     5 | That's not something you can enter.\n\nYou hear the wail of distant sirens.
+     5 | I only understood you as far as wanting to watch Angela.
+     5 | You see nothing noteworthy about neon sign.
+     5 | I only understood you as far as wanting to look at the newspaper.
+     5 | I only understood you as far as wanting to climb the inside.
+     5 | I only understood you as far as wanting to listen.
+     4 | I only understood you as far as wanting to search the storm drain.
+     4 | I only understood you as far as wanting to go down.
+     4 | I only understood you as far as wanting to check storm gutter.
+     4 | I only understood you as far as wanting to note the buffalo chopper.
+     4 | I only understood you as far as wanting to note the dry gravy.
+     4 | I only understood you as far as wanting to note the linoleum counter.
+     4 | You can't go that way.\n\nA cockroach scurries across the floor.
+     4 | What do you want to search?
+     4 | I only understood you as far as wanting to tie the tourniquet.
+     4 | You see nothing special about the brass key.\n\nNikolai spies into the dining room.
+     4 | I only understood you as far as wanting to shine the flashlight.
+     4 | I only understood you as far as wanting to examine the north.
+     4 | I only understood you as far as wanting to take the book.
+     4 | I only understood you as far as wanting to go north.
+     4 | I only understood you as far as wanting to examine the table.
+     4 | I only understood you as far as wanting to take the outside.
+     4 | What do you want to note?
+     4 | I only understood you as far as wanting to no.
+     3 | There is nothing on the linoleum counter.
+     3 | I only understood you as far as wanting to quit.
+     3 | You see nothing noteworthy about the mirror.
+     3 | I only understood you as far as wanting to examine the rivulets.
+     3 | Which do you mean, the wash basin or the rinse basin?
+     3 | You see nothing noteworthy about plaster wall.\n\nNikolai wipes the glistening sweat from his brow.
+     3 | I only understood you as far as wanting to turn the screw.
+     3 | You can't see inside, since the green dumpster is closed.
+     3 | You see nothing special about the brass key.\n\nNikolai wipes the glistening sweat from his brow.
+     3 | I only understood you as far as wanting to check the other cars.
+     3 | I only understood you as far as wanting to read the green awning.
+     3 | I only understood you as far as wanting to note the mold.
+     3 | I only understood you as far as wanting to climb the down.
+     3 | I only understood you as far as wanting to wait.
+     3 | You see nothing noteworthy about the crabgrass.
+     3 | I only understood you as far as wanting to note the inside.
+     3 | I only understood you as far as wanting to check the newspaper.
+     3 | You can't go that way.\n\nYou hear the wail of distant sirens.
+     3 | You must name something more substantial.
+     2 | I only understood you as far as wanting to inspect the aluminum placard.
+     2 | I only understood you as far as wanting to look at the aluminum placard.
+     2 | You see nothing special about the wall.
+     2 | I only understood you as far as wanting to up.
+     2 | You can't go that way.\n\nA mouse runs in circles, then races away.
+     2 | I only understood you as far as wanting to note the plastic pitcher.
+     2 | I only understood you as far as wanting to look at Goldschmidt's Pawnshop.
+     2 | I only understood you as far as wanting to go south.
+     2 | I only understood you as far as wanting to note the kettle.
+     2 | You see nothing noteworthy about the blackened chips of bacon.
+     2 | You see nothing noteworthy about the mutilated corpse.
+     2 | You see nothing special about the ceiling.
+     2 | I only understood you as far as wanting to look at the mirror.
+     2 | I only understood you as far as wanting to note the entrails.
+     2 | Which do you mean, the severed left arm or the severed right arm?
+     2 | I only understood you as far as wanting to examine the mutilated corpse.
+     2 | I only understood you as far as wanting to examine the wall.
+     2 | There is nothing on Nikolai's desk.
+     2 | I only understood you as far as wanting to help.
+     2 | I only understood you as far as wanting to enter storm gutter.
+     2 | I only understood you as far as wanting to look through Goldschmidt's Pawnshop.
+     2 | You see nothing noteworthy about the wall.
+     2 | I only understood you as far as wanting to examine the other cars.
+     2 | I only understood you as far as wanting to look at the other cars.
+     2 | I only understood you as far as wanting to examine neon sign.
+     2 | I only understood you as far as wanting to examine the duct tape.
+     2 | That's not something you can open.\n\nYou note a rat out of the corner of your eye.
+     2 | You already have that.\n\nYou note a rat out of the corner of your eye.
+     2 | You see nothing special about the fixtures.
+     2 | I only understood you as far as wanting to open the front door.
+     2 | I only understood you as far as wanting to look inside the window.
+     2 | What do you want to read?
+     2 | I only understood you as far as wanting to turn the front door.
+     2 | You see nothing noteworthy about the ice.\n\nYou hear police sirens nearby.
+     2 | I only understood you as far as wanting to examine the broken glass.
+     2 | I only understood you as far as wanting to get the outside.
+     2 | I only understood you as far as wanting to jump.
+     2 | I only understood you as far as wanting to kick the front door.
+     2 | You can't go that way.\n\nYou hear police sirens nearby.
+     2 | I only understood you as far as wanting to climb the outside.
+     1 | I only understood you as far as wanting to check the window.
+     1 | I only understood you as far as wanting to note the rat.
+     1 | But you aren't in anything at the moment.\n\nAngela begins wiping tables.
+     1 | You can't see inside, since the mini fridge is closed.
+     1 | There is nothing on the table.
+     1 | You see nothing noteworthy about mounds of unpaid invoices.
+     1 | What do you want to examine?
+     1 | I only understood you as far as wanting to note the blackened chips of bacon.
+     1 | There is nothing on the flat grill.
+     1 | I only understood you as far as wanting to look at Angela.
+     1 | I only understood you as far as wanting to turn the flashlight on.
+     1 | I only understood you as far as wanting to break Goldschmidt's Pawnshop.
+     1 | I only understood you as far as wanting to unscrew the screw.
+     1 | You see nothing noteworthy about the steam table.
+     1 | You see nothing noteworthy about the mini fridge.\n\nA squadron of police cars arrive outside Nikolai's.  You are arrested at gun point for vandalizing a window.  The officers drag you across the street in cuffs, force you into the back of a black and white sedan, then drive you back to the station.\n\n\n\n    *** You've been convicted. ***\n\n\nNikolai's Bar and Grill earned a final sanitation rating of -2.\n\n\nWould you like to RESTART, RESTORE a saved game or QUIT
+     1 | You see nothing noteworthy about plaster wall.\n\nA mouse runs in circles, then races away.
+     1 | Violence isn't the answer to this one.
+     1 | I only understood you as far as wanting to look at the gate.
+     1 | Which do you mean, the severed left foot or the severed right hand?
+     1 | I only understood you as far as wanting to examine the particle board crate.
+     1 | I only understood you as far as wanting to examine the dish machine.
+     1 | I only understood you as far as wanting to read the book.
+     1 | I only understood you as far as wanting to examine the ceiling.
+     1 | I only understood you as far as wanting to examine the hotel pan.
+     1 | I only understood you as far as wanting to examine the servingware.
+     1 | I only understood you as far as wanting to examine the gate.
+     1 | I only understood you as far as wanting to examine the sink.
+     1 | I only understood you as far as wanting to examine the stereo.
+     1 | I only understood you as far as wanting to search Nikolai's desk.
+     1 | You see nothing noteworthy about the stereo.
+     1 | That's already open.
+     1 | I only understood you as far as wanting to stand up.
+     1 | I only understood you as far as wanting to pull Sofia.
+     1 | I only understood you as far as wanting to search the dish machine.
+     1 | I only understood you as far as wanting to look at Nikolai.
+     1 | You can't go that way.\n\nSofia remarks, "You're a pretty one, my pet."
+     1 | I only understood you as far as wanting to examine the hand dryer.
+     1 | I only understood you as far as wanting to unscrew the hand dryer.
+     1 | I only understood you as far as wanting to examine the bathroom sink.
+     1 | I only understood you as far as wanting to examine your car.
+     1 | You see nothing noteworthy about Angela.
+     1 | I only understood you as far as wanting to examine the green awning.
+     1 | I only understood you as far as wanting to look at the green awning.
+     1 | I only understood you as far as wanting to check the chair.
+     1 | I only understood you as far as wanting to examine the newspaper.
+     1 | I only understood you as far as wanting to look inside the Dining Room.
+     1 | I only understood you as far as wanting to examine the chair.
+     1 | I only understood you as far as wanting to examine the pair of eyes.
+     1 | I only understood you as far as wanting to go west.
+     1 | I only understood you as far as wanting to look under the newspaper.
+     1 | I only understood you as far as wanting to inspect the mold.
+     1 | I only understood you as far as wanting to examine the boot.
+     1 | I only understood you as far as wanting to drop the newspaper into storm gutter.
+     1 | You must name something more substantial.\n\nNikolai wipes the glistening sweat from his brow.
+     1 | I only understood you as far as wanting to play the stereo.
+     1 | That's already on.
+     1 | Nothing obvious happens.
+     1 | You can't go that way.\n\nA squadron of police cars arrive outside Nikolai's.  You are arrested at gun point for vandalizing a window.  The officers drag you across the street in cuffs, force you into the back of a black and white sedan, then drive you back to the station.\n\n\n\n    *** You've been convicted. ***\n\n\n\nWould you like to RESTART, RESTORE a saved game or QUIT
+     1 | I only understood you as far as wanting to look at the window.
+     1 | You see nothing noteworthy about the ice.\n\nYou note a rat out of the corner of your eye.
+     1 | There is nothing on the linoleum counter.\n\nThe song on the radio changes to "Witch Doctor" by David Seville.
+     1 | You see nothing noteworthy about the ice.\n\nThe song on the radio changes to "Great Pretender" by the Platters.
+     1 | You see nothing special about the brass key.\n\nNikolai scratches himself indiscretely.
+     1 | What do you want to attach the aluminum placard to?
+     1 | You haven't got that.
+     1 | I only understood you as far as wanting to get in your car.
+     1 | You see nothing noteworthy about the notepad.
+     1 | I only understood you as far as wanting to get your car.
+     1 | I only understood you as far as wanting to look at your car.
+     1 | I only understood you as far as wanting to note the crabgrass.
+     1 | I only understood you as far as wanting to swing the aluminum placard.
+     1 | There's nothing sensible to swing here.
+     1 | I only understood you as far as wanting to enter the broken glass.
+     1 | I only understood you as far as wanting to break the front door.
+     1 | I only understood you as far as wanting to kick the down.
+     1 | You can't go that way.\n\nA cockroach scuttles up the wall.
+     1 | You see nothing special about the brass key.\n\nA large rat turns to look at you, then runs away.
+     1 | I only understood you as far as wanting to unscrew the protective cover.
+     1 | I only understood you as far as wanting to look in Goldschmidt's Pawnshop.
+     1 | You see nothing noteworthy about the ice.\n\nA cockroach scurries across the floor.
+     1 | I only understood you as far as wanting to east.
+     1 | I only understood you as far as wanting to reach into storm gutter.
+     1 | I only understood you as far as wanting to look in storm gutter.
+     1 | Which do you mean, the steam table or the prep table?
+     1 | I only understood you as far as wanting to go out.
+     1 | But you aren't in anything at the moment.\n\nA squadron of police cars arrive outside Nikolai's.  You are arrested at gun point for vandalizing a window.  The officers drag you across the street in cuffs, force you into the back of a black and white sedan, then drive you back to the station.\n\n\n\n    *** You've been convicted. ***\n\n\n\nWould you like to RESTART, RESTORE a saved game or QUIT
+     1 | You can't go that way.\n\nA squadron of police cars arrive outside Nikolai's.  You are arrested at gun point for vandalizing a window.  The officers drag you across the street in cuffs, force you into the back of a black and white sedan, then drive you back to the station.\n\n\n\n    *** You've been convicted. ***\n\n\nNikolai's Bar and Grill earned a final sanitation rating of -4.\n\n\nWould you like to RESTART, RESTORE a saved game or QUIT
+     1 | I only understood you as far as wanting to smell storm gutter.
+     1 | You see nothing special about the brass key.\n\nNikolai rifles through his invoices.

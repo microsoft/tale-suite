@@ -1,0 +1,189 @@
+# Invalid Action Messages: JerichoEnvZtuu
+# Total unique error messages: 182
+# Total error occurrences: 12513
+#
+# Format: count | message
+#===============================================================================
+
+  5508 | That's not a verb I recognize.
+  2197 | You can't see any such thing.
+  1114 | You seem to want to talk to someone, but I can't see whom.
+  1080 | I beg your pardon?
+   259 | I only understood you as far as wanting to look.
+   196 | You can't go that way.
+   179 | I only understood you as far as wanting to inventory.
+   151 | You find nothing of interest.
+   137 | Which do you mean, the pile of bones or the leg bones?
+   104 | That's not something you can open.
+    92 | I only understood you as far as wanting to shine the brass lantern.
+    83 | You can't go that way.\n\nMike does his best impression of Al Vezza, former CEO of Infocom. Marc is not generally amused by this, but does smile ever so slightly at the sight of Mike's face scrunched like a weasel.
+    72 | That's not something you can enter.
+    69 | Which do you mean, the Baby Rune, the Multi-Implementeers, the ZM$100000 or the Forever Gores?
+    67 | You already have that.
+    63 | Time passes.
+    55 | What do you want to ask the bust of Marc Blank for?
+    53 | I only understood you as far as wanting to go the south wall.
+    50 | I only understood you as far as wanting to pull the curtain.
+    45 | Violence isn't the answer to this one.
+    43 | I only understood you as far as wanting to go the north wall.
+    37 | You can't use multiple objects with that verb.
+    37 | I only understood you as far as wanting to wait.
+    34 | I didn't understand that sentence.
+    34 | I only understood you as far as wanting to drop the brass lantern.
+    30 | I only understood you as far as wanting to go the east wall.
+    26 | Nothing obvious happens.
+    26 | I only understood you as far as wanting to in.
+    25 | Which do you mean, the spiked gloves, the bloody gloves, the stumpy gloves, the blistered gloves, the scaly gloves, the razor-like gloves, the suction-cupped gloves or the hairy gloves?
+    24 | I only understood you as far as wanting to use the cheaply-made sword.
+    23 | You can only do that to something animate.
+    22 | I only understood you as far as wanting to use the brass lantern.
+    20 | You can't go that way.\n\nThe lantern flickers and goes out.\n\nIt is now pitch dark in here!
+    19 | I only understood you as far as wanting to hold the cover.
+    18 | You can't go that way.\n\nMike's bust looks wistful. "Sigh," he sighs. "Oh for the olden, golden days of yore."
+    18 | Which do you mean, the slimy mask, the pock-marked mask, the four-eyed mask, the decomposing mask, the fish-mouthed mask, the lizard-like mask, the fungus-like mask or the humanoid mask?
+    17 | You don't have the cheaply-made sword.
+    17 | I only understood you as far as wanting to remove the salesman.
+    16 | I only understood you as far as wanting to go the west wall.
+    15 | I don't think much is to be achieved by that.
+    15 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the southeast wall, the northwest wall or the southwest wall?
+    15 | You can't go that way.\n\nCalling Mike's attention to your sword,  Marc struggles to suppress a laugh.
+    15 | I only understood you as far as wanting to examine the northeast wall.
+    15 | You see nothing special about the northeast wall.
+    14 | What do you want to unlock the door with?
+    14 | I only understood you as far as wanting to restart.
+    11 | You haven't got that.
+     9 | Which do you mean, the gelatinous body suit, the feathered body suit, the glowing/fur-covered body suit, the rainbow-striped body suit, the armor-plated body suit, the sponge-like body suit, the blood-oozing body suit or the semi-transparent body suit?
+     9 | Which do you mean, the black lens, the red lens, the blue lens, the green lens or the yellow lens?
+     9 | I only understood you as far as wanting to stand.
+     9 | What do you want to pay the bust of Marc Blank?
+     8 | Which do you mean, the hairy gloves, the spiked gloves, the bloody gloves, the stumpy gloves, the blistered gloves, the scaly gloves, the razor-like gloves or the suction-cupped gloves?
+     8 | I only understood you as far as wanting to help.
+     7 | I only understood you as far as wanting to examine the symbols.
+     7 | It's already closed.
+     7 | What do you want to examine?
+     7 | That's not something you can switch.
+     6 | I only understood you as far as wanting to hold the yellow button.
+     6 | I only understood you as far as wanting to read the east wall.
+     6 | I only understood you as far as wanting to enter the door.
+     6 | I only understood you as far as wanting to hold the brass lantern.
+     6 | Which do you mean, the bust of Marc Blank or the bust of Mike Berlyn?
+     6 | I only understood you as far as wanting to wear the salesman.
+     5 | I only understood you as far as wanting to cut the spine.
+     5 | I only understood you as far as wanting to cut the curtain.
+     5 | I only understood you as far as wanting to take the leg bones.
+     5 | It's already open.
+     5 | Which do you mean, the hairy gloves, the spiked gloves, the bloody gloves, the stumpy gloves, the blistered gloves, the scaly gloves, the suction-cupped gloves or the razor-like gloves?
+     4 | I only understood you as far as wanting to examine the Display Unit.
+     4 | What do you want to insert the quint-Zorkmid coin in?
+     4 | I only understood you as far as wanting to read the sign.
+     4 | You can't go that way.\n\nThe lantern dims a little.
+     4 | You already have that.\n\nOh no! A lurking grue slithered into the room and devoured you!\n\n\n    *** You have died ***\n\n\nIn that game you scored 0 out of a possible 100, in 35 turns, earning you the rank of would-be adventurer.\n\nWould you like to RESTART, RESTORE a saved game, give the FULL score for that game or QUIT
+     4 | You can't go that way.\n\nMarc, looking wistful, asks Mike whether they would still be considered Great Implementers if they had gone to graphic adventures a few years earlier.
+     4 | You see nothing special about the floor.
+     4 | I only understood you as far as wanting to search the tunnel.
+     3 | You're already holding it open.
+     3 | I only understood you as far as wanting to look at the symbols.
+     3 | I only understood you as far as wanting to close the Display Unit.
+     3 | You're already wearing that!
+     3 | I only understood you as far as wanting to examine the picture.
+     3 | I only understood you as far as wanting to hold the picture.
+     3 | You can't go that way.\n\nMike turns to Marc and says, "This bear walks into a bar and says, `Give me a beer...'" and is immediately cut off by a rather curt "Heard it!"
+     3 | I only understood you as far as wanting to stand on the circle.
+     3 | Which do you mean, the slimy mask, the pock-marked mask, the four-eyed mask, the fish-mouthed mask, the lizard-like mask, the fungus-like mask, the humanoid mask or the decomposing mask?
+     3 | I only understood you as far as wanting to take the salesman.
+     3 | You already have that.\n\nMarc comments on the weather, or lack thereof, on the surface of Contra.
+     3 | I only understood you as far as wanting to use the slot.
+     3 | I only understood you as far as wanting to climb the floor.
+     3 | I only understood you as far as wanting to swing the cheaply-made sword.
+     3 | I only understood you as far as wanting to take the red lens.
+     2 | You don't have the cheaply-made sword.\n\nThe lantern dims a little.
+     2 | That's not something you can close.
+     2 | You can't go that way.\n\nMarc's bust does a double-take. "Hmm," he hmms. "Not a bad-looking specimen, though back in the old days, they built `em tougher."
+     2 | I only understood you as far as wanting to use the skull.
+     2 | You're already holding it open. \n\nThe lantern flickers and goes out.
+     2 | I only understood you as far as wanting to examine the busts.
+     2 | I only understood you as far as wanting to examine the glass ball.
+     2 | You can't go that way.\n\nThe salesman, losing interest in you, leans back and resumes whatever it was he was doing (staring, mostly.)
+     2 | I only understood you as far as wanting to look at the picture.
+     2 | I only understood you as far as wanting to open the cover.
+     2 | I only understood you as far as wanting to open the door.
+     2 | I only understood you as far as wanting to look under the cover.
+     2 | You can't go that way.\n\nMarc comments on the weather, or lack thereof, on the surface of Contra.
+     2 | I only understood you as far as wanting to pull the cover.
+     2 | You see nothing special about the ceiling.
+     2 | I only understood you as far as wanting to jump.
+     2 | I only understood you as far as wanting to nw.
+     2 | You can't go that way.\n\nOh no! A lurking grue slithered into the room and devoured you!\n\n\n    *** You have died ***\n\n\nIn that game you scored 0 out of a possible 100, in 35 turns, earning you the rank of would-be adventurer.\n\nWould you like to RESTART, RESTORE a saved game, give the FULL score for that game or QUIT
+     2 | You already have that.\n\nThe lantern dims a little.\n\nMike turns to Marc and says, "This bear walks into a bar and says, `Give me a beer...'" and is immediately cut off by a rather curt "Heard it!"
+     2 | I only understood you as far as wanting to search the door.
+     2 | This dangerous act would achieve little.
+     2 | What do you want to pay the bust of Mike Berlyn?
+     2 | I only understood you as far as wanting to s.
+     2 | That's not something you need to refer to in the course of this game.
+     2 | There's nothing sensible to swing here.
+     2 | Which do you mean, the first rib, the second rib, the third rib, the fourth rib, the fifth rib or the sixth rib?
+     2 | I only understood you as far as wanting to light the brass lantern.
+     2 | There is no reply.\n\nCalling Mike's attention to your sword,  Marc struggles to suppress a laugh.
+     2 | I only understood you as far as wanting to examine the red lens.
+     2 | I only understood you as far as wanting to extinguis the red lens.
+     1 | I only understood you as far as wanting to look at the Display Unit.
+     1 | I only understood you as far as wanting to stab the spine.
+     1 | I only understood you as far as wanting to detach the spine.
+     1 | I only understood you as far as wanting to cut the skull.
+     1 | I only understood you as far as wanting to use the skeleton.
+     1 | You see nothing special about the north wall.\n\nThe lantern flickers and goes out.\n\nIt is now pitch dark in here!
+     1 | I only understood you as far as wanting to read the sealed door.
+     1 | That doesn't seem to be something you can unlock.
+     1 | You can't go that way.\n\nOh no! A lurking grue slithered into the room and devoured you!\n\n\n    *** You have died ***\n\n\nIn that game you scored 5 out of a possible 100, in 35 turns, earning you the rank of would-be adventurer.\n\nWould you like to RESTART, RESTORE a saved game, give the FULL score for that game or QUIT
+     1 | You can't go that way.\n\nThe lantern flickers and goes out.\n\nMike's bust looks wistful. "Sigh," he sighs. "Oh for the olden, golden days of yore."\n\nIt is now pitch dark in here!
+     1 | You're already holding it open. \n\nThe lantern dims a little.
+     1 | I only understood you as far as wanting to go the northwest wall.
+     1 | I only understood you as far as wanting to talk to the salesman.
+     1 | I only understood you as far as wanting to look at the busts.
+     1 | I only understood you as far as wanting to look at the sealed door.
+     1 | I only understood you as far as wanting to examine the sealed door.
+     1 | I only understood you as far as wanting to examine the tree.
+     1 | I only understood you as far as wanting to take the hot-air balloon.
+     1 | I only understood you as far as wanting to examine the sign.
+     1 | I only understood you as far as wanting to look at the sign.
+     1 | I only understood you as far as wanting to go the southwest wall.
+     1 | I only understood you as far as wanting to search the skeleton.
+     1 | You haven't got that.\n\nOh no! A lurking grue slithered into the room and devoured you!\n\n\n    *** You have died ***\n\n\nIn that game you scored 0 out of a possible 100, in 35 turns, earning you the rank of would-be adventurer.\n\nWould you like to RESTART, RESTORE a saved game, give the FULL score for that game or QUIT
+     1 | I only understood you as far as wanting to examine the floor.
+     1 | I only understood you as far as wanting to examine the circle.
+     1 | I only understood you as far as wanting to examine the square.
+     1 | I only understood you as far as wanting to examine the triangle.
+     1 | I only understood you as far as wanting to examine the pentagon.
+     1 | You don't need to put that there.
+     1 | I only understood you as far as wanting to examine the notice.
+     1 | I only understood you as far as wanting to look at the cover.
+     1 | I only understood you as far as wanting to put the brass lantern on the cover.
+     1 | You can't go that way.\n\nMike turns a baleful eye to your lantern. "You could get a better one of those in a box of cereal," he says. If he weren't so obviously correct, you might easily take offense at that sort of comment.
+     1 | I only understood you as far as wanting to stand on the square.
+     1 | I only understood you as far as wanting to go the northeast wall.
+     1 | I only understood you as far as wanting to use the glass ball.
+     1 | What do you want to ask the bust of Mike Berlyn for?
+     1 | Which do you mean, the pock-marked mask, the four-eyed mask, the decomposing mask, the fish-mouthed mask, the lizard-like mask, the fungus-like mask, the humanoid mask or the slimy mask?
+     1 | You already have that.\n\nMike turns to Marc and says, "This bear walks into a bar and says, `Give me a beer...'" and is immediately cut off by a rather curt "Heard it!"
+     1 | You see nothing special about the floor.\n\nMike asks Marc to explain the parser to him again (for the 3945th time this week.)  Marc declines politely, noting the presence of a (hopefully) paying customer.
+     1 | You can't go that way.\n\nMike starts to nod off, but Marc clears his throat loudly, snapping him back to attention.
+     1 | What do you want to insert the cheaply-made sword in?
+     1 | You already have that.\n\nMike does his best impression of Al Vezza, former CEO of Infocom. Marc is not generally amused by this, but does smile ever so slightly at the sight of Mike's face scrunched like a weasel.
+     1 | You already have that.\n\nMike turns a baleful eye to your lantern. "You could get a better one of those in a box of cereal," he says. If he weren't so obviously correct, you might easily take offense at that sort of comment.
+     1 | That's not something you can switch.\n\nOh no! A lurking grue slithered into the room and devoured you!\n\n\n    *** You have died ***\n\n\nIn that game you scored 5 out of a possible 100, in 35 turns, earning you the rank of would-be adventurer.\n\nWould you like to RESTART, RESTORE a saved game, give the FULL score for that game or QUIT
+     1 | What do you want to attack?
+     1 | What do you want to fight?
+     1 | What do you want to hit?
+     1 | I only understood you as far as wanting to throw the brass lantern.
+     1 | I only understood you as far as wanting to go the ceiling.
+     1 | You see nothing special about the north wall.
+     1 | You see nothing special about the south wall.\n\nThe lantern flickers and goes out.
+     1 | There is no reply.\n\nMike ponders that if God spelled backward is Dog, what's that do for Bob? Or Otto?
+     1 | I only understood you as far as wanting to insert the quint-Zorkmid coin in the quint-Zorkmid coin.
+     1 | I only understood you as far as wanting to raise the brass lantern.
+     1 | I only understood you as far as wanting to talk to the bust of Marc Blank.
+     1 | What do you want to search?
+     1 | That's not something you can open.\n\nMike turns a baleful eye to your lantern. "You could get a better one of those in a box of cereal," he says. If he weren't so obviously correct, you might easily take offense at that sort of comment.
+     1 | I only understood you as far as wanting to south.
+     1 | I only understood you as far as wanting to down.
+     1 | That's not something you can open.\n\nOh no! A lurking grue slithered into the room and devoured you!\n\n\n    *** You have died ***\n\n\nIn that game you scored 5 out of a possible 100, in 35 turns, earning you the rank of would-be adventurer.\n\nWould you like to RESTART, RESTORE a saved game, give the FULL score for that game or QUIT

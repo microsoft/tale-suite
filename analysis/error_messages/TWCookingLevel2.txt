@@ -1,0 +1,86 @@
+# Invalid Action Messages: TWCookingLevel2
+# Total unique error messages: 79
+# Total error occurrences: 12228
+#
+# Format: count | message
+#===============================================================================
+
+  5846 | That's not a verb I recognise.
+  1602 | You can't see any such thing.
+  1122 | I beg your pardon?
+   521 | It isn't something you can switch.
+   500 | I only understood you as far as wanting to check the cookbook.
+   320 | You seem to want to talk to someone, but I can't see whom.
+   316 | But you aren't in anything at the moment.
+   238 | I only understood you as far as wanting to take inventory.
+   207 | Time passes.
+   167 | You still miss something.
+   162 | You need to take the carrot first.
+   154 | I didn't understand that sentence.
+   110 | It isn't something you can open.
+    99 | (with the carrot)\nYou need to take the carrot first.
+    78 | The fridge looks grand. You can't see inside it because the lid's in your way.
+    76 | What do you want to cook the carrot with?
+    57 | You can't see inside, since the fridge is closed.
+    52 | What do you want to cook the pork chop with?
+    47 | I only understood you as far as wanting to examine the oven.
+    42 | I only understood you as far as wanting to wait.
+    34 | (with the pork chop)\nYou need to take the pork chop first.
+    33 | This dangerous act would achieve little.
+    33 | You can't begin with a comma.
+    33 | What do you want to open?
+    29 | That's already open.
+    27 | You need to take the pork chop first.
+    24 | I only understood you as far as wanting to check the oven.
+    24 | You need to specify how you want to cut the pork chop. Either slice, dice, or chop it.
+    24 | I only understood you as far as wanting to cut the pork chop.
+    24 | That was a rhetorical question.\n\n\nYou seem to want to talk to someone, but I can't see whom.
+    19 | I only understood you as far as wanting to (go) in.
+    13 | You couldn't pay me to eat that carrot.
+    13 | I only understood you as far as wanting to take the pork chop.
+    13 | I only understood you as far as wanting to exit.
+    11 | You can't go that way.
+    11 | I only understood you as far as wanting to turn the oven.
+    10 | That's fixed in place.
+    10 | It is fixed in place.
+     9 | Cooking requires a source of heat.
+     9 | You haven't got that.
+     9 | I only understood you as far as wanting to close the oven.
+     8 | I only understood you as far as wanting to take the carrot.
+     7 | You can't use multiple objects with that verb.
+     7 | I only understood you as far as wanting to check the fridge.
+     7 | I only understood you as far as wanting to leave.
+     6 | I only understood you as far as wanting to turn the stove.
+     5 | I only understood you as far as wanting to put the carrot on the stove.
+     5 | I only understood you as far as wanting to open the oven.
+     4 | That's already closed.
+     4 | What do you want to cook the stove with?
+     3 | I only understood you as far as wanting to light the stove.
+     3 | What do you want to cook?
+     3 | Violence isn't the answer to this one.
+     3 | You already have that.
+     3 | What do you want to read?
+     3 | Cutting something requires a knife.
+     2 | No, you can't set that to anything.
+     2 | I only understood you as far as wanting to look the oven.
+     2 | I only understood you as far as wanting to search the fridge.
+     2 | The stove is fixed in place.
+     2 | (the cookbook)\nIt isn't something you can open.
+     2 | I only understood you as far as wanting to open the counter.
+     1 | I only understood you as far as wanting to check the table.
+     1 | I only understood you as far as wanting to eat the carrot.
+     1 | I only understood you as far as wanting to search the table.
+     1 | I only understood you as far as wanting to check the counter.
+     1 | I only understood you as far as wanting to eat the pork chop.
+     1 | You have to be more specific!
+     1 | What do you want to cook the oven with?
+     1 | I only understood you as far as wanting to cook the carrot with the pork chop.
+     1 | You aren't wearing the carrot.
+     1 | What do you want to get?
+     1 | I only understood you as far as wanting to put the carrot in the oven.
+     1 | I only understood you as far as wanting to cook the pork chop on the stove.
+     1 | You need to specify how you want to cut the carrot. Either slice, dice, or chop it.
+     1 | (with the carrot)\nCutting something requires a knife.
+     1 | I only understood you as far as wanting to throw the pork chop.
+     1 | What do you want to slice the pork chop with?
+     1 | I only understood you as far as wanting to search the counter.

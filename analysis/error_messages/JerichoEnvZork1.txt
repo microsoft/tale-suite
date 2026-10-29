@@ -1,0 +1,606 @@
+# Invalid Action Messages: JerichoEnvZork1
+# Total unique error messages: 599
+# Total error occurrences: 10300
+#
+# Format: count | message
+#===============================================================================
+
+   867 | That sentence isn't one I recognize.
+   771 | I don't know the word ">".
+   765 | You can't go that way.
+   700 | I don't know the word "**open".
+   524 | I beg your pardon?
+   441 | Time passes...
+   331 | I don't know the word "you".
+   276 | I don't know the word "use".
+   270 | I don't know the word "`open".
+   257 | I don't know the word "`help`".
+   209 | There was no verb in that sentence!
+   202 | You already have that!
+   184 | I don't know the word "help".
+   164 | You find nothing unusual.
+   160 | You can't get up there with what you're carrying.
+   156 | I don't know the word "```".
+   142 | I don't know the word "apologize".
+   114 | There's nothing special about the pile of leaves.
+   101 | What do you want to break the door with?
+    81 | What do you want to turn the bolt with?
+    76 | You don't have that!
+    67 | There's nothing special about the control panel.
+    67 | I don't know the word "`examine".
+    66 | I don't know the word "word".
+    55 | I don't know the word "`look".
+    53 | What do you want to climb down?
+    52 | There's nothing special about the bolt.
+    51 | It's too dark to see!
+    49 | What do you want to listen to?
+    49 | I don't know the word "text".
+    48 | There's nothing special about the carpet.
+    47 | There's nothing special about the pile of plastic.
+    45 | What do you want to look in?
+    43 | I don't know the word "clasp".
+    41 | You used the word "again" in a way that I don't understand.
+    40 | What do you want to examine:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:?
+    37 | What do you want to inflate the plastic with?
+    37 | I don't know the word "```enter".
+    36 | I don't know the word "carefully".
+    34 | What do you want to ìò;=?
+    34 | I don't know the word "meticulously".
+    33 | I don't know the word "more".
+    32 | You don't have enough lung power to inflate it.
+    32 | You used the word "east" in a way that I don't understand.
+    30 | I don't know the word "thoroughly".
+    28 | There's nothing special about the tree.
+    28 | I don't know the word "*".
+    26 | There's nothing special about the sword.
+    26 | I don't know the word "readzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz".
+    25 | I don't know the word "pry".
+    25 | You used the word "back" in a way that I don't understand.
+    25 | You can't see any axe here!
+    25 | There's nothing special about the painting.
+    24 | You used the word "north" in a way that I don't understand.
+    23 | I don't know the word "upstairs".
+    23 | I don't know the word "sound".
+    22 | There's nothing special about the rainbow.
+    22 | What do you want to dig the leaves with?
+    22 | I don't know the word "`inspect".
+    21 | I don't know the word "`go".
+    21 | I don't know the word "care".
+    21 | I don't know the word "magnifying".
+    20 | I don't know the word "`north`".
+    20 | I don't know the word "eyes".
+    20 | I don't know the word "`check".
+    19 | I don't know the word "try".
+    19 | I don't know the word "`read".
+    19 | I don't know the word "`touch".
+    18 | I don't know the word "now".
+    18 | I don't know the word "un".
+    17 | You can't do that!
+    17 | I don't know the word "game".
+    17 | You can't see any window here!
+    17 | What do you want to unlock?
+    16 | What do you want to unlock the grating with?
+    16 | I don't know the word "clearing".
+    16 | You can't see any door here!
+    16 | What do you want to examine?
+    16 | You can't see any egg here!
+    15 | I don't know the word "descend".
+    15 | There's nothing special about the chasm.
+    15 | I don't know the word "toothpaste".
+    15 | I don't know the word "seems".
+    15 | I don't know the word "understand".
+    14 | You can't see any bolt here!
+    14 | There's nothing special about the broken clockwork canary.
+    14 | I don't know the word "let's".
+    14 | I don't know the word "`look`".
+    13 | I don't know the word "check".
+    13 | There is nothing but dust there.
+    13 | You can't see any tree here!
+    13 | You can't do that.
+    13 | You can't see any painting here!
+    13 | I don't know the word "*read".
+    13 | I don't know the word "fingers".
+    12 | You used the word "quit" in a way that I don't understand.
+    12 | I don't know the word "am".
+    12 | What do you want to unlock the egg with?
+    12 | You used the word "touch" in a way that I don't understand.
+    12 | I don't know the word "entrance".
+    11 | You can't see any key here!
+    11 | I don't know the word "end".
+    11 | What do you want to break the bubble with?
+    11 | I don't know the word "`move".
+    11 | I don't know the word "these".
+    10 | I don't know the word "unfold".
+    10 | I don't know the word "closely".
+    10 | You can't see any lamp here!
+    10 | What do you want to attack the troll with?
+    10 | There's nothing special about the boarded window.
+    10 | You can't see any from kitchen here!
+    10 | I don't know the word "```rest".
+    10 | I don't know the word "`enter".
+    10 | I don't know the word "`east`".
+    10 | I don't know the word "`walk".
+    10 | I don't know the word "`west`".
+    10 | I don't know the word "binoculars".
+     9 | It is already on.
+     9 | You can't see any trap door here!
+     9 | You can't see any trunk here!
+     9 | You can't see any bubble here!
+     9 | I don't know the word "cavern".
+     9 | I don't know the word "mat".
+     9 | I don't know the word "approach".
+     9 | I don't know the word "if".
+     9 | I don't know the word "`use".
+     9 | I don't know the word "`knock".
+     9 | I don't know the word "`push".
+     9 | I don't know the word "field".
+     9 | I don't know the word "attention".
+     9 | I don't know the word "focus".
+     8 | I don't know the word "room".
+     8 | I don't know the word "scramble".
+     8 | I don't know the word "living".
+     8 | There's nothing special about the lunch.
+     8 | What do you want to break the egg with?
+     8 | I don't know the word "pop".
+     8 | I don't know the word "don't".
+     8 | You can't see any red here!
+     8 | I don't know the word "you'".
+     8 | I don't know the word "clim".
+     8 | I don't know the word "`take".
+     8 | I don't know the word "crawl".
+     7 | You can't see any chimney here!
+     7 | What do you want to inflate the boat with?
+     7 | I don't know the word "show".
+     7 | You can't see any sack here!
+     7 | There's nothing special about the ground.
+     7 | There's nothing special about the dam.
+     7 | You can't move the bolt.
+     7 | I don't know the word "goodbye".
+     7 | I don't know the word "attic".
+     7 | I don't know the word "welcome".
+     7 | I don't know the word "text:".
+     7 | I don't know the word "zor".
+     7 | You can't see any tool here!
+     7 | You used the word "open" in a way that I don't understand.
+     6 | I don't know the word "rock".
+     6 | You can't see any grating here!
+     6 | What do you want to inflate the pile with?
+     6 | What do you want to turn the valve with?
+     6 | You can't see any thief here!
+     6 | You can't see any gunk here!
+     6 | There's nothing special about the surrounding wall.
+     6 | I don't know the word "taken".
+     6 | I don't know the word "done".
+     6 | I don't know the word "finished".
+     6 | I don't know the word "be".
+     6 | I don't know the word "santa".
+     6 | I don't know the word "``````".
+     6 | I don't know the word "`approach".
+     6 | I don't know the word "way".
+     6 | I don't know the word "there".
+     6 | I don't know the word "obvious".
+     6 | I don't know the word "```|".
+     5 | What do you want to light?
+     5 | There's nothing special about the chute.
+     5 | There's nothing special about the clove of garlic.
+     5 | You can't see any bell here!
+     5 | There's nothing special about the stairs.
+     5 | I don't know the word "aside".
+     5 | I don't know the word "sing".
+     5 | You can't see any nest here!
+     5 | I don't know the word "doormat".
+     5 | I don't know the word "unboard".
+     5 | You can't see any gunk here!\nThe water level here is now up to your shin.
+     5 | There's nothing special about the way.
+     5 | You can't see any bar here!
+     5 | What do you want to break the boards with?
+     5 | You don't have the small mailbox.
+     5 | What do you want to hit the boards with?
+     5 | I don't know the word "hinge".
+     5 | You used the word "leave" in a way that I don't understand.
+     5 | I don't know the word "ho".
+     5 | I don't know the word "suit".
+     5 | I don't know the word "slowly".
+     5 | I don't know the word "appears".
+     5 | I don't know the word "or".
+     5 | I don't know the word "`return".
+     5 | I don't know the word "`stand".
+     5 | I don't know the word "`face".
+     5 | I don't know the word "keyhole".
+     5 | I don't know the word "```-".
+     5 | I don't know the word "```ve".
+     5 | There's nothing special about the mountain range.
+     4 | You can't see any forest here!
+     4 | I don't know the word "near".
+     4 | You can't see any lantern here!
+     4 | I don't know the word "something".
+     4 | You don't have the pile of plastic.
+     4 | I don't know the word "sluice".
+     4 | I don't know the word "beach".
+     4 | What do you want to cut the nails with?
+     4 | Nothing happens.
+     4 | I don't know the word "noise".
+     4 | I don't know the word "stop".
+     4 | I don't know the word "unscrew".
+     4 | I don't know the word "crowbar".
+     4 | There's nothing special about the blue button.
+     4 | I don't know the word "putty".
+     4 | I don't know the word "individual".
+     4 | I don't know the word "egg's".
+     4 | You used the word "lock" in a way that I don't understand.
+     4 | You can't go that way.\nYou hear in the distance the chirping of a song bird.
+     4 | I don't know the word "reads:".
+     4 | I don't know the word "*you".
+     4 | I don't know the word "``".
+     4 | I don't know the word "term".
+     4 | I don't know the word "-".
+     4 | I don't know the word "`house`".
+     4 | You used the word "hello" in a way that I don't understand.
+     4 | You can't see any tools here!
+     4 | You used the word "remove" in a way that I don't understand.
+     4 | I don't know the word "upper".
+     4 | I don't know the word "```you".
+     4 | I don't know the word "```   ".
+     4 | You can't see any brown button here!
+     4 | I don't know the word "whistle".
+     4 | You can't see any trapdoor here!
+     4 | You can't see any trident here!
+     3 | I don't know the word "slash".
+     3 | What do you want to kill the man with?
+     3 | You can't see any pump here!
+     3 | You can't see any gold here!
+     3 | You can't see any blue button here!
+     3 | I don't know the word "cellar".
+     3 | You can't see any trophy case here!
+     3 | You can't see any rope here!
+     3 | I don't know the word "explore".
+     3 | You can't see any railing here!
+     3 | You can't see any leather bag here!
+     3 | You already have that!\nYou hear in the distance the chirping of a song bird.
+     3 | I don't know the word "call".
+     3 | You used the word "south" in a way that I don't understand.
+     3 | You can't get up there with what you're carrying.\nSomeone carrying a large bag is casually leaning against one of the walls here. He does not speak, but it is clear from his aspect that the bag will be taken only over his dead body.
+     3 | You can't see any leaves here!
+     3 | What do you want to smash the egg with?
+     3 | You can't see any stone here!
+     3 | What do you want to smash the door with?
+     3 | I don't know the word "mainspring".
+     3 | You can't see any songbird here.
+     3 | You can't reach something that's inside a closed container.
+     3 | You can't see any lunch here!
+     3 | What do you want to cut the door with?
+     3 | What do you want to hit the nails with?
+     3 | I don't know the word "please".
+     3 | I don't know the word "burp".
+     3 | I don't know the word "```explore".
+     3 | I don't know the word "```help".
+     3 | I don't know the word "riddle".
+     3 | I don't know the word "roots".
+     3 | I don't know the word "lies".
+     3 | I don't know the word "`search".
+     3 | You can't see any sword here!
+     3 | I don't know the word "```i".
+     3 | There's nothing special about the forest.\nYou hear in the distance the chirping of a song bird.
+     3 | There's nothing special about the forest.
+     3 | There's nothing special about the crack.
+     3 | I don't know the word "flee".
+     3 | I don't know the word "fists".
+     3 | I don't know the word "creep".
+     3 | I don't know the word "hole".
+     3 | You can't see any west here!
+     3 | You can't see any page here!
+     2 | I don't know the word "chop".
+     2 | You can't see any small key here!
+     2 | There is no tree here suitable for climbing.\nYou hear in the distance the chirping of a song bird.
+     2 | I don't know the word "die".
+     2 | There's nothing special about the stream.
+     2 | There's nothing special about the screwdriver.
+     2 | What do you want to inflate the plastic pile with?
+     2 | You can't see any green bubble here!
+     2 | I don't know the word "maintenance".
+     2 | I don't know the word "while".
+     2 | What do you want to tie the rope to?
+     2 | There's nothing special about the nasty knife.
+     2 | I don't know the word "info".
+     2 | I don't know the word "(empty)".
+     2 | There's nothing special about the skeleton key.
+     2 | You can't see any platinum bar here!
+     2 | You can't use multiple indirect objects with "turn".
+     2 | I don't know the word "loosen".
+     2 | I don't know the word "hint".
+     2 | You can't go that way.\nThe lamp appears a bit dimmer.
+     2 | You can't see any yellow button here!
+     2 | You don't have enough lung power to inflate it.\nThe lamp appears a bit dimmer.
+     2 | You can't see any coins here!
+     2 | You used the word "ulysses" in a way that I don't understand.
+     2 | You can't see any bag here!
+     2 | I don't know the word "keys".
+     2 | You can't see any buttons here!
+     2 | You can't see any boards here!
+     2 | You can't see any boarded front door here!
+     2 | You can't see any front door here!
+     2 | I don't know the word "sounds".
+     2 | I don't know the word "thank".
+     2 | I don't know the word "doorway".
+     2 | I don't know the word "area".
+     2 | You can't move the green bubble.
+     2 | You can't see any leaves here!\nYou hear in the distance the chirping of a song bird.
+     2 | What do you want to throw the egg at?
+     2 | You can't see any rug here!
+     2 | What do you want to knock at?
+     2 | You can't see any nails here!
+     2 | I don't know the word "shaft".
+     2 | You can't do that.\nThe water level here is now up to your shin.
+     2 | You don't have the brown sack.
+     2 | I don't know the word "spring".
+     2 | You don't have the pile of leaves.
+     2 | You don't have the lunch.
+     2 | You don't have the broken clockwork canary.
+     2 | You can't see any machinery here!
+     2 | I don't know the word "left".
+     2 | You can't see any crystal window here!
+     2 | You can't see any canary here!
+     2 | You can't go there in a magic boat.
+     2 | What do you want to hit the grating with?
+     2 | I don't know the word "fist".
+     2 | I don't know the word "leaving".
+     2 | I don't know the word "home".
+     2 | I don't know the word "chirping".
+     2 | You can't see any garlic here!
+     2 | I don't know the word "merry".
+     2 | I don't know the word "player".
+     2 | I don't know the word "gloves".
+     2 | I don't know the word "cloth".
+     2 | What do you want to hit the troll with?
+     2 | What do you want to hit the bubble with?
+     2 | I don't know the word "hammer".
+     2 | I don't know the word "after".
+     2 | I don't know the word "i'".
+     2 | I don't know the word "obvi".
+     2 | I don't know the word "i't".
+     2 | I don't know the word "```enter|".
+     2 | You can't see any matchbook here!
+     2 | You can't see any stream here!
+     2 | I don't know the word "twist".
+     2 | You can't see any bird here!
+     2 | You can't see any ramp here!
+     2 | I don't know the word "hum".
+     2 | I don't know the word "imitate".
+     2 | I don't know the word "chirp".
+     2 | I don't know the word "trill".
+     2 | I don't know the word "cheep".
+     2 | I don't know the word "tweet".
+     2 | I don't know the word "peep".
+     2 | I don't know the word "warble".
+     2 | You don't have the bird's nest.
+     2 | You don't have the tree.
+     2 | You're not carrying the tree.
+     2 | I don't know the word "clamber".
+     2 | I don't know the word "dismount".
+     2 | What do you want to run away?
+     2 | I don't know the word "crouch".
+     2 | I don't know the word "duck".
+     2 | I don't know the word "wriggle".
+     2 | I don't know the word "slip".
+     2 | I don't know the word "stoop".
+     2 | I don't know the word "kneel".
+     2 | I don't know the word "squirm".
+     2 | What do you want to squeeze?
+     2 | I don't know the word "squat".
+     2 | I don't know the word "bash".
+     2 | You don't have the nasty knife.
+     2 | I don't know the word "smear".
+     1 | I don't know the word "hack".
+     1 | I don't know the word "lever".
+     1 | What do you want to break the grating with?
+     1 | I don't know the word "shine".
+     1 | You can't see any elvish sword here!
+     1 | I don't know the word "above".
+     1 | You can't see any leaflet here!
+     1 | I don't know the word "wound".
+     1 | I don't know the word "would".
+     1 | I don't know the word "aim".
+     1 | You don't have the blast of air.
+     1 | There's nothing special about the wrench.
+     1 | You can't see any red button here!
+     1 | I don't know the word "counterclockwise".
+     1 | What do you want to turn the green bubble with?
+     1 | I don't know the word "studio".
+     1 | You can't see any bottle here!
+     1 | You don't have the jewel-encrusted egg.
+     1 | You can't reach the lock from here.\nYou'd better have more light than from the brass lantern.
+     1 | You can't reach the lock from here.
+     1 | I don't know the word "closer".
+     1 | You can't see any rainbow here!
+     1 | You can't see any pot of gold here!
+     1 | You can't see any treasure here!
+     1 | You can't see any pot here!
+     1 | What do you want to wave?
+     1 | There's nothing special about the dome.
+     1 | There's nothing special about the white cliffs.
+     1 | There's nothing special about the wooden railing.
+     1 | There's nothing special about the control panel.\nThe lamp appears a bit dimmer.
+     1 | You can't see any plastic here!
+     1 | You can't see any wrench here!
+     1 | I don't know the word "graffiti".
+     1 | You don't have the dam.
+     1 | I don't know the word "wheel".
+     1 | There's nothing special about the rope.
+     1 | It is already open.\nThe lamp is nearly out.
+     1 | I don't know the word "contents".
+     1 | You can't see any mailbox here!
+     1 | You can't see any windows here!
+     1 | You used the word "oil" in a way that I don't understand.
+     1 | You can't see any boarded door here!
+     1 | I don't know the word "bread".
+     1 | There's nothing special about the bloody axe.
+     1 | You can't see any match here!
+     1 | You can't see any staircase here!
+     1 | You can't see any trees here!
+     1 | I don't know the word "moment".
+     1 | I don't know the word "darkness".
+     1 | I don't know the word "everything".
+     1 | I don't know the word "start".
+     1 | I don't know the word "begin".
+     1 | I don't know the word "return".
+     1 | I don't know the word "some".
+     1 | You can't see any kitchen here!
+     1 | What do you want to throw the bottle at?
+     1 | You can't see any nest here!\nYou hear in the distance the chirping of a song bird.
+     1 | What do you want to kill the troll with?
+     1 | You don't have the leaflet.
+     1 | You can't see any songbird here.\nYou hear in the distance the chirping of a song bird.
+     1 | You can't see any rusty key here!
+     1 | There's nothing special about the bat.
+     1 | I don't know the word "rocks".
+     1 | What do you want to cut the rope with?
+     1 | You already have that!\nThe lamp is definitely dimmer now.
+     1 | I don't know the word "wing".
+     1 | You can't see any bag here!\nYou hear in the distance the chirping of a song bird.
+     1 | I don't know the word "bird's".
+     1 | There's nothing special about the yellow button.\nA "lean and hungry" gentleman just wandered through, carrying a large bag. Finding nothing of value, he left disgruntled.
+     1 | You can't see any control panel here!
+     1 | What do you want to patch the boat with?
+     1 | What do you want to launch?
+     1 | I don't know the word "sheet".
+     1 | You don't have the wrench.
+     1 | You can't do that.\nThe water level here is now up to your knees.
+     1 | You can't see any leak here!
+     1 | What do you want to search?
+     1 | I don't know the word "i'm".
+     1 | You used the word "exit" in a way that I don't understand.
+     1 | You can't see any house here!
+     1 | I don't know the word "goodbye!".
+     1 | I don't know the word "farewell".
+     1 | I don't know the word "beak".
+     1 | I don't know the word "face".
+     1 | I don't know the word "wings".
+     1 | What do you want to lock the grating with?
+     1 | I don't know the word "as".
+     1 | You used the word "i" in a way that I don't understand.
+     1 | What do you want to move?
+     1 | I don't know the word "*ex".
+     1 | I don't know the word "*text".
+     1 | I don't know the word "observation".
+     1 | I don't know the word "text:text:".
+     1 | What do you want to examine:text::text:text:text:texttexttexttexttexttexttexttext:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:text:t?
+     1 | What do you want to Ìî;=?
+     1 | What do you want to èì;=?
+     1 | I don't know the word "continue".
+     1 | I don't know the word "```read".
+     1 | I don't know the word "```help```".
+     1 | I don't know the word "```inventory```".
+     1 | I don't know the word "```quit```".
+     1 | I don't know the word "```save```".
+     1 | I don't know the word "```load```".
+     1 | I don't know the word "```restart```".
+     1 | I don't know the word "```north```".
+     1 | I don't know the word "```south```".
+     1 | I don't know the word "```east".
+     1 | I don't know the word "``````rest".
+     1 | I don't know the word "`".
+     1 | I don't know the word "*examine".
+     1 | I don't know the word "readt".
+     1 | I don't know the word "readtext".
+     1 | I don't know the word "read:".
+     1 | I don't know the word "zonf".
+     1 | I don't know the word "texttext:".
+     1 | I don't know the word "z:".
+     1 | I don't know the word "zorkor".
+     1 | I don't know the word "zorzorkorzorzorzorzorkorkorkorkorkorzorzorzorzorkzorzorkzorzorzorzorzorzorzorzorkorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzor".
+     1 | I don't know the word "readzzorzzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzzorzorzorzorzzorzzzorzorzorzorzorzorzorzorzorzorzorzzorzorzorzorzorzorzorzorzorzorzorzorzorzor".
+     1 | I don't know the word "readorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzzorzorzorzorzorzorzorzorzzorzorzorzorzorzorzzorzorzorzorzorzorzorzorzorzorzzorzor".
+     1 | I don't know the word "readorzorzorzorzorzorzzzzzorzzorzzorzorzorzorzorzorzorzorzorzorzorzorzorzzzorzorzorzorzorzorzorzzzzorzorzzorzorzorzorzorzorzzorzorzzzzorzorzorzz".
+     1 | I don't know the word "readorzorzorzzzorzorzorzorzorzorzorzorzorzzzorzorzorzorzorzorzorzorzorzorzorzorzorzorzorzzorzorzorzzzzorzorzorzorzorzzzzorzorzorzorzorzzzorzorzzz".
+     1 | I don't know the word "readorzorzorzorzorzorzorzzorzzzzzzzorzzzzzzorzzzzzzorzorzorzorzorzorzzorzorzorzorzzzzorzzzorzorzorzorzorzorzorzzzorzzzzzorzzzzorzorzzorz".
+     1 | I don't know the word "readzzzzzzzzzzzzzzzzzzzzzzzzzzorzorzorzzorzorzorzzorzorzorzzzzorzzzzzzzzzzzzorzzzzzzzzzzzorzzzorzorzzorzorzzzorzzorzorzzzor".
+     1 | You used the word ";6 in a way that I don't understand.
+     1 | I don't know the word "apologies".
+     1 | I don't know the word "ì;6".
+     1 | I don't know the word "<|system|><|system|><|system|>".
+     1 | I don't know the word "this".
+     1 | I don't know the word "`head".
+     1 | I don't know the word "`near".
+     1 | What do you want to kill the thief with?
+     1 | You don't have the bolt.
+     1 | I don't know the word "opening".
+     1 | I don't know the word "strength".
+     1 | You can't see any force here!
+     1 | I don't know the word "stick".
+     1 | You can't see any branch here!
+     1 | I don't know the word "log".
+     1 | I don't know the word "wood".
+     1 | I don't know the word "club".
+     1 | You can't see any bat here!
+     1 | I don't know the word "mallet".
+     1 | I don't know the word "sledgehammer".
+     1 | I don't know the word "sledge".
+     1 | I don't know the word "`inventory`".
+     1 | I don't know the word "solution".
+     1 | I don't know the word "method".
+     1 | I don't know the word "i's".
+     1 | I don't know the word "```   `   ".
+     1 | I don't know the word "````````````enter".
+     1 | I don't know the word "i'sir".
+     1 | I don't know the word "```door".
+     1 | I don't know the word "beg".
+     1 | I don't know the word "```-backpacking".
+     1 | I don't know the word "```p".
+     1 | I don't know the word "```n".
+     1 | I don't know the word "```````````````enter".
+     1 | I don't know the word "```r|".
+     1 | I don't know the word "```might".
+     1 | I don't know the word "```>".
+     1 | I don't know the word "```orth|".
+     1 | I don't know the word "```/".
+     1 | I don't know the word "falls".
+     1 | You can't see any cliffs here!
+     1 | There's nothing special about the door.
+     1 | You can't see any troll here!
+     1 | You can't see any gunk here!\nThe water level here is now up to your knees.
+     1 | You can't do that.\nThe water level here is now up to your hips.
+     1 | You can't move the blue button.
+     1 | I don't know the word "desk".
+     1 | I don't know the word "reservoir".
+     1 | What do you want to press?
+     1 | You can't see any spirits here!
+     1 | You can't see any gate here!
+     1 | You can't move the mirror.
+     1 | You can't see any letters here!
+     1 | I don't know the word "bye".
+     1 | There's nothing special about the lake.
+     1 | You can't see any dam here!
+     1 | I don't know the word "[no".
+     1 | I don't know the word "dance".
+     1 | I don't know the word "wield".
+     1 | I don't know the word "draw".
+     1 | I don't know the word "irregularity".
+     1 | I don't know the word "grope".
+     1 | I don't know the word "unbar".
+     1 | What do you want to attack the man with?
+     1 | I don't know the word "punch".
+     1 | What do you want to hit the man with?
+     1 | I don't know the word "sneak".
+     1 | I don't know the word "past".
+     1 | You don't have the trap door.
+     1 | There is no granite wall here.
+     1 | What do you want to throw the rope at?
+     1 | You don't have the trunk of jewels.
+     1 | I don't know the word "ride".
+     1 | I don't know the word "framework".
+     1 | What do you want to get in?
+     1 | What do you want to turn the page with?
+     1 | You can't get up there with what you're carrying.\nThe lamp is definitely dimmer now.
+     1 | You can't see any puncture here!
+     1 | There is nothing to fill it with.
+     1 | You can't do that.\nThe water level here is now up to your neck.
+     1 | You can't see any chests here!
+     1 | You can't see any manual here!
+     1 | You can't see any guidebook here!
+     1 | You can't do that.\nThe water level here is now up to your waist.
+     1 | I don't know the word "goo".
+     1 | You can't do that.\nThe water level here is now up to your chest.
+     1 | What do you want to break the window with?
+     1 | You can't see any grate here!
+     1 | I don't know the word "fingernail".
+     1 | I don't know the word "unclasp".

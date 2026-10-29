@@ -1,0 +1,191 @@
+# Invalid Action Messages: JerichoEnvDeephome
+# Total unique error messages: 184
+# Total error occurrences: 14286
+#
+# Format: count | message
+#===============================================================================
+
+  3636 | That's not a verb I recognise.
+  2146 | You can't see any such thing.
+   886 | It seems to be locked.
+   758 | What do you want to look up in?
+   744 | You seem to want to talk to someone, but I can't see whom.
+   720 | What do you want to read in?
+   638 | I beg your pardon?
+   453 | I only understood you as far as wanting to use the Sword.
+   412 | I only understood you as far as wanting to use King's Order.
+   397 | That's not something you need to refer to in the course of this game.
+   266 | I only understood you as far as wanting to look.
+   233 | Which do you mean, the tree, the house or the mountain?
+   217 | You can't go that way.
+   205 | Nothing happens.
+   196 | I only understood you as far as wanting to use the symbols.
+   184 | You find nothing of interest.
+   167 | I only understood you as far as wanting to attack the Dark Spirit.
+   149 | Which do you mean, the wooden door or the cabinet?
+   145 | I only understood you as far as wanting to inventory.
+   101 | I only understood you as far as wanting to open the southwest wall.
+    67 | You can't see inside, since the desks are closed.
+    62 | I only understood you as far as wanting to get the hatch.
+    60 | I only understood you as far as wanting to check the wooden door.
+    58 | I only understood you as far as wanting to exit.
+    48 | I only understood you as far as wanting to pull the lever.
+    47 | You can't use multiple objects with that verb.
+    41 | That doesn't seem to be something you can unlock.
+    41 | That's not something you can enter.
+    38 | I only understood you as far as wanting to restore.
+    38 | There is nothing here with which to fill the bottle.
+    36 | I only understood you as far as wanting to take Fresto's Excorcisms and Tasty Hors Devours.
+    35 | What do you want to dig the rock with?
+    35 | I only understood you as far as wanting to go the southwest wall.
+    34 | You already have that.
+    34 | There is no reply.
+    34 | You don't have anything to dig with.
+    32 | Violence isn't the answer to this one.
+    32 | I only understood you as far as wanting to open the rail car.
+    30 | I only understood you as far as wanting to fill the cistern.
+    28 | What do you want to use?
+    27 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall, the southwest wall or the rock?
+    26 | I only understood you as far as wanting to examine the wooden door.
+    26 | I only understood you as far as wanting to use Fresto's Excorcisms and Tasty Hors Devours.
+    26 | I only understood you as far as wanting to look at the symbols.
+    25 | I only understood you as far as wanting to go the south wall.
+    23 | I only understood you as far as wanting to go the floor.
+    23 | I only understood you as far as wanting to in.
+    23 | I only understood you as far as wanting to search Leshosh's Encyclopedia.
+    22 | I only understood you as far as wanting to examine the symbols.
+    20 | Which do you mean, Fresto's Excorcisms and Tasty Hors Devours or Leshosh's Encyclopedia?
+    20 | You are already wielding that.
+    16 | I only understood you as far as wanting to go the west wall.
+    15 | I only understood you as far as wanting to shine the lantern.
+    15 | What do you want to get out of?
+    15 | What do you want to look up that in?
+    14 | I only understood you as far as wanting to look at the wooden door.
+    14 | I only understood you as far as wanting to get Fresto's Excorcisms and Tasty Hors Devours.
+    14 | I didn't understand that sentence.
+    13 | I only understood you as far as wanting to clean the ovens.
+    13 | I only understood you as far as wanting to use the lantern.
+    13 | That's already open.
+    13 | I only understood you as far as wanting to turn the wheel.
+    13 | I only understood you as far as wanting to go the east wall.
+    13 | I only understood you as far as wanting to search the wooden door.
+    12 | I only understood you as far as wanting to take the hatch.
+    12 | I only understood you as far as wanting to help.
+    11 | I only understood you as far as wanting to go the northeast wall.
+    11 | I only understood you as far as wanting to think.
+    11 | I don't think much is to be achieved by that.
+    10 | What do you want to dig hole in?
+     9 | I only understood you as far as wanting to examine the rail car.
+     9 | I only understood you as far as wanting to move the lever the ceiling.
+     8 | I only understood you as far as wanting to turn the lever.
+     8 | I only understood you as far as wanting to examine Fresto's Excorcisms and Tasty Hors Devours.
+     8 | I only understood you as far as wanting to pray.
+     7 | I only understood you as far as wanting to use the bottle.
+     7 | What do you want to attack?
+     7 | I only understood you as far as wanting to push the lever the ceiling.
+     7 | I only understood you as far as wanting to set the lever to that.
+     7 | I only understood you as far as wanting to hit the rock.
+     6 | I only understood you as far as wanting to use the shield.
+     6 | I only understood you as far as wanting to go the ceiling.
+     6 | I only understood you as far as wanting to go the north wall.
+     6 | I only understood you as far as wanting to hold the lantern.
+     5 | I only understood you as far as wanting to look at the rail car.
+     5 | You can't see inside, since the generator furnace is closed.
+     5 | Time passes.
+     5 | You don't have anything to burn that with.
+     5 | What do you want to read about in?
+     5 | I only understood you as far as wanting to touch the symbols.
+     5 | That's not something you can switch.
+     5 | What do you want to look up?
+     4 | You can't go that way, its blocked by the Portcullis.
+     4 | I only understood you as far as wanting to get the pile of papers.
+     4 | You see nothing special about the north wall.
+     4 | I only understood you as far as wanting to examine the cabinet.
+     4 | I only understood you as far as wanting to examine the letter.
+     3 | What do you want to unlock the wheel with?
+     3 | What do you want to dig the piece of coal with?
+     3 | I only understood you as far as wanting to look at the mural.
+     3 | You can only do that to something animate.
+     3 | I only understood you as far as wanting to examine the hatch.
+     3 | You already have that.\n\nThe specter swirls around in a cyclone of misty darkness and seems to implode, disappearing from sight in a moment
+     3 | I only understood you as far as wanting to break the rock.
+     3 | I only understood you as far as wanting to pull the peg.
+     3 | What do you want to ask the Dark Spirit about?
+     3 | What do you want to go inside?
+     3 | I only understood you as far as wanting to hold the bottle.
+     2 | I only understood you as far as wanting to pour the bottle.
+     2 | I only understood you as far as wanting to fight the Dark Spirit.
+     2 | I only understood you as far as wanting to examine the wheel.
+     2 | I only understood you as far as wanting to use the blank paper.
+     2 | I only understood you as far as wanting to look at Fresto's Excorcisms and Tasty Hors Devours.
+     2 | You see nothing special about the east wall.
+     2 | I only understood you as far as wanting to open the wooden door.
+     2 | I only understood you as far as wanting to go the northwest wall.
+     2 | I only understood you as far as wanting to go the southeast wall.
+     2 | I only understood you as far as wanting to open Fresto's Excorcisms and Tasty Hors Devours.
+     2 | I only understood you as far as wanting to turn the hatch.
+     2 | I only understood you as far as wanting to stand.
+     2 | I only understood you as far as wanting to search the cabinet.
+     2 | I only understood you as far as wanting to examine the table.
+     2 | I only understood you as far as wanting to switch the lever.
+     2 | You see nothing special about the south wall.
+     2 | I only understood you as far as wanting to unlock the wooden door with the symbols.
+     2 | I only understood you as far as wanting to attack the rock.
+     2 | I only understood you as far as wanting to look inside the hatch.
+     2 | What do you want to examine?
+     2 | There is no reply.\n\nThe specter swirls around in a cyclone of misty darkness and seems to implode, disappearing from sight in a moment
+     2 | I only understood you as far as wanting to search Fresto's Excorcisms and Tasty Hors Devours.
+     2 | There's nothing sensible to swing here.
+     2 | You can't do that.
+     1 | What do you want to search?
+     1 | I only understood you as far as wanting to wave Fresto's Excorcisms and Tasty Hors Devours.
+     1 | What do you want to unlock the deposit box with?
+     1 | I only understood you as far as wanting to hit the deposit box.
+     1 | I only understood you as far as wanting to smash the deposit box.
+     1 | I only understood you as far as wanting to examine the large key.
+     1 | I only understood you as far as wanting to attack the Eranti.
+     1 | I only understood you as far as wanting to sing.
+     1 | I only understood you as far as wanting to examine King's Order.
+     1 | I only understood you as far as wanting to unlock the wooden door with the mountain.
+     1 | I only understood you as far as wanting to search the desks.
+     1 | I only understood you as far as wanting to turn the wheel on.
+     1 | I only understood you as far as wanting to examine the mural.
+     1 | I only understood you as far as wanting to open the desks.
+     1 | I only understood you as far as wanting to examine the warning note.
+     1 | I only understood you as far as wanting to look at the warning note.
+     1 | You can't see inside, since the cabinet is closed.
+     1 | I only understood you as far as wanting to examine the doors.
+     1 | I only understood you as far as wanting to look at the sign post.
+     1 | I only understood you as far as wanting to examine the sign post.
+     1 | I only understood you as far as wanting to examine the mosaics.
+     1 | I only understood you as far as wanting to look at the tapestries.
+     1 | I only understood you as far as wanting to check the columns.
+     1 | I only understood you as far as wanting to examine the columns.
+     1 | I only understood you as far as wanting to touch the columns.
+     1 | I only understood you as far as wanting to open the cabinet.
+     1 | I only understood you as far as wanting to look at the cabinet.
+     1 | I only understood you as far as wanting to look at the letter.
+     1 | I only understood you as far as wanting to examine the fireplace.
+     1 | I only understood you as far as wanting to examine the ceiling.
+     1 | You see nothing special about the ceiling.
+     1 | I only understood you as far as wanting to look inside the cabinet.
+     1 | I only understood you as far as wanting to adjust the lever to that.
+     1 | I only understood you as far as wanting to use the pickaxe.
+     1 | I only understood you as far as wanting to hit the wheel.
+     1 | There is nothing on the throne.
+     1 | Which do you mean, the small barrel or the oil barrel?
+     1 | I only understood you as far as wanting to look at the tree.
+     1 | I only understood you as far as wanting to examine the tree.
+     1 | I only understood you as far as wanting to turn the peg.
+     1 | I only understood you as far as wanting to pray to Kraxis.
+     1 | I only understood you as far as wanting to look at the library.
+     1 | I only understood you as far as wanting to examine the pipe.
+     1 | But you aren't in anything at the moment.
+     1 | I only understood you as far as wanting to examine the bottle.
+     1 | I only understood you as far as wanting to check the symbols.
+     1 | I only understood you as far as wanting to press the tree the house.
+     1 | What do you want to walk inside?
+     1 | There's nothing sensible to swing here.\n\nThe specter swirls around in a cyclone of misty darkness and seems to implode, disappearing from sight in a moment
+     1 | Which do you mean, the warning note or King's Order?
+     1 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+     1 | I only understood you as far as wanting to swing the pickaxe.

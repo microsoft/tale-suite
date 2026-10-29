@@ -1,0 +1,18 @@
+# Invalid Action Messages: ALFWorldLookAtObjInLightUnseen
+# Total unique error messages: 11
+# Total error occurrences: 19884
+#
+# Format: count | message
+#===============================================================================
+
+ 19837 | Nothing happens.
+    12 | There's nothing special about keychain 1.
+    11 | There's nothing special about alarmclock 1.
+     6 | There's nothing special about book 1.
+     5 | There's nothing special about keychain 3.
+     5 | There's nothing special about pencil 1.
+     4 | There's nothing special about cd 2.
+     1 | There's nothing special about pen 2.
+     1 | There's nothing special about pen 1.
+     1 | There's nothing special about pen 3.
+     1 | There's nothing special about pillow 1.

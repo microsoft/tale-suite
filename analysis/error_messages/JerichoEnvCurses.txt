@@ -1,0 +1,159 @@
+# Invalid Action Messages: JerichoEnvCurses
+# Total unique error messages: 152
+# Total error occurrences: 10323
+#
+# Format: count | message
+#===============================================================================
+
+  4627 | That's not a verb I recognise.
+  2086 | You can't see any such thing.
+   669 | I only understood you as far as wanting to look.
+   356 | That's not something you need to refer to in the course of this game.
+   324 | You seem to want to talk to someone, but I can't see whom.
+   276 | It's already open.
+   261 | I beg your pardon?
+   144 | That doesn't seem to be something you can unlock.
+   130 | You find nothing of interest.
+    98 | That's not something you can open.
+    84 | I only understood you as far as wanting to inventory.
+    79 | I only understood you as far as wanting to search the teachests.
+    71 | I only understood you as far as wanting to help that.
+    60 | You see nothing special about the hinged trapdoor.
+    46 | You can't go that way.
+    42 | I only understood you as far as wanting to unscrew the labelled glass demijohn.
+    42 | You see nothing special about the pulley ropes.
+    38 | I only understood you as far as wanting to go the floor.
+    36 | I only understood you as far as wanting to twist the labelled glass demijohn.
+    36 | I only understood you as far as wanting to examine the dark shaft.
+    34 | What do you want to open?
+    32 | You can't read it while it's holding the pipe up.
+    30 | I only understood you as far as wanting to examine the labelled glass demijohn.
+    28 | I didn't understand that sentence.
+    27 | I only understood you as far as wanting to examine the floor.
+    25 | Which do you mean, the box of chocolates or the chocolate biscuit?
+    23 | You see nothing special about the cupboard door.
+    23 | You see nothing special about the old gardeners' gloves.
+    23 | You see nothing special about the gift-wrapped parcel.
+    21 | You see nothing special about the steel wrench.
+    21 | Time passes.
+    19 | I only understood you as far as wanting to turn the wheel.
+    19 | It seems to be locked.
+    18 | You see nothing special about the floor.
+    17 | I only understood you as far as wanting to shine the photographer's flash.
+    17 | That's already on.
+    17 | I only understood you as far as wanting to search the History of the Meldrews (vol. II).
+    16 | I only understood you as far as wanting to turn the labelled glass demijohn.
+    16 | You see nothing special about the box of chocolates.
+    14 | I only understood you as far as wanting to take the sepia photograph.
+    14 | That's not something you can switch.
+    14 | Which do you mean, the sepia photograph or the photographer's flash?
+    14 | I only understood you as far as wanting to examine the old smudged battery.
+    14 | You already have that.
+    11 | Nothing obvious happens.
+    11 | You see nothing special about the old smudged battery.
+    11 | I only understood you as far as wanting to swing the old striped scarf.
+    10 | Violence isn't the answer to this one.
+     9 | I only understood you as far as wanting to exit.
+     9 | What do you want to get?
+     8 | But you aren't holding it.
+     8 | I only understood you as far as wanting to drop the crumpled piece of paper.
+     8 | I don't think much is to be achieved by that.
+     7 | I only understood you as far as wanting to hit the labelled glass demijohn.
+     7 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the southeast wall, the northwest wall or the southwest wall?
+     7 | You can't reach them!
+     7 | I only understood you as far as wanting to make.
+     7 | I only understood you as far as wanting to climb the floor.
+     7 | I only understood you as far as wanting to dig that.
+     6 | I only understood you as far as wanting to tie the old striped scarf.
+     6 | You see nothing special about the camp bed.
+     5 | I only understood you as far as wanting to examine the antiquated wireless.
+     5 | You see nothing special about the hole in the wall.
+     5 | I only understood you as far as wanting to look in the old smudged battery.
+     5 | What do you want to ask Jemima for?
+     4 | I only understood you as far as wanting to check the labelled glass demijohn.
+     4 | You can't use multiple objects with that verb.
+     4 | I only understood you as far as wanting to take the old gardeners' gloves.
+     4 | I only understood you as far as wanting to examine the crumpled piece of paper.
+     4 | I only understood you as far as wanting to drop the History of the Meldrews (vol. II).
+     4 | I only understood you as far as wanting to examine the antique jewellery box.
+     4 | What do you want to close?
+     4 | I only understood you as far as wanting to examine the hinged trapdoor.
+     4 | I only understood you as far as wanting to get the teachests.
+     4 | There's nothing sensible to swing here.
+     4 | You can only do that to something animate.
+     3 | I only understood you as far as wanting to search the labelled glass demijohn.
+     3 | Which do you mean, the chocolate biscuit or the box of chocolates?
+     3 | You see nothing special about the south wall.
+     3 | I only understood you as far as wanting to examine the wheel.
+     3 | I only understood you as far as wanting to sleep.
+     3 | I only understood you as far as wanting to polish the solid glass ball.
+     3 | I only understood you as far as wanting to clean the solid glass ball.
+     3 | I only understood you as far as wanting to rub the solid glass ball.
+     3 | I only understood you as far as wanting to speak.
+     3 | I only understood you as far as wanting to search the tourist map.
+     3 | I only understood you as far as wanting to jump.
+     2 | I only understood you as far as wanting to examine the sepia photograph.
+     2 | That's not something you can open.\n\nThe radio valves glow, and execrable so-called easy listening music fills the air with a sort of bland aural candy-floss.
+     2 | I only understood you as far as wanting to fix the wheel.
+     2 | That doesn't seem to be something you can unlock.\n\nAustin runs in from the attic.
+     2 | I only understood you as far as wanting to search the floor.
+     2 | I only understood you as far as wanting to break the labelled glass demijohn.
+     2 | I only understood you as far as wanting to throw the steel wrench at the labelled glass demijohn.
+     2 | I only understood you as far as wanting to go the west wall.
+     2 | I only understood you as far as wanting to pull the wheel.
+     2 | I only understood you as far as wanting to examine the teachests.
+     2 | I only understood you as far as wanting to oil the wheel.
+     2 | I only understood you as far as wanting to pull the ceiling.
+     2 | You see nothing special about the wrapping paper with reindeer on.
+     2 | It's already closed.
+     2 | You can't see inside, since it is closed.
+     2 | You can't get a close enough look.
+     2 | That's not something you can enter.
+     2 | I only understood you as far as wanting to rub the labelled glass demijohn.
+     2 | I only understood you as far as wanting to climb the pulley ropes.
+     2 | I only understood you as far as wanting to pull the pulley ropes.
+     2 | Which do you mean, the photographer's flash or the electric torch?
+     1 | I only understood you as far as wanting to look inside the labelled glass demijohn.
+     1 | That's not something you can switch.\n\nAustin jumps up at the cord, but falls back down again, growling.
+     1 | I only understood you as far as wanting to go the ceiling.
+     1 | You haven't got that.
+     1 | I only understood you as far as wanting to put the steel wrench on the labelled glass demijohn.
+     1 | That doesn't seem to be something you can unlock.\n\nAustin leaps in from the attic.
+     1 | That's not something you can open.\n\nThe radio plays a light orchestra transcription of Kylie Minogue's "I Should Be So Lucky".
+     1 | I only understood you as far as wanting to examine the old gardeners' gloves.
+     1 | I only understood you as far as wanting to look under the floor.
+     1 | I only understood you as far as wanting to open the labelled glass demijohn.
+     1 | I only understood you as far as wanting to remove the labelled glass demijohn.
+     1 | I only understood you as far as wanting to smash the labelled glass demijohn.
+     1 | I only understood you as far as wanting to go the east wall.
+     1 | That's already off.\n\nYou can't see any such thing.
+     1 | I only understood you as far as wanting to look inside the dumbwaiter.
+     1 | I only understood you as far as wanting to examine the dumbwaiter.
+     1 | I only understood you as far as wanting to open the steel wrench.
+     1 | I only understood you as far as wanting to pull the dumbwaiter.
+     1 | I only understood you as far as wanting to turn the wheel with the steel wrench.
+     1 | I only understood you as far as wanting to look at the wheel.
+     1 | I only understood you as far as wanting to search the wheel.
+     1 | I only understood you as far as wanting to read the labelled glass demijohn.
+     1 | I only understood you as far as wanting to look at the nasty-looking red battery.
+     1 | I only understood you as far as wanting to rub the chicken wishbone.
+     1 | What do you want to search?
+     1 | Which do you mean, the crumpled piece of paper or the wrapping paper with reindeer on?
+     1 | Which do you mean, the nasty-looking red battery or the old smudged battery?
+     1 | You see nothing special about the cupboard door.\n\nAustin tiptoes in from the east landing.
+     1 | That's already off.
+     1 | I only understood you as far as wanting to pull the floor.
+     1 | I only understood you as far as wanting to look in the floor.
+     1 | You see nothing special about the north wall.
+     1 | I only understood you as far as wanting to examine the north wall.
+     1 | I only understood you as far as wanting to shine the electric torch.
+     1 | I only understood you as far as wanting to check the wheel.
+     1 | I only understood you as far as wanting to hit the labelled glass demijohn with the steel wrench.
+     1 | What do you want to fight?
+     1 | I only understood you as far as wanting to in.
+     1 | I only understood you as far as wanting to toss the old striped scarf.
+     1 | I only understood you as far as wanting to climb up the pulley ropes.
+     1 | I only understood you as far as wanting to wind the ceiling.
+     1 | I only understood you as far as wanting to open the nasty-looking red battery.
+     1 | I only understood you as far as wanting to pull the chicken wishbone.
+     1 | I only understood you as far as wanting to shoot the photographer's flash.

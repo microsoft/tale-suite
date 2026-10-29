@@ -1,0 +1,18 @@
+# Invalid Action Messages: ScienceWorldUseThermometer
+# Total unique error messages: 11
+# Total error occurrences: 11633
+#
+# Format: count | message
+#===============================================================================
+
+ 11247 | No known action matches that input.
+   235 | The door is not open.
+    93 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    37 | The door is already open.
+     6 | You can't pick up a gas directly.
+     6 | The door is already closed.
+     3 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+     2 | The drawer is already open.
+     2 | The drawer isn't open, so you can't see inside.
+     1 | The painting isn't open, so you can't see inside.
+     1 | The closet isn't open, so you can't see inside.

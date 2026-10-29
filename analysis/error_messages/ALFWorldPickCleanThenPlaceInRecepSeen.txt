@@ -1,0 +1,14 @@
+# Invalid Action Messages: ALFWorldPickCleanThenPlaceInRecepSeen
+# Total unique error messages: 7
+# Total error occurrences: 18538
+#
+# Format: count | message
+#===============================================================================
+
+ 18512 | Nothing happens.
+    18 | There's nothing special about butterknife 1.
+     2 | There's nothing special about dishsponge 1.
+     2 | There's nothing special about spoon 2.
+     2 | There's nothing special about butterknife 3.
+     1 | There's nothing special about spraybottle 1.
+     1 | There's nothing special about knife 1.

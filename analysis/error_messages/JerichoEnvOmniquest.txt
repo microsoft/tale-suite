@@ -1,0 +1,137 @@
+# Invalid Action Messages: JerichoEnvOmniquest
+# Total unique error messages: 130
+# Total error occurrences: 12315
+#
+# Format: count | message
+#===============================================================================
+
+  4437 | That's not a verb I recognise.
+  2940 | You can't see any such thing.
+  1358 | You can't go that way.
+   385 | You seem to want to talk to someone, but I can't see whom.
+   385 | I beg your pardon?
+   295 | I only understood you as far as wanting to look.
+   285 | What do you want to dig?
+   246 | You see nothing special about the path.
+   231 | You see nothing special about the tree.
+   170 | I only understood you as far as wanting to swim.
+   135 | You see nothing special about the boulders.
+   118 | I only understood you as far as wanting to inventory.
+    97 | You already have that.
+    85 | You don't need to worry about the boulders.
+    68 | You see nothing special about the snorkel.
+    62 | Time passes...
+    54 | I only understood you as far as wanting to go the east wall.
+    54 | I only understood you as far as wanting to jump.
+    52 | You find nothing of interest.
+    51 | You see nothing special about the match.
+    45 | You see nothing special about the clearing.
+    44 | You don't need to worry about the white sand.
+    34 | You see nothing special about the shovel.
+    33 | You see nothing special about the small passages.
+    31 | You can't see inside, since the raincoat is closed.
+    27 | You don't need to worry about the clearing.
+    26 | You see nothing special about the island.
+    25 | I only understood you as far as wanting to go the southwest wall.
+    25 | I only understood you as far as wanting to go the southeast wall.
+    22 | You see nothing special about the ocean.
+    22 | I only understood you as far as wanting to go the south wall.
+    20 | You don't need to worry about the ocean.
+    18 | I didn't understand that sentence.
+    18 | You don't need to worry about the path.
+    18 | I only understood you as far as wanting to use the shovel.
+    17 | This dangerous act would achieve little.
+    17 | You don't need to worry about the river.
+    16 | That's already open.
+    16 | I only understood you as far as wanting to use the snorkel.
+    13 | You're already wearing that!
+    12 | You can't use multiple objects with that verb.
+    12 | You see nothing special about the canyon.
+    12 | You see nothing special about the pipe organ.
+    11 | You see nothing special about the torch.
+    10 | You don't need to worry about the passage.
+    10 | You see nothing special about the dense forest.
+     9 | I only understood you as far as wanting to go the west wall.
+     9 | I don't think much is to be achieved by that.
+     8 | You can't go that way.\nYour match has blown out.  You toss it away.
+     8 | I only understood you as far as wanting to go the northeast wall.
+     7 | You see nothing special about the river.
+     7 | You see nothing special about the passages.
+     6 | I only understood you as far as wanting to use the match.
+     6 | You see nothing special about the beach.
+     6 | You see nothing special about the large clearing.
+     6 | You don't need to worry about the dense forest.
+     6 | I only understood you as far as wanting to break the wall of ice.
+     6 | You see nothing special about the rubble.
+     6 | I only understood you as far as wanting to take the path.
+     6 | You see nothing special about the pipes.
+     5 | You see nothing special about the ceiling.
+     5 | I only understood you as far as wanting to kill the samurai.
+     5 | You see nothing special about the earth.
+     5 | You see nothing special about the wall of ice.
+     5 | You don't need to worry about the beach.
+     5 | I only understood you as far as wanting to swing the shovel.
+     5 | I only understood you as far as wanting to yell.
+     5 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+     4 | Nothing happens.
+     4 | You don't need to worry about the wall of ice.
+     4 | You see nothing special about the island.\nYour match has blown out.  You toss it away.
+     4 | You don't need to worry about the large clearing.
+     4 | You don't need to worry about the dunes.
+     4 | I only understood you as far as wanting to hit the boulders.
+     3 | I only understood you as far as wanting to examine the raincoat.
+     3 | You see nothing special about the coast.
+     3 | You see nothing special about the parka.
+     3 | I only understood you as far as wanting to go the north wall.
+     3 | You see nothing special about the northeast wall.
+     3 | You see nothing special about the ledge.
+     2 | I only understood you as far as wanting to examine the boulders.
+     2 | I only understood you as far as wanting to dive.
+     2 | I only understood you as far as wanting to examine the small passages.
+     2 | What do you want to search?
+     2 | You don't need to worry about the wall of ice.\nYour match has blown out.  You toss it away.
+     2 | I only understood you as far as wanting to put the snorkel in the raincoat.
+     2 | You see nothing special about the abyss.
+     2 | You see nothing special about the faint light.
+     2 | You see nothing special about the worm.
+     2 | You don't need to worry about the store.
+     2 | You see nothing special about the sword.
+     2 | But you aren't in anything at the moment.
+     2 | You don't need to worry about the path.\nThat's not a verb I recognise.
+     2 | I only understood you as far as wanting to break the boulders.
+     2 | I only understood you as far as wanting to smash the boulders.
+     2 | You see nothing special about the dunes.
+     2 | You don't need to worry about the forest.
+     2 | You don't need to worry about the cavern.
+     2 | You see nothing special about the tree.\nYour match has blown out.  You toss it away.
+     2 | You don't need to worry about the canyon.
+     2 | I only understood you as far as wanting to throw the raincoat.
+     2 | I only understood you as far as wanting to throw the snorkel.
+     2 | Nothing obvious happens.
+     2 | I only understood you as far as wanting to hit the wall of ice.
+     2 | You see nothing special about the fragments.
+     1 | You see nothing special about the horizon.
+     1 | That's not something you can enter.
+     1 | You see nothing special about the passage.
+     1 | I only understood you as far as wanting to cut the rubble.
+     1 | You can't use the fishing rod here.
+     1 | I only understood you as far as wanting to examine the path.
+     1 | You don't need to worry about the pipes.
+     1 | What do you want to put the snorkel on?
+     1 | I only understood you as far as wanting to use the lamp.
+     1 | I only understood you as far as wanting to attack the rubble.
+     1 | I only understood you as far as wanting to examine the match.
+     1 | I only understood you as far as wanting to examine the tree.
+     1 | You see nothing special about the tree.\nThat's not a verb I recognise.
+     1 | I only understood you as far as wanting to hit the northeast wall.
+     1 | That's not something you can stand on.
+     1 | I only understood you as far as wanting to dig the north wall.
+     1 | I only understood you as far as wanting to fly.
+     1 | You don't need to worry about the coast.
+     1 | You don't need to worry about the fragments.
+     1 | You see nothing special about the white sand.
+     1 | I only understood you as far as wanting to touch the wall of ice.
+     1 | You see nothing special about the lake.
+     1 | You don't need to worry about the lake.
+     1 | I only understood you as far as wanting to attack the wall of ice.
+     1 | You don't need to worry about the ledge.

@@ -1,0 +1,15 @@
+# Invalid Action Messages: ScienceWorldChemistryMixPaintSecondaryColor
+# Total unique error messages: 8
+# Total error occurrences: 10754
+#
+# Format: count | message
+#===============================================================================
+
+ 10396 | No known action matches that input.
+   217 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+   110 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+    10 | The large cupboard is already open.
+     9 | The drawer is already open.
+     5 | You can't pick up a gas directly.
+     4 | The drawer isn't open, so you can't see inside.
+     3 | The door is not open.

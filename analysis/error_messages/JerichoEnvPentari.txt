@@ -1,0 +1,135 @@
+# Invalid Action Messages: JerichoEnvPentari
+# Total unique error messages: 128
+# Total error occurrences: 16325
+#
+# Format: count | message
+#===============================================================================
+
+  4286 | You can't see any such thing.
+  3859 | That's not a verb I recognise.
+  1516 | You seem to want to talk to someone, but I can't see whom.
+  1007 | Time passes.
+   630 | I only understood you as far as wanting to look.
+   547 | You already have that.
+   520 | I only understood you as far as wanting to open the (capchest).
+   503 | You can't go that way.
+   502 | That's not something you can open.
+   466 | What do you want to read in?
+   434 | You find nothing of interest.
+   404 | I beg your pardon?
+   210 | I only understood you as far as wanting to inventory.
+   181 | But you aren't in anything at the moment.
+   180 | There is no reply.
+   101 | I only understood you as far as wanting to luminus.
+    70 | That's not something you can sit down on.
+    68 | I only understood you as far as wanting to exit.
+    46 | I only understood you as far as wanting to no.
+    44 | You can't use multiple objects with that verb.
+    43 | I only understood you as far as wanting to look at the postcard.
+    41 | I only understood you as far as wanting to examine the (capchest).
+    37 | I didn't understand that sentence.
+    34 | Which do you mean, the crumpled piece of paper or the fine scroll?
+    31 | I only understood you as far as wanting to quit.
+    27 | I only understood you as far as wanting to go the ceiling.
+    26 | It seems to be locked.
+    25 | That doesn't seem to be something you can unlock.
+    24 | I only understood you as far as wanting to attack The Dark Elf.
+    21 | What do you want to go in?
+    19 | What do you want to look up in?
+    15 | Violence isn't the answer to this one.
+    14 | Which do you mean, that or that?
+    14 | That's not something you can lie down on.
+    13 | I only understood you as far as wanting to take those things.
+    13 | I only understood you as far as wanting to city.
+    13 | I only understood you as far as wanting to wave the fine scroll.
+    13 | I only understood you as far as wanting to q.
+    12 | You see nothing special about the floor.
+    11 | I only understood you as far as wanting to look at the (capchest).
+    11 | That's not something you can enter.
+    10 | You can only do that to something animate.
+    10 | What do you want to ask Morden about?
+    10 | I only understood you as far as wanting to help.
+    10 | I only understood you as far as wanting to save.
+    10 | I only understood you as far as wanting to examine the fine Pentarian sword.
+     9 | Nothing obvious happens.
+     9 | You see nothing special about the ceiling.
+     8 | I only understood you as far as wanting to examine the crumpled piece of paper.
+     8 | You can't see inside, since the oaken chest is closed.
+     8 | I only understood you as far as wanting to sleep.
+     8 | What do you want to sit on top of?
+     7 | This dangerous act would achieve little.
+     7 | Nothing happens.
+     7 | You see nothing special about the north wall.
+     6 | What do you want to go inside?
+     6 | I only understood you as far as wanting to shine the fine Pentarian sword.
+     6 | I only understood you as far as wanting to kill The Dark Elf.
+     6 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+     6 | That's already open.
+     6 | You see nothing special about the west wall.
+     6 | I only understood you as far as wanting to outside.
+     6 | What do you want to take?
+     5 | I only understood you as far as wanting to cut the oaken chest.
+     4 | I only understood you as far as wanting to cover the fine Pentarian sword.
+     4 | I only understood you as far as wanting to look under the (cbunk).
+     4 | You can't go that way.\n\nThe Dark Elf walks in.
+     4 | I only understood you as far as wanting to go the west wall.
+     4 | I only understood you as far as wanting to go the south wall.
+     4 | I only understood you as far as wanting to in.
+     3 | I only understood you as far as wanting to examine Morden.
+     3 | What do you want to shout?
+     3 | I only understood you as far as wanting to enter the Pentarian Transporter.
+     3 | I only understood you as far as wanting to examine the postcard.
+     3 | I only understood you as far as wanting to go the east wall.
+     3 | I only understood you as far as wanting to touch the fine Pentarian sword.
+     3 | I only understood you as far as wanting to search the copy of The Legends and Lore of Pentari.
+     3 | I only understood you as far as wanting to take the crumpled piece of paper.
+     3 | Which do you mean, the fine scroll or the crumpled piece of paper?
+     3 | You see nothing special about the east wall.
+     3 | But you aren't on the (cbunk) at the moment.
+     3 | There's nothing sensible to swing here.
+     2 | I only understood you as far as wanting to look in the (capchest).
+     2 | I only understood you as far as wanting to look inside the (capchest).
+     2 | I only understood you as far as wanting to search the (capchest).
+     2 | I only understood you as far as wanting to attack Morden.
+     2 | I only understood you as far as wanting to look at Morden.
+     2 | I only understood you as far as wanting to cut the Large Fireplace.
+     2 | What do you want to look up?
+     2 | I only understood you as far as wanting to break the oaken chest.
+     2 | I only understood you as far as wanting to open the crumpled piece of paper.
+     2 | I only understood you as far as wanting to go the north wall.
+     2 | That's not something you can switch.
+     2 | I only understood you as far as wanting to smash the oaken chest.
+     2 | I only understood you as far as wanting to hit the (books).
+     2 | I only understood you as far as wanting to wipe the (circle).
+     1 | I only understood you as far as wanting to check the (cbunk).
+     1 | I only understood you as far as wanting to examine the (cbunk).
+     1 | I only understood you as far as wanting to look at the (cbunk).
+     1 | I only understood you as far as wanting to hit the Large Fireplace.
+     1 | You already have that.\n\nThe Dark Elf walks around as if looking for something.
+     1 | Which do you mean, the oaken chest or the platinum box?
+     1 | You already have that.\n\nThe Dark Elf walks in.
+     1 | I only understood you as far as wanting to wave the fine Pentarian sword.
+     1 | I only understood you as far as wanting to open the (stove).
+     1 | I only understood you as far as wanting to search the Large Fireplace.
+     1 | I only understood you as far as wanting to examine the oaken chest.
+     1 | I only understood you as far as wanting to jump.
+     1 | I only understood you as far as wanting to look at the crumpled piece of paper.
+     1 | I only understood you as far as wanting to examine the Pentarian Transporter.
+     1 | I only understood you as far as wanting to restart.
+     1 | I only understood you as far as wanting to rub the fine scroll.
+     1 | You can't go that way.\n\nThe Dark Elf leaves the room
+     1 | I only understood you as far as wanting to examine the west wall.
+     1 | What do you want to search?
+     1 | You can't see inside, since the platinum box is closed.
+     1 | I only understood you as far as wanting to walk the ceiling.
+     1 | I only understood you as far as wanting to sit on the (lchair).
+     1 | I only understood you as far as wanting to swing the fine Pentarian sword.
+     1 | I don't think much is to be achieved by that.
+     1 | I only understood you as far as wanting to up.
+     1 | I only understood you as far as wanting to smash The Empirical Emerald.
+     1 | I only understood you as far as wanting to hit The Empirical Emerald.
+     1 | I only understood you as far as wanting to rub the (circle).
+     1 | I only understood you as far as wanting to clean the (circle).
+     1 | That's not something you can open.\n\nThe Dark Elf walks in.
+     1 | What do you want to unlock the (capchest) with?
+     1 | I only understood you as far as wanting to unfold the crumpled piece of paper.

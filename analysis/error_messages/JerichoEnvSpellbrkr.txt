@@ -1,0 +1,1029 @@
+# Invalid Action Messages: JerichoEnvSpellbrkr
+# Total unique error messages: 1022
+# Total error occurrences: 13731
+#
+# Format: count | message
+#===============================================================================
+
+  1254 | Time passes...
+   580 | I beg your pardon?
+   520 | I don't know the word "**ask."
+   447 | There was no verb in that sentence!
+   416 | I don't know the word ">."
+   353 | You can't see well enough to find your way out.
+   332 | You can't see anything, what with the smokey orange cloud that blankets the square.
+   308 | I don't know the word "address."
+   296 | That sentence isn't one I recognize.
+   293 | I don't know the word "order."
+   275 | I don't know the word "gloth."
+   261 | You don't have the blorple spell memorized!
+   244 | I don't know the word "**action:**."
+   221 | You can't go that way.
+   215 | I don't know the word "`help`."
+   207 | I don't know the word "issues."
+   196 | I don't know the word "facing."
+   196 | I don't know the word "standing."
+   192 | I don't know the word "problems."
+   165 | I don't know the word "troubles."
+   146 | It's too dark to see!
+   121 | I don't know the word "quest."
+   116 | I don't know the word "**offer."
+   112 | You don't have the yomin spell memorized!
+   110 | I don't know the word "`look`."
+   107 | I don't know the word "apologize."
+   103 | You don't have the jindak spell memorized!
+    96 | You don't have the lesoch spell memorized!
+    90 | I don't know the word "`listen`."
+    83 | I don't know the word "slender."
+    82 | I don't know the word "difficulties."
+    82 | You don't have the malyon spell memorized!
+    79 | I don't know the word "fripple."
+    78 | I don't know the word "**listen**."
+    74 | There is nothing there.
+    72 | You can't see any square here.
+    68 | I don't know the word "**talk."
+    61 | I don't know the word "malfunctions."
+    59 | I don't know the word "clear."
+    59 | I don't know the word "word."
+    59 | I don't know the word "spe."
+    58 | I don't know the word "ob."
+    57 | I don't know the word "rat-ants."
+    51 | I don't know the word "failures."
+    50 | I don't know the word "dough."
+    50 | You used the word "proceed" in a way that I don't understand.
+    48 | You can't see any door here.
+    47 | I don't know the word "use."
+    46 | I don't know the word "baking."
+    46 | You used the word "what" in a way that I don't understand.
+    46 | I don't know the word "tail."
+    45 | You can't see that here!
+    44 | I don't know the word "progress."
+    42 | I don't know the word "pastry."
+    41 | I don't know the word "meeting."
+    40 | I don't know the word "speak."
+    38 | I don't know the word "(press."
+    37 | You used the word "help" in a way that I don't understand.
+    36 | You aren't holding the serpent.
+    36 | I don't know the word "try."
+    35 | You already have that spell inscribed in your spell book!
+    35 | There is no sign of such a person.
+    34 | You don't have the throck spell memorized!
+    34 | I don't know the word "`inspect."
+    33 | I don't know the word "beer."
+    31 | I don't know the word "making."
+    31 | You already have it.
+    29 | I don't know the word "explain."
+    28 | I don't know the word "**cast."
+    28 | I don't know the word "amphibians."
+    27 | I don't know the word "working."
+    26 | I don't know the word "traitors."
+    26 | You see nothing special about the water.
+    26 | I don't know the word "'gloth'."
+    25 | I don't know the word "`look."
+    25 | I don't know the word "`take`."
+    24 | I don't know the word "pastries."
+    24 | You aren't holding the cube.
+    23 | You can't see any bread here.
+    23 | I don't know the word "spellbreaker."
+    22 | I don't know the word "that."
+    22 | I don't know the word "cloak."
+    22 | You used the word "go" in a way that I don't understand.
+    22 | I don't know the word "seems."
+    22 | I don't know the word "understand."
+    21 | What do you want to rest on?
+    21 | You don't have the throck spell memorized!\n\nThe ogre sneezes.
+    21 | I don't know the word "`examine."
+    21 | I don't know the word "revised."
+    20 | I don't know the word "preparation."
+    20 | You can't do that!
+    19 | You can't see any cube here.
+    19 | It is pitch black.
+    19 | I don't know the word "calm."
+    19 | I don't know the word "disappear."
+    19 | What do you want to throw the cube at?
+    19 | I don't know the word "```."
+    18 | I don't know the word "not."
+    18 | I don't know the word "folding."
+    18 | I don't know the word "surroundings."
+    18 | I don't know the word "carefully."
+    18 | I don't know the word "you."
+    18 | What do you want to ask the guard for?
+    17 | I don't know the word "creation."
+    17 | You don't have the yomin spell memorized!\n\nThe ogre sneezes.
+    17 | You see nothing special about the hole.
+    17 | What do you want to frotz?
+    17 | I don't know the word "situation."
+    17 | I don't know the word "fade."
+    17 | I don't know the word "```help."
+    16 | I don't know the word "vats."
+    16 | I don't know the word "**command**:."
+    15 | You can't see well enough to find your way out.\n\nThe orange smoke dissipates almost as suddenly as it arrived. Left behind on the cobblestones is a small featureless white cube.
+    15 | I don't know the word "trouble."
+    15 | I don't know the word "end."
+    15 | I don't know the word "be."
+    15 | You don't have that.
+    15 | I don't know the word "breek."
+    15 | What do you want to show the cube to?
+    15 | I don't know the word "ap."
+    15 | I don't know the word "`go."
+    15 | I don't know the word "`south`."
+    14 | You used the word "hand" in a way that I don't understand.
+    14 | I don't know the word "something."
+    14 | I don't know the word "maps."
+    14 | I don't know the word "defend."
+    14 | I don't know the word "way."
+    14 | I don't know the word "this."
+    14 | You can't see any serpent here.
+    13 | I don't know the word "problem."
+    13 | I don't know the word "why."
+    13 | I don't know the word "as."
+    13 | I don't know the word "function."
+    13 | You used the word "drink" in a way that I don't understand.
+    13 | I don't know the word "cough."
+    13 | I don't know the word "fan."
+    13 | You see nothing special about the knife.
+    13 | You can't move the east wall.
+    13 | I don't know the word "dissipate."
+    13 | You see nothing special about the wall.
+    13 | I don't know the word "pass."
+    13 | What do you want to give the cube to?
+    12 | I don't know the word "effectiveness."
+    12 | What do you want to throck?
+    12 | You can't see any openings here.
+    12 | You can't see any building here.
+    12 | I don't know the word "clues."
+    12 | I don't know the word "forward."
+    12 | You aren't holding yourself.
+    12 | I don't know the word "'fripple'."
+    12 | What do you want to push?
+    12 | I don't know the word "game."
+    12 | I don't know the word "course."
+    12 | I don't know the word "ask:."
+    11 | I don't know the word "what's."
+    11 | I don't know the word "relationship."
+    11 | I don't know the word "workings."
+    11 | You can't go that way.\n\nYou hear a noise from within the cave that sounds like a sneeze.
+    11 | I don't know the word "failure."
+    11 | I don't know the word "stay."
+    11 | I don't know the word "more."
+    11 | I don't know the word "investigate."
+    11 | I don't know the word "if."
+    11 | I don't know the word "by."
+    10 | I don't know the word "work."
+    10 | I don't know the word "brewing."
+    10 | I don't know the word "performance."
+    10 | I don't know the word "still."
+    10 | I don't know the word "study."
+    10 | It's already open.
+    10 | You can't see any north opening here.
+    10 | You can't see any search the square here.
+    10 | I don't know the word "closely."
+    10 | I don't know the word "invisiclues."
+    10 | I don't know the word "remain."
+    10 | I don't know the word "stop."
+    10 | What do you want to feel?
+    10 | You see nothing special about the chunk of rye bread.
+    10 | I don't know the word "*observe."
+    10 | I don't know the word "`say."
+    10 | I don't know the word "computer."
+     9 | You used the word "restore" in a way that I don't understand.
+     9 | You can't see any guard here.
+     9 | You don't have the blorple spell memorized!\n\nThe ogre sneezes.
+     9 | I don't know the word "assistance."
+     9 | I don't know the word "information."
+     9 | You used the word "open" in a way that I don't understand.
+     9 | I don't know the word "map."
+     9 | I don't know the word "ass."
+     9 | What do you want to ask for?
+     9 | I don't know the word "(please."
+     8 | I don't know the word "affecting."
+     8 | I don't know the word "breathe."
+     8 | You don't have the blorple spell memorized!\n\nYou hear a noise from within the cave that sounds like a sneeze.
+     8 | I don't know the word "ruins."
+     8 | You don't have the lesoch spell memorized!\n\nThe ogre sneezes.
+     8 | You can't see anything, what with the smokey orange cloud that blankets the square.\n\nThe orange smoke dissipates almost as suddenly as it arrived. Left behind on the cobblestones is a small featureless white cube.
+     8 | I don't know the word "explosion."
+     8 | I don't know the word "beasts."
+     8 | I don't know the word "wild."
+     8 | I don't know the word "near."
+     8 | I don't know the word "council."
+     8 | I don't know the word "form."
+     8 | You used the word "lift" in a way that I don't understand.
+     8 | I don't know the word "slowly."
+     8 | You used the word "who" in a way that I don't understand.
+     8 | You can't use multiple indirect objects with "cast".
+     8 | You can't see any give guard cube here.
+     8 | I don't know the word "join."
+     8 | I don't know the word "context:."
+     8 | I don't know the word "*acknowledge."
+     8 | I don't know the word "apologies."
+     8 | I don't know the word "`listen."
+     7 | I don't know the word "uses."
+     7 | I don't know the word "cause."
+     7 | I don't know the word "how."
+     7 | I don't know the word "preparing."
+     7 | I don't know the word "food-related."
+     7 | I don't know the word "tasks."
+     7 | I don't know the word "job."
+     7 | I don't know the word "duty."
+     7 | What do you want to wave?
+     7 | You can't see any wave arms here.
+     7 | You don't have the yomin spell memorized!\nYou are feeling tired.
+     7 | What do you want to search?
+     7 | I don't know the word "belwit."
+     7 | I don't know the word "booklet."
+     7 | I don't know the word "away."
+     7 | I don't know the word "sound."
+     7 | I don't know the word "make."
+     7 | I don't know the word "coax."
+     7 | I don't know the word "p."
+     7 | I don't know the word "bribe."
+     7 | I don't know the word "weak."
+     7 | I don't know the word "obsent."
+     7 | I don't know the word "(or."
+     7 | I don't know the word "```enter."
+     6 | I don't know the word "instability."
+     6 | I don't know the word "bakers."
+     6 | I don't know the word "failing."
+     6 | I don't know the word "true."
+     6 | I don't know the word "cooking."
+     6 | You can't see any fish here.
+     6 | You don't have the lesoch spell memorized!\n\nThe orange smoke dissipates almost as suddenly as it arrived. Left behind on the cobblestones is a small featureless white cube.
+     6 | What do you want to gnusto?
+     6 | I don't know the word "darkness."
+     6 | You can't see any girgol here.
+     6 | I don't know the word "body."
+     6 | I don't know the word "back."
+     6 | You can't see any guild hall here.
+     6 | I don't know the word "package."
+     6 | You used the word "hint" in a way that I don't understand.
+     6 | I don't know the word "net."
+     6 | I don't know the word "return."
+     6 | I don't know the word "settle."
+     6 | I don't know the word "guidance."
+     6 | I don't know the word "aid."
+     6 | I don't know the word "dais."
+     6 | I don't know the word "crawl."
+     6 | You aren't holding the ground.
+     6 | You can't move the north wall.
+     6 | What do you want to offer the cube to?
+     6 | You can't see any creatures here.
+     6 | I don't know the word "cease."
+     6 | I don't know the word "seam."
+     6 | I don't know the word "zork."
+     6 | I don't know the word "text."
+     6 | I don't know the word "text-based."
+     5 | I don't know the word "discussion."
+     5 | I don't know the word "butter."
+     5 | I don't know the word "production."
+     5 | I don't know the word "strength."
+     5 | I don't know the word "wind."
+     5 | I don't know the word "disperse."
+     5 | You don't have that spell, if indeed that is a spell.
+     5 | I don't know the word "ledge."
+     5 | I don't know the word "gesundheit."
+     5 | You aren't holding the ogre.
+     5 | You aren't holding Ardis.
+     5 | I don't know the word "issue."
+     5 | I don't know the word "edges."
+     5 | I don't know the word "crowd."
+     5 | You see nothing special about the ceiling.
+     5 | You used the word "hello" in a way that I don't understand.
+     5 | I don't know the word "request."
+     5 | I don't know the word "support."
+     5 | I don't know the word "do."
+     5 | I don't know the word "someone."
+     5 | I don't know the word "noise."
+     5 | I don't know the word "silence."
+     5 | I don't know the word "transformation."
+     5 | I don't know the word "sneak."
+     5 | What do you want to cut the thongs with?
+     5 | I don't know the word "podium."
+     5 | I don't know the word "business."
+     5 | You see nothing special about the smoked fish.
+     5 | I don't know the word "bounds."
+     5 | You can't see any bag here.
+     5 | What do you want to ask Sneffle for?
+     5 | I don't know the word "beast."
+     5 | I don't know the word "animal."
+     5 | I don't know the word "reveal."
+     5 | I don't know the word "while."
+     5 | I don't know the word "bad."
+     5 | I don't know the word "conversation."
+     5 | I don't know the word "happened."
+     5 | What do you want to observe?
+     5 | I don't know the word "(."
+     5 | I don't know the word "mayor."
+     5 | I don't know the word "his."
+     5 | I don't know the word "`inventory`."
+     5 | I don't know the word "`examine`."
+     5 | I don't know the word "`quit`."
+     5 | You can't see any mist here.
+     5 | I don't know the word "carve."
+     4 | I don't know the word "needs."
+     4 | I don't know the word "right."
+     4 | I don't know the word "crafting."
+     4 | I don't know the word "formation."
+     4 | I don't know the word "shaping."
+     4 | I don't know the word "status."
+     4 | There is nothing there.\n\nHoobly of the Guild of Brewers stands, gesturing at the floury baker. "You don't know what trouble is! Lately, what comes out of the vats, like as not, is cherry flavored or worse. The last vat, I swear it, tasted as if grues had been bathing in it. It takes magic to turn weird vegetables and water into good Borphee beer. Well, without magic, there isn't going to be any beer!" This statement has a profound effect on portions of the crowd. You can hear rumblings from the back concerning Enchanters. The word "traitors" rises out of nowhere. Your fellow Enchanters are looking at one another nervously.
+     4 | I don't know the word "spellbook."
+     4 | You aren't holding the chunk of rye bread.
+     4 | I don't know the word "activate."
+     4 | I don't know the word "recite."
+     4 | You aren't holding the smoked fish.
+     4 | What do you want to malyon?
+     4 | You can't see any malyon cube here.
+     4 | You can't see any opening here.
+     4 | You see nothing special about the passage.
+     4 | You aren't holding the channel.
+     4 | I don't know the word "master."
+     4 | I don't know the word "stick."
+     4 | I don't know the word "itself."
+     4 | I don't know the word "traces."
+     4 | I don't know the word "lessen."
+     4 | I don't know the word "thin."
+     4 | I don't know the word "change."
+     4 | I don't know the word "vanish."
+     4 | I don't know the word "grope."
+     4 | I don't know the word "breath."
+     4 | You aren't holding that.
+     4 | I don't know the word "rip."
+     4 | I don't know the word "cobblestones."
+     4 | I don't know the word "undo."
+     4 | I don't know the word "robe."
+     4 | I don't know the word "hood."
+     4 | I don't know the word "hidden."
+     4 | I don't know the word "hints."
+     4 | I don't know the word "stands."
+     4 | I don't know the word "any."
+     4 | I don't know the word "himself."
+     4 | You used the word "yes" in a way that I don't understand.
+     4 | I don't know the word "obser."
+     4 | You used the word "of" in a way that I don't understand.
+     4 | I don't know the word "purpose."
+     3 | I don't know the word "mentioned."
+     3 | I don't know the word "causing."
+     3 | I don't know the word "creating."
+     3 | I don't know the word "going."
+     3 | I don't know the word "correct."
+     3 | I don't know the word "normal."
+     3 | I don't know the word "used."
+     3 | I don't know the word "activities."
+     3 | I don't know the word "condition."
+     3 | I don't know the word "drinks."
+     3 | I don't know the word "behavior."
+     3 | You can't see any throck ogre here.
+     3 | You can't see any jindak cube here.
+     3 | I don't know the word "will."
+     3 | You can't see any throck rocks here.
+     3 | You aren't holding the cloud of orange smoke.
+     3 | You don't have the throck spell memorized!\n\nSomething you've done has disturbed the rocks above! Dirt and small stones are trickling down. It looks like the whole dike is about to give way!
+     3 | What do you want to rezrov?
+     3 | You don't have the jindak spell memorized!\n\nThe ogre sneezes.
+     3 | I don't know the word "<br>wait."
+     3 | You can't go that way.\nYou are dead tired.
+     3 | You see nothing special about the passage.\n\nThe ogre sneezes.
+     3 | You can't see any north door here.
+     3 | I don't know the word "table."
+     3 | I don't know the word "sides."
+     3 | I don't know the word "difficulty."
+     3 | I don't know the word "hay."
+     3 | I don't know the word "sneezing."
+     3 | You used the word "response" in a way that I don't understand.
+     3 | I don't know the word "other."
+     3 | I don't know the word "story."
+     3 | It's already here!
+     3 | You can't see any pocket here.
+     3 | I don't know the word "items."
+     3 | Nothing happens.
+     3 | You can't move the leather thongs.
+     3 | You used the word "cut" in a way that I don't understand.
+     3 | I don't know the word "nose."
+     3 | I don't know the word "platform."
+     3 | You used the word "stand" in a way that I don't understand.
+     3 | What do you want to give the bread to?
+     3 | I don't know the word "hand-made."
+     3 | I don't know the word "weird."
+     3 | I don't know the word "cherry."
+     3 | I don't know the word "x."
+     3 | I don't know the word "thunder."
+     3 | I don't know the word "rumble."
+     3 | You can't see any smoke here.
+     3 | I don't know the word "outside."
+     3 | I don't know the word "blackness."
+     3 | What do you want to ask Hoobly for?
+     3 | I don't know the word "apart."
+     3 | I don't know the word "against."
+     3 | You used the word "answers" in a way that I don't understand.
+     3 | I don't know the word "bit."
+     3 | I don't know the word "patiently."
+     3 | I don't know the word "clue."
+     3 | I don't know the word "sing."
+     3 | You used the word "no" in a way that I don't understand.
+     3 | You used the word "listen" in a way that I don't understand.
+     3 | I don't know the word "list."
+     3 | I don't know the word "speath."
+     3 | You used the word "observe" in a way that I don't understand.
+     3 | I don't know the word "name."
+     3 | I don't know the word "temple."
+     3 | What do you want to play?
+     3 | I don't know the word "`observe."
+     3 | I don't know the word "`watch."
+     3 | I don't know the word "(type."
+     3 | I don't know the word "eavesdrop."
+     3 | I don't know the word "don't."
+     3 | You can't see any water here.
+     3 | You can't see any pillar here.
+     3 | You can't see any channel here.
+     3 | I don't know the word "let."
+     3 | You can't see any north exit here.
+     3 | I don't know the word "define."
+     3 | I don't know the word "fail."
+     3 | I don't know the word "good."
+     3 | I don't know the word "present."
+     3 | You can't see any key here.
+     2 | I don't know the word "talked."
+     2 | I don't know the word "discussed."
+     2 | I don't know the word "complained."
+     2 | I don't know the word "has."
+     2 | I don't know the word "giving."
+     2 | I don't know the word "impacting."
+     2 | I don't know the word "requires."
+     2 | I don't know the word "relies."
+     2 | I don't know the word "depends."
+     2 | I don't know the word "casts."
+     2 | I don't know the word "accurate."
+     2 | I don't know the word "usual."
+     2 | I don't know the word "consistent."
+     2 | I don't know the word "steady."
+     2 | I don't know the word "stable."
+     2 | I don't know the word "reliable."
+     2 | I don't know the word "expected."
+     2 | I don't know the word "processes."
+     2 | I don't know the word "actions."
+     2 | I don't know the word "malfunction."
+     2 | I don't know the word "cooks."
+     2 | You can't use multiple indirect objects with "ask".
+     2 | I don't know the word "power."
+     2 | I don't know the word "beverages."
+     2 | What do you want to blow up?
+     2 | You can't see any ogre here.
+     2 | You see nothing special about the wall.\nYou are getting more and more tired.
+     2 | I don't know the word "xyzzy."
+     2 | You don't have the throck spell memorized!\n\nHuge rocks and boulders are tumbling down, making an almost continuous curtain above you. If you don't do something soon, you will die!\nYou are beginning to tire.
+     2 | You can't see any throck dirt here.
+     2 | You can't see any girgol scroll here.
+     2 | I don't know the word "explore."
+     2 | You don't have the blorple spell memorized!\n\nThousands of tons of rock are tumbling down the mountainside!
+     2 | You don't have the malyon spell memorized!\n\nThe ogre sneezes.
+     2 | I don't know the word "lamp."
+     2 | What do you want to cast?
+     2 | You don't have the jindak spell memorized!\nYou are beginning to tire.
+     2 | You aren't holding the guard.
+     2 | You don't have the blorple spell memorized!\nYou are feeling tired.
+     2 | You already have that spell inscribed in your spell book!\nYou are getting more and more tired.
+     2 | You don't have the caskly spell memorized!
+     2 | You can't see any girgol spell here.
+     2 | You can't use multiple direct objects with "look".
+     2 | I don't know the word "detail."
+     2 | I don't know the word "after."
+     2 | You can't see any serpent head here.
+     2 | I don't know the word "loop."
+     2 | I don't know the word "rat."
+     2 | I don't know the word "danger."
+     2 | I don't know the word "directions."
+     2 | I don't know the word "front."
+     2 | I don't know the word "fault."
+     2 | I don't know the word "surface."
+     2 | I don't know the word "protection."
+     2 | I don't know the word "entry."
+     2 | You're already holding it!
+     2 | You used the word "where" in a way that I don't understand.
+     2 | You can't see any shadowy figure here.
+     2 | You can't see any shadow here.
+     2 | I don't know the word "torch."
+     2 | You can't see any brush here.
+     2 | I don't know the word "prepare."
+     2 | I don't know the word "ogre's."
+     2 | I don't know the word "prison."
+     2 | You used the word "leave" in a way that I don't understand.
+     2 | You used the word "answer" in a way that I don't understand.
+     2 | I don't know the word "another."
+     2 | I don't know the word "transformed."
+     2 | I don't know the word "details."
+     2 | I don't know the word "specific."
+     2 | I don't know the word "advice."
+     2 | I don't know the word "direction."
+     2 | I don't know the word "hush."
+     2 | I don't know the word "quietly."
+     2 | I don't know the word "person."
+     2 | You don't have the throck spell memorized!\n\nThe ogre, impatient with your presence and your impudent intrusion, tramples you to a pulp.\n\n   ****  You have died  ****\n\nYou are floating in a dark, silent realm of nothingness. You don't know how much time passes, but eventually you hear the sound of soft footsteps. A figure in a dark cloak comes near. In a voice like ashes, it speaks: "How nice to see you again. Unfortunately, I still have need of you, so this foolishness can't be allowed. You'll have to go back."\n\nYou find yourself falling down a deep well of darkness, as the figure recedes into infinite distances.\n\nBoneyard\nThis is a room of bones. Shoulder blades make up the floor, skulls the walls and leg bones the door frames. The west exit leads into darkness, but the doorway to the north opens onto a seemingly normal street scene.
+     2 | I don't know the word "cover."
+     2 | I don't know the word "glow."
+     2 | I don't know the word "chair."
+     2 | You can't see any arms here.
+     2 | You can't see any my knife here.
+     2 | I don't know the word "knots."
+     2 | You can't move the thongs.
+     2 | I don't know the word "breek!."
+     2 | I don't know the word "lectern."
+     2 | I don't know the word "twist."
+     2 | I don't know the word "cold."
+     2 | You see nothing special about your head.
+     2 | There is nothing there.\n\nThe ogre sneezes.
+     2 | What do you want to blorple?
+     2 | I don't know the word "sneezes."
+     2 | I don't know the word "discomfort."
+     2 | I don't know the word "annoyance."
+     2 | I don't know the word "lice."
+     2 | I don't know the word "ogreish."
+     2 | I don't know the word "carbuncles."
+     2 | You can't see any green light here.
+     2 | I don't know the word "ball."
+     2 | I don't know the word "street."
+     2 | What do you want to sit on?
+     2 | I don't know the word "detection."
+     2 | You can't see any magic spell here.
+     2 | I don't know the word "secret."
+     2 | I don't know the word "pieces."
+     2 | I don't know the word "smaller."
+     2 | I don't know the word "parts."
+     2 | You used the word "enter" in a way that I don't understand.
+     2 | I don't know the word "see."
+     2 | I don't know the word "now."
+     2 | What do you want to send for?
+     2 | I don't know the word "shoo."
+     2 | You used the word "time" in a way that I don't understand.
+     2 | You can't see any sign here.
+     2 | I don't know the word "force."
+     2 | I don't know the word "flaw."
+     2 | I don't know the word "weakness."
+     2 | I don't know the word "limits."
+     2 | There is nothing there.\n\nThe orange smoke dissipates almost as suddenly as it arrived. Left behind on the cobblestones is a small featureless white cube.
+     2 | I don't know the word "mark."
+     2 | I don't know the word "extend."
+     2 | I don't know the word "attend."
+     2 | I don't know the word "game:."
+     2 | I don't know the word "speach."
+     2 | I don't know the word "speech."
+     2 | I don't know the word "detailed."
+     2 | I don't know the word "splassists."
+     2 | I don't know the word "savingcomepleasing."
+     2 | What do you want to ask about?
+     2 | I don't know the word "sugg1ate."
+     2 | I don't know the word "apreci."
+     2 | I don't know the word "*apologies."
+     2 | I don't know the word "appears."
+     2 | I don't know the word "participate."
+     2 | I don't know the word "'."
+     2 | You used the word "wait" in a way that I don't understand.
+     2 | What do you want to show the guard cube to?
+     2 | I don't know the word "reason."
+     2 | You can't move the south wall.
+     2 | I don't know the word "entering."
+     2 | I don't know the word "access."
+     2 | I don't know the word "crystal."
+     2 | I don't know the word "elara."
+     2 | I don't know the word "vortex."
+     2 | I don't know the word "`pay."
+     2 | I don't know the word "`attend."
+     2 | I don't know the word "`focus."
+     2 | I don't know the word "`concentrate."
+     2 | I don't know the word "`hear."
+     2 | I don't know the word "(use."
+     2 | I don't know the word "(enter."
+     2 | I don't know the word "(i."
+     2 | I don't know the word "(then."
+     2 | I don't know the word "(note:."
+     2 | I don't know the word "```look."
+     2 | I don't know the word "brew."
+     2 | I don't know the word "frames."
+     2 | You can't see any portico here.
+     2 | You see nothing special about the wall.\nYou are beginning to tire.
+     2 | You aren't holding the zipper.
+     2 | You don't have the blorple spell memorized!\nYou are beginning to tire.
+     2 | You see nothing special about the water.\nYou are beginning to tire.
+     2 | I don't know the word "wrong."
+     2 | I don't know the word "works."
+     2 | I don't know the word "helps."
+     2 | I don't know the word "ward."
+     2 | I don't know the word "bow."
+     2 | I don't know the word "kneel."
+     2 | I don't know the word "sorry."
+     2 | I don't know the word "smile."
+     2 | I don't know the word "beg."
+     2 | I don't know the word "shine."
+     2 | I don't know the word "brandish."
+     2 | What do you want to give the guard cube to?
+     2 | What do you want to poke the guard with?
+     2 | I don't know the word "tear."
+     2 | I don't know the word "frame."
+     2 | I don't know the word "peer."
+     2 | I don't know the word "permit."
+     2 | You can't see any frogs here.
+     2 | I don't know the word "chant."
+     1 | I don't know the word "was."
+     1 | I don't know the word "concerned."
+     1 | I don't know the word "worried."
+     1 | I don't know the word "upset."
+     1 | I don't know the word "troubled."
+     1 | I don't know the word "bothered."
+     1 | I don't know the word "unhappy."
+     1 | I don't know the word "dislikes."
+     1 | I don't know the word "finds."
+     1 | I don't know the word "spoke."
+     1 | I don't know the word "referred."
+     1 | I don't know the word "brought."
+     1 | I don't know the word "that's."
+     1 | I don't know the word "troubling."
+     1 | I don't know the word "bothering."
+     1 | I don't know the word "upsetting."
+     1 | I don't know the word "influencing."
+     1 | I don't know the word "related."
+     1 | I don't know the word "concerning."
+     1 | I don't know the word "interfering."
+     1 | I don't know the word "important."
+     1 | I don't know the word "crucial."
+     1 | I don't know the word "vital."
+     1 | I don't know the word "essential."
+     1 | I don't know the word "performs."
+     1 | I don't know the word "does."
+     1 | I don't know the word "unreliable."
+     1 | I don't know the word "malfunctioning."
+     1 | I don't know the word "functioning."
+     1 | I don't know the word "behaving."
+     1 | I don't know the word "acting."
+     1 | I don't know the word "proper."
+     1 | I don't know the word "standard."
+     1 | I don't know the word "performing."
+     1 | I don't know the word "doing."
+     1 | I don't know the word "intended."
+     1 | I don't know the word "planned."
+     1 | I don't know the word "dependable."
+     1 | I don't know the word "trustworthy."
+     1 | I don't know the word "sure."
+     1 | I don't know the word "certain."
+     1 | I don't know the word "precise."
+     1 | I don't know the word "exact."
+     1 | I don't know the word "pastry-making."
+     1 | I don't know the word "food-making."
+     1 | I don't know the word "meals."
+     1 | I don't know the word "potency."
+     1 | I don't know the word "beverage."
+     1 | I don't know the word "functionality."
+     1 | I don't know the word "firmly."
+     1 | You don't have the throck spell memorized!\n\nThe ogre sneezes.\nYou are beginning to tire.
+     1 | You don't have the throck spell memorized!\nYou are feeling tired.
+     1 | You don't have the yomin spell memorized!\nYou are beginning to tire.
+     1 | It's already open.\nYou are worn out.
+     1 | You don't have the throck spell memorized!\n\nThe ogre, impatient with your presence and your impudent intrusion, tramples you to a pulp.\n\n   ****  You have died  ****\n\nYou are floating in a dark, silent realm of nothingness. You don't know how much time passes, but eventually you hear the sound of soft footsteps. A figure in a dark cloak comes near. In a voice like ashes, it speaks: "How nice to see you again. Unfortunately, I still have need of you, so this foolishness can't be allowed. You'll have to go back."\n\nYou find yourself falling down a deep well of darkness, as the figure recedes into infinite distances.\n\nBoneyard\nThis is a room of bones. Shoulder blades make up the floor, skulls the walls and leg bones the door frames. The west exit leads into darkness, but the doorway to the north opens onto a seemingly normal street scene.\nYou are beginning to tire.
+     1 | You don't have that spell, if indeed that is a spell.\n\nThe ogre sneezes.
+     1 | You can't see any flimsy scroll here.
+     1 | I don't know the word "<br>up."
+     1 | I don't know the word "<br>north."
+     1 | I don't know the word "closed."
+     1 | You can't see any hall here.
+     1 | You aren't holding the guard.\nYou are beginning to tire.
+     1 | You don't have the jindak spell memorized!\nYou are worn out.
+     1 | You don't have the yomin spell memorized!\n\nThe ogre sneezes.\nYou are getting more and more tired.
+     1 | I don't know the word "western."
+     1 | You can't see any hole here.
+     1 | You can't see any jindak serpent here.
+     1 | You can't see any scaly wall here.
+     1 | I don't know the word "rushing."
+     1 | I don't know the word "smashed."
+     1 | You used the word "attack" in a way that I don't understand.
+     1 | I don't know the word "concern."
+     1 | I don't know the word "news."
+     1 | I don't know the word "report."
+     1 | I don't know the word "statement."
+     1 | I don't know the word "quickly."
+     1 | What do you want to toss the cube at?
+     1 | I don't know the word "top."
+     1 | I don't know the word "left."
+     1 | I don't know the word "bottom."
+     1 | I don't know the word "above."
+     1 | You can't see any cloud here.
+     1 | I don't know the word "rat-ant."
+     1 | I don't know the word "faces."
+     1 | You can't see any inventory here.
+     1 | I don't know the word "aside."
+     1 | I don't know the word "murmurs."
+     1 | I don't know the word "rumblings."
+     1 | I don't know the word "keeping."
+     1 | I don't know the word "town."
+     1 | I don't know the word "safety."
+     1 | You can't see any orange smoke here.
+     1 | I don't know the word "location."
+     1 | I don't know the word "turning."
+     1 | I don't know the word "branch."
+     1 | You can't go that way.\nYou are beginning to tire.
+     1 | I don't know the word "eating."
+     1 | You can't see any hides here.
+     1 | There is nothing there.\n\nThe ogre, impatient with your presence and your impudent intrusion, tramples you to a pulp.\n\n   ****  You have died  ****\n\nYou are floating in a dark, silent realm of nothingness. You don't know how much time passes, but eventually you hear the sound of soft footsteps. A figure in a dark cloak comes near. In a voice like ashes, it speaks: "How nice to see you again. Unfortunately, I still have need of you, so this foolishness can't be allowed. You'll have to go back."\n\nYou find yourself falling down a deep well of darkness, as the figure recedes into infinite distances.\n\nBoneyard\nThis is a room of bones. Shoulder blades make up the floor, skulls the walls and leg bones the door frames. The west exit leads into darkness, but the doorway to the north opens onto a seemingly normal street scene.
+     1 | I don't know the word "exits."
+     1 | I don't know the word "different."
+     1 | I don't know the word "somewhere."
+     1 | You used the word "place" in a way that I don't understand.
+     1 | I don't know the word "sounds."
+     1 | You used the word "move" in a way that I don't understand.
+     1 | I don't know the word "nearest."
+     1 | I don't know the word "event."
+     1 | I don't know the word "events."
+     1 | I don't know the word "chaos."
+     1 | I don't know the word "guilds."
+     1 | I don't know the word "quiet."
+     1 | I don't know the word "sneeze."
+     1 | I don't know the word "keep."
+     1 | What do you want to hold?
+     1 | I don't know the word "things."
+     1 | I don't know the word "share."
+     1 | I don't know the word "suggestion."
+     1 | I don't know the word "assist."
+     1 | I don't know the word "attention."
+     1 | I don't know the word "solution."
+     1 | I don't know the word "ideas."
+     1 | I don't know the word "create."
+     1 | I don't know the word "produce."
+     1 | I don't know the word "ahead."
+     1 | What do you want to go on?
+     1 | I don't know the word "or."
+     1 | I don't know the word "dispel."
+     1 | I don't know the word "pavement."
+     1 | I don't know the word "stains."
+     1 | I don't know the word "rockfalls."
+     1 | I don't know the word "illness."
+     1 | I don't know the word "framed."
+     1 | I don't know the word "wield."
+     1 | I don't see what you're referring to.\n\nHoobly of the Guild of Brewers stands, gesturing at the floury baker. "You don't know what trouble is! Lately, what comes out of the vats, like as not, is cherry flavored or worse. The last vat, I swear it, tasted as if grues had been bathing in it. It takes magic to turn weird vegetables and water into good Borphee beer. Well, without magic, there isn't going to be any beer!" This statement has a profound effect on portions of the crowd. You can hear rumblings from the back concerning Enchanters. The word "traitors" rises out of nowhere. Your fellow Enchanters are looking at one another nervously.
+     1 | What do you want to cut the leather thongs with?
+     1 | You aren't holding the leather thongs.
+     1 | I don't know the word "slip."
+     1 | You can't move the thongs.\nYou are beginning to tire.
+     1 | I don't know the word "'breek'."
+     1 | I don't know the word "rostrum."
+     1 | You don't have the blorple spell memorized!\n\nYou are falling towards the ground, wind whipping around you.
+     1 | You don't have the throck spell memorized!\n\nYou hear a noise from within the cave that sounds like a sneeze.
+     1 | You don't have the blorple spell memorized!\n\nSomething you've done has disturbed the rocks above! Dirt and small stones are trickling down. It looks like the whole dike is about to give way!
+     1 | You can't see any invent here.
+     1 | You can't see any girgol spell book here.
+     1 | You can't go that way.\nYou are feeling tired.
+     1 | I don't know the word "rear."
+     1 | You aren't holding the passage.
+     1 | You used the word "pitch" in a way that I don't understand.
+     1 | I don't know the word "page."
+     1 | I don't know the word "rumbling."
+     1 | I don't know the word "thunderstorm."
+     1 | I don't know the word "sky."
+     1 | I don't know the word "void."
+     1 | I don't know the word "nothing."
+     1 | I don't know the word "funny."
+     1 | I don't know the word "bone."
+     1 | It's already open.\nYou are feeling tired.
+     1 | I don't know the word "fingers."
+     1 | You can't see any entrance here.
+     1 | You don't have the lesoch spell memorized!\n\nYou hear a noise from within the cave that sounds like a sneeze.
+     1 | You don't have the lesoch spell memorized!\n\nThe ogre, impatient with your presence and your impudent intrusion, tramples you to a pulp.\n\n   ****  You have died  ****\n\nYou are floating in a dark, silent realm of nothingness. You don't know how much time passes, but eventually you hear the sound of soft footsteps. A figure in a dark cloak comes near. In a voice like ashes, it speaks: "How nice to see you again. Unfortunately, I still have need of you, so this foolishness can't be allowed. You'll have to go back."\n\nYou find yourself falling down a deep well of darkness, as the figure recedes into infinite distances.\n\nBoneyard\nThis is a room of bones. Shoulder blades make up the floor, skulls the walls and leg bones the door frames. The west exit leads into darkness, but the doorway to the north opens onto a seemingly normal street scene.
+     1 | You can't see any maw here.
+     1 | I don't know the word "yourself."
+     1 | What do you want to show Hoobly to?
+     1 | You can't see Hoobly here.
+     1 | I don't know the word "everything."
+     1 | What do you want to give the white cube to?
+     1 | You used the word "find" in a way that I don't understand.
+     1 | You used the word "show" in a way that I don't understand.
+     1 | I don't know the word "discover."
+     1 | You can't see any manse here.
+     1 | I don't know the word "special."
+     1 | You used the word "get" in a way that I don't understand.
+     1 | I don't know the word "landmark."
+     1 | I don't know the word "disassemble."
+     1 | I don't know the word "woman."
+     1 | You can't see any lead here.
+     1 | You aren't carrying the room.
+     1 | You aren't carrying the cube.
+     1 | You can't see any signs here.
+     1 | I don't know the word "evidence."
+     1 | I don't know the word "local."
+     1 | I don't know the word "mysterious."
+     1 | I don't know the word "cube's."
+     1 | I don't know the word "corners."
+     1 | I don't know the word "shape."
+     1 | I don't know the word "closer."
+     1 | I don't know the word "perimeter."
+     1 | I don't know the word "boundary."
+     1 | I don't know the word "attempt."
+     1 | I don't know the word "minute."
+     1 | I don't know the word "markings."
+     1 | I don't know the word "writing."
+     1 | I don't know the word "labels."
+     1 | I don't know the word "alone."
+     1 | I don't know the word "pattern."
+     1 | What do you want to ask Ardis for?
+     1 | I don't know the word "reverse."
+     1 | I don't know the word "humans."
+     1 | I don't know the word "people."
+     1 | I don't know the word "cancel."
+     1 | I don't know the word "dwarf."
+     1 | You used the word "description" in a way that I don't understand.
+     1 | I don't know the word "m."
+     1 | I don't know the word "obften."
+     1 | I don't know the word "obse."
+     1 | I don't know the word "assser."
+     1 | I don't know the word "listertain."
+     1 | I don't know the word "listreciate."
+     1 | You used the word "response:" in a way that I don't understand.
+     1 | I don't know the word "liststanding."
+     1 | I don't know the word "speatch."
+     1 | I don't know the word "speentistant."
+     1 | I don't know the word "speaking1."
+     1 | I don't know the word "specedact."
+     1 | I don't know the word "speertain."
+     1 | I don't know the word "spechatechate."
+     1 | I don't know the word "speacher."
+     1 | I don't know the word "speather."
+     1 | I don't know the word "speate."
+     1 | I don't know the word "spe:."
+     1 | I don't know the word "speat."
+     1 | I don't know the word "ass:."
+     1 | I don't know the word "speight."
+     1 | I don't know the word "speword."
+     1 | I don't know the word "*attend."
+     1 | I don't know the word "obstanding."
+     1 | I don't know the word "obent."
+     1 | I don't know the word "ob:."
+     1 | I don't know the word "gathering."
+     1 | I don't know the word "assembly."
+     1 | I don't know the word "for:."
+     1 | I don't know the word "aprecertain."
+     1 | I don't know the word "acknowledge."
+     1 | I don't know the word "apolog."
+     1 | I don't know the word "*."
+     1 | I don't know the word "like."
+     1 | I don't know the word "*s."
+     1 | I don't know the word "such."
+     1 | I don't know the word "ar."
+     1 | I don't know the word "theing."
+     1 | I don't know the word "ing."
+     1 | I don't know the word "inging."
+     1 | I don't know the word "inginginginginginginginginginginging."
+     1 | I don't know the word "inginginging."
+     1 | I don't know the word "inginging."
+     1 | I don't know the word "i'm."
+     1 | I don't know the word "i'mveveat."
+     1 | I don't know the word "veveveve."
+     1 | I don't know the word "appear."
+     1 | I don't know the word "it's."
+     1 | What do you want to purchase?
+     1 | I don't know the word "complex."
+     1 | I don't know the word "connection."
+     1 | I don't know the word ":."
+     1 | I don't know the word "mansion."
+     1 | I don't know the word "house."
+     1 | I don't know the word "identity."
+     1 | I don't know the word "visiting."
+     1 | I don't know the word "guarding."
+     1 | I don't know the word "passing."
+     1 | I don't know the word "escape."
+     1 | You used the word "release" in a way that I don't understand.
+     1 | I don't know the word "freedom."
+     1 | I don't know the word "leaving."
+     1 | I don't know the word "past."
+     1 | I don't know the word "age."
+     1 | I don't know the word "mimicry."
+     1 | I don't know the word "sacrifice."
+     1 | I don't know the word "pride."
+     1 | I don't know the word "bored."
+     1 | I don't know the word "cage."
+     1 | I don't know the word "mood."
+     1 | I don't know the word "think."
+     1 | What do you want to touch?
+     1 | I don't know the word "trust."
+     1 | You can't see any box here.
+     1 | I don't know the word "hooded."
+     1 | I don't know the word "plan."
+     1 | I don't know the word "plot."
+     1 | I don't know the word "incidents."
+     1 | You can't see any symbols here.
+     1 | I don't know the word "wolf."
+     1 | I don't know the word "influence."
+     1 | You can't see any figure here.
+     1 | You can't see any scrolls here.
+     1 | I don't know the word "well."
+     1 | I don't know the word "artifact."
+     1 | What do you want to show the key to?
+     1 | You can't see any shadows here.
+     1 | I don't know the word "umbra."
+     1 | I don't know the word "start."
+     1 | I don't know the word "rumors."
+     1 | I don't know the word "library."
+     1 | I don't know the word "source."
+     1 | I don't know the word "corruption."
+     1 | I don't know the word "lair."
+     1 | I don't know the word "fireball."
+     1 | You used the word "consuming" in a way that I don't understand.
+     1 | I don't know the word "heart."
+     1 | I don't know the word "amulet."
+     1 | I don't know the word "debt."
+     1 | I don't know the word "whispering."
+     1 | I don't know the word "orb."
+     1 | I don't know the word "dangers."
+     1 | I don't know the word "paths."
+     1 | I don't know the word "riddle."
+     1 | I don't know the word "`eavesdrop."
+     1 | I don't know the word "(continue."
+     1 | I don't know the word "(the."
+     1 | I don't know the word "(part."
+     1 | I don't know the word "(try."
+     1 | I don't know the word "(if."
+     1 | I don't know the word "full."
+     1 | I don't know the word "```hel."
+     1 | I don't know the word "suggested."
+     1 | I don't know the word "```listen."
+     1 | I don't know the word "i'."
+     1 | I don't know the word "```t."
+     1 | I don't know the word "loyal."
+     1 | I don't know the word "us."
+     1 | You used the word "follow" in a way that I don't understand.
+     1 | I don't know the word "come."
+     1 | I don't know the word "wins."
+     1 | I don't know the word "beat."
+     1 | You used the word "cast" in a way that I don't understand.
+     1 | You can't see any blorple cube here.
+     1 | You can't see any rezrov door here.
+     1 | I don't know the word "unroll."
+     1 | I don't know the word "unfold."
+     1 | I don't know the word "spread."
+     1 | What do you want to cut the scroll with?
+     1 | I don't know the word "interrupt."
+     1 | I don't know the word "ants."
+     1 | I don't know the word "snip."
+     1 | I don't know the word "loosen."
+     1 | I don't know the word "detach."
+     1 | I don't know the word "bindings."
+     1 | I don't know the word "ties."
+     1 | I don't know the word "hack."
+     1 | I don't know the word "chop."
+     1 | I don't know the word "vat."
+     1 | What do you want to ask Gzornenplatz for?
+     1 | I don't know the word "ratants."
+     1 | I don't know the word "rats."
+     1 | I don't know the word "creep."
+     1 | I don't know the word "suspend."
+     1 | What do you want to knock at?
+     1 | What do you want to insert the cube in?
+     1 | I don't know the word "prod."
+     1 | What do you want to poke the cube with?
+     1 | I don't know the word "finger."
+     1 | I don't know the word "brass."
+     1 | I don't know the word "stones."
+     1 | I don't know the word "fold."
+     1 | I don't know the word "stumble."
+     1 | You don't have the malyon spell memorized!\n\nThe orange smoke dissipates almost as suddenly as it arrived. Left behind on the cobblestones is a small featureless white cube.
+     1 | You can't see any east wall of manse here.
+     1 | You can't see any north wall of manse here.
+     1 | You can't see any south wall of manse here.
+     1 | I don't know the word "sesame."
+     1 | You see nothing special about your head.\nYou are beginning to tire.
+     1 | You don't have the blorple spell memorized!\n\nTime resumes its forward flight.
+     1 | What do you want to cut the bread with?
+     1 | I don't know the word "uncoil."
+     1 | I don't know the word "greet."
+     1 | You used the word "scale" in a way that I don't understand.
+     1 | You can't see any scales here.
+     1 | You can't see any snake here.
+     1 | You don't have the lesoch spell memorized!\n\nThe ogre sneezes.\nYou are feeling tired.
+     1 | You don't have the jindak spell memorized!\n\nThe ogre, impatient with your presence and your impudent intrusion, tramples you to a pulp.\n\n   ****  You have died  ****\n\nYou are floating in a dark, silent realm of nothingness. You don't know how much time passes, but eventually you hear the sound of soft footsteps. A figure in a dark cloak comes near. In a voice like ashes, it speaks: "How nice to see you again. Unfortunately, I still have need of you, so this foolishness can't be allowed. You'll have to go back."\n\nYou find yourself falling down a deep well of darkness, as the figure recedes into infinite distances.\n\nBoneyard\nThis is a room of bones. Shoulder blades make up the floor, skulls the walls and leg bones the door frames. The west exit leads into darkness, but the doorway to the north opens onto a seemingly normal street scene.
+     1 | I don't know the word "sample."
+     1 | You can't see any loaf here.
+     1 | I don't know the word "approach."
+     1 | You can't see any newt here.
+     1 | I don't know the word "volunteer."
+     1 | You used the word "fix" in a way that I don't understand.
+     1 | I don't know the word "chisel."
+     1 | You don't have the lesoch spell memorized!\n\nSomething you've done has disturbed the rocks above! Dirt and small stones are trickling down. It looks like the whole dike is about to give way!
+     1 | You can't see any rezrov cube here.
+     1 | I don't know the word "letters."
+     1 | I don't know the word "seal."
+     1 | I don't know the word "/pass/."
+     1 | You can't see any frotz cube here.
+     1 | What do you want to show the "pass" to?
+     1 | I don't know the word "ticket."
+     1 | I don't know the word "demonstrate."
+     1 | I don't know the word "die."
+     1 | I don't know the word "âbreek."
+     1 | I don't know the word "pedestal."
+     1 | I don't know the word "altar."
+     1 | I don't know the word "co-ax."
+     1 | I don't know the word "utter."
+     1 | I don't know the word "urn."
+     1 | I don't know the word "depression."
+     1 | You can't see any north face here.
+     1 | I don't know the word "trapdoor."
+     1 | I don't know the word "enough."
+     1 | I don't know the word "until."
+     1 | You aren't holding the wall.
+     1 | You can't see any north thong here.
+     1 | What do you want to slice the leather thongs with?
+     1 | I don't know the word "rope."

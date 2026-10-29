@@ -1,0 +1,222 @@
+# Invalid Action Messages: JerichoEnvKarn
+# Total unique error messages: 215
+# Total error occurrences: 9466
+#
+# Format: count | message
+#===============================================================================
+
+  2757 | That's not a verb I recognise.
+  2438 | You can't see any such thing.
+   504 | You can't see any such thing.\n\nWhat do you want to do, Doctor
+   366 | I only understood you as far as wanting to open K9.
+   284 | You find nothing of interest.
+   277 | I only understood you as far as wanting to examine the TARDIS console.
+   275 | You can't go that way.
+   248 | I only understood you as far as wanting to examine the scanner.
+   244 | You seem to want to talk to someone, but I can't see whom.
+   204 | I beg your pardon?
+   162 | I only understood you as far as wanting to check the TARDIS console.
+    97 | I didn't understand that sentence.
+    94 | What do you want to examine?\n\nWhat do you want to do, Doctor
+    81 | I only understood you as far as wanting to go the east wall.
+    59 | I only understood you as far as wanting to help.
+    55 | I only understood you as far as wanting to go the floor.
+    54 | I only understood you as far as wanting to go the northwest wall.
+    52 | I only understood you as far as wanting to exit.
+    52 | There is no reply.
+    48 | Nothing obvious happens.
+    46 | You're not carrying the fluid link.
+    45 | You already have that.
+    44 | What do you want to insert the fluid link in?
+    38 | What do you want to fill the fluid link with?
+    36 | It's already open.
+    36 | I only understood you as far as wanting to go the southeast wall.
+    31 | I only understood you as far as wanting to jump.
+    24 | I only understood you as far as wanting to inventory.
+    24 | What do you want to climb down?
+    24 | I only understood you as far as wanting to examine the slot.
+    21 | That's not something you can switch.
+    20 | That's not something you need to refer to in the course of this game.
+    20 | I only understood you as far as wanting to open the west wall.\n\nWhat do you want to do, Doctor
+    19 | You see nothing special about the TARDIS key.
+    19 | That's not something you can enter.
+    19 | I only understood you as far as wanting to close the main doors.
+    18 | I only understood you as far as wanting to examine K9.
+    18 | That's not something you can open.
+    18 | Time passes.
+    17 | I only understood you as far as wanting to open the small panel.
+    15 | I only understood you as far as wanting to search the TARDIS console.
+    14 | I only understood you as far as wanting to think.
+    14 | I only understood you as far as wanting to open the south wall.
+    13 | I only understood you as far as wanting to search the rubble.
+    12 | I only understood you as far as wanting to examine the small panel.
+    11 | I only understood you as far as wanting to open the main doors.
+    10 | I only understood you as far as wanting to examine the huge boulder.
+    10 | You see nothing special about the unlit match.
+    10 | I only understood you as far as wanting to close the small panel.
+    10 | I only understood you as far as wanting to stand.
+    10 | You see nothing special about the northwest wall.
+    10 | I only understood you as far as wanting to enter the brown card.
+     9 | Violence isn't the answer to this one.
+     9 | Which do you mean, the brown card or the gold card?
+     9 | You see no sign of a door on the surface of the ship.
+     9 | You can only do that to something animate.
+     9 | I only understood you as far as wanting to follow the lake water.
+     8 | I only understood you as far as wanting to open the tiny drawer.
+     8 | You see nothing special about the west wall.
+     8 | I don't think much is to be achieved by that.
+     8 | You're not carrying the gold card.
+     8 | I only understood you as far as wanting to check the scanner.
+     7 | What do you want to insert the gold card in?
+     7 | I only understood you as far as wanting to open the door.
+     7 | I only understood you as far as wanting to pull the incredibly long scarf.
+     7 | You can't open the hatch with the TARDIS key.
+     7 | What do you want to unlock the main doors with?
+     7 | What do you want to pour the fluid link in?
+     7 | I only understood you as far as wanting to dive.
+     6 | I only understood you as far as wanting to hit the flying saucer.
+     6 | You can't reach the scarf from here.
+     6 | I only understood you as far as wanting to get the incredibly long scarf.
+     6 | I only understood you as far as wanting to go the west wall.
+     6 | I only understood you as far as wanting to set the brown card.
+     5 | I only understood you as far as wanting to exit.\n\nWhat do you want to do, Doctor
+     5 | I only understood you as far as wanting to slide the floor.
+     5 | I only understood you as far as wanting to go the ceiling.
+     5 | I only understood you as far as wanting to swim.
+     5 | This dangerous act would achieve little.
+     5 | What do you want to insert the brown card in?
+     5 | You're not carrying the brown card.
+     5 | I only understood you as far as wanting to rotate the fluid link.
+     5 | I only understood you as far as wanting to slide the fluid link.
+     4 | I only understood you as far as wanting to examine the tiny space.
+     4 | I only understood you as far as wanting to pull the red lever.
+     4 | I only understood you as far as wanting to insert the gold card into the slot.
+     4 | I only understood you as far as wanting to search K9.
+     4 | It's already burnt out.
+     4 | That doesn't seem to be something you can unlock.
+     4 | I only understood you as far as wanting to check the slot.
+     4 | What do you want to lock the main doors with?
+     4 | What do you want to insert the TARDIS key in?
+     4 | You can't see inside, since it is closed.
+     4 | I only understood you as far as wanting to down.
+     3 | I only understood you as far as wanting to drop the floor.
+     3 | I only understood you as far as wanting to hop.
+     3 | I only understood you as far as wanting to search the huge boulder.
+     3 | What do you want to go in?
+     3 | I only understood you as far as wanting to remove the brain case.
+     3 | I only understood you as far as wanting to cut the brain case.
+     3 | You're not carrying the scalpel.
+     3 | I only understood you as far as wanting to hit the huge boulder.
+     3 | I only understood you as far as wanting to search the workbench.
+     3 | I only understood you as far as wanting to examine the fluid link.
+     3 | That doesn't seem to be something you can unlock.\n\nA deafening roar shakes the ground as the spaceship's thrusters fire and it rockets upwards into the sky.  Unfortunately, you do not fully appreciate this spectacle, as you are burned to death by the blast from the engines.\n\n\n    *** You have died ***\n\n\nIn that game you scored 10 out of a possible 170, in 150 turns.\n\nWould you like to RESTART, RESTORE a saved game, give the FULL score for that game or QUIT
+     3 | Which do you mean, the gold card or the brown card?
+     3 | I only understood you as far as wanting to fix K9.
+     3 | I only understood you as far as wanting to pull the brown card.
+     3 | I only understood you as far as wanting to search the cupboard.
+     3 | I only understood you as far as wanting to wave the sonic screwdriver.
+     3 | I only understood you as far as wanting to turn the brown card.
+     3 | I only understood you as far as wanting to check the fluid link.
+     2 | I only understood you as far as wanting to look the floor.
+     2 | I only understood you as far as wanting to cut Morbius' body.
+     2 | What do you want to cut Morbius' body with?
+     2 | I only understood you as far as wanting to open the west wall.
+     2 | I only understood you as far as wanting to insert the fluid link into the slot.
+     2 | There is no reply.\nOhica drums her fingers on the throne.
+     2 | I only understood you as far as wanting to examine the tapestry.
+     2 | I only understood you as far as wanting to examine the homing device.
+     2 | I only understood you as far as wanting to examine the flying saucer.
+     2 | You can't open the hatch with the scalpel.
+     2 | I only understood you as far as wanting to climb the flying saucer.
+     2 | I only understood you as far as wanting to enter the door.
+     2 | I only understood you as far as wanting to insert the gold card into the TARDIS console.
+     2 | I only understood you as far as wanting to open the cupboard.
+     2 | I only understood you as far as wanting to put the gold card in the slot.
+     2 | I only understood you as far as wanting to examine the TARDIS.
+     2 | I only understood you as far as wanting to examine the south wall.
+     2 | You can't open the hatch with the fluid link.
+     2 | It's already closed.
+     2 | I only understood you as far as wanting to go the southwest wall.
+     2 | But you aren't in anything at the moment.
+     2 | I only understood you as far as wanting to it.
+     2 | I only understood you as far as wanting to fill the fluid link.
+     2 | I only understood you as far as wanting to throw the homing device.
+     2 | I only understood you as far as wanting to swing the yo-yo.
+     2 | I only understood you as far as wanting to walk the floor.
+     2 | I only understood you as far as wanting to take the brain case.
+     2 | I only understood you as far as wanting to hit the incredibly long scarf.
+     2 | I only understood you as far as wanting to take the incredibly long scarf.
+     1 | I only understood you as far as wanting to check the tiny drawer.
+     1 | I only understood you as far as wanting to search the tiny drawer.
+     1 | I only understood you as far as wanting to check the time rotor.
+     1 | I only understood you as far as wanting to search the time rotor.
+     1 | You haven't got that.
+     1 | I only understood you as far as wanting to check the huge boulder.
+     1 | I only understood you as far as wanting to examine the signpost.
+     1 | I only understood you as far as wanting to read the signpost.
+     1 | I only understood you as far as wanting to empty the fluid link.
+     1 | I only understood you as far as wanting to search Morbius' body.
+     1 | I only understood you as far as wanting to examine the rubble.
+     1 | I only understood you as far as wanting to drop the fluid link.
+     1 | You're not carrying the extinguished match.
+     1 | What do you want to cut the hatch with?
+     1 | What do you want to throw the yo-yo onto?
+     1 | I only understood you as far as wanting to throw the yo-yo.
+     1 | I only understood you as far as wanting to tie the yo-yo.
+     1 | I only understood you as far as wanting to tie the incredibly long scarf.
+     1 | You're not carrying the homing device.
+     1 | You can't open the hatch with the brown card.
+     1 | I only understood you as far as wanting to examine the lake water.
+     1 | What do you want to examine?
+     1 | What do you want to unlock the temple doors with?
+     1 | I only understood you as far as wanting to fix the small panel.
+     1 | I only understood you as far as wanting to take the small panel.
+     1 | I only understood you as far as wanting to pull the tiny drawer.
+     1 | I only understood you as far as wanting to examine the tiny drawer.
+     1 | I only understood you as far as wanting to put the homing device in the small panel.
+     1 | I only understood you as far as wanting to insert the homing device in the small panel.
+     1 | You can't go that way.\n\nOuch! You drop the match as the flame reaches your fingers.
+     1 | I only understood you as far as wanting to light the small panel.
+     1 | I only understood you as far as wanting to insert the gold card into K9.
+     1 | I only understood you as far as wanting to put the gold card in the small panel.
+     1 | I only understood you as far as wanting to open the slot.
+     1 | I only understood you as far as wanting to insert the gold card in the slot.
+     1 | I only understood you as far as wanting to insert the fluid link in the fluid link.
+     1 | I only understood you as far as wanting to search the small cloth pouch.
+     1 | I only understood you as far as wanting to examine the workbench.
+     1 | You see nothing special about the floor.
+     1 | I only understood you as far as wanting to insert the fluid link into K9.
+     1 | I only understood you as far as wanting to insert the unlit match into K9.
+     1 | I only understood you as far as wanting to close K9.
+     1 | I only understood you as far as wanting to search the tiny space.
+     1 | There is nothing on the workbench.
+     1 | I only understood you as far as wanting to hold the homing device.
+     1 | I only understood you as far as wanting to hold the ceiling.
+     1 | You see nothing special about the burning match.
+     1 | You can't go that way.\n\nA deafening roar shakes the ground as the spaceship's thrusters fire and it rockets upwards into the sky.  Unfortunately, you do not fully appreciate this spectacle, as you are burned to death by the blast from the engines.\n\n\n    *** You have died ***\n\n\nIn that game you scored 5 out of a possible 170, in 79 turns.\n\nWould you like to RESTART, RESTORE a saved game, give the FULL score for that game or QUIT
+     1 | I only understood you as far as wanting to screw the small panel.
+     1 | What do you want to put the gold card underneat?
+     1 | You're not holding the fluid link.
+     1 | I only understood you as far as wanting to follow the homing device.
+     1 | What do you want to follow?
+     1 | What do you want to search?
+     1 | What do you want to lock?
+     1 | I only understood you as far as wanting to wait.
+     1 | I only understood you as far as wanting to adjust the scanner.
+     1 | I only understood you as far as wanting to climb the northwest wall.
+     1 | You can't use multiple objects with that verb.
+     1 | You don't have anything to shoot with.
+     1 | I only understood you as far as wanting to play.
+     1 | What do you want to knock on?
+     1 | I only understood you as far as wanting to turn the fluid link.
+     1 | I only understood you as far as wanting to insert the fluid link in the slot.
+     1 | I only understood you as far as wanting to rub the fluid link.
+     1 | I only understood you as far as wanting to swing the fluid link.
+     1 | I only understood you as far as wanting to flip the fluid link.
+     1 | I only understood you as far as wanting to climb the south wall.
+     1 | What do you want to climb up?
+     1 | I only understood you as far as wanting to south the fluid link.
+     1 | I only understood you as far as wanting to get the brain case.
+     1 | I only understood you as far as wanting to wave the withered branch.
+     1 | I only understood you as far as wanting to pull the main doors.
+     1 | You're not wearing that.

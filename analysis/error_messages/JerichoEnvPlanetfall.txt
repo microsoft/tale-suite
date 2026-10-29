@@ -1,0 +1,762 @@
+# Invalid Action Messages: JerichoEnvPlanetfall
+# Total unique error messages: 755
+# Total error occurrences: 13921
+#
+# Format: count | message
+#===============================================================================
+
+  2271 | Time passes...
+  1169 | I can't find a verb in that sentence!
+   823 | I don't know the word '>'.
+   565 | I beg your pardon?
+   520 | I don't know the word 'you'.
+   503 | I don't know the word '`get'.
+   468 | I don't know the word '**action:**'.
+   461 | I don't know the word '`scrub'.
+   450 | I don't know the word 'about'.
+   391 | What do you want to listen to?
+   333 | I don't understand that sentence.
+   153 | You can't reach it from here.
+   151 | I don't know the word 'let's'.
+   123 | You can't see any bulkhead here!
+   115 | I don't know the word 'apologize'.
+   102 | I don't know the word 'check'.
+    89 | Nothing happens.
+    87 | I don't know the word '`examine'.
+    86 | You can't go that way.
+    83 | I don't know the word '`look'.
+    81 | You can't close it yourself.\nThe pod door clangs shut as heavy explosions continue to buffet the Feinstein.
+    80 | I don't know the word '**open'.
+    77 | I don't know the word '`inspect'.
+    77 | I don't know the word '```'.
+    76 | I don't know the word '**bulkhead**'.
+    76 | I don't know the word '`begin'.
+    75 | I don't know the word 'northeast'.
+    72 | I don't know the word '`'.
+    71 | You find nothing unusual.
+    69 | I don't know the word 'nine'.
+    68 | I don't know the word '**pod**'.
+    67 | I don't know the word 'inspect'.
+    66 | I don't know the word 'beach'.
+    64 | I don't know the word 'launch'.
+    60 | I don't know the word 'use'.
+    58 | I don't know the word 'land'.
+    58 | I don't know the word 'southwest'.
+    58 | I don't know the word 'order'.
+    55 | I don't know the word 'booklet'.
+    53 | I don't know the word '```enter'.
+    50 | You already have it.\nThe ambassador recites a plea for co-existence between your races.
+    45 | I don't know the word 'bunks'.
+    42 | I don't know the word 'island'.
+    42 | I don't know the word '`go'.
+    42 | I don't know the word 'planet'.
+    39 | You already have it.
+    37 | I don't know the word '`enter'.
+    36 | I don't know the word 'corridor'.
+    36 | I don't know the word 'word'.
+    35 | I don't know the word 'try'.
+    33 | I don't know the word '`up`'.
+    33 | I don't know the word 'game'.
+    33 | I don't know the word '`use'.
+    30 | I don't know the word 'hatch'.
+    30 | I don't know the word 'pencil'.
+    29 | You're already in it!\nThe pod door clangs shut as heavy explosions continue to buffet the Feinstein.
+    29 | I don't know the word 'sorry'.
+    29 | I don't know the word '`move'.
+    28 | You can't see any key here!
+    28 | I don't know the word '`open'.
+    27 | I don't know the word '`clean'.
+    26 | You can't see any Blather here!
+    26 | I don't know the word '**scrub'.
+    26 | I don't know the word 'demerits'.
+    26 | I don't know the word 'says'.
+    25 | I don't know the word 'buildings'.
+    25 | I don't know the word 'room'.
+    25 | I don't know the word '`climb'.
+    25 | I don't know the word '`sweep'.
+    24 | I don't know the word 'back'.
+    24 | I don't know the word '`gangway`'.
+    23 | You can't see any escape pod here!
+    23 | I don't know the word 'level'.
+    23 | I don't know the word '''.
+    23 | I don't know the word '`pick'.
+    22 | I don't know the word 'i'm'.
+    22 | You can't see any button here!
+    22 | I don't know the word 'wall'.
+    22 | I don't know the word 'buy'.
+    22 | You already have it.\nThe ambassador remarks that all humans look alike to him.
+    22 | I don't know the word '`activate'.
+    21 | I don't know the word 'landing'.
+    20 | I don't know the word '**up**'.
+    20 | What do you want to unlock the pod bulkhead with?
+    20 | I don't know the word '`press'.
+    19 | I don't know the word '**starboard**'.
+    19 | I don't know the word '`survey'.
+    18 | I don't know the word '**port**'.
+    18 | It's already open!\nMore powerful explosions buffet the ship. The lights flicker madly, and the escape-pod bulkhead clangs shut.
+    18 | You can't see any survival kit here!
+    18 | I don't know the word 'progress'.
+    18 | I don't know the word '*note:'.
+    18 | I don't know the word '`look`'.
+    17 | I don't know the word 'plateau'.
+    17 | I don't know the word 'cell'.
+    17 | I don't know the word 'voice'.
+    17 | You can't see any pod controls here!
+    17 | I don't know the word '(try'.
+    17 | I don't know the word '(i'.
+    16 | You can't go that way.\n"I said to return to your post, Ensign Seventh Class!" bellows Blather, turning a deepening shade of crimson.
+    16 | I don't know the word 'stop'.
+    16 | I don't know the word '`ascend'.
+    15 | You can't see any panel here!
+    15 | I don't know the word 'you're'.
+    15 | I don't know the word '`help`'.
+    15 | I don't know the word 'resume'.
+    15 | I don't know the word '`take'.
+    15 | I don't know the word '`grab'.
+    14 | I don't know the word '**aft**'.
+    14 | I don't know the word '`acquire'.
+    13 | I don't know the word 'commands'.
+    13 | I don't know the word 'manual'.
+    13 | I don't know the word 'return'.
+    13 | I don't know the word 'am'.
+    13 | I don't know the word 'descend'.
+    13 | You can't see any kit here!
+    13 | I don't know the word '`up'.
+    13 | I don't know the word '`obtain'.
+    12 | I don't know the word 'brace'.
+    12 | You can't see any pod here!
+    12 | I don't know the word 'beds'.
+    12 | I don't know the word 'post'.
+    12 | I don't know the word 'clipboard'.
+    12 | I don't know the word 'please'.
+    12 | I don't know the word 'these'.
+    11 | I don't know the word 'accept'.
+    11 | I don't know the word '`swab'.
+    10 | You don't have that!
+    10 | I don't know the word 'text'.
+    10 | I don't know the word '**gangway**'.
+    10 | I don't know the word '**escape'.
+    10 | I don't know the word '**open**'.
+    10 | I don't know the word 'water'.
+    10 | I don't know the word 'continue'.
+    10 | I don't know the word 'prepare'.
+    10 | I don't know the word 'explain'.
+    10 | I don't know the word 'investigate'.
+    10 | I don't know the word '`ascend`'.
+    10 | You can't see any screen here!
+    10 | I don't know the word '(in'.
+     9 | I don't know the word '**door**'.
+     9 | What do you want to climb down?
+     9 | I don't know the word 'more'.
+     9 | I don't know the word 'settle'.
+     9 | I don't know the word 'strap'.
+     9 | You can't do that.
+     9 | I don't know the word 'co-existence'.
+     9 | I don't know the word 'plea'.
+     9 | I don't know the word 'work'.
+     9 | I don't know the word 'there'.
+     9 | I don't know the word '(note:'.
+     9 | I don't know the word '(after'.
+     8 | I don't know the word 'quickly'.
+     8 | I don't know the word 'hall'.
+     8 | I don't know the word '**answer:**'.
+     8 | I don't know the word '**command:**'.
+     8 | I don't know the word 'book'.
+     8 | You can't close it yourself.
+     8 | I don't know the word 'autopilot'.
+     8 | I don't know the word 'coexistence'.
+     8 | I don't know the word 'ceremony'.
+     8 | I don't know the word '*remember'.
+     8 | I don't know the word '`push'.
+     8 | I don't know the word '`approach'.
+     8 | I don't know the word '`walk'.
+     8 | I don't know the word '`inventory`'.
+     7 | I don't know the word 'eject'.
+     7 | I don't know the word 'breath'.
+     7 | I don't know the word 'southeast'.
+     7 | You can't see any machinery here!
+     7 | I don't know the word 'decline'.
+     7 | I don't know the word 'finish'.
+     7 | I don't know the word 'pry'.
+     7 | I don't know the word 'religious'.
+     7 | I don't know the word 'planetfall'.
+     7 | You're already in it!\nYou feel the pod begin to slide down its ejection tube as explosions shake the mother ship.
+     7 | You can't see any ambassador here!
+     7 | I don't know the word '`proceed'.
+     7 | You can't see any slot here!
+     7 | I don't know the word 'orders'.
+     7 | I don't know the word '`wipe'.
+     6 | I don't know the word 'now'.
+     6 | I don't know the word 'locked'.
+     6 | You can't go that way.\nBlather loses his last vestige of patience and drags you to the Feinstein's brig. He throws you in, and the door clangs shut behind you.\n\nBrig\nYou are in the Feinstein's brig. Graffiti cover the walls. The cell door to the south is locked.
+     6 | I don't know the word 'northwest'.
+     6 | You can't open it with your hands.
+     6 | I don't know the word 'tie'.
+     6 | I don't know the word 'tight'.
+     6 | You can't see any brochure here!
+     6 | I don't know the word 'arrive'.
+     6 | I don't know the word 'hear'.
+     6 | I don't know the word 'come'.
+     6 | I don't know the word 'swipe'.
+     6 | I don't know the word 'walls'.
+     6 | I don't know the word 'buckle'.
+     6 | I don't know the word 'start'.
+     6 | What do you want to look out?
+     6 | I don't know the word 'world'.
+     6 | I don't know the word '`observe'.
+     6 | I don't know the word 'seems'.
+     6 | I don't know the word 'i'sensitive'.
+     6 | I don't know the word 'unscrew'.
+     5 | I don't know the word 'fasten'.
+     5 | I don't know the word 'surface'.
+     5 | I don't know the word 'actions'.
+     5 | I don't know the word '**go'.
+     5 | I don't know the word '**help**'.
+     5 | I don't know the word '**'.
+     5 | I don't know the word '**north**'.
+     5 | What do you want to type?
+     5 | What do you want to brush?
+     5 | I don't know the word '**enter**'.
+     5 | I don't know the word '**enter'.
+     5 | I don't know the word '**break'.
+     5 | I don't know the word '**unlock'.
+     5 | I don't know the word '**unseal'.
+     5 | I don't know the word '**look**'.
+     5 | I don't know the word '**push'.
+     5 | I don't know the word 'rocks'.
+     5 | I don't know the word 'stay'.
+     5 | I don't know the word 'head'.
+     5 | I don't know the word 'carefully'.
+     5 | I don't know the word 'instructions'.
+     5 | I don't know the word 'guide'.
+     5 | I don't know the word 'captain'.
+     5 | I don't know the word 'moment'.
+     5 | I don't know the word 'cleaning'.
+     5 | That doesn't work.
+     5 | I don't know the word 'exports'.
+     5 | I don't know the word 'not'.
+     5 | There doesn't seem to be any way to open it.\nThe ship rocks from the force of multiple explosions. The lights go out, and you feel a sudden drop in pressure accompanied by a loud hissing. Too bad you weren't in the escape pod...\n \n   ****  You have died  **** \n\nOh, well. According to the Treaty of Gishen IV, signed in 8747 GY, all adventure game players must be given another chance after dying. In the interests of interstellar peace, would you like to play again? (Y is affirmative):
+     5 | I don't know the word 'mail'.
+     5 | I don't know the word 'as'.
+     5 | I don't know the word '`ass'.
+     5 | I don't know the word '`check'.
+     5 | I don't know the word '`type'.
+     5 | I don't know the word '`search'.
+     5 | I don't know the word 'appears'.
+     5 | I don't know the word '`bulkhead`'.
+     5 | I don't know the word '(or)'.
+     5 | I don't know the word '(either'.
+     5 | I don't know the word '```sence'.
+     5 | I don't know the word 'report'.
+     5 | I don't know the word 'because'.
+     5 | I don't know the word 'force'.
+     5 | I don't know the word 'âmayâ'.
+     4 | I don't know the word 'source'.
+     4 | I don't know the word 'origin'.
+     4 | What do you want to unlock the escape pod with?
+     4 | I don't know the word 'switch'.
+     4 | I don't know the word '**down**'.
+     4 | I don't know the word '**return**'.
+     4 | I don't know the word '**back**'.
+     4 | I don't know the word '**brush'.
+     4 | I don't know the word 'crag'.
+     4 | You can't see any green goo here!
+     4 | You can't do that to an escape pod.\nThe pod door clangs shut as heavy explosions continue to buffet the Feinstein.
+     4 | You can't see any dial here!
+     4 | I don't know the word 'hider'.
+     4 | I don't know the word 'hide'.
+     4 | You don't have the glass flask.
+     4 | I don't know the word 'biography'.
+     4 | I don't know the word 'hyperspatial'.
+     4 | What do you want to salute?
+     4 | I don't know the word 'sound'.
+     4 | I don't know the word 'pay'.
+     4 | I don't know the word 'still'.
+     4 | I don't know the word 'eight'.
+     4 | I don't know the word 'assistance'.
+     4 | You can't see any id card here!
+     4 | You don't have the safety web.
+     4 | I don't know the word 'coex'.
+     4 | I don't know the word 'adventure'.
+     4 | I don't know the word 'beg'.
+     4 | I don't know the word 'pardon'.
+     4 | I don't know the word 'job'.
+     4 | You can't see any paper here!
+     4 | I don't know the word 'thing'.
+     4 | I don't see what you are referring to.\n"I said to return to your post, Ensign Seventh Class!" bellows Blather, turning a deepening shade of crimson.
+     4 | I don't know the word 'die'.
+     4 | I don't know the word 'who'.
+     4 | I don't know the word '`begint'.
+     4 | I don't know the word '*r'.
+     4 | I don't know the word '`access'.
+     4 | I don't know the word 'note'.
+     4 | I don't know the word 'shine'.
+     4 | I don't know the word 'obey'.
+     4 | I don't know the word '`mop'.
+     4 | I don't know the word 'here'.
+     4 | I don't know the word '```i'.
+     4 | I don't know the word 'alarm'.
+     4 | I don't know the word 'patch'.
+     4 | I don't know the word 'hull'.
+     4 | I don't know the word 'kneel'.
+     4 | I don't know the word 'hang'.
+     3 | I don't know the word 'user'.
+     3 | I don't know the word 'why'.
+     3 | I don't know the word 'trail'.
+     3 | I don't know the word 'comes'.
+     3 | You can't see any structure here!
+     3 | I don't know the word 'brig'.
+     3 | I don't know the word 'handle'.
+     3 | I don't know the word 'fill'.
+     3 | I don't know the word 'remain'.
+     3 | You're not holding the survival kit!
+     3 | I don't know the word 'closely'.
+     3 | You don't have the good ninety-ohm bedistor.
+     3 | I don't know the word 'list'.
+     3 | I don't know the word 'attention'.
+     3 | I don't know the word 'duck'.
+     3 | I don't know the word 'crouch'.
+     3 | There doesn't seem to be any way to open it.\nAn enormous explosion tears the walls of the ship apart. If only you had made it to the escape pod...\n \n   ****  You have died  **** \n\nOh, well. According to the Treaty of Gishen IV, signed in 8747 GY, all adventure game players must be given another chance after dying. In the interests of interstellar peace, would you like to play again? (Y is affirmative):
+     3 | I don't know the word 'thoroughly'.
+     3 | I don't know the word 'bang'.
+     3 | I don't know the word 'activity'.
+     3 | I don't know the word 'noise'.
+     3 | I don't know the word 'surroundings'.
+     3 | What do you want to search?
+     3 | What do you want to sit the webbing in?
+     3 | I don't know the word 'bribe'.
+     3 | You can't see any ocean here!
+     3 | I don't know the word 'top'.
+     3 | I don't know the word 'coexistance'.
+     3 | I don't know the word 'wipe'.
+     3 | I don't see what you are referring to.
+     3 | I don't know the word 'conversation'.
+     3 | I don't know the word 'goodbye!'.
+     3 | I don't know the word '*blank'.
+     3 | I don't know the word '(end'.
+     3 | I don't know the word 'further'.
+     3 | I don't know the word '`assistant'.
+     3 | I don't know the word '`name'.
+     3 | I don't know the word 'term'.
+     3 | I don't know the word '`pod'.
+     3 | I don't know the word '`pod`'.
+     3 | I don't know the word '`head'.
+     3 | I don't know the word '`commands`'.
+     3 | I don't know the word 'exploring'.
+     3 | I don't know the word 'bow'.
+     3 | I don't know the word 'clue'.
+     3 | I don't know the word 'directions'.
+     3 | I don't know the word 'advice'.
+     3 | I don't know the word 'just'.
+     3 | I don't know the word 'override'.
+     3 | You can't see any celery here!
+     2 | I don't know the word 'thrusters'.
+     2 | I don't know the word 'code'.
+     2 | I don't know the word 'assistant'.
+     2 | I don't know the word 'shore'.
+     2 | I don't know the word 'rock'.
+     2 | You can't see any cleft here!
+     2 | I don't know the word 'don't'.
+     2 | I don't know the word 'entrance'.
+     2 | I don't know the word 'upward'.
+     2 | I don't know the word 'explosion'.
+     2 | I don't know the word 'wrap'.
+     2 | I don't know the word 'branches'.
+     2 | You can't see any red goo here!
+     2 | I don't know the word 'u-shaped'.
+     2 | You don't have the curved metal bar.
+     2 | You can't see any escape pod here!\nYou hear a distant bellowing ... something about an Ensign Seventh Class whose life is in danger.
+     2 | I don't know the word 'menu'.
+     2 | I don't know the word 'interior'.
+     2 | You can't close it yourself.\nThe pod is now completely submerged, and you feel it smash against underwater rocks. Bubbles streaming upward past the window indicate that the pod is continuing to sink.
+     2 | What do you want to hold?
+     2 | I don't know the word 'air'.
+     2 | You can't see any controls here!
+     2 | You can't see any safety webbing here!\nAn enormous explosion tears the walls of the ship apart. If only you had made it to the escape pod...\n \n   ****  You have died  **** \n\nOh, well. According to the Treaty of Gishen IV, signed in 8747 GY, all adventure game players must be given another chance after dying. In the interests of interstellar peace, would you like to play again? (Y is affirmative):
+     2 | I don't know the word 'map'.
+     2 | There doesn't seem to be any way to open it.\nExplosions continue to rock the ship.
+     2 | It's already open!
+     2 | I don't know the word 'nothing'.
+     2 | I don't know the word 'thank'.
+     2 | I don't know the word 'blobs'.
+     2 | I don't know the word 'stabilize'.
+     2 | You are already in it!
+     2 | I don't know the word 'do'.
+     2 | You can't see any gangway here!
+     2 | I don't know the word 'call'.
+     2 | I don't know the word 'be'.
+     2 | I don't know the word 'ready'.
+     2 | I don't know the word 'sounds'.
+     2 | I don't know the word 'voices'.
+     2 | I don't know the word 'response'.
+     2 | I don't know the word 'someone'.
+     2 | I don't know the word 'rescue'.
+     2 | I don't know the word 'aid'.
+     2 | I don't know the word 'commotion'.
+     2 | I don't know the word 'something'.
+     2 | I don't know the word 'sneak'.
+     2 | You can't see any console here!
+     2 | You already have it.\nThe ambassador introduces himself as Br'gun-te'elkner-ipg'nun.
+     2 | I don't know the word 'mapped-file'.
+     2 | What do you want to drink?
+     2 | I don't know the word 'system'.
+     2 | I don't know the word 'blow'k-bibben-gordo'.
+     2 | I don't know the word 'major'.
+     2 | I don't know the word 'plead'.
+     2 | You can't give a brochure to a brochure!\nA massive explosion rocks the ship. Echoes from the explosion resound deafeningly down the halls. The door to port slides open. Blather, confused by this non-routine occurrence, orders you to continue scrubbing the floor, and then dashes off.
+     2 | I don't know the word 'purchase'.
+     2 | I don't know the word 'position'.
+     2 | I don't know the word 'ninth'.
+     2 | I don't know the word 'division'.
+     2 | I don't know the word 'islands'.
+     2 | I don't know the word 'cap'.
+     2 | You can't see any south door here!
+     2 | I don't know the word 'request'.
+     2 | You can't go that way.\nA massive explosion rocks the ship. Echoes from the explosion resound deafeningly down the halls.
+     2 | What do you want to go?
+     2 | There is no escape. We control the horizontal. We control the vertical. We control the disk drives...\nYou feel the pod begin to slide down its ejection tube as explosions shake the mother ship.
+     2 | I don't know the word 'fall'.
+     2 | You can't see any structures here!
+     2 | I don't know the word 'dying'.
+     2 | I don't know the word 'command'.
+     2 | I don't know the word '`insight'.
+     2 | I don't know the word '`ins'.
+     2 | I don't know the word '`begin''.
+     2 | I don't know the word '```*'.
+     2 | I don't know the word '*'.
+     2 | I don't know the word '*remem'.
+     2 | I don't know the word '`inspectate'.
+     2 | I don't know the word '`at'.
+     2 | I don't know the word '`action'.
+     2 | I don't know the word '`asspect'.
+     2 | I don't know the word '`view'.
+     2 | I don't know the word '`see'.
+     2 | I don't know the word 'inspector'.
+     2 | I don't know the word ''s'.
+     2 | I don't know the word 'm'.
+     2 | I don't know the word '`climb`'.
+     2 | I don't know the word '`escape'.
+     2 | I don't know the word 'which'.
+     2 | I don't know the word 'fits'.
+     2 | I don't know the word 'fits!'.
+     2 | I don't know the word 'yo'.
+     2 | I don't know the word 'abort'.
+     2 | I don't know the word 'snorts'.
+     2 | I don't know the word 'task'.
+     2 | I don't know the word 'has'.
+     2 | I don't know the word '`engage'.
+     2 | I don't know the word '---'.
+     2 | I don't know the word 'can'sensitive'.
+     2 | I don't know the word 'can''.
+     2 | I don't know the word 'i''.
+     2 | I don't know the word 'unfasten'.
+     2 | You can't see any reactor here!
+     2 | You can't see any towel here!
+     2 | I don't know the word 'hook'.
+     2 | I don't know the word 'seal'.
+     2 | I don't know the word 'nose'.
+     2 | I don't know the word 'grip'.
+     2 | I don't know the word 'often'.
+     2 | I don't know the word 'that's'.
+     2 | I don't know the word 'hallway'.
+     2 | I don't know the word 'mission'.
+     2 | You can't see any brown goo here!
+     2 | I don't know the word 'leak'.
+     2 | You can't see any reactor here!\n"I said to return to your post, Ensign Seventh Class!" bellows Blather, turning a deepening shade of crimson.
+     2 | I don't know the word 'ion'.
+     2 | I don't know the word 'hurry'.
+     2 | I don't know the word 'grovel'.
+     2 | I don't know the word 'instruction'.
+     2 | I don't know the word 'excuse'.
+     2 | I don't know the word 'confess'.
+     2 | I don't know the word 'repent'.
+     2 | I don't know the word 'tip'.
+     2 | I don't know the word 'flyer'.
+     2 | I don't know the word 'comply'.
+     2 | I don't know the word 'sir'.
+     2 | I don't know the word 'roger'.
+     2 | I don't know the word 'im'.
+     2 | I don't know the word 'working'.
+     2 | I don't know the word 'stoop'.
+     2 | I don't know the word 'bend'.
+     2 | I don't know the word 'low'.
+     2 | I don't know the word 'crawl'.
+     2 | I don't know the word 'squat'.
+     2 | I don't know the word 'clarify'.
+     2 | What do you want to take off?
+     2 | I don't know the word 'grab'.
+     2 | I don't know the word 'harness'.
+     2 | I don't know the word 'touchdown'.
+     2 | I don't know the word 'park'.
+     2 | I don't know the word 'bash'.
+     2 | I don't know the word 'nay'.
+     2 | What do you want to slide the id card under?
+     2 | You don't have the escape pod.
+     2 | You can't see any blue button here!
+     2 | What do you want to push down?
+     2 | You can't see any brush here!
+     2 | I don't know the word 'apart'.
+     1 | I don't know the word 'main'.
+     1 | I don't know the word 'vejz655755555555555555555555555555555555555555555555555555555555555555'.
+     1 | I don't know the word 'tightly'.
+     1 | You are already in it!\nYou feel the temperature begin to rise, and the pod's climate control system roars as it labors to compensate.
+     1 | I don't know the word 'closest'.
+     1 | You can't see any complex here!
+     1 | You can't see any safety webbing here!
+     1 | I don't know the word 'by'.
+     1 | You can't see any lever here!
+     1 | You can't see any lock here!
+     1 | I don't know the word 'arrived'.
+     1 | I don't know the word 'softly'.
+     1 | I don't know the word 'info'.
+     1 | I don't know the word 'courtyard'.
+     1 | I don't know the word 'baas'.
+     1 | It's already open.
+     1 | You don't have the Patrol-issue self-contained multi-purpose scrub brush.
+     1 | You don't have the K-series megafuse.
+     1 | You can't see any north door here!
+     1 | I don't know the word '`l`'.
+     1 | I don't know the word '`north`'.
+     1 | I don't know the word '`port`'.
+     1 | I don't know the word '`i`'.
+     1 | You can't see any webbing here!
+     1 | I don't know the word 'ship'.
+     1 | I don't know the word 'log'.
+     1 | You can't see any computer terminal here!\nEnsign First Class Blather swaggers in. He studies your work with half-closed eyes. "You call this polishing, Ensign Seventh Class?" he sneers. "We have a position for an Ensign Ninth Class in the toilet-scrubbing division, you know. Thirty demerits." He glares at you, his arms crossed.
+     1 | I don't know the word 'cover'.
+     1 | I don't know the word 'auxiliary'.
+     1 | You can't see any port door here!
+     1 | You can't see any escape lever here!
+     1 | I don't know the word 'fast'.
+     1 | I don't know the word 'hard'.
+     1 | I don't know the word 'repeatedly'.
+     1 | I don't know the word 'faster'.
+     1 | You are already in it!\nAs the escape pod tumbles away from the former location of the Feinstein, its gyroscopes whine. The pod slowly stops tumbling. Lights on the control panel blink furiously as the autopilot searches for a reasonable destination.
+     1 | You are already in it!\nThe main thrusters fire a long, gentle burst. A monotonic voice issues from the control panel. "Approaching planet...human-habitable."
+     1 | I don't know the word 'guard'.
+     1 | I don't know the word 'make'.
+     1 | I don't know the word 'ejection'.
+     1 | I don't know the word 'observe'.
+     1 | I don't know the word 'route'.
+     1 | I don't know the word 'while'.
+     1 | I don't know the word 'items'.
+     1 | I don't know the word 'anything'.
+     1 | I don't know the word 'clues'.
+     1 | I don't know the word 'rest'.
+     1 | You can't go that way.\nA massive explosion rocks the ship. Echoes from the explosion resound deafeningly down the halls. Blather, looking slightly disoriented, barks at you to resume your assigned duties.\n"I said to return to your post, Ensign Seventh Class!" bellows Blather, turning a deepening shade of crimson.
+     1 | I don't know the word 'apologise'.
+     1 | You can't see any id here!
+     1 | You can't see any uniform here!
+     1 | You can't see any scrub brush here!
+     1 | There is nothing but dust there.\nA massive explosion rocks the ship. Echoes from the explosion resound deafeningly down the halls.
+     1 | You can't go that way.\nThrough the viewport of the pod you see the Feinstein dwindle as you head away. Bursts of light dot its hull. Suddenly, a huge explosion blows the Feinstein into tiny pieces, sending the escape pod tumbling away! \nYou are thrown against the bulkhead, bruising a few limbs. The safety webbing might have offered a bit more protection.
+     1 | You are already in it!\nThe auxiliary rockets fire briefly, and a nearby planet swings into view through the port. It appears to be almost entirely ocean, with just a few visible islands and an unusually small polar ice cap. A moment later, the system's sun swings into view, and the viewport polarizes into a featureless black rectangle.
+     1 | You are already in it!\nThe pod lands with a thud. Through the viewport you can see a rocky cleft and some water below. The pod rocks gently back and forth as if it was precariously balanced. A previously unseen panel slides open, revealing some emergency provisions, including a survival kit and a towel.
+     1 | You can't see any red button here!
+     1 | You can't go that way.\nAn enormous explosion tears the walls of the ship apart. If only you had made it to the escape pod...\n \n   ****  You have died  **** \n\nOh, well. According to the Treaty of Gishen IV, signed in 8747 GY, all adventure game players must be given another chance after dying. In the interests of interstellar peace, would you like to play again? (Y is affirmative):
+     1 | I don't know the word 'greet'.
+     1 | You don't have the piece of celery.
+     1 | I don't know the word 'ramble'.
+     1 | I don't know the word 'freeze'.
+     1 | You can't see any Floyd here!\nEither the crevice is too narrow, or your fingers are too large.
+     1 | You can't see any Floyd here!\nAdmin Corridor
+     1 | I don't know the word 'hider-and-seeker'.
+     1 | That doesn't work.\nFloyd tells you about the time he helped someone sharpen a pencil.
+     1 | I don't know the word 'upstairs'.
+     1 | There doesn't seem to be any way to open it.\nMore powerful explosions buffet the ship. The lights flicker madly, and the escape-pod bulkhead clangs shut.
+     1 | I don't know the word 'thirty'.
+     1 | I don't know the word 'ice'.
+     1 | I don't know the word 'polar'.
+     1 | You can't go that way.\nAnother explosion. A narrow bulkhead at the base of the gangway slams shut!
+     1 | I don't know the word 'dry'.
+     1 | I don't know the word 'ignore'.
+     1 | I don't know the word 'argue'.
+     1 | I don't know the word 'wrong'.
+     1 | I don't know the word 'bad'.
+     1 | I don't know the word 'mean'.
+     1 | I don't know the word 'spot'.
+     1 | What do you want to touch?
+     1 | I don't know the word 'hidden'.
+     1 | You can't see any computer here!
+     1 | I don't know the word 'happening'.
+     1 | I don't know the word 'saying'.
+     1 | I don't know the word 'telling'.
+     1 | I don't see what you are referring to.\nThe pod is buffeted as it enters the planet's atmosphere.
+     1 | I don't know the word 'my'.
+     1 | You are already standing, I think.\n"I said to return to your post, Ensign Seventh Class!" bellows Blather, turning a deepening shade of crimson.
+     1 | You are already standing, I think.\nYou are deafened by more explosions and by the sound of emergency bulkheads slamming closed. Blather, foaming slightly at the mouth, screams at you to swab the decks.\n"I said to return to your post, Ensign Seventh Class!" bellows Blather, turning a deepening shade of crimson.
+     1 | You can't see any duty here!
+     1 | I don't know the word 'speaker'.
+     1 | You can't see any message here!
+     1 | I don't know the word 'temperature'.
+     1 | I don't know the word 'heat'.
+     1 | I don't know the word 'it's'.
+     1 | I don't know the word 'hot'.
+     1 | I don't know the word 'burning'.
+     1 | I don't know the word 'badly'.
+     1 | I don't know the word 'pain'.
+     1 | I don't know the word 'sick'.
+     1 | I don't know the word 'going'.
+     1 | I don't know the word 'soon'.
+     1 | I don't know the word 'finished'.
+     1 | I don't know the word 'done'.
+     1 | I don't know the word 'refuse'.
+     1 | I don't know the word 'thanks'.
+     1 | What do you want to activate?
+     1 | You can't go that way.\nThe pod, whose automated controls were unfortunately designed by computer scientists, lands with a good deal of force. Your body sails across the pod until it is stopped by one of the sharper corners of the control panel.\n \n   ****  You have died  **** \n\nOh, well. According to the Treaty of Gishen IV, signed in 8747 GY, all adventure game players must be given another chance after dying. In the interests of interstellar peace, would you like to play again? (Y is affirmative):
+     1 | I don't know the word '`scrubbingtonallytive'.
+     1 | What do you want to scrub?
+     1 | I don't know the word 'free'.
+     1 | I don't know the word '`inspectivebrat'.
+     1 | I don't know the word '`inspectimprove'.
+     1 | I don't know the word '`inspropret'.
+     1 | I don't know the word '`inspectas'.
+     1 | I don't know the word '`ight'.
+     1 | I don't know the word '*note'.
+     1 | I don't know the word '```s'.
+     1 | I don't know the word '```*use'.
+     1 | I don't know the word '`find'.
+     1 | I don't know the word '`inspectateenspectate'.
+     1 | I don't know the word '`insolate'.
+     1 | I don't know the word '`other'.
+     1 | I don't know the word '`word'.
+     1 | I don't know the word '`beginplay'.
+     1 | I don't know the word '-levellevel-level-end'.
+     1 | I don't know the word '-level'.
+     1 | I don't know the word '-'.
+     1 | I don't know the word 'verb'.
+     1 | I don't know the word 'here's'.
+     1 | I don't know the word ''under'.
+     1 | I don't know the word 'ap'.
+     1 | I don't know the word 'itt'.
+     1 | What do you want to open?
+     1 | I don't know the word 'gre'.
+     1 | I don't know the word 'define'.
+     1 | I don't know the word 'if'.
+     1 | I don't know the word 'apire'.
+     1 | I don't know the word '`describe'.
+     1 | I don't know the word 'closed'.
+     1 | I don't know the word 'scout'.
+     1 | You can't see any communicator here!
+     1 | I don't know the word 'crackles'.
+     1 | You can't see any consoles here!
+     1 | I don't know the word 'covered'.
+     1 | I don't know the word 'bridge'.
+     1 | I don't know the word 'envelope'.
+     1 | I don't know the word 'crystalline'.
+     1 | You can't see any glowing here!
+     1 | I don't know the word 'jungle'.
+     1 | I don't know the word 'deeper'.
+     1 | I don't know the word 'formation'.
+     1 | I don't know the word 'path'.
+     1 | I don't know the word 'does'.
+     1 | I don't know the word 'keypad'.
+     1 | You can't see any object here!
+     1 | I don't know the word 'taken'.
+     1 | I don't know the word 'apparatus'.
+     1 | I don't know the word 'oxygen'.
+     1 | I don't know the word 'beeping'.
+     1 | I don't know the word '`operate'.
+     1 | I don't know the word '`depress'.
+     1 | I don't know the word '`touch'.
+     1 | I don't know the word '`turn'.
+     1 | You can't see any pod button here!
+     1 | I don't know the word '`scrub-brush`'.
+     1 | I don't know the word 'will'.
+     1 | I don't know the word '```your'.
+     1 | I don't know the word 'hope'.
+     1 | I don't know the word 'i're'.
+     1 | I don't know the word '```'sence'.
+     1 | I don't know the word 'i'try'.
+     1 | I don't know the word 'can'sensitive'try'.
+     1 | I don't know the word 'irror'.
+     1 | I don't know the word '(please'.
+     1 | I don't know the word 'i'sdf'.
+     1 | I don't know the word 'don'situation'.
+     1 | I don't know the word '```checking'.
+     1 | I don't know the word 'don's`check'.
+     1 | I don't know the word '```check'.
+     1 | I don't know the word '(1'.
+     1 | I don't know the word '(you'.
+     1 | I don't know the word 'can'vebored'.
+     1 | I don't know the word 'i'`check'.
+     1 | I don't know the word 'input'.
+     1 | I don't know the word 'ring'.
+     1 | I don't know the word 'trigger'.
+     1 | I don't know the word 'raise'.
+     1 | You can't do that.\nA massive explosion rocks the ship. Echoes from the explosion resound deafeningly down the halls. The door to port slides open.
+     1 | I don't know the word 'secure'.
+     1 | I don't know the word 'snap'.
+     1 | I don't know the word 'slow'.
+     1 | I don't know the word 'reduce'.
+     1 | I don't know the word 'throttle'.
+     1 | I don't know the word 'halt'.
+     1 | I don't know the word 'engines'.
+     1 | I don't know the word 'power'.
+     1 | I don't know the word 'speed'.
+     1 | I don't know the word 'coast'.
+     1 | What do you want to unlock the bulkhead with?
+     1 | You can't do that.\nThe alien ambassador from the planet Blow'k-bibben-Gordo ambles toward you from down the corridor. He is munching on something resembling an enormous stalk of celery, and he leaves a trail of green slime on the deck. He stops nearby, and you wince as a pool of slime begins forming beneath him on your newly-polished deck. The ambassador wheezes loudly and hands you a brochure outlining his planet's major exports.
+     1 | I don't know the word 'repeat'.
+     1 | I don't know the word 'negatory'.
+     1 | I don't know the word 'ordering'.
+     1 | You already have it.\nThe ambassador grunts a polite farewell, and disappears up the gangway, leaving a trail of dripping slime.
+     1 | I don't know the word 'jimmy'.
+     1 | I don't know the word 'wedge'.
+     1 | I don't know the word 'jam'.
+     1 | I don't know the word 'ram'.
+     1 | I don't know the word 'prod'.
+     1 | I don't know the word 'blaze'.
+     1 | I don't know the word 'ignite'.
+     1 | I don't know the word 'panic'.
+     1 | I don't know the word 'cram'.
+     1 | I don't know the word 'shove'.
+     1 | I don't know the word 'stick'.
+     1 | I don't know the word 'wiggle'.
+     1 | I don't know the word 'budge'.
+     1 | You can't move the escape pod bulkhead.
+     1 | I don't know the word 'poke'.
+     1 | I don't know the word 'tap'.
+     1 | I don't know the word 'name'.
+     1 | I don't know the word 'yourself'.
+     1 | I don't know the word 'greetings'.
+     1 | I don't know the word 'attach'.
+     1 | I don't know the word 'routine'.
+     1 | I don't know the word 'underway'.
+     1 | I don't know the word 'only'.
+     1 | I don't know the word 'chore'.
+     1 | I don't know the word 'performing'.
+     1 | I don't know the word 'copy'.
+     1 | You can't see any reader here!
+     1 | You can't see any pamphlet here!
+     1 | I don't know the word 'creep'.
+     1 | I don't know the word 'inch'.
+     1 | I don't know the word 'lift'.
+     1 | You are already standing, I think.\nAs the escape pod tumbles away from the former location of the Feinstein, its gyroscopes whine. The pod slowly stops tumbling. Lights on the control panel blink furiously as the autopilot searches for a reasonable destination.
+     1 | I don't know the word 'splash'.
+     1 | I don't know the word 'pilot'.
+     1 | I don't know the word 'course'.
+     1 | I don't know the word 'dive'.
+     1 | I don't know the word 'steady'.
+     1 | I don't know the word 'cliffs'.
+     1 | I don't know the word 'pass'.
+     1 | You can't see any bulkhead here!\n"I said to return to your post, Ensign Seventh Class!" bellows Blather, turning a deepening shade of crimson.
+     1 | You can't see any starboard bulkhead here!
+     1 | You already have it.\nA massive explosion rocks the ship. Echoes from the explosion resound deafeningly down the halls. The door to port slides open. The ambassador squawks frantically, evacuates a massive load of gooey slime, and rushes away.
+     1 | You can't see any padlock here!
+     1 | I don't know the word 'inv'.
+     1 | You can't reach it from here.\nAs the escape pod tumbles away from the former location of the Feinstein, its gyroscopes whine. The pod slowly stops tumbling. Lights on the control panel blink furiously as the autopilot searches for a reasonable destination.
+     1 | I don't know the word 'file'.
+     1 | I don't know the word 'twist'.
+     1 | I don't know the word 'screwdriver'.
+     1 | I don't know the word 'bristles'.
+     1 | I don't know the word 'rotate'.
+     1 | I don't know the word 'counterclockwise'.
+     1 | You can't go that way.\nThe pod door clangs shut as heavy explosions continue to buffet the Feinstein.
+     1 | You can't reach it from here.\nYou feel the pod begin to slide down its ejection tube as explosions shake the mother ship.
+     1 | I don't know the word 'tape'.
+     1 | I don't know the word 'dip'.
+     1 | I don't know the word 'wet'.
+     1 | I don't know the word 'may'.
+     1 | You can't see any wide bulkhead here!
+     1 | You can't see any pod door here!

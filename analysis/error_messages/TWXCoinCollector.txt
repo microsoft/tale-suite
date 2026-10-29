@@ -1,0 +1,8 @@
+# Invalid Action Messages: TWXCoinCollector
+# Total unique error messages: 1
+# Total error occurrences: 3526
+#
+# Format: count | message
+#===============================================================================
+
+  3526 | Unknown action: I'm not sure what you mean.

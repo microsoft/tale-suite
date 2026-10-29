@@ -1,0 +1,246 @@
+# Invalid Action Messages: JerichoEnvHuntdark
+# Total unique error messages: 239
+# Total error occurrences: 17533
+#
+# Format: count | message
+#===============================================================================
+
+  9113 | That's not a verb I recognize.
+  3013 | You can't see any such thing.
+  1170 | Time passes.
+  1005 | You seem to want to talk to someone, but I can't see whom.
+   453 | I only understood you as far as wanting to look.
+   353 | I beg your pardon?
+   178 | You don't have the energy to move.
+   150 | You see no gear or equipment on the corpse.\n\nBlood continues to trickle down your fingers.\n\nMore bats gather.
+   125 | Nothing obvious happens.
+   123 | What do you want to fire the crossbow at?
+   117 | I only understood you as far as wanting to inventory.
+   114 | I only understood you as far as wanting to wait.
+    90 | You can't reach back to your leg with that much dexterity.
+    67 | What do you want to bandage your arm with?
+    53 | You don't have enough leverage, stretched out like this.
+    51 | You don't have the energy to move.\n\nSomething is licking your arm. You close your eyes.\n\n\n    *** You have died ***\n\n\n\nWould you like to RESTART, RESTORE a saved game, UNDO your last move, or QUIT
+    47 | You already have that.\n\nSomething shifts in the darkness ahead, a great silent bulk. Your prey.
+    46 | I only understood you as far as wanting to move.
+    46 | Nothing happens.
+    45 | What do you want to shoot at?
+    44 | I didn't understand that sentence.
+    35 | I only understood you as far as wanting to shoot the crossbow.
+    35 | There is no sound here but your labored breath.
+    32 | What do you want to push?
+    32 | I only understood you as far as wanting to cock the crossbow.
+    32 | I only understood you as far as wanting to climb the pit below.
+    27 | Which do you mean, the left side passage or the right side passage?
+    24 | I only understood you as far as wanting to pull the crossbow.
+    23 | You find nothing of interest.
+    23 | What do you want to squeeze?
+    23 | I only understood you as far as wanting to go the (CaveCompass).
+    23 | You already have that.
+    21 | I only understood you as far as wanting to examine the claw.
+    18 | What do you want to turn?
+    18 | What do you want to twist?
+    18 | But you aren't in anything at the moment.
+    17 | What do you want to let go of?
+    17 | You can't use multiple objects with that verb.
+    16 | I only understood you as far as wanting to examine the pit.
+    16 | I only understood you as far as wanting to shine the lamplens.
+    15 | I only understood you as far as wanting to turn the crossbow.
+    14 | What do you want to climb?
+    14 | I only understood you as far as wanting to feel the roof.
+    14 | But you aren't in anything at the moment.\n\nYou are starting to feel quite chill and distant.
+    13 | Which do you mean, the pit above or the pit below?
+    13 | What do you want to search?
+    12 | You're not wearing that.
+    12 | I only understood you as far as wanting to shoot the claw.
+    11 | What do you want to examine?
+    11 | What do you want to tie the rope to?
+    10 | I only understood you as far as wanting to rest.
+    10 | But you aren't in anything at the moment.\n\nA stream of bats flickers overhead, around, never settling. You wave again. They seem more attracted than frightened by your hand.
+    10 | But you aren't in anything at the moment.\n\nYou shake your head to disperse the cold mist, and start to rub your eyes. It doesn't help, except to smear blood all over your face.
+    10 | But you aren't holding that.\n\nThe world is becoming distant. Shock, a voice says somewhere. That makes sense, you think; you can't have lost enough blood yet to affect you directly.
+     9 | What do you want to move?
+     9 | What do you want to pull?
+     9 | You see no gear or equipment on the corpse.\n\nA bat flutters down from overhead. And another. You wave your arms, but they're keeping their distance.
+     9 | I only understood you as far as wanting to feel the crawl ahead.
+     9 | I only understood you as far as wanting to stand.
+     9 | I only understood you as far as wanting to touch the corpse.
+     9 | I only understood you as far as wanting to cut the thighband.
+     8 | I only understood you as far as wanting to search the floor.
+     8 | I only understood you as far as wanting to pull the rope.
+     8 | What do you want to blow?
+     7 | You see no gear or equipment on the corpse.\n\nA stream of bats flickers overhead, around, never settling. You wave again. They seem more attracted than frightened by your hand.
+     7 | I only understood you as far as wanting to examine the crossbow.
+     7 | I only understood you as far as wanting to look the pit above.
+     7 | I only understood you as far as wanting to look at the pit.
+     7 | I only understood you as far as wanting to wipe the lamplens.
+     7 | But you aren't in anything at the moment.\n\nSomething moves on the ground nearby. You twist around violently, but it's not approaching you; the bat is crouched over the blood-stained stone where you fell.
+     7 | I only understood you as far as wanting to take the corpse.
+     7 | I only understood you as far as wanting to examine the corpse.
+     6 | I only understood you as far as wanting to wear the thighband.
+     6 | What do you want to dig?
+     6 | I only understood you as far as wanting to break the stone wall.
+     6 | I only understood you as far as wanting to climb the pit.
+     6 | Which do you mean, the crawl behind or the crawl ahead?
+     6 | You're not holding your crossbow.\n\nYou are starting to feel quite chill and distant.
+     6 | That's not something you can close.
+     5 | You see no gear or equipment on the corpse.\n\nYou are starting to feel quite chill and distant.
+     5 | I only understood you as far as wanting to look the pit.
+     5 | You see no gear or equipment on the corpse.
+     5 | I only understood you as far as wanting to feel the stone wall.
+     5 | I only understood you as far as wanting to search the pit.
+     5 | I only understood you as far as wanting to look the pit below.
+     5 | I only understood you as far as wanting to examine your bloody wound.
+     5 | I only understood you as far as wanting to pull the cocking lever.
+     5 | There is no safe descent here -- or even a risky one.
+     5 | But you aren't in anything at the moment.\n\nBlood continues to trickle down your fingers.\n\nMore bats gather.
+     4 | I only understood you as far as wanting to search the corpse.
+     4 | I only understood you as far as wanting to check the corpse.
+     4 | What do you want to rotate?
+     4 | I only understood you as far as wanting to examine the rope.
+     4 | I only understood you as far as wanting to climb the left side passage.
+     4 | You don't have the energy to move.\n\nSomething is licking your hands. You close your eyes.\n\n\n    *** You have died ***\n\n\n\nWould you like to RESTART, RESTORE a saved game, UNDO your last move, or QUIT
+     4 | I only understood you as far as wanting to pull your arm.
+     4 | You see no gear or equipment on the corpse.\n\nYou're starting to feel a bit less shaky.
+     4 | You already have that.\n\nA scrap of shadow flickers across a wall.
+     4 | There is no light ahead.
+     4 | I only understood you as far as wanting to set the crossbow.
+     4 | I only understood you as far as wanting to hold your bloody wound.
+     4 | That's not something you can open.
+     4 | I only understood you as far as wanting to pull the bowstring.
+     3 | I only understood you as far as wanting to swim.
+     3 | What do you want to bandage your bloody wound with?
+     3 | You can't reach back to your leg with that much dexterity.\n\nIt is dark.
+     3 | What do you want to shift?
+     3 | What do you want to feel?
+     3 | What do you want to tie the rags to?
+     3 | I only understood you as far as wanting to examine the pit below.
+     3 | I only understood you as far as wanting to enter the narrow crawl.
+     3 | I only understood you as far as wanting to think.
+     3 | I only understood you as far as wanting to jump the pit below.
+     3 | I only understood you as far as wanting to examine the stone blades.
+     3 | I only understood you as far as wanting to restart.
+     3 | I only understood you as far as wanting to turn the lamplens.
+     3 | I only understood you as far as wanting to tap the floor.
+     3 | I only understood you as far as wanting to examine the roof.
+     3 | I only understood you as far as wanting to feel the pit.
+     3 | I don't think much is to be achieved by that.
+     3 | I only understood you as far as wanting to take the crossbow.
+     3 | You're not holding your crossbow.\n\nSomething moves on the ground nearby. You twist around violently, but it's not approaching you; the bat is crouched over the blood-stained stone where you fell.
+     3 | You're not holding your crossbow.
+     3 | I only understood you as far as wanting to get the left side passage.
+     3 | I only understood you as far as wanting to rub yourself.
+     3 | What do you want to drop?
+     3 | You can't go that way.
+     2 | I only understood you as far as wanting to wave your arm.
+     2 | I only understood you as far as wanting to shoot the crossbow at the bats.
+     2 | I only understood you as far as wanting to throw the thighband.
+     2 | What do you want to press?
+     2 | What do you want to remove?
+     2 | I only understood you as far as wanting to feel the water.
+     2 | You can't reach back to your leg with that much dexterity.\n\nYou slump down. Just a little rest, a voice lies, but unfortunately you're too tired to argue with it.
+     2 | What do you want to break?
+     2 | What do you want to tie your arm to?
+     2 | What do you want to fire at?
+     2 | I only understood you as far as wanting to tie the thighband to the crossbow.
+     2 | I only understood you as far as wanting to enter the side chamber.
+     2 | I only understood you as far as wanting to examine the floor.
+     2 | I only understood you as far as wanting to climb the rope.
+     2 | I only understood you as far as wanting to shoot the crossbow at the rope.
+     2 | I only understood you as far as wanting to cover the lamplens.
+     2 | I only understood you as far as wanting to feel the floor.
+     2 | I only understood you as far as wanting to push the crossbow the crawl ahead.
+     2 | I only understood you as far as wanting to cut the rags.
+     2 | I only understood you as far as wanting to pull the rags.
+     2 | I only understood you as far as wanting to wave the crossbow.
+     2 | I only understood you as far as wanting to bandage your bloody wound with your bloody wound.
+     2 | I only understood you as far as wanting to examine the stone wall.
+     2 | I only understood you as far as wanting to tap the crossbow.
+     2 | I only understood you as far as wanting to pull the claw.
+     2 | Which do you mean, the rags or the bowstring?
+     2 | What do you want to tie the cloth strips to?
+     2 | You already have those.\n\nYou are starting to feel quite chill and distant.
+     2 | You're not holding your crossbow.\n\nBlood continues to trickle down your fingers.\n\nMore bats gather.
+     2 | You're not holding your crossbow.\n\nA stream of bats flickers overhead, around, never settling. You wave again. They seem more attracted than frightened by your hand.
+     2 | What do you want to throw?
+     2 | I only understood you as far as wanting to get the shaft above.
+     2 | What do you want to hit?
+     2 | You can't go that way.\n\nYou slump down. Just a little rest, a voice lies, but unfortunately you're too tired to argue with it.
+     2 | I only understood you as far as wanting to attack the thighband.
+     2 | What do you want to fasten the rope to?
+     1 | I only understood you as far as wanting to search the mud.
+     1 | You see no gear or equipment on the corpse.\n\nMore bats gather.
+     1 | I only understood you as far as wanting to shoot the rope.
+     1 | You see no gear or equipment on the corpse.\n\nThe world is becoming distant. Shock, a voice says somewhere. That makes sense, you think; you can't have lost enough blood yet to affect you directly.
+     1 | You don't have the energy to move.\n\nA bat darts towards your face, and quickly away.
+     1 | I only understood you as far as wanting to shoot the left side passage.
+     1 | I only understood you as far as wanting to look at the right side passage.
+     1 | I only understood you as far as wanting to get the rope.
+     1 | I only understood you as far as wanting to pull yourself.
+     1 | What do you want to drop those things in?
+     1 | You can't reach back to your leg with that much dexterity.\n\nThe stone is not going to let you go.
+     1 | I only understood you as far as wanting to cover the claw.
+     1 | I only understood you as far as wanting to swing the rope.
+     1 | I only understood you as far as wanting to throw the crossbow.
+     1 | I only understood you as far as wanting to shoot the bolt.
+     1 | I only understood you as far as wanting to shoot the stone wall.
+     1 | I only understood you as far as wanting to examine the left side passage.
+     1 | You see no gear or equipment on the corpse.\n\nSomething moves on the ground nearby. You twist around violently, but it's not approaching you; the bat is crouched over the blood-stained stone where you fell.
+     1 | I only understood you as far as wanting to examine the side chamber.
+     1 | I only understood you as far as wanting to look the narrow crawl.
+     1 | I only understood you as far as wanting to examine the lamplens.
+     1 | I only understood you as far as wanting to look the low passage.
+     1 | I only understood you as far as wanting to go the narrow crawl.
+     1 | I only understood you as far as wanting to climb the stone wall.
+     1 | I only understood you as far as wanting to drop the crossbow.
+     1 | I only understood you as far as wanting to throw the crossbow at the rope.
+     1 | I only understood you as far as wanting to swing the crossbow.
+     1 | What do you want to throw the crossbow the crossbow?
+     1 | What do you want to throw the pit below?
+     1 | I only understood you as far as wanting to remove your bloody wound.
+     1 | I only understood you as far as wanting to check the lamplens.
+     1 | I only understood you as far as wanting to drop the pit below.
+     1 | I only understood you as far as wanting to tap the stone wall.
+     1 | I only understood you as far as wanting to search the stone wall.
+     1 | I only understood you as far as wanting to adjust the lamplens.
+     1 | I only understood you as far as wanting to examine the smear of blood.
+     1 | I only understood you as far as wanting to touch the pit.
+     1 | I only understood you as far as wanting to pull the right side passage.
+     1 | That's not something you can enter.
+     1 | I only understood you as far as wanting to uncock the crossbow.
+     1 | I only understood you as far as wanting to polish the lamplens.
+     1 | I only understood you as far as wanting to turn the crossbow on.
+     1 | You don't have a hand free.\n\nYou slip again, gasp, grit your teeth, and hold.
+     1 | You don't have a hand free.\n\nYour hands are slashes of pain, and blood is making your grip uncertain.\n\nYou swing along the wall, fingers screaming at the extra strain.
+     1 | You don't have a hand free.\n\nYou bump to a stop.
+     1 | You already have that.\n\nThe bats seem less agitated now.\n\nA stream of bats flickers overhead, around, never settling. You wave again. They seem more attracted than frightened by your hand.
+     1 | What do you want to attack?
+     1 | I only understood you as far as wanting to attack the roof.
+     1 | You see nothing special about the small stones.\n\nYou catch a distant whiff of something.
+     1 | That's not something you can open.\n\nIt is dark.
+     1 | I only understood you as far as wanting to clean the lamplens.
+     1 | You're already wearing that!
+     1 | You're not holding your crossbow.\n\nYou slump down. Just a little rest, a voice lies, but unfortunately you're too tired to argue with it.
+     1 | You see no gear or equipment on the corpse.\n\nThe bats seem less agitated now.\n\nSomething moves on the ground nearby. You twist around violently, but it's not approaching you; the bat is crouched over the blood-stained stone where you fell.
+     1 | I only understood you as far as wanting to rub your arm.
+     1 | I only understood you as far as wanting to attack the stone wall.
+     1 | I only understood you as far as wanting to empty your bloody wound.
+     1 | You already have those.\n\nYou shake your head to disperse the cold mist, and start to rub your eyes. It doesn't help, except to smear blood all over your face.
+     1 | You see nothing special about the sand.\n\nAgain, shadow-flutter. More bats. They don't seem to have noticed you yet.
+     1 | You see nothing special about the sand.
+     1 | You haven't got that.
+     1 | I only understood you as far as wanting to shoot the bolt at the rope.
+     1 | What do you want to hold?
+     1 | But you aren't in anything at the moment.\n\nYou slump down. Just a little rest, a voice lies, but unfortunately you're too tired to argue with it.
+     1 | There is no way across.
+     1 | What do you want to read in?
+     1 | I only understood you as far as wanting to exit.
+     1 | I only understood you as far as wanting to quit.
+     1 | What do you want to climb up?
+     1 | I only understood you as far as wanting to jump the pit above.
+     1 | You already have those.\n\nSomething moves on the ground nearby. You twist around violently, but it's not approaching you; the bat is crouched over the blood-stained stone where you fell.
+     1 | I only understood you as far as wanting to rub the thighband.
+     1 | I only understood you as far as wanting to rub the mud.
+     1 | You see no gear or equipment on the corpse.\n\nBlood continues to trickle down your fingers.\n\nA bat flutters down from overhead. And another. You wave your arms, but they're keeping their distance.
+     1 | I only understood you as far as wanting to shoot the rope at the left side passage.
+     1 | You already have that.\n\nBlood continues to trickle down your fingers.\n\nMore bats gather.

@@ -1,0 +1,166 @@
+# Invalid Action Messages: JerichoEnvLudicorp
+# Total unique error messages: 159
+# Total error occurrences: 20503
+#
+# Format: count | message
+#===============================================================================
+
+  6630 | That's not a verb I recognise.
+  5428 | You can't see any such thing.
+  1487 | I only understood you as far as wanting to look.
+   747 | What do you want to go the north wall?
+   720 | You seem to want to talk to someone, but I can't see whom.
+   628 | What do you want to go the south wall?
+   549 | You can't go that way.
+   392 | I only understood you as far as wanting to set the ceiling.
+   335 | What do you want to go the east wall?
+   285 | Nothing happens.
+   274 | I only understood you as far as wanting to examine the Office Building.
+   259 | You find nothing of interest.
+   255 | Time passes.
+   226 | What do you want to go the west wall?
+   212 | I beg your pardon?
+   211 | That's not something you can enter.
+   171 | I don't think much is to be achieved by that.
+   155 | What do you want to go the southeast wall?
+   148 | I didn't understand that sentence.
+   105 | You see nothing special about the east wall.
+    94 | That's not something you can open.
+    93 | You see nothing special about the north wall.
+    81 | I only understood you as far as wanting to inventory.
+    77 | You see nothing special about the west wall.
+    64 | Violence isn't the answer to this one.
+    60 | I only understood you as far as wanting to climb the floor.
+    59 | You see nothing special about the south wall.
+    50 | It seems to be locked.
+    45 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+    43 | I only understood you as far as wanting to exit.
+    40 | What do you want to walk the south wall?
+    40 | What do you want to go the ceiling?
+    28 | I only understood you as far as wanting to look at the Office Building.
+    23 | What do you want to go?
+    21 | What do you want to read in?
+    20 | You see nothing special about the floor.
+    19 | But you aren't in anything at the moment.
+    19 | What do you want to unlock the Main Door with?
+    17 | What do you want to walk the east wall?
+    15 | I only understood you as far as wanting to examine the north wall.
+    13 | I only understood you as far as wanting to south.
+    11 | What do you want to walk the north wall?
+    11 | I only understood you as far as wanting to look at the southeast wall.
+    10 | What do you want to walk the west wall?
+    10 | I only understood you as far as wanting to in.
+    10 | I only understood you as far as wanting to look through the Office Building.
+     9 | You see nothing special about the southeast wall.
+     8 | I only understood you as far as wanting to examine the Main Door.
+     8 | I only understood you as far as wanting to examine the Control Panel.
+     8 | That's not something you can switch.
+     8 | I only understood you as far as wanting to enter the north wall.
+     8 | I only understood you as far as wanting to examine the Diesel Generator.
+     7 | What do you want to search?
+     7 | I only understood you as far as wanting to wait.
+     7 | You can't use multiple objects with that verb.
+     7 | I only understood you as far as wanting to east.
+     6 | I only understood you as far as wanting to break the Office Building.
+     6 | I only understood you as far as wanting to examine the southeast wall.
+     5 | I only understood you as far as wanting to check the north wall.
+     5 | I only understood you as far as wanting to search the southeast wall.
+     5 | You can't get into the closed Car.
+     5 | I only understood you as far as wanting to down.
+     5 | I only understood you as far as wanting to examine the Security Gate.
+     5 | I only understood you as far as wanting to climb the Office Building.
+     5 | I only understood you as far as wanting to use the Long Ladder.
+     5 | I only understood you as far as wanting to hit the Control Panel.
+     5 | I only understood you as far as wanting to south the south wall.
+     5 | I only understood you as far as wanting to enter the Office Building.
+     5 | I only understood you as far as wanting to examine the east wall.
+     5 | I only understood you as far as wanting to set the Long Ladder.
+     5 | You can't go that way.\nThat's not a verb I recognise.
+     4 | I only understood you as far as wanting to search the Office Building.
+     4 | I only understood you as far as wanting to climb the Well.
+     4 | I only understood you as far as wanting to break the Main Door.
+     4 | I only understood you as far as wanting to examine the south wall.
+     4 | I only understood you as far as wanting to east the east wall.
+     3 | I only understood you as far as wanting to search the north wall.
+     3 | What do you want to look inside?
+     3 | I only understood you as far as wanting to climb the Security Gate.
+     3 | I only understood you as far as wanting to use the Coil of wire.
+     3 | I only understood you as far as wanting to put the Long Ladder down.
+     3 | I only understood you as far as wanting to get the Sheet of Paper.
+     3 | I only understood you as far as wanting to examine the Coffee.
+     3 | I only understood you as far as wanting to get the White Board.
+     3 | What do you want to cut the Bushes with?
+     3 | I only understood you as far as wanting to go the south wall.
+     3 | I only understood you as far as wanting to north.
+     3 | I only understood you as far as wanting to smash the Office Building.
+     3 | I only understood you as far as wanting to examine the west wall.
+     3 | I only understood you as far as wanting to pull the Diesel Generator.
+     3 | I only understood you as far as wanting to look under the Diesel Generator.
+     3 | I only understood you as far as wanting to look at the Diesel Generator.
+     3 | I only understood you as far as wanting to south the Button.
+     3 | I only understood you as far as wanting to west.
+     2 | You can't see inside, since the Car is closed.
+     2 | I only understood you as far as wanting to stand.
+     2 | I only understood you as far as wanting to down the floor.
+     2 | I only understood you as far as wanting to break the Control Panel.
+     2 | I only understood you as far as wanting to examine the Well.
+     2 | What do you want to dig?
+     2 | I only understood you as far as wanting to get the Paper Tree.
+     2 | You can't see any way to do that.
+     2 | I only understood you as far as wanting to use the Long Ladder on the Office Building.
+     2 | What do you want to walk the southeast wall?
+     2 | What do you want to look up in?
+     2 | You can't see "me" (yourself) at the moment.
+     2 | I only understood you as far as wanting to remove the Metal Grill.
+     2 | I only understood you as far as wanting to take the Diesel Generator.
+     2 | I only understood you as far as wanting to turn the Diesel Generator on.
+     2 | That's not something you can enter.\nI only understood you as far as wanting to look.
+     2 | I only understood you as far as wanting to open the north wall.
+     2 | I only understood you as far as wanting to outside.
+     2 | That doesn't seem to be something you can unlock.
+     2 | I only understood you as far as wanting to hit the Office Building.
+     1 | Which do you mean, the Paper Tree or the Paper Tree Leaves?
+     1 | I only understood you as far as wanting to examine the Paper Tree.
+     1 | I only understood you as far as wanting to get the Paper Tree Leaves.
+     1 | I only understood you as far as wanting to up.
+     1 | Which do you mean, the blank punch card or the Card Dispenser?
+     1 | I only understood you as far as wanting to climb the Long Ladder.
+     1 | I only understood you as far as wanting to fix the Diesel Generator.
+     1 | You see nothing special about the northeast wall.
+     1 | You see nothing special about the northwest wall.
+     1 | You see nothing special about the southwest wall.
+     1 | I only understood you as far as wanting to smash the Main Door.
+     1 | I only understood you as far as wanting to use the Long Ladder on the north wall.
+     1 | I only understood you as far as wanting to use the Long Ladder on the west wall.
+     1 | I only understood you as far as wanting to touch the Office Building.
+     1 | I only understood you as far as wanting to look at the north wall.
+     1 | I only understood you as far as wanting to sing.
+     1 | You already have that.
+     1 | I only understood you as far as wanting to hit the Metal Grill.
+     1 | I only understood you as far as wanting to smash the Metal Grill.
+     1 | I only understood you as far as wanting to pull the Metal Grill.
+     1 | I only understood you as far as wanting to turn the Dragon Statue.
+     1 | I only understood you as far as wanting to drop the Coffee.
+     1 | I only understood you as far as wanting to examine the Small Yellow Label.
+     1 | I only understood you as far as wanting to look at the Small Yellow Label.
+     1 | I only understood you as far as wanting to out.
+     1 | You already have those.
+     1 | What do you want to open?
+     1 | I only understood you as far as wanting to open the east wall.
+     1 | I only understood you as far as wanting to west the west wall.
+     1 | What do you want to move?
+     1 | I only understood you as far as wanting to down the south wall.
+     1 | I only understood you as far as wanting to examine yourself.
+     1 | I only understood you as far as wanting to describe yourself.
+     1 | You see nothing special about the ceiling.
+     1 | I only understood you as far as wanting to southeast.
+     1 | What do you want to run the south wall?
+     1 | I only understood you as far as wanting to jump.
+     1 | You can only do that to something animate.
+     1 | I only understood you as far as wanting to open the Car.
+     1 | I only understood you as far as wanting to east the Office Building.
+     1 | Nothing obvious happens.
+     1 | I only understood you as far as wanting to east the Long Ladder.
+     1 | I only understood you as far as wanting to take the Long Ladder.
+     1 | I only understood you as far as wanting to take the Sheet of Paper.
+     1 | What do you want to run the north wall?

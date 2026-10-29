@@ -1,0 +1,192 @@
+# Invalid Action Messages: JerichoEnvBallyhoo
+# Total unique error messages: 185
+# Total error occurrences: 3978
+#
+# Format: count | message
+#===============================================================================
+
+   593 | [That sentence isn't one I recognize.]
+   484 | [There was no verb in that sentence!]
+   402 | You find nothing unusual.
+   316 | [You used the word "address" in a way that I don't understand.]
+   204 | Time passes...
+   202 | [There were too many nouns in that sentence.]
+   170 | You see nothing unusual about the grandstand.
+   109 | You can't go that way.
+    74 | [You used the word "proceed" in a way that I don't understand.]
+    54 | [You used the word "hello" in a way that I don't understand.]
+    48 | You see nothing extraordinary about Comrade Thumb (except that he's about two feet high).\n\nThe little general gets up on his tiptoes in front of the drinking fountain.
+    41 | You see nothing special about the fiberglass pole.
+    41 | You see nothing special about Comrade Thumb (except that he's about two feet high).\n\nThe little general gets up on his tiptoes in front of the drinking fountain.
+    38 | [You used the word "help" in a way that I don't understand.]
+    37 | You see nothing unusual about the fiberglass pole.
+    34 | You already have it.
+    34 | [You used the word "step" in a way that I don't understand.]
+    30 | You see nothing unusual about the ladder.
+    29 | You see nothing interesting about the tightrope.
+    29 | There's nothing eye-catching under the white wagon.
+    28 | You see nothing extraordinary about the ladder.
+    28 | You see nothing interesting about the fiberglass pole.
+    27 | You can't move the direction.
+    24 | You can't go that way.\nYou're still out of balance, almost imperceptibly now, to the south.
+    24 | You see nothing unusual about the clown mask.
+    24 | There's nothing eye-catching under the safety net.
+    23 | You see nothing unusual about Comrade Thumb (except that he's about two feet high).\n\nThe little general gets up on his tiptoes in front of the drinking fountain.
+    23 | You see nothing special about the clown mask.
+    22 | You see nothing interesting about the clown mask.
+    22 | You see nothing extraordinary about the lions' den.
+    22 | You see nothing interesting about the lions' den.
+    21 | You can't go that way.\nYou're really fighting it now, the high wire starts acting like a jump rope. \nFlailing away to regain some balance, you nearly slip a disk right before you plummet ...\n\n\n\n\n\n\n\n\n\n\n\n\n\n... deeply into the safety net, which heaves you high into the air ... then  catches you back down.
+    20 | You can't go that way.\nYou're still out of balance, just a hair now, to the south.
+    19 | [There seems to be a noun missing in that sentence.]
+    19 | You see nothing interesting about Comrade Thumb (except that he's about two feet high).\n\nThe little general gets up on his tiptoes in front of the drinking fountain.
+    18 | [You used the word "open" in a way that I don't understand.]
+    18 | There is nothing behind the figure of President Taft.
+    18 | [You used the word "did" in a way that I don't understand.]
+    16 | [You used the word "let" in a way that I don't understand.]
+    16 | You see nothing unusual about the lions' den.
+    16 | You're not holding the gorilla suit.
+    16 | [You used the word "hints" in a way that I don't understand.]
+    15 | You see nothing special about the lions' den.
+    14 | You can't go that way.\nYou're really fighting it now, the high wire starts acting like a jump rope. \nYou're doing a pretty good Elvis right before you plummet ...\n\n\n\n\n\n\n\n\n\n\n\n\n\n... deeply into the safety net, which heaves you high into the air ... then  catches you back down.
+    13 | You see nothing interesting about Chuckles.\n\nThe tall clown, whom you now recognize as Chuckles, barks a hello into the cage. You hear an electronic buzz from the turnstile and Chuckles passes through.
+    13 | You see nothing extraordinary about the tightrope.
+    13 | You see nothing unusual about the tightrope.
+    13 | You see nothing extraordinary about the grandstand.
+    13 | There's nothing eye-catching under the grandstand.
+    12 | You see nothing extraordinary about the fiberglass pole.
+    12 | You see nothing special about the ladder.
+    12 | You can't go that way.\nYou're still out of balance, radically now, to the south.
+    11 | You can't go that way.\nYou're still out of balance, radically now, to the north.
+    11 | You see nothing extraordinary about the apparatus.
+    11 | You see nothing special about the platform.
+    11 | [You used the word "pass" in a way that I don't understand.]
+    11 | You see nothing interesting about the ladder.
+    11 | [You used the word "hint" in a way that I don't understand.]
+     9 | You can't go that way.\nYou're still out of balance, just a hair now, to the north.
+     9 | You can't go that way.\nYou're still out of balance, quite noticeably now, to the north.
+     9 | You see nothing extraordinary about the clown mask.
+     9 | [You used the word "balance" in a way that I don't understand.]
+     9 | You can't reach the lion stand.
+     8 | You see nothing unusual about the platform.
+     8 | You see nothing unusual about Chuckles.\n\nThe tall clown, whom you now recognize as Chuckles, barks a hello into the cage. You hear an electronic buzz from the turnstile and Chuckles passes through.
+     8 | You can't move the direction.\nYou're really fighting it now, the high wire starts acting like a jump rope. \nYou're doing a pretty good Elvis right before you plummet ...\n\n\n\n\n\n\n\n\n\n\n\n\n\n... deeply into the safety net, which heaves you high into the air ... then  catches you back down.
+     8 | There is nothing behind the grandstand.
+     8 | [I don't know the word "understand."]
+     7 | You see nothing interesting about the grandstand.
+     7 | You can't do that.
+     7 | [You used the word "performance" in a way that I don't understand.]
+     7 | You see nothing extraordinary about the platform.
+     7 | You see nothing interesting about the platform.
+     7 | You aren't wearing that!
+     6 | You see nothing unusual about Comrade Thumb (except that he's about two feet high).\n\nAttempting to do a pull-up, Comrade Thumb manages to sprawl himself onto the drinking fountain.
+     6 | You can't go that way.\nYou're still out of balance, almost imperceptibly now, to the north.
+     6 | You can't open a lion stand.
+     5 | You see nothing unusual about the ground.
+     5 | [You used the word "applause" in a way that I don't understand.]
+     5 | You are already standing.\nYou're still out of balance, radically now, to the north.
+     5 | You can't reach the sagging banner.
+     4 | You're not holding your ticket.
+     4 | You see nothing special about the grandstand.
+     4 | [You used the word "exit" in a way that I don't understand.]
+     4 | You can't move your back.
+     4 | You can't drink that!\n\nStraining his neck to reach the spout, the midget gropes for the button, loses his grip and plops to the ground before the drinking fountain.
+     4 | There's nothing in the narrow slot.
+     4 | There is nothing on the other side of the barred passage.
+     4 | You're already wearing the clown mask!
+     4 | [lion stand]\nYou can't reach the lion stand.\n\n[There was no verb in that sentence!]
+     4 | You see nothing extraordinary about the button.\n\nStraining his neck to reach the spout, the midget gropes for the button, loses his grip and plops to the ground before the drinking fountain.
+     4 | There is nothing behind the lions' den.
+     3 | You can't move the direction.\nYou're still out of balance, just a hair now, to the south.
+     3 | You can't put the fiberglass pole in a turnstile!
+     3 | You see nothing special about the apparatus.
+     3 | You see nothing interesting about the apparatus.
+     3 | [You used the word "empty" in a way that I don't understand.]
+     3 | You're already wearing the gorilla suit!
+     3 | [You used the word "wrong" in a way that I don't understand.]
+     3 | [You used the word "answer" in a way that I don't understand.]
+     3 | You're already wearing the clown mask!\n\nThe midget performer does several cartwheels in a figure-eight pattern around the grass field.
+     3 | There's nothing eye-catching under the sawdust.
+     2 | [You used the word "tell" in a way that I don't understand.]
+     2 | [You used the word "shout" in a way that I don't understand.]
+     2 | [You used the word "wave" in a way that I don't understand.]
+     2 | You're not holding the fiberglass pole.
+     2 | You can't reach the tightrope.
+     2 | You see nothing unusual about the tent.
+     2 | [to the guard]\n"Well, good evening to you."\n\n[There was no verb in that sentence!]
+     2 | You see nothing interesting about Comrade Thumb (except that he's about two feet high).\n\nAttempting to do a pull-up, Comrade Thumb manages to sprawl himself onto the drinking fountain.
+     2 | [You used the word "sleep" in a way that I don't understand.]
+     2 | You see nothing extraordinary about the chain link fence.
+     2 | You see nothing unusual about the apparatus.
+     2 | You can't go that way.\n\nYou exhale your lungsful of helium.
+     2 | You see nothing special about the tightrope.
+     2 | You see nothing interesting about yourself.
+     2 | [You used the word "reach" in a way that I don't understand.]
+     2 | You see nothing unusual about the canvas wall.\n\nYou can hear muffled voices coming from outside, getting louder and nearer. You feel the childish embarrassment of being trapped.
+     2 | You see nothing extraordinary about the apparatus.\nYou find yourself leaning quite noticeably to the south.
+     2 | [You used the word "no" in a way that I don't understand.]
+     2 | You see nothing extraordinary about the tent.\n\nThe midget performer does several cartwheels in a figure-eight pattern around the grass field.
+     2 | You see nothing extraordinary about the uniform.\n\nThe little general gets up on his tiptoes in front of the drinking fountain.
+     2 | You see nothing special about Chuckles.\n\nThe tall clown, whom you now recognize as Chuckles, barks a hello into the cage. You hear an electronic buzz from the turnstile and Chuckles passes through.
+     2 | You see nothing extraordinary about the tent.
+     2 | You can't reach the smooth-bodied lion, luckily.
+     2 | You see nothing special about the sawdust.
+     2 | You can't reach the shaggy lion, luckily.
+     2 | There is nothing behind the lion stand.
+     2 | You see nothing extraordinary about Comrade Thumb (except that he's about two feet high).\n\nAttempting to do a pull-up, Comrade Thumb manages to sprawl himself onto the drinking fountain.
+     1 | [You used the word "ask" in a way that I don't understand.]
+     1 | [You used the word "smile" in a way that I don't understand.]
+     1 | [You used the word "move" in a way that I don't understand.]
+     1 | [You used the word "unlock" in a way that I don't understand.]
+     1 | You can't put the clown mask in a turnstile!
+     1 | You can't do that.\n\nStraining his neck to reach the spout, the midget gropes for the button, loses his grip and plops to the ground before the drinking fountain.
+     1 | You can't reach the apparatus.\nYou're still out of balance, almost imperceptibly now, to the north.
+     1 | You see nothing special about Comrade Thumb (except that he's about two feet high).\n\nStraining his neck to reach the spout, the midget gropes for the button, loses his grip and plops to the ground before the drinking fountain.
+     1 | You see nothing special about the tent.
+     1 | There's nothing eye-catching under the midget car.
+     1 | You see nothing interesting about the clown mask.\n\nComrade Thumb, in his squeaky and high-pitched voice, says "Hello Harry" toward the burned cage. You hear a buzzing sound from the turnstile as the midget reaches up to its lowest rung and passes through ...
+     1 | You see nothing special about the ignition switch.
+     1 | You can't give a clown mask to a burned cage!
+     1 | You can't give your ticket to a turnstile!
+     1 | There's nothing eye-catching under the turnstile.
+     1 | You see nothing extraordinary about the tightrope.\nYou find yourself leaning quite noticeably to the south.
+     1 | There's nothing eye-catching under the cage door.
+     1 | There's nothing eye-catching under the clown mask.
+     1 | You are already standing.\n\nThe midget looks up at you sadly, then at the drinking fountain.
+     1 | You see nothing special about Comrade Thumb (except that he's about two feet high).\n\nComrade Thumb flaps his little arms once in frustration, and waddles off into the darkness.
+     1 | You see nothing special about the tent.\n\nIn front of you, Comrade Thumb terminates his acrobatics on one knee with a grand gesture of his small arms.
+     1 | You see nothing special about the tent.\n\nComrade Thumb, in his squeaky and high-pitched voice, says "Hello Harry" toward the burned cage. You hear a buzzing sound from the turnstile as the midget reaches up to its lowest rung and passes through ...
+     1 | You see nothing extraordinary about the ceiling.
+     1 | You see nothing extraordinary about yourself.
+     1 | You see nothing unusual about Comrade Thumb (except that he's about two feet high).\n\nStraining his neck to reach the spout, the midget gropes for the button, loses his grip and plops to the ground before the drinking fountain.
+     1 | [You used the word "stop" in a way that I don't understand.]
+     1 | [You used the word "perform" in a way that I don't understand.]
+     1 | You're not holding the clown mask.
+     1 | [You used the word "records" in a way that I don't understand.]
+     1 | [You used the word "record" in a way that I don't understand.]
+     1 | You are already wearing it.\n\nThe midget performer does several cartwheels in a figure-eight pattern around the grass field.
+     1 | You see nothing unusual about Comrade Thumb (except that he's about two feet high).\n\nThe midget looks up at you sadly, then at the drinking fountain.
+     1 | You are already wearing it.
+     1 | You can't go that way.\n\nFear motivates you to crouch behind the cardboard character.\n\nFrom behind the figure of President Taft you hear footsteps enter the tent, a pause, then hushed conversation.
+     1 | You see nothing interesting about the chain link fence.
+     1 | There's nothing eye-catching under the ladder.
+     1 | You can't go that way.\nYou're still out of balance, quite noticeably now, to the south.
+     1 | You see nothing special about the pair of sunglasses.
+     1 | There's nothing eye-catching under the barred passage.
+     1 | You see nothing extraordinary about the button.
+     1 | [You used the word "what" in a way that I don't understand.]
+     1 | You see nothing special about the ceiling.
+     1 | [You used the word "answers" in a way that I don't understand.]
+     1 | You see nothing interesting about the ground.
+     1 | You can't move the direction.\nYou're still out of balance, almost imperceptibly now, to the south.
+     1 | [You used the word "balanced" in a way that I don't understand.]
+     1 | You can't reach the center pole.\nYou're still out of balance, quite noticeably now, to the north.
+     1 | You see nothing interesting about the canvas wall.\n\nYou hear one voice say, "Let's duck in here."
+     1 | There's nothing eye-catching under the lions' den.
+     1 | [You used the word "free" in a way that I don't understand.]
+     1 | You can't drink that!
+     1 | You see nothing interesting about the ignition switch.
+     1 | You see nothing interesting about Comrade Thumb (except that he's about two feet high).\n\nStraining his neck to reach the spout, the midget gropes for the button, loses his grip and plops to the ground before the drinking fountain.
+     1 | You see nothing unusual about the chain link fence.
+     1 | You see nothing extraordinary about Comrade Thumb (except that he's about two feet high).\n\nComrade Thumb flaps his little arms once in frustration, and waddles off into the darkness.
+     1 | You can't open a white wagon.

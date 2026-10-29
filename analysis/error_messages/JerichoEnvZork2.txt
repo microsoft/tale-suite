@@ -1,0 +1,643 @@
+# Invalid Action Messages: JerichoEnvZork2
+# Total unique error messages: 636
+# Total error occurrences: 12294
+#
+# Format: count | message
+#===============================================================================
+
+  1781 | I don't know the word ">".
+  1392 | You can't go that way.
+   659 | Time passes...
+   601 | I don't know the word "help".
+   497 | That sentence isn't one I recognize.
+   496 | I beg your pardon?
+   438 | I don't know the word "**cut".
+   230 | There was no verb in that sentence!
+   168 | What do you want to examine?
+   166 | You can't see any wizard here!
+   164 | I don't know the word "word".
+   161 | It's too dark to see!
+   155 | You can't go that way.\nYou look around, and strangely, the topiary animals seem to have changed position slightly.
+   144 | There is no way to go in that direction.
+   138 | I don't know the word "okay".
+   128 | You already have that!
+   114 | You used the word "ford" in a way that I don't understand.
+   114 | You used the word "place" in a way that I don't understand.
+   112 | I don't know the word "`pick".
+   111 | I don't know the word "end".
+   109 | I don't know the word "`grab".
+   106 | I don't know the word "use".
+   101 | I don't know the word "approach".
+   100 | You used the word "proceed" in a way that I don't understand.
+    98 | You can't go that way.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+    83 | I don't know the word "`obtain".
+    79 | There's nothing special about the sword.
+    75 | I don't know the word "done".
+    72 | You can't see any necklace here!
+    71 | It is already on.
+    70 | You can't see any key here!
+    69 | I don't know the word "*".
+    69 | I don't know the word "Ò".
+    64 | You can't see any ribbon here!
+    62 | I don't know the word "apologize".
+    58 | I don't know the word "you".
+    55 | You can't go that way.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+    55 | I don't know the word "`get".
+    54 | I don't know the word "`take".
+    53 | I don't know the word "towards".
+    51 | There's nothing special about the tunnel.
+    50 | You can't see any hedges here!
+    50 | I don't know the word "```".
+    48 | I don't know the word "`acquire".
+    47 | I don't know the word "`retrieve".
+    41 | You can't do that.
+    40 | There's nothing special about the glacier.
+    40 | I don't know the word "archway".
+    40 | You used the word "i" in a way that I don't understand.
+    39 | You don't have that!
+    39 | I don't know the word "tree".
+    39 | I don't know the word "glow".
+    38 | You can't see any well here!
+    36 | I don't know the word "```enter".
+    35 | I don't know the word "room".
+    33 | You can't see any f here!
+    30 | I don't know the word "neck".
+    30 | There's nothing special about the lizard.
+    30 | There's nothing special about the portrait of J. Pierpont Flathead.
+    30 | You can't see any wizard's wand here!
+    29 | There's nothing special about the letter opener.
+    28 | You used the word "break" in a way that I don't understand.
+    27 | It is already open.
+    27 | I don't know the word "there".
+    27 | I don't know the word "(note:".
+    25 | You can't go that way.\nYou suddenly decide that the Wizard isn't that terrifying...
+    25 | You find nothing unusual.
+    24 | I don't know the word "walls".
+    23 | There's nothing special about the brick.
+    23 | I don't know the word "rocks".
+    22 | You can't see any letter here!
+    20 | You can't see any sword here!
+    20 | I don't know the word "**get".
+    20 | You used the word "back" in a way that I don't understand.
+    20 | I don't know the word "debris".
+    20 | I don't know the word "->".
+    19 | There's nothing special about the ground.
+    18 | You can't see any hedge here!
+    18 | You can't see any dragon here!
+    17 | I don't know the word "barrow".
+    17 | What do you want to break the window with?
+    17 | I don't know the word "i'".
+    16 | You can't see any stream here!
+    16 | There's nothing special about the shimmering curtain of light.
+    16 | I don't know the word "vegetation".
+    15 | I don't know the word "wield".
+    15 | I don't know the word "bushes".
+    15 | I don't know the word "rosebed".
+    14 | I don't know the word "surroundings".
+    14 | You can't see any rose here!
+    14 | I don't know the word "apolog".
+    13 | There's nothing special about the black string.
+    13 | There's nothing special about the bridge.
+    12 | What do you want to throw the sword at?
+    12 | I don't know the word "gap".
+    12 | I don't know the word "garden".
+    12 | There's nothing special about the gazebo.
+    12 | I don't know the word "object".
+    12 | You can't see any necklace here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+    12 | I don't know the word "pry".
+    12 | What do you want to throw the string at?
+    12 | I don't know the word "`collect".
+    11 | You can't go that way.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.\nYou suddenly decide that the Wizard isn't that terrifying...
+    11 | You don't have the brick.
+    11 | I don't know the word "leaves".
+    10 | You can't go that way.\nThe unicorn bounds lightly away.
+    10 | I don't know the word "`attack".
+    10 | I don't know the word "frescoes".
+    10 | I don't know the word "fresco".
+    10 | I don't know the word "shadow".
+    10 | You can't see any wand here!
+    10 | What do you want to break the ice with?
+    10 | What do you want to dig the ice with?
+    10 | I don't know the word "term".
+    10 | You used the word "narrow" in a way that I don't understand.
+    10 | There's nothing special about the stalag.
+     9 | I don't know the word "between".
+     9 | I don't know the word "way".
+     9 | I don't know the word "crawl".
+     9 | You're not carrying the gazebo.
+     9 | I don't know the word "opening".
+     9 | You used the word "again" in a way that I don't understand.
+     9 | You don't have the black string.
+     9 | You can't go that way.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.\nYou suddenly decide that the Wizard isn't that terrifying...
+     9 | I don't know the word "ledge".
+     9 | There's nothing special about the chasm.
+     9 | I don't know the word "(with".
+     9 | I don't know the word "```you".
+     9 | I don't know the word "twigs".
+     8 | I don't know the word "engraving".
+     8 | I don't know the word "item".
+     8 | I don't know the word "thing".
+     8 | You can't do that!
+     8 | You can't see any club here!
+     8 | I don't know the word "show".
+     8 | What do you want to burn the club with?
+     8 | You used the word "answer" in a way that I don't understand.
+     8 | I don't know the word "right".
+     8 | What do you want to turn?
+     8 | I don't know the word "(to".
+     7 | I don't know the word "tiny".
+     7 | I don't know the word "shallow".
+     7 | There's nothing special about the pearl necklace.
+     7 | I don't know the word "ceiling".
+     7 | You can't move the large stone cube.
+     7 | There's nothing special about the gazebo.\nA unicorn is cropping grass on the other side of the room. A gold key hangs from a ribbon around its neck.\nYour sword has begun to glow very brightly.
+     7 | There is no way to go in that direction.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fence!" He cackles gleefully.
+     7 | You used the word "southwest" in a way that I don't understand.
+     7 | It is already open.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     7 | I don't know the word "whirring".
+     7 | I don't know the word "*you".
+     7 | I don't know the word "seems".
+     7 | I don't know the word "suggest".
+     7 | I don't know the word "if".
+     7 | I don't know the word "wedge".
+     6 | I don't know the word "shine".
+     6 | I don't know the word "trees".
+     6 | I don't know the word "info".
+     6 | You can't move the diamond shaped window.
+     6 | Nothing happens.
+     6 | There's nothing special about the west wall.
+     6 | I don't know the word "explore".
+     6 | I don't know the word "carving".
+     6 | What do you want to search?
+     6 | I don't know the word "*blank".
+     6 | I don't know the word "lampass".
+     6 | I don't know the word "appears".
+     6 | What do you want to slide the window under?
+     6 | I don't know the word "```sql".
+     6 | There's nothing special about the mosses.
+     6 | I don't know the word "jam".
+     6 | You can't see any key here!\nYou catch a glimpse of something white between two hedges.
+     6 | You can't see any slot here!
+     5 | I don't know the word "flash".
+     5 | I don't know the word "speak".
+     5 | You can't see any gold key here!\nThere is a beautiful unicorn eating roses here. Around his neck is a red satin ribbon on which is strung a tiny key.
+     5 | I don't know the word "near".
+     5 | I don't know the word "cavern".
+     5 | There's nothing special about the north wall.
+     5 | I don't know the word "topiary".
+     5 | There's nothing special about the letter opener.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     5 | I don't know the word "something".
+     5 | I don't know the word "upward".
+     5 | What do you want to smash the window with?
+     5 | I don't know the word "tube".
+     5 | I don't know the word "bow".
+     5 | I don't know the word "arch".
+     5 | I don't know the word "x".
+     5 | I don't know the word "handle".
+     5 | You can't go that way.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fear!" He cackles gleefully.\nYou look at the Wizard in terror. You scramble away, trying to get as far as possible from him.\n\nNarrow Tunnel\nYou are standing at the southern end of a narrow tunnel where it opens into a wide cavern. The cavern is dimly illuminated by phosphorescent mosses clinging to its high ceiling. A deep ravine winds through the cavern, with a small stream at the bottom. The walls of the ravine are steep and crumbly. A foot bridge crosses the ravine to the south.
+     5 | You can't see any water here!
+     5 | I don't know the word "solves".
+     5 | I don't know the word "correct".
+     5 | You can't see any man here!
+     5 | You don't have the glacier.
+     5 | You can't see any sword here!\nThe dragon continues to watch you carefully.
+     5 | You already have that!\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fear!" He cackles gleefully.\nYou look at the Wizard in terror. You scramble away, trying to get as far as possible from him.\n\nNarrow Tunnel\nYou are standing at the southern end of a narrow tunnel where it opens into a wide cavern. The cavern is dimly illuminated by phosphorescent mosses clinging to its high ceiling. A deep ravine winds through the cavern, with a small stream at the bottom. The walls of the ravine are steep and crumbly. A foot bridge crosses the ravine to the south.
+     5 | I don't know the word "inscription".
+     5 | I don't know the word "against".
+     5 | I don't know the word "st".
+     5 | There's nothing special about the tunnel.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fear!" He cackles gleefully.\nYou look at the Wizard in terror. You scramble away, trying to get as far as possible from him.\n\nNarrow Tunnel\nYou are standing at the southern end of a narrow tunnel where it opens into a wide cavern. The cavern is dimly illuminated by phosphorescent mosses clinging to its high ceiling. A deep ravine winds through the cavern, with a small stream at the bottom. The walls of the ravine are steep and crumbly. A foot bridge crosses the ravine to the south.
+     5 | You can't see any key here!\nYou suddenly decide that the Wizard isn't that terrifying...
+     5 | You can't see any key here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fence!" He cackles gleefully.
+     5 | What do you want to turn the window with?
+     5 | You used the word "hello" in a way that I don't understand.
+     5 | You can't see any letter here!\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     5 | It is already on.\nThe match has gone out.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     5 | You don't have the lamp.
+     5 | You already have that!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     5 | You can't see any key here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     5 | I don't know the word "i'm".
+     5 | I don't know the word "```m".
+     5 | I don't know the word "carved".
+     5 | I don't know the word "notch".
+     5 | You don't have the sword.
+     4 | There is nothing but dust there.
+     4 | You can't see any hedges here!\nYou catch a glimpse of something white between two hedges.\nYour sword has begun to glow very brightly.
+     4 | You can't see any riddle here!
+     4 | I don't know the word "think".
+     4 | You can't see any stairs here!
+     4 | I don't know the word "heel".
+     4 | I don't know the word "area".
+     4 | You can't see any menhir here!
+     4 | I don't know the word "sing".
+     4 | I don't know the word "fire".
+     4 | I don't know the word "lava".
+     4 | I don't know the word "shape".
+     4 | I don't know the word "investigate".
+     4 | I don't know the word "do".
+     4 | I don't know the word "now".
+     4 | I don't know the word "yourself".
+     4 | You used the word "examine" in a way that I don't understand.
+     4 | I don't know the word "(".
+     4 | You can't see any wizard's wand here!\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     4 | I don't know the word "shadows".
+     4 | I don't know the word "sleep".
+     4 | I don't know the word "fit".
+     4 | I don't know the word "sign".
+     4 | I don't know the word "stick".
+     3 | I don't know the word "map".
+     3 | You can't see any staircase here!
+     3 | You can't see any dragon here!\nYou look around, and strangely, the topiary animals seem to have changed position slightly.
+     3 | What do you want to melt the ice with?
+     3 | You can't see any letter here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     3 | You can't go that way.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Filch!" He cackles gleefully.\nSomething you are carrying has disappeared!
+     3 | There is nothing behind the portrait of J. Pierpont Flathead.
+     3 | I don't know the word "call".
+     3 | There's nothing special about the way.
+     3 | You already have that!\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fierce!" He cackles gleefully.\nYou rush at the Wizard, intending to tear him limb from limb.\nThe Wizard mumbles something under his breath, and just before you reach him, he vanishes.
+     3 | There is nothing but dust there.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     3 | There's nothing special about the south wall.
+     3 | There's nothing special about the east wall.
+     3 | I don't know the word "flame".
+     3 | I don't know the word "tap".
+     3 | You used the word "exit" in a way that I don't understand.
+     3 | You can't move the north wall.
+     3 | I don't know the word "grass".
+     3 | You can't see any hedge here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     3 | What do you want to listen to?
+     3 | I don't know the word "foot".
+     3 | You can't see any door here!
+     3 | I don't know the word "torch".
+     3 | I don't know the word "corridor".
+     3 | There's nothing special about the stream.
+     3 | I don't know the word "left".
+     3 | I don't know the word "everything".
+     3 | I don't know the word "conversation".
+     3 | I don't know the word "game".
+     3 | I don't know the word "interaction".
+     3 | I don't know the word ">ing".
+     3 | You can't see any menhir here!\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fierce!" He cackles gleefully.\nYou rush at the Wizard, intending to tear him limb from limb.\nThe Wizard mumbles something under his breath, and just before you reach him, he vanishes.
+     3 | What do you want to throw the brick at?
+     3 | You can't see any window here!
+     3 | You used the word "hi" in a way that I don't understand.
+     3 | You used the word "the" in a way that I don't understand.
+     3 | I don't know the word "lever".
+     3 | I don't know the word "```repeated".
+     3 | I don't know the word "don's".
+     3 | You used the word "long" in a way that I don't understand.
+     3 | I don't know the word "greet".
+     3 | You can't see any teapot here!
+     3 | You don't have the letter opener.
+     3 | I don't know the word "cracks".
+     3 | What do you want to break the brick with?
+     3 | You can't see any letter here!\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fierce!" He cackles gleefully.\nYou rush at the Wizard, intending to tear him limb from limb.\nThe Wizard mumbles something under his breath, and just before you reach him, he vanishes.
+     3 | I don't know the word "ornate".
+     3 | I don't know the word "mark".
+     3 | I don't know the word "shove".
+     3 | I don't know the word "force".
+     3 | I don't know the word "ram".
+     3 | I don't know the word "cram".
+     3 | I don't know the word "pluck".
+     3 | You can't see any rose arbor here!
+     3 | I don't know the word "horn".
+     2 | You can't go that way.\nYou feel cooler and less angry now.
+     2 | I don't know the word "check".
+     2 | You already have that!\nYou feel cooler and less angry now.
+     2 | You can't see any wizard here!\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fierce!" He cackles gleefully.\nYou rush at the Wizard, intending to tear him limb from limb.\nThe Wizard mumbles something under his breath, and just before you reach him, he vanishes.
+     2 | You can't see any ribbon here!\nThe unicorn bounds lightly away.
+     2 | You can't see any narrow tunnel here!
+     2 | You can't see any gold key here!
+     2 | I don't know the word "descend".
+     2 | I don't know the word "formal".
+     2 | I don't know the word "glassy".
+     2 | There's nothing special about the letter opener.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     2 | I don't know the word "hint".
+     2 | There's nothing special about the gazebo.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     2 | You can't see any box here!
+     2 | What do you want to feed the lizard to?
+     2 | You can't see any stairway here!
+     2 | You can't do that.\nThe match has gone out.
+     2 | What do you want to unlock the door with?
+     2 | I don't know the word "solve".
+     2 | I don't know the word "closely".
+     2 | You don't have the china teapot.
+     2 | You don't have the matchbook.
+     2 | There's nothing special about the way.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     2 | You can't see any key here!\nYou catch a glimpse of something white between two hedges.\nYour sword has begun to glow very brightly.
+     2 | You can't see any white structure here!
+     2 | You can't go that way.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fierce!" He cackles gleefully.\nYou rush at the Wizard, intending to tear him limb from limb.\nThe Wizard mumbles something under his breath, and just before you reach him, he vanishes.
+     2 | There's nothing special about the gazebo.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     2 | I don't know the word "human".
+     2 | You're not carrying the gazebo.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     2 | You can't see any serpent here!
+     2 | I don't know the word "flickering".
+     2 | I don't know the word "shatters".
+     2 | I don't know the word "hidden".
+     2 | I don't know the word "other".
+     2 | You don't have the wooden club.
+     2 | I don't know the word "another".
+     2 | I don't know the word "toward".
+     2 | I don't know the word "top".
+     2 | I don't know the word "quietly".
+     2 | I don't know the word "whistle".
+     2 | You can't see any hedges here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     2 | I don't know the word "wipe".
+     2 | What do you want to tie the lizard to?
+     2 | What do you want to burn the string with?
+     2 | There's nothing here to take.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     2 | There's nothing special about the gazebo.\nYou catch a glimpse of something white between two hedges.\nYour sword has begun to glow very brightly.
+     2 | You can't see any dog here!
+     2 | You can't see any necklace here!\nYou suddenly decide that the Wizard isn't that terrifying...
+     2 | I don't know the word "hanging".
+     2 | You used the word "lock" in a way that I don't understand.
+     2 | I don't know the word "knob".
+     2 | You can't see any rose here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     2 | I don't know the word "doorknob".
+     2 | I don't know the word "sneak".
+     2 | I don't know the word "far".
+     2 | I don't know the word "wound".
+     2 | I don't know the word "*examine".
+     2 | I don't know the word "*say".
+     2 | I don't know the word "*ask".
+     2 | I don't know the word "feeling".
+     2 | I don't know the word "your".
+     2 | I don't know the word "assistant".
+     2 | I don't know the word "this".
+     2 | I don't know the word "sentence".
+     2 | I don't know the word "illuminate".
+     2 | I don't know the word "carousel".
+     2 | I don't know the word "faint".
+     2 | I don't know the word "coins".
+     2 | I don't know the word "(holding".
+     2 | I don't know the word "(going".
+     2 | You used the word "small" in a way that I don't understand.
+     2 | I don't know the word "```ve".
+     2 | I don't know the word "i'south".
+     2 | I don't know the word "bricks".
+     2 | You can't see any letters here!
+     2 | I don't know the word "agiel".
+     2 | I don't know the word "abracadabra".
+     2 | You can't see any mortar here!
+     2 | I don't know the word "tip".
+     2 | There's nothing special about the letter opener.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.
+     2 | What do you want to burn the newspaper with?
+     2 | There's nothing special about the stalac.
+     2 | You can't go that way.\nThe unicorn bounds lightly away.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Feeble!" He cackles gleefully.\nAll at once you feel very tired.\nIn fact, you feel so weak that you drop the lamp.
+     2 | There's nothing special about the brick.\nYou feel more energetic now.
+     2 | You can't see any letter opener here!
+     2 | You used the word "southwestern" in a way that I don't understand.
+     2 | I don't know the word "rim".
+     2 | You can't see any volcano here!
+     2 | I don't know the word "ledges".
+     2 | I don't know the word "ruins".
+     2 | I don't know the word "twist".
+     2 | I don't know the word "flicker".
+     2 | You can't see any letter here!\nYou suddenly decide that the Wizard isn't that terrifying...
+     2 | You can't see any hole here!
+     2 | I don't know the word "groove".
+     2 | I don't know the word "niche".
+     2 | I don't know the word "recess".
+     2 | I don't know the word "slit".
+     2 | You used the word "cut" in a way that I don't understand.
+     2 | You can't see any " f " here!
+     2 | I don't know the word "big".
+     2 | I don't know the word "kneel".
+     2 | There is nothing but dust there.\nYou suddenly decide that the Wizard isn't that terrifying...
+     2 | You can't see any placemat here!
+     2 | You can't see any animal here!
+     2 | I don't know the word "sheath".
+     2 | I don't know the word "vines".
+     1 | It is already on.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fierce!" He cackles gleefully.\nYou rush at the Wizard, intending to tear him limb from limb.\nThe Wizard mumbles something under his breath, and just before you reach him, he vanishes.
+     1 | It is already on.\nYou feel cooler and less angry now.
+     1 | What do you want to cut the ribbon with?
+     1 | You can't see any red ribbon here!\nThe unicorn bounds lightly away.
+     1 | You can't see any hedge here!\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.
+     1 | I don't know the word "overgrown".
+     1 | You can't see any hedges here!\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.
+     1 | You can't see any hedge here!\nThe unicorn bounds lightly away.
+     1 | You can't see any ribbon here!\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.
+     1 | You can't go that way.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.
+     1 | You can't go that way.\nThe match has gone out.
+     1 | I don't know the word "limestone".
+     1 | I don't know the word "chunks".
+     1 | There is nothing to fill it with.
+     1 | You can't see any glass here!
+     1 | You can't go there in a wooden bucket.
+     1 | What do you want to turn the bucket with?
+     1 | I don't know the word "legba".
+     1 | You can't see any rose here!\nYou catch a glimpse of something white between two hedges.
+     1 | I don't know the word "<missing".
+     1 | There's nothing special about the gazebo.\nA unicorn is cropping grass on the other side of the room. A gold key hangs from a ribbon around its neck.
+     1 | You can't see any curtain here!
+     1 | There is no way to go in that direction.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThere is a loud crackling noise. Blue smoke rises from out of the Wizard's sleeve. He sighs and disappears.
+     1 | I don't know the word "exits".
+     1 | You can't see any gazebo here!\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     1 | You can't go that way.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Feeble!" He cackles gleefully.\nAll at once you feel very tired.\nIn fact, you feel so weak that you drop the wooden club.
+     1 | There's nothing special about the keyhole.
+     1 | You can't see any necklace here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.\nYou suddenly decide that the Wizard isn't that terrifying...
+     1 | There is nothing but dust there.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     1 | There's nothing special about the sword.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     1 | I don't know the word "carefully".
+     1 | I don't know the word "bed".
+     1 | You can't see any rose bush here!
+     1 | I don't know the word "flowers".
+     1 | You can't see any stalagmites here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     1 | You can't see any moss here!
+     1 | You can't see any key here!\nThere is a beautiful unicorn eating roses here. Around his neck is a red satin ribbon on which is strung a tiny key.\nYour sword has begun to glow very brightly.
+     1 | I don't know the word "shapes".
+     1 | There's nothing special about the gazebo.\nThere is a beautiful unicorn eating roses here. Around his neck is a red satin ribbon on which is strung a tiny key.\nYour sword has begun to glow very brightly.
+     1 | I don't know the word "switch".
+     1 | I don't know the word "type".
+     1 | You're not carrying the gazebo.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     1 | What do you want to throw the club at?
+     1 | I don't know the word "oddly-angled".
+     1 | There is no way to go in that direction.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Feeble!" He cackles gleefully.\nAll at once you feel very tired.\nIn fact, you feel so weak that you drop the sword.
+     1 | I don't know the word "items".
+     1 | I don't know the word "breaks".
+     1 | You can't see any broken window here!
+     1 | You don't have the wooden bucket.
+     1 | You don't have the newspaper.
+     1 | You can't go that way.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, almost inaudibly, whispers a word beginning with "F," and then disappears, chuckling nastily.
+     1 | I don't know the word "slowly".
+     1 | I don't know the word "jumble".
+     1 | I don't know the word "glimpse".
+     1 | You can't see any hedges here!\nThe match has gone out.
+     1 | You can't see any paintings here!
+     1 | I don't know the word "noise".
+     1 | I don't know the word "'well'".
+     1 | I don't know the word "polish".
+     1 | I don't know the word "sorry".
+     1 | There is no way to go in that direction.\nYou feel more energetic now.
+     1 | I don't know the word "spread".
+     1 | You can't go that way.\nYour sword is no longer glowing.
+     1 | You can't see any dragon here!\nThe topiary animals seem to close in on you. You turn and they are very close. They seem to be leering at you.
+     1 | I don't know the word "misshapen".
+     1 | It is already on.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, almost inaudibly, whispers a word beginning with "F," and then disappears, chuckling nastily.\nAll at once you feel very tired.\nIn fact, you feel so weak that you drop the black string.
+     1 | You can't see any necklace here!\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     1 | I don't know the word "charm".
+     1 | I don't know the word "token".
+     1 | I don't know the word "pendant".
+     1 | I don't know the word "amulet".
+     1 | You can't see any collar here!
+     1 | You can't see any such thing here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     1 | I don't know the word "its".
+     1 | I don't know the word "grope".
+     1 | What do you want to feel?
+     1 | You can't see any brick here!
+     1 | It is already on.\nThe match has gone out.
+     1 | You can't go that way.\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Feeble!" He cackles gleefully.\nAll at once you feel very tired.\nIn fact, you feel so weak that you drop the china teapot.
+     1 | You don't have the place mat.
+     1 | There's nothing special about the sword.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     1 | There's nothing special about the sword.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fierce!" He cackles gleefully.\nYou rush at the Wizard, intending to tear him limb from limb.\nThe Wizard mumbles something under his breath, and just before you reach him, he vanishes.
+     1 | I don't know the word "center".
+     1 | You can't see any ribbon here!\nThere is a large, white animal partly hidden behind some trees.
+     1 | You can't see any ribbon here!\nA unicorn is cropping grass on the other side of the room. A gold key hangs from a ribbon around its neck.
+     1 | I don't know the word "cup".
+     1 | What do you want to what?
+     1 | I don't know the word "try".
+     1 | I don't know the word "pictures".
+     1 | You already have that!\nYou suddenly decide that the Wizard isn't that terrifying...
+     1 | I don't know the word "return".
+     1 | There's nothing special about the stream.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Fierce!" He cackles gleefully.\nYou rush at the Wizard, intending to tear him limb from limb.\nThe Wizard mumbles something under his breath, and just before you reach him, he vanishes.
+     1 | I don't know the word "solution".
+     1 | You can't see any water here!\nYou suddenly decide that the Wizard isn't that terrifying...
+     1 | There's nothing special about the tunnel.\nYou suddenly decide that the Wizard isn't that terrifying...
+     1 | What do you want to attack?
+     1 | I don't know the word "goodbye".
+     1 | I don't know the word "nothing".
+     1 | I don't know the word "*stares".
+     1 | There's nothing special about the tunnel.\nYou feel cooler and less angry now.
+     1 | I don't know the word "rest".
+     1 | I don't know the word "*examand".
+     1 | I don't know the word "wighten".
+     1 | I don't know the word "wightend".
+     1 | I don't know the word "wright".
+     1 | There's nothing special about the west wall.\n\nI don't know the word "*".
+     1 | I don't know the word "wertain".
+     1 | I don't know the word "request".
+     1 | I don't know the word "*request".
+     1 | I don't know the word "express".
+     1 | I don't know the word "*express".
+     1 | I don't know the word "surrand".
+     1 | You used the word "look" in a way that I don't understand.
+     1 | I don't know the word "branted".
+     1 | What do you want to examine1?
+     1 | I don't know the word "response".
+     1 | I don't know the word "p".
+     1 | I don't know the word "lanircassyundernevularcing".
+     1 | I don't know the word "torow".
+     1 | I don't know the word "torcome".
+     1 | I don't know the word "torchearlight".
+     1 | I don't know the word "lampromass".
+     1 | I don't know the word "lampassistant".
+     1 | I don't know the word "you'".
+     1 | I don't know the word "*the".
+     1 | I don't know the word "gameonite".
+     1 | I don't know the word "ô".
+     1 | I don't know the word "lan".
+     1 | I don't know the word "wander".
+     1 | I don't know the word "*choose".
+     1 | I don't know the word "*t".
+     1 | I don't know the word "ex".
+     1 | I don't know the word "cautiously".
+     1 | You can't see any lantern here!
+     1 | I don't know the word "re".
+     1 | I don't know the word "understand".
+     1 | I don't know the word "continue".
+     1 | You used the word """ in a way that I don't understand.
+     1 | I don't know the word "(in".
+     1 | I don't know the word "```pla".
+     1 | I don't know the word "pla".
+     1 | I don't know the word "nevermind".
+     1 | You don't have the pearl necklace.
+     1 | What do you want to spin?
+     1 | I don't know the word "```:`".
+     1 | I don't know the word "```e".
+     1 | I don't know the word "```the".
+     1 | I don't know the word "```ent".
+     1 | I don't know the word "(using".
+     1 | What do you want to go?
+     1 | I don't know the word "(still".
+     1 | I don't know the word "(north)".
+     1 | I don't know the word "i't".
+     1 | I don't know the word "i'suggest".
+     1 | I don't know the word "i'llow".
+     1 | I don't know the word "```i'tion)".
+     1 | I don't know the word "```i".
+     1 | I don't know the word "```   `enter".
+     1 | I don't know the word "don'".
+     1 | I don't know the word "```tin".
+     1 | I don't know the word "i'sout".
+     1 | You used the word "great" in a way that I don't understand.
+     1 | I don't know the word "```veit".
+     1 | I don't know the word "``````you".
+     1 | I don't know the word "````".
+     1 | I don't know the word "```mistem>".
+     1 | I don't know the word "```mist".
+     1 | I don't know the word "```makes".
+     1 | I don't know the word "sever".
+     1 | You can't see any hedges here!\nThere is a large, white animal partly hidden behind some trees.\nYour sword has begun to glow very brightly.
+     1 | I don't know the word "steal".
+     1 | I don't know the word "mount".
+     1 | I don't know the word "ride".
+     1 | You can't see any gold key here!\nYou catch a glimpse of something white between two hedges.\nYour sword has begun to glow very brightly.
+     1 | You can't see any red ribbon here!\nThe unicorn bounds lightly away.\nYour sword is no longer glowing.
+     1 | You can't see any gold key here!\nThere is a large, white animal partly hidden behind some trees.\nYour sword has begun to glow very brightly.
+     1 | I don't know the word "symbol".
+     1 | I don't know the word "prop".
+     1 | What do you want to insert the brick in?
+     1 | I don't know the word "fissure".
+     1 | You can't see any letterf here!
+     1 | I don't know the word "fletter".
+     1 | I don't know the word "well!".
+     1 | I don't know the word "my".
+     1 | I don't know the word "slash".
+     1 | I don't know the word "stoop".
+     1 | I don't know the word "duck".
+     1 | I don't know the word "low".
+     1 | I don't know the word "applaud".
+     1 | I don't know the word "crouch".
+     1 | I don't know the word "tiptoe".
+     1 | There's nothing special about the brick.\nThe dragon continues to watch you carefully.
+     1 | I don't know the word "peer".
+     1 | I don't know the word "placate".
+     1 | You can't see any club here!\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, almost inaudibly, whispers a word beginning with "F," and then disappears, chuckling nastily.
+     1 | I don't know the word "medallion".
+     1 | It is already open.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.
+     1 | You can't see any cube here!
+     1 | There's nothing special about the roses.
+     1 | There is no way to go in that direction.\nA strange little man in a long cloak appears suddenly in the room. He is wearing a high pointed hat embroidered with astrological signs. He has a long, stringy, and unkempt beard.\nThe Wizard draws forth his wand and waves it in your direction. It begins to glow with a faint blue glow.\nThe Wizard, in a deep and resonant voice, speaks the word "Feeble!" He cackles gleefully.\nAll at once you feel very tired.\nIn fact, you feel so weak that you drop the wooden club.
+     1 | It is already open.\nA unicorn is peacefully cropping grass at the north end of the garden. There is something hanging around its neck.\nYour sword is glowing with a faint blue glow.
+     1 | You can't see any hedges here!\nThere is a large, white animal partly hidden behind some trees.
+     1 | You can't see any sword here!\nThere is a beautiful unicorn eating roses here. Around his neck is a red satin ribbon on which is strung a tiny key.
+     1 | You can't see any unicorn here!
+     1 | You can't see any key here!\nYou look around, and strangely, the topiary animals seem to have changed position slightly.
+     1 | I don't know the word "side".
+     1 | What do you want to turn the menhir with?
+     1 | I don't know the word "crossbar".
+     1 | I don't know the word "fee".
+     1 | What do you want to turn the head with?
+     1 | I don't know the word "headâs".
+     1 | I don't know the word "tooth".
+     1 | You can't see any head here!
+     1 | I don't know the word "mold".
+     1 | I don't know the word "eyes".
+     1 | I don't know the word "fee-fi-foe-foo".
+     1 | I don't know the word "fangs".
+     1 | You can't see any necklace here!\nThe unicorn bounds lightly away.
+     1 | I don't know the word "chain".
+     1 | You used the word "brush" in a way that I don't understand.
+     1 | I don't know the word "weeds".
+     1 | I don't know the word "vine".
+     1 | I don't know the word "ivy".
+     1 | I don't know the word "briers".
+     1 | You can't see any necklace here!\nYou catch a glimpse of something white between two hedges.\nYour sword has begun to glow very brightly.
+     1 | I don't know the word "reach".
+     1 | You can't see any hedge here!\nYou catch a glimpse of something white between two hedges.
+     1 | You used the word "ring" in a way that I don't understand.
+     1 | You can't see any hedge here!\nThere is a beautiful unicorn eating roses here. Around his neck is a red satin ribbon on which is strung a tiny key.\nYour sword has begun to glow very brightly.
+     1 | I don't know the word "rosebud".
+     1 | I don't know the word "flower".
+     1 | You can't see any hedge here!\nYou catch a glimpse of something white between two hedges.\nYour sword has begun to glow very brightly.
+     1 | I don't know the word "aloft".
+     1 | What do you want to cut?
+     1 | You used the word "fence" in a way that I don't understand.

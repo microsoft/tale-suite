@@ -1,0 +1,126 @@
+# Invalid Action Messages: JerichoEnvInhumane
+# Total unique error messages: 119
+# Total error occurrences: 9940
+#
+# Format: count | message
+#===============================================================================
+
+  3862 | That's not a verb I recognise.
+  1575 | You can't see any such thing.
+   708 | You don't have a shovel, genius.
+   670 | You seem to want to talk to someone, but I can't see whom.
+   626 | You see nothing interesting about the jeweled amulet.
+   404 | You can't go that way.
+   357 | That's not something you need to refer to in the course of this game.
+   280 | I only understood you as far as wanting to inventory.
+   157 | I only understood you as far as wanting to look.
+   123 | This dangerous act would achieve little.
+   112 | You see nothing interesting about the floor.
+    86 | You see nothing interesting about the shovel.
+    83 | I only understood you as far as wanting to dig.
+    70 | I only understood you as far as wanting to jump.
+    59 | You see nothing interesting about the stalagmites.
+    58 | It seems to be locked.
+    55 | I only understood you as far as wanting to no.
+    52 | I don't think much is to be achieved by that.
+    49 | That's not something you can switch.
+    41 | Which do you mean, the north wall, the south wall, the east wall or the west wall?
+    37 | But you aren't in anything at the moment.
+    33 | I didn't understand that sentence.
+    31 | What do you want to search?
+    24 | You find nothing of interest.
+    22 | You see nothing interesting about the Great Door.
+    21 | You see nothing interesting about the door.
+    19 | You see nothing interesting about the north wall.
+    17 | You can't use multiple objects with that verb.
+    16 | You already have that.
+    14 | I only understood you as far as wanting to exit.
+    13 | I only understood you as far as wanting to hold the door.
+    13 | Violence isn't the answer to this one.
+     9 | You see nothing interesting about the west wall.
+     9 | I only understood you as far as wanting to examine the torch.
+     8 | You see nothing interesting about the wooden door.
+     8 | What do you want to check?
+     7 | You see nothing interesting about the east wall.
+     7 | What do you want to unlock the Great Door with?
+     7 | You see nothing interesting about the left disk.
+     7 | What do you want to press?
+     6 | You see nothing interesting about the ceiling.
+     6 | I only understood you as far as wanting to look at the torch.
+     6 | What do you want to read?
+     6 | What do you want to insert the jeweled amulet in?
+     6 | I only understood you as far as wanting to east.
+     5 | I only understood you as far as wanting to examine the small pebble.
+     5 | That's not something you can enter.
+     5 | I only understood you as far as wanting to look in the east wall.
+     5 | You see nothing interesting about the solid gold brick.
+     5 | You see nothing interesting about the iron crank.
+     5 | What do you want to sit on?
+     5 | I only understood you as far as wanting to examine the jeweled amulet.
+     5 | What do you want to go in?
+     4 | I only understood you as far as wanting to hit the door.
+     4 | I only understood you as far as wanting to examine the east wall.
+     4 | You see nothing interesting about the south wall.
+     3 | I only understood you as far as wanting to light the torch.
+     3 | I only understood you as far as wanting to look in Roboff's toilet.
+     3 | I only understood you as far as wanting to search Roboff's toilet.
+     3 | I only understood you as far as wanting to break the door.
+     3 | You can only do that to something animate.
+     3 | You see nothing interesting about the large perfect ruby.
+     3 | You see nothing interesting about the iron key.
+     3 | You see nothing interesting about the golden figure of a demon.
+     3 | You see nothing interesting about the faceted obsidian sphere.
+     3 | You see nothing interesting about the small pebble.
+     3 | You see nothing interesting about the beautiful silver necklace.
+     3 | What do you want to push?
+     3 | What do you want to take?
+     3 | What do you want to light?
+     3 | What do you want to take the jeweled amulet from?
+     3 | I only understood you as far as wanting to it.
+     2 | I only understood you as far as wanting to break the quartz window.
+     2 | I only understood you as far as wanting to get the beautiful silver necklace.
+     2 | That doesn't seem to be something you can unlock.
+     2 | I only understood you as far as wanting to climb the floor.
+     2 | I only understood you as far as wanting to read the labelled button.
+     2 | I only understood you as far as wanting to hit the stone obelisk.
+     2 | You see nothing interesting about the iron shelf.
+     2 | You see nothing interesting about the coin-holder.
+     2 | I only understood you as far as wanting to think.
+     2 | What do you want to examine?
+     2 | What do you want to attack?
+     2 | I only understood you as far as wanting to search the east wall.
+     2 | I only understood you as far as wanting to enter the west wall.
+     2 | You see nothing interesting about the door.\n\nThe door has swung shut.
+     1 | I only understood you as far as wanting to check Roboff's toilet.
+     1 | I only understood you as far as wanting to wait.
+     1 | What do you want to unlock the small chest with?
+     1 | You're not holding the coin bag to put the coin into.
+     1 | I only understood you as far as wanting to open the wooden door.
+     1 | I only understood you as far as wanting to search the torch.
+     1 | I only understood you as far as wanting to look under Roboff's toilet.
+     1 | I only understood you as far as wanting to remove Roboff's toilet.
+     1 | I only understood you as far as wanting to open Roboff's toilet.
+     1 | I only understood you as far as wanting to close Roboff's toilet.
+     1 | I only understood you as far as wanting to examine Roboff's toilet.
+     1 | I only understood you as far as wanting to break the stalagmites.
+     1 | That doesn't seem to be something you can unlock.\n\nThe door has swung shut.
+     1 | I only understood you as far as wanting to break the Great Door.
+     1 | I only understood you as far as wanting to sing.
+     1 | I only understood you as far as wanting to break the stone obelisk.
+     1 | I only understood you as far as wanting to smash the quartz window.
+     1 | I only understood you as far as wanting to examine the north wall.
+     1 | You see nothing interesting about the right disk.
+     1 | I only understood you as far as wanting to stand.
+     1 | You see nothing interesting about the priceless dorkmid.
+     1 | You see nothing interesting about the middle disk.
+     1 | What do you want to punch?
+     1 | What do you want to grope?
+     1 | What do you want to uncover?
+     1 | What do you want to hit?
+     1 | I only understood you as far as wanting to examine the floor.
+     1 | What do you want to fight?
+     1 | I only understood you as far as wanting to q.
+     1 | What do you want to drink?
+     1 | I only understood you as far as wanting to swim.
+     1 | You see nothing interesting about the iron key.\n\nThe platform is to the southeast of the axle.
+     1 | You see nothing interesting about the stone disk.

@@ -1,0 +1,105 @@
+# Invalid Action Messages: JerichoEnvAwaken
+# Total unique error messages: 98
+# Total error occurrences: 11706
+#
+# Format: count | message
+#===============================================================================
+
+  3951 | That's not a verb I recognise.
+  2826 | You can't see any such thing.
+  1265 | You seem to want to talk to someone, but I can't see whom.
+   827 | Time passes.
+   647 | But you aren't in anything at the moment.
+   617 | I only understood you as far as wanting to wait.
+   313 | I beg your pardon?
+   258 | I only understood you as far as wanting to look.
+   237 | You find nothing of interest.
+    84 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+    77 | I don't think much is to be achieved by that.
+    52 | I only understood you as far as wanting to hit the guard dog.
+    41 | You see nothing special about the south wall.
+    41 | I only understood you as far as wanting to attack the guard dog.
+    36 | I only understood you as far as wanting to inventory.
+    34 | That's not something you can enter.
+    29 | I only understood you as far as wanting to throw the broken limb.
+    24 | There is no entrance into the church on this side.
+    22 | I only understood you as far as wanting to break the windows.
+    19 | You see nothing special about the east wall.
+    19 | What do you want to dig?
+    17 | You can't use multiple objects with that verb.
+    16 | I only understood you as far as wanting to swing the broken limb.
+    15 | You see nothing special about the south wall.\n\nLightning arcs overhead, followed instantly by a blast of thunder.
+    12 | Violence isn't the answer to this one.
+    11 | You see nothing special about the west wall.
+    10 | I only understood you as far as wanting to pull yourself.
+    10 | I only understood you as far as wanting to examine the church.
+    10 | You see nothing special about the north wall.
+     8 | I only understood you as far as wanting to examine the windows.
+     8 | I only understood you as far as wanting to dig the disturbed grave.
+     8 | I only understood you as far as wanting to feel the mud.
+     8 | I didn't understand that sentence.
+     8 | I only understood you as far as wanting to jump.
+     7 | You see nothing special about the south wall.\n\nFor a brief moment, hail pounds against you then subsides.
+     6 | I only understood you as far as wanting to break the chain.
+     6 | You see nothing special about the north wall.\n\nLightning arcs overhead, followed instantly by a blast of thunder.
+     6 | I only understood you as far as wanting to drag yourself.
+     5 | But you aren't in anything at the moment.\nThat's not a verb I recognise.
+     5 | You see no need to carry the trash around with you.\n\nThe dog growls at you threateningly.
+     5 | You see nothing special about the west wall.\n\nMomentarily, the wind and rain slacken then return with renewed force.
+     5 | I only understood you as far as wanting to throw the handful of gravel.
+     4 | I only understood you as far as wanting to stand up.
+     4 | I only understood you as far as wanting to stand.
+     4 | You see nothing special about the west wall.\n\nWith a loud CRACK, a bolt of lightning strikes the steeple of the church.
+     4 | I only understood you as far as wanting to examine the disturbed grave.
+     4 | That's not something you can enter.\n\nFor a brief moment, hail pounds against you then subsides.
+     4 | There is no entrance into the church on this side.\n\nLightning arcs overhead, followed instantly by a blast of thunder.
+     4 | I only understood you as far as wanting to examine the mud.
+     4 | I only understood you as far as wanting to dig the mud.
+     3 | There's nothing sensible to swing here.\n\nThe dog leaps at you, raking your chest with its claws and leaving a trail of red.
+     3 | I only understood you as far as wanting to kill the guard dog.
+     3 | That's not something you can enter.\n\nThe dog growls at you threateningly.
+     3 | There is no entrance into the church on this side.\n\nThe dog growls at you threateningly.
+     2 | I only understood you as far as wanting to fight the guard dog.
+     2 | You see nothing special about the east wall.\n\nLightning arcs overhead, followed instantly by a blast of thunder.
+     2 | You see nothing special about the west wall.\n\nThe dog growls at you threateningly.
+     2 | You see nothing special about the south wall.\n\nWith a loud CRACK, a bolt of lightning strikes the steeple of the church.
+     2 | I only understood you as far as wanting to hit the windows.
+     2 | There is no entrance into the church on this side.\n\nWith a loud CRACK, a bolt of lightning strikes the steeple of the church.
+     2 | I only understood you as far as wanting to climb the oak trees.
+     2 | There's nothing sensible to swing here.\n\nThe dog finally manages to latch onto your throat. Your last sight is of your blood splattering onto its face.\n\n\n    *** You have died ***\n\n\nIn that game you scored 0 out of a possible 50, in 29 turns.\n\nWould you like to RESTART, RESTORE a saved game, UNDO your last move, give the FULL score for that game or QUIT
+     2 | I only understood you as far as wanting to wave the broken limb.
+     2 | There's nothing sensible to swing here.\n\nThe dog growls at you threateningly.\n\nLightning arcs overhead, followed instantly by a blast of thunder.
+     2 | I only understood you as far as wanting to swim.
+     2 | I only understood you as far as wanting to pull the ivy.
+     2 | I only understood you as far as wanting to hit the chain.
+     1 | But you aren't in anything at the moment.\n\nIn the Mud\nRain and muddy water are pouring down on you, making it difficult to see or even breathe. Sodden earth and mud surrounds you on all sides except overhead, where flashes of lightning illuminate a storm tossed sky.
+     1 | You see nothing special about the east wall.\n\nA blast of thunder rattles the ground.
+     1 | There's nothing sensible to swing here.\n\nYou feel a flash of searing pain as the dog latches onto your side with its teeth.
+     1 | What do you want to look up in?
+     1 | You see nothing special about the north wall.\n\nFor a brief moment, hail pounds against you then subsides.
+     1 | You see nothing special about the south wall.\n\nA blast of thunder rattles the ground.
+     1 | You see nothing special about the north wall.\n\nA blast of thunder rattles the ground.
+     1 | You see nothing special about the floor.\n\nYou hear a loud crash and see a flash of light through the cracks in the boards covering the windows.
+     1 | There is no passage in that direction.
+     1 | You see nothing special about the ceiling.
+     1 | That's not something you can enter.\n\nLightning arcs overhead, followed instantly by a blast of thunder.
+     1 | I only understood you as far as wanting to search the mud.
+     1 | I only understood you as far as wanting to climb the mud.
+     1 | I only understood you as far as wanting to pull the windows.
+     1 | I only understood you as far as wanting to pull the sidewalk.
+     1 | There is no entrance into the church on this side.\n\nMomentarily, the wind and rain slacken then return with renewed force.
+     1 | I only understood you as far as wanting to attack the windows.
+     1 | There is no entrance into the church on this side.\n\nA blast of thunder rattles the ground.
+     1 | You see nothing special about the southeast wall.\n\nLightning arcs overhead, followed instantly by a blast of thunder.
+     1 | I only understood you as far as wanting to get the ceiling.
+     1 | That's not something you can open.
+     1 | There is no entrance into the church on this side.\n\nFor a brief moment, hail pounds against you then subsides.
+     1 | You see nothing special about the south wall.\n\nThe dog growls at you threateningly.
+     1 | You see nothing special about the north wall.\n\nMomentarily, the wind and rain slacken then return with renewed force.
+     1 | You see nothing special about the southwest wall.\n\nMomentarily, the wind and rain slacken then return with renewed force.
+     1 | You see nothing special about the southeast wall.
+     1 | You see nothing special about the northeast wall.
+     1 | That's not something you can enter.\n\nYou feel a flash of searing pain as the dog latches onto your side with its teeth.
+     1 | I only understood you as far as wanting to smash the windows.
+     1 | That's not something you can enter.\n\nMomentarily, the wind and rain slacken then return with renewed force.
+     1 | I only understood you as far as wanting to wipe the mud.

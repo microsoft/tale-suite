@@ -1,0 +1,20 @@
+# Invalid Action Messages: ScienceWorldFindAnimal
+# Total unique error messages: 13
+# Total error occurrences: 13726
+#
+# Format: count | message
+#===============================================================================
+
+ 12993 | No known action matches that input.
+   256 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+   222 | The door is not open.
+   133 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+    36 | The door is already open.
+    26 | The large cupboard is already open.
+    25 | The drawer isn't open, so you can't see inside.
+    17 | The bee hive is already open.
+     7 | The drawer is already open.
+     7 | You can't pick up a gas directly.
+     2 | The cupboard isn't open, so you can't see inside.
+     1 | The large cupboard is already closed.
+     1 | You can't move something into itself.

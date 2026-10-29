@@ -1,0 +1,48 @@
+# Invalid Action Messages: TWCookingLevel5
+# Total unique error messages: 41
+# Total error occurrences: 9424
+#
+# Format: count | message
+#===============================================================================
+
+  5014 | That's not a verb I recognise.
+  1665 | You can't see any such thing.
+  1151 | I beg your pardon?
+   783 | You seem to want to talk to someone, but I can't see whom.
+   365 | I only understood you as far as wanting to take inventory.
+   150 | You can't go that way.
+    64 | That's fixed in place.
+    32 | You can't begin with a comma.
+    27 | It isn't something you can open.
+    26 | You still miss something.
+    20 | What do you want to open?
+    19 | That's already open.
+    14 | You need to take the block of cheese first.
+    12 | This dangerous act would achieve little.
+    11 | I only understood you as far as wanting to go south.
+     9 | It isn't something you can switch.
+     8 | I only understood you as far as wanting to (go) in.
+     8 | That was a rhetorical question.\n\n\nThat's not a verb I recognise.
+     7 | I only understood you as far as wanting to go north.
+     5 | Which do you mean, patio door, the patio chair or the patio table?
+     4 | Which do you mean, barn door or patio door?
+     3 | It is fixed in place.
+     2 | You can't use multiple objects with that verb.
+     2 | I only understood you as far as wanting to go east.
+     2 | I only understood you as far as wanting to check the workbench.
+     2 | What do you want to cook?
+     2 | You can't talk to barn door.
+     2 | But you aren't in anything at the moment.
+     2 | I only understood you as far as wanting to leave.
+     2 | That's not something you can sit down on.
+     1 | I didn't understand that sentence.
+     1 | I only understood you as far as wanting to check the toolbox.
+     1 | I only understood you as far as wanting to look the toolbox.
+     1 | I only understood you as far as wanting to read the cookbook.
+     1 | You already have that.
+     1 | I only understood you as far as wanting to examine the BBQ.
+     1 | I only understood you as far as wanting to check the BBQ.
+     1 | I only understood you as far as wanting to exit.
+     1 | That was a rhetorical question.
+     1 | I only understood you as far as wanting to examine east.
+     1 | I only understood you as far as wanting to open east.

@@ -1,0 +1,16 @@
+# Invalid Action Messages: ScienceWorldIdentifyLifeStages2
+# Total unique error messages: 9
+# Total error occurrences: 11842
+#
+# Format: count | message
+#===============================================================================
+
+ 11522 | No known action matches that input.
+    90 | The door is already open.
+    86 | The door is not open.
+    80 | You can't pick up a gas directly.
+    52 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+     4 | self watering flower pot 1 is already connected, and must be disconnected before it can be connected to something else
+     4 | self watering flower pot 3 is already connected, and must be disconnected before it can be connected to something else
+     2 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+     2 | The bee hive isn't open, so you can't see inside.

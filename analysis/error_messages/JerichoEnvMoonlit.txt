@@ -1,0 +1,146 @@
+# Invalid Action Messages: JerichoEnvMoonlit
+# Total unique error messages: 139
+# Total error occurrences: 10022
+#
+# Format: count | message
+#===============================================================================
+
+  3948 | That's not a verb I recognise.
+  1609 | You can't see any such thing.
+   747 | I beg your pardon?
+   631 | You seem to want to talk to someone, but I can't see whom.
+   561 | I only understood you as far as wanting to examine the porcelain mask.
+   283 | I only understood you as far as wanting to sing.
+   200 | I only understood you as far as wanting to go the floor.
+   200 | I only understood you as far as wanting to think.
+   185 | I only understood you as far as wanting to strike the bronze gong.
+   166 | I only understood you as far as wanting to inventory.
+   158 | I only understood you as far as wanting to look.
+   123 | I only understood you as far as wanting to examine the bas-relief.
+    99 | I only understood you as far as wanting to fold the sheet of red paper.
+    89 | You can't use multiple objects with that verb.
+    84 | You already have that.
+    80 | Time passes.
+    60 | You find nothing of interest.
+    48 | I only understood you as far as wanting to go the ceiling.
+    47 | I only understood you as far as wanting to hit the bronze gong.
+    46 | What do you want to read in?
+    46 | What do you want to get?
+    38 | I only understood you as far as wanting to examine the banquet of bones.
+    32 | I only understood you as far as wanting to arrange the glassware.
+    31 | I only understood you as far as wanting to wave the tasseled fan.
+    31 | I don't think much is to be achieved by that.
+    24 | I only understood you as far as wanting to down.
+    21 | I only understood you as far as wanting to fold the folded maple leaf.
+    20 | I only understood you as far as wanting to touch the banquet of bones.
+    19 | You already have those.
+    18 | You're not wearing that.
+    16 | I only understood you as far as wanting to pick up the banquet of bones.
+    16 | I only understood you as far as wanting to climb the floor.
+    15 | You can't put something on top of itself.
+    14 | I only understood you as far as wanting to tie the porcelain mask.
+    14 | I only understood you as far as wanting to wave the ivory chopsticks.
+    11 | You can only do that to something animate.
+    11 | I only understood you as far as wanting to hold the porcelain mask.
+    11 | I only understood you as far as wanting to examine the sky.
+    10 | I only understood you as far as wanting to set the jade compass.
+    10 | I only understood you as far as wanting to look at the porcelain mask.
+     9 | I only understood you as far as wanting to play the bronze gong.
+     8 | I only understood you as far as wanting to eat the banquet of bones.
+     8 | I only understood you as far as wanting to wait.
+     8 | That's not something you can enter.
+     7 | I only understood you as far as wanting to adjust the porcelain mask.
+     7 | What do you want to put the porcelain mask on?
+     7 | What do you want to sit on top of?
+     7 | I only understood you as far as wanting to examine the moonlight.
+     7 | I only understood you as far as wanting to examine the bronze gong.
+     6 | I only understood you as far as wanting to look at the banquet of bones.
+     6 | I only understood you as far as wanting to wear the porcelain mask.
+     6 | There is nothing on the stairs.
+     6 | I only understood you as far as wanting to feel the porcelain mask.
+     5 | I didn't understand that sentence.
+     5 | I only understood you as far as wanting to play the clay ocarina.
+     5 | What do you want to throw the folded maple leaf those things?
+     5 | You can't put something inside itself.
+     5 | I only understood you as far as wanting to tie the ivory chopsticks.
+     4 | I only understood you as far as wanting to turn the jade compass.
+     4 | I only understood you as far as wanting to examine the bronze-hilted dagger.
+     4 | I only understood you as far as wanting to examine the tasseled fan.
+     4 | I only understood you as far as wanting to examine the white tassel.
+     4 | I only understood you as far as wanting to cut the white tassel.
+     4 | That's not something you can open.
+     4 | I only understood you as far as wanting to cover the porcelain mask.
+     4 | You see nothing special about the floor.
+     4 | I only understood you as far as wanting to in.
+     4 | I only understood you as far as wanting to put the porcelain mask on the bas-relief.
+     3 | I only understood you as far as wanting to examine the ivory dragon.
+     3 | I only understood you as far as wanting to hold the tasseled fan.
+     3 | I only understood you as far as wanting to turn the porcelain mask.
+     2 | I only understood you as far as wanting to arrange the silk cushions.
+     2 | I only understood you as far as wanting to examine the rim.
+     2 | I only understood you as far as wanting to restore.
+     2 | I only understood you as far as wanting to down the floor.
+     2 | I only understood you as far as wanting to hold the bronze-hilted dagger.
+     2 | I only understood you as far as wanting to examine the ivory phoenix.
+     2 | I only understood you as far as wanting to take the ivory phoenix.
+     2 | I only understood you as far as wanting to play the tortoise-shell comb.
+     2 | What do you want to search?
+     2 | I only understood you as far as wanting to touch the porcelain mask.
+     2 | I only understood you as far as wanting to pull the porcelain mask.
+     2 | I only understood you as far as wanting to tear the porcelain mask.
+     2 | Violence isn't the answer to this one.
+     2 | Which do you mean, the stones or the shadow weapons?
+     2 | I only understood you as far as wanting to attack the ivory phoenix.
+     2 | I only understood you as far as wanting to attack the banquet of bones.
+     1 | I only understood you as far as wanting to examine the ivory chopsticks.
+     1 | I only understood you as far as wanting to hold the ivory chopsticks.
+     1 | What do you want to throw the folded maple leaf?
+     1 | I only understood you as far as wanting to fly the folded maple leaf.
+     1 | I only understood you as far as wanting to attach the tasseled fan.
+     1 | I only understood you as far as wanting to cut the tasseled fan.
+     1 | I only understood you as far as wanting to examine the mural.
+     1 | I only understood you as far as wanting to take the stairs.
+     1 | What do you want to look up in?
+     1 | I only understood you as far as wanting to look at the bas-relief.
+     1 | I only understood you as far as wanting to touch the table.
+     1 | I only understood you as far as wanting to wave the porcelain mask.
+     1 | I only understood you as far as wanting to strike the table.
+     1 | I only understood you as far as wanting to touch the ivory dragon.
+     1 | I only understood you as far as wanting to touch the ivory phoenix.
+     1 | I only understood you as far as wanting to take the ivory dragon.
+     1 | I only understood you as far as wanting to put the folded maple leaf in the garden.
+     1 | I only understood you as far as wanting to arrange the banquet of bones.
+     1 | I only understood you as far as wanting to arrange the stoneware.
+     1 | That's not something you can stand on.
+     1 | I only understood you as far as wanting to cover yourself.
+     1 | I only understood you as far as wanting to cover the raptors' eyes.
+     1 | I only understood you as far as wanting to blow the folded maple leaf.
+     1 | I only understood you as far as wanting to hold the folded maple leaf.
+     1 | I only understood you as far as wanting to tie the folded maple leaf to the ivory chopsticks.
+     1 | I only understood you as far as wanting to untie the white tassel.
+     1 | I only understood you as far as wanting to tie the ivory dragon to the ivory phoenix.
+     1 | I only understood you as far as wanting to remove the porcelain mask.
+     1 | This dangerous act would achieve little.
+     1 | I only understood you as far as wanting to search the porcelain mask.
+     1 | I only understood you as far as wanting to play the ivory chopsticks.
+     1 | But you aren't in anything at the moment.
+     1 | I only understood you as far as wanting to score.
+     1 | I only understood you as far as wanting to strike the banquet of bones.
+     1 | I only understood you as far as wanting to strike the bronze-hilted dagger.
+     1 | I only understood you as far as wanting to hit the banquet of bones.
+     1 | I only understood you as far as wanting to smash the banquet of bones.
+     1 | Nothing obvious happens.
+     1 | I only understood you as far as wanting to get the ivory dragon.
+     1 | I only understood you as far as wanting to examine the sheet of red paper.
+     1 | I only understood you as far as wanting to strike the tasseled pommel.
+     1 | I only understood you as far as wanting to examine the maple leaf.
+     1 | I only understood you as far as wanting to put the porcelain mask on the ivory phoenix.
+     1 | I only understood you as far as wanting to break the glassware.
+     1 | I only understood you as far as wanting to smash the stoneware.
+     1 | I only understood you as far as wanting to attack the ivory chopsticks.
+     1 | I only understood you as far as wanting to kill the ivory phoenix.
+     1 | I only understood you as far as wanting to break the ivory chopsticks.
+     1 | I only understood you as far as wanting to put the folded maple leaf on the folded maple leaf.
+     1 | I only understood you as far as wanting to put the tortoise-shell comb on the tortoise-shell comb.
+     1 | I only understood you as far as wanting to insert the folded maple leaf into the folded maple leaf.
+     1 | I only understood you as far as wanting to put the tortoise-shell comb in the tortoise-shell comb.

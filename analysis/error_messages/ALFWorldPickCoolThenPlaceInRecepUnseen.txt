@@ -1,0 +1,12 @@
+# Invalid Action Messages: ALFWorldPickCoolThenPlaceInRecepUnseen
+# Total unique error messages: 5
+# Total error occurrences: 17758
+#
+# Format: count | message
+#===============================================================================
+
+ 17724 | Nothing happens.
+    24 | There's nothing special about bread 1.
+     8 | There's nothing special about lettuce 1.
+     1 | There's nothing special about potato 2.
+     1 | There's nothing special about vase 1.

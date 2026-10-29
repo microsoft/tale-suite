@@ -1,0 +1,13 @@
+# Invalid Action Messages: ALFWorldPickAndPlaceSimpleUnseen
+# Total unique error messages: 6
+# Total error occurrences: 17696
+#
+# Format: count | message
+#===============================================================================
+
+ 17676 | Nothing happens.
+     9 | There's nothing special about keychain 3.
+     6 | There's nothing special about cellphone 1.
+     3 | There's nothing special about keychain 1.
+     1 | There's nothing special about book 1.
+     1 | There's nothing special about cellphone 2.

@@ -1,0 +1,16 @@
+# Invalid Action Messages: ALFWorldPickTwoObjAndPlaceSeen
+# Total unique error messages: 9
+# Total error occurrences: 18857
+#
+# Format: count | message
+#===============================================================================
+
+ 18826 | Nothing happens.
+     9 | There's nothing special about alarmclock 2.
+     8 | There's nothing special about pen 3.
+     6 | There's nothing special about alarmclock 1.
+     2 | There's nothing special about creditcard 1.
+     2 | There's nothing special about cd 2.
+     2 | There's nothing special about pen 2.
+     1 | There's nothing special about keychain 1.
+     1 | There's nothing special about pillow 1.

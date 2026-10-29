@@ -1,0 +1,106 @@
+# Invalid Action Messages: JerichoEnvJewel
+# Total unique error messages: 99
+# Total error occurrences: 13604
+#
+# Format: count | message
+#===============================================================================
+
+  6545 | That's not a verb I recognise.
+  1790 | Time passes.
+  1120 | You can only do that to something animate.
+  1084 | You can't see any such thing.
+   862 | You seem to want to talk to someone, but I can't see whom.
+   335 | You can't go that way.
+   275 | I only understood you as far as wanting to examine the lava rocks.
+   242 | I only understood you as far as wanting to look.
+   210 | I only understood you as far as wanting to inventory.
+   159 | I beg your pardon?
+   143 | You find nothing of interest.
+   107 | I only understood you as far as wanting to wait.
+    95 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall, the southwest wall or the porous wall?
+    65 | There is nothing on the body.
+    39 | But you aren't in anything at the moment.
+    35 | I don't think much is to be achieved by that.
+    32 | That's not something you can enter.
+    29 | You can't see inside, since the travelling sack is closed.
+    28 | I only understood you as far as wanting to look at the lava rocks.
+    20 | That's not something you need to refer to in the course of this game.
+    18 | Which do you mean, the west wall or the porous wall?
+    18 | Violence isn't the answer to this one.
+    18 | Which do you mean, the floor or the dirty floor?
+    16 | What do you want to look up in?
+    15 | I only understood you as far as wanting to jump.
+    14 | You can't go that way.\n\nThe ground shakes a bit underneath you.
+    13 | I only understood you as far as wanting to go the ceiling.
+    13 | You see nothing special about the ceiling.
+    12 | Which do you mean, the remaining patch of moss or the spongy moss?
+    10 | What do you want to search?
+    10 | You can't use multiple objects with that verb.
+    10 | But you aren't in anything at the moment.\n\nIn an instant a stream of sulfurous water shoots through the geyser, 100 feet up the shaft. The water comes crashing back down in a torrent and momentarily knocks you off your feet!
+     9 | What do you want to dig?
+     9 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+     9 | I only understood you as far as wanting to go the floor.
+     9 | I only understood you as far as wanting to check the lava rocks.
+     8 | I only understood you as far as wanting to go the west wall.
+     7 | Which do you mean, the narrow hole or the gaping hole?
+     7 | I only understood you as far as wanting to search the skeleton.
+     7 | I only understood you as far as wanting to examine the skeleton.
+     7 | I only understood you as far as wanting to fill the travelling sack.
+     6 | I only understood you as far as wanting to examine the round object.
+     6 | You see nothing special about the north wall.
+     6 | That's already open.
+     5 | You can't go that way.\n\nYou can feel a slight rumbling beneath your feet.
+     5 | I only understood you as far as wanting to examine the body.
+     5 | Which do you mean, the ceiling or the ceiling hole?
+     5 | You see nothing special about the floor.
+     5 | You see nothing special about the west wall.
+     5 | I only understood you as far as wanting to go the north wall.
+     5 | What do you want to hold?
+     4 | I only understood you as far as wanting to examine the droplets of water.
+     4 | I only understood you as far as wanting to look under the skeleton.
+     4 | I only understood you as far as wanting to go the northeast wall.
+     4 | I only understood you as far as wanting to hit the gleaming silver sword.
+     4 | I only understood you as far as wanting to rub the lava rocks.
+     3 | I only understood you as far as wanting to examine the lava river et al..
+     3 | You already have that.
+     3 | I only understood you as far as wanting to break the skeleton.
+     3 | You see nothing special about the east wall.
+     3 | I didn't understand that sentence.
+     3 | I only understood you as far as wanting to search the floor.
+     3 | I only understood you as far as wanting to go the south wall.
+     3 | I only understood you as far as wanting to rub the spongy moss.
+     3 | I only understood you as far as wanting to rub the moon salt.
+     3 | That's not something you can open.
+     2 | What do you want to move?
+     2 | I only understood you as far as wanting to examine the geyser.
+     2 | I only understood you as far as wanting to stand.
+     2 | I only understood you as far as wanting to take the lava river et al..
+     2 | I only understood you as far as wanting to go the northwest wall.
+     2 | I only understood you as far as wanting to go the east wall.
+     2 | I only understood you as far as wanting to smell the remaining patch of moss.
+     2 | I only understood you as far as wanting to hold the gleaming silver sword.
+     2 | I only understood you as far as wanting to check the west wall.
+     2 | I only understood you as far as wanting to help.
+     2 | What do you want to examine?
+     2 | I only understood you as far as wanting to take the dirty floor.
+     2 | You can't get a good hold of it.
+     2 | I only understood you as far as wanting to hold the spongy moss.
+     1 | You haven't got that.
+     1 | You see nothing special about the south wall.
+     1 | You can't go that way.\n\nThe ground here seems slightly unstable. It trembles and you lose your balance.
+     1 | I only understood you as far as wanting to climb the carved steps.
+     1 | I only understood you as far as wanting to remove the skeleton.
+     1 | I only understood you as far as wanting to examine the ceiling hole.
+     1 | I only understood you as far as wanting to examine the ice block.
+     1 | You can't go that way.\n\nIn an instant a stream of sulfurous water shoots through the geyser, 100 feet up the shaft. The water comes crashing back down in a torrent and momentarily knocks you off your feet!
+     1 | What do you want to shoot the red and white mushroom with?
+     1 | What do you want to load the crossbow in?
+     1 | That's not something you can enter.\n\nIn an instant a stream of sulfurous water shoots through the geyser, 100 feet up the shaft. The water comes crashing back down in a torrent and momentarily knocks you off your feet!
+     1 | I only understood you as far as wanting to hit the skeleton.
+     1 | What do you want to press?
+     1 | What do you want to check?
+     1 | What do you want to climb?
+     1 | I only understood you as far as wanting to rub the gleaming silver sword.
+     1 | I only understood you as far as wanting to examine the floor.
+     1 | I only understood you as far as wanting to cut the red and white mushroom.
+     1 | I only understood you as far as wanting to tie the spongy moss.

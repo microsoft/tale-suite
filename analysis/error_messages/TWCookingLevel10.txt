@@ -1,0 +1,80 @@
+# Invalid Action Messages: TWCookingLevel10
+# Total unique error messages: 73
+# Total error occurrences: 10329
+#
+# Format: count | message
+#===============================================================================
+
+  3521 | That's not a verb I recognise.
+  2679 | You can't see any such thing.
+  1151 | I beg your pardon?
+   996 | You seem to want to talk to someone, but I can't see whom.
+   301 | You can't go that way.
+   298 | What do you want to slice the red apple with?
+   226 | That's already open.
+   209 | I only understood you as far as wanting to take inventory.
+   114 | You still miss something.
+   104 | It isn't something you can switch.
+    69 | It isn't something you can open.
+    62 | Time passes.
+    48 | You need to take the carrot first.
+    48 | That's fixed in place.
+    47 | I didn't understand that sentence.
+    44 | It is fixed in place.
+    41 | You can't begin with a comma.
+    40 | You need to take the red apple first.
+    36 | (with the carrot)\nYou need to take the carrot first.
+    29 | This dangerous act would achieve little.
+    23 | What do you want to cook the red apple with?
+    21 | You need to take the white onion first.
+    17 | You have to be more specific!
+    15 | I only understood you as far as wanting to examine the toolbox.
+    14 | What do you want to cook the carrot with?
+    14 | You need to take the knife first.
+    13 | You already have that.
+    12 | I only understood you as far as wanting to take the red apple.
+    11 | You can't see inside, since the fridge is closed.
+     9 | You need to specify how you want to cut the red apple. Either slice, dice, or chop it.
+     7 | But you aren't in anything at the moment.
+     6 | I only understood you as far as wanting to leave.
+     5 | I only understood you as far as wanting to check outside.
+     5 | I only understood you as far as wanting to smash the showcase.
+     5 | What do you want to slice the carrot with?
+     5 | Which do you mean, the white onion or the red onion?
+     5 | Which do you mean, the red hot pepper or the yellow bell pepper?
+     5 | I only understood you as far as wanting to (go) in.
+     4 | What do you want to cook?
+     4 | (with the white onion)\nYou need to take the white onion first.
+     4 | I only understood you as far as wanting to get the red apple.
+     4 | I only understood you as far as wanting to break the showcase.
+     4 | I only understood you as far as wanting to hit the showcase.
+     4 | That was a rhetorical question.\n\n\nYou seem to want to talk to someone, but I can't see whom.
+     4 | I only understood you as far as wanting to open north.
+     3 | You can't use multiple objects with that verb.
+     3 | That can't contain things.
+     3 | (with the knife)\nYou need to take the red apple first.
+     3 | I only understood you as far as wanting to go south.
+     3 | What do you want to eat?
+     2 | The red apple is already sliced.
+     2 | I only understood you as far as wanting to examine the cookbook.
+     2 | I only understood you as far as wanting to examine the showcase.
+     2 | Violence isn't the answer to this one.
+     2 | That's not something you can sit down on.
+     2 | That was a rhetorical question.\n\n\nI only understood you as far as wanting to take inventory.
+     2 | I only understood you as far as wanting to take the toilet.
+     2 | I only understood you as far as wanting to take the carrot.
+     1 | You can't talk to the cookbook.
+     1 | What do you want to cook the white onion with?
+     1 | (with the oven)\nThe oven is fixed in place.
+     1 | I only understood you as far as wanting to light the stove.
+     1 | I only understood you as far as wanting to look the fridge.
+     1 | I only understood you as far as wanting to look the oven.
+     1 | You couldn't pay me to eat that chopped white onion.
+     1 | I only understood you as far as wanting to examine the toilet.
+     1 | You can't talk to the bed.
+     1 | I only understood you as far as wanting to exit.
+     1 | That's already closed.
+     1 | I only understood you as far as wanting to close the BBQ.
+     1 | I only understood you as far as wanting to open patio door.
+     1 | I only understood you as far as wanting to examine north.
+     1 | I only understood you as far as wanting to jump.

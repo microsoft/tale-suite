@@ -1,0 +1,146 @@
+# Invalid Action Messages: JerichoEnvZenon
+# Total unique error messages: 139
+# Total error occurrences: 10065
+#
+# Format: count | message
+#===============================================================================
+
+  4437 | That's not a verb I recognise.
+  1308 | You can't see any such thing.
+   732 | I only understood you as far as wanting to examine the pressure guage.
+   451 | I only understood you as far as wanting to turn the Steel key.
+   360 | Time passes.
+   350 | I beg your pardon?
+   194 | I only understood you as far as wanting to look.
+   184 | You see nothing special about the door.
+   179 | You seem to want to talk to someone, but I can't see whom.
+   145 | I only understood you as far as wanting to wait.
+   122 | It seems to be locked.
+   122 | I only understood you as far as wanting to inventory.
+   108 | That's already off.
+    99 | That's already open.
+    87 | You can't go that way.
+    84 | What do you want to read in?
+    54 | I didn't understand that sentence.
+    53 | What do you want to smash?
+    51 | That's already off.\nYou hear hurried footsteps from outside as a guard rushes up.
+    44 | I only understood you as far as wanting to look at the pressure guage.
+    42 | I only understood you as far as wanting to check the pressure guage.
+    41 | I only understood you as far as wanting to turn the pressure guage.
+    41 | There is nothing on the bed.
+    40 | You find nothing of interest.
+    34 | I only understood you as far as wanting to twist the pressure guage.
+    33 | I only understood you as far as wanting to rotate the pressure guage.
+    31 | You see nothing special about the floor.
+    28 | You see nothing special about the ceiling.
+    26 | That's already off.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+    24 | I only understood you as far as wanting to examine the door.
+    24 | But you aren't in anything at the moment.
+    22 | That's already closed.
+    21 | I only understood you as far as wanting to adjust the pressure guage.
+    20 | That's not something you can enter.
+    18 | I only understood you as far as wanting to open the pressure guage.
+    17 | Nothing obvious happens.
+    17 | I only understood you as far as wanting to unscrew the pressure guage.
+    17 | What do you want to get?
+    16 | I only understood you as far as wanting to hit the pressure guage.
+    16 | I only understood you as far as wanting to search the bed.
+    13 | I only understood you as far as wanting to smash the pressure guage.
+    13 | I only understood you as far as wanting to stand.
+    12 | I only understood you as far as wanting to examine the bed.
+    12 | I only understood you as far as wanting to open the door.
+    12 | I only understood you as far as wanting to attack the pressure guage.
+    11 | I only understood you as far as wanting to insert the Steel key into the pressure guage.
+    11 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+    10 | You see nothing special about the door.\nYou hear hurried footsteps from outside as a guard rushes up.
+    10 | I only understood you as far as wanting to attack the light switch.
+     9 | You see nothing special about the east wall.
+     9 | You see nothing special about the door.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     9 | That's not something you can lie down on.
+     8 | I only understood you as far as wanting to break the pressure guage.
+     8 | I only understood you as far as wanting to smash the light switch.
+     7 | That's already open.\nYou hear hurried footsteps from outside as a guard rushes up.
+     7 | You see nothing special about the north wall.
+     7 | What do you want to press?
+     6 | I only understood you as far as wanting to set the pressure guage.
+     6 | That's already open.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     6 | I only understood you as far as wanting to go the south wall.
+     6 | You see nothing special about the west wall.
+     6 | You see nothing special about the south wall.
+     6 | I only understood you as far as wanting to think.
+     6 | What do you want to feel?
+     6 | I only understood you as far as wanting to unlock the door with the pressure guage.
+     5 | I only understood you as far as wanting to pull the pressure guage.
+     5 | That's not something you can sit down on.
+     5 | I only understood you as far as wanting to search the door.
+     5 | I only understood you as far as wanting to check the door.
+     4 | I only understood you as far as wanting to search the pressure guage.
+     4 | I only understood you as far as wanting to exit.
+     4 | I only understood you as far as wanting to look under the bed.
+     4 | I only understood you as far as wanting to hit the light switch.
+     4 | I only understood you as far as wanting to take the pressure guage.
+     4 | I only understood you as far as wanting to pick up the pressure guage.
+     4 | I only understood you as far as wanting to unscrew the bed.
+     3 | I only understood you as far as wanting to destroy the pressure guage.
+     3 | I only understood you as far as wanting to drop the Steel key.
+     3 | That's not something you can enter.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     3 | That's not something you can lie down on.\nYou hear hurried footsteps from outside as a guard rushes up.
+     3 | You can't go that way.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     3 | There is no reply.\n\nThe janitor wanders off, mopping as he goes.
+     3 | There is no reply.
+     3 | I only understood you as far as wanting to pull the chaff grenade.
+     3 | That's not something you can stand on.
+     3 | What do you want to check?
+     3 | You can't use multiple objects with that verb.
+     3 | What do you want to unlock the door with?
+     3 | I only understood you as far as wanting to jump.
+     2 | That's already off.\nA big red light starts to flash on the pressure guage. Perhaps you did something wrong.
+     2 | That's already off.\nA big red light starts to flash on the pressure guage. Perhaps you did something wrong.\n\n\nAs soon as you walk out of the cell, a guard picks you up and throws you back in, locking the door behind him.\n\n\nCell\n\nYou can see a door, a bed, a pressure guage and a light switch here.\nYou hear hurried footsteps from outside as a guard rushes up.
+     2 | That's already off.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off.A big red light starts to flash on the pressure guage. Perhaps you did something wrong.\nIt seems to be locked.\nYou hear hurried footsteps from outside as a guard rushes up.
+     2 | That's already on.
+     2 | That's not something you can lie down on.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     2 | That's not something you can enter.\nYou hear hurried footsteps from outside as a guard rushes up.
+     2 | What do you want to clean?
+     2 | I only understood you as far as wanting to throw the chaff grenade.
+     2 | You see nothing special about the floor.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     2 | I only understood you as far as wanting to close the pressure guage.
+     2 | I only understood you as far as wanting to examine the light switch.
+     2 | I only understood you as far as wanting to look at the door.
+     2 | I only understood you as far as wanting to check the bed.
+     2 | You see nothing special about the northeast wall.
+     2 | You see nothing special about the northwest wall.
+     2 | There is nothing on the bed.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     2 | I only understood you as far as wanting to put the Steel key in the pressure guage.
+     2 | I only understood you as far as wanting to help.
+     2 | There is nothing on the bed.\nYou hear hurried footsteps from outside as a guard rushes up.
+     2 | That's already closed.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     1 | That doesn't seem to be something you can unlock.
+     1 | I only understood you as far as wanting to look at the east wall.
+     1 | But you aren't in anything at the moment.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     1 | That's not something you can switch.
+     1 | There's nothing inside it that can be copied, so it refuses to start.
+     1 | I only understood you as far as wanting to examine the Male Secretary.
+     1 | There is no reply.\nThe female secretary gets her purse out and powders her nose.
+     1 | That's already on.\nThe guard rushes in, dodging around the items in the room, almost falling over a few times and presses the button on the guage. He shouts some profanity at you before walking off
+     1 | I only understood you as far as wanting to open the pressure guage with the light switch.
+     1 | I only understood you as far as wanting to examine the button.
+     1 | I only understood you as far as wanting to unscrew the light switch.
+     1 | That's not something you can open.
+     1 | That doesn't seem to be something you can lock.
+     1 | You see nothing special about the ceiling.\nYou hear hurried footsteps from outside as a guard rushes up.
+     1 | I only understood you as far as wanting to read in the pressure guage.
+     1 | What do you want to fight?
+     1 | What do you want to switch on?
+     1 | What do you want to open?
+     1 | What do you want to search?
+     1 | What do you want to turn?
+     1 | You can't go that way.\nYou seem to want to talk to someone, but I can't see whom.
+     1 | I only understood you as far as wanting to yes.
+     1 | I don't think much is to be achieved by that.
+     1 | I only understood you as far as wanting to hit the door.
+     1 | I only understood you as far as wanting to insert the Steel key in the pressure guage.
+     1 | I only understood you as far as wanting to get the pressure guage.
+     1 | I only understood you as far as wanting to remove the pressure guage.
+     1 | You see nothing special about the southeast wall.
+     1 | You see nothing special about the floor.\nYou hear hurried footsteps from outside as a guard rushes up.
+     1 | That's not something you can stand on.\nYou hear hurried footsteps from outside as a guard rushes up.

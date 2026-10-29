@@ -1,0 +1,21 @@
+# Invalid Action Messages: ScienceWorldGrowPlant
+# Total unique error messages: 14
+# Total error occurrences: 13194
+#
+# Format: count | message
+#===============================================================================
+
+ 12850 | No known action matches that input.
+   103 | The door is not open.
+    93 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    90 | The door is already open.
+    24 | The sink is already activated.
+    13 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+     5 | The drain is already open.
+     4 | The drain is already closed.
+     4 | The bee hive is already open.
+     3 | The oven is already activated.
+     2 | jug is already connected, and must be disconnected before it can be connected to something else
+     1 | The drawer isn't open, so you can't see inside.
+     1 | The bathtub is already activated.
+     1 | The bee hive isn't open, so you can't see inside.

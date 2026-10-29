@@ -1,0 +1,133 @@
+# Invalid Action Messages: JerichoEnvAdventureland
+# Total unique error messages: 126
+# Total error occurrences: 11431
+#
+# Format: count | message
+#===============================================================================
+
+  2699 | That's not a verb I recognise.
+  2117 | You can't see any such thing.
+   996 | You can't go that way.
+   959 | You seem to want to talk to someone, but I can't see whom.
+   927 | I beg your pardon?
+   572 | I only understood you as far as wanting to look.
+   400 | Nothing happens.
+   382 | You can only do that to something animate.
+   194 | You see nothing special about the sign reads- IN SOME CASES MUD IS GOOD, IN OTHERS....
+   173 | I only understood you as far as wanting to bunyon.
+   157 | You see nothing special about the trees.
+   145 | I only understood you as far as wanting to throw the rusty axe (magic word- BUNYON -on it).
+   109 | You see nothing special about the sleeping Dragon.
+   107 | I only understood you as far as wanting to inventory.
+   104 | I don't think much is to be achieved by that.
+   102 | You see nothing special about the *SMALL STATUE OF A BLUE OX*.
+    99 | I only understood you as far as wanting to take the *SMALL STATUE OF A BLUE OX*.
+    87 | I only understood you as far as wanting to jump.
+    78 | I only understood you as far as wanting to throw the *SMALL STATUE OF A BLUE OX*.
+    73 | You already have that.
+    64 | What do you want to climb?
+    63 | There is no reply.
+    60 | You find nothing of interest.
+    47 | I only understood you as far as wanting to swing the rusty axe (magic word- BUNYON -on it).
+    41 | You can't use multiple objects with that verb.
+    40 | I only understood you as far as wanting to throw the evil smelling mud at the sleeping Dragon.
+    31 | You see nothing special about the sign reads- LIMBO. FIND RIGHT EXIT AND LIVE AGAIN!.
+    30 | You see nothing special about the evil smelling mud.
+    29 | I only understood you as far as wanting to rub the evil smelling mud.
+    29 | What do you want to unlock the locked door with?
+    27 | I only understood you as far as wanting to swim.
+    25 | You see nothing special about the hollow stump and remains of a felled tree.
+    22 | You see nothing special about the cypress tree.
+    21 | You see nothing special about the sign reads- NO SWIMMING ALLOWED.
+    20 | There's nothing sensible to swing here.
+    20 | You see nothing special about the sign reads- PAUL'S PLACE.
+    19 | You see nothing special about the floating patch of oily slime.
+    17 | Violence isn't the answer to this one.
+    16 | You see nothing special about the water.
+    16 | I only understood you as far as wanting to chop the cypress tree.
+    15 | What do you want to throw?
+    15 | Nothing obvious happens.
+    12 | You see nothing special about the swamp gas.
+    12 | You see nothing special about the *GOLDEN FISH*.
+    11 | That doesn't seem to be something you can unlock.
+    10 | I only understood you as far as wanting to look at the *SMALL STATUE OF A BLUE OX*.
+    10 | I only understood you as far as wanting to take the ring of skeleton keys.
+     9 | You see nothing special about the chiggers.
+     9 | That's not something you can open.
+     8 | But you aren't in anything at the moment.
+     7 | I only understood you as far as wanting to get the *SMALL STATUE OF A BLUE OX*.
+     7 | I only understood you as far as wanting to chop the *SMALL STATUE OF A BLUE OX*.
+     7 | That's already on.
+     6 | I didn't understand that sentence.
+     6 | You see nothing special about the bricked-up window.
+     5 | You see nothing special about the *JEWELLED FRUIT*.
+     5 | I only understood you as far as wanting to help.
+     5 | I only understood you as far as wanting to throw the ring of skeleton keys.
+     5 | I only understood you as far as wanting to throw the *JEWELLED FRUIT*.
+     5 | There's nothing suitable to drink here.
+     5 | You see nothing special about the locked door.
+     5 | You haven't got that.
+     5 | What do you want to feed the sleeping Dragon?
+     4 | What do you want to dig?
+     4 | What do you want to throw the *SMALL STATUE OF A BLUE OX* onto?
+     4 | I only understood you as far as wanting to climb the *SMALL STATUE OF A BLUE OX*.
+     4 | I only understood you as far as wanting to cut the cypress tree.
+     4 | Which do you mean, the water or the bottled water?
+     4 | You see nothing special about the hollow stump and remains of a felled tree.\n\nYou're bitten by chiggers.
+     4 | Which do you mean, the *DIAMOND RING* or the ring of skeleton keys?
+     4 | You see nothing special about the ring of skeleton keys.
+     4 | I only understood you as far as wanting to throw the *DIAMOND RING* at the sleeping Dragon.
+     4 | Time passes.
+     4 | That's not something you can enter.
+     4 | I only understood you as far as wanting to rub the ring of skeleton keys.
+     3 | I only understood you as far as wanting to throw the evil smelling mud.
+     3 | What do you want to unlock?
+     3 | What do you want to unlock the ceiling with?
+     3 | It seems to be locked.
+     3 | I only understood you as far as wanting to it.
+     3 | I only understood you as far as wanting to in.
+     3 | I only understood you as far as wanting to rub the *DIAMOND RING*.
+     2 | I only understood you as far as wanting to attack the sleeping Dragon.
+     2 | I only understood you as far as wanting to cut the sleeping Dragon.
+     2 | I only understood you as far as wanting to hit the sleeping Dragon.
+     2 | I only understood you as far as wanting to cover yourself.
+     2 | I only understood you as far as wanting to get the ring of skeleton keys.
+     2 | You can't go that way.\n\nThe bites have rotted your whole body.\n\nMisty Room\nYou're in a large misty room with strange letters over the exits.\n\nObvious exits: South, East, West, Up, Down.\n\nYou can also see: sign reads- LIMBO. FIND RIGHT EXIT AND LIVE AGAIN!
+     2 | But you aren't holding that.
+     2 | I only understood you as far as wanting to find that.
+     2 | I only understood you as far as wanting to rub yourself.
+     2 | You see nothing special about the large African bees.
+     2 | What do you want to take?
+     2 | I only understood you as far as wanting to examine the rusty axe (magic word- BUNYON -on it).
+     2 | I only understood you as far as wanting to smash the *SMALL STATUE OF A BLUE OX*.
+     2 | You see nothing special about the swamp gas.\n\nYou're bitten by chiggers.
+     2 | I only understood you as far as wanting to hit the *SMALL STATUE OF A BLUE OX*.
+     2 | There is nothing here with which to fill the bottle.
+     2 | I only understood you as far as wanting to fill the empty wine bladder.
+     1 | I only understood you as far as wanting to cut the trees.
+     1 | I only understood you as far as wanting to chop the trees.
+     1 | I only understood you as far as wanting to drop the *SMALL STATUE OF A BLUE OX*.
+     1 | You see nothing special about the sleeping Dragon.\nDragon smells something - awakens - attacks you!\n\nMisty Room\nYou're in a large misty room with strange letters over the exits.\n\nObvious exits: South, East, West, Up, Down.\n\nYou can also see: sign reads- LIMBO. FIND RIGHT EXIT AND LIVE AGAIN!
+     1 | I only understood you as far as wanting to rub the sleeping Dragon.
+     1 | I only understood you as far as wanting to shine the old fashioned lamp.
+     1 | I only understood you as far as wanting to wave the rusty axe (magic word- BUNYON -on it).
+     1 | You see nothing special about the floating patch of oily slime.\n\nYou're bitten by chiggers.
+     1 | You see nothing special about the chiggers.\n\nYour chigger bites are now infected.
+     1 | I only understood you as far as wanting to throw the rusty axe (magic word- BUNYON -on it) at the *SMALL STATUE OF A BLUE OX*.
+     1 | I only understood you as far as wanting to say that to yourself.
+     1 | I only understood you as far as wanting to away.
+     1 | You see nothing special about the *THICK PERSIAN RUG*.
+     1 | I only understood you as far as wanting to rub the old fashioned lamp.
+     1 | You see nothing special about the east wall.
+     1 | I only understood you as far as wanting to take the floating patch of oily slime.
+     1 | What do you want to chop?
+     1 | You haven't got that.\nBees sting you.\n\nMisty Room\nYou're in a large misty room with strange letters over the exits.\n\nObvious exits: South, East, West, Up, Down.\n\nYou can also see: sign reads- LIMBO. FIND RIGHT EXIT AND LIVE AGAIN!
+     1 | You see nothing special about the sign reads- To the Architects - TSURRIS.
+     1 | You see nothing special about the sleeping Dragon.\n\nYour chigger bites are now infected.
+     1 | I only understood you as far as wanting to fill the empty bottle.
+     1 | I only understood you as far as wanting to get the swamp gas.
+     1 | I only understood you as far as wanting to rub the infected chigger bites.
+     1 | You see nothing special about the *GOLDEN FISH*.\n\nThe fish escape back to the lake.
+     1 | You already have that.\n\nYou're bitten by chiggers.
+     1 | What do you want to throw the evil smelling mud onto?
+     1 | You can't go that way.\n\nYour chigger bites are now infected.

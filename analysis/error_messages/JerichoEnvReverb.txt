@@ -1,0 +1,119 @@
+# Invalid Action Messages: JerichoEnvReverb
+# Total unique error messages: 112
+# Total error occurrences: 9650
+#
+# Format: count | message
+#===============================================================================
+
+  5956 | That's not a verb I recognise.
+  1526 | You can't see any such thing.
+   588 | I beg your pardon?
+   391 | You seem to want to talk to someone, but I can't see whom.
+   276 | I only understood you as far as wanting to look.
+    80 | Time passes.
+    59 | You already have that.
+    55 | I only understood you as far as wanting to inventory.
+    54 | That's not something you need to refer to in the course of this game.
+    53 | It seems to be locked.
+    53 | Which do you mean, the third story window or the second story window?
+    42 | Which do you mean, the district attorney or the defense attorney?
+    41 | I only understood you as far as wanting to examine the people.
+    33 | You find nothing of interest.
+    32 | You can only do that to something animate.
+    19 | Which do you mean, Jill or the defense attorney?
+    19 | You don't have any money, dude. This has something to do with your lame job.
+    19 | That's already open.
+    17 | I only understood you as far as wanting to exit.
+    16 | You can't go that way.
+    16 | You can't use multiple objects with that verb.
+    15 | That's not something you can open.\n\nYou see a woman hail a taxi and drive off.
+    14 | There is no reply.\n\nA guy in a business suit walks past you.
+    13 | I only understood you as far as wanting to examine the large pizza.
+    12 | I didn't understand that sentence.
+    10 | What do you want to buy?
+     9 | I only understood you as far as wanting to examine the large pizza box.
+     8 | I only understood you as far as wanting to help.
+     7 | There is nothing on the counter.
+     7 | I only understood you as far as wanting to go the south wall.
+     7 | That's not something you can open.
+     6 | That's not something you can open.\n\nTwo teenaged girls go by carrying shopping bags.
+     6 | I only understood you as far as wanting to jump.
+     6 | That's not something you can open.\n\nInside the window, you hear the mayor and the lackey engaged in low conversation, too quiet for you to hear.
+     6 | I only understood you as far as wanting to wait.
+     6 | It's already open!
+     6 | What do you want to go inside?
+     6 | You see nothing special about the southwest wall.
+     6 | I only understood you as far as wanting to open the east wall.
+     5 | I only understood you as far as wanting to swing.
+     5 | I only understood you as far as wanting to turn the large pizza box.
+     5 | What do you want to cut the large pizza box with?
+     5 | That's not something you can open.\n\nTwo men bump into each other. They murmur apologies and go their separate ways.
+     5 | That's not something you can enter.\n\nA guy in a business suit walks past you.
+     5 | There is no reply.\n\nA man and a woman walk by holding hands. They make a cute couple.
+     4 | That's not something you can enter.\n\nTwo teenaged girls go by carrying shopping bags.
+     4 | That's not something you can open.\n\nA big ugly low rider cruises by, blaring rap music loud enough to make the sidewalk shake.
+     4 | I only understood you as far as wanting to search the hardware.
+     4 | What do you want to drop?
+     4 | What do you want to read in?
+     4 | That's not something you can open.\n\nInside the window, you hear the mayor and the lackey engaged in low conversation, too quiet for you to hear.\n\nThe window down below is opening.
+     3 | I only understood you as far as wanting to examine the glass box.
+     3 | That's not something you can open.\n\nA police car drives by. You press yourself against a wall until it goes by.
+     3 | I only understood you as far as wanting to look at the large pizza.
+     3 | I only understood you as far as wanting to spray the bottle of hairspray.
+     3 | There is no reply.\n\nThe mayor and the lackey look out the window. They are surprised to see you.\n\nJill looks up at you anxiously.
+     3 | That's not something you can open.\n\nA guy in a business suit walks past you.
+     3 | There is no reply.\n\nTwo men bump into each other. They murmur apologies and go their separate ways.
+     3 | That's not something you can open.\n\nThe henchman approaches with a mean gleam in his eye. It is highly recommended that you find an escape route.
+     3 | I only understood you as far as wanting to knock the east wall.
+     2 | I only understood you as far as wanting to kick the second story window.
+     2 | What do you want to cut the large pizza with?
+     2 | You can't see inside, since the large pizza box is closed.
+     2 | It's already open!\n\nJill tries desperately to convince the judge that Guido "The Armadillo" Calzone plans to escape, but it's obvious she won't get anywhere without more evidence.
+     2 | Nothing obvious happens.
+     2 | You can't see inside, since the large pizza box is closed.\n\nTwo men bump into each other. They murmur apologies and go their separate ways.
+     2 | You see nothing special about the roof.
+     2 | I only understood you as far as wanting to look at Jill.
+     2 | I only understood you as far as wanting to go the northeast wall.
+     2 | I only understood you as far as wanting to examine the handwritten note.
+     2 | That's not something you can open.\n\nA man and a woman walk by holding hands. They make a cute couple.
+     2 | That's not something you can enter.\n\nYou see a woman hail a taxi and drive off.
+     2 | I only understood you as far as wanting to southwest.
+     2 | I only understood you as far as wanting to out.
+     2 | I don't think much is to be achieved by that.
+     2 | You can't see inside, since the large pizza box is closed.\n\n"Your opinion is duly noted, Miss Thompson," says the judge sarcastically. "But the fact is, the 'long history' you refer to is based on hearsay. Now, I recommend you gather some solid evidence when you prepare for the trial, because the minimal research you've obviously done won't be enough to convict the defendant."
+     2 | You can't see inside, since the large pizza box is closed.\n\nJill tries hopelessly to plead her case.
+     2 | You can't see inside, since the large pizza box is closed.\n\nThe district attorney tries hopelessly to plead her case.
+     2 | There is no reply.\n\nYou see a woman hail a taxi and drive off.
+     2 | I only understood you as far as wanting to enter the floor.
+     2 | That doesn't seem to be something you can unlock.
+     2 | You're not holding onto anything important anyway.
+     1 | You see nothing special about the north wall.
+     1 | It's already open!\n\nJill tries hopelessly to plead her case.
+     1 | You see nothing special about the floor.\n\n"Miss Thompson," says the judge, "I've had about enough of you wasting this court's time. Unless you can demonstrate a clear threat to public safety, I'm going to recommend that Mr. Calzone be transported to a minimum security prison pending further review. His trial is to be held next week."  The district attorney is clearly not happy with this pronouncement.\nThat's not a verb I recognise.
+     1 | You haven't got that.\n\nThe mayor and the lackey look out the window. They are surprised to see you.\n\nJill looks up at you anxiously.
+     1 | I only understood you as far as wanting to go the north wall.
+     1 | I only understood you as far as wanting to go the ceiling.
+     1 | I only understood you as far as wanting to examine Jill.
+     1 | I only understood you as far as wanting to look at the people.
+     1 | I only understood you as far as wanting to examine the counter.
+     1 | There is no reply.\n\nA big ugly low rider cruises by, blaring rap music loud enough to make the sidewalk shake.
+     1 | You see nothing special about the ceiling.\n\nJill tries hopelessly to plead her case.
+     1 | You see nothing special about the floor.\n\nJill tries desperately to convince the judge that Guido "The Armadillo" Calzone plans to escape, but it's obvious she won't get anywhere without more evidence.
+     1 | There is no reply.\n\nJill tries hopelessly to plead her case.
+     1 | I only understood you as far as wanting to search the defense attorney.
+     1 | I only understood you as far as wanting to buy the bunch of clothes.
+     1 | I only understood you as far as wanting to examine the store clerk.
+     1 | I only understood you as far as wanting to examine the bunch of clothes.
+     1 | I only understood you as far as wanting to n.
+     1 | I only understood you as far as wanting to in.
+     1 | But you aren't in anything at the moment.\n\nA big ugly low rider cruises by, blaring rap music loud enough to make the sidewalk shake.
+     1 | That's not something you can enter.\n\nA man and a woman walk by holding hands. They make a cute couple.
+     1 | That's not something you can enter.\n\nA big ugly low rider cruises by, blaring rap music loud enough to make the sidewalk shake.
+     1 | I only understood you as far as wanting to climb the floor.
+     1 | There is no reply.\n\n"Your opinion is duly noted, Miss Thompson," says the judge sarcastically. "But the fact is, the 'long history' you refer to is based on hearsay. Now, I recommend you gather some solid evidence when you prepare for the trial, because the minimal research you've obviously done won't be enough to convict the defendant."
+     1 | I only understood you as far as wanting to take the pizza parlor.
+     1 | That's not something you can open.\n\nThe henchman is almost upon you.
+     1 | But you aren't in anything at the moment.\n\nThe henchman approaches with a mean gleam in his eye. It is highly recommended that you find an escape route.
+     1 | But you aren't in anything at the moment.\n\nThe henchman riddles you with bullets.\n\n\n    *** You are toast ***\n\n\nIn that game you scored 10 out of a possible 50, in 35 turns.\n\nWould you like to RESTART, RESTORE a saved game or QUIT
+     1 | You can't see inside, since the file cabinet is closed.
+     1 | That's not something you can enter.\n\nTwo men bump into each other. They murmur apologies and go their separate ways.

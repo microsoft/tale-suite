@@ -1,0 +1,193 @@
+# Invalid Action Messages: JerichoEnvTryst205
+# Total unique error messages: 186
+# Total error occurrences: 17760
+#
+# Format: count | message
+#===============================================================================
+
+  4723 | You can't see any such thing.
+  4175 | That's not a verb I recognise.
+  2131 | Time passes.
+  1792 | The carpets haven't finished drying yet!
+  1046 | You seem to want to talk to someone, but I can't see whom.
+   820 | I only understood you as far as wanting to look.
+   453 | I beg your pardon?
+   434 | I only understood you as far as wanting to inventory.
+   339 | You find nothing of interest.
+   155 | It seems to be locked.
+   151 | I only understood you as far as wanting to go the floor.
+   148 | You see nothing special about the floor.
+    92 | That doesn't seem to be something you can unlock.
+    87 | Violence isn't the answer to this one.
+    87 | I didn't understand that sentence.
+    69 | I only understood you as far as wanting to wait.
+    63 | You can't see inside, since the beat-up old bag is closed.
+    61 | I only understood you as far as wanting to rub the bar of soap.
+    52 | You see nothing special about the ceiling.
+    50 | That's not something you can open.
+    49 | I only understood you as far as wanting to hit the beat-up old bag.
+    40 | I only understood you as far as wanting to it.
+    32 | There is nothing on the bench.
+    27 | What do you want to oil the beat-up old bag with?
+    24 | I only understood you as far as wanting to examine the beat-up old bag.
+    24 | But you aren't in anything at the moment.
+    23 | I only understood you as far as wanting to pull the beat-up old bag.
+    19 | There is nothing on the bed.
+    17 | I only understood you as far as wanting to rub the moldy candy bar.
+    16 | I only understood you as far as wanting to turn the piece of paper.
+    15 | I only understood you as far as wanting to go the ceiling.
+    15 | You already have that.
+    14 | I only understood you as far as wanting to break the beat-up old bag.
+    14 | What do you want to cut the beat-up old bag with?
+    14 | I only understood you as far as wanting to check the floor.
+    12 | You can't use multiple objects with that verb.
+    12 | I only understood you as far as wanting to open the south wall.
+    11 | What do you want to unlock Kati's bedroom door with?
+    10 | There is nothing else under the clothing.
+    10 | I only understood you as far as wanting to examine the wad of gooey gum.
+    10 | What do you want to look up in?
+    10 | I don't think much is to be achieved by that.
+    10 | What do you want to pry the beat-up old bag with?
+    10 | There is no reply.
+     9 | I only understood you as far as wanting to smash the beat-up old bag.
+     9 | I only understood you as far as wanting to in.
+     8 | That's already open.
+     8 | I only understood you as far as wanting to jump.
+     7 | I only understood you as far as wanting to put the bench on the floor.
+     7 | I only understood you as far as wanting to hold the blue ice pack.
+     7 | You can't see inside, since the drawer is closed.
+     7 | I only understood you as far as wanting to pry the beat-up old bag.
+     7 | I only understood you as far as wanting to rub the beat-up old bag.
+     7 | I only understood you as far as wanting to tear the beat-up old bag.
+     7 | I only understood you as far as wanting to look at the wad of gooey gum.
+     7 | I only understood you as far as wanting to take the bar of soap.
+     7 | I only understood you as far as wanting to help.
+     6 | I only understood you as far as wanting to open the beat-up old bag.
+     6 | I only understood you as far as wanting to look in the beat-up old bag.
+     6 | I only understood you as far as wanting to look inside the beat-up old bag.
+     6 | I only understood you as far as wanting to examine the bench.
+     6 | I only understood you as far as wanting to go the south wall.
+     6 | I only understood you as far as wanting to down the floor.
+     5 | I only understood you as far as wanting to open Kati's bedroom door.
+     5 | I only understood you as far as wanting to rub the blue ice pack.
+     5 | I only understood you as far as wanting to touch the beat-up old bag.
+     5 | I only understood you as far as wanting to pull the wad of gooey gum.
+     5 | I only understood you as far as wanting to go the west wall.
+     5 | I only understood you as far as wanting to search the floor.
+     5 | I only understood you as far as wanting to search the wooden dresser.
+     5 | I only understood you as far as wanting to examine the toys.
+     5 | I only understood you as far as wanting to look at the floor.
+     5 | What do you want to unlock the door to the closet with?
+     5 | I only understood you as far as wanting to turn the beat-up old bag.
+     4 | I only understood you as far as wanting to look at Kati's bedroom door.
+     4 | You can only do that to something animate.
+     4 | I only understood you as far as wanting to examine the little toy car.
+     4 | But you aren't holding that.
+     4 | You haven't got that.
+     4 | I only understood you as far as wanting to rub the little toy car.
+     4 | I only understood you as far as wanting to open the drawer.
+     4 | I only understood you as far as wanting to open the door to the closet.
+     4 | I only understood you as far as wanting to stand up.
+     4 | I only understood you as far as wanting to search the beat-up old bag.
+     4 | I only understood you as far as wanting to examine the south wall.
+     4 | I only understood you as far as wanting to get the bar of soap with the little toy car.
+     4 | I only understood you as far as wanting to peel the wad of gooey gum.
+     3 | I only understood you as far as wanting to take the beat-up old bag.
+     3 | I only understood you as far as wanting to search the drawer.
+     3 | That's not something you can enter.
+     3 | I only understood you as far as wanting to examine the piece of paper.
+     3 | You see nothing special about the ceiling.\n\nThe dust in here really irritates your nose.
+     3 | What do you want to drop those things in?
+     3 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+     3 | I only understood you as far as wanting to examine Kati's bedroom door.
+     3 | I only understood you as far as wanting to look at the little toy car.
+     3 | I only understood you as far as wanting to open the wooden dresser.
+     3 | I only understood you as far as wanting to examine some water on the floor.
+     3 | I only understood you as far as wanting to examine the wooden dresser.
+     3 | You can't see inside, since the ornate box is closed.
+     2 | I only understood you as far as wanting to empty the beat-up old bag.
+     2 | I only understood you as far as wanting to break the door to the closet.
+     2 | I only understood you as far as wanting to smash the door to the closet.
+     2 | I only understood you as far as wanting to examine the mountain of clothing.
+     2 | You see nothing special about the west wall.
+     2 | I only understood you as far as wanting to examine the ornate box.
+     2 | What do you want to unlock the ornate box with?
+     2 | You see nothing special about the floor.\n\nThe dust in here really irritates your nose.
+     2 | I only understood you as far as wanting to sneeze.
+     2 | I only understood you as far as wanting to go the east wall.
+     2 | I only understood you as far as wanting to go the northeast wall.
+     2 | I only understood you as far as wanting to shake the beat-up old bag.
+     2 | I only understood you as far as wanting to search the clothes.
+     2 | I only understood you as far as wanting to pull the drawer.
+     2 | I only understood you as far as wanting to look at the drawer.
+     2 | I only understood you as far as wanting to look at the beat-up old bag.
+     2 | I only understood you as far as wanting to search the bench.
+     2 | I only understood you as far as wanting to look at the little gnome.
+     2 | I only understood you as far as wanting to examine the bed.
+     2 | I only understood you as far as wanting to examine the door to the closet.
+     2 | You see nothing special about the south wall.
+     2 | I only understood you as far as wanting to get the bar of soap.
+     2 | I only understood you as far as wanting to get the (Not_Watch).
+     2 | I only understood you as far as wanting to take the bench.
+     2 | I only understood you as far as wanting to scrape the wad of gooey gum.
+     2 | I only understood you as far as wanting to attack the little gnome.
+     2 | I only understood you as far as wanting to wave the blue gumball.
+     2 | What do you want to jimmy the beat-up old bag with?
+     2 | You're not wearing that.
+     1 | I only understood you as far as wanting to check the beat-up old bag.
+     1 | I only understood you as far as wanting to check the door ledge.
+     1 | I only understood you as far as wanting to examine the door ledge.
+     1 | I only understood you as far as wanting to think.
+     1 | What do you want to search?
+     1 | That doesn't seem to be something you can unlock.\n\nMark comes in and searches the room for Kati. Not finding her, he departs stomping his feet.
+     1 | I only understood you as far as wanting to rub the wad of gooey gum.
+     1 | You see nothing special about the ceiling.\n\nMark and Kati run into the room, see you, and run away giggling.
+     1 | I only understood you as far as wanting to put the blue ice pack on the beat-up old bag.
+     1 | You can't see inside, since the drawer is closed.\n\nKati comes into the room, looks around, and departs without a sound.
+     1 | I only understood you as far as wanting to blow the piece of paper.
+     1 | That's not something you can close.\n\nThe dust in here really irritates your nose.
+     1 | What do you want to blow?
+     1 | What do you want to stir the dust with?
+     1 | What do you want to stir the cauldrons with?
+     1 | What do you want to pry the wad of gooey gum with?
+     1 | I only understood you as far as wanting to look at the bed.
+     1 | I only understood you as far as wanting to look at the clothes.
+     1 | I only understood you as far as wanting to pick up the wad of gooey gum.
+     1 | I only understood you as far as wanting to pull the wooden dresser.
+     1 | I only understood you as far as wanting to feel the beat-up old bag.
+     1 | I only understood you as far as wanting to look under the bench.
+     1 | I only understood you as far as wanting to ask the little gnome for the blue gumball.
+     1 | I only understood you as far as wanting to cut the beat-up old bag with the little toy car.
+     1 | I only understood you as far as wanting to clean the wad of gooey gum.
+     1 | I only understood you as far as wanting to take the wad of gooey gum.
+     1 | What do you want to take the pair of garden gloves?
+     1 | I only understood you as far as wanting to search the toys.
+     1 | I only understood you as far as wanting to examine the floor.
+     1 | I only understood you as far as wanting to search the ornate box.
+     1 | I only understood you as far as wanting to take the mountain of clothing.
+     1 | You can't go that way.
+     1 | I only understood you as far as wanting to turn the shower.
+     1 | That's not something you can switch.
+     1 | You're already wearing that!
+     1 | I only understood you as far as wanting to look at the shower.
+     1 | What do you want to cut the wad of gooey gum with?
+     1 | You haven't got a container, and if you did it wouldn't be worth taking anyway. It's amazing that if you leave the least little thing lying around in an adventure, someone wants to pick it up or do something with it. Well, this isn't one of those times. Oops. Sorry. My mistake. You can do something with the water, you just can't take it.
+     1 | You see nothing special about the north wall.
+     1 | You see nothing special about the east wall.
+     1 | There is nothing else under the clothing.\n\nMark comes in and searches the room for Kati. Not finding her, he departs stomping his feet.
+     1 | I only understood you as far as wanting to turn the toy black safe.
+     1 | What do you want to push?
+     1 | You can't see "him" (the little gnome) at the moment.
+     1 | I only understood you as far as wanting to climb the floor.
+     1 | I only understood you as far as wanting to check the wooden dresser.
+     1 | I only understood you as far as wanting to exit.
+     1 | I only understood you as far as wanting to loosen the beat-up old bag.
+     1 | What do you want to poke the beat-up old bag with?
+     1 | There is nothing on the bed.\n\nMark runs into the room fussing about something, and then leaves in disgust when he receives no consolation.
+     1 | That doesn't seem to be something you can unlock.\n\nMark runs into the room fussing about something, and then leaves in disgust when he receives no consolation.
+     1 | That doesn't seem to be something you can unlock.\n\nKati follows Mark into the room and chases him back out.
+     1 | I only understood you as far as wanting to attack the beat-up old bag.
+     1 | I only understood you as far as wanting to hit the little gnome.
+     1 | I only understood you as far as wanting to take the moldy candy bar.
+     1 | I only understood you as far as wanting to pull the shower curtain.
+     1 | I only understood you as far as wanting to rub the pair of garden gloves.

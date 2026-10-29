@@ -1,0 +1,36 @@
+# Invalid Action Messages: ScienceWorldChangeTheStateOfMatterOf
+# Total unique error messages: 29
+# Total error occurrences: 12710
+#
+# Format: count | message
+#===============================================================================
+
+ 12172 | No known action matches that input.
+   234 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    96 | The door is not open.
+    36 | You can't pick up a liquid directly. Try pouring it from one container to another, or dunking empty containers into containers filled with the liquid.
+    25 | The oven is already open.
+    25 | The drawer isn't open, so you can't see inside.
+    20 | The oven is already activated.
+    16 | The bathtub is already activated.
+    12 | The oven isn't open, so you can't see inside.
+    11 | The cupboard is already open.
+     8 | You can't pick up a gas directly.
+     7 | The sink is already activated.
+     7 | The door is already open.
+     6 | The drain is already closed.
+     4 | The glass jar isn't open, so you can't see inside.
+     4 | The cupboard isn't open, so you can't see inside.
+     4 | The bathtub is already deactivated.
+     3 | The switch is already activated.
+     3 | The freezer isn't open, so you can't see inside.
+     3 | The ultra low temperature freezer is already activated.
+     2 | The ultra low temperature freezer is already open.
+     2 | The fridge isn't open, so you can't see inside.
+     2 | You can't pour a gas directly.
+     2 | The drawer is already open.
+     2 | The fridge is already open.
+     1 | The blast furnace isn't open, so you can't see inside.
+     1 | anode on switch is already connected, and must be disconnected before it can be connected to something else
+     1 | cathode on battery is already connected, and must be disconnected before it can be connected to something else
+     1 | The drain is already open.

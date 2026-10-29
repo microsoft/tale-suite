@@ -1,0 +1,63 @@
+# Invalid Action Messages: TWCookingLevel1
+# Total unique error messages: 56
+# Total error occurrences: 9925
+#
+# Format: count | message
+#===============================================================================
+
+  4933 | That's not a verb I recognise.
+  1173 | You can't see any such thing.
+  1029 | I beg your pardon?
+   758 | You seem to want to talk to someone, but I can't see whom.
+   500 | I only understood you as far as wanting to check the cookbook.
+   417 | I only understood you as far as wanting to take inventory.
+   191 | You need to take the block of cheese first.
+   125 | The fridge looks grand. You can't see inside it because the lid's in your way.
+   121 | It isn't something you can open.
+    98 | It isn't something you can switch.
+    80 | What do you want to open?
+    77 | You can't see inside, since the fridge is closed.
+    67 | You still miss something.
+    54 | What do you want to cook the block of cheese with?
+    31 | You can't go that way.
+    24 | That's already open.
+    23 | (with the block of cheese)\nYou need to take the block of cheese first.
+    20 | This dangerous act would achieve little.
+    20 | I only understood you as far as wanting to (go) in.
+    20 | But you aren't in anything at the moment.
+    16 | What do you want to cook?
+    16 | You need to specify how you want to cut the cilantro. Either slice, dice, or chop it.
+    15 | You already have that.
+    14 | Time passes.
+    13 | It is fixed in place.
+    12 | I didn't understand that sentence.
+    10 | I only understood you as far as wanting to wait.
+    10 | What do you want to dice the cilantro with?
+     9 | What do you want to chop the cilantro with?
+     5 | What do you want to read?
+     4 | What do you want to cook the cookbook with?
+     4 | Can only cook food.
+     3 | You couldn't pay me to eat that fried block of cheese.
+     3 | That's fixed in place.
+     3 | I only understood you as far as wanting to cut the cilantro.
+     2 | No, you can't set that to anything.
+     2 | You need to take the cilantro first.
+     2 | I only understood you as far as wanting to examine the stove.
+     2 | That can't contain things.
+     2 | I only understood you as far as wanting to check the oven.
+     2 | Cooking requires a source of heat.
+     1 | I only understood you as far as wanting to read the cookbook.
+     1 | That's already closed.
+     1 | Violence isn't the answer to this one.
+     1 | What do you want to take?
+     1 | You can't begin with a comma.
+     1 | You haven't got that.
+     1 | I only understood you as far as wanting to search the counter.
+     1 | I only understood you as far as wanting to search the stove.
+     1 | I only understood you as far as wanting to help.
+     1 | (the cookbook)\nIt isn't something you can open.
+     1 | I only understood you as far as wanting to no.
+     1 | You can't talk to the cookbook.
+     1 | What do you want to examine?
+     1 | I only understood you as far as wanting to exit.
+     1 | You have to be more specific!

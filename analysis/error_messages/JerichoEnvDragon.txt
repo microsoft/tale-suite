@@ -1,0 +1,159 @@
+# Invalid Action Messages: JerichoEnvDragon
+# Total unique error messages: 152
+# Total error occurrences: 14691
+#
+# Format: count | message
+#===============================================================================
+
+  4918 | That's not a verb I recognise.
+  2917 | You can't see any such thing.
+   759 | You seem to want to talk to someone, but I can't see whom.
+   690 | You can't go that way.
+   510 | You find nothing of interest.
+   509 | I only understood you as far as wanting to down.
+   506 | I only understood you as far as wanting to go the east wall.
+   427 | I only understood you as far as wanting to look.
+   425 | Time passes.
+   377 | I beg your pardon?
+   364 | I only understood you as far as wanting to in.
+   262 | This dangerous act would achieve little.
+   130 | Nothing obvious happens.
+   120 | You already have that.
+   119 | There is nothing on the magnificently carved chair.
+   113 | I didn't understand that sentence.
+   105 | That's not something you can open.
+   103 | There is no reply.
+   102 | You see nothing more of interest in the carvings.
+    81 | I only understood you as far as wanting to go the floor.
+    66 | I only understood you as far as wanting to open the dark wooden table.
+    65 | I only understood you as far as wanting to examine the dark wooden table.
+    64 | I only understood you as far as wanting to examine the birds.
+    58 | I only understood you as far as wanting to go the west wall.
+    56 | I don't think much is to be achieved by that.
+    48 | I only understood you as far as wanting to rub the ancient silver coin.
+    44 | I only understood you as far as wanting to wait.
+    43 | Violence isn't the answer to this one.
+    31 | I only understood you as far as wanting to inventory.
+    31 | I only understood you as far as wanting to examine the little man.
+    29 | What do you want to search?
+    29 | I only understood you as far as wanting to think.
+    25 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the northwest wall, the southeast wall or the southwest wall?
+    25 | Which do you mean, the curtains or the windows?
+    22 | I only understood you as far as wanting to take the dark wooden table.
+    19 | I only understood you as far as wanting to go the south wall.
+    19 | That's not something you can enter.
+    19 | I only understood you as far as wanting to examine the goblin.
+    18 | I only understood you as far as wanting to examine the magnificently carved chair.
+    18 | I only understood you as far as wanting to examine the large cardboard box.
+    17 | I only understood you as far as wanting to turn the mouldy old boot.
+    17 | That's not something you can switch.
+    17 | You can't use multiple objects with that verb.
+    16 | I only understood you as far as wanting to examine the carvings.
+    15 | I only understood you as far as wanting to take the old delivery bicycle.
+    15 | I only understood you as far as wanting to help.
+    14 | There is no more room on the nail behind the door.
+    13 | You can't go out. You seem to be trapped inside the cottage.
+    12 | I only understood you as far as wanting to look at the birds.
+    12 | I only understood you as far as wanting to go the ceiling.
+    12 | I only understood you as far as wanting to get the old delivery bicycle.
+    11 | I only understood you as far as wanting to touch the carvings.
+    11 | I only understood you as far as wanting to go the north wall.
+    10 | I only understood you as far as wanting to look at the pile of bones.
+    10 | You're not carrying anything you can pour...
+     9 | I only understood you as far as wanting to turn the large iron key on.
+     9 | I only understood you as far as wanting to examine the old delivery bicycle.
+     9 | I only understood you as far as wanting to search the carvings.
+     8 | I only understood you as far as wanting to examine the pile of bones.
+     5 | But you aren't in anything at the moment.
+     5 | I only understood you as far as wanting to search the large box full of parts.
+     5 | I only understood you as far as wanting to examine the ancient silver coin.
+     5 | That's not something you can enter.\nI only understood you as far as wanting to in.
+     5 | I only understood you as far as wanting to look in the birds.
+     4 | What do you want to light?
+     4 | I only understood you as far as wanting to turn the nail behind the door.
+     4 | I only understood you as far as wanting to fix.
+     4 | Which do you mean, the large box full of parts or the box of matches?
+     4 | There's nothing sensible to swing here.
+     4 | I only understood you as far as wanting to attack the little man.
+     4 | I only understood you as far as wanting to examine the exits.
+     4 | It seems to be locked.
+     4 | I only understood you as far as wanting to remove the nail behind the door.
+     3 | What do you want to move?
+     3 | I only understood you as far as wanting to ring the small silver bell.
+     3 | I only understood you as far as wanting to buy the large cardboard box.
+     3 | I only understood you as far as wanting to look at the banana skins.
+     3 | I only understood you as far as wanting to examine the castle.
+     3 | I only understood you as far as wanting to climb the castle.
+     3 | I only understood you as far as wanting to say that to the little man.
+     3 | There's nothing inside.
+     3 | What do you want to open?
+     3 | I only understood you as far as wanting to shine the brass lamp.
+     2 | I only understood you as far as wanting to light the brass lamp with the small silver bell.
+     2 | I only understood you as far as wanting to search the barrels.
+     2 | I only understood you as far as wanting to turn the large iron key.
+     2 | I only understood you as far as wanting to examine the mouldy old boot.
+     2 | I only understood you as far as wanting to up.
+     2 | I only understood you as far as wanting to fill the pewter mug.
+     2 | That's not something you can stand on.
+     2 | I only understood you as far as wanting to sit on the dark wooden table.
+     2 | I only understood you as far as wanting to pull the nail behind the door.
+     2 | What do you want to grope?
+     2 | I only understood you as far as wanting to unscrew the brass lamp.
+     2 | I only understood you as far as wanting to down the magnificently carved chair.
+     2 | I only understood you as far as wanting to fill the mouldy old boot.
+     2 | I only understood you as far as wanting to unscrew the old delivery bicycle.
+     2 | You aren't carrying any.
+     2 | I only understood you as far as wanting to feel the ancient silver coin.
+     2 | What do you want to climb?
+     2 | You can't see "them" (the barrels) at the moment.
+     2 | What do you want to go in?
+     2 | I only understood you as far as wanting to down the floor.
+     2 | I only understood you as far as wanting to climb the floor.
+     2 | I only understood you as far as wanting to exit.
+     2 | I only understood you as far as wanting to jump.
+     2 | I only understood you as far as wanting to take the long reeds.
+     2 | I only understood you as far as wanting to smash the door.
+     2 | I only understood you as far as wanting to smash the castle door.
+     2 | I only understood you as far as wanting to unscrew the nail behind the door.
+     2 | I only understood you as far as wanting to hit the nail behind the door.
+     1 | I only understood you as far as wanting to look at the magnificently carved chair.
+     1 | I only understood you as far as wanting to look under the magnificently carved chair.
+     1 | That doesn't seem to be something you can unlock.
+     1 | You're not carrying it.
+     1 | I only understood you as far as wanting to pour the pewter mug (full).
+     1 | I only understood you as far as wanting to attack the huge (no longer enchanted) dragon.
+     1 | You see nothing special about the floor.
+     1 | I only understood you as far as wanting to hit the green glass bottle.
+     1 | You aren't carrying the kit.
+     1 | I only understood you as far as wanting to throw the large cardboard box.
+     1 | You already have those.
+     1 | I only understood you as far as wanting to build the large box full of parts.
+     1 | I only understood you as far as wanting to examine the curtains.
+     1 | I only understood you as far as wanting to ask the little man for the large cardboard box.
+     1 | You can only do that to something animate.
+     1 | But you aren't on the magnificently carved chair at the moment.
+     1 | I only understood you as far as wanting to touch the magnificently carved chair.
+     1 | I only understood you as far as wanting to look at the goblin.
+     1 | I only understood you as far as wanting to examine the fire.
+     1 | I only understood you as far as wanting to look at the old delivery bicycle.
+     1 | I only understood you as far as wanting to take the nail behind the door.
+     1 | I only understood you as far as wanting to examine the nail behind the door.
+     1 | I only understood you as far as wanting to take the goblin.
+     1 | What do you want to insert the large iron key in?
+     1 | I only understood you as far as wanting to search the wooden table.
+     1 | I only understood you as far as wanting to search the forge.
+     1 | I only understood you as far as wanting to search the old delivery bicycle.
+     1 | That's not something you can enter.\nThat's not a verb I recognise.
+     1 | That's not something you can enter.\nYou can't go that way.\nYou can't go that way.\nI only understood you as far as wanting to inventory.
+     1 | You can't go that way.\nYou can't go that way.
+     1 | You can't go that way.\nThat's not a verb I recognise.
+     1 | I only understood you as far as wanting to fill the birds.
+     1 | I only understood you as far as wanting to get the long reeds.
+     1 | I only understood you as far as wanting to examine the long reeds.
+     1 | I only understood you as far as wanting to hold the brass lamp.
+     1 | I only understood you as far as wanting to pull the cloths.
+     1 | I only understood you as far as wanting to hit the castle door.
+     1 | I only understood you as far as wanting to drag the hang glider.
+     1 | I only understood you as far as wanting to blow the carvings.
+     1 | That's not something you can enter.\n\nOh dear, it seems your visit has woken the Dragon. \nIt suddenly moves and attacks you.\nYou have just been lightly toasted by the Dragon, but you magically return back to life for another go ... \n(You still have a bit of a headache, though...)\n\nThe Troll is chasing after you!\n\nFlames\nYou did something slightly fatal... \n\nYou can see a way out to the south...\n\nYou can see a huge Troll with a club here.\n\n[Your score has just gone down by two points.]
+     1 | But you aren't in anything at the moment.\n\nOh dear, it seems your visit has woken the Dragon. \nIt suddenly moves and attacks you.\nYou have just been lightly toasted by the Dragon, but you magically return back to life for another go ... \n(You still have a bit of a headache, though...)\n\nFlames\nYou did something slightly fatal... \n\nYou can see a way out to the south...\n\n[Your score has just gone down by two points.]

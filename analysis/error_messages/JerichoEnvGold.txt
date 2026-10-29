@@ -1,0 +1,163 @@
+# Invalid Action Messages: JerichoEnvGold
+# Total unique error messages: 156
+# Total error occurrences: 11843
+#
+# Format: count | message
+#===============================================================================
+
+  4849 | That's not a verb I recognise.
+  3294 | I can't see any such thing.
+  1318 | [Comment NOT recorded.]
+   620 | I didn't understand that sentence.
+   420 | I only understood you as far as wanting to take inventory.
+   204 | I beg your pardon?
+    79 | I only understood you as far as wanting to go north.
+    77 | It seems to be locked.
+    67 | I only understood you as far as wanting to go south.
+    64 | I only understood you as far as wanting to go west.
+    62 | I only understood you as far as wanting to use some sticks of dynamite.
+    59 | I only understood you as far as wanting to use the pair of secateurs.
+    55 | What do you want to ask the pedlar for?
+    52 | There is no reply.
+    36 | I only understood you as far as wanting to blow the up above.
+    36 | Time passes.
+    29 | I only understood you as far as wanting to examine the ornamental pond.
+    21 | I don't think much is to be achieved by that.
+    19 | Violence isn't the answer to this one.
+    19 | I only understood you as far as wanting to milk Daisy the cow.
+    19 | I only understood you as far as wanting to plant some sticks of dynamite.
+    18 | I only understood you as far as wanting to use the ratty old paintbrush.
+    15 | I only understood you as far as wanting to dig the inside.
+    15 | I only understood you as far as wanting to wait.
+    13 | I don't see much point in doing that. Besides, I'd only ladder my tights!
+    12 | I only understood you as far as wanting to go east.
+    11 | I only understood you as far as wanting to take the ornamental pond.
+    11 | There is nothing on the fireplace.
+    11 | I only understood you as far as wanting to think.
+    11 | I only understood you as far as wanting to sell yourself.
+    11 | What do you want to look inside?
+    11 | I only understood you as far as wanting to pull the ornamental pond.
+     8 | I only understood you as far as wanting to help.
+     8 | I only understood you as far as wanting to s.
+     7 | I only understood you as far as wanting to use the overripe pumpkin.
+     7 | What do you want to knock?
+     6 | I only understood you as far as wanting to search the pedlar.
+     6 | I only understood you as far as wanting to sleep.
+     6 | I only understood you as far as wanting to examine Daisy the cow.
+     5 | I only understood you as far as wanting to jump.
+     5 | I only understood you as far as wanting to take Daisy the cow.
+     5 | I only understood you as far as wanting to open the potting shed.
+     5 | I only understood you as far as wanting to search the potting shed.
+     5 | That's already open.
+     5 | What do you want to ask Daisy the cow for?
+     5 | I only understood you as far as wanting to take the pedlar's bunions.
+     5 | I only understood you as far as wanting to dive.
+     5 | I only understood you as far as wanting to in.
+     5 | I only understood you as far as wanting to take the path.
+     5 | I only understood you as far as wanting to rub some sticks of dynamite.
+     4 | I only understood you as far as wanting to examine the pedlar's bunions.
+     4 | There is no reply.\n\nThe Big Bad Wolf scratches his ear.
+     4 | I only understood you as far as wanting to examine the wind turbine.
+     4 | I only understood you as far as wanting to get the ornamental pond.
+     4 | I only understood you as far as wanting to examine the pedlar.
+     4 | I only understood you as far as wanting to enter the Three Bears' cottage.
+     4 | I only understood you as far as wanting to climb the trees.
+     4 | I only understood you as far as wanting to pull some leaves.
+     4 | There is nothing on the log.
+     4 | I only understood you as far as wanting to pull the up above.
+     4 | I only understood you as far as wanting to fill the empty milkbottle.
+     4 | What do you want to take?
+     3 | I only understood you as far as wanting to use Daisy the cow.
+     3 | I only understood you as far as wanting to read the crumpled note.
+     3 | What do you want to dig?
+     3 | Which do you mean, the large bowl, the medium-sized bowl, the tiny little bowl or the gigantic bowl?
+     3 | I only understood you as far as wanting to go down.
+     3 | I only understood you as far as wanting to eat the tiny quantity of just-right porridge.
+     3 | I only understood you as far as wanting to examine the vegetable plot.
+     3 | What do you want to unlock the battered suitcase with?
+     3 | I only understood you as far as wanting to examine the path.
+     3 | I only understood you as far as wanting to examine the potting shed.
+     3 | I only understood you as far as wanting to examine the trees.
+     3 | I only understood you as far as wanting to check the path.
+     3 | I only understood you as far as wanting to search the ornamental pond.
+     3 | I only understood you as far as wanting to use the milkbottle.
+     3 | What do you want to buy?
+     3 | I only understood you as far as wanting to tie Daisy the cow.
+     3 | I only understood you as far as wanting to fill the milkbottle.
+     2 | I only understood you as far as wanting to check the rickety fence.
+     2 | I only understood you as far as wanting to search the rickety fence.
+     2 | I only understood you as far as wanting to climb the wind turbine.
+     2 | I only understood you as far as wanting to use the crumpled note.
+     2 | I only understood you as far as wanting to look down.
+     2 | Which do you mean, the large quantity of hot porridge, the medium quantity of cold porridge or the tiny quantity of just-right porridge?
+     2 | I only understood you as far as wanting to examine the Three Bears' cottage.
+     2 | I only understood you as far as wanting to pet Daisy the cow.
+     2 | I only understood you as far as wanting to search the vegetable plot.
+     2 | I only understood you as far as wanting to examine the porch.
+     2 | I only understood you as far as wanting to walk west.
+     2 | I don't see much point in doing that. Besides, I'd only ladder my tights!\n\nCan't help feeling I'm being watched...
+     2 | I only understood you as far as wanting to search the porch.
+     2 | I only understood you as far as wanting to break the milkbottle.
+     2 | I only understood you as far as wanting to search the wind turbine.
+     2 | I only understood you as far as wanting to throw the overripe pumpkin at the potting shed.
+     2 | I only understood you as far as wanting to plant the magic bean.
+     2 | I only understood you as far as wanting to remove the ornamental pond.
+     2 | I only understood you as far as wanting to hit the pedlar.
+     2 | Nothing obvious happens.
+     2 | I only understood you as far as wanting to about.
+     2 | What do you want to pay?
+     2 | I only understood you as far as wanting to set some sticks of dynamite.
+     2 | I only understood you as far as wanting to drop some sticks of dynamite.
+     2 | I only understood you as far as wanting to throw some sticks of dynamite at the wind turbine.
+     2 | I only understood you as far as wanting to light some sticks of dynamite.
+     1 | What do you want to pry open the battered suitcase with?
+     1 | I only understood you as far as wanting to use the empty milkbottle.
+     1 | I only understood you as far as wanting to use the trowel.
+     1 | I only understood you as far as wanting to use the turnip.
+     1 | There is no reply.\n\nThe Big Bad Wolf taps his foot impatiently.
+     1 | There is no reply.\n\nDaisy's back half attempts to dance the tango with her front half.
+     1 | There is no more room in the empty milkbottle.\n\nDaisy's back half attempts to dance the tango with her front half.
+     1 | I only understood you as far as wanting to climb the wind.
+     1 | I only understood you as far as wanting to examine the wind.
+     1 | What do you want to search?
+     1 | I only understood you as far as wanting to search the path.
+     1 | I only understood you as far as wanting to look in.
+     1 | I only understood you as far as wanting to search the inside.
+     1 | I only understood you as far as wanting to examine the hay.
+     1 | I only understood you as far as wanting to search the hay.
+     1 | I only understood you as far as wanting to examine the sign.
+     1 | I only understood you as far as wanting to run the south.
+     1 | I only understood you as far as wanting to run the west.
+     1 | I only understood you as far as wanting to search the ground.
+     1 | I only understood you as far as wanting to examine the battered old dustbin.
+     1 | I only understood you as far as wanting to search the battered old dustbin.
+     1 | I only understood you as far as wanting to walk north.
+     1 | I only understood you as far as wanting to examine the overgrown pergola.
+     1 | I only understood you as far as wanting to smash the overripe pumpkin.
+     1 | I only understood you as far as wanting to hit the potting shed.
+     1 | I only understood you as far as wanting to open the Three Bears' cottage.
+     1 | I only understood you as far as wanting to search the Three Bears' cottage.
+     1 | I only understood you as far as wanting to examine some leaves.
+     1 | I only understood you as far as wanting to examine the old metal trunk.
+     1 | I only understood you as far as wanting to knock the oil can.
+     1 | I only understood you as far as wanting to open the north.
+     1 | I only understood you as far as wanting to paint the front door.
+     1 | I only understood you as far as wanting to paint Daisy the cow.
+     1 | What do you want to give?
+     1 | I only understood you as far as wanting to touch the ornamental pond.
+     1 | I only understood you as far as wanting to get the outside.
+     1 | What do you want to force the battered suitcase open with?
+     1 | I only understood you as far as wanting to hit some sticks of dynamite.
+     1 | I only understood you as far as wanting to throw some sticks of dynamite.
+     1 | I only understood you as far as wanting to swim.
+     1 | I only understood you as far as wanting to hit the front door.
+     1 | I only understood you as far as wanting to examine the front door.
+     1 | I only understood you as far as wanting to squeeze the ground.
+     1 | I only understood you as far as wanting to climb the Three Bears' cottage.
+     1 | I only understood you as far as wanting to south.
+     1 | I only understood you as far as wanting to north the magic bean.
+     1 | I only understood you as far as wanting to west the crumpled note.
+     1 | I only understood you as far as wanting to break the front door.
+     1 | I only understood you as far as wanting to break the windows.
+     1 | I only understood you as far as wanting to smash the windows.
+     1 | I only understood you as far as wanting to fill the empty milkbottle with the ornamental pond.

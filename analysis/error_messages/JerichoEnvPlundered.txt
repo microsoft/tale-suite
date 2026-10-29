@@ -1,0 +1,288 @@
+# Invalid Action Messages: JerichoEnvPlundered
+# Total unique error messages: 281
+# Total error occurrences: 6518
+#
+# Format: count | message
+#===============================================================================
+
+  1669 | [There was no verb in that sentence!]
+  1609 | [That sentence isn't one I recognize.]
+   279 | Time passes...
+   260 | [There were too many nouns in that sentence.]
+   208 | [You used the word "aft" in a way that I don't understand.]
+   179 | There's nothing under the bed.\n   You recognize a voice from far away, "Don't take that! Look in the cabin at the stern -- you'll find some fun there!" It sounds like Davis.
+   125 | You can't see any way to do that.
+   118 | You can't see any water here!
+    87 | You can't reach the door from the bed.
+    86 | That doesn't work here.
+    80 | You can't go that way.
+    71 | [You used the word "help" in a way that I don't understand.]
+    67 | You already have the jewelled brooch.
+    61 | [You used the word "knock" in a way that I don't understand.]
+    55 | You can't get a toehold in the fence.
+    54 | You can't reach the door from the bed.\n   With a creak and a crash, somewhere a mast falls to the deck.
+    54 | [You used the word "who" in a way that I don't understand.]
+    50 | [I don't know the word "understand."]
+    47 | You can't reach the curtain from the bed.
+    45 | You're not holding the cotton frock.
+    40 | You can't see any hold here!
+    40 | [There seems to be a noun missing in that sentence.]
+    37 | There's nothing under the bed.
+    34 | You can't reach the pile of clothes.
+    31 | You can't see any skiff here!
+    30 | You can't see any rag here!
+    29 | You're not holding the coffer.
+    27 | You can't see Cookie here!
+    26 | [You used the word "break" in a way that I don't understand.]
+    26 | You can't open a grate!
+    25 | You can't see any gap here!
+    25 | [You used the word "what" in a way that I don't understand.]
+    25 | I don't see who you're referring to.
+    23 | There's nothing under the bed.\n   Crash! You whirl around to see the door shatter, kicked by a hulking man, his twisted visage blackened with soot and blood. "Me name's Andy Crulley, and ladies learn to love me," sniggers the pirate.
+    23 | You can't reach the food and ammunition supplies.
+    21 | It is already open.
+    18 | You can't reach the door from the bed.\n   Suddenly, the ship lurches to one side, throwing you out of the bed. A coffer slides from under the bed and bumps against your foot.\n   "The Falcon! The Falcon conquers!" yells someone.
+    17 | [You used the word "reflect" in a way that I don't understand.]
+    15 | You can't see any ring here!
+    15 | You can't see any coffer here!
+    15 | [You used the word "enter" in a way that I don't understand.]
+    14 | You can't see any gun here!
+    14 | You can't see any rum here!
+    14 | You already have the coffer.
+    14 | You can't see any man here.
+    12 | You can't see any water cask here!
+    12 | You can't see that here!
+    12 | You can't see any gate here!
+    11 | [You used the word "find" in a way that I don't understand.]
+    11 | You can't reach the fuse.
+    11 | You can't reach the curtain from the bed.\n   "We have anchored off St. Sinistra," says Captain Jamison, "and I must look like a guest at Lafond's dance tonight. I will find and free your father, and then finally wreak my revenge on Lafond." He half draws his rapier from its scabbard.
+    10 | [You used the word "rescue" in a way that I don't understand.]
+    10 | [You used the word "reach" in a way that I don't understand.]
+     9 | You can't reach the curtain from the bed.\n   "I am sorry you have been confined down here, but I don't trust my lonely crew with such beauty. Crulley isn't the only man aboard with few principles." He smiles at you, eyes lingering, and takes your hand. You feel your color rising. "If anything goes wrong, turn to Cookie. He is quite deaf, but capable. He'll see you through."
+     9 | You can't see any window here!
+     9 | You're not holding the coffer.\n   "Avast me, but ain't ye a beauty," sniggers the pirate. His breath is heavy with rum.
+     9 | You can't reach the window from the bed.
+     9 | You can't reach the coffer from the bed.
+     9 | [You used the word "exit" in a way that I don't understand.]
+     9 | You can't see any hatch here!
+     8 | [You used the word "look" in a way that I don't understand.]
+     8 | There's nothing unusual about the keg.
+     8 | You can't put the jewelled brooch in a cotton frock!
+     8 | [You used the word "come" in a way that I don't understand.]
+     8 | You're already standing.
+     8 | You can't see any key here!
+     8 | You can't reach the large cupboard from the bed.
+     8 | You can't reach the curtain from the bed.\n   His look darkens. "You should know why I hate Lafond: Some years ago, as my brother and his bride sailed to a new life in Virginia, pirates struck. Their ship was boarded, looted and burned, the women taken, never to be seen again. A sailor, the one survivor, watched as a man of Lafond's description shot my brother in the back as he tried to save the women. Lafond has now bought respectability, but he shall never buy peace." Jamison straightens resolutely, bows, and departs.
+     7 | You can't do that from here.
+     7 | You're not holding the coffer.\n   "They calls me Andy, but I'm really randy," sniggers the pirate.\n   Crulley drags you, despite your resistance, towards him. Then suddenly he grunts, stiffens and slumps into your arms. Stunned, Crulley collapses at your feet, his eyes rolling.\n   A tall form blocks the shattered door, one fist still raised from striking your attacker. You catch a glimpse of the hard masculinity of his broad shoulders, the implied power in the scar that etches the stranger's jaw, and feel tremors course through your veins. Then you realize how ragged are his shirt, patched breeches and high boots. Intuitively, you understand -- he is the dreaded Falcon, scourge of the sea! Alas, your fate is sealed. Resigned, you meet his sea-blue eyes.\n   With a creak and a crash, somewhere a mast falls to the deck.
+     7 | You can't see any frock here!
+     7 | You can't see any quarters here!
+     7 | [You used the word "return" in a way that I don't understand.]
+     7 | [You used the word "where" in a way that I don't understand.]
+     7 | You can't see Rodney here!
+     7 | You can't see any fuse here!
+     7 | [You used the word "offer" in a way that I don't understand.]
+     7 | You can't see any flame here!
+     6 | You can't go that way.\n   Crash! You whirl around to see the door shatter, kicked by a hulking man, his twisted visage blackened with soot and blood. "Me name's Andy Crulley, and ladies learn to love me," sniggers the pirate.
+     6 | You can't see any missive here!
+     6 | You can't see any brooch here!
+     6 | You can't see any rapier here!
+     6 | You're already wearing the cotton frock!
+     6 | You can't reach the coffer from the bed.\n   Suddenly, the ship lurches to one side, throwing you out of the bed. The coffer bumps against your foot.\n   "The Falcon! The Falcon conquers!" yells someone.
+     6 | [You used the word "walk" in a way that I don't understand.]
+     5 | I don't see who you're referring to.\n   "They calls me Andy, but I'm really randy," sniggers the pirate.\n   Crulley drags you, despite your resistance, towards him. Then suddenly he grunts, stiffens and slumps into your arms. Stunned, Crulley collapses at your feet, his eyes rolling.\n   A tall form blocks the shattered door, one fist still raised from striking your attacker. You catch a glimpse of the hard masculinity of his broad shoulders, the implied power in the scar that etches the stranger's jaw, and feel tremors course through your veins. Then you realize how ragged are his shirt, patched breeches and high boots. Intuitively, you understand -- he is the dreaded Falcon, scourge of the sea! Alas, your fate is sealed. Resigned, you meet his sea-blue eyes.\n   With a creak and a crash, somewhere a mast falls to the deck.
+     5 | You're already standing.\n   To your surprise, the stranger bows. "Well met, my lady." His accent is cultured, his smile vibrant. "I am Captain Nicholas Jamison, known in these waters as 'The Falcon'. Your father has sent me." He chuckles at your glare of distrust. "Yes, you are like your sire. You needn't believe me untried -- I carry this." He hands you a missive.
+     5 | [You used the word "unlock" in a way that I don't understand.]
+     5 | There's nothing under the bed.\n   The end of a rope ladder blows past the window.
+     5 | You can't see any bottle here!
+     5 | You can't reach the window from the bed.\n   With a creak and a crash, somewhere a mast falls to the deck.
+     5 | You can't reach the door from the bed.\n   "Cap'n Jamison! We've got 'em!" cries a rough voice.
+     5 | You can't see any sign here!
+     5 | You can't see the moon from here.
+     5 | You can't go that way.\n   "Avast me, but ain't ye a beauty," sniggers the pirate. His breath is heavy with rum.
+     5 | You already have the missive.\n   The pirate captain glances around the empty room, then notices the coffer. "Davis's safety box -- my men were hoping I'd find it." He takes it and nudges the unconscious man on the floor, "I wonder how Crulley knew you were here? Just his bad luck? He'll be flogged when he wakes."\n   The pirate bows. "My lady, may I offer my protection and my ship until your father is free?"
+     5 | [You used the word "l" in a way that I don't understand.]
+     4 | There's nothing special about the keg.
+     4 | You can't see any grate here!
+     4 | You can't see any mirror here!
+     4 | You already have the cotton frock.
+     4 | [You used the word "open" in a way that I don't understand.]
+     4 | There's nothing special about the grate.
+     4 | You're not holding the ladder.
+     4 | [You used the word "get" in a way that I don't understand.]
+     4 | [You used the word "grab" in a way that I don't understand.]
+     4 | You can't reach the curtain from the bed.\n   You hear the large cupboard scrape, and turn to see Captain Jamison. "Hello! I came down to give you this -- my allotment from the coffer." He nods at the box in his arms.\n   Jamison starts to pin a jewelled brooch on your clothes, but, "Devil take it, the clasp is broken. I'll have it repaired." He folds the pretty thing into your hand. "And I meant to reassure you that if the men suddenly abandon ship, they are off to help me. Rodney will stay behind with you." He drops the coffer on the floor, smiling in farewell, and walks swiftly away.
+     4 | You can't move a direction!
+     4 | You can't see any powders here!
+     4 | There's nothing special about the ceiling.
+     4 | It is already open.\n   You gradually notice a familiar, worrying smell, sniff, and identify it as smoke. A tiny glow of fire creeps across a stretch of floor -- inside the cage full of ammunition.
+     4 | [on Crulley]\nYou jerk the smelling salts away from your nose after one brief ammoniac whiff. Your burning nostrils make you feel more alert.\n   Crulley drags you, despite your resistance, towards him. Then suddenly he grunts, stiffens and slumps into your arms. Stunned, Crulley collapses at your feet, his eyes rolling.\n   A tall form blocks the shattered door, one fist still raised from striking your attacker. You catch a glimpse of the hard masculinity of his broad shoulders, the implied power in the scar that etches the stranger's jaw, and feel tremors course through your veins. Then you realize how ragged are his shirt, patched breeches and high boots. Intuitively, you understand -- he is the dreaded Falcon, scourge of the sea! Alas, your fate is sealed. Resigned, you meet his sea-blue eyes.
+     4 | [on Crulley]\nYou jerk the smelling salts away from your nose after one brief ammoniac whiff. Your burning nostrils make you feel more alert.\n   "They calls me Andy, but I'm really randy," sniggers the pirate.\n   Crulley drags you, despite your resistance, towards him. Then suddenly he grunts, stiffens and slumps into your arms. Stunned, Crulley collapses at your feet, his eyes rolling.\n   A tall form blocks the shattered door, one fist still raised from striking your attacker. You catch a glimpse of the hard masculinity of his broad shoulders, the implied power in the scar that etches the stranger's jaw, and feel tremors course through your veins. Then you realize how ragged are his shirt, patched breeches and high boots. Intuitively, you understand -- he is the dreaded Falcon, scourge of the sea! Alas, your fate is sealed. Resigned, you meet his sea-blue eyes.\n   With a creak and a crash, somewhere a mast falls to the deck.
+     4 | You can't do that from here.\n   Men clomp about overhead and a rope ladder unfurls itself past the window. Jamison climbs down it, entering the skiff that awaits him below. He rows to the island as the men above your head disperse, calling farewells to their captain.
+     4 | [You used the word "inspect" in a way that I don't understand.]
+     4 | [I don't know the word "`verb`."]
+     4 | You can't read a banknote!\n   The pirate captain glances around the empty room, then notices the coffer in your arms. "Davis's safety box -- my men were hoping I'd find it." He takes it and nudges the unconscious man on the floor, "I wonder how Crulley knew you were here? Just his bad luck? He'll be flogged when he wakes."\n   The pirate bows. "My lady, may I offer my protection and my ship until your father is free?"
+     4 | You can't read a banknote!\n   Crash! You whirl around to see the door shatter, kicked by a hulking man, his twisted visage blackened with soot and blood. "Me name's Andy Crulley, and ladies learn to love me," sniggers the pirate.
+     4 | You're not holding the sign.
+     4 | You're not wearing the jewelled brooch!
+     4 | You can't see any fire here!
+     3 | [You used the word "move" in a way that I don't understand.]
+     3 | You can't see any something here!
+     3 | You already have your reticule.
+     3 | You can't see Crulley here!
+     3 | You don't have time to dry it.
+     3 | You can't see any canvas hatch here!
+     3 | You can't see any way to do that.\n   You hear a footstep, and turn to see Captain Jamison. "Hello! How did you escape? Don't stutter, I won't lock you up again -- you are safe as long as you remain below-decks. I came down to give you this -- my allotment from the coffer." He nods at the box in his arms.\n   Jamison starts to pin a jewelled brooch on your clothes, but, "Devil take it, the clasp is broken. I'll have it repaired." He folds the pretty thing into your hand. "And I meant to reassure you that if the men suddenly abandon ship, they are off to help me. Rodney will stay behind with you." He hands the coffer to you. "Please return this to my quarters for me, will you?" and walks swiftly away.
+     3 | There's nothing special about the mess.
+     3 | [You used the word "signal" in a way that I don't understand.]
+     3 | You can't reach the coffer from the bed.\n   The end of a rope ladder blows past the window.
+     3 | You can't go that way.\n   The end of a rope ladder blows past the window.
+     3 | You can't see Falcon here!
+     3 | You can't read a banknote!
+     3 | You can't see any his hand here!
+     2 | You can't see Jamison here!
+     2 | [You used the word "ask" in a way that I don't understand.]
+     2 | [You used the word "nod" in a way that I don't understand.]
+     2 | You can't reach the window from the bed.\n   "We have anchored off St. Sinistra," says Captain Jamison, "and I must look like a guest at Lafond's dance tonight. I will find and free your father, and then finally wreak my revenge on Lafond." He half draws his rapier from its scabbard.
+     2 | You can't see any captain's quarters here!
+     2 | You can't see any skiff here.\n   Rebounding, the ladder twists you around to face the Helena Louise.
+     2 | That's already wet enough.
+     2 | You can't see any dagger here!
+     2 | You can't see any table here!
+     2 | You're not wearing the cotton frock!
+     2 | You can't see any smelling salts here!
+     2 | You can't see any reticule here!
+     2 | [You used the word "proceed" in a way that I don't understand.]
+     2 | You can't see any way to do that.\n   You hear the large cupboard scrape, and turn to see Captain Jamison. "Hello! I came down to give you this -- my allotment from the coffer." He nods at the box in his arms.\n   Jamison starts to pin a jewelled brooch on your clothes, but, "Devil take it, the clasp is broken. I'll have it repaired." He folds the pretty thing into your hand. "And I meant to reassure you that if the men suddenly abandon ship, they are off to help me. Rodney will stay behind with you." He drops the coffer on the floor, smiling in farewell, and walks swiftly away.
+     2 | You can't see any way to do that.\n   The end of a rope ladder blows past the window.
+     2 | You can't put the jewelled brooch in a gate!
+     2 | There's nothing unusual about the ceiling.
+     2 | It is already open.\n   Men clomp about overhead and a rope ladder unfurls itself past the window. Jamison climbs down it, entering the skiff that awaits him below. He rows to the island as the men above your head disperse, calling farewells to their captain.
+     2 | It is already open.\n   The end of a rope ladder blows past the window.
+     2 | [You used the word "take" in a way that I don't understand.]
+     2 | [You used the word "fix" in a way that I don't understand.]
+     2 | [You used the word "throw" in a way that I don't understand.]
+     2 | [You used the word "put" in a way that I don't understand.]
+     2 | [You used the word "extinguish" in a way that I don't understand.]
+     2 | You can't put the leather bottle in a cotton frock!
+     2 | You're already wearing the cotton frock.
+     2 | You're already wearing the linen chemise.
+     2 | You can't put the jewelled brooch in an invitation!
+     2 | There's nothing under the bed.\n   "Avast me, but ain't ye a beauty," sniggers the pirate. His breath is heavy with rum.
+     2 | [You used the word "starboard" in a way that I don't understand.]
+     2 | [You used the word "free" in a way that I don't understand.]
+     2 | You can't see Father here!
+     2 | You can't see the moon from here.\n   You hear a footstep, and turn to see Captain Jamison. "Hello! How did you escape? Don't stutter, I won't lock you up again -- you are safe as long as you remain below-decks. I came down to give you this -- my allotment from the coffer." He nods at the box in his arms.\n   Jamison starts to pin a jewelled brooch on your clothes, but, "Devil take it, the clasp is broken. I'll have it repaired." He folds the pretty thing into your hand. "And I meant to reassure you that if the men suddenly abandon ship, they are off to help me. Rodney will stay behind with you." He hands the coffer to you. "Please return this to my quarters for me, will you?" and walks swiftly away.
+     2 | You can't see watch captai jamiso here!
+     2 | You can't see any gown here!
+     2 | You're not holding your head.
+     2 | [You used the word "climb" in a way that I don't understand.]
+     2 | [You used the word "leave" in a way that I don't understand.]
+     2 | You can't reach Captain Jamison from the bed.
+     2 | You can't reach Captain Jamison from the bed.\n   "We have anchored off St. Sinistra," says Captain Jamison, "and I must look like a guest at Lafond's dance tonight. I will find and free your father, and then finally wreak my revenge on Lafond." He half draws his rapier from its scabbard.
+     2 | There's nothing unusual about the mess.
+     2 | You're not holding the coffer.\n   "They calls me Andy, but I'm really randy," sniggers the pirate, advancing toward you.\n   Crulley drags you, despite your resistance, towards him. Then suddenly he grunts, stiffens and slumps into your arms. Stunned, Crulley collapses at your feet, his eyes rolling.\n   A tall form blocks the shattered door, one fist still raised from striking your attacker. You catch a glimpse of the hard masculinity of his broad shoulders, the implied power in the scar that etches the stranger's jaw, and feel tremors course through your veins. Then you realize how ragged are his shirt, patched breeches and high boots. Intuitively, you understand -- he is the dreaded Falcon, scourge of the sea! Alas, your fate is sealed. Resigned, you meet his sea-blue eyes.\n   "Aaieeee!" echoes a scream, followed by several grunts and thumps.
+     2 | You can't see any lock here!
+     2 | You can't see any cask here!
+     1 | You can't see any your dress here!
+     1 | You can't see any your chemise here!
+     1 | [You used the word "raise" in a way that I don't understand.]
+     1 | [You used the word "make" in a way that I don't understand.]
+     1 | [You used the word "smile" in a way that I don't understand.]
+     1 | [You used the word "wave" in a way that I don't understand.]
+     1 | [You used the word "tap" in a way that I don't understand.]
+     1 | [You used the word "touch" in a way that I don't understand.]
+     1 | [You used the word "sigh" in a way that I don't understand.]
+     1 | [You used the word "wait" in a way that I don't understand.]
+     1 | [You used the word "turn" in a way that I don't understand.]
+     1 | [You used the word "approach" in a way that I don't understand.]
+     1 | [You used the word "stand" in a way that I don't understand.]
+     1 | [You used the word "close" in a way that I don't understand.]
+     1 | [Crulley]\nYour dainty fists could not hurt Crulley.\n   "They calls me Andy, but I'm really randy," sniggers the pirate.\n   Crulley drags you, despite your resistance, towards him. Then suddenly he grunts, stiffens and slumps into your arms. Stunned, Crulley collapses at your feet, his eyes rolling.\n   A tall form blocks the shattered door, one fist still raised from striking your attacker. You catch a glimpse of the hard masculinity of his broad shoulders, the implied power in the scar that etches the stranger's jaw, and feel tremors course through your veins. Then you realize how ragged are his shirt, patched breeches and high boots. Intuitively, you understand -- he is the dreaded Falcon, scourge of the sea! Alas, your fate is sealed. Resigned, you meet his sea-blue eyes.\n   With a creak and a crash, somewhere a mast falls to the deck.
+     1 | It is already open.\n   "I am sorry you have been confined down here, but I don't trust my lonely crew with such beauty. Crulley isn't the only man aboard with few principles." He smiles at you, eyes lingering, and takes your hand. You feel your color rising. "If anything goes wrong, turn to Cookie. He is quite deaf, but capable. He'll see you through."
+     1 | You already have the jewelled brooch.\n   Men clomp about overhead and a rope ladder unfurls itself past the window. Jamison climbs down it, entering the skiff that awaits him below. He rows to the island as the men above your head disperse, calling farewells to their captain.
+     1 | [I don't know the word "verb."]
+     1 | [I don't know the word "verbs."]
+     1 | You can't see any skiff here.\n   Your battered hands can take no more. Your grip loosens and the sea comes up to break your fall.\n\n      ***   You have died   ***\n\n\n   In 46 turns, you have achieved a score of 1 out of 25 points. This gives you the rank of Damsel in Distress.\n   You may start over, restore a saved position, or end this session of the game. (Type RESTART, RESTORE, or QUIT):
+     1 | You can't see any skiff here.\n   Your battered hands can take no more. Your grip loosens and the sea comes up to break your fall.\n\n      ***   You have died   ***\n\n\n   In 40 turns, you have achieved a score of 1 out of 25 points. This gives you the rank of Damsel in Distress.\n   You may start over, restore a saved position, or end this session of the game. (Type RESTART, RESTORE, or QUIT):
+     1 | You already have a rag.\n   Your battered hands can take no more. Your grip loosens and the sea comes up to break your fall.\n\n      ***   You have died   ***\n\n\n   In 46 turns, you have achieved a score of 1 out of 25 points. This gives you the rank of Damsel in Distress.\n   You may start over, restore a saved position, or end this session of the game. (Type RESTART, RESTORE, or QUIT):
+     1 | You can't see any windows here!
+     1 | You can't see any knife here!
+     1 | You can't see any knots to untie, just line.
+     1 | There's nothing special about the wall.
+     1 | There's nothing unusual about the grate.
+     1 | You can't see any search hold here!
+     1 | There's nothing unusual under the stair.
+     1 | You can't see any go throug gap here!
+     1 | There's nothing extraordinary about the keg.
+     1 | You can't see any shot here!
+     1 | You can't see any salt meat here!
+     1 | You can't see any meat here!
+     1 | You can't see any salt here!
+     1 | You can't see any invitation here!
+     1 | You can't see any rope here!
+     1 | [You used the word "examine" in a way that I don't understand.]
+     1 | [You used the word "let" in a way that I don't understand.]
+     1 | You're already standing.\n   The end of a rope ladder blows past the window.
+     1 | You already have the invitation.\n   The end of a rope ladder blows past the window.
+     1 | You can't see any casks of water here!
+     1 | [You used the word "inventory" in a way that I don't understand.]
+     1 | [You used the word "stick" in a way that I don't understand.]
+     1 | You can't see any banknote here!
+     1 | You're already standing.\n   Crash! You whirl around to see the door shatter, kicked by a hulking man, his twisted visage blackened with soot and blood. "Me name's Andy Crulley, and ladies learn to love me," sniggers the pirate.
+     1 | [You used the word "repair" in a way that I don't understand.]
+     1 | You can't see any ball here!
+     1 | You can't see any way to do that.\n   Men clomp about overhead and a rope ladder unfurls itself past the window. Jamison climbs down it, entering the skiff that awaits him below. He rows to the island as the men above your head disperse, calling farewells to their captain.
+     1 | [You used the word "shine" in a way that I don't understand.]
+     1 | There's nothing noteworthy under the coffer.
+     1 | [You used the word "crawl" in a way that I don't understand.]
+     1 | You can't see Andy here!
+     1 | You can't put the bit of mirror in a rag!
+     1 | You can't see any water casks here!
+     1 | You can't see any way to do that.\n   The crash of surf is increasing in volume. You'd best find out what's going on!
+     1 | You can't put the bit of mirror in a cotton frock!
+     1 | You can't get anything into the leather bottle.
+     1 | You already have the invitation.
+     1 | You can't put the banknote in a jewelled brooch!
+     1 | You can't put the invitation in a jewelled brooch!
+     1 | There's nothing under the bed.\n   His look darkens. "You should know why I hate Lafond: Some years ago, as my brother and his bride sailed to a new life in Virginia, pirates struck. Their ship was boarded, looted and burned, the women taken, never to be seen again. A sailor, the one survivor, watched as a man of Lafond's description shot my brother in the back as he tried to save the women. Lafond has now bought respectability, but he shall never buy peace." Jamison straightens resolutely, bows, and departs.
+     1 | You can't read a bit of mirror!
+     1 | [You used the word "cut" in a way that I don't understand.]
+     1 | You can't reach the coffer from the bed.\n   "Cap'n Jamison! We've got 'em!" cries a rough voice.
+     1 | You can't see any way to do that.\n   You gradually notice a familiar, worrying smell, sniff, and identify it as smoke. A tiny glow of fire creeps across a stretch of floor -- inside the cage full of ammunition.
+     1 | [You used the word "hit" in a way that I don't understand.]
+     1 | [You used the word "smash" in a way that I don't understand.]
+     1 | You're already wearing the linen chemise!\n   You hear the large cupboard scrape, and turn to see Captain Jamison. "Hello! I came down to give you this -- my allotment from the coffer." He nods at the box in his arms.\n   Jamison starts to pin a jewelled brooch on your clothes, but, "Devil take it, the clasp is broken. I'll have it repaired." He folds the pretty thing into your hand. "And I meant to reassure you that if the men suddenly abandon ship, they are off to help me. Rodney will stay behind with you." He drops the coffer on the floor, smiling in farewell, and walks swiftly away.
+     1 | [You used the word "use" in a way that I don't understand.]
+     1 | You're not holding the coffer.\n   The end of a rope ladder blows past the window.
+     1 | [You used the word "locate" in a way that I don't understand.]
+     1 | [You used the word "tell" in a way that I don't understand.]
+     1 | I don't see who you're referring to.\n   "We have anchored off St. Sinistra," says Captain Jamison, "and I must look like a guest at Lafond's dance tonight. I will find and free your father, and then finally wreak my revenge on Lafond." He half draws his rapier from its scabbard.
+     1 | You can't reach Captain Jamison from the bed.\n   His look darkens. "You should know why I hate Lafond: Some years ago, as my brother and his bride sailed to a new life in Virginia, pirates struck. Their ship was boarded, looted and burned, the women taken, never to be seen again. A sailor, the one survivor, watched as a man of Lafond's description shot my brother in the back as he tried to save the women. Lafond has now bought respectability, but he shall never buy peace." Jamison straightens resolutely, bows, and departs.
+     1 | [You used the word "swing" in a way that I don't understand.]
+     1 | You can't see any empty room here!
+     1 | [You used the word "search" in a way that I don't understand.]
+     1 | [You used the word "inspec" in a way that I don't understand.]
+     1 | You can't go that way.\n   "Aaieeee!" echoes a scream, followed by several grunts and thumps.
+     1 | You're already standing.\n   "We haven't time to waste. Will you come willingly or not?" says Captain Jamison.\n   "The Falcon! The Falcon conquers!" yells someone.
+     1 | [You used the word "hide" in a way that I don't understand.]
+     1 | [You used the word "what's" in a way that I don't understand.]
+     1 | You can't see any stairs here!
+     1 | You can't reach the large cupboard from the bed.\n   You hear the large cupboard scrape, and turn to see Captain Jamison. "Hello! I came down to give you this -- my allotment from the coffer." He nods at the box in his arms.\n   Jamison starts to pin a jewelled brooch on your clothes, but, "Devil take it, the clasp is broken. I'll have it repaired." He folds the pretty thing into your hand. "And I meant to reassure you that if the men suddenly abandon ship, they are off to help me. Rodney will stay behind with you." He drops the coffer on the floor, smiling in farewell, and walks swiftly away.
+     1 | You can't see any food here!
+     1 | You can't see Lafond here!
+     1 | [I don't know the word "understand:."]
+     1 | You can't see any squeez gap here!
+     1 | You can't see any back wall here!
+     1 | You can't see any fence here!
+     1 | You can't see any ladder here!
+     1 | You already have the jewelled brooch.\n   The end of a rope ladder blows past the window.
+     1 | You can't see any door here!
+     1 | You're already wearing the cotton frock.\n   Your battered hands can take no more. Your grip loosens and the sea comes up to break your fall.\n\n      ***   You have died   ***\n\n\n   In 46 turns, you have achieved a score of 1 out of 25 points. This gives you the rank of Damsel in Distress.\n   You may start over, restore a saved position, or end this session of the game. (Type RESTART, RESTORE, or QUIT):
+     1 | You can't see any cupboard here!
+     1 | You can't see any pirate here!
+     1 | You can't open a jewelled brooch!
+     1 | You can't go that way.\n   Men clomp about overhead and a rope ladder unfurls itself past the window. Jamison climbs down it, entering the skiff that awaits him below. He rows to the island as the men above your head disperse, calling farewells to their captain.
+     1 | You can't see any gold pin here!
+     1 | You can't open a missive!\n   The pirate captain glances around the empty room, then notices the coffer in your arms. "Davis's safety box -- my men were hoping I'd find it." He takes it and nudges the unconscious man on the floor, "I wonder how Crulley knew you were here? Just his bad luck? He'll be flogged when he wakes."\n   The pirate bows. "My lady, may I offer my protection and my ship until your father is free?"
+     1 | You can't see any railing here!

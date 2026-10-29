@@ -1,0 +1,43 @@
+# Invalid Action Messages: TWCookingLevel6
+# Total unique error messages: 36
+# Total error occurrences: 7719
+#
+# Format: count | message
+#===============================================================================
+
+  3283 | That's not a verb I recognise.
+  1667 | You can't see any such thing.
+  1230 | I beg your pardon?
+   704 | You seem to want to talk to someone, but I can't see whom.
+   284 | You can't go that way.
+   217 | I only understood you as far as wanting to take inventory.
+    91 | You still miss something.
+    43 | It isn't something you can open.
+    31 | It is fixed in place.
+    25 | I only understood you as far as wanting to (go) in.
+    17 | You can't use multiple objects with that verb.
+    15 | You already have that.
+    13 | I only understood you as far as wanting to leave.
+    12 | You need to take the block of cheese first.
+    12 | I only understood you as far as wanting to examine the toilet.
+    10 | I only understood you as far as wanting to go south.
+     8 | That was a rhetorical question.
+     8 | I only understood you as far as wanting to examine the bed.
+     7 | You can't begin with a comma.
+     7 | I only understood you as far as wanting to exit.
+     5 | I only understood you as far as wanting to open the toolbox.
+     5 | I only understood you as far as wanting to examine the toolbox.
+     4 | You can't see inside, since the fridge is closed.
+     3 | That's already open.
+     2 | What do you want to cook the block of cheese with?
+     2 | I only understood you as far as wanting to take the toilet.
+     2 | That's fixed in place.
+     2 | That's not something you can sit down on.
+     2 | I only understood you as far as wanting to go north.
+     2 | I only understood you as far as wanting to open north.
+     1 | It isn't something you can switch.
+     1 | I only understood you as far as wanting to (go) e.
+     1 | (the bed)\nIt isn't something you can open.
+     1 | You can't talk to the bed.
+     1 | What do you want to drop those things in?
+     1 | But you aren't in anything at the moment.

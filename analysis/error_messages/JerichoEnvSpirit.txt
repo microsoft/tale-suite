@@ -1,0 +1,125 @@
+# Invalid Action Messages: JerichoEnvSpirit
+# Total unique error messages: 118
+# Total error occurrences: 14180
+#
+# Format: count | message
+#===============================================================================
+
+  4773 | That's not a verb I recognise.
+  3943 | You can't see any such thing.
+   893 | Time passes.
+   876 | I beg your pardon?
+   666 | You seem to want to talk to someone, but I can't see whom.
+   567 | You can't go that way.
+   432 | I only understood you as far as wanting to look.
+   349 | You can only do that to something animate.
+   153 | You find nothing of interest.
+   142 | I only understood you as far as wanting to wait.
+   105 | I only understood you as far as wanting to inventory.
+   103 | I only understood you as far as wanting to take the the Order.
+    93 | I didn't understand that sentence.
+    65 | That's not something you need to refer to in the course of this game.
+    63 | I only understood you as far as wanting to take the sack of flour.
+    60 | You can't reach it.
+    54 | I don't think much is to be achieved by that.
+    53 | You already have that.
+    48 | I only understood you as far as wanting to read the diary.
+    45 | You see nothing special about the west wall.
+    44 | You haven't got that chant prepared. [Type "spells" or "chants" to see what you do have prepared.]
+    40 | That's not something you can open.
+    38 | Which do you mean, the north wall, the south wall, the east wall, the west wall, the northeast wall, the southeast wall, the northwest wall or the southwest wall?
+    33 | I only understood you as far as wanting to go the north wall.
+    27 | I only understood you as far as wanting to look at the the Order.
+    27 | I only understood you as far as wanting to read a copy of the Holy Scriptures.
+    27 | What do you want to examine?
+    24 | But you aren't in anything at the moment.
+    21 | I only understood you as far as wanting to go the south wall.
+    20 | There is nothing on the sleeping pallet.
+    19 | There is nothing on the long table.
+    17 | Nothing happens.
+    16 | You see nothing special about the floor.
+    13 | Violence isn't the answer to this one.
+    13 | I only understood you as far as wanting to go the west wall.
+    12 | I only understood you as far as wanting to go the floor.
+    11 | I only understood you as far as wanting to jump.
+    10 | I only understood you as far as wanting to help.
+     9 | There is nothing on the large boulder.
+     9 | I only understood you as far as wanting to take the scrap of paper.
+     9 | There is nothing on the large barrel.
+     9 | I only understood you as far as wanting to stand.
+     9 | I only understood you as far as wanting to sleep.
+     9 | I only understood you as far as wanting to go the east wall.
+     9 | What do you want to search?
+     8 | I only understood you as far as wanting to get the sack of flour.
+     8 | I only understood you as far as wanting to read the scrap of paper.
+     8 | I only understood you as far as wanting to climb the floor.
+     8 | I only understood you as far as wanting to cast a chant at the folded scroll.
+     7 | I only understood you as far as wanting to get the scrap of paper.
+     7 | I only understood you as far as wanting to read the prayer book.
+     7 | You see nothing special about the ceiling.
+     7 | I only understood you as far as wanting to read the thin journal.
+     7 | I only understood you as far as wanting to touch the stone marker.
+     6 | That's not something you can enter.
+     6 | I only understood you as far as wanting to pray.
+     6 | You see nothing special about the north wall.
+     6 | I only understood you as far as wanting to cast a chant at the gnusto chant.
+     5 | I only understood you as far as wanting to go the ceiling.
+     5 | What do you want to move?
+     5 | What do you want to light?
+     5 | I only understood you as far as wanting to climb the north wall.
+     4 | I only understood you as far as wanting to read the note.
+     4 | Which do you mean, the travel brochure or the subway brochure?
+     4 | You can't see "self" (yourself) at the moment.
+     4 | You can't go that way.\n\nThat's not a verb I recognise.
+     4 | I only understood you as far as wanting to wipe the snow.
+     4 | I only understood you as far as wanting to cover the brazier.
+     4 | I only understood you as far as wanting to fill the brazier.
+     3 | I only understood you as far as wanting to throw the sand.
+     3 | Which do you mean, the frotz chant or the gnusto chant?
+     3 | You see nothing special about the south wall.
+     3 | There is nothing on the preparing table.
+     3 | What do you want to feel?
+     3 | What do you want to read?
+     3 | I only understood you as far as wanting to dust the brazier.
+     3 | I only understood you as far as wanting to wave the holy amulet.
+     2 | There doesn't seem to be a section about that.
+     2 | I only understood you as far as wanting to down.
+     2 | I only understood you as far as wanting to open the south wall.
+     2 | You see nothing special about the east wall.
+     2 | You can't use multiple objects with that verb.
+     2 | I only understood you as far as wanting to look at the river ice.
+     2 | I only understood you as far as wanting to walk the south wall.
+     2 | I only understood you as far as wanting to out.
+     2 | I only understood you as far as wanting to open the steeple window.
+     2 | I only understood you as far as wanting to search the preparing table.
+     2 | There is nothing on the shelves.
+     2 | I only understood you as far as wanting to turn the diary.
+     2 | Which do you mean, the moldy crate, the dusty crate or the filthy crate?
+     2 | I only understood you as far as wanting to rub the sand.
+     2 | Nothing obvious happens.
+     2 | That's not something you can close.
+     2 | I only understood you as far as wanting to climb the snow.
+     2 | I only understood you as far as wanting to rub the brazier.
+     1 | I only understood you as far as wanting to look at the torn page.
+     1 | I only understood you as far as wanting to read the torn page.
+     1 | I only understood you as far as wanting to look at the scrap of paper.
+     1 | I only understood you as far as wanting to look at the sack of flour.
+     1 | I only understood you as far as wanting to open the sack of flour.
+     1 | I only understood you as far as wanting to look inside the sack of flour.
+     1 | I only understood you as far as wanting to search the north wall.
+     1 | I only understood you as far as wanting to go the northeast wall.
+     1 | I only understood you as far as wanting to look at the south wall.
+     1 | I only understood you as far as wanting to look at the ceiling.
+     1 | I only understood you as far as wanting to look at the floor.
+     1 | I only understood you as far as wanting to cast the gnusto chant.
+     1 | I only understood you as far as wanting to cast the gnusto chant at the prayer book.
+     1 | What do you want to touch?
+     1 | What do you want to get?
+     1 | What do you want to go in?
+     1 | I only understood you as far as wanting to touch the large boulder.
+     1 | I only understood you as far as wanting to rub the large boulder.
+     1 | I only understood you as far as wanting to rub the holy amulet.
+     1 | I only understood you as far as wanting to hold the holy amulet.
+     1 | Which do you mean, the gnusto chant or the frotz chant?
+     1 | I only understood you as far as wanting to memorize the frotz chant.
+     1 | I only understood you as far as wanting to crack the corbie egg.

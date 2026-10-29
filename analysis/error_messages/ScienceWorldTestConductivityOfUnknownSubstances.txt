@@ -1,0 +1,31 @@
+# Invalid Action Messages: ScienceWorldTestConductivityOfUnknownSubstances
+# Total unique error messages: 24
+# Total error occurrences: 13335
+#
+# Format: count | message
+#===============================================================================
+
+ 12877 | No known action matches that input.
+   193 | The door is not open.
+    42 | Unknown action.  Type 'help' for a list of actions, and 'objects' for a list of possible object referents.
+    39 | The switch is already activated.
+    25 | terminal 1 on black wire is already connected, and must be disconnected before it can be connected to something else
+    25 | terminal 2 on unknown substance U is already connected, and must be disconnected before it can be connected to something else
+    22 | anode on battery is already connected, and must be disconnected before it can be connected to something else
+    21 | terminal 1 on unknown substance U is already connected, and must be disconnected before it can be connected to something else
+    19 | The door is already open.
+    13 | You can't pick up a gas directly.
+    12 | terminal 2 on black wire is already connected, and must be disconnected before it can be connected to something else
+     9 | cathode on battery is already connected, and must be disconnected before it can be connected to something else
+     8 | The drawer is already open.
+     5 | terminal 2 on blue wire is already connected, and must be disconnected before it can be connected to something else
+     5 | terminal 1 on blue wire is already connected, and must be disconnected before it can be connected to something else
+     5 | The drawer is already closed.
+     3 | anode on switch is already connected, and must be disconnected before it can be connected to something else
+     3 | terminal 2 on orange wire is already connected, and must be disconnected before it can be connected to something else
+     2 | cathode on red light bulb is already connected, and must be disconnected before it can be connected to something else
+     2 | The drawer isn't open, so you can't see inside.
+     2 | cathode on green light bulb is already connected, and must be disconnected before it can be connected to something else
+     1 | terminal 1 on orange wire is already connected, and must be disconnected before it can be connected to something else
+     1 | red box is already connected, and must be disconnected before it can be connected to something else
+     1 | cathode on switch is already connected, and must be disconnected before it can be connected to something else

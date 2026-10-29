@@ -1,0 +1,1139 @@
+# Invalid Action Messages: JerichoEnvCutthroat
+# Total unique error messages: 1132
+# Total error occurrences: 10419
+#
+# Format: count | message
+#===============================================================================
+
+   635 | You can't go that way.
+   546 | I don't know the word "`read".
+   517 | I don't know the word "you".
+   426 | I don't understand that sentence.
+   419 | I don't know the word "seems".
+   418 | What?
+   408 | I don't know the word "shanty".
+   374 | I don't know the word "red's".
+   362 | I don't know the word ">".
+   255 | I don't know the word "`examine".
+   207 | I don't know the word "`look".
+   173 | I don't know the word "wheelhouse".
+   172 | I don't know the word "resolve".
+   146 | I don't know the word "deal".
+   110 | I don't know the word "tavern".
+   110 | I don't know the word "**command:**".
+    97 | I don't know the word "ex".
+    90 | I don't know the word "**examine".
+    86 | I don't know the word "meeting".
+    86 | I don't know the word "**open".
+    79 | What do you want to eat?
+    79 | I don't know the word "apologize".
+    74 | You can't get through the weeds.
+    69 | I don't know the word "boar".
+    62 | I don't know the word "**take".
+    59 | I don't know the word "sorry".
+    56 | You can't go that way.\nYour stomach is growling loudly.
+    51 | I don't know the word "map".
+    49 | You can't see any Weasel here.
+    48 | I don't know the word "binoculars".
+    47 | I don't know the word "inn".
+    47 | I don't know the word "`message`".
+    46 | You can't see any door here.
+    46 | I don't know the word "hut".
+    45 | I don't know the word "alright".
+    44 | I don't know the word "your".
+    44 | You can't see any food here.
+    44 | I don't know the word "two".
+    43 | I don't know the word "`paper`".
+    42 | I don't know the word "word".
+    41 | I don't know the word "wharf".
+    38 | I don't know the word "gangway".
+    38 | I don't know the word "`inspect".
+    36 | I don't know the word "outfitters".
+    35 | I don't know the word "dock".
+    34 | I don't know the word "i'm".
+    33 | I don't know the word "cutthroats".
+    33 | I don't know the word "something".
+    31 | I don't know the word "job".
+    31 | I don't know the word "interact".
+    31 | I don't know the word "```".
+    30 | I don't know the word "plans".
+    30 | I don't know the word "**get".
+    28 | I don't know the word "plan".
+    27 | I don't know the word "ashore".
+    26 | I don't know the word "death".
+    26 | There's nothing on the stove.
+    25 | You can't see any book here.
+    25 | I don't know the word "agree".
+    25 | What do you want to knock at?
+    25 | I don't know the word "`stuff`".
+    24 | I don't know the word "```:`go".
+    23 | There's nothing on the table.
+    22 | You find nothing unusual.
+    22 | It's already open.
+    22 | I don't know the word "office".
+    22 | I don't know the word "`object`".
+    22 | What do you want to get?
+    22 | I don't know the word "apologies".
+    21 | There's nothing but dust there.
+    21 | I don't know the word "nod".
+    21 | I don't know the word "dollars".
+    21 | What do you want to say?
+    20 | I don't know the word "new".
+    20 | I don't know the word "clock".
+    20 | I don't know the word "house".
+    20 | I don't know the word "outside".
+    19 | I don't know the word "store".
+    19 | I don't know the word "```enter".
+    18 | I don't know the word "`floor".
+    17 | I don't know the word "join".
+    17 | I don't know the word "wrecks".
+    17 | You can't see any text here.
+    17 | I don't know the word "ap".
+    16 | I don't know the word "interested".
+    16 | I don't know the word "`get".
+    15 | You can't see any meal here.
+    15 | I don't know the word "answer".
+    15 | I don't know the word "work".
+    15 | I don't know the word "`scroll`".
+    15 | I don't know the word "`thing`".
+    14 | I don't know the word "hollywood".
+    14 | What do you want to listen to?
+    14 | I don't know the word "last".
+    14 | I don't know the word "`letter`".
+    14 | I don't know the word "`paper".
+    14 | I don't know the word "`thing".
+    13 | I don't know the word "mentioned".
+    13 | You can't go that way.\nYou begin to feel hungry.
+    13 | I don't know the word "`help`".
+    13 | You already have it.
+    13 | You can't see any wheel here.
+    13 | I don't know the word "ex:".
+    13 | I don't know the word "has".
+    12 | I don't know the word "balance".
+    12 | I don't know the word "supplies".
+    12 | I don't know the word "`north`".
+    12 | You can't see any McGinty here.
+    11 | You can't see any note here.
+    11 | I don't know the word "sandwich".
+    11 | I don't know the word "building".
+    11 | You can't see any water here.
+    11 | I don't know the word "if".
+    11 | There's nothing on the stove.\nYou lick your lips and clear your throat.
+    11 | I don't know the word "chowder".
+    11 | I don't know the word "`take".
+    10 | I don't know the word "whereabouts".
+    10 | You are already standing, I think.
+    10 | I don't know the word "equipment".
+    10 | I don't know the word "accept".
+    10 | I don't know the word "`floor`".
+     9 | You're not carrying the Night Wind.
+     9 | What do you want to drink?
+     9 | I don't know the word "until".
+     9 | I don't know the word "appointment".
+     9 | I don't know the word "continue".
+     9 | You can't see any drink here.
+     9 | It's already on.\nYour stomach is growling loudly.
+     9 | I don't know the word "am".
+     9 | I don't know the word "`note`".
+     9 | I don't know the word "exactly".
+     8 | I don't know the word "talked".
+     8 | I don't know the word "marked".
+     8 | I don't know the word "note's".
+     8 | You can't go that way.\nThe Weasel is to the east, heading away from you.
+     8 | You can't go that way.\nThe Weasel heads off to the west.
+     8 | I don't know the word "not".
+     8 | I don't know the word "road".
+     8 | I don't know the word "bread".
+     8 | I don't know the word "you're".
+     7 | You can't see any Johnny's bar here.
+     7 | I don't know the word "referred".
+     7 | I don't know the word "information".
+     7 | I don't know the word "visit".
+     7 | I don't know the word "use".
+     7 | I don't know the word "account".
+     7 | I don't know the word "opportunity".
+     7 | I don't know the word "gear".
+     7 | I don't know the word "found".
+     7 | You can't go that way.\nPete the Rat, off to the west, disappears from sight to the southwest.
+     7 | I don't know the word "crew".
+     7 | I don't know the word "restaurant".
+     7 | You can't go that way.\nThe Weasel is to the east, heading toward the west.
+     7 | You can't see any dresser here.
+     7 | There's nothing on the bunk.
+     7 | You can't see any businesses here.
+     7 | I don't know the word "do".
+     7 | I don't know the word "more".
+     7 | It's already on.
+     7 | I don't know the word "now".
+     7 | I don't know the word "`open".
+     7 | You don't have that.
+     7 | I don't know the word "```âs".
+     7 | I don't know the word "consult".
+     6 | I don't know the word "wrote".
+     6 | I don't know the word "said".
+     6 | You don't have the right key.\nYour stomach is growling loudly.
+     6 | I don't know the word "alley".
+     6 | You can't see any beef stew here.
+     6 | You can't see any Johnny here.
+     6 | I don't know the word "coordinates".
+     6 | I don't know the word "morning".
+     6 | I don't know the word "next".
+     6 | I don't know the word "being".
+     6 | I don't know the word "killed".
+     6 | I don't know the word "`unlock".
+     6 | You can't see any back here.
+     6 | You can't see any breakfast here.
+     6 | I don't know the word "much".
+     6 | There's nothing on the stove.\nYour stomach is growling loudly.
+     6 | I don't know the word "pie".
+     6 | I don't know the word "along".
+     6 | You can't see any hatch here.
+     6 | I don't know the word "shop".
+     6 | I don't know the word "text:".
+     6 | I don't know the word "````".
+     6 | I don't know the word "```:`".
+     5 | I don't know the word "he".
+     5 | You don't have the room key.
+     5 | You can't go that way.\nThe Weasel walks past you.
+     5 | There's nothing on the bed.
+     5 | You can't get through the weeds.\nYour stomach is growling loudly.
+     5 | I don't know the word "way".
+     5 | I don't know the word "wetsuit".
+     5 | You don't have the right key.
+     5 | I don't know the word "lobby".
+     5 | I don't know the word "want".
+     5 | I don't know the word "explain".
+     5 | There's nothing but dust there.\nYour stomach is growling loudly.
+     5 | You can't go that way.\nYou lick your lips and clear your throat.
+     5 | I don't know the word "getting".
+     5 | I don't know the word "tonight".
+     5 | I don't know the word "them".
+     5 | I don't know the word "smile".
+     5 | I don't know the word "done".
+     5 | I don't know the word "aye".
+     5 | I don't know the word "try".
+     5 | I don't know the word "simple".
+     5 | I don't know the word "`pick".
+     5 | I don't know the word "`what".
+     5 | I don't know the word "`door`".
+     5 | I don't know the word "body".
+     5 | I don't know the word "hotel".
+     5 | You can't see any Red here.
+     5 | I don't know the word "be".
+     5 | I don't know the word "after".
+     5 | I don't know the word "going".
+     5 | I don't know the word "(after".
+     5 | I don't know the word "signed".
+     5 | I don't know the word "warehouse".
+     5 | I don't know the word "crawl".
+     4 | You can't go that way.\nYour throat starts to feel dry.
+     4 | I don't know the word "reason".
+     4 | I don't know the word "proposal".
+     4 | You can't go that way.\nYou hear something at the door and turn to see the Weasel walk in. Fear flashes across his face, but only for an instant. He says, "Oh, hi. I was just wonderin' if you was comin' to the meeting. Looks like we found the real thing this time."
+     4 | I don't know the word "real".
+     4 | I don't know the word "vacant".
+     4 | You can't go that way.\nTo the west McGinty comes into view from the south.
+     4 | You can't go that way.\nJohnny Red is to the east, heading toward the west.
+     4 | I don't know the word "island".
+     4 | I don't know the word "places".
+     4 | I don't know the word "spots".
+     4 | I don't know the word "sites".
+     4 | I don't know the word "boats".
+     4 | I don't know the word "site".
+     4 | I don't know the word "area".
+     4 | I don't know the word "part".
+     4 | I don't know the word "depth".
+     4 | I don't know the word "surroundings".
+     4 | I don't know the word "previous".
+     4 | I don't know the word "angle".
+     4 | I don't know the word "approach".
+     4 | I don't know the word "always".
+     4 | You can't see any knife here.
+     4 | I don't know the word "**go".
+     4 | I don't know the word "galley".
+     4 | You can't see any passbook here.
+     4 | You can't get there from here.
+     4 | You can't go that way.\nTo the west the Weasel comes into view from the south.
+     4 | I don't know the word "will".
+     4 | You can't go that way.\nTo the east the Weasel comes into view from the southeast.
+     4 | I don't know the word "his".
+     4 | I don't know the word "menu".
+     4 | You can't see any bar here.
+     4 | I don't know the word "crackers".
+     4 | I don't know the word "needed".
+     4 | I don't know the word "`see".
+     4 | I don't know the word "was".
+     4 | I don't know the word "radio".
+     4 | I don't know the word "expl".
+     4 | I don't know the word "ass".
+     4 | I don't know the word "don's".
+     4 | I don't know the word "have".
+     4 | What do you want to break the door with?
+     4 | I don't know the word "rephrase".
+     4 | I don't know the word "shack".
+     4 | I don't know the word "leviathan".
+     3 | I don't know the word "spoke".
+     3 | I don't know the word "noted".
+     3 | I don't know the word "contents".
+     3 | I don't know the word "purpose".
+     3 | I don't know the word "i'll".
+     3 | I don't know the word "marks".
+     3 | I don't know the word "books".
+     3 | I don't know the word "profit".
+     3 | I don't know the word "cosmos".
+     3 | I don't know the word "space".
+     3 | I don't know the word "expanse".
+     3 | I don't know the word "stretch".
+     3 | I don't know the word "extent".
+     3 | I don't know the word "scope".
+     3 | I don't know the word "scale".
+     3 | I don't know the word "size".
+     3 | I don't know the word "magnitude".
+     3 | I don't know the word "degree".
+     3 | I don't know the word "level".
+     3 | I don't know the word "height".
+     3 | I don't know the word "nearby".
+     3 | I don't know the word "background".
+     3 | I don't know the word "history".
+     3 | I don't know the word "past".
+     3 | I don't know the word "object".
+     3 | I don't know the word "thing".
+     3 | I don't know the word "item".
+     3 | I don't know the word "content".
+     3 | I don't know the word "side".
+     3 | I don't know the word "provided".
+     3 | I don't know the word "different".
+     3 | I don't know the word "force".
+     3 | You can't see any diving suit here.
+     3 | You can't see any suit here.
+     3 | There's nothing on the counter.\nJohnny glances nervously at McGinty.
+     3 | You can't go that way.\nMcGinty walks past you.\nAs he looks at you, he does a double take and stares intently at your possessions.
+     3 | I don't know the word "one-man".
+     3 | I don't know the word "killing".
+     3 | I don't know the word "fate".
+     3 | There's nothing on the counter.\nYour stomach is growling loudly.
+     3 | I don't know the word "lot".
+     3 | You can't see any closet here.
+     3 | You can't see any south door here.
+     3 | There's nothing on the counter.
+     3 | I don't know the word "participate".
+     3 | You can't go that way.\nMcGinty is to the west, heading toward the east.
+     3 | You can't go that way.\nTo the east the Weasel comes into view from the south.
+     3 | I don't know the word "forms".
+     3 | I don't know the word "form".
+     3 | You can't see any drawer here.
+     3 | You can't see any window here.
+     3 | You can't see any Mary Margaret here.
+     3 | I don't know the word "type".
+     3 | I don't know the word "eating".
+     3 | I don't know the word "beg".
+     3 | I don't know the word "away".
+     3 | I don't know the word "`notebook`".
+     3 | I don't know the word "`dresser`".
+     3 | I don't know the word "`stuff".
+     3 | I don't know the word "`i".
+     3 | I don't know the word "`do`".
+     3 | You can't see any stairs here.
+     3 | You can't see any key here.
+     3 | I don't know the word "apract".
+     3 | I don't know the word "sprite".
+     3 | I don't know the word "got".
+     3 | I don't know the word "options:".
+     3 | I don't know the word "i'".
+     3 | I don't know the word "```â".
+     3 | I don't know the word "```re".
+     3 | I don't know the word "winding".
+     2 | I don't know the word "told".
+     2 | I don't know the word "indicated".
+     2 | You can't go that way.\nMcGinty, off to the west, leaves your view to the south.
+     2 | I don't know the word "machete".
+     2 | You can't go that way.\nJohnny Red, off to the west, leaves your view to the south.
+     2 | You can't see any gold coin here.
+     2 | What do you want to deposit?
+     2 | What do you want to hide the shipwreck book under?
+     2 | I don't know the word "im".
+     2 | I don't know the word "finish".
+     2 | I don't know the word "later".
+     2 | I don't know the word "interest".
+     2 | I don't know the word "venture".
+     2 | I don't know the word "scheme".
+     2 | I don't know the word "proposition".
+     2 | I don't know the word "vessel".
+     2 | I don't know the word "underwater".
+     2 | I don't know the word "depths".
+     2 | I don't know the word "tanks".
+     2 | I don't know the word "exploration".
+     2 | I don't know the word "explore".
+     2 | I don't know the word "discovery".
+     2 | I don't know the word "discover".
+     2 | I don't know the word "position".
+     2 | I don't know the word "spot".
+     2 | I don't know the word "region".
+     2 | I don't know the word "zone".
+     2 | I don't know the word "section".
+     2 | I don't know the word "portion".
+     2 | I don't know the word "territory".
+     2 | I don't know the word "domain".
+     2 | I don't know the word "realm".
+     2 | I don't know the word "world".
+     2 | I don't know the word "universe".
+     2 | I don't know the word "distance".
+     2 | I don't know the word "far".
+     2 | I don't know the word "near".
+     2 | I don't know the word "adjacent".
+     2 | I don't know the word "neighborhood".
+     2 | I don't know the word "vicinity".
+     2 | I don't know the word "environment".
+     2 | I don't know the word "setting".
+     2 | I don't know the word "context".
+     2 | I don't know the word "prior".
+     2 | I don't know the word "before".
+     2 | I don't know the word "earlier".
+     2 | I don't know the word "former".
+     2 | I don't know the word "ancient".
+     2 | I don't know the word "antique".
+     2 | I don't know the word "relic".
+     2 | I don't know the word "artifact".
+     2 | I don't know the word "article".
+     2 | I don't know the word "fragment".
+     2 | I don't know the word "component".
+     2 | I don't know the word "element".
+     2 | I don't know the word "constituent".
+     2 | I don't know the word "ingredient".
+     2 | I don't know the word "substance".
+     2 | I don't know the word "material".
+     2 | I don't know the word "matter".
+     2 | I don't know the word "interior".
+     2 | I don't know the word "inner".
+     2 | I don't know the word "core".
+     2 | I don't know the word "center".
+     2 | I don't know the word "middle".
+     2 | I don't know the word "heart".
+     2 | I don't know the word "soul".
+     2 | I don't know the word "spirit".
+     2 | I don't know the word "essence".
+     2 | I don't know the word "nature".
+     2 | I don't know the word "character".
+     2 | I don't know the word "personality".
+     2 | I don't know the word "trait".
+     2 | I don't know the word "quality".
+     2 | I don't know the word "attribute".
+     2 | I don't know the word "property".
+     2 | I don't know the word "feature".
+     2 | I don't know the word "characteristic".
+     2 | I don't know the word "aspect".
+     2 | I don't know the word "facet".
+     2 | I don't know the word "perspective".
+     2 | I don't know the word "view".
+     2 | I don't know the word "opinion".
+     2 | I don't know the word "belief".
+     2 | I don't know the word "faith".
+     2 | I don't know the word "effort".
+     2 | I don't know the word "exertion".
+     2 | I don't know the word "activity".
+     2 | I don't know the word "action".
+     2 | I don't know the word "deed".
+     2 | I don't know the word "act".
+     2 | I don't know the word "behavior".
+     2 | I don't know the word "conduct".
+     2 | I don't know the word "demeanor".
+     2 | I don't know the word "bearing".
+     2 | I don't know the word "manner".
+     2 | I don't know the word "method".
+     2 | I don't know the word "technique".
+     2 | I don't know the word "strategy".
+     2 | I don't know the word "tactic".
+     2 | I don't know the word "maneuver".
+     2 | I don't know the word "motion".
+     2 | I don't know the word "movement".
+     2 | I don't know the word "shift".
+     2 | I don't know the word "change".
+     2 | I don't know the word "alteration".
+     2 | I don't know the word "modification".
+     2 | I don't know the word "adjustment".
+     2 | I don't know the word "adaptation".
+     2 | I don't know the word "variation".
+     2 | I don't know the word "difference".
+     2 | I don't know the word "contrast".
+     2 | I don't know the word "similarity".
+     2 | I don't know the word "likeness".
+     2 | I don't know the word "resemblance".
+     2 | I don't know the word "parallel".
+     2 | I don't know the word "equivalent".
+     2 | I don't know the word "equal".
+     2 | I don't know the word "same".
+     2 | I don't know the word "identical".
+     2 | I don't know the word "match".
+     2 | I don't know the word "couple".
+     2 | I don't know the word "duo".
+     2 | I don't know the word "twice".
+     2 | I don't know the word "multiple".
+     2 | I don't know the word "many".
+     2 | I don't know the word "several".
+     2 | I don't know the word "numerous".
+     2 | I don't know the word "countless".
+     2 | I don't know the word "infinite".
+     2 | I don't know the word "unlimited".
+     2 | I don't know the word "boundless".
+     2 | I don't know the word "endless".
+     2 | I don't know the word "eternal".
+     2 | I don't know the word "forever".
+     2 | I don't know the word "ever".
+     2 | I don't know the word "never".
+     2 | I don't know the word "sometimes".
+     2 | I don't know the word "occasionally".
+     2 | I don't know the word "rarely".
+     2 | I don't know the word "seldom".
+     2 | I don't know the word "infrequently".
+     2 | I don't know the word "often".
+     2 | I don't know the word "frequently".
+     2 | I don't know the word "regularly".
+     2 | I don't know the word "consistently".
+     2 | I don't know the word "constantly".
+     2 | I don't know the word "continuously".
+     2 | I don't know the word "perpetually".
+     2 | I don't know the word "hidden".
+     2 | I don't know the word "concealed".
+     2 | I don't know the word "amount".
+     2 | I don't know the word "sum".
+     2 | I don't know the word "total".
+     2 | I don't know the word "aggregate".
+     2 | I don't know the word "entirety".
+     2 | I don't know the word "nothing".
+     2 | I don't know the word "cost".
+     2 | I don't know the word "current".
+     2 | I don't know the word "recent".
+     2 | I don't know the word "bad".
+     2 | I don't know the word "good".
+     2 | I don't know the word "right".
+     2 | You can't go that way.\nJohnny Red is to the west, heading toward the east.
+     2 | You can't see any rope here.
+     2 | I don't know the word "warn".
+     2 | You can't go that way.\nPete the Rat is to the west, heading away from you.
+     2 | You can't go that way.\nThe Weasel, off to the west, leaves your view to the south.
+     2 | You can't go that way.\nMcGinty is to the east, heading toward the west.
+     2 | I don't know the word "coins".
+     2 | I don't know the word "credits".
+     2 | I don't know the word "heist".
+     2 | I don't know the word "demise".
+     2 | I don't know the word "end".
+     2 | I don't know the word "passing".
+     2 | I don't know the word "didn't".
+     2 | I don't know the word "absent".
+     2 | I don't know the word "missing".
+     2 | I don't know the word "late".
+     2 | There's nothing behind the counter.
+     2 | I don't know the word "situation".
+     2 | I don't know the word "trouble".
+     2 | I don't know the word "hunger".
+     2 | I don't know the word "sunken".
+     2 | You already have it.\nYour stomach is growling loudly.
+     2 | I don't know the word "ten".
+     2 | I don't know the word "controls".
+     2 | I don't know the word "chance".
+     2 | I don't know the word "advice".
+     2 | I don't know the word "guidance".
+     2 | I don't know the word "options".
+     2 | I don't know the word "actions".
+     2 | I don't know the word "this".
+     2 | I don't know the word "role".
+     2 | I don't know the word "involvement".
+     2 | I don't know the word "activities".
+     2 | I don't know the word "lounge".
+     2 | You can't see any captain's cabin here.
+     2 | You can't see any coffee here.
+     2 | I don't know the word "men".
+     2 | You can't see any grog here.
+     2 | I don't know the word "ashes".
+     2 | You can't go that way.\nThe Weasel heads off to the east.
+     2 | I don't know the word "undo".
+     2 | I don't know the word "landing".
+     2 | You can't see any sign here.
+     2 | You can't go that way.\nMcGinty, off to the east, leaves your view to the south.\nJohnny Red is to the east, heading toward the west.
+     2 | There's nothing on the stove.\nYou lick your lips and clear your throat.\nYour stomach is growling loudly.
+     2 | You can't reach it from here.
+     2 | I don't know the word "apple".
+     2 | I don't know the word "fruit".
+     2 | What do you want to hide under?
+     2 | You can't see any counter here.
+     2 | You can't see any teller here.
+     2 | You can't see any safe here.
+     2 | You can't do that.
+     2 | I don't know the word "just".
+     2 | I don't know the word "decision".
+     2 | I don't know the word "refuse".
+     2 | I don't know the word "instead".
+     2 | I don't know the word "`search".
+     2 | I don't know the word "`check".
+     2 | I don't know the word "`what's".
+     2 | I don't know the word "`in".
+     2 | I don't know the word "`book`".
+     2 | I don't know the word "`shipwreck".
+     2 | I don't know the word "`room`".
+     2 | I don't know the word "`my".
+     2 | I don't know the word "`the".
+     2 | I don't know the word "`go".
+     2 | I don't know the word "`out`".
+     2 | I don't know the word "`exit`".
+     2 | I don't know the word "`leave`".
+     2 | I don't know the word "`go`".
+     2 | I don't know the word "`out".
+     2 | I don't know the word "`through".
+     2 | I don't know the word "`me`".
+     2 | I don't know the word "does".
+     2 | I don't know the word "alone".
+     2 | I don't know the word "`object".
+     2 | What do you want to look out?
+     2 | You're not carrying the Weasel's knife.
+     2 | You don't have the Weasel's knife.
+     2 | I don't know the word "main".
+     2 | I don't know the word "mention".
+     2 | What do you want to attack Weasel with?
+     2 | I don't know the word "further".
+     2 | You can't see any chart here.
+     2 | I don't know the word "sleepve".
+     2 | I don't know the word "existant".
+     2 | I don't know the word "other".
+     2 | I don't know the word "get:".
+     2 | I don't know the word "response".
+     2 | I don't know the word "or".
+     2 | I don't know the word "*you".
+     2 | I don't know the word "cabinet".
+     2 | I don't know the word "i's".
+     2 | I don't know the word "```leave".
+     2 | You can't go that way.\nJohnny Red, off to the west, disappears from sight to the southwest.
+     2 | You can't go that way.\nPete the Rat heads off to the southwest.
+     2 | You can't see any Pete here.
+     2 | I don't know the word "xyzzy".
+     2 | You don't have the money.
+     2 | I don't know the word "ticket".
+     2 | What do you want to pay the ferry man to?
+     2 | I don't know the word "ferryman".
+     2 | I don't know the word "clarification".
+     2 | I don't know the word "plainly".
+     2 | I don't know the word "words".
+     2 | I don't know the word "everyday".
+     2 | I don't know the word "simplify".
+     2 | I don't know the word "language".
+     2 | I don't know the word "english".
+     2 | I don't know the word "clarify".
+     2 | I don't know the word "spell".
+     2 | I don't know the word "repeat".
+     2 | I don't know the word "restate".
+     2 | I don't know the word "once".
+     2 | I don't know the word "slow".
+     2 | I don't know the word "confused".
+     2 | I don't know the word "lost".
+     2 | I don't know the word "sentence".
+     2 | I don't know the word "reword".
+     2 | I don't know the word "another".
+     2 | I don't know the word "meaning".
+     2 | I don't know the word "reiterate".
+     2 | I don't know the word "rewrite".
+     2 | I don't know the word "creep".
+     2 | I don't know the word "sneak".
+     2 | What do you want to smash the door with?
+     2 | You can't see any salesman here.
+     2 | I don't know the word "fishing".
+     2 | I don't know the word "catch".
+     2 | You can't go that way.\nJohnny Red is to the west, heading away from you.
+     2 | You can't go that way.\nTo the southwest Johnny Red comes into view from the northwest.
+     2 | You can't see any price list here.
+     1 | You're not carrying the Mary Margaret.
+     1 | I don't know the word "called".
+     1 | I don't know the word "named".
+     1 | I don't know the word "book's".
+     1 | I don't know the word "arrangement".
+     1 | I don't know the word "agreement".
+     1 | I don't know the word "discussion".
+     1 | I don't know the word "conversation".
+     1 | I don't know the word "invitation".
+     1 | I don't know the word "**final".
+     1 | I don't know the word "game".
+     1 | I don't know the word "session".
+     1 | I don't know the word "operation".
+     1 | You can't see any bartender here.
+     1 | I don't know the word "confidence".
+     1 | I don't know the word "certainty".
+     1 | I don't know the word "surety".
+     1 | I don't know the word "assurance".
+     1 | I don't know the word "guarantee".
+     1 | I don't know the word "promise".
+     1 | I don't know the word "commitment".
+     1 | I don't know the word "obligation".
+     1 | I don't know the word "duty".
+     1 | I don't know the word "responsibility".
+     1 | I don't know the word "task".
+     1 | I don't know the word "labor".
+     1 | I don't know the word "positions".
+     1 | I don't know the word "areas".
+     1 | I don't know the word "regions".
+     1 | I don't know the word "zones".
+     1 | I don't know the word "sections".
+     1 | I don't know the word "parts".
+     1 | I don't know the word "portions".
+     1 | I don't know the word "territories".
+     1 | I don't know the word "domains".
+     1 | I don't know the word "realms".
+     1 | I don't know the word "worlds".
+     1 | I don't know the word "universes".
+     1 | I don't know the word "funds".
+     1 | I don't know the word "wealth".
+     1 | I don't know the word "riches".
+     1 | I don't know the word "fortune".
+     1 | I don't know the word "silver".
+     1 | I don't know the word "jewels".
+     1 | I don't know the word "gems".
+     1 | I don't know the word "diamonds".
+     1 | I don't know the word "pearls".
+     1 | I don't know the word "loot".
+     1 | I don't know the word "booty".
+     1 | I don't know the word "plunder".
+     1 | I don't know the word "spoils".
+     1 | I don't know the word "prize".
+     1 | I don't know the word "reward".
+     1 | I don't know the word "bounty".
+     1 | I don't know the word "gain".
+     1 | I don't know the word "earnings".
+     1 | I don't know the word "income".
+     1 | I don't know the word "revenue".
+     1 | I don't know the word "returns".
+     1 | I don't know the word "yield".
+     1 | I don't know the word "output".
+     1 | I don't know the word "production".
+     1 | I don't know the word "manufacture".
+     1 | I don't know the word "creation".
+     1 | I don't know the word "making".
+     1 | I don't know the word "construction".
+     1 | I don't know the word "structure".
+     1 | I don't know the word "edifice".
+     1 | I don't know the word "home".
+     1 | I don't know the word "residence".
+     1 | I don't know the word "dwelling".
+     1 | I don't know the word "abode".
+     1 | I don't know the word "shelter".
+     1 | I don't know the word "refuge".
+     1 | I don't know the word "haven".
+     1 | I don't know the word "sanctuary".
+     1 | I don't know the word "protected".
+     1 | I don't know the word "guarded".
+     1 | I don't know the word "defended".
+     1 | I don't know the word "shielded".
+     1 | I don't know the word "covered".
+     1 | I don't know the word "secret".
+     1 | I don't know the word "mystery".
+     1 | I don't know the word "puzzle".
+     1 | I don't know the word "riddle".
+     1 | I don't know the word "enigma".
+     1 | I don't know the word "unknown".
+     1 | I don't know the word "unfamiliar".
+     1 | I don't know the word "strange".
+     1 | I don't know the word "odd".
+     1 | I don't know the word "unusual".
+     1 | I don't know the word "uncommon".
+     1 | I don't know the word "scarce".
+     1 | I don't know the word "limited".
+     1 | I don't know the word "restricted".
+     1 | I don't know the word "confined".
+     1 | I don't know the word "bounded".
+     1 | I don't know the word "finite".
+     1 | I don't know the word "measurable".
+     1 | I don't know the word "quantifiable".
+     1 | I don't know the word "countable".
+     1 | I don't know the word "number".
+     1 | I don't know the word "quantity".
+     1 | I don't know the word "full".
+     1 | I don't know the word "entire".
+     1 | You can't use multiple indirect objects with "ask".
+     1 | I don't know the word "everything".
+     1 | I don't know the word "anything".
+     1 | I don't know the word "void".
+     1 | I don't know the word "blank".
+     1 | I don't know the word "bare".
+     1 | I don't know the word "naked".
+     1 | I don't know the word "nude".
+     1 | I don't know the word "exposed".
+     1 | I don't know the word "revealed".
+     1 | I don't know the word "shown".
+     1 | I don't know the word "displayed".
+     1 | I don't know the word "exhibited".
+     1 | I don't know the word "presented".
+     1 | I don't know the word "offered".
+     1 | I don't know the word "given".
+     1 | I don't know the word "supplied".
+     1 | I don't know the word "furnished".
+     1 | I don't know the word "equipped".
+     1 | I don't know the word "outfitted".
+     1 | I don't know the word "fitted".
+     1 | I don't know the word "attired".
+     1 | I don't know the word "garbed".
+     1 | I don't know the word "robed".
+     1 | I don't know the word "suited".
+     1 | I don't know the word "uniformed".
+     1 | I don't know the word "costumed".
+     1 | I don't know the word "masked".
+     1 | I don't know the word "disguised".
+     1 | I don't know the word "veiled".
+     1 | I don't know the word "shrouded".
+     1 | I don't know the word "cloaked".
+     1 | I don't know the word "wrapped".
+     1 | I don't know the word "bound".
+     1 | I don't know the word "tied".
+     1 | I don't know the word "linked".
+     1 | I don't know the word "joined".
+     1 | I don't know the word "united".
+     1 | I don't know the word "merged".
+     1 | I don't know the word "blended".
+     1 | I don't know the word "mixed".
+     1 | I don't know the word "stirred".
+     1 | I don't know the word "agitated".
+     1 | I don't know the word "disturbed".
+     1 | I don't know the word "troubled".
+     1 | I don't know the word "upset".
+     1 | I don't know the word "distressed".
+     1 | I don't know the word "anxious".
+     1 | I don't know the word "worried".
+     1 | I don't know the word "concerned".
+     1 | I don't know the word "apprehensive".
+     1 | I don't know the word "fearful".
+     1 | I don't know the word "afraid".
+     1 | I don't know the word "scared".
+     1 | I don't know the word "frightened".
+     1 | I don't know the word "terrified".
+     1 | I don't know the word "petrified".
+     1 | I don't know the word "panic".
+     1 | I don't know the word "alarm".
+     1 | I don't know the word "dread".
+     1 | I don't know the word "horror".
+     1 | I don't know the word "terror".
+     1 | I don't know the word "fright".
+     1 | I don't know the word "shock".
+     1 | I don't know the word "astonishment".
+     1 | I don't know the word "amazement".
+     1 | I don't know the word "wonder".
+     1 | I don't know the word "awe".
+     1 | I don't know the word "reverence".
+     1 | I don't know the word "respect".
+     1 | I don't know the word "admiration".
+     1 | I don't know the word "esteem".
+     1 | I don't know the word "regard".
+     1 | I don't know the word "consideration".
+     1 | I don't know the word "attention".
+     1 | I don't know the word "focus".
+     1 | I don't know the word "concentration".
+     1 | I don't know the word "tool".
+     1 | I don't know the word "instrument".
+     1 | I don't know the word "apparatus".
+     1 | I don't know the word "expense".
+     1 | I don't know the word "charge".
+     1 | I don't know the word "fee".
+     1 | I don't know the word "rate".
+     1 | I don't know the word "value".
+     1 | I don't know the word "worth".
+     1 | I don't know the word "latest".
+     1 | I don't know the word "updated".
+     1 | I don't know the word "revised".
+     1 | I don't know the word "modified".
+     1 | I don't know the word "changed".
+     1 | I don't know the word "altered".
+     1 | I don't know the word "adjusted".
+     1 | I don't know the word "adapted".
+     1 | I don't know the word "varied".
+     1 | I don't know the word "separate".
+     1 | I don't know the word "individual".
+     1 | I don't know the word "particular".
+     1 | I don't know the word "specific".
+     1 | I don't know the word "certain".
+     1 | I don't know the word "definite".
+     1 | I don't know the word "precise".
+     1 | I don't know the word "exact".
+     1 | I don't know the word "accurate".
+     1 | I don't know the word "afternoon".
+     1 | I don't know the word "evening".
+     1 | I don't know the word "wednesday".
+     1 | I don't know the word "today".
+     1 | I don't know the word "date".
+     1 | I don't know the word "calendar".
+     1 | I don't know the word "month".
+     1 | I don't know the word "year".
+     1 | I don't know the word "season".
+     1 | I don't know the word "weather".
+     1 | I don't know the word "climate".
+     1 | I don't know the word "temperature".
+     1 | I don't know the word "heat".
+     1 | I don't know the word "cold".
+     1 | I don't know the word "warm".
+     1 | I don't know the word "cool".
+     1 | I don't know the word "sun".
+     1 | I don't know the word "moon".
+     1 | I don't know the word "stars".
+     1 | I don't know the word "sky".
+     1 | I don't know the word "clouds".
+     1 | I don't know the word "rain".
+     1 | I don't know the word "snow".
+     1 | I don't know the word "storm".
+     1 | I don't know the word "thunder".
+     1 | I don't know the word "lightning".
+     1 | I don't know the word "strength".
+     1 | I don't know the word "energy".
+     1 | I don't know the word "vigor".
+     1 | I don't know the word "vitality".
+     1 | I don't know the word "life".
+     1 | I don't know the word "existence".
+     1 | I don't know the word "entity".
+     1 | I don't know the word "creature".
+     1 | I don't know the word "animal".
+     1 | I don't know the word "beast".
+     1 | I don't know the word "monster".
+     1 | I don't know the word "demon".
+     1 | I don't know the word "devil".
+     1 | I don't know the word "evil".
+     1 | I don't know the word "wrong".
+     1 | I don't know the word "incorrect".
+     1 | I don't know the word "true".
+     1 | I don't know the word "false".
+     1 | I don't know the word "fake".
+     1 | I don't know the word "genuine".
+     1 | I don't know the word "authentic".
+     1 | I don't know the word "legitimate".
+     1 | I don't know the word "valid".
+     1 | I don't know the word "legal".
+     1 | I don't know the word "lawful".
+     1 | I don't know the word "illegal".
+     1 | I don't know the word "unlawful".
+     1 | I don't know the word "criminal".
+     1 | I don't know the word "crime".
+     1 | I don't know the word "dying".
+     1 | You can't see any mask here.
+     1 | You can't see any diving knife here.
+     1 | I don't know the word "<br>southeast".
+     1 | You can't go that way.\nYou feel fairly thirsty.
+     1 | I don't know the word "killer".
+     1 | I don't know the word "bay".
+     1 | I don't know the word "rations".
+     1 | I don't know the word "police".
+     1 | You can't see any scuba tank here.
+     1 | You can't see any air tank here.
+     1 | You can't see any tank here.
+     1 | You can't see any field here.
+     1 | You can't see any weeds here.
+     1 | I don't know the word "alleyway".
+     1 | I don't know the word "toward".
+     1 | You can't see any for food here.
+     1 | I don't know the word "own".
+     1 | There's nothing on the bunk.\nYour stomach is growling loudly.
+     1 | I don't know the word "kitchen".
+     1 | I don't know the word "thank".
+     1 | It's already unlocked.
+     1 | I don't know the word "shore".
+     1 | You can't see any Pete money here.
+     1 | You can't see any clothe here.
+     1 | I don't know the word "cafe".
+     1 | I don't know the word "buildings".
+     1 | I don't know the word "instruments".
+     1 | You can't go that way.\nTo the east Johnny Red comes into view from the south.
+     1 | You can't see any Johnny Red here.
+     1 | You can't go that way.\nJohnny Red heads off to the west.
+     1 | I don't know the word "ready".
+     1 | I don't know the word "hunt".
+     1 | I don't know the word "respond".
+     1 | I don't know the word "ahead".
+     1 | I don't know the word "risk".
+     1 | I don't know the word "suggestions".
+     1 | I don't know the word "choices".
+     1 | I don't know the word "friendship".
+     1 | I don't know the word "relationship".
+     1 | I don't know the word "tap".
+     1 | I don't know the word "details".
+     1 | I don't know the word "arrival".
+     1 | I don't know the word "services".
+     1 | I don't know the word "banking".
+     1 | I don't know the word "mainland".
+     1 | I don't know the word "clues".
+     1 | I don't know the word "crew's".
+     1 | You can't see any business here.
+     1 | I don't know the word "ships".
+     1 | I don't know the word "operations".
+     1 | I don't know the word "projects".
+     1 | I don't know the word "experience".
+     1 | I don't know the word "knowledge".
+     1 | I don't know the word "expertise".
+     1 | I don't know the word "skills".
+     1 | I don't know the word "interests".
+     1 | What do you want to wave at?
+     1 | You can't see any weasel here.
+     1 | I don't know the word "disturbance".
+     1 | I don't know the word "recommendations".
+     1 | I don't know the word "snacks".
+     1 | You can't go that way.\nMcGinty walks past you.
+     1 | I don't know the word "hevin".
+     1 | What do you want to search?
+     1 | What do you want to sit on?
+     1 | You can't see any chair here.
+     1 | You can't do that.\nJohnny Red walks past you.
+     1 | I don't know the word "pry".
+     1 | I don't know the word "lever".
+     1 | I don't know the word "handle".
+     1 | I don't know the word "crank".
+     1 | You can't move the wall.
+     1 | You can't go that way.\nYour stomach begins to bother you. Better find some food!
+     1 | You can't see any fish here.
+     1 | You can't get through the weeds.\nTo the east the Weasel comes into view from the northeast.
+     1 | You can't see any table here.
+     1 | You can't get through the weeds.\nYou lick your lips and clear your throat.
+     1 | You can't go that way.\nMcGinty heads off to the east.\nYour stomach is growling loudly.
+     1 | I don't know the word "page".
+     1 | You can't use multiple direct objects with "withdraw".
+     1 | You can't go that way.\nJohnny Red is to the southwest, heading away from you.
+     1 | You can't go that way.\nThe Weasel is to the west, heading away from you.
+     1 | I don't know the word "wants".
+     1 | I don't know the word "fine".
+     1 | You can't go that way.\n"Well, what is it? Yes or no?" Pete asks anxiously.
+     1 | I don't know the word "plead".
+     1 | What do you want to ask?
+     1 | I don't know the word "reconsider".
+     1 | I don't know the word "possessions".
+     1 | What do you want to hide the book under?
+     1 | You can't see any clothes here.
+     1 | I don't know the word "`slip`".
+     1 | I don't know the word "`look`".
+     1 | I don't know the word "`examine`".
+     1 | I don't know the word "`see`".
+     1 | I don't know the word "`read`".
+     1 | I don't know the word "`investigate".
+     1 | I don't know the word "`dresser".
+     1 | I don't know the word "`contents`".
+     1 | I don't know the word "`red".
+     1 | I don't know the word "`slim".
+     1 | I don't know the word "`volume`".
+     1 | I don't know the word "`things`".
+     1 | I don't know the word "`things".
+     1 | I don't know the word "`it`".
+     1 | I don't know the word "`here`".
+     1 | I don't know the word "`this".
+     1 | I don't know the word "`your".
+     1 | I don't know the word "`outside`".
+     1 | I don't know the word "`can".
+     1 | I don't know the word "`help".
+     1 | I don't know the word "`show".
+     1 | I don't know the word "`commands`".
+     1 | I don't know the word "rooms".
+     1 | I don't know the word "hallway".
+     1 | You can't see any looking here.
+     1 | I don't know the word "someone".
+     1 | What do you want to look in?
+     1 | I don't know the word "aboard".
+     1 | You can't see any ladder here.
+     1 | I don't know the word "ramp".
+     1 | I don't know the word "study".
+     1 | I don't know the word "gathering".
+     1 | I don't know the word "condition".
+     1 | I don't know the word "still".
+     1 | I don't know the word "hands".
+     1 | I don't know the word "idea".
+     1 | I don't know the word "terms".
+     1 | I don't know the word "assistant:".
+     1 | I don't know the word "readstanding".
+     1 | I don't know the word "single".
+     1 | I don't know the word "readstand".
+     1 | I don't know the word "key:".
+     1 | I don't know the word "*".
+     1 | I don't know the word "*keytime".
+     1 | I don't know the word "*key".
+     1 | I don't know the word "key?".
+     1 | I don't know the word "as".
+     1 | I don't know the word "apreciprot".
+     1 | I don't know the word "apolog".
+     1 | I don't know the word "apot".
+     1 | I don't know the word "fridge".
+     1 | There's nothing on the table.\nYour stomach is growling loudly.
+     1 | It's already open.\nYour stomach is growling loudly.
+     1 | I don't know the word "outfitter".
+     1 | You are already standing, I think.\nYour stomach is growling loudly.
+     1 | You can't see any boat here.
+     1 | I don't know the word "expenses".
+     1 | I don't know the word "danger".
+     1 | I don't know the word "rowboat".
+     1 | I don't know the word "imposter".
+     1 | You can't see any chest here.
+     1 | You can't see any treasure here.
+     1 | I don't know the word "sailboat".
+     1 | I don't know the word "understand".
+     1 | I don't know the word "`".
+     1 | I don't know the word "```<!--".
+     1 | I don't know the word "i're".
+     1 | I don't know the word "```recommonly".
+     1 | I don't know the word "don'".
+     1 | I don't know the word "```t".
+     1 | I don't know the word "```messentially".
+     1 | I don't know the word "```:``".
+     1 | I don't know the word "don'sentire".
+     1 | I don't know the word "```mproviding".
+     1 | I don't know the word "```;".
+     1 | I don't know the word "contains".
+     1 | I don't know the word "says".
+     1 | I don't know the word "lying".
+     1 | I don't know the word "```âsely".
+     1 | I don't know the word "suggest".
+     1 | I don't know the word "```has".
+     1 | I don't know the word "define".
+     1 | I don't know the word "soup".
+     1 | I don't know the word "shelves".
+     1 | I don't know the word "comes".
+     1 | I don't know the word "arrives".
+     1 | I don't know the word "turns".
+     1 | I don't know the word "shows".
+     1 | I don't know the word "instructions".
+     1 | I don't know the word "appears".
+     1 | I don't know the word "mistrust".
+     1 | I don't know the word "dangerous".
+     1 | I don't know the word "quick".
+     1 | I don't know the word "fast".
+     1 | I don't know the word "shoreline".
+     1 | I don't know the word "dumpster".
+     1 | I don't know the word "trash".
+     1 | I don't know the word "bin".
+     1 | I don't know the word "fists".
+     1 | I don't know the word "punch".
+     1 | I don't know the word "bash".
+     1 | I don't know the word "head".
+     1 | What do you want to hit the door with?
+     1 | I don't know the word "rock".
+     1 | I don't know the word "stone".
+     1 | I don't know the word "left".
+     1 | I don't know the word "howdy".
+     1 | I don't know the word "greet".
+     1 | I don't know the word "bacon".
+     1 | I don't know the word "eggs".
+     1 | I don't know the word "hungry".
+     1 | I don't know the word "starving".
+     1 | You can't go that way.\nPete the Rat, off to the southwest, disappears from sight to the northwest.
+     1 | It's already closed.
+     1 | You can't go that way.\nTo the east Pete the Rat comes into view from the south.\nThe Weasel, off to the west, disappears from sight to the southwest.
+     1 | You don't have the number.
+     1 | You can't go that way.\nMcGinty is to the east, heading away from you.
+     1 | You can't go that way.\nMcGinty walks past you.\nAs he looks at you, he does a double take and stares intently at your possessions.\nPete the Rat heads off to the west.
+     1 | I don't know the word "mat".
+     1 | You can't go that way.\nTo the east McGinty comes into view from the south.\nPete the Rat is to the east, heading toward the west.
+     1 | You can't go that way.\nMcGinty is to the east, heading toward the west.\nPete the Rat walks past you.
+     1 | What do you want to show the book to?
+     1 | You can't go that way.\nTo the east Pete the Rat comes into view from the south.\nThe Weasel heads off to the southwest.
+     1 | You can't go that way.\nJohnny Red walks past you.
+     1 | You can't go that way.\nJohnny Red heads off to the northeast.
+     1 | I don't know the word "cruise".
+     1 | You can't go that way.\nJohnny Red, off to the northeast, disappears from sight to the east.
+     1 | You can't go that way.\nTo the east McGinty comes into view from the south.
+     1 | I don't know the word "ø?ùù".
+     1 | You can't see any box here.
+     1 | I don't know the word "slip".
+     1 | I don't know the word "rubble".
+     1 | You can't see any debris here.
+     1 | You can't see any small businesses here.
+     1 | You can't go that way.\nMcGinty heads off to the south.
+     1 | You can't see any wet suit here.
+     1 | You can't go that way.\nMcGinty is to the west, heading away from you.
+     1 | I don't know the word "wares".
+     1 | You can't see any flippers here.
+     1 | You can't go that way.\nThe Weasel heads off to the south.
+     1 | I don't know the word "pilothouse".
+     1 | I don't know the word "doormat".

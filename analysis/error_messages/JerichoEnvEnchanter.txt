@@ -1,0 +1,603 @@
+# Invalid Action Messages: JerichoEnvEnchanter
+# Total unique error messages: 596
+# Total error occurrences: 12604
+#
+# Format: count | message
+#===============================================================================
+
+  1459 | You can't go that way.
+  1273 | I beg your pardon?
+   943 | I don't know the word "southeast".
+   711 | I don't know the word ">".
+   515 | I don't know the word "northeast".
+   490 | I don't know the word "`north`".
+   426 | I don't know the word "help".
+   351 | You can't see any water here!
+   296 | I don't understand that sentence.
+   259 | I don't know the word "seems".
+   251 | What do you want to go?
+   164 | I don't know the word "are".
+   158 | I don't know the word "**answer:**".
+   138 | You don't have the rezrov spell committed to memory!
+   136 | What do you want to gnusto?
+   135 | I don't know the word "ex".
+   123 | I can't find a verb in that sentence!
+   122 | I don't know the word "`northeast`".
+   119 | You already have that spell inscribed in your book!
+   110 | I don't know the word "apologize".
+    88 | You find nothing unusual.
+    82 | You see nothing special about the chains.
+    82 | I don't know the word "about".
+    82 | I don't know the word "**command:**".
+    80 | You can't see any scroll here!
+    79 | You see nothing special about the foundation.
+    79 | I don't know the word "village".
+    76 | What do you want to go to?
+    75 | Time passes...
+    71 | I don't know the word "way".
+    67 | You can't see any sign here!
+    64 | I don't know the word "southwest".
+    60 | I don't know the word "`go".
+    59 | You don't have the frotz spell committed to memory!
+    57 | I don't know the word "```".
+    55 | I don't know the word "right".
+    52 | You don't have the nitfol spell committed to memory!
+    46 | I don't know the word "document".
+    46 | I don't know the word "deserted".
+    46 | I don't know the word "this".
+    41 | You see nothing special about the road.
+    41 | You see nothing special about the wooden shack.
+    41 | I don't know the word "creature".
+    40 | You see nothing special about the window.
+    40 | I don't know the word "exword".
+    35 | I don't know the word "instructions".
+    34 | You can't see any gate here!
+    34 | There is nothing but dust there.
+    34 | I don't know the word "details".
+    32 | What do you want to drink?
+    32 | There is nothing but stone there.
+    32 | You can't move the table.
+    30 | You can't drink that!
+    30 | I don't know the word "```take".
+    29 | I don't know the word "left".
+    29 | I don't know the word "message".
+    29 | I don't know the word "information".
+    29 | I don't know the word "`examine".
+    29 | I don't know the word "`take".
+    28 | I don't know the word "explore".
+    28 | I don't know the word "direction".
+    28 | I don't know the word "purpose".
+    28 | I don't know the word "`move".
+    27 | I don't know the word "meaning".
+    27 | I don't know the word "words".
+    27 | I don't know the word "goo".
+    27 | I don't know the word "`proceed".
+    27 | I don't know the word "`look".
+    25 | I don't know the word "carefully".
+    25 | You can't go that way.\nThe sun has now risen above the hills.
+    25 | It's too dark to see!
+    25 | I don't know the word "text".
+    25 | I don't know the word "`travel".
+    24 | I don't know the word "northwest".
+    24 | What do you want to exit?
+    22 | You don't have your spell book. How do you expect to memorize a spell without a spell book?
+    22 | I don't know the word "substance".
+    22 | I don't know the word "do".
+    22 | I don't know the word "mellon".
+    21 | You can't go that way.\nYour mouth is getting rather dry.
+    21 | I don't know the word "summon".
+    21 | I don't know the word "goor".
+    21 | I don't know the word "content".
+    20 | What do you want to eat?
+    20 | I don't know the word "darkness".
+    19 | There is nothing behind the table.
+    19 | You see nothing special about the castle wall.
+    19 | You see nothing special about the cell.
+    19 | I don't know the word "slowly".
+    19 | I don't know the word "thoroughly".
+    19 | I don't know the word "`get".
+    18 | You can't go that way.\nYou are becoming quite thirsty.
+    17 | You see nothing special about the tangle of rope.
+    17 | I don't know the word "farms".
+    17 | I don't know the word "continue".
+    17 | I don't know the word "well".
+    17 | I don't know the word "animal".
+    16 | I don't know the word "rest".
+    16 | There is no road there.
+    16 | You see nothing special about the temple.
+    16 | What do you want to ask the belboz for?
+    16 | I don't know the word "*assistant".
+    16 | You can't see any paper here!
+    15 | I don't know the word "am".
+    15 | You can't see any food here!
+    15 | You can't see any door here!
+    15 | I don't know the word "`advance".
+    14 | I don't know the word "use".
+    14 | You can't see any brook here!
+    14 | I don't know the word "fork".
+    14 | I don't know the word "spellbook".
+    14 | I don't know the word "forward".
+    14 | What do you want to read?
+    14 | I don't know the word "i'".
+    14 | I don't know the word "`walk".
+    14 | I don't know the word "`continue".
+    13 | You see nothing special about the table.
+    13 | I don't know the word "vegetation".
+    13 | I don't know the word "does".
+    12 | You can't go that way.\nYour stomach is starting to grumble.
+    12 | I don't know the word "furry".
+    12 | You see nothing special about the bench.
+    12 | What do you want to go on?
+    12 | I don't know the word "clouds".
+    11 | You can't go that way.\nYou are very thirsty now. You'd better have a drink soon.
+    11 | I don't know the word "why".
+    11 | You can't see any jug here!
+    11 | You can't see any bread here!
+    11 | You already have it.
+    11 | I don't know the word "hamlet".
+    11 | I don't know the word "`head".
+    10 | There's nothing to fill it with.
+    10 | I don't know the word "twist".
+    10 | I don't know the word "advice".
+    10 | I don't know the word "guidance".
+     9 | You can't go that way.\nYour lips are parched. If you don't get a drink soon you will pass out.
+     9 | You can't go that way.\nYou are becoming quite hungry.
+     9 | What do you want to nitfol?
+     8 | You see nothing special about the bramble.
+     8 | I don't know the word "copy".
+     8 | I don't know the word "try".
+     8 | I don't know the word "address".
+     8 | It's already in the open position.
+     8 | I don't know the word "town".
+     8 | I don't know the word "settlement".
+     8 | You can't see any worn sign here!
+     8 | What do you want to ask the person for?
+     8 | I don't know the word "go:".
+     8 | I don't know the word "mission".
+     8 | You can't see any cave here!
+     8 | I don't know the word "`east`".
+     8 | You see nothing special about the hovel.
+     7 | You see nothing special about the floor.
+     7 | I don't know the word "surroundings".
+     7 | I don't know the word "towards".
+     7 | I don't know the word "goes".
+     7 | You can't move the chains.
+     6 | You can't go that way.\nYou are beginning to tire and the spells you've memorized are becoming confused.
+     6 | You can't go that way.\nThe sun starts to set behind the Lonely Mountain in the west.\nYou are beginning to feel faint from lack of water.
+     6 | I don't know the word "study".
+     6 | I don't know the word "unmake".
+     6 | There's nothing in the brambles now. Count your blessings.
+     6 | You can't see any chain here!
+     6 | I don't know the word "reverse".
+     6 | You see nothing special about the window.\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nThere is a loaf of bread here.\nThere is a jug here.\nThe jug contains:\n  A quantity of water
+     6 | I don't know the word "my".
+     6 | I don't know the word "stream".
+     6 | I don't know the word "scribe".
+     6 | You don't have the nitfol spell committed to memory!\nYour mouth is getting rather dry.
+     6 | I don't know the word "stop".
+     6 | There is nothing behind the sign.
+     6 | I don't know the word "expert".
+     6 | I don't know the word "don't".
+     6 | I don't know the word "`ne`".
+     6 | I don't know the word "```get".
+     6 | I don't know the word "suggest".
+     6 | I don't know the word "crawl".
+     6 | You don't have that spell, if indeed that is a spell.
+     5 | You don't have the blorb spell committed to memory!
+     5 | You can't see any spring here!
+     5 | You see nothing special about the window.\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nThere is a jug here.
+     5 | You don't have your spell book. How do you expect to memorize a spell without a spell book?\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nThere is a jug here.
+     5 | There is nothing but stone there.\nThe sun has now risen above the hills.
+     5 | You can't see any house here!
+     5 | You can't see any hole here.
+     5 | I don't know the word "thing".
+     5 | I don't know the word "ahead".
+     5 | I don't know the word "beast".
+     5 | I don't know the word "there".
+     5 | I don't know the word "have".
+     5 | I don't know the word "exact".
+     5 | I don't know the word "southeastward".
+     5 | I don't know the word "significance".
+     5 | I don't know the word "importance".
+     5 | I don't know the word "contents".
+     5 | I don't know the word "`help`".
+     5 | What do you want to light?
+     5 | I don't know the word "`progress".
+     5 | I don't know the word "ah".
+     5 | I don't know the word "ivy".
+     5 | I don't know the word "duck".
+     4 | I don't know the word "key".
+     4 | What do you want to wave?
+     4 | You can't do that from your resting position.
+     4 | You don't have the rezrov spell committed to memory!\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nYour mouth is getting rather dry.
+     4 | I don't know the word "resolve".
+     4 | I don't know the word "type".
+     4 | I don't know the word "commands".
+     4 | You can't see that anymore.
+     4 | I don't know the word "inscribe".
+     4 | I don't know the word "transcribe".
+     4 | You can't see any old lingolf house here!
+     4 | I don't know the word "prepare".
+     4 | You can't see any worn here!
+     4 | I don't know the word "beside".
+     4 | You see nothing special about the road.\nThe sun has now risen above the hills.
+     4 | I don't know the word "nearby".
+     4 | What do you want to examine?
+     4 | I don't know the word "something".
+     4 | What do you want to climb on?
+     4 | I don't know the word "can".
+     4 | I don't know the word "keep".
+     4 | What do you want to ask?
+     4 | I don't know the word "exolate".
+     4 | I don't know the word "or".
+     4 | I don't know the word "task".
+     4 | I don't know the word "bucket".
+     4 | I don't know the word "obtain".
+     4 | I don't know the word "`pick".
+     4 | I don't know the word "bash".
+     4 | I don't know the word "friend".
+     4 | I don't know the word "speak".
+     3 | I don't know the word "more".
+     3 | You can't go that way.\nYou pass out from lack of water and die.\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nYou are at a fork in the road where paths to the northwest and southwest girdle the base of the Lonely Mountain and a smaller path winds its way to the east.
+     3 | I don't know the word "vanish".
+     3 | I don't know the word "dissolve".
+     3 | I don't know the word "bars".
+     3 | I don't know the word "because".
+     3 | I don't know the word "another".
+     3 | You don't have the rezrov spell committed to memory!\nYour mouth is getting rather dry.
+     3 | You see nothing special about the window.\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nThere is a loaf of bread here.\nThere is a jug here.
+     3 | You see nothing special about the heap of garbage.
+     3 | You don't have the rezrov spell committed to memory!\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nThere is a loaf of bread here.\nThere is a jug here.\nThe jug contains:\n  A quantity of water
+     3 | You see nothing special about the cell.\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork
+     3 | I don't know the word "shining".
+     3 | You don't have your spell book. How do you expect to memorize a spell without a spell book?\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nThere is a loaf of bread here.\nThere is a jug here.
+     3 | You can't see any oven here!
+     3 | I don't know the word "other".
+     3 | You see nothing special about the forest.
+     3 | You can't see any rezrov scroll here!
+     3 | I don't know the word "your".
+     3 | You can't see any chains here!
+     3 | What do you want to search?
+     3 | I don't know the word "torch".
+     3 | I don't know the word "leads".
+     3 | I don't know the word "home".
+     3 | I don't know the word "sun".
+     3 | I don't know the word "written".
+     3 | I don't know the word "someone".
+     3 | I don't know the word "dwarf".
+     3 | I don't know the word "expl".
+     3 | I don't know the word "gooo".
+     3 | I don't know the word "game".
+     3 | I don't know the word "already".
+     3 | I don't know the word "faint".
+     3 | I don't know the word "list".
+     3 | I don't know the word "directions".
+     3 | I don't know the word "`journey".
+     3 | I don't know the word "`inspect".
+     3 | I don't know the word "(whichever".
+     3 | I don't know the word "```enter".
+     3 | I don't know the word "beg".
+     3 | I don't know the word "mouse".
+     3 | I don't know the word "dip".
+     3 | You see nothing special about the foundation.\nThe sun has now risen above the hills.
+     3 | I don't know the word "sesame".
+     3 | I don't know the word "ram".
+     3 | I don't know the word "sneak".
+     3 | You can't see any iron gate here!
+     3 | I don't know the word "crouch".
+     3 | I don't know the word "stoop".
+     3 | You can't see any bench here!
+     2 | I don't know the word "locate".
+     2 | You don't have the frotz spell committed to memory!\nYour stomach is starting to grumble.
+     2 | I don't know the word "be".
+     2 | There is nothing behind the table.\nThe sun has now risen above the hills.
+     2 | You don't have the rezrov spell committed to memory!\nYou are becoming quite hungry.
+     2 | You can't see any mountain here!
+     2 | You don't have the rezrov spell committed to memory!\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nThere is a jug here.\nThe jug contains:\n  A quantity of water
+     2 | You don't have the nitfol spell committed to memory!\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork
+     2 | You don't have the rezrov spell committed to memory!\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nThere is a loaf of bread here.\nThere is a jug here.
+     2 | I don't know the word "deeper".
+     2 | What do you want to cut the rope with?
+     2 | I don't know the word "navigate".
+     2 | I don't know the word "text-based".
+     2 | You don't have the rezrov spell committed to memory!\nThe sun starts to set behind the Lonely Mountain in the west.
+     2 | You can't see any shack here!
+     2 | I don't know the word "likely".
+     2 | I don't know the word "tear".
+     2 | I don't know the word "record".
+     2 | I don't know the word "consult".
+     2 | I don't know the word "hall".
+     2 | You see nothing special about the hammer.\n"Crash!" A huge hammer smashes against the stone floor.
+     2 | I don't know the word "source".
+     2 | I don't know the word "river".
+     2 | You can't see any lingolf house here!
+     2 | I don't know the word "shady".
+     2 | What do you want to frotz?
+     2 | I don't know the word "sound".
+     2 | I don't know the word "it's".
+     2 | I don't know the word "seems*".
+     2 | I don't know the word "not".
+     2 | I don't know the word "man".
+     2 | I don't know the word "local".
+     2 | I don't know the word "bit".
+     2 | I don't know the word "people".
+     2 | I don't know the word "anyone".
+     2 | I don't know the word "got".
+     2 | I don't know the word "head".
+     2 | I don't know the word "ex:".
+     2 | I don't know the word "exertain".
+     2 | I don't know the word "*note:".
+     2 | I don't know the word "ex'".
+     2 | I don't know the word "pass".
+     2 | I don't know the word "explain".
+     2 | I don't know the word "field".
+     2 | I don't see what you are referring to.
+     2 | You can't see any north door here!
+     2 | I don't know the word "cottage".
+     2 | I don't know the word "troll".
+     2 | I don't know the word "thalion".
+     2 | I don't know the word "foe".
+     2 | You can't see any box here!
+     2 | I don't know the word "`mountain`".
+     2 | I don't know the word "don'take".
+     2 | I don't know the word "don'".
+     2 | I don't know the word "will".
+     2 | You see nothing special about the courtyard.
+     2 | What do you want to burn the rope with?
+     2 | You see nothing special about the passage.
+     2 | You can't see any rainbow turtle here.
+     2 | You see nothing special about the tables.\nThe group of hunched and hairy shapes takes you in their arms and escorts you into a huge temple.\n\nA low noise begins behind you, and you turn to see hundreds of hunched and hairy shapes. A guttural chant issues from their throats. Near you stands a figure draped in a robe of deepest black, brandishing a vicious dagger. The chant grows louder as the robed figure approaches the altar. As the shapes grab you, the figure in black speaks: "Take the victim to the tower. I shall prepare for the sacrifice!" The figures, whose form you can barely guess, take you from here through the northern door and into a prison cell. They take your possessions from you and close the door with a crash!\n\nCell\nEverything you see is grey and lifeless, as though covered with a veil of ash. Sound is muted and there is a faint acrid odor.\nThis is a small prison cell in the north tower of the temple. Hideous shapes can be seen through the iron-barred window in the prison door. From the temple, a blood-curdling chant can be heard.
+     2 | There's nothing inside.
+     2 | You don't have the rezrov spell committed to memory!\nFrom the other side of the "mirror" a bedraggled adventurer comes into view, carrying a brass lantern and an elvish sword, which is glowing dimly. He stops and stares in your direction.
+     2 | I don't know the word "gallery".
+     2 | There is nothing behind the Frobozz portrait.
+     2 | There is nothing behind the Flathead portrait.
+     2 | You don't have the nitfol spell committed to memory!\n\nI don't know the word "can".
+     2 | I don't see how you propose to do that.
+     2 | You don't have the nitfol spell committed to memory!\n\nBeats me, but it's not here.
+     2 | You can't see any flotsam here!
+     2 | There's nothing much interesting to see.
+     2 | I don't know the word "opening".
+     2 | I don't know the word "inscription".
+     2 | I don't know the word "whisper".
+     2 | I don't know the word "murmur".
+     2 | I don't know the word "meditate".
+     2 | You can't see any towers here!
+     2 | You can't see any runes here!
+     2 | I don't know the word "creep".
+     2 | You can't see any rezrov gate here!
+     2 | I don't know the word "catch".
+     2 | I don't know the word "bend".
+     2 | I don't know the word "kneel".
+     2 | I don't know the word "zap".
+     2 | I don't know the word "recite".
+     2 | What do you want to write with?
+     2 | I don't know the word "undo".
+     2 | I don't know the word "x".
+     2 | You can't see any scribbled scroll here!
+     1 | I don't know the word "closely".
+     1 | I don't know the word "completely".
+     1 | You can't see any frotz scroll here!
+     1 | I don't know the word "reveal".
+     1 | I don't know the word "compel".
+     1 | I don't know the word "disintegrate".
+     1 | I don't know the word "detect".
+     1 | I don't know the word "commit".
+     1 | I don't know the word "object".
+     1 | You can't see any foundation here!
+     1 | You don't have the frotz spell committed to memory!\nYou are becoming quite thirsty.
+     1 | You can't see any figures here!
+     1 | You can't go that way.\nYou hear a rustling in the brambles nearby, and you catch a glimpse of something small and furry as it scurries away.
+     1 | You can't see any lantern here!
+     1 | You can't give a loaf of bread to an iron gate!
+     1 | You can't take it; thus, you can't shake it!
+     1 | You can't move the iron gate.
+     1 | I don't know the word "aim".
+     1 | You can't see any spell book here!
+     1 | I don't know the word "brightly".
+     1 | I don't know the word "kitchen".
+     1 | There is nothing but rotted food there.
+     1 | You don't have the nitfol spell committed to memory!\nThe group of hunched and hairy shapes takes you in their arms and escorts you into a huge temple.\n\nA low noise begins behind you, and you turn to see hundreds of hunched and hairy shapes. A guttural chant issues from their throats. Near you stands a figure draped in a robe of deepest black, brandishing a vicious dagger. The chant grows louder as the robed figure approaches the altar. As the shapes grab you, the figure in black speaks: "Take the victim to the tower. I shall prepare for the sacrifice!" The figures, whose form you can barely guess, take you from here through the northern door and into a prison cell. They take your possessions from you and close the door with a crash!\n\nCell\nThis is a small prison cell in the north tower of the temple. Hideous shapes can be seen through the iron-barred window in the prison door. From the temple, a blood-curdling chant can be heard.\nYour mouth is getting rather dry.
+     1 | I don't know the word "beasts".
+     1 | You can't see any bed here!
+     1 | You see nothing special about the hammer.
+     1 | You don't have your spell book. How do you expect to memorize a spell without a spell book?\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork
+     1 | You can't go that way.\nYou are beginning to tire.
+     1 | You see nothing special about the road.\nYour mouth is getting rather dry.
+     1 | You see nothing special about the tangle of rope.\nYou are becoming quite thirsty.
+     1 | There is nothing on the fourposter feather bed.
+     1 | I don't know the word "staircase".
+     1 | I don't know the word "opposite".
+     1 | I don't know the word "interior".
+     1 | You see nothing special about the road.\nYou are becoming quite thirsty.
+     1 | I don't know the word "toward".
+     1 | You see nothing special about the road.\nYour lips are parched. If you don't get a drink soon you will pass out.
+     1 | I don't know the word "circle".
+     1 | I don't know the word "sing".
+     1 | I don't know the word "dance".
+     1 | I don't know the word "die".
+     1 | What do you want to wake up?
+     1 | You are already standing, I think.\nYou are very hungry now. You'd better have something to eat.
+     1 | You see nothing special about the table.\nThe sun has now risen above the hills.
+     1 | You can't see any gnusto rezrov scroll here!
+     1 | I don't know the word "chant".
+     1 | What do you want to listen to?
+     1 | I don't know the word "pleasant".
+     1 | You can't see any cell walls here!
+     1 | You see nothing special about the floor.\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork
+     1 | You see nothing special about the window.\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork
+     1 | I don't know the word "return".
+     1 | I don't know the word "pack".
+     1 | I don't know the word "refer".
+     1 | I don't know the word "etch".
+     1 | I don't know the word "top".
+     1 | You see nothing special about the window.\nYour mouth is getting rather dry.
+     1 | I don't know the word "uncork".
+     1 | You don't have the rezrov spell committed to memory!\nYour stomach is starting to grumble.
+     1 | I don't know the word "stones".
+     1 | You can't move the foundation.
+     1 | You can't see any south here!
+     1 | You can't move the Frobozz portrait.
+     1 | I don't know the word "shove".
+     1 | I don't know the word "sailor".
+     1 | I don't know the word "slightly".
+     1 | You see nothing special about the frog.\nThe sounds of frogs and other swamp dwellers fill the air.
+     1 | You see nothing special about the temple.\nYour stomach is starting to grumble.
+     1 | You can't move the table.\nThe sun has now risen above the hills.
+     1 | You don't have the rezrov spell committed to memory!\nThe adventurer, after checking his compass, walks off.
+     1 | It is already open.\nYou are beginning to tire.
+     1 | I don't know the word "creek".
+     1 | You can't see any pond here!
+     1 | I don't know the word "lake".
+     1 | I don't know the word "fountain".
+     1 | I don't know the word "cistern".
+     1 | I don't know the word "puddle".
+     1 | You can't see any lingolf here!
+     1 | You can't see any old house here!
+     1 | It's already in the open position.\nYou are becoming quite thirsty.
+     1 | You see nothing special about the hammer.\n"Crash!" A huge hammer smashes against the stone floor.\nA rat skitters across the floor, sees you, is startled, and rushes back the way it came.
+     1 | What do you want to hand?
+     1 | You see nothing special about the bramble.\nThe sounds of frogs and other swamp dwellers fill the air. The frogs are discussing what they will do if they ever become princes again.
+     1 | There's nothing in the brambles now. Count your blessings.\nThe sounds of frogs and other swamp dwellers fill the air. The frogs are discussing the politics of lily pad assignment.\nYou are beginning to tire.
+     1 | I don't know the word "rodent".
+     1 | You see nothing special about the forest.\nYou hear a rustling in the brambles nearby, and you catch a glimpse of something small and furry as it scurries away.
+     1 | You can't see any light here!
+     1 | What do you want to sit on?
+     1 | I don't know the word "visit".
+     1 | I don't know the word "shelter".
+     1 | You can't see any small here!
+     1 | You don't have the nitfol spell committed to memory!\nYour stomach is starting to grumble.
+     1 | You don't have the nitfol spell committed to memory!\nYou hear a rustling in the brambles nearby, and you catch a glimpse of something small and furry as it scurries away.\nYour lips are parched. If you don't get a drink soon you will pass out.
+     1 | You don't have the nitfol spell committed to memory!\nYou are becoming quite thirsty.
+     1 | I don't know the word "rustling".
+     1 | You don't have the nitfol spell committed to memory!\nYou are very thirsty now. You'd better have a drink soon.
+     1 | You don't have your spell book. How do you expect to memorize a spell without a spell book?\nYou are very thirsty now. You'd better have a drink soon.
+     1 | You don't have your spell book. How do you expect to memorize a spell without a spell book?\nYour lips are parched. If you don't get a drink soon you will pass out.
+     1 | I don't know the word "sun's".
+     1 | I don't know the word "morning".
+     1 | What do you want to climb up?
+     1 | You can't see any rocks here!
+     1 | I don't know the word "upwards".
+     1 | I don't know the word "splits".
+     1 | I don't know the word "forks".
+     1 | I don't know the word "makes".
+     1 | I don't know the word "looks".
+     1 | I don't know the word "traveler".
+     1 | You can't see any map here!
+     1 | I don't know the word "straight".
+     1 | What do you want to walk on?
+     1 | I don't know the word "while".
+     1 | I don't know the word "moment".
+     1 | I don't know the word "villager".
+     1 | I don't know the word "if".
+     1 | I don't know the word "them".
+     1 | I don't know the word "travelers".
+     1 | I don't know the word "locals".
+     1 | I don't know the word "villagers".
+     1 | I don't know the word "want".
+     1 | I don't know the word "expect".
+     1 | I don't know the word "eastor".
+     1 | I don't know the word "nebookotherebook".
+     1 | I don't know the word "*choose".
+     1 | I don't know the word "goorate".
+     1 | I don't know the word "try:".
+     1 | I don't know the word "there'".
+     1 | I don't know the word "goost".
+     1 | I don't know the word "*".
+     1 | I don't know the word "gople".
+     1 | I don't know the word "response".
+     1 | I don't know the word "do:".
+     1 | I don't know the word "you'".
+     1 | I don't know the word "expl1".
+     1 | I don't know the word "exc".
+     1 | I don't know the word "can't".
+     1 | I don't know the word "creature's".
+     1 | You can't see any such thing here!
+     1 | I don't know the word "ar".
+     1 | You can't see any north here!
+     1 | I don't know the word "doors".
+     1 | I don't know the word "second".
+     1 | You can't see any noise here!
+     1 | I don't know the word "grendel".
+     1 | I don't know the word "pendant".
+     1 | I don't know the word "malachor".
+     1 | I don't know the word "enemy".
+     1 | I don't know the word "dispel".
+     1 | I don't know the word "new".
+     1 | I don't know the word "staff".
+     1 | What do you want to dig in?
+     1 | I don't know the word "orb".
+     1 | I don't know the word "`approach".
+     1 | I don't know the word "`towards".
+     1 | I don't know the word "`climb".
+     1 | I don't know the word "`ascend".
+     1 | I don't know the word "`scale".
+     1 | I don't know the word "`explore".
+     1 | I don't know the word "`observe".
+     1 | I don't know the word "travel".
+     1 | I don't know the word "don'suggestion".
+     1 | I don't know the word "```might".
+     1 | I don't know the word "don'suggestions".
+     1 | I don't know the word "don's".
+     1 | I don't know the word "```repeatedly".
+     1 | I don't know the word "don'repeatedly".
+     1 | I don't know the word "don'said:".
+     1 | I don't know the word "```document".
+     1 | I don't know the word "i's".
+     1 | You see nothing special about the chains.\nYour mouth is getting rather dry.
+     1 | I don't know the word "forage".
+     1 | I don't know the word "fish".
+     1 | I don't know the word "trout".
+     1 | I don't know the word "lux".
+     1 | I don't know the word "ropes".
+     1 | You can't see any low here!
+     1 | I don't know the word "squat".
+     1 | I don't know the word "headfirst".
+     1 | I don't know the word "bow".
+     1 | I don't know the word "vines".
+     1 | I don't know the word "knots".
+     1 | I don't know the word "untangle".
+     1 | I don't know the word "rip".
+     1 | I don't know the word "unwrap".
+     1 | I don't know the word "unwind".
+     1 | You can't move the tangle of rope.
+     1 | You don't have the blorb spell committed to memory!\nYou are very thirsty now. You'd better have a drink soon.
+     1 | I don't know the word "loosen".
+     1 | You can't see any rope here!
+     1 | I don't know the word "unravel".
+     1 | I don't know the word "note".
+     1 | You can't see any letter here!
+     1 | You can't see any frotz gate here!
+     1 | I don't know the word "squirrel".
+     1 | You see nothing special about the temple.\nYou are very thirsty now. You'd better have a drink soon.
+     1 | You can't see any south archway here!
+     1 | You can't see any north archway here!
+     1 | I don't know the word "abracadabra".
+     1 | You can't see any gnusto krill here!
+     1 | I don't know the word "yank".
+     1 | I don't know the word "empty".
+     1 | I don't know the word "running".
+     1 | You can't see any courtyard here!
+     1 | You can't see that anymore.\nYour mouth is getting rather dry.
+     1 | You can't put anything under that.
+     1 | You can't see any sword here!
+     1 | You can't see any egg here!
+     1 | There is nothing but dust there.\nYour mouth is getting rather dry.
+     1 | You see nothing special about the bench.\nYou are becoming quite thirsty.
+     1 | You don't have the rezrov spell committed to memory!\nYour lips are parched. If you don't get a drink soon you will pass out.
+     1 | You see nothing special about the cell.\n\nA host of hunched and hairy shapes appear through the window. The cell door opens and you are marched solemnly to the temple and, from there, up the steps to the altar. The large, black figure approaches menacingly. He reaches into his cloak and pulls out a great, glowing dagger. He pulls you onto the altar, and with a murmur of approval from the throng, he plunges the blade into your heart!\n \n    ****  You have died  **** \n\nYou awaken among the members of the Circle. Belboz the Necromancer looks tired, and scattered about are the remains of the components of a spell of great healing power. The other members of the Circle are pleased to see you revived, but worried by the setback. "I think Krill is too powerful," says one. "This inexperienced wizard will never defeat one so puissant as he." Quiet discussion ensues, with well-concealed acrimony beneath the surface.\nDebate ensues, with Belboz returning frequently to the contents of the ancient manuscript. His wishes prevail, and it is agreed to send you back....\n\nEastern Fork\nThere is a loaf of bread here.\nThere is a jug here.\nThe jug contains:\n  A quantity of water
+     1 | I don't know the word "blast".
+     1 | It is already open.
+     1 | I don't know the word "quill".
+     1 | I don't know the word "invoke".
+     1 | I don't know the word "fold".
+     1 | I don't know the word "clean".
+     1 | I don't know the word "rags".
+     1 | I don't know the word "decipher".
+     1 | I don't know the word "wipe".
+     1 | I don't know the word "unroll".
+     1 | You can't see any shredded scroll here!
+     1 | I don't know the word "finger".
+     1 | You can't see any table here!
+     1 | You can't see any windows here!
+     1 | I don't know the word "load".

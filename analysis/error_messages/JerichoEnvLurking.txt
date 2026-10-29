@@ -1,0 +1,906 @@
+# Invalid Action Messages: JerichoEnvLurking
+# Total unique error messages: 899
+# Total error occurrences: 13622
+#
+# Format: count | message
+#===============================================================================
+
+   862 | I beg your pardon?
+   647 | That sentence isn't one I recognize.
+   619 | What do you want to login?
+   611 | Time passes...
+   583 | It is pitch black.
+   563 | You can't go that way.
+   533 | I don't know the word "files."
+   487 | What do you want to passwo?
+   377 | It's too dark to see!
+   350 | I don't know the word ">."
+   345 | I don't know the word "given."
+   308 | I don't know the word "progress."
+   305 | What do you want to type passwo?
+   251 | I don't know the word "`get."
+   222 | You used the word "proceed" in a way that I don't understand.
+   217 | I don't know the word "seems."
+   182 | I don't know the word "let's."
+   169 | There was no verb in that sentence!
+   151 | I don't know the word "`."
+   146 | I don't know the word "`examine."
+   144 | I don't know the word "`look."
+   136 | I don't know the word "apologize."
+   133 | I don't know the word "word."
+   122 | I don't know the word "`help`."
+   108 | I don't know the word "use."
+   106 | You can't use quotes like that!
+   104 | I don't know the word "path."
+    90 | I don't know the word "`type."
+    86 | I don't know the word "stairs."
+    80 | What do you want to ask the hacker for?
+    79 | I don't know the word "`login`."
+    78 | You can't see any sticky ground here.
+    69 | There is nothing there.
+    68 | I don't know the word "`look`."
+    65 | I don't know the word "understand."
+    61 | What do you want to x?
+    56 | You see nothing special about it.
+    55 | I don't know the word "`password`."
+    52 | You can't see any department of alchemy here.
+    43 | I don't know the word "back."
+    43 | I don't know the word "building."
+    42 | What do you want to open?
+    40 | I don't know the word "`examine`."
+    40 | I don't know the word "`open."
+    35 | I don't know the word "`enter."
+    34 | I don't know the word "you."
+    34 | I don't know the word "```enter."
+    33 | I don't know the word "user."
+    31 | I don't know the word "match."
+    31 | You can't see any alchemy department here.
+    30 | I don't know the word "photograph."
+    30 | I don't know the word "what's."
+    29 | I don't know the word "`edit."
+    28 | I don't know the word "forward."
+    28 | What do you want to search?
+    28 | What do you want to feel?
+    27 | You can't see any department of alchemy here.\n\nThe hacker wanders back to his terminal and returns to his hacking.
+    27 | You can't go anywhere in a forklift that isn't running.
+    26 | I don't know the word "edges."
+    25 | I don't know the word "game."
+    25 | I don't know the word "```."
+    24 | You used the word "where" in a way that I don't understand.
+    24 | I don't know the word "open:."
+    24 | I don't know the word "`save."
+    23 | I don't know the word "rock."
+    23 | I don't know the word "this."
+    23 | There's nothing recognizable on the screen.\n\nThe hacker types furiously, and the screen displays what to you looks like an explosion in a teletype factory. After a while he says. "Chomping file system. Your directory has gone seriously west. I fixed it." He checks the screen. "It was mixed up on the file server with some files from the Department of Alchemy." He grunts. "People's names for their nodes are getting weird. This one is called 'Lovecraft.'" He pauses. "Your paper is gone, though. Sorry. Maybe they could help you down there."
+    23 | You already have it.\n\nThe darkness before you, now visible, is a creature. It towers over the now-silent crowd. The thing jerks this way and that, spraying a foul ichor. Its palps twitch expectantly, then pound impatiently against the rock. You can feel the smooth stone vibrating in your hand.
+    22 | I don't know the word "logout."
+    22 | I don't know the word "load."
+    22 | What do you want to edit?
+    22 | I don't know the word "headlights."
+    22 | I don't know the word "edit:."
+    22 | I don't know the word "`ask."
+    21 | I don't know the word "source."
+    21 | You can't see any open here.
+    20 | What do you want to password?
+    20 | I don't know the word "glowing."
+    20 | I don't know the word "shapes."
+    20 | You used the word "what" in a way that I don't understand.
+    20 | You aren't holding the keyring.
+    19 | You used the word "crack" in a way that I don't understand.
+    18 | I don't know the word "grope."
+    18 | I don't know the word "dream."
+    18 | You can't reach the light from within the forklift.
+    18 | I don't know the word "bowl."
+    17 | You can't go that way.\n\nBitter, bone-cracking cold assaults you continuously. The temperature and the blizzard conditions are both horrible.
+    17 | You can't see any call buttons here.
+    17 | I don't know the word "nightmare."
+    17 | I don't know the word "center."
+    17 | I don't know the word "poem."
+    17 | I don't know the word "chompers."
+    16 | You used the word "hello" in a way that I don't understand.
+    16 | You see no YAK editor.
+    16 | I don't know the word "hungry."
+    16 | I don't know the word "`sit."
+    16 | I don't know the word "`sit`."
+    15 | You used the word "find" in a way that I don't understand.
+    15 | I don't know the word "try."
+    15 | I don't know the word "bye."
+    15 | I don't know the word "`log."
+    14 | You can't see any lovecraft here.
+    14 | What do you want to light?
+    14 | You can't see any file here.
+    14 | I don't know the word "escape."
+    14 | I don't know the word "<br>go."
+    14 | You can't see any department here.
+    14 | I don't know the word "summoning."
+    14 | I don't know the word "picture."
+    14 | I don't know the word "`inventory`."
+    14 | I don't know the word "changes."
+    13 | I don't know the word "log."
+    13 | I don't know the word "node."
+    13 | You can't open this lock with a crowbar!
+    13 | You can't go that way.\n\nThe elevator doors slide closed.
+    13 | You can't read in the dark.
+    13 | I don't know the word "how."
+    13 | I don't know the word "tightly."
+    13 | I don't know the word "directions."
+    13 | I don't know the word "starving."
+    12 | You see no YAK editor.\n\nThe hacker types furiously, and the screen displays what to you looks like an explosion in a teletype factory. After a while he says. "Chomping file system. Your directory has gone seriously west. I fixed it." He checks the screen. "It was mixed up on the file server with some files from the Department of Alchemy." He grunts. "People's names for their nodes are getting weird. This one is called 'Lovecraft.'" He pauses. "Your paper is gone, though. Sorry. Maybe they could help you down there."
+    12 | I don't know the word "waste."
+    12 | You can't see any controls here.
+    12 | You see nothing special about the crowbar.
+    12 | You can't see any flashlight here.
+    12 | I don't know the word "return."
+    12 | I don't know the word "pattern."
+    12 | I don't know the word "scroll."
+    12 | I don't know the word "looking."
+    12 | I don't know the word "`talk."
+    12 | I don't know the word "`use."
+    11 | I don't know the word "tables."
+    11 | I don't know the word "things."
+    11 | I don't know the word "visitor."
+    11 | You can't see any urgent file here.
+    11 | You used the word "i" in a way that I don't understand.
+    11 | I don't know the word "fantasy."
+    10 | You used the word "feel" in a way that I don't understand.
+    10 | I don't know the word "order."
+    10 | I don't know the word "temporary."
+    10 | I don't know the word "pizza."
+    10 | I don't know the word "notes."
+    10 | I don't know the word "illustrations."
+    10 | I don't know the word "copy."
+    10 | I don't know the word "why."
+    10 | You used the word "input:" in a way that I don't understand.
+    10 | I don't know the word "`turn."
+     9 | You used the word "search" in a way that I don't understand.
+     9 | I don't know the word "carefully."
+     9 | I don't know the word "print."
+     9 | You can't see any hacker here.
+     9 | You can't see any chinese food here.
+     9 | I don't know the word "can."
+     9 | I don't know the word "documentation."
+     9 | You can't see any file here.\n\nYou faint, and when you awaken...\n\n\n[Use $SOUND to toggle sound usage on and off.]\n\nPlace\nThis is a place. Things move about on a broken, rocky surface. Harsh sounds split the air. Something sticky grabs at your feet. There is no color, everything is drained of brightness, dull and lifeless. A path descends into a shallow bowl of black basalt.
+     9 | You already have it.
+     9 | I don't know the word "mouth."
+     9 | I don't know the word "boxes."
+     9 | I don't know the word "think."
+     9 | You can't move the direction.
+     9 | I don't know the word "characters."
+     9 | I don't know the word "map."
+     9 | I don't know the word "going."
+     9 | What do you want to what?
+     9 | I don't know the word "crowd."
+     9 | I don't know the word "happened."
+     9 | I don't know the word "very."
+     9 | I don't know the word "`inspect."
+     9 | I don't know the word "`access."
+     8 | I don't know the word "sacrifice."
+     8 | I don't know the word "youâve."
+     8 | I don't know the word "location."
+     8 | I don't know the word "task."
+     8 | I don't know the word "writing."
+     8 | You see nothing special about the wall socket.
+     8 | You can't see it too clearly, but it looks like a large waxing machine.
+     8 | I don't know the word "minute."
+     8 | I don't know the word "stairway."
+     8 | You can't go that way.\n\nThe hacker wanders back to his terminal and returns to his hacking.
+     8 | I don't know the word "watching."
+     8 | I don't know the word "seeing."
+     8 | I don't know the word "observing."
+     8 | You used the word "get" in a way that I don't understand.
+     8 | You used the word "show" in a way that I don't understand.
+     8 | I don't know the word "get:."
+     8 | I don't know the word "interactive."
+     8 | I don't know the word "`view."
+     8 | I don't know the word "`read."
+     8 | I don't know the word "don's."
+     7 | I don't know the word "second."
+     7 | I don't know the word "write."
+     7 | You can't see any up-arrow here.
+     7 | You can't see any chair here.
+     7 | I don't know the word "document."
+     7 | You used the word "step" in a way that I don't understand.
+     7 | I don't know the word "tomb."
+     7 | I don't know the word "closely."
+     7 | What do you want to read?
+     7 | What do you want to descend?
+     7 | It's already displayed. It hasn't changed, either.
+     7 | I don't know the word "photo."
+     7 | I don't know the word "investigate."
+     7 | I don't know the word "paying."
+     7 | I don't know the word "focusing."
+     7 | You can't go that way.\n\nThe crowd around you begins to sway and groan. They are expecting something. You are drawn forward by the noise.\n\nAt Platform\nYou stand before a low rock platform, more like an afterthought of piled rocks or a glacial moraine than a work of artifice. You are pushed against the pile by the crowd around you.\n\nOne small stone stands out in the pile, smooth, shiny, and glowing with a blazing light.
+     7 | What do you want to type?
+     7 | I don't know the word "did."
+     7 | You used the word "buy" in a way that I don't understand.
+     7 | Nothing happens.
+     7 | You can't see any text here.
+     7 | I don't know the word "text:."
+     7 | I don't know the word "text-based."
+     6 | I don't know the word "activate."
+     6 | I don't know the word "locate."
+     6 | I don't know the word "there."
+     6 | I don't know the word "now."
+     6 | I don't know the word "operate."
+     6 | You can't reach the pair of electrician's gloves from within the forklift.
+     6 | You aren't holding the smooth stone.
+     6 | I don't know the word "woodcuts."
+     6 | You can't go that way.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl\nYou are at the bottom of a deeply cut, smooth basalt bowl. Dimly seen shapes crowd you on all sides. Ahead, in the focus of the movement, is a rock platform.
+     6 | You can't see any alchemy department here.\n\nThe hacker wanders back to his terminal and returns to his hacking.
+     6 | I don't know the word "username."
+     6 | You can't see any forklift here.
+     6 | I don't know the word "highlighted."
+     6 | You can't see any noisy room here.
+     6 | I don't know the word "continue."
+     6 | I don't know the word "remember."
+     6 | I don't know the word "be."
+     6 | I don't know the word "closer."
+     6 | I don't know the word "retrieve."
+     6 | I don't know the word "margins."
+     6 | You can't see any alchemy here.
+     6 | I don't know the word "study."
+     6 | What do you want to stop?
+     6 | What do you want to push?
+     6 | You used the word "eat" in a way that I don't understand.
+     6 | I don't know the word "finding."
+     6 | I don't know the word "campus."
+     6 | I don't know the word "streetlights."
+     6 | You can't reach the junk from within the forklift.
+     6 | I don't know the word "forks."
+     5 | I don't know the word "assistant."
+     5 | You can't see any edit classi paper here.
+     5 | I don't know the word "decrypt."
+     5 | You can't see any elevator here.
+     5 | I don't know the word "restaurant."
+     5 | You can't see any sticky here.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl\nYou are at the bottom of a deeply cut, smooth basalt bowl. Dimly seen shapes crowd you on all sides. Ahead, in the focus of the movement, is a rock platform.
+     5 | There's nothing recognizable on the screen.\n\nThe hacker wanders over, trying to look nonchalant as he takes over your chair. "Losing, huh?" he asks wittily. He glances at your terminal, which displays a pattern of snow and unusual characters. He appears somewhat excited.
+     5 | What do you want to pry the padlock with?
+     5 | I don't know the word "server."
+     5 | I don't know the word "directory."
+     5 | You see nothing special about it.\n\nBitter, bone-cracking cold assaults you continuously. The temperature and the blizzard conditions are both horrible.
+     5 | You can't see any microwave here.
+     5 | You can't see any file here.\n\nThe professor continues to gaze at you with malign intent.
+     5 | There is no path through the junk for you, much less for a forklift.
+     5 | I don't know the word "lost."
+     5 | I don't know the word "admin."
+     5 | I don't know the word "image."
+     5 | You aren't carrying the hacker.
+     5 | I don't know the word "keep."
+     5 | I don't know the word "slowly."
+     5 | I don't know the word "blinking."
+     5 | I don't know the word "do."
+     5 | I don't know the word "forth."
+     5 | I don't know the word "booklet."
+     5 | You used the word "hint" in a way that I don't understand.
+     5 | You used the word "read" in a way that I don't understand.
+     5 | You can't see any people here.
+     5 | I don't know the word "you're."
+     5 | I don't know the word "downstairs."
+     5 | I don't know the word "dir."
+     5 | I don't know the word "horror."
+     5 | I don't know the word "keyboard."
+     5 | I don't know the word "`press."
+     5 | I don't know the word "`power."
+     5 | I don't know the word "`quit`."
+     5 | I don't know the word "`shut."
+     5 | I don't know the word "`load."
+     5 | I don't know the word "`launch."
+     5 | I don't know the word "```user."
+     5 | I don't know the word "player."
+     5 | I don't know the word "shine."
+     5 | I don't know the word "house."
+     4 | You used the word "look" in a way that I don't understand.
+     4 | You can't see any edit classics paper here.
+     4 | You can't see any access panel here.
+     4 | I don't know the word "delete."
+     4 | I don't know the word "surface."
+     4 | I don't know the word "matches."
+     4 | I don't know the word "pockets."
+     4 | I don't know the word "name."
+     4 | I don't know the word "hard."
+     4 | I don't know the word "substance."
+     4 | You can't see that here!
+     4 | I don't know the word "<br>wait."
+     4 | You used the word "time" in a way that I don't understand.
+     4 | I don't know the word "**."
+     4 | I don't know the word "woodcut."
+     4 | I don't know the word "twist."
+     4 | You can't see any stone here.
+     4 | I don't know the word "resist."
+     4 | I don't know the word "cans."
+     4 | You see nothing special about the passage.
+     4 | I don't know the word "duplicate."
+     4 | I don't know the word "way."
+     4 | I don't know the word "grip."
+     4 | I don't know the word "clutch."
+     4 | I don't know the word "view."
+     4 | I don't know the word "translation."
+     4 | You can't see any food here.
+     4 | You can't see any file classics paper here.
+     4 | You aren't holding the pc.
+     4 | I don't know the word "towards."
+     4 | You used the word "enter" in a way that I don't understand.
+     4 | I don't know the word "viewing."
+     4 | It's already light.
+     4 | I don't know the word "hey."
+     4 | I don't know the word "form."
+     4 | You can't see any lovecr here.
+     4 | I don't know the word "happening."
+     4 | I don't know the word "goodbye."
+     4 | You can't see any help yourself here.
+     4 | I don't know the word "talking."
+     4 | You used the word "input" in a way that I don't understand.
+     4 | I don't know the word "narrative."
+     4 | I don't know the word "`say."
+     4 | I don't know the word "offerings."
+     4 | You can't see any food here.\n\nThe fourth page is a photograph. You try to recoil from the screen, but cannot. Fascinated and repelled at the same time, you wonder: is that a mouth, and what is in it?
+     4 | I don't know the word "pit."
+     4 | You can't see any door here.
+     4 | I don't know the word "clears."
+     4 | I don't know the word "```help."
+     4 | I don't know the word "i's."
+     4 | I don't know the word "```   ."
+     4 | You see nothing special about the steam pipes.
+     4 | I don't know the word "wood."
+     4 | You can't see any sticky here.
+     4 | I don't know the word "ram."
+     4 | I don't know the word "border."
+     3 | I don't know the word "discover."
+     3 | I don't know the word "identify."
+     3 | You used the word "check" in a way that I don't understand.
+     3 | I don't know the word "unusual."
+     3 | I don't know the word "please."
+     3 | You can't see any new here.
+     3 | You used the word "move" in a way that I don't understand.
+     3 | I don't know the word "staircase."
+     3 | I don't know the word "negotiate."
+     3 | I don't know the word "backup."
+     3 | I don't know the word "session."
+     3 | What do you want to type login?
+     3 | You can't see any computer room here.
+     3 | What do you want to unlock the padlock with?
+     3 | I don't know the word "vigorously."
+     3 | You can't go that way.\n\nThe maintenance man continues slipping, falling, standing, and so on. He reminds you of a badly made windup toy.
+     3 | I don't know the word "apparatus."
+     3 | I don't know the word "<br>feel."
+     3 | I don't know the word "<br>look."
+     3 | You can't see any north door here.\n\nThe professor continues to gaze at you with malign intent.
+     3 | I don't know the word "reading."
+     3 | What do you want to show the stone to?
+     3 | You can't see any urgent file box here.
+     3 | You can't see any coke here.
+     3 | I don't know the word "code."
+     3 | I don't know the word "highlight."
+     3 | I don't know the word "finish."
+     3 | I don't know the word "stay."
+     3 | I don't know the word "remain."
+     3 | I don't know the word "staring."
+     3 | I don't know the word "concentrating."
+     3 | I don't know the word "table."
+     3 | You can't see any electrical panel here.
+     3 | I don't know the word "summon."
+     3 | You can't see any hi here.
+     3 | You can't see any dome here.\n\nYou can feel the cold worming its way through your layers of clothing and biting into your flesh.
+     3 | I don't know the word "deadline."
+     3 | You can't see any red thing here.
+     3 | I don't know the word "see."
+     3 | I don't know the word "wrong."
+     3 | I don't know the word "something."
+     3 | I don't know the word "send."
+     3 | You can't see any help here.
+     3 | I don't know the word "need."
+     3 | I don't know the word "borrow."
+     3 | You aren't holding the master key.
+     3 | I don't know the word "by."
+     3 | I don't know the word "`greet."
+     3 | I don't know the word "`start."
+     3 | I don't know the word "`begin."
+     3 | I don't know the word "```view."
+     3 | You can't see any lab here.
+     3 | You can't see any wire channels here.
+     3 | You can't see any hi hacker here.
+     3 | I don't know the word "i'm."
+     3 | What do you want to connect the lovecraft to?
+     3 | I don't know the word "tilt."
+     3 | I don't know the word "fumble."
+     2 | I don't know the word "anything."
+     2 | I don't know the word "different."
+     2 | I don't know the word "trace."
+     2 | You used the word "slide" in a way that I don't understand.
+     2 | You can't see any down-arrow here.
+     2 | You can't see any open button here.
+     2 | You see no YAK editor.\n\nBitter, bone-cracking cold assaults you continuously. The temperature and the blizzard conditions are both horrible.
+     2 | I don't know the word "phrase."
+     2 | I don't know the word "play."
+     2 | I don't know the word "recover."
+     2 | I don't know the word "done."
+     2 | I don't know the word "end."
+     2 | I don't know the word "â."
+     2 | You can't see any network here.
+     2 | You can't see any disk here.
+     2 | You can't see any chinese food here.\n\nThe hacker turns to you and says, "Why don't you see if you can cons up some food? Then I might be able to do something for you."
+     2 | You can't see any urgent here.
+     2 | What do you want to close?
+     2 | You used the word "southeast" in a way that I don't understand.
+     2 | I don't know the word "ctrl-c."
+     2 | You can't see any sticky thing here.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl\nYou are at the bottom of a deeply cut, smooth basalt bowl. Dimly seen shapes crowd you on all sides. Ahead, in the focus of the movement, is a rock platform.
+     2 | I don't know the word "dimly."
+     2 | You see nothing special about your hand.\n\nThe hacker wanders over, trying to look nonchalant as he takes over your chair. "Losing, huh?" he asks wittily. He glances at your terminal, which displays a pattern of snow and unusual characters. He appears somewhat excited.
+     2 | I don't know the word "bags."
+     2 | I don't know the word "sandwiches."
+     2 | There is no path through the junk for you, much less for a forklift.\n\nYou are getting more and more tired.
+     2 | I don't know the word "<br>give."
+     2 | I don't know the word "minutes."
+     2 | You see nothing special about the laboratory.\n\nThe professor continues to gaze at you with malign intent.
+     2 | I don't know the word "experiments."
+     2 | You can't see any lock here.
+     2 | You can't go that way.\n\nBitter, bone-cracking cold assaults you continuously. The temperature and the blizzard conditions are both horrible.\n\nYou are getting more and more tired.
+     2 | You can't go that way.\n\nYou are worn out.
+     2 | You can't see any equipment here.
+     2 | You used the word "quit" in a way that I don't understand.
+     2 | You can't see any lamp here.
+     2 | You can't see any edit classi here.
+     2 | I don't know the word "stuff."
+     2 | What do you want to select?
+     2 | You can't see any keys here.
+     2 | I don't know the word "recovering."
+     2 | I don't know the word "recovery."
+     2 | You can't see any basalt here.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl\nYou are at the bottom of a deeply cut, smooth basalt bowl. Dimly seen shapes crowd you on all sides. Ahead, in the focus of the movement, is a rock platform.
+     2 | I don't know the word "editing."
+     2 | I don't know the word "options."
+     2 | I don't know the word "bad."
+     2 | I don't know the word "seconds."
+     2 | You can't see any microwave controls here.
+     2 | I don't know the word "if."
+     2 | I don't know the word "his."
+     2 | You can't see any chinese food here.\n\nThe hacker turns to you and says, "I'd hate to leave, with the machines so empty. On the other hand, I'm seriously starving."
+     2 | I don't know the word "engine."
+     2 | I don't know the word "explore."
+     2 | I don't know the word "explain."
+     2 | I don't know the word "cautiously."
+     2 | I don't know the word "aside."
+     2 | I don't know the word "contents."
+     2 | I don't know the word "store."
+     2 | I don't know the word "observe."
+     2 | I don't know the word "nearby."
+     2 | You can't see any red file here.
+     2 | You can't see any file here.\n\nThe fourth page is a photograph. You try to recoil from the screen, but cannot. Fascinated and repelled at the same time, you wonder: is that a mouth, and what is in it?
+     2 | I don't know the word "surroundings."
+     2 | I don't know the word "sounds."
+     2 | You can't see any lovecraft here.\n\nThe hacker wanders back to his terminal and returns to his hacking.
+     2 | I don't know the word "upstairs."
+     2 | You aren't carrying the elevator.
+     2 | I don't know the word "steps."
+     2 | I don't know the word "fuse."
+     2 | You can't reach the crowbar from within the forklift.
+     2 | I don't know the word "chant."
+     2 | I don't know the word "greet."
+     2 | I don't know the word "folder."
+     2 | You can't see any padlock here.
+     2 | You see nothing special about the wall socket.\n\nThe floor waxer waxes away to the east.
+     2 | I don't know the word "maps."
+     2 | I don't know the word "guess."
+     2 | I don't know the word "ponder."
+     2 | I don't know the word "make."
+     2 | I don't know the word "hear."
+     2 | I don't know the word "quietly."
+     2 | I don't know the word "still."
+     2 | You used the word "free" in a way that I don't understand.
+     2 | I don't know the word "papers."
+     2 | I don't know the word "due."
+     2 | I don't know the word "tomorrow."
+     2 | What do you want to ask the symbol for?
+     2 | I don't know the word "nothing."
+     2 | I don't know the word "saw."
+     2 | I don't know the word "know."
+     2 | I don't know the word "that."
+     2 | I don't know the word "he."
+     2 | I don't know the word "eating."
+     2 | I don't know the word "want."
+     2 | You're already holding it!
+     2 | I don't know the word "openstanding."
+     2 | I don't know the word "open?."
+     2 | I don't know the word "texttext."
+     2 | I don't know the word "editate."
+     2 | I don't know the word "open1."
+     2 | I don't know the word "filefile."
+     2 | You can't see any open termin here.
+     2 | I don't know the word "story."
+     2 | I don't know the word "here's."
+     2 | You used the word "no" in a way that I don't understand.
+     2 | I don't know the word "hope."
+     2 | I don't know the word "`work."
+     2 | I don't know the word "meant."
+     2 | I don't know the word "```re."
+     2 | I don't know the word "don'help."
+     2 | I don't know the word "takes."
+     2 | I don't know the word "```display."
+     2 | I don't know the word "```your."
+     2 | I don't know the word "```recent>."
+     2 | I don't know the word "most."
+     2 | You used the word "save" in a way that I don't understand.
+     2 | I don't know the word "beg."
+     2 | You can't see any lines here.\n\nThe fourth page is a photograph. You try to recoil from the screen, but cannot. Fascinated and repelled at the same time, you wonder: is that a mouth, and what is in it?
+     2 | You can't reach the up-arrow from within the forklift.
+     2 | I don't know the word "battery."
+     2 | I don't know the word "shack."
+     2 | You can't reach the manhole from within the forklift.
+     2 | I don't know the word "largest."
+     2 | I don't know the word "debugging."
+     2 | I don't know the word "consult."
+     2 | I don't know the word "grey."
+     2 | I don't know the word "bang."
+     2 | I don't know the word "glitch."
+     2 | I don't know the word "structure."
+     2 | I don't know the word "street."
+     2 | I don't know the word "drift."
+     2 | What do you want to burn the assignment with?
+     2 | You can't go that way.\n\nEach breath you take is like swallowing knives.
+     2 | You can't see any lock here.\n\nYou are suffused with a warm, blissful numbness. It is marred only by the knowledge that before you wake again, you will die.\n\n    ****  You have died  ****\n\nAt first, you think "Maybe it was all just a bad dream," but no such luck. It appears to be for real. That's too bad, although something gnawing on your fingertips thinks it's pretty wonderful, or at least fairly tasty.\n Smith Street                                                                                                  Score: 5                Moves: 82              \nYour score is 5 of a possible 100, in 82 moves. Graded on the curve, you are in the class of Freshman.\n\nWould you like to restart the game from the beginning, restore a saved game position, or end this session of the game?\n(Type RESTART, RESTORE, or QUIT):
+     2 | I don't know the word "good."
+     2 | I don't know the word "present."
+     2 | I don't know the word "arrived."
+     2 | You used the word "greetings" in a way that I don't understand.
+     2 | I don't know the word "welcome."
+     2 | I don't know the word "hail."
+     2 | You used the word "answer" in a way that I don't understand.
+     2 | I don't know the word "aid."
+     2 | I don't know the word "sideways."
+     2 | I don't know the word "squint."
+     2 | I don't know the word "peer."
+     2 | You can't see any opening here.\n\nYou faint, and when you awaken...\n\n\n[Use $SOUND to toggle sound usage on and off.]\n\nPlace\nThis is a place. Things move about on a broken, rocky surface. Harsh sounds split the air. Something sticky grabs at your feet. There is no color, everything is drained of brightness, dull and lifeless. A path descends into a shallow bowl of black basalt.
+     2 | I don't know the word "wield."
+     2 | I don't know the word "aloft."
+     2 | I don't know the word "jam."
+     2 | What do you want to wedge the stone with?
+     2 | I don't know the word "gap."
+     2 | You can't put anything under that!
+     2 | I don't know the word "sorry."
+     2 | I don't know the word "token."
+     2 | You can't see any close box here.
+     2 | You can't see any open wire channel here.
+     2 | You can't see any open channel here.
+     2 | There's no way to close the classics paper.
+     2 | You can't see any switch here.
+     1 | I don't know the word "assassin."
+     1 | I don't know the word "detect."
+     1 | I don't know the word "<algorithm>."
+     1 | I don't know the word "def."
+     1 | I don't know the word "actions."
+     1 | I don't know the word "bumps."
+     1 | I don't know the word "raised."
+     1 | I don't know the word "tantra."
+     1 | I don't know the word "section."
+     1 | What do you want to pry the panel with?
+     1 | You can't see any panel here.
+     1 | You can't see any 2 button here.\n\nYou hear the elevator begin moving.
+     1 | You can't see any stop switch here.\n\nThe up-arrow blinks off.
+     1 | You can't see any access panel here.\n\nThe elevator doors slide open.
+     1 | You can't see any 3 button here.
+     1 | You can't go that way.\n\nYou hear the elevator begin moving.
+     1 | I don't know the word "`recover."
+     1 | I don't know the word "halt."
+     1 | I don't know the word "losing."
+     1 | I don't know the word "telnet."
+     1 | You can't see any lovecraft here.\n\nThe hacker turns to you and says, "I'd hate to leave, with the machines so empty. On the other hand, I'm seriously starving."
+     1 | I don't know the word "finished."
+     1 | I don't know the word "interaction."
+     1 | I don't know the word "**[x]**."
+     1 | You can't see any classi here.
+     1 | You can't see any classics here.
+     1 | You can't see any paper here.
+     1 | You see nothing special about it.\n\nThe hacker turns to you and says, "I'd hate to leave, with the machines so empty. On the other hand, I'm seriously starving."
+     1 | I don't know the word "aim."
+     1 | I don't know the word "id."
+     1 | I don't know the word "will."
+     1 | I don't know the word "storm."
+     1 | I don't know the word "user-id."
+     1 | I don't know the word "flee."
+     1 | I don't know the word "himself."
+     1 | I don't know the word "past."
+     1 | I don't know the word "<br>trade."
+     1 | I don't know the word "<br>switch."
+     1 | I don't know the word "<br>help."
+     1 | I don't know the word "<br>east."
+     1 | You can't go that way.\n\nThe maintenance man stares with maniacal intensity at your throat.
+     1 | You can't see any carton here.
+     1 | I don't know the word "indentations."
+     1 | You see nothing special about the catwalk.
+     1 | You can't see any flashlight here.\n\nThe hacker turns to you and says, "I don't know where I can get something to eat, what with all the snow."
+     1 | You can't see any microwave button here.
+     1 | You can't see any dark room here.
+     1 | You can't see any alchemy door here.
+     1 | You can't go that way.\n\nThe elevator begins to move downward.
+     1 | You can't see any west door here.
+     1 | I don't know the word "subbasement."
+     1 | What do you want to pry the junk with?
+     1 | You can't see any alchemy department here.\n\nThe urchin looks around nervously, obviously thinking of flight, but decides against it.
+     1 | You can't see any keys here.\n\nThe floor waxer continues waxing a section of floor nearby. The maintenance man operating it stares at you suspiciously.
+     1 | You can't see any wall socket here.
+     1 | I don't know the word "copies."
+     1 | I don't know the word "stair."
+     1 | You can't see any button here.
+     1 | You see no YAK editor.\n\nThe hacker turns to you and says, "I don't know where I can get something to eat, what with all the snow."
+     1 | You can't see any szechuan food here.\n\nThe hacker turns to you and says, "I'd hate to leave, with the machines so empty. On the other hand, I'm seriously starving."
+     1 | I don't know the word "advice."
+     1 | What do you want to password123?
+     1 | You can't see any microwave readout here.
+     1 | You can't reach that!
+     1 | I don't know the word "dial."
+     1 | You can't see any microwave panel here.
+     1 | I don't know the word "favor."
+     1 | You aren't carrying the direction.
+     1 | You can't see any red file box here.
+     1 | I don't know the word "advance."
+     1 | You can't do that!
+     1 | I don't know the word "entrance."
+     1 | I don't know the word "movement."
+     1 | I don't know the word "toward."
+     1 | I don't know the word "direction."
+     1 | I don't know the word "clues."
+     1 | I don't know the word "hints."
+     1 | I don't know the word "information."
+     1 | I don't know the word "next."
+     1 | I don't know the word "record."
+     1 | It's already here!\n\nThe hacker types furiously, and the screen displays what to you looks like an explosion in a teletype factory. After a while he says. "Chomping file system. Your directory has gone seriously west. I fixed it." He checks the screen. "It was mixed up on the file server with some files from the Department of Alchemy." He grunts. "People's names for their nodes are getting weird. This one is called 'Lovecraft.'" He pauses. "Your paper is gone, though. Sorry. Maybe they could help you down there."
+     1 | You can't see any large noisy room here.
+     1 | I don't know the word "hall."
+     1 | I don't know the word "first."
+     1 | You used the word "lower" in a way that I don't understand.
+     1 | I don't know the word "arrive."
+     1 | I don't know the word "come."
+     1 | You see nothing special about the noise.\n\nThe elevator begins to move downward.
+     1 | I don't know the word "tight."
+     1 | I don't know the word "double-click."
+     1 | You can't see any file box here.
+     1 | I don't know the word "interact."
+     1 | I don't know the word "focus."
+     1 | I don't know the word "attention."
+     1 | You used the word "gaze" in a way that I don't understand.
+     1 | There is nothing there.\n\nThe hacker turns to you and says, "I'd hate to leave, with the machines so empty. On the other hand, I'm seriously starving."
+     1 | I don't know the word "adjust."
+     1 | I don't know the word "another."
+     1 | I don't know the word "moment."
+     1 | I don't know the word "lockpicking."
+     1 | I don't know the word "re-enter."
+     1 | I don't know the word "crawl."
+     1 | I don't know the word "tap."
+     1 | There is nothing behind the junk.
+     1 | You see nothing special about your feet.
+     1 | You can't see any edge here.\n\nThe third page is in the same script as the first, but laid out like a poem. There are woodcut illustrations which are queasily disturbing.\n\nThere is a translation, or notes for one, typed between the lines of the poem:\n\n"He returns, he is called back (?)\nThe loyal ones (acolytes?) make a sacrifice\nThose who survive will meet him (be absorbed? eaten?)\nThey will live, yet die\nForever will be (is?) nothing to them (to him?)\n\n"His place (lair? burrow?) must be prepared\nHis food (offerings?) must be prepared\nCall him forth (invite him?) with great power\nOnly an acceptable (tasteful?) sacrifice will call him forth\nHe will be grateful (satiated?)"\n\nThe rest is even more fragmentary.
+     1 | I don't know the word "thelper."
+     1 | You can't see any open here.\n\nYou hear the elevator begin moving.
+     1 | You can't see any open here.\n\nYou no longer hear the elevator moving.
+     1 | You can't go that way.\n\nSuddenly, you remember why the graduate student's name was familiar. He was a missing student, until his body was found smashed and broken at the base of the tallest building on campus.
+     1 | You can't see any rope here.
+     1 | I don't know the word "tool."
+     1 | You can't see any junk here.
+     1 | You can't see any stone here.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl\nYou are at the bottom of a deeply cut, smooth basalt bowl. Dimly seen shapes crowd you on all sides. Ahead, in the focus of the movement, is a rock platform.
+     1 | I don't know the word "invisi."
+     1 | I don't know the word "torch."
+     1 | I don't know the word "candle."
+     1 | You can't go that way.\n\nThe elevator doors slide open.
+     1 | I don't know the word "coat."
+     1 | What do you want to touch?
+     1 | I don't know the word "retreat."
+     1 | I don't know the word "shelter."
+     1 | You can't see any terminal here.
+     1 | I don't know the word "moving."
+     1 | I don't know the word "freeze."
+     1 | I don't know the word "position."
+     1 | I don't know the word "longer."
+     1 | I don't know the word "pause."
+     1 | What do you want to rest on?
+     1 | I don't know the word "retry."
+     1 | You can't move your hand.
+     1 | I don't know the word "struggle."
+     1 | It's already here!\n\nThe hacker turns to you and says, "Why don't you see if you can cons up some food? Then I might be able to do something for you."
+     1 | I don't know the word "cons."
+     1 | You used the word "examine" in a way that I don't understand.
+     1 | I don't know the word "manual."
+     1 | You can't see any alchemy here.\n\nThe hacker wanders back to his terminal and returns to his hacking.
+     1 | You can't see any help here.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl
+     1 | I don't know the word "does."
+     1 | I don't know the word "net."
+     1 | I don't know the word "alone."
+     1 | What do you want to power off?
+     1 | What do you want to climb?
+     1 | What do you want to turn off?
+     1 | You can't go that way.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl
+     1 | I don't know the word "typing."
+     1 | You can't see any your paper here.
+     1 | You used the word "give" in a way that I don't understand.
+     1 | I don't know the word "recall."
+     1 | What do you want to buy the help from?
+     1 | I don't know the word "vendor."
+     1 | I don't know the word "shop."
+     1 | I don't know the word "catalog."
+     1 | I don't know the word "mail."
+     1 | You can't see any mass here.
+     1 | I don't know the word "looks."
+     1 | You can't go that way.\n\nThe hacker turns to you and says, "Why don't you see if you can cons up some food? Then I might be able to do something for you."
+     1 | What do you want to ask for?
+     1 | You used the word "grab" in a way that I don't understand.
+     1 | You can't see any food here.\n\nThe hacker turns to you and says, "Why don't you see if you can cons up some food? Then I might be able to do something for you."
+     1 | I don't know the word "remind."
+     1 | I don't know the word "mention."
+     1 | I don't know the word "brought."
+     1 | I don't know the word "gave."
+     1 | I don't know the word "had."
+     1 | I don't know the word "found."
+     1 | You aren't holding the package of Funny Bones.
+     1 | You can't see any package here.
+     1 | I don't know the word "*write:."
+     1 | I don't know the word "openside."
+     1 | I don't know the word "i't."
+     1 | I don't know the word "class."
+     1 | You can't see any edit text here.
+     1 | I don't know the word "i'."
+     1 | I don't know the word "->."
+     1 | I don't know the word "file:."
+     1 | I don't know the word "command."
+     1 | I don't know the word "filetext."
+     1 | You can't see any file text here.
+     1 | I don't know the word "action."
+     1 | I don't know the word "adventure."
+     1 | I don't know the word "scenario."
+     1 | I don't know the word "setting."
+     1 | I don't know the word "term."
+     1 | I don't know the word "context."
+     1 | I don't know the word "or."
+     1 | You used the word "t" in a way that I don't understand.
+     1 | I don't know the word "`stand`."
+     1 | I don't know the word "`stand."
+     1 | I don't know the word "`move`."
+     1 | I don't know the word "`enter`."
+     1 | I don't know the word "layout."
+     1 | I don't know the word "author."
+     1 | I don't know the word "route."
+     1 | You can't see any darkness here.
+     1 | You can't see any screen here.
+     1 | You can't see any stop here.
+     1 | I don't know the word "others."
+     1 | I don't know the word "home."
+     1 | What do you want to unlock the door with?
+     1 | I don't know the word "voice."
+     1 | I don't know the word "begin."
+     1 | You can't see any computer here.
+     1 | I don't know the word "printer."
+     1 | I don't know the word "mouths."
+     1 | You can't see any help here.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl\nYou are at the bottom of a deeply cut, smooth basalt bowl. Dimly seen shapes crowd you on all sides. Ahead, in the focus of the movement, is a rock platform.
+     1 | You used the word "who" in a way that I don't understand.
+     1 | I don't know the word "book."
+     1 | I don't know the word "speak."
+     1 | You can't see any door here.\n\nThe crowd around you begins to sway and groan. They are expecting something. You are drawn forward by the noise.\n\nAt Platform\nYou stand before a low rock platform, more like an afterthought of piled rocks or a glacial moraine than a work of artifice. You are pushed against the pile by the crowd around you.\n\nOne small stone stands out in the pile, smooth, shiny, and glowing with a blazing light.
+     1 | I don't know the word "unfreeze."
+     1 | I don't know the word "security."
+     1 | You can't see any mass here.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl\nYou are at the bottom of a deeply cut, smooth basalt bowl. Dimly seen shapes crowd you on all sides. Ahead, in the focus of the movement, is a rock platform.
+     1 | You can't see any symbols here.
+     1 | You can't see any hole here.\n\nThe crowd around you begins to sway and groan. They are expecting something. You are drawn forward by the noise.\n\nAt Platform\nYou stand before a low rock platform, more like an afterthought of piled rocks or a glacial moraine than a work of artifice. You are pushed against the pile by the crowd around you.\n\nOne small stone stands out in the pile, smooth, shiny, and glowing with a blazing light.
+     1 | You can't see any control here.
+     1 | I don't know the word "data."
+     1 | I don't know the word "learning."
+     1 | I don't know the word "gate."
+     1 | I don't know the word "station."
+     1 | You can't see any plug here.\n\nYou faint, and when you awaken...\n\n\n[Use $SOUND to toggle sound usage on and off.]\n\nPlace\nThis is a place. Things move about on a broken, rocky surface. Harsh sounds split the air. Something sticky grabs at your feet. There is no color, everything is drained of brightness, dull and lifeless. A path descends into a shallow bowl of black basalt.
+     1 | What do you want to jump in?
+     1 | I don't know the word "realms."
+     1 | I don't know the word "hunger."
+     1 | I don't know the word "forever."
+     1 | I don't know the word "pain."
+     1 | You used the word "rest" in a way that I don't understand.
+     1 | I don't know the word "mercy."
+     1 | I don't know the word "relief."
+     1 | I don't know the word "existence."
+     1 | I don't know the word "strength."
+     1 | I don't know the word "always."
+     1 | You used the word "leave" in a way that I don't understand.
+     1 | You can't see any lamp here.\n\nFrom below, a low noise begins, and slowly builds. You feel yourself drawn downward by the noise.\n\nBasalt Bowl\nYou are at the bottom of a deeply cut, smooth basalt bowl. Dimly seen shapes crowd you on all sides. Ahead, in the focus of the movement, is a rock platform.
+     1 | You used the word "consume" in a way that I don't understand.
+     1 | I don't know the word "`select."
+     1 | I don't know the word "`choose."
+     1 | I don't know the word "`click."
+     1 | I don't know the word "don'sition."
+     1 | I don't know the word "```reboot."
+     1 | I don't know the word "```restart."
+     1 | I don't know the word "```restarting."
+     1 | I don't know the word "don'suggested."
+     1 | I don't know the word "apologize:."
+     1 | I don't know the word "```ther."
+     1 | I don't know the word "```repeatedly."
+     1 | I don't know the word "grows."
+     1 | I don't know the word "expands."
+     1 | I don't know the word "covers."
+     1 | I don't know the word "occupies."
+     1 | I don't know the word "fills."
+     1 | I don't know the word "```{:."
+     1 | I don't know the word "```textremembert."
+     1 | I don't know the word "i'say:."
+     1 | I don't know the word "```schaft."
+     1 | I don't know the word "```vbnet."
+     1 | You used the word "version" in a way that I don't understand.
+     1 | I don't know the word "wants."
+     1 | I don't know the word "requests."
+     1 | I don't know the word "asks."
+     1 | I don't know the word "don'the."
+     1 | I don't know the word "don't."
+     1 | I don't know the word "```moves:."
+     1 | I don't know the word "```p>."
+     1 | I don't know the word "```posted:."
+     1 | I don't know the word "```pard."
+     1 | I don't know the word "```a."
+     1 | I don't know the word "```objectivec."
+     1 | I don't know the word "```markdown."
+     1 | I don't know the word "c."
+     1 | I don't know the word "title."
+     1 | I don't know the word "wor."
+     1 | I don't know the word "words:."
+     1 | You used the word "following:" in a way that I don't understand.
+     1 | I don't know the word "lurk."
+     1 | I don't know the word "show:."
+     1 | I don't know the word "(name."
+     1 | I don't know the word "don'."
+     1 | I don't know the word "```n'."
+     1 | I don't know the word "bend."
+     1 | I don't know the word "pictures."
+     1 | I don't know the word "goo."
+     1 | You can't see any slime here.
+     1 | I don't know the word "not."
+     1 | I don't know the word "winning."
+     1 | I don't know the word "fine."
+     1 | What do you want to connect the alchemy to?
+     1 | You can't see any alchemy paper here.
+     1 | I don't know the word "borders."
+     1 | I don't know the word "activity."
+     1 | What do you want to ignite the stone with?
+     1 | I don't know the word "block."
+     1 | I don't know the word "stick."
+     1 | What do you want to lean the monitor on?
+     1 | I don't know the word "brandish."
+     1 | I don't know the word "invisiclues."
+     1 | I don't know the word "force."
+     1 | I don't know the word "rush."
+     1 | You can't see any classics paper here.
+     1 | You can't see any computer terminal here.
+     1 | I don't know the word "i'll."
+     1 | I don't know the word "coming."
+     1 | I don't know the word "soon."
+     1 | I don't know the word "excuse."
+     1 | I don't know the word "pardon."
+     1 | I don't know the word "remorse."
+     1 | I don't know the word "mea."
+     1 | I don't know the word "regret."
+     1 | I don't know the word "visit."
+     1 | You can't go that way.\n\nThe urchin looks around nervously, obviously thinking of flight, but decides against it.
+     1 | You can't see any cord here.
+     1 | I don't know the word "esc."
+     1 | You used the word "break" in a way that I don't understand.
+     1 | You can't see any ladder here.
+     1 | You can't see any cable here.
+     1 | You can't see any down arrow here.
+     1 | I don't know the word "scrollbar."
+     1 | I don't know the word "crash."
+     1 | What do you want to pry the open wire channel with?
+     1 | You can't see any open wire channe here.
+     1 | You can't see any wire channel here.
+     1 | There's nothing recognizable on the screen.\n\nThe hacker, mumbling under his breath, begins a flurry of activity. First the screen returns to something nearly normal, then windows begin popping up like toadstools after a rain. The screen looks a lot like the top of his terminal table (or the bottom of a trash can).
+     1 | I don't know the word "dismantle."
+     1 | I don't know the word "boards."
+     1 | You can't see any pallets here.
+     1 | I don't know the word "apart."
+     1 | I don't know the word "tines."
+     1 | You can't see any switch here.\n\nYou can no longer feel the tips of your fingers. As for your toes, they have long since ceased to report.
+     1 | You can't see any stone here.\n\nYour eyes are icing up.
+     1 | I don't see what you're referring to.
+     1 | You can't see any bench here.
+     1 | You can't see any bench here.\n\nEach breath you take is like swallowing knives.
+     1 | I don't know the word "abort."
+     1 | I don't know the word "f10."
+     1 | You used the word "x" in a way that I don't understand.
+     1 | You can't see any plug here.
+     1 | I don't know the word "desk."
+     1 | I don't know the word "drawers."
+     1 | You can't put anything under that!\n\nYou can feel the cold worming its way through your layers of clothing and biting into your flesh.
+     1 | I don't know the word "shelves."
+     1 | I don't know the word "doorknob."
+     1 | You can't go that way.\n\nYou can feel the cold worming its way through your layers of clothing and biting into your flesh.
