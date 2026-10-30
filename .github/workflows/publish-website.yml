@@ -29,12 +29,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1.0.13
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@7f797815d8adceb1c412e7abefdd1ab4abc47a5f # v1.335.0
         with:
-          source: ./docs/website
-          destination: ./_site
+          ruby-version: "3.3"
+          bundler-cache: true
+          working-directory: docs/website
+      - name: Build with Jekyll
+        working-directory: docs/website
+        env:
+          JEKYLL_ENV: production
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_REPO_NWO: ${{ github.repository }}
+          JEKYLL_BUILD_REVISION: ${{ github.sha }}
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --destination ../../_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
 
