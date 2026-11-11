@@ -46,34 +46,34 @@ An example script can be found in the scripts folder.
 1.	Run benchmark evaluation on all the games for the specified random agent:
 
     ```python
-    python benchmark.py --agent agents/random.py random
+    python benchmark.py random
 
 2.	Run benchmark evaluation on a subset of the games:
 
     ```python
-    python benchmark.py --agent agents/random.py random --env textworld
+    python benchmark.py random --env textworld
 
 3.	Run benchmark evaluation on specific games:
 
     ```python
-    python benchmark.py --agent agents/random.py random --envs JerichoEnvZork1 JerichoEnvDetective
+    python benchmark.py random --envs JerichoEnvZork1 JerichoEnvDetective
 
 4.	Run benchmark evaluation using as a HumanAgent:
 
     ```python
-    python benchmark.py --agent agents/human.py human --envs TWCookingLevel1
+    python benchmark.py human --envs TWCookingLevel1
 
 5.	Run benchmark evaluation where the ground-truth walkthrough is being followed:
 
     ```python
-    python benchmark.py --agent agents/walkthrough.py walkthrough --envs JerichoEnvZork1
+    python benchmark.py walkthrough --envs JerichoEnvZork1
 
 
 ## 3. Benchmarking LLMs
 
 In order to benchmark a given LLM acting as language agent playing text-based games, you will need to first configure it. `tales` is leveraging the [`llm`](https://llm.datasette.io/en/stable/) library to handle communication with different LLMs.
 
-    python benchmark.py --agent agents/llm.py zero-shot --envs TWCookingLevel1
+    python benchmark.py zero-shot --envs TWCookingLevel1
 
 ### Continuing a Previous Run
 
@@ -137,7 +137,7 @@ You can check that everything is working properly with this simple command:
 
 ## 4. Building Custom Agents
 
-To build a custom agent, you need to create a new file (e.g., `custom.py`) in the agents folder and implement the `Agent` class and implement the proper arguments parser.
+To build a custom agent, you need to create a new file (e.g., `custom.py`) and implement the `Agent` class and implement the proper arguments parser.
 
 ```python
 from typing import Dict, Any
@@ -164,9 +164,12 @@ register(
 )
 ```
 
-You can then use this agent by specifying the path to the file and the class name in the `--agent` argument.
+The agents bundled with TALES (in the `agents` folder) are always available. To use a custom agent, explicitly pass the path to its file (or a glob pattern) with the `--agent` argument, followed by the registered agent name.
 
-        python benchmark.py --agent agents/custom.py my-agent
+        python benchmark.py --agent path/to/custom.py my-agent
+
+> [!WARNING]
+> Files passed with `--agent` are imported, i.e., executed as Python code. Only pass trusted files.
 
 > [!NOTE]
 > See the [agents folder](https://github.com/microsoft/tale-suite/tree/main/agents) for more concrete examples.

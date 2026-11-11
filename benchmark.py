@@ -1,7 +1,7 @@
 import argparse
 import datetime
 import glob
-import importlib
+import importlib.util
 import json
 import logging
 import os
@@ -694,28 +694,69 @@ def exit_listing_agents(agent=None):
     sys.exit(1)
 
 
-def _maybe_load_agent_module():
-    parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument(
-        "--agent",
-        default="agents/*.py",
-        help="Load external python file(s). Useful to register custom agent on-the-fly. Default: %(default)s",
-    )
-    args, _ = parser.parse_known_args()
-    if args.agent:
-        print(f"Importing agent(s) from {args.agent}.")
-        for agent_file in glob.glob(args.agent):
-            print(f"Importing {agent_file}...")
-            agent_dirname = os.path.dirname(agent_file)
-            agent_filename, _ = os.path.splitext(os.path.basename(agent_file))
-            if f"{agent_dirname}.{agent_filename}" in sys.modules:
+BUNDLED_AGENTS_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "agents")
+AGENT_HELP = (
+    "Python file(s) or glob pattern(s) of custom agents to load in addition to the\n"
+    "agents bundled with TALES. WARNING: the matching files are executed, so only\n"
+    "pass trusted code. Default: only load the bundled agents."
+)
+
+
+def _exec_module(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    try:
+        spec.loader.exec_module(module)
+    except BaseException:
+        sys.modules.pop(name, None)
+        raise
+
+
+def _load_bundled_agents():
+    """Load the agents shipped with TALES, independently of the working directory."""
+    if "agents" not in sys.modules:
+        # Pin the `agents` package to the bundled folder so bundled agents can
+        # import each other (e.g. `from agents.llm import ...`) without ever
+        # resolving to an `agents/` folder from the current working directory.
+        spec = importlib.util.spec_from_loader("agents", loader=None, is_package=True)
+        spec.submodule_search_locations = [BUNDLED_AGENTS_DIR]
+        sys.modules["agents"] = importlib.util.module_from_spec(spec)
+
+    for agent_file in sorted(glob.glob(pjoin(BUNDLED_AGENTS_DIR, "*.py"))):
+        name = f"agents.{os.path.splitext(os.path.basename(agent_file))[0]}"
+        if name not in sys.modules:
+            _exec_module(name, agent_file)
+
+
+def _load_external_agents(patterns):
+    """Load the custom agent file(s) explicitly requested with --agent."""
+    for pattern in patterns:
+        agent_files = sorted(glob.glob(pattern))
+        if not agent_files:
+            sys.exit(f"error: --agent {pattern!r} did not match any file.")
+
+        for agent_file in agent_files:
+            agent_file = os.path.realpath(agent_file)
+            if os.path.dirname(agent_file) == BUNDLED_AGENTS_DIR:
+                continue  # Already loaded as a bundled agent.
+
+            stem = os.path.splitext(os.path.basename(agent_file))[0]
+            name = f"tales_custom_agent_{stem}_{abs(hash(agent_file)):x}"
+            if name in sys.modules:
                 continue
 
-            spec = importlib.util.spec_from_file_location(
-                f"{agent_dirname}.{agent_filename}", agent_file
-            )
-            module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
+            print(f"Importing custom agent from {agent_file}...")
+            _exec_module(name, agent_file)
+
+
+def _load_agent_modules():
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("--agent", action="append", default=[])
+    args, _ = parser.parse_known_args()
+
+    _load_bundled_agents()
+    _load_external_agents(args.agent)
 
 
 def parse_args():
@@ -723,8 +764,8 @@ def parse_args():
 
     description = "Benchmark some agent on interactive text environments."
     general_parser = argparse.ArgumentParser(add_help=False, description=description)
-    general_parser.add_argument("--agent", default="./agents/*",
-                                help="Load external python file(s). Useful to register custom agent on-the-fly. Default: %(default)s")
+    general_parser.add_argument("--agent", action="append", default=[],
+                                metavar="PATH_OR_GLOB", help=AGENT_HELP)
 
     parser = argparse.ArgumentParser(parents=[general_parser])
     subparsers = parser.add_subparsers(dest="subcommand", title='Available agents to benchmark')
@@ -796,7 +837,7 @@ def parse_args():
 
 
 def main():
-    _maybe_load_agent_module()
+    _load_agent_modules()
     args = parse_args()
 
     if args.subcommand is None:
