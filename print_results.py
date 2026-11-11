@@ -20,9 +20,19 @@ def main():
 
     results = []
     for logpath in args.logs:
-        for logfile in glob.glob(pjoin(logpath, "**", "*.jsonl"), recursive=True):
+        # Newer runs store rollouts gzip-compressed (".jsonl.gz"); older runs
+        # use a plain ".jsonl". Support both, preferring the compressed one when
+        # both exist for the same episode.
+        rollouts = {}
+        for pattern in ("*.jsonl", "*.jsonl.gz"):
+            for logfile in glob.glob(pjoin(logpath, "**", pattern), recursive=True):
+                key = logfile[:-3] if logfile.endswith(".gz") else logfile
+                if key not in rollouts or logfile.endswith(".gz"):
+                    rollouts[key] = logfile
 
-            path, _ = os.path.splitext(logfile)
+        for logfile in rollouts.values():
+            path = logfile[:-3] if logfile.endswith(".gz") else logfile
+            path, _ = os.path.splitext(path)
             _, agent, env_name, env_params = path.rsplit(os.path.sep, maxsplit=3)
             admissible_command, game_seed = env_params.split("_")
             admissible_command = bool(int(admissible_command[1]))

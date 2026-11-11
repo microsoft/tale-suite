@@ -20,7 +20,18 @@ def get_token_counter(model: Optional[Model] = None):
     if "claude-" in model.model_id:
         return ClaudeTokenCounter(model)
 
-    elif "gemini" in model.model_id or "gemma" in model.model_id:
+    # Models served through the Azure OpenAI plugin (grok, kimi, gemma, ...) have
+    # no public HF/tiktoken tokenizer available here. Route them to tiktoken
+    # (o200k_base for unmapped ids) instead of the Gemini/HF counters, which
+    # would need a Google API key or a gated model download. Note gpt-* Azure
+    # deployments are AzureChat too and already map cleanly via OpenAITokenCounter.
+    if model.__class__.__name__ in ("AzureChat", "AsyncAzureChat"):
+        try:
+            return OpenAITokenCounter(model.model_id)
+        except KeyError:
+            return OpenAITokenCounter("gpt-4o")  # o200k_base approximation
+
+    if "gemini" in model.model_id or "gemma" in model.model_id:
         return GeminiTokenCounter(model)
 
     try:

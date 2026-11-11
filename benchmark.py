@@ -7,8 +7,10 @@ import logging
 import os
 import sys
 import time
+from contextlib import chdir, contextmanager
 from functools import partial
 from os.path import join as pjoin
+from tempfile import TemporaryDirectory
 
 import gymnasium as gym
 import pandas as pd
@@ -28,6 +30,53 @@ from tales.wandb_utils import (
 )
 
 os.environ["WANDB_MODE"] = "disabled"
+
+
+class _WorkingDirectoryEnvironment:
+    def __init__(self, env, workdir):
+        self._env = env
+        self.workdir = workdir
+
+    def reset(self, *args, **kwargs):
+        with chdir(self.workdir):
+            return self._env.reset(*args, **kwargs)
+
+    def step(self, *args, **kwargs):
+        with chdir(self.workdir):
+            return self._env.step(*args, **kwargs)
+
+    def close(self):
+        with chdir(self.workdir):
+            return self._env.close()
+
+    def __getattr__(self, name):
+        return getattr(self._env, name)
+
+
+@contextmanager
+def _isolated_environment(env_name, admissible_commands):
+    with TemporaryDirectory(prefix=f"tales-{env_name}-") as workdir:
+        with chdir(workdir):
+            env = gym.make(
+                f"tales/{env_name}-v0",
+                disable_env_checker=True,
+                admissible_commands=admissible_commands,
+            )
+        isolated_env = _WorkingDirectoryEnvironment(env, workdir)
+        try:
+            yield isolated_env
+        finally:
+            isolated_env.close()
+
+
+def _evaluation_paths(log_root, env_name, env_params):
+    logdir = os.path.abspath(pjoin(log_root, env_name))
+    return (
+        logdir,
+        pjoin(logdir, f"{env_params}.json"),
+        pjoin(logdir, f"{env_params}.jsonl.gz"),
+        pjoin(logdir, f"{env_params}.log"),
+    )
 
 
 def _make_state(obs, info):
@@ -55,6 +104,13 @@ def _step_env(env, state, action):
 
     if "\n" in action.strip():
         state["obs"] = "The game only allows one action per step."
+    elif action.lstrip().startswith("\\"):
+        # The dumb-frotz z-machine interpreter (used by the Jericho and
+        # TextWorld backends via libfrotz) treats any input line starting with a
+        # backslash as an interpreter meta-command. Such a line never advances
+        # the game and makes the frotz backend loop forever, hanging the whole
+        # benchmark. Reject it as an invalid action instead of stepping the env.
+        state["obs"] = "Commands starting with a backslash are not allowed."
     else:
         obs, _, done, info = env.step(action)
         state["obs"] = obs
@@ -342,17 +398,16 @@ def evaluate(agent, env_name, args):
     env_params = (
         f"a{int(args.admissible_commands)}_s{args.game_seed}_steps{args.nb_steps}"
     )
-    logdir = pjoin(args.log_dir, f"{env_name}")
+    logdir, summary_file, rollouts_file, log_file = _evaluation_paths(
+        args.log_dir, env_name, env_params
+    )
     os.makedirs(logdir, exist_ok=True)
-    summary_file = pjoin(logdir, f"{env_params}.json")
-    rollouts_file = pjoin(logdir, f"{env_params}.jsonl")
-    log_file = pjoin(logdir, f"{env_params}.log")
 
     # Create new file handler for this env evaluation.
     fh = log.add_new_file_handler(log_file)
 
     # Check if the game has already been evaluated.
-    if not args.force_all and os.path.exists(summary_file):
+    if not args.force_all and not args.no_local_check and os.path.exists(summary_file):
         log.info(f"Previous evaluation found: {summary_file}")
         with open(summary_file) as reader:
             summary = json.load(reader)
@@ -425,75 +480,68 @@ def evaluate(agent, env_name, args):
         name=run_name,
     )
 
-    env = gym.make(
-        f"tales/{env_name}-v0",
-        disable_env_checker=True,
-        admissible_commands=args.admissible_commands,
-    )
+    with _isolated_environment(env_name, args.admissible_commands) as env:
+        log.debug(f"Using {env.__class__.__name__}")
+        log.debug(f"Playing {env_name} in isolated workdir {env.workdir}")
 
-    log.debug(f"Using {env.__class__.__name__}")
-    log.debug(f"Playing {env_name}")
+        start_time = time.time()
+        obs, info = env.reset(seed=args.game_seed)
 
-    start_time = time.time()
-    obs, info = env.reset(seed=args.game_seed)
+        agent = agent.new()
+        agent.reset(obs, info, env_name)
 
-    agent = agent.new()
-    agent.reset(obs, info, env_name)
+        log.debug(f"Environment reset.\n{obs}\n")
 
-    log.debug(f"Environment reset.\n{obs}\n")
+        state = _make_state(obs, info)
 
-    state = _make_state(obs, info)
-
-    wandb_run.log(
-        {
-            "episode/moves": 0,
-            "episode/score": 0,
-            "episode/highscore": 0,
-            "episode/normalized_score": 0,
-            "episode/normalized_highscore": 0,
-            "episode/token_usage": 0,
-        },
-        step=0,
-    )
-
-    # Replay phase (if continuing from a previous run).
-    replay_steps = 0
-    if trajectory_df is not None:
-        replay_steps = replay_trajectory(
-            env, agent, trajectory_df, state, wandb_run, args, env_name, start_time
+        wandb_run.log(
+            {
+                "episode/moves": 0,
+                "episode/score": 0,
+                "episode/highscore": 0,
+                "episode/normalized_score": 0,
+                "episode/normalized_highscore": 0,
+                "episode/token_usage": 0,
+            },
+            step=0,
         )
 
-    # Play phase (LLM-driven).
-    status = "running"
-    try:
-        play_with_agent(
-            env,
-            agent,
-            state,
-            wandb_run,
-            args,
-            env_name,
-            start_time,
-            start_step=replay_steps + 1,
-        )
-        status = "finished"
+        # Replay phase (if continuing from a previous run).
+        replay_steps = 0
+        if trajectory_df is not None:
+            replay_steps = replay_trajectory(
+                env, agent, trajectory_df, state, wandb_run, args, env_name, start_time
+            )
 
-    except KeyboardInterrupt as e:
-        status = "killed"
-        log.critical(colored(f"{env_name} (killed)", "red"))
-        log.error(str(e))
-        time.sleep(1)
-        if args.debug:
-            raise
+        # Play phase (LLM-driven).
+        status = "running"
+        try:
+            play_with_agent(
+                env,
+                agent,
+                state,
+                wandb_run,
+                args,
+                env_name,
+                start_time,
+                start_step=replay_steps + 1,
+            )
+            status = "finished"
 
-    except Exception as e:
-        status = "failed"
-        log.critical(colored(f"{env_name} ({e!r})", "red"))
-        log.error(str(e), exc_info=True)
-        if args.debug:
-            raise
+        except KeyboardInterrupt as e:
+            status = "killed"
+            log.critical(colored(f"{env_name} (killed)", "red"))
+            log.error(str(e))
+            time.sleep(1)
+            if args.debug:
+                raise
 
-    env.close()
+        except Exception as e:
+            status = "failed"
+            log.critical(colored(f"{env_name} ({e!r})", "red"))
+            log.error(str(e), exc_info=True)
+            if args.debug:
+                raise
 
     final_stats = {
         "nb_steps": state["step"],
@@ -517,7 +565,7 @@ def evaluate(agent, env_name, args):
     ]
     # fmt: on
     df = pd.DataFrame(state["results"], columns=columns)
-    df.to_json(rollouts_file, orient="records", lines=True)
+    df.to_json(rollouts_file, orient="records", lines=True, compression="gzip")
 
     wandb_stats = {
         "total/Env. Steps": final_stats["nb_steps"],
@@ -705,6 +753,10 @@ def parse_args():
                             help="Force overwriting existing log files.")
         general_group.add_argument("-f", "--force-failed", action="store_true",
                             help="Force overwriting only log files that have failed.")
+        general_group.add_argument("--no-local-check", action="store_true",
+                            help="Skip the local summary-file check so whether to skip a run is\n"
+                                 "decided from wandb only (needs --wandb). Useful when local logs\n"
+                                 "are stale or absent but the runs already exist on wandb.")
         general_group.add_argument("--debug", action="store_true",
                             help="Debug mode.")
         general_group.add_argument("--continue-from", dest="continue_from",

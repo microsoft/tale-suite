@@ -14,6 +14,7 @@ from tales.agent import register
 from tales.token import get_token_counter
 from tales.utils import (
     format_messages_to_markdown,
+    inject_anthropic_cache_control,
     is_recoverable_error,
     merge_messages,
     messages2conversation,
@@ -37,6 +38,11 @@ CLAUDE_MODELS = [
     "claude-sonnet-4.5",
     "claude-sonnet-4.6",
     "claude-haiku-4.5",
+    "claude-opus-4.7",
+    "claude-opus-4.8",
+    "claude-opus-5",
+    "claude-fable-5",
+    "claude-fable-5.1",
 ]
 
 
@@ -91,8 +97,27 @@ class LLMAgent(tales.Agent):
         stop=stop_after_attempt(100),
     )
     def _llm_call_from_conversation(self, conversation, *args, **kwargs):
-        response = conversation.prompt(*args, **kwargs)
-        response.duration_ms()  # Forces the response to be computed.
+        # The llm-anthropic plugin only sets cache_control for attachments or
+        # empty-text prompts, so for our pure-text game conversations cache=True
+        # is a no-op. Inject cache_control ourselves via a build_kwargs patch.
+        inject_cache = bool(kwargs.get("cache")) and self.llm in CLAUDE_MODELS
+        if inject_cache:
+            original_build_kwargs = self.model.__class__.build_kwargs
+
+            def patched_build_kwargs(self_model, prompt, stream):
+                result = original_build_kwargs(self_model, prompt, stream)
+                inject_anthropic_cache_control(result)
+                return result
+
+            self.model.__class__.build_kwargs = patched_build_kwargs
+
+        try:
+            response = conversation.prompt(*args, **kwargs)
+            response.duration_ms()  # Forces the response to be computed.
+        finally:
+            if inject_cache:
+                self.model.__class__.build_kwargs = original_build_kwargs
+
         return response
 
     def _llm_call_from_messages(self, messages, *args, **kwargs):
@@ -115,6 +140,7 @@ class LLMAgent(tales.Agent):
         if self.llm in CLAUDE_MODELS:
             # For these models, we cannot set the seed.
             llm_kwargs.pop("seed")
+            llm_kwargs["cache"] = True  # Enable prompt caching to reduce cost
 
         if "gemini" in self.llm or "gemma" in self.llm:
             # For these models, we cannot set the seed and max_tokens has a different name.

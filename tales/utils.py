@@ -108,9 +108,59 @@ def merge_messages(messages):
     return messages_out
 
 
+def inject_anthropic_cache_control(kwargs):
+    """Add Anthropic ``cache_control`` breakpoints to a built request.
+
+    The llm-anthropic plugin only marks ``cache_control`` on attachments or
+    empty-text prompts, so pure-text conversations never get cached. We add
+    two ephemeral breakpoints: one on the (static) system prompt and one on
+    the last message's last content block, so the growing conversation prefix
+    is cached incrementally across game steps.
+    """
+    # Cache the system prompt (static across all turns).
+    system = kwargs.get("system")
+    if isinstance(system, str) and system:
+        kwargs["system"] = [
+            {
+                "type": "text",
+                "text": system,
+                "cache_control": {"type": "ephemeral"},
+            }
+        ]
+    elif isinstance(system, list) and system and isinstance(system[-1], dict):
+        system[-1]["cache_control"] = {"type": "ephemeral"}
+
+    # Cache the conversation prefix: breakpoint on the last message's last block.
+    messages = kwargs.get("messages")
+    if messages:
+        last = messages[-1]
+        content = last.get("content")
+        if isinstance(content, list) and content and isinstance(content[-1], dict):
+            content[-1]["cache_control"] = {"type": "ephemeral"}
+        elif isinstance(content, str) and content:
+            last["content"] = [
+                {
+                    "type": "text",
+                    "text": content,
+                    "cache_control": {"type": "ephemeral"},
+                }
+            ]
+
+
 def messages2conversation(model, messages):
+    # llm >= 0.32 rebuilds the next turn's message chain from ``responses[-1]``
+    # only, expecting that response's ``prompt.messages`` to already hold the
+    # full prior chain (see llm.models._build_full_chain). Older llm walked the
+    # whole ``responses`` list instead. To stay correct on both, every synthetic
+    # response carries the accumulated canonical chain up to (and including) its
+    # own user turn via an explicit ``messages=``; ``_messages_now()`` then
+    # appends that turn's assistant output. Without this, all but the last turn
+    # of history are silently dropped on the new llm core.
+    from llm.parts import Message, TextPart
+
     messages = merge_messages(messages)  # Just in case.
     responses = []
+    chain = []  # Canonical Message chain accumulated so far (excludes system).
 
     system = None
     for message in messages:
@@ -120,22 +170,29 @@ def messages2conversation(model, messages):
 
         if message["role"] == "user":
             prompt = message["content"]
+            chain.append(Message(role="user", parts=[TextPart(text=prompt)]))
             continue
 
         if message["role"] == "assistant":
-            # Make a fake response object.
+            # Make a fake response object. Its prompt carries the full chain up
+            # to this turn's user input (excluding this assistant output, which
+            # ``_messages_now()`` derives from ``_chunks``).
             response = Response(
                 model=model,
                 prompt=Prompt(
                     prompt,
                     system=system,
                     model=model,
+                    messages=list(chain),
                 ),
                 stream=False,
             )
             response._done = True
             response._chunks = [message["content"]]
             responses.append(response)
+            chain.append(
+                Message(role="assistant", parts=[TextPart(text=message["content"])])
+            )
 
             system = None
             prompt = None
@@ -173,6 +230,8 @@ def is_recoverable_error(exception):
         "anthropic.OverloadedError",
         "anthropic.APIStatusError",
         "anthropic._exceptions.OverloadedError",
+        "anthropic.APITimeoutError",
+        "anthropic._exceptions.APITimeoutError",
         "llm.errors.ModelError",  # Gemini
         # Add more as needed
     ]

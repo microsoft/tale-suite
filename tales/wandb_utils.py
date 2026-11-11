@@ -163,12 +163,19 @@ def fetch_run_trajectory(run_id, project=None):
 
 
 def _download_rollout(run):
-    """Download and parse the rollout JSONL file from a wandb run."""
+    """Download and parse the rollout JSONL file from a wandb run.
+
+    Newer runs store the rollout gzip-compressed (``.jsonl.gz``); older runs use
+    a plain ``.jsonl`` file. Both are supported (a ``.jsonl.gz`` is preferred
+    when present). Compression is inferred from the file extension.
+    """
     rollout_file = None
     for f in run.files():
-        if f.name.endswith(".jsonl"):
+        if f.name.endswith(".jsonl.gz"):
             rollout_file = f
             break
+        if f.name.endswith(".jsonl") and rollout_file is None:
+            rollout_file = f
 
     if rollout_file is None:
         raise ValueError(
